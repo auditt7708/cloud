@@ -1,16 +1,20 @@
  Services im homenet4
 
-* [icinga2](Icinga version 2 und web Interface)
-* [Drbd](drbd dienst mit direktem zugriff auf ein device )
+* [icinga2](https://gitlab.com/tobkern1980/home-net4-environment/wikis/icinga2)
+* [Drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/drbd )
 * [Pacemaker](https://gitlab.com/tobkern1980/home-net4-environment/wikis/pacemaker)
+*[Jenkins]()
 
 Hosts
-* [srv1](srv1)
-* [srv2](srv2)
-* [rp1](rp1)
-* [rp2](rp2)
-* [rp3](rp3)
-* [rp4](rp4)
+* [srv1](https://gitlab.com/tobkern1980/home-net4-environment/wikis/srv1)
+* [srv2](https://gitlab.com/tobkern1980/home-net4-environment/wikis/srv2)
+* [rp1](https://gitlab.com/tobkern1980/home-net4-environment/wikis/rp1)
+* [rp2](https://gitlab.com/tobkern1980/home-net4-environment/wikis/rp2)
+* [rp3](https://gitlab.com/tobkern1980/home-net4-environment/wikis/rp3)
+* [rp4](https://gitlab.com/tobkern1980/home-net4-environment/wikis/rp4)
 * [tobkern-desktop](tobkern-desktop)
 * [tobkern-desktop-win10](tobkern-desktop-win10)
 
+Hilfen und tools
+* [SSH](https://gitlab.com/tobkern1980/home-net4-environment/wikis/arbeiten-mit-ssh)
+* [gitlab](https://gitlab.com/tobkern1980/home-net4-environment/wikis/arbeiten-mit-gitlab)
