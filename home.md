@@ -1,6 +1,6 @@
  Services im homenet4
 
-* [Icinga2](Icinga version 2 und web Interface)
+* [icinga2](Icinga version 2 und web Interface)
 * [Drbd](drbd dienst mit direktem zugriff auf ein device )
 * [Pacemaker](Cluster mit drbd)
 
