@@ -34,3 +34,6 @@ Quellen
 * http://www.learnitguide.net/2016/07/how-to-install-and-configure-drbd-on-linux.html
 * http://clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Clusters_from_Scratch/ch07.html
 * http://crmsh.github.io/man-3/
+* http://www.unixarena.com/2016/01/rhel7-configuring-gfs2-on-pacemakercorosync-cluster.html
+* http://www.unixarena.com/2016/08/configuring-nfs-ha-using-redhat-cluster-pacemaker-rhel-7.html
+* http://www.unixarena.com/2016/01/rhel-7-configure-fencing-pacemaker.html
