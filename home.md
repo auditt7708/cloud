@@ -19,3 +19,44 @@ Hosts
 Hilfen und tools
 * [SSH](https://gitlab.com/tobkern1980/home-net4-environment/wikis/arbeiten-mit-ssh)
 * [gitlab](https://gitlab.com/tobkern1980/home-net4-environment/wikis/arbeiten-mit-gitlab)
+
+
+Packete auf allen Systemen
+
+| OS | Packet |
+| :--------: | :--------: |
+| beide   | vim     |
+| beide   | mc      |
+| beide   | tree   |
+| beide   | tmux   |
+| beide   | cell 2   |
+| cell 3   | cell 4   |
+| cell 1   | cell 2   |
+| cell 3   | cell 4   |
+| cell 1   | cell 2   |
+| cell 3   | cell 4   |
+
+
+
+Packete für Centos 7, drbd  und nfs
+
+
+| Service | Packet |
+| :--------: | :--------: |
+| beide   | vim     |
+| beide   | mc      |
+| beide   | tree   |
+| beide   | tmux   |
+| beide   | cell 2   |
+
+Packete für Centos 7, drbd , nfs und glusterfs server
+
+
+| Service | Packet |
+| :--------: | :--------: |
+| beide   | vim     |
+| beide   | mc      |
+| beide   | tree   |
+| beide   | tmux   |
+| beide   | cell 2   |
+
