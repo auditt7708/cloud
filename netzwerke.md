@@ -1,3 +1,6 @@
+Netzwerke
+==========
+
 Netzwerk 192.168.4.0
 
 Net Class = C
@@ -21,3 +24,15 @@ Broadcast addresse = 192.168.4.63
 
 IP Subnetz = 64
 
+vlan
+===
+ | vlan ID |               netzkerk              |                      Info                         |
+| :----------: | :----------------------------------: | :--------------------------------------: | 
+|      1         | 192.168.4.1                        | default Net                             | 
+|      2         | 192.168.4.2                        | reserved                                   |
+|      3         | 192.168.4.3                        | reserved                                   |
+|      4         | 192.168.4.4                        | reserved                                   |
+|      5         | 192.168.4.5                        | reserved                                   |
+|      6         | 192.168.4.6                        | reserved                                   |
+|      7         | 192.168.4.7                        | reserved                                   |
+|      8         | 192.168.4.8                        | reserved                                   |
