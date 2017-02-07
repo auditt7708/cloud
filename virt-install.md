@@ -146,6 +146,57 @@ osinfo-query os
  winxp                | Microsoft Windows XP                               | 5.1      | http://microsoft.com/win/xp  
 ```
 
+Kickstart and debootstrap
+
+If you have a kickstart file set up you can give it directly to the vm using the `--extra-args` parameter:
+
+ ```--extra-args "ks=http://server/vm.ks" ```
+
+If you don't have a server set up you can inject a file into the initrd and use that for kickstarting:
+
+```--initrd-inject=vm.ks --extra-args "ks=file:/vm.ks" ```
+
+preseed.cfg is a regular preseed file (as described in the Debian Wiki) in your local filesystem. It must be named preseed.cfg in order for d-i to pick it up from the initrd.
+
+Here is another, rather boring, image of a Debian install via virt-install:
+
+```Picture```
+
+Starting a VM
+
+To start a VM you've just created after the installation, use the virsh start NAME command:
+
+virsh start centos7
+
+Use the virsh list --all to list all available virtual machines, including powered off ones:
+
+$ virsh list --all
+ Id    Name                           State
+----------------------------------------------------
+ 4     centos7                        running
+ -     debian7                        shut off
+ -     win7                           shut off
+ -     win98                          shut off
+ -     winxp                          shut off
+
+Stopping and removing
+
+To stop a VM, you give the (unintuitive) command virsh destroy NAME:
+
+virsh destroy centos7
+
+It will not remove any data, just stop the VM by pulling the virtual power cable.
+
+If you want to remove the VM from the virsh list, you need to undefine it:
+
+virsh undefine centos7
+
+This will remove the configuration. If you don't undefine the VM and want to try the virt-install again it will give an error like this:
+
+ERROR    Guest name 'centos7' is already in use.
+
+You do manually need to remove the virtual disk after undefining a vm.
+
 
 Sources:
  * virt-install
