@@ -3,8 +3,8 @@
 * [icinga2](https://gitlab.com/tobkern1980/home-net4-environment/wikis/icinga2)
 * [Drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/drbd )
 * [Pacemaker](https://gitlab.com/tobkern1980/home-net4-environment/wikis/pacemaker)
-*[Jenkins](https://gitlab.com/tobkern1980/home-net4-environment/wikis/jenkins)
-*[elk-stack](https://gitlab.com/tobkern1980/home-net4-environment/wikis/elk-stack)
+* [Jenkins](https://gitlab.com/tobkern1980/home-net4-environment/wikis/jenkins)
+* [elk-stack](https://gitlab.com/tobkern1980/home-net4-environment/wikis/elk-stack)
 
 Hosts
 * [srv1](https://gitlab.com/tobkern1980/home-net4-environment/wikis/srv1)
