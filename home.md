@@ -40,7 +40,6 @@ Packete auf allen Systemen
 | cell 3   | cell 4   |
 
 
-
 Packete für Centos 7, drbd  und nfs
 
 Wichtig für drbd http://elrepo.org/tiki/tiki-index.php 
@@ -164,6 +163,7 @@ docker
 adm-libvirt
 sshmgr
 ansible
+rsshadm
 
 
 ### Standart Gruppen
@@ -173,6 +173,13 @@ gitlab-runner
 ssh-opt
 libvirtd
 
+User für ssh verbindungen ohne password rsshadm
+```
+sudo mkdir -p  /home/rsshadm/.ssh
+sudo chmod 700 /home/rsshadm/.ssh
+sudo chmod 0600 /home/rsshadm/.ssh/authorized_keys
+sudo chown -R rsshadm:rsshadm /home/rsshadm/.ssh
+```
 
 sudo
 ====
