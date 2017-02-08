@@ -1,5 +1,8 @@
  Services im homenet4
 
+Dropbox Link : https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AAAUxW-Blx7sUDQ10DoRBJQta?dl=0 
+
+
 * [icinga2](https://gitlab.com/tobkern1980/home-net4-environment/wikis/icinga2)
 * [Drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/drbd )
 * [Pacemaker](https://gitlab.com/tobkern1980/home-net4-environment/wikis/pacemaker)
@@ -191,11 +194,15 @@ Defaults        mail_badpass
 Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 # Host alias specification
-
+Host_Alias   HOMENET4     = 192.168.4.0/24
+Host_Alias   DESKTOP = tobkern-desktop, tobkern-desktop-win10
 
 # User alias specification
 Runas_Alias     OP = root, operator
-User_Alias     WEBMASTERS = tobkern, www-data
+Runas_Alias  DBA = oracle,pgsql
+User_Alias    WEBMASTERS = tobkern, www-data
+User_Alias   ADMINS  = tobkern
+User_Alias   DEVEL   = tobkern
 
 # Cmnd alias specification
 Cmnd_Alias      KILL = /bin/kill
@@ -204,11 +211,14 @@ Cmnd_Alias      SHUTDOWN = /usr/sbin/shutdown
 Cmnd_Alias      HALT = /usr/sbin/halt
 Cmnd_Alias      REBOOT = /usr/sbin/reboot
 Cmnd_Alias      SHELLS = /sbin/sh, /usr/bin/sh, /usr/bin/csh, /usr/bin/ksh, \
-                         /usr/local/bin/tcsh, /usr/bin/rsh, \
-                         /usr/local/bin/zsh
+                                                   /usr/local/bin/tcsh, /usr/bin/rsh, \
+                                                  /usr/local/bin/zsh
 Cmnd_Alias      VIPW = /usr/sbin/vipw, /usr/bin/passwd, /usr/bin/chsh, \
-                       /usr/bin/chfn
+                                              /usr/bin/chfn
 Cmnd_Alias      PAGERS = /usr/bin/more, /usr/bin/pg, /usr/bin/less
+Cmnd_Alias   SYSTEM  = /sbin/reboot,/usr/bin/kill,/sbin/halt,/sbin/shutdown,/etc/init.d/
+Cmnd_Alias   PW      = /usr/bin/passwd [A-z]*, !/usr/bin/passwd root # Not root pwd!
+Cmnd_Alias   DEBUG   = /usr/sbin/tcpdump,/usr/bin/wireshark,/usr/bin/nmap
 
 # User privilege specification
 root    ALL=(ALL:ALL) ALL
@@ -219,9 +229,14 @@ tkern   ALL=(ALL:ALL) ALL
 # Allow members of group sudo to execute any command
 %sudo   ALL=(ALL:ALL) ALL
 %operator ALL = /var/log/messages*
+sysadmin     DMZ     = (ALL) NOPASSWD: SYSTEM,PW,DEBUG
+sysadmin     ALL,!DMZ = (ALL) NOPASSWD: ALL   # Can do anything outside the DMZ.
+%dba         ALL     = (DBA) ALL              # Group dba can run as database user.
+
+# anyone can mount/unmount a cd-rom on the desktop machines
+ALL          DESKTOP = NOPASSWD: /sbin/mount /cdrom,/sbin/umount /cdrom
 
 # See sudoers(5) for more information on "#include" directives:
-
 #includedir /etc/sudoers.d
 
 '''
