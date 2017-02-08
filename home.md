@@ -29,7 +29,7 @@ Packete auf allen Systemen
 | beide   | mc      |
 | beide   | tree   |
 | beide   | tmux   |
-| beide   | cell 2   |
+| beide   | wget   |
 | cell 3   | cell 4   |
 | cell 1   | cell 2   |
 | cell 3   | cell 4   |
@@ -40,6 +40,7 @@ Packete auf allen Systemen
 
 Packete für Centos 7, drbd  und nfs
 
+Wichtig für drbd http://elrepo.org/tiki/tiki-index.php 
 
 | Service | Packet |
 | :--------: | :--------: |
