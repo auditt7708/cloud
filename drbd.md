@@ -10,3 +10,8 @@ drbd device erstellen
 ```drbdadm create-md drbd0 ```
 
 
+Berechtigungen 
+
+| Datei | Rechte | Benutzer |
+| -------- | -------- | -------- |
+|/etc/drbd.d/global_common.conf | 644 | root:root |
