@@ -19,6 +19,18 @@ Hosts
 * [tobkern-desktop](tobkern-desktop)
 * [tobkern-desktop-win10](tobkern-desktop-win10)
 
+
+Cluster Beispiele
+* [Peacemaker-drbd-MySql](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Peacemaker-drbd-MySql)
+* [Pacemaker-iSCSI-drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Pacemaker-iSCSI-drbd)
+* [Pacemaker-NFS-drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Pacemaker-NFS-drbd)
+* [Pacemaker-drbd-dual-primary](https://gitlab.com/tobkern1980/home-net4-environment/wikis/drbd-dual-primary)
+* [Pacemaker-root-drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Pacemaker-root-drbd)
+* [Pacemaker-kvm-iSCSI-drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Pacemaker-kvm-iSCSI-drbd)
+* [Pacemaker-geo-drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Pacemaker-NFS-drbd)
+* [Pacemaker-disaster-proxy-drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Pacemaker-disaster-proxy-drbd)
+
+
 Hilfen und tools
 * [SSH](https://gitlab.com/tobkern1980/home-net4-environment/wikis/arbeiten-mit-ssh)
 * [gitlab](https://gitlab.com/tobkern1980/home-net4-environment/wikis/arbeiten-mit-gitlab)
