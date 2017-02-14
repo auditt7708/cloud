@@ -1,24 +1,10 @@
- Services im homenet4
+** Services im homenet4**
 
 Dropbox Link : https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AAAUxW-Blx7sUDQ10DoRBJQta?dl=0 
 
 
-* [icinga2](https://gitlab.com/tobkern1980/home-net4-environment/wikis/icinga2)
-* [Drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/drbd )
-* [Pacemaker](https://gitlab.com/tobkern1980/home-net4-environment/wikis/pacemaker)
-* [Jenkins](https://gitlab.com/tobkern1980/home-net4-environment/wikis/jenkins)
-* [elk-stack](https://gitlab.com/tobkern1980/home-net4-environment/wikis/elk-stack)
-
-Hosts
-* [srv1](https://gitlab.com/tobkern1980/home-net4-environment/wikis/srv1)
-* [srv2](https://gitlab.com/tobkern1980/home-net4-environment/wikis/srv2)
-* [rp1](https://gitlab.com/tobkern1980/home-net4-environment/wikis/rp1)
-* [rp2](https://gitlab.com/tobkern1980/home-net4-environment/wikis/rp2)
-* [rp3](https://gitlab.com/tobkern1980/home-net4-environment/wikis/rp3)
-* [rp4](https://gitlab.com/tobkern1980/home-net4-environment/wikis/rp4)
-* [tobkern-desktop](tobkern-desktop)
-* [tobkern-desktop-win10](tobkern-desktop-win10)
-
+* [Services](https://gitlab.com/tobkern1980/home-net4-environment/wikis/services)
+* [Hosts](https://gitlab.com/tobkern1980/home-net4-environment/wikis/hosts)
 
 Cluster Beispiele
 * [Peacemaker-drbd-MySql](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Peacemaker-drbd-MySql)
