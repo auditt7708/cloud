@@ -11,6 +11,9 @@ drbd Administration
 **Primary Master Festlegen**
 `drbdadm -- --overwrite-data-of-peer primary drbd0`
 
+**Prüfen des Zustandes **
+ `cat /proc/drbd`
+
 Berechtigungen Matrix
 ===================
 
