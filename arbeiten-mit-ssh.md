@@ -26,4 +26,6 @@ Host gitlab.company.com
 RSAAuthentication yes
 IdentityFile ~/.ssh/config/private-key-filename
 
+
+
 ```
