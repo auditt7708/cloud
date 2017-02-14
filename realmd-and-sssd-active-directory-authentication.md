@@ -95,6 +95,7 @@ Example sssd.conf Configuration
 
 The following is an example sshd.conf configuration file. I’ve seen it happen once that somehow access_provider was set to ad. I haven’t got the chance to play with that setting, as simple worked almost every time for now.
 
+```
 [sssd]
 domains = addomain
 config_file_version = 2
@@ -114,25 +115,6 @@ use_fully_qualified_names = True
 fallback_homedir = /home/%u@%d
 access_provider = simple
 simple_allow_groups = adgroup@addomain
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
 	
 [sssd]
 domains = addomain
@@ -154,6 +136,8 @@ fallback_homedir = /home/%u@%d
 access_provider = simple
 simple_allow_groups = adgroup@addomain
 
+```
+
 Required security permissions in AD
 
 A few months ago, we had a problem where some users were no longer able to authenticate. After an extended search we discovered the reason was a hardening change in permissions on some ou’s in our AD. My colleague Jenne and I discovered that the Linux server computer objects need minimal permissions on the ou which contains the users that want to authenticate on your Linux servers. After testing almost all obvious permissions, we came to the conclusions that the computer objects need “Read remote access information”!
@@ -166,13 +150,7 @@ How to clear the SSSD cache?
 sudo systemctl stop sssd
 </code>sudo rm -f /var/lib/sss/db/* 
 sudo systemctl start sssd
-1
-2
-3
-	
-sudo systemctl stop sssd
-</code>sudo rm -f /var/lib/sss/db/* 
-sudo systemctl start sssd
+
 
 Just wanted to add this command which also helped me in one case:
 
@@ -181,4 +159,5 @@ authconfig --updateall
 
 Sources : 
 * https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Windows_Integration_Guide/realmd-ad-unenroll.html
-* 
+* https://outsideit.net/realmd-sssd-ad-authentication/
+
