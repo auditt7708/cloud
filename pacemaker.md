@@ -1,6 +1,8 @@
 Installation und Konfiguration
 ========================
 
+* [Drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Drbd)
+
 Pacemaker wird mit und seinen Abhängigkeiten installiert 
 
 ```
@@ -18,8 +20,20 @@ systemctl enable pcsd.service
 Cluster Resource anlegen
 ====================
 
+**Cluster mit drbd **
+
+Virtuelle IP einrichten
+`pcs resource create VirtualIP ocf:heartbeat:IPaddr2 ip=192.168.4.140 cidr_netmask=24 nic=eth0 op monitor interval=30s`
+
+drbd Ressource bekannt machen und mit pcs/cib erstellen 
+`pcs resource create p_drbd0 ocf:linbit:drbd params drbd_resource="drbd0"`
+'pcs resource master ms_drbd0 p_drbd0 master-max=1 master-node-max=1 clone-max=2 clone-node-max=1 notify=true'
+'pcs resource create fs_drbd0 Filesystem device=/dev/drbd0 directory=/var/drbd fstype=ext4'
+
 Stopping Cluster Services
 ====================
+
+
 
 `pcs cluster stop [--all] [node] [...]`
 Mit `--all` wird auf allen nodes 
