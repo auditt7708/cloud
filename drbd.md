@@ -7,7 +7,7 @@ Clustername = testcluster
 drbd Administration
 ================
 
-**Infos **
+**Infos**
 
 * Das von **drbdadm** erstelle device muss auf Master und Slave erstellt werden .
 * In der Konfiguration muss auf den Parameter **on** das Resultat von `$(hostname -f)` folgen.
@@ -28,10 +28,12 @@ drbd Administration
  `cat /proc/drbd`
 
 **Node Cluster erstellen**
+
 `pcs cluster setup --start --name testcluster store1 store2 --transport udpu`
 
 
 **Cluster mit drbd **
+
 Virtuelle IP einrichten
 `pcs resource create VirtualIP ocf:heartbeat:IPaddr2 ip=192.168.4.140 cidr_netmask=24 nic=eth0 op monitor interval=30s`
 
@@ -67,6 +69,7 @@ Splitbrain Fehler  sowie ein Fehler auftritt der irgendetwas in der Richtung nen
 drbdadm secondary all
 
 **Primary Master Festlegen**
+
 `drbdadm -- --overwrite-data-of-peer primary drbd0`
 
 
