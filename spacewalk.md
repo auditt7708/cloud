@@ -31,7 +31,7 @@ Mit einer lokalen Datenbank .
 `spacewalk-setup`
 
 Mit einer externen Datenbank
-`spacewalk-setup --external-oracle`
+`spacewalk-setup --external-postgresql`
 
 **Sources: **
 * http://spacewalk.redhat.com/
@@ -39,3 +39,4 @@ Mit einer externen Datenbank
 * https://fedorahosted.org/spacewalk/wiki/HowToInstall
 * https://fedorahosted.org/spacewalk/wiki/UserDocs
 * http://www.itzgeek.com/how-tos/linux/centos-how-tos/how-to-install-spacewalk-on-centos-7-rhel-7.html # geht ! 
+* https://www.unixmen.com/install-and-configure-spacewalk-in-centos-7/
