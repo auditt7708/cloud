@@ -32,18 +32,7 @@ drbd Administration
 `pcs cluster setup --start --name testcluster store1 store2 --transport udpu`
 
 
-**Cluster mit drbd **
-
-Virtuelle IP einrichten
-`pcs resource create VirtualIP ocf:heartbeat:IPaddr2 ip=192.168.4.140 cidr_netmask=24 nic=eth0 op monitor interval=30s`
-
-drbd Ressource bekannt machen und mit pcs/cib erstellen 
-`pcs resource create p_drbd0 ocf:linbit:drbd params drbd_resource="drbd0"`
-'pcs resource master ms_drbd0 p_drbd0 master-max=1 master-node-max=1 clone-max=2 clone-node-max=1 notify=true'
-'pcs resource create fs_drbd0 Filesystem device=/dev/drbd0 directory=/var/drbd fstype=ext4'
-
-
-Resource bearbeiten 
+**Resource bearbeiten** 
 z.B. wird hier einfach der mount von /var/drbd nach /mnt/drbd geändert .
 *Es muss natürlich schon das Verzeichnis existieren*
 `pcs resource update fs_drbd0  filesystem device=/dev/drbd0 directory=/mnt/drbd fstype=ext4`
@@ -73,6 +62,6 @@ drbdadm secondary all
 `drbdadm -- --overwrite-data-of-peer primary drbd0`
 
 
-Quellen: 
+**Quellen: **
 * https://www.hastexo.com/resources/hints-and-kinks/solve-drbd-split-brain-4-steps/
 
