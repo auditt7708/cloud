@@ -29,6 +29,7 @@ Cluster Beispiele
 * [Pacemaker-kvm-iSCSI-drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Pacemaker-kvm-iSCSI-drbd)
 * [Pacemaker-geo-drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Pacemaker-NFS-drbd)
 * [Pacemaker-disaster-proxy-drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Pacemaker-disaster-proxy-drbd)
+* [Pacemaker-gfs-nfs-drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Pacemaker-gfs-nfs-drbd)
 
 
 Hilfen und tools
