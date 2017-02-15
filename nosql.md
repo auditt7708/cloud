@@ -1,6 +1,6 @@
 
 
-**Redis Links: **
+**Redis Links:**
 
 * https://www.heise.de/developer/artikel/NoSQL-Key-Value-Datenbank-Redis-im-Ueberblick-1233843.html
 * https://github.com/crypt1d/redi.sh
