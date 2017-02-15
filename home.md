@@ -30,6 +30,8 @@ Dropbox Link : https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AAAUxW-Blx7sUDQ10DoRBJ
 * [Powershell](https://gitlab.com/tobkern1980/home-net4-environment/wikis/powershell-basic)
 * [Cloud](https://gitlab.com/tobkern1980/home-net4-environment/wikis/cloud)
 * [spacewalk](https://gitlab.com/tobkern1980/home-net4-environment/wikis/spacewalk)
+* [Backup](https://gitlab.com/tobkern1980/home-net4-environment/wikis/backup)
+* [Entwicklung](https://gitlab.com/tobkern1980/home-net4-environment/wikis/entwicklung)
 
 **Hilfen und tools**
 * [SSH](https://gitlab.com/tobkern1980/home-net4-environment/wikis/arbeiten-mit-ssh)
