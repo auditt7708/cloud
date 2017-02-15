@@ -9,8 +9,8 @@ Dropbox Link : https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AAAUxW-Blx7sUDQ10DoRBJ
 * [Repositories](https://gitlab.com/tobkern1980/home-net4-environment/wikis/repositories)
 * [User und Gruppen](https://gitlab.com/tobkern1980/home-net4-environment/wikis/user-und-gruppen)
 * [Sudo](https://gitlab.com/tobkern1980/home-net4-environment/wikis/sudo)
-*[Preseed](https://gitlab.com/tobkern1980/home-net4-environment/wikis/preseed)
-*[cobbler](https://gitlab.com/tobkern1980/home-net4-environment/wikis/cobbler)
+* [Preseed](https://gitlab.com/tobkern1980/home-net4-environment/wikis/preseed)
+* [cobbler](https://gitlab.com/tobkern1980/home-net4-environment/wikis/cobbler)
 
 **Hilfen und tools**
 * [SSH](https://gitlab.com/tobkern1980/home-net4-environment/wikis/arbeiten-mit-ssh)
