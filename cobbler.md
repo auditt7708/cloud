@@ -1,7 +1,14 @@
 Installation
+=========
 
 `yum install -y cobbler cobbler-web tftp-server mc screen tmux mc tree vim `
 
+
+
+Konfiguration
+===========
+
+Mongodb auf srv2 wurde für cobbler  konfiguriert. 
 
 **Quellen:**
 
