@@ -3,4 +3,7 @@
 * [Pacemaker](https://gitlab.com/tobkern1980/home-net4-environment/wikis/pacemaker)
 * [Jenkins](https://gitlab.com/tobkern1980/home-net4-environment/wikis/jenkins)
 * [elk-stack](https://gitlab.com/tobkern1980/home-net4-environment/wikis/elk-stack)
-* [rundeck](https://gitlab.com/tobkern1980/home-net4-environment/wikis/rundeck)
+* [FAI](https://gitlab.com/tobkern1980/home-net4-environment/wikis/fai)
+* [ELK Stack](https://gitlab.com/tobkern1980/home-net4-environment/wikis/elk-stack)
+* [DogTag] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/dogtag)
+* [repositories](https://gitlab.com/tobkern1980/home-net4-environment/wikis/repositories)
