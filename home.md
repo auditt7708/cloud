@@ -7,6 +7,7 @@ Dropbox Link : https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AAAUxW-Blx7sUDQ10DoRBJ
 
 
 **Dokumentationen**
+* [Dashboard](https://gitlab.com/tobkern1980/home-net4-environment/wikis/dashboard)
 * [Services](https://gitlab.com/tobkern1980/home-net4-environment/wikis/services)
 * [Hosts](https://gitlab.com/tobkern1980/home-net4-environment/wikis/hosts)
 * [Cluster Beispiele] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/cluster-beispiele)
