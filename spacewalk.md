@@ -1,7 +1,8 @@
 Installation
 =========
 
-**Auf CentOS 7 **
+**Auf CentOS 7**
+
 `rpm -Uvh http://yum.spacewalkproject.org/2.6/RHEL/7/x86_64/spacewalk-repo-2.6-0.el7.noarch.rpm`
 
 **EPEL 7 (use for Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7) für Java**
