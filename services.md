@@ -3,3 +3,4 @@
 * [Pacemaker](https://gitlab.com/tobkern1980/home-net4-environment/wikis/pacemaker)
 * [Jenkins](https://gitlab.com/tobkern1980/home-net4-environment/wikis/jenkins)
 * [elk-stack](https://gitlab.com/tobkern1980/home-net4-environment/wikis/elk-stack)
+* [rundeck](https://gitlab.com/tobkern1980/home-net4-environment/wikis/rundeck)
