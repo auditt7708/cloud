@@ -34,10 +34,16 @@ Mit einer lokalen Datenbank .
 Mit einer externen Datenbank
 `spacewalk-setup --external-postgresql`
 
+Installation durchführen
+`spacewalk-setup`
+
+Nach der Installation startet spacewalk nicht automatisch
+`/usr/sbin/spacewalk-service start`
+
 **Sources: **
 * http://spacewalk.redhat.com/
 * http://jensd.be/566/linux/install-and-use-spacewalk-2-3-on-centos-7
 * https://fedorahosted.org/spacewalk/wiki/HowToInstall
 * https://fedorahosted.org/spacewalk/wiki/UserDocs
-* http://www.itzgeek.com/how-tos/linux/centos-how-tos/how-to-install-spacewalk-on-centos-7-rhel-7.html # geht ! 
+* http://www.itzgeek.com/how-tos/linux/centos-how-tos/how-to-install-spacewalk-on-centos-7-rhel-7.html # geht ! ref.
 * https://www.unixmen.com/install-and-configure-spacewalk-in-centos-7/
