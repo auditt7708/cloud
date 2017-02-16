@@ -1,6 +1,7 @@
 **Services im homenet4**
 
-Dropbox Link : https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AAAUxW-Blx7sUDQ10DoRBJQta?dl=0 
+Dropbox tobkern-desktop preseed Datei : `wget https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AACrvW1tDHmkCqhMCphKabfha/preseed/installer-tobkern-desktop.example.com_2017-02-10.preseed?dl=1 -o installer-tobkern-desktop.example.com_2017-02-10.preseed
+`
 
 **Locale Rechner**
 
