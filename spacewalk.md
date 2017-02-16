@@ -1,3 +1,6 @@
+
+Local https://spacewalk.example.com
+
 Installation
 =========
 
