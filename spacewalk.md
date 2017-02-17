@@ -103,9 +103,12 @@ Erweiterte Konfiguration vom Spacewalk Server
 
 **User und Gruppen Management mit OpenLDAP**
 
-**Quellen**
+**Quellen:**
 * https://github.com/spacewalkproject/spacewalk/wiki/SpacewalkWithLDAP
 
+**Spacewalk Hostnamen Ändern**
+**Quellen:**
+* https://fedorahosted.org/spacewalk/wiki/SpacewalkHostnameRename
 
 **Sources: **
 * http://spacewalk.redhat.com/
