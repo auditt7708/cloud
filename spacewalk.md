@@ -93,10 +93,10 @@ Install Klient packete
 `yum -y install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin`
 
 Install Spacewalk's CA zertificate auf dem server um  SSL Kommunication zu ermöglichen (rpm version anpassen)
-`rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm`
+`rpm -Uvh http://spacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm`
 
 Register dein System zum Spacewalk benutze den key den du zuvor erstellst
-`rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-rhel-custom-channel> `
+`rhnreg_ks --serverUrl=http://spacewalk.example.com/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-rhel-custom-channel> `
 
 Erweiterte Konfiguration vom Spacewalk Server 
 =======================================
