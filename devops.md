@@ -2,7 +2,7 @@ IT-Entwicklung Architekt
 ====================
 
 * [vagrant-puppet-docker-fuer-entwickler-und-architekten](https://www.informatik-aktuell.de/entwicklung/methoden/vagrant-puppet-docker-fuer-entwickler-und-architekten.html)
-* []()
+* [devops-in-der-praxis-von-continuous-integration-zu-continuous-delivery](https://www.informatik-aktuell.de/entwicklung/methoden/devops-in-der-praxis-von-continuous-integration-zu-continuous-delivery.html)
 
 itil
 ====
