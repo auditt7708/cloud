@@ -16,41 +16,42 @@ Dokumentationen
 ===============
 
 ## Umgebung
-* [Dashboard](https://gitlab.com/tobkern1980/home-net4-environment/wikis/dashboard)
-* [Hosts](https://gitlab.com/tobkern1980/home-net4-environment/wikis/hosts)
+* [Dashboard](../dashboard)
+* [Hosts](../hosts)
 
-### System [Entwicklung](https://gitlab.com/tobkern1980/home-net4-environment/wikis/entwicklung)
-* [Services](https://gitlab.com/tobkern1980/home-net4-environment/wikis/services)
-* [DNS] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/dns)
-* [sicherheit](https://gitlab.com/tobkern1980/home-net4-environment/wikis/sicherheit)
+### System [Entwicklung](../entwicklung)
+* [Services](../services)
+* [DNS] (../dns)
+* [sicherheit](../sicherheit)
+* [Backup](../backup)
 
-#### Linux [Entwicklung](https://gitlab.com/tobkern1980/home-net4-environment/wikis/entwicklung)
-* [Cluster Beispiele] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/cluster-beispiele)
-* [Repositories](https://gitlab.com/tobkern1980/home-net4-environment/wikis/repositories)
-* [User und Gruppen](https://gitlab.com/tobkern1980/home-net4-environment/wikis/user-und-gruppen)
-* [Sudo](https://gitlab.com/tobkern1980/home-net4-environment/wikis/sudo)
-* [Preseed](https://gitlab.com/tobkern1980/home-net4-environment/wikis/preseed)
-* [cobbler](https://gitlab.com/tobkern1980/home-net4-environment/wikis/cobbler)
-* [NoSQL](https://gitlab.com/tobkern1980/home-net4-environment/wikis/nosql)
-* [Deployment] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/deployment)
-* [realmd-and-sssd-active-directory-authentication](https://gitlab.com/tobkern1980/home-net4-environment/wikis/realmd-and-sssd-active-directory-authentication)
-* [repositories](https://gitlab.com/tobkern1980/home-net4-environment/wikis/repositories)
-* [Pressed] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/preseed)
-* [virtualisierung](https://gitlab.com/tobkern1980/home-net4-environment/wikis/virtualisierung)
-* [monitoring](https://gitlab.com/tobkern1980/home-net4-environment/wikis/monitoring)
+#### Linux [Entwicklung](../entwicklung)
+* [Cluster Beispiele] (../cluster-beispiele)
+* [Repositories](../repositories)
+* [User und Gruppen](../user-und-gruppen)
+* [Sudo](../sudo)
+* [Preseed](../preseed)
+* [cobbler](../cobbler)
+* [NoSQL](../nosql)
+* [Deployment] (../deployment)
+* [realmd-and-sssd-active-directory-authentication](../realmd-and-sssd-active-directory-authentication)
+* [repositories](../repositories)
+* [Pressed] (../preseed)
+* [virtualisierung](../virtualisierung)
+* [monitoring](../monitoring)
 
-#### Windows [Entwicklung](https://gitlab.com/tobkern1980/home-net4-environment/wikis/entwicklung)
-* [Powershell](https://gitlab.com/tobkern1980/home-net4-environment/wikis/powershell-basic)
+#### Windows [Entwicklung](../entwicklung)
+* [Powershell](../powershell-basic)
 
 #### Entwicklungs Methoden
-* [Continuous Delivery](https://gitlab.com/tobkern1980/home-net4-environment/wikis/continuous-delivery)
+* [Continuous Delivery](../continuous-delivery)
 
 ### Programmierung 
 * [Json](../json)
 * [angular-js](../angular-js)
 * [Cloud](../cloud)
 * [spacewalk](../spacewalk)
-* [Backup](../backup)
+
 * [Entwicklung](../entwicklung)
 
 
