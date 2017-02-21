@@ -46,16 +46,16 @@ Dokumentationen
 * [Continuous Delivery](https://gitlab.com/tobkern1980/home-net4-environment/wikis/continuous-delivery)
 
 ### Programmierung 
-* [Json](https://gitlab.com/tobkern1980/home-net4-environment/wikis/json)
-* [angular-js](https://gitlab.com/tobkern1980/home-net4-environment/wikis/angular-js)
-* [Cloud](https://gitlab.com/tobkern1980/home-net4-environment/wikis/cloud)
-* [spacewalk](https://gitlab.com/tobkern1980/home-net4-environment/wikis/spacewalk)
-* [Backup](https://gitlab.com/tobkern1980/home-net4-environment/wikis/backup)
-* [Entwicklung](https://gitlab.com/tobkern1980/home-net4-environment/wikis/entwicklung)
+* [Json](../json)
+* [angular-js](../angular-js)
+* [Cloud](../cloud)
+* [spacewalk](../spacewalk)
+* [Backup](../backup)
+* [Entwicklung](../entwicklung)
 
 
 **Hilfen und tools**
-* [SSH](https://gitlab.com/tobkern1980/home-net4-environment/wikis/arbeiten-mit-ssh)
+* [SSH](../arbeiten-mit-ssh)
 * [gitlab] (../arbeiten-mit-gitlab)
 * [gitlab] (../arbeiten-mit-gitlab.md)
 
