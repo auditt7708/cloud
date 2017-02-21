@@ -41,6 +41,7 @@ Dokumentationen
 * [Pressed] (../preseed)
 * [virtualisierung](../virtualisierung)
 * [monitoring](../monitoring)
+* [Package Management ](../package-management)
 
 #### Windows [Entwicklung](../entwicklung)
 * [Powershell](../powershell-basic)
