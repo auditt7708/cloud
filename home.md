@@ -24,6 +24,9 @@ Dokumentationen
 * [DNS] (../dns)
 * [sicherheit](../sicherheit)
 * [Backup](../backup)
+* [Cloud](../cloud)
+* [spacewalk](../spacewalk)
+* [cobbler](../cobbler)
 
 #### Linux [Entwicklung](../entwicklung)
 * [Cluster Beispiele] (../cluster-beispiele)
@@ -31,7 +34,6 @@ Dokumentationen
 * [User und Gruppen](../user-und-gruppen)
 * [Sudo](../sudo)
 * [Preseed](../preseed)
-* [cobbler](../cobbler)
 * [NoSQL](../nosql)
 * [Deployment] (../deployment)
 * [realmd-and-sssd-active-directory-authentication](../realmd-and-sssd-active-directory-authentication)
@@ -49,9 +51,6 @@ Dokumentationen
 ### Programmierung 
 * [Json](../json)
 * [angular-js](../angular-js)
-* [Cloud](../cloud)
-* [spacewalk](../spacewalk)
-
 * [Entwicklung](../entwicklung)
 
 
@@ -76,5 +75,4 @@ desk = tobkern-desktop tobkern-desktop-win10
 ToDu
 ====
 * [ ]  https://github.com/evilstreak/markdown-js für die wiki integrieren .
-
 * [ ]  https://github.com/markdown-it/markdown-it zum parsen .
