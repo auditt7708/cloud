@@ -58,7 +58,6 @@ Dokumentationen
 * [SSH](https://gitlab.com/tobkern1980/home-net4-environment/wikis/arbeiten-mit-ssh)
 * [gitlab] (../arbeiten-mit-gitlab)
 * [gitlab] (../arbeiten-mit-gitlab.md)
-* [gitlab] (./wikis/arbeiten-mit-gitlab)
 
 Host Gruppen
 ===========
