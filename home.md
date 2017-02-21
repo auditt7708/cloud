@@ -1,16 +1,19 @@
-**Services im homenet4**
+Services im homenet4
+==================
 
-Dropbox tobkern-desktop preseed Datei : 
+**Dropbox tobkern-desktop preseed Datei : **
 ```
 wget https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AACrvW1tDHmkCqhMCphKabfha/preseed/installer-tobkern-desktop.example.com_2017-02-10.preseed?dl=1 -o installer-tobkern-desktop.example.com_2017-02-10.preseed
 ```
 
-**Locale Rechner**
+Locale Rechner
+=============
 
 * [Dashboard](http://192.168.4.14/~tobkern/startmin-master/pages/server.html)
 
 
-**Dokumentationen**
+Dokumentationen
+===============
 
 * [Dashboard](https://gitlab.com/tobkern1980/home-net4-environment/wikis/dashboard)
 * [Services](https://gitlab.com/tobkern1980/home-net4-environment/wikis/services)
@@ -48,16 +51,17 @@ Host Gruppen
 ===========
 
 srvs = srv1 srv2
+
 rps = rp1 rp2 rp3 rp4 
+
 desk = tobkern-desktop tobkern-desktop-win10
 
-
-Sources :
+**Sources :**
 
  *  http://www.gtkdb.de/index_34_2792.html
 
 ToDu
 ====
-https://github.com/evilstreak/markdown-js für die wiki integrieren .
-https://github.com/markdown-it/markdown-it zum parsen .
+* [ ]  https://github.com/evilstreak/markdown-js für die wiki integrieren .
 
+* [ ]  https://github.com/markdown-it/markdown-it zum parsen .
