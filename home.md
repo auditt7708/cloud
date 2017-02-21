@@ -46,6 +46,7 @@ Dokumentationen
 * [Powershell](../powershell-basic)
 
 #### Entwicklungs Methoden
+### [DevOPS](https://gitlab.com/tobkern1980/home-net4-environment/wikis/devops)
 * [Continuous Delivery](../continuous-delivery)
 
 ### Programmierung 
