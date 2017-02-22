@@ -17,3 +17,11 @@
 |List repositories|cat /etc/apt/sources.list|zypper repos|yum repolist|cat /etc/pacman.conf|
 |Add repository|(edit /etc/apt/sources.list)|zypper addrepo path name|(add repo to /etc/yum.repos.d/)|(edit /etc/pacman.conf)|
 |Remove repository|(edit /etc/apt/sources.list)|zypper removerepo name|(remove repo from /etc/yum.repos.d/)|(edit /etc/pacman.conf)|
+
+
+Lösungen
+
+[aptly](https://www.aptly.info/) Debian repo management soll aber auch bald auch RPM können.
+[pulp](http://pulpproject.org/) kann nebem RPM auch Python Puppet Docker und OSTree software packte Automatisch verwalten
+[ostree](https://ostree.readthedocs.io/en/latest/#projects-using-ostree) high performance continuous delivery/testing system für RPM bald auch DEB
+[Flatpak](http://flatpak.org/apps.html)  Installiert Applikationen Distribution unabhängig
