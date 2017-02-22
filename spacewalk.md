@@ -1,5 +1,21 @@
-
 Local https://spacewalk.example.com
+
+Allemeines 
+===
+
+### Channels
+Ein Red Hat/CentOS Satellite/Spacewalk channel ist eine collection von software packeten . 
+Channels help you segregate packages by sensible rules: a channel may contain packages from a specific Red Hat distribution. 
+A channel may contain packages for an application or family of applications. 
+Users may also define channels for their own particular needs; 
+a company may create a channel that contains packages for a specific architecture in the organization's network. 
+
+#### Base Channels und Child Channels
+
+
+### Tools Übersicht
+
+rhnreg_ks = Wird benutzt für die  registration der clients zum Spacewalk Server
 
 Voraussetzungen
 ==============
@@ -66,9 +82,7 @@ SSL Cert vom Server zum Client Kopieren
 `wget --no-check-certificate https://spacewalk.example.com/pub/RHN-ORG-TRUSTED-SSL-CERT -O /usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT`
 
 
-Toools Übersicht
 
-rhnreg_ks = Wird benutzt für die  registration der clients zum Spacewalk Server
 
 **Client Installation bei Debian/Ubuntu**
 
@@ -121,6 +135,7 @@ yum install perl-Text-Unidecode
 `wget http://cefs.steve-meier.de/errata.latest.xml`
 
 4. Errata script ausführen 
+
 ```
 #!/bin/bash
 SPACEWALK_USER=$1
@@ -130,7 +145,7 @@ SPACEWALK_PASS=$2
 
 ```
 
-Zum Abschluß muss noch die Errata publiziert werden 
+Zum Abschluss muss noch die Errata publiziert werden 
 Errata -> Manage Errata -> Unpublished to find them
 
 **User und Gruppen Management mit OpenLDAP**
@@ -139,6 +154,8 @@ Errata -> Manage Errata -> Unpublished to find them
 * https://github.com/spacewalkproject/spacewalk/wiki/SpacewalkWithLDAP
 
 **Spacewalk Hostnamen Ändern**
+ 
+
 **Quellen:**
 * https://fedorahosted.org/spacewalk/wiki/SpacewalkHostnameRename
 
@@ -146,13 +163,16 @@ Spacewalk Administration
 ======================
 
 ###  Spacewalk-Konfiguration - Bootstrap
-Ort : 'Admin -> Spacewalk Konfiguration -> Bootstrap-Skript'
+Ort :  Admin -> Spacewalk Konfiguration -> Bootstrap-Skript
 
 Speicherort des SSL-Zertifikats /var/www/html/pub/RHN-ORG-TRUSTED-SSL-CERT
 
-
 ### System-Set-Manager 
 * [RemoteCommand](https://spacewalk.example.com/rhn/systems/ssm/provisioning/RemoteCommand.do)
+
+### Tools Übersicht
+
+rhnreg_ks = Wird benutzt für die  registration der clients zum Spacewalk Server
 
 **Sources: **
 * http://spacewalk.redhat.com/
