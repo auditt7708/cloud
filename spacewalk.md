@@ -100,6 +100,29 @@ Register dein System zum Spacewalk benutze den key den du zuvor erstellst
 
 Erweiterte Konfiguration vom Spacewalk Server 
 =======================================
+**Errata Installation für Centos 7**
+
+1. Neue Voraussetzung 
+```
+yum install perl-Frontier-RPC
+yum install perl-Text-Unidecode
+```
+
+2. Errata Download
+`wget https://github.com/stevemeier/cefs/raw/master/errata-import.pl && chmod 755 errata-import.pl`
+
+3. Errata Script Download
+`wget http://cefs.steve-meier.de/errata.latest.xml`
+
+4. Errata script ausführen 
+```
+#!/bin/bash
+SPACEWALK_USER=$1
+SPACEWALK_PASS=$2
+
+./errata-import.pl --server spacewalk.example.com --errata errata.latest.xml 
+
+```
 
 **User und Gruppen Management mit OpenLDAP**
 
@@ -109,6 +132,18 @@ Erweiterte Konfiguration vom Spacewalk Server
 **Spacewalk Hostnamen Ändern**
 **Quellen:**
 * https://fedorahosted.org/spacewalk/wiki/SpacewalkHostnameRename
+
+Spacewalk Administration
+======================
+
+###  Spacewalk-Konfiguration - Bootstrap
+Ort : 'Admin -> Spacewalk Konfiguration -> Bootstrap-Skript'
+
+Speicherort des SSL-Zertifikats /var/www/html/pub/RHN-ORG-TRUSTED-SSL-CERT
+
+
+### System-Set-Manager 
+* [RemoteCommand](https://spacewalk.example.com/rhn/systems/ssm/provisioning/RemoteCommand.do)
 
 **Sources: **
 * http://spacewalk.redhat.com/
