@@ -85,7 +85,7 @@ Installation der client tools
 **Client installation bei RHEL/CentOS**
 
 Repositories  RHEL 7 / SL 7 / CentOS 7
-`rpm -Uvh http://yum.spacewalkproject.org/2.6-client/RHEL/7/x86_64/spacewalk-client-repo-2.6-0.el7.noarch.rpm`
+`rpm -Uvh http://yum.spacewalkproject.org/latest-client/RHEL/7/x86_64/spacewalk-client-repo-2.6-0.el7.noarch.rpm`
 `BASEARCH=$(uname -i)`
 `rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm`
 
@@ -96,11 +96,17 @@ Install Spacewalk's CA zertificate auf dem server um  SSL Kommunication zu ermö
 `rpm -Uvh http://spacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm`
 
 Register dein System zum Spacewalk benutze den key den du zuvor erstellst
-`rhnreg_ks --serverUrl=http://spacewalk.example.com/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-rhel-custom-channel> `
+`rhnreg_ks --serverUrl=http://spacewalk.example.com/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey= 	1-59e7b1cb8bc200f7ea676bd6f81e9495`
 
 Erweiterte Konfiguration vom Spacewalk Server 
 =======================================
-**Errata Installation für Centos 7**
+
+### Remote-Befehl
+Voraussetzung ist dafür: 
+`rhncfg-actions`
+
+
+### Errata Installation für Centos 7
 
 1. Neue Voraussetzung 
 ```
@@ -123,6 +129,9 @@ SPACEWALK_PASS=$2
 ./errata-import.pl --server spacewalk.example.com --errata errata.latest.xml 
 
 ```
+
+Zum Abschluß muss noch die Errata publiziert werden 
+Errata -> Manage Errata -> Unpublished to find them
 
 **User und Gruppen Management mit OpenLDAP**
 
