@@ -72,6 +72,11 @@ Nach der Installation startet spacewalk nicht automatisch
 Client Installation
 ==============
 
+**Bootstrap Kleint**
+`wget http://satellite.example.com/pub/bootstrap/bootstrap.sh`
+
+muss aber auf dem Server noch um den Activation Key erweitert werden 
+
 **Allgemeine Schritte für alle Distributionen**
 
 1. Erstelle einen  base channel in Spacewalk (Channels > Manage Software Channels > Create New Channel)
@@ -80,8 +85,6 @@ Client Installation
 
 SSL Cert vom Server zum Client Kopieren
 `wget --no-check-certificate https://spacewalk.example.com/pub/RHN-ORG-TRUSTED-SSL-CERT -O /usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT`
-
-
 
 
 **Client Installation bei Debian/Ubuntu**
