@@ -27,6 +27,7 @@ Dokumentationen
 * [Cloud](../cloud)
 * [spacewalk](../spacewalk)
 * [cobbler](../cobbler)
+* [Datenbanken](../datenbanken)
 
 #### Linux [Entwicklung](../entwicklung)
 * [Cluster Beispiele] (../cluster-beispiele)
