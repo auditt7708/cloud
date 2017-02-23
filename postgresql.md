@@ -1,8 +1,8 @@
 Konfiguration
 ===
 
-Dateien und Verzeichnisse
-===
+### Dateien und Verzeichnisse
+
 
 |Distribution|Zweck|Ort| Psql Version|
 | :---: | :---: | :---: | :---: |
