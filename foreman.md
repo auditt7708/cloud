@@ -11,16 +11,11 @@ Für Ubuntu/Debian werden nicht alle fitures unterstützt.
 **Quellen:**
 
 
-Plugins  und Tools 
+Plugins Einrichten
 ===========
 
-* [foreman_ansible_inventory](https://github.com/theforeman/foreman_ansible_inventory)
-* [ISO and USB boot disk support for Foreman ](https://github.com/theforeman/foreman_bootdisk)
-* [Forklift provides tools to create Foreman/Katello environments for development, testing and production configurations](https://github.com/theforeman/forklift)
-* [provisioning_templates](https://github.com/theforeman/community-templates/tree/develop/provisioning_templates)
-* [SmartProxyDnsPowerdns](https://github.com/theforeman/smart_proxy_dns_powerdns)
 
-Erweiterte Einstellungen
+Erweiterte einstellungen
 ===============
 
 **libvirt**
@@ -51,6 +46,7 @@ exit
 
 
 **docker**
+
 
 
 **Quellen:**
