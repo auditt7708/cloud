@@ -4,7 +4,7 @@
 [Sudo](https://gitlab.com/tobkern1980/home-net4-environment/wikis/sudo)
 
 ### Keepass
-* https://github.com/SnapServ/keepass.io
+* [keepass.io](https://github.com/SnapServ/keepass.io)
 
 ### Pass
 * [upass pass verwaltung in der Konsole](https://github.com/Kwpolska/upass)
