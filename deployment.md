@@ -11,10 +11,10 @@ Puppet
 [SaltStack](https://gitlab.com/tobkern1980/home-net4-environment/wikis/saltstack)
 =========
 
-
 Sonstiges
 ========
 
 * [Pressed] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/preseed)
 * [Templating] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/templating)
-* [propagit Cascading multi-server git deployment. ](https://github.com/substack/propagit)
+* [propagit](https://github.com/substack/propagit)
+* [gradle-debian-plugin](https://github.com/gesellix/gradle-debian-plugin)
