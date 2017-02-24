@@ -10,17 +10,16 @@ Container Services
 Test Automation
 =============
 * [testautomation-im-bereich-continuous-delivery.](https://www.informatik-aktuell.de/entwicklung/methoden/testautomation-im-bereich-continuous-delivery.html)
-* []()
 
 Container Management
 ====================
 * https://virtuozzo.com/products/devops/ # DevOps Lösung
-* 
 
 continuous-delivery
 =================
 * https://www.informatik-aktuell.de/entwicklung/methoden/von-continuous-integration-zu-continuous-delivery-mit-jenkins-workflow.html # mit (Jenkins)[https://gitlab.com/tobkern1980/home-net4-environment/wikis/jenkins/edit]
 * [Docker CI/CD](https://www.docker.com/use-cases/cicd)
+* [Continuous Delivery with Maven, Puppet and Tomcat](https://github.com/carlossg/continuous-delivery)
 
 continuous-integration
 ===================
@@ -28,6 +27,7 @@ continuous-integration
 * [Docker continuous-integration-pipeline](https://goto.docker.com/continuous-integration-pipeline.html)
 * [devops-in-der-praxis-von-continuous-integration-zu-continuous-delivery](https://www.informatik-aktuell.de/entwicklung/methoden/devops-in-der-praxis-von-continuous-integration-zu-continuous-delivery.html)
 * [docker-images-continuous-integration](https://blog.newrelic.com/2016/09/21/docker-images-continuous-integration/)
+* [strider-cd](http://strider-cd.github.io/)
 
 Continuous-Deployment
 =====================
