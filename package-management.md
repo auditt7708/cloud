@@ -21,7 +21,7 @@
 
 Lösungen
 
-[aptly](https://www.aptly.info/) Debian repo management soll aber auch bald auch RPM können.
-[pulp](http://pulpproject.org/) kann nebem RPM auch Python Puppet Docker und OSTree software packte Automatisch verwalten
-[ostree](https://ostree.readthedocs.io/en/latest/#projects-using-ostree) high performance continuous delivery/testing system für RPM bald auch DEB
-[Flatpak](http://flatpak.org/apps.html)  Installiert Applikationen Distribution unabhängig
+* [aptly](https://www.aptly.info/) Debian repo management soll aber auch bald auch RPM können.
+* [pulp](http://pulpproject.org/) kann nebem RPM auch Python Puppet Docker und OSTree software packte Automatisch verwalten
+* [ostree](https://ostree.readthedocs.io/en/latest/#projects-using-ostree) high performance continuous delivery/testing system für RPM bald auch DEB
+* [Flatpak](http://flatpak.org/apps.html)  Installiert Applikationen Distribution unabhängig
