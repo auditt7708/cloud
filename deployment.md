@@ -17,4 +17,4 @@ Sonstiges
 
 * [Pressed] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/preseed)
 * [Templating] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/templating)
-
+* [propagit Cascading multi-server git deployment. ](https://github.com/substack/propagit)
