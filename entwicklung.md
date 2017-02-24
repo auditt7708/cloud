@@ -1,10 +1,10 @@
 Programmiersprachen
 ====
 
-[Python](../python)
-[Ruby] (../ruby)
-[go](../go)
-[perl](../perl)
+* [Python](../python)
+* [Ruby] (../ruby)
+* [go](../go)
+* [perl](../perl)
 
 
 Web
