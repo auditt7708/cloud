@@ -10,4 +10,5 @@ Sources:
 * http://lorenzofox3.github.io/smart-table-website/#section-intro
 * https://github.com/TheSharpieOne/angular-validation-match
 * https://select2.github.io/examples.html
+* [WhatsApp Clone with Meteor CLI and Ionic] (https://angular-meteor.com/tutorials/whatsapp/meteor/bootstrapping)
 
