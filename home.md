@@ -44,6 +44,10 @@ Dokumentationen
 * [virtualisierung](../virtualisierung)
 * [monitoring](../monitoring)
 * [Package Management ](../package-management)
+* [Bash](../bash)
+* [Konsolen Tools](../konsolen-tools)
+* [Terminal](../terminal)
+
 
 #### Windows [Entwicklung](../entwicklung)
 * [Powershell](../powershell-basic)
