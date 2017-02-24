@@ -18,6 +18,7 @@ Dokumentationen
 ## Umgebung
 * [Dashboard](../dashboard)
 * [Hosts](../hosts)
+* [collaboration](..collaboration)
 
 ### System [Entwicklung](../entwicklung)
 * [Services](../services)
