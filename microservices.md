@@ -55,6 +55,17 @@ Continuous Operations
 * [Continuous-Operations Meaning ](https://www.boem.gov/Continuous-Operations/)
 * [continuous-operations bigr](http://bigr.io/continuous-operations/)
 
+hashicorp Tools
+=============
+
+* [Packer](../packer)
+* [Vagrant](../vagrant)
+* [Terraform](../terraform)
+* [Vault](../vault)
+* [Consul](../consul)
+* [Serf](../serf)
+* [Nomad](../nomad)
+
 Allgemeines
 ============
 * [APM](https://www.informatik-aktuell.de/entwicklung/methoden/next-level-apm-microservice-architekturen-sinnvoll-ueberwachen.html)
@@ -69,4 +80,3 @@ Allgemeines
 * [devops-testautomation-ii-webapplikationen-mobile-device-clouds](https://www.informatik-aktuell.de/entwicklung/methoden/devops-testautomation-ii-webapplikationen-mobile-device-clouds.html)
 * [secdevops-kontinuierlich-sichere-software-bauen](https://www.informatik-aktuell.de/betrieb/sicherheit/secdevops-kontinuierlich-sichere-software-bauen.html)
 * [Autarke Teams und DevOps: So skaliert Continuous Delivery](https://www.informatik-aktuell.de/entwicklung/methoden/autarke-teams-und-devops-so-skaliert-continuous-delivery.html)
-* []()
