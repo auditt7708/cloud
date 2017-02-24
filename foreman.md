@@ -14,7 +14,8 @@ Für Ubuntu/Debian werden nicht alle fitures unterstützt.
 Plugins Einrichten
 ===========
 
-[foreman_ansible_inventory](https://github.com/theforeman/foreman_ansible_inventory)
+* [foreman_ansible_inventory](https://github.com/theforeman/foreman_ansible_inventory)
+* [ISO and USB boot disk support for Foreman ](https://github.com/theforeman/foreman_bootdisk)
 
 Erweiterte Einstellungen
 ===============
