@@ -184,3 +184,11 @@ rhnreg_ks = Wird benutzt für die  registration der clients zum Spacewalk Server
 * https://fedorahosted.org/spacewalk/wiki/UserDocs
 * http://www.itzgeek.com/how-tos/linux/centos-how-tos/how-to-install-spacewalk-on-centos-7-rhel-7.html # geht ! ref.
 * https://www.unixmen.com/install-and-configure-spacewalk-in-centos-7/
+
+
+ToDu
+===
+
+* [ ]  Iso Von Centos7 in /var/satellite/custom-distro/centos-x86_64-server-7/Server/ mounten 
+
+* [ ]  dann https://access.redhat.com/documentation/en-US/Red_Hat_Satellite/5.7/html/Getting_Started_Guide/chap-System_Provisioning.html 
