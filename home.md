@@ -30,6 +30,7 @@ Dokumentationen
 * [cobbler](../cobbler)
 * [Datenbanken](../datenbanken)
 * [microservices](../microservices)
+* [Logging](../logging)
 
 #### Linux [Entwicklung](../entwicklung)
 * [Cluster Beispiele] (../cluster-beispiele)
