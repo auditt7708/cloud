@@ -6,6 +6,11 @@
 ### Keepass
 * https://github.com/SnapServ/keepass.io
 
+### Pass
+* [upass pass verwaltung in der Konsole](https://github.com/Kwpolska/upass)
+* [pass git helper](https://github.com/languitar/pass-git-helper)
+
+
 ### [Open GPG](../open-gpg)
 
 `gpg --expert  --edit -key $key`
