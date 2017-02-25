@@ -1,13 +1,13 @@
 [Ansible](https://gitlab.com/tobkern1980/home-net4-environment/wikis/ansible)
 ======
 * [ansibleplaybook-rancher](https://github.com/joshuacox/ansibleplaybook-rancher)
+
 [Puppet](https://gitlab.com/tobkern1980/home-net4-environment/wikis/puppet)
 ======
-' [puppet-rancher](https://github.com/nickschuch/puppet-rancher)
+*  [puppet-rancher](https://github.com/nickschuch/puppet-rancher)
 
 [SaltStack](https://gitlab.com/tobkern1980/home-net4-environment/wikis/saltstack)
 =========
-
 * [rancher-salt](https://github.com/komljen/rancher-salt)
 
 Orchestraisierung
