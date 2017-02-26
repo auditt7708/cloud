@@ -47,11 +47,29 @@ Quellen:
 [Service Monitoring](https://docs.icinga.com/icinga2/latest/doc/module/icinga2/chapter/service-monitoring)
 [](https://docs.icinga.com/icinga2/latest/doc/module/icinga2/chapter/service-monitoring#service-monitoring-dns)
 []()
-[]()
-[]()
+
+Erweiterte Konfiguration
+===
+Hier sind einige Erweiterung der Standard Einrichtungen
+
+### [Advanced Nagios Plugins Collection](https://github.com/HariSekhon/nagios-plugins)
+Es gibt Erweiterungen der Nagios Plugins die auch für [Icinga2](../icinga2) genutzt werden können.
+Einrichtung 
+```
+git clone https://github.com/HariSekhon/nagios-plugins.git && cd nagios-plugins
+
+make && make clean 
+
+```
+
+Dann kann ein neues verzeichnis erstellen 
+```
+mkdir -p /opt/monitoring/plugins && cp {*.pl|*.py} 
+```
+und alle plugins hierhin Kopieren 
 
 
-Icinga Administration
+Icinga2 Administration
 ===
 Daly Operationen zum [Icinga2](../icinga2) Monitorring
 
