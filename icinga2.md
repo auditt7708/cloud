@@ -45,7 +45,7 @@ Default wird der Hostname als ZoneName gesetzt in der Datei `constants.conf`
 
 Quellen: 
 [Service Monitoring](https://docs.icinga.com/icinga2/latest/doc/module/icinga2/chapter/service-monitoring)
-[]()
+[](https://docs.icinga.com/icinga2/latest/doc/module/icinga2/chapter/service-monitoring#service-monitoring-dns)
 []()
 []()
 []()
