@@ -75,4 +75,4 @@ Für `MySQL Server` sind unter `/usr/share/icinga2-ido-mysql/schema/upgrade/` al
     - [ ] Version Notieren
     - [] Version vergleichen
     - [ ] je minor Update ein Schema Upgrade durchführen.
-
+- [] Login/Logout script um System zu überwachen / nicht überwachen schreiben
