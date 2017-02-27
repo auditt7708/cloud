@@ -18,7 +18,7 @@ Dokumentationen
 ## Planung und Support
 
 ```
- - Management
+                              - Management
 -- Operations Manager    -- Service Manager
 
 ```
