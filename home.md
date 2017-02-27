@@ -15,6 +15,14 @@ Lokale Umgebung
 Dokumentationen
 ===============
 
+## Planung und Support
+
+```
+ - Management
+-- Operations Manager    -- Service Manager
+
+```
+
 ## Umgebung
 * [Dashboard](../dashboard)
 * [Hosts](../hosts)
