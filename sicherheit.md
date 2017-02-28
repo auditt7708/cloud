@@ -20,4 +20,18 @@
 
 ### [Yubikey](../yubikey)
 
+### [OpenSSH](../arbeiten-mit-ssh)
+* [SSH](../arbeiten-mit-ssh)
+
+
+### OpenSSL
+
+### Certutil
+
+certutil - Manage keys and certificate in both NSS databases and other NSS tokens
+
+```
+    sudo mkdir -p /etc/pki/tls/certs
+    sudo mkdir /etc/pki/tls/private
+```
 
