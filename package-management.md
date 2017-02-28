@@ -13,6 +13,8 @@
 |Search by pattern|apt-cache search pattern|zypper search -t pattern pattern|yum search pattern|pacman -Ss pattern|
 |Search by file name|apt-file search path|zypper wp file|yum provides file|pacman -Qo file|
 |List installed packages|dpkg -l|zypper search -is|rpm -qa|pacman -Q|
+|package installed onto your system|dpkg-query -L pkg|||
+|see the filles will be installed|dpkg-deb -c pkg|||
 |**Configuring access to software repositories**|||||
 |List repositories|cat /etc/apt/sources.list|zypper repos|yum repolist|cat /etc/pacman.conf|
 |Add repository|(edit /etc/apt/sources.list)|zypper addrepo path name|(add repo to /etc/yum.repos.d/)|(edit /etc/pacman.conf)|
