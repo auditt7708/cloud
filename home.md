@@ -26,7 +26,8 @@ Dokumentationen
 ## Umgebung
 * [Dashboard](../dashboard)
 * [Hosts](../hosts)
-* [collaboration](..collaboration)
+* [collaboration](../collaboration)
+* [Sicherheit](../sicherheit)
 
 ### System [Entwicklung](../entwicklung)
 * [Services](../services)
@@ -39,6 +40,7 @@ Dokumentationen
 * [Datenbanken](../datenbanken)
 * [microservices](../microservices)
 * [Logging](../logging)
+* [Sicherheit](../sicherheit)
 
 #### Linux [Entwicklung](../entwicklung)
 * [Cluster Beispiele] (../cluster-beispiele)
@@ -57,7 +59,7 @@ Dokumentationen
 * [Bash](../bash)
 * [Konsolen Tools](../konsolen-tools)
 * [Terminal](../terminal)
-
+* [Sicherheit](../sicherheit)
 
 #### Windows [Entwicklung](../entwicklung)
 * [Powershell](../powershell-basic)
@@ -70,7 +72,6 @@ Dokumentationen
 * [Json](../json)
 * [angular-js](../angular-js)
 * [Entwicklung](../entwicklung)
-
 
 **Hilfen und tools**
 * [SSH](../arbeiten-mit-ssh)
