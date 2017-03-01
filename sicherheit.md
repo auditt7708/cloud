@@ -21,8 +21,6 @@
 ### [Yubikey](../yubikey)
 
 ### [OpenSSH](../arbeiten-mit-ssh)
-* [SSH](../arbeiten-mit-ssh)
-
 
 ### OpenSSL
 
