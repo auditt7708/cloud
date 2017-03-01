@@ -1,9 +1,8 @@
+# [Heartbeat](../heartbeat)
+
 # [Corosync](../corosync)
 
 # [Pacemaker](../pacemaker)
-
-# []()
-
 
 # [Gui Cluster Werkzeuge](../cluster-gui-tools)
 
