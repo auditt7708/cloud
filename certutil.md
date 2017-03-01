@@ -9,6 +9,7 @@
 
 
 
+
 ```
     sudo mkdir -p /etc/pki/tls/certs
     sudo mkdir /etc/pki/tls/private
