@@ -6,6 +6,10 @@ Installation
 ## [Elasticsearch](../elasticsearch)
 
 ### [Ubuntu 16.04 ](../ubuntu1604)
+Quellen: 
+* [etup-elk-stack-ubuntu-16-04](http://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/setup-elk-stack-ubuntu-16-04.html)
+* [setup-elk-stack-ubuntu-16](http://linoxide.com/ubuntu-how-to/setup-elk-stack-ubuntu-16/)
+* []()
 
 ### [Centos 7](../centos7)
 
