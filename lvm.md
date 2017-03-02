@@ -1,10 +1,20 @@
-Neue Festplatte hinzufügen 
+**Neue Festplatte hinzufügen **
 `pvcreate /dev/sda`
 
-Volume Group vergrößern
+**Volume Group vergrößern**
 `vgextend $VG /dev/sda3`
 
+**Vergrößern des LV**
+`lvextend -L 1G /dev/mapper/deviceN`
+
+ACHTUNG 1G ist die Größe das Gerät insgesamt hat!
+
+**Vergrößern des LV auf die maximale Größe**
+`lvextend -l +100%FREE /dev/mapper/deviceN `
+
 **Quellen**
+* [LVM_vergrößern](https://www.thomas-krenn.com/de/wiki/LVM_vergrößern)
+
 
 Zusammenfassung der Schritte
 
