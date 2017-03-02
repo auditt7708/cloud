@@ -1,4 +1,4 @@
-**Neue Festplatte hinzufügen **
+**Neue Festplatte hinzufügen**
 `pvcreate /dev/sda`
 
 **Volume Group vergrößern**
