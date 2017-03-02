@@ -11,6 +11,10 @@ Lokale Umgebung
 
 * [Dashboard](http://192.168.4.14/~tobkern/startmin-master/pages/server.html)
 
+Builds 
+
+[![build status](https://gitlab.com/tobkern1980/home-net4-environment/badges/master/build.svg)](https://gitlab.com/tobkern1980/home-net4-environment/commits/master)
+
 
 Dokumentationen
 ===============
