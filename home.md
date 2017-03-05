@@ -32,6 +32,7 @@ Dokumentationen
 * [Hosts](../hosts)
 * [collaboration](../collaboration)
 * [Sicherheit](../sicherheit)
+* [Netzwerke](../netzwerke)
 
 ### System [Entwicklung](../entwicklung)
 * [Services](../services)
