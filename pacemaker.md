@@ -35,27 +35,8 @@ drbd Ressource bekannt machen und mit pcs/cib erstellen
 Stopping Cluster Services
 ====================
 
-
-
 `pcs cluster stop [--all] [node] [...]`
 Mit `--all` wird auf allen nodes 
-
-``
-``
-``
-
-
-pcs Tool
-=======
-
-Version mit der getestet wurde .
-
-*  0.9.152 ``` echo $()```
-
-Namen der deamons
-* corosync
-* pacemaker
-* pcsd
 
 Zugang und Zugangsdaten auf die Nodes 
 ===============================
@@ -69,7 +50,7 @@ Zugang  für einen neuen node anlegen :
 ` pcs cluster auth testnode1 ` 
 User ist dann der hacluster 
 
-peacemaker
+[peacemaker](../pacemaker)
 ==========
 Version mit der getestet wurde .
 
