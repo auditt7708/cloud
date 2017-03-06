@@ -8,7 +8,7 @@ Amanda
 * []()
 
 
-Bacula
+[Bacula](../bacula)
 ======
 
 * [ Bacula: Cross-Platform Client-Server Backups](http://www.onlamp.com/pub/a/onlamp/2004/01/09/bacula.html)
