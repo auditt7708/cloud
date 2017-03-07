@@ -16,19 +16,14 @@ Builds
 [![build status](https://gitlab.com/tobkern1980/home-net4-environment/badges/master/build.svg)](https://gitlab.com/tobkern1980/home-net4-environment/commits/master)
 
 
-Dokumentation
-=====
-Lösungen
-* [mkdocs](http://www.mkdocs.org/)
-
+Dokumentationen
+===============
 
 ## Planung und Support
 
 ```
-                             Management
-                                         | 
-    Operations Manager    Service Manager
-                       | |                                       | |
+                              - Management
+-- Operations Manager    -- Service Manager
 
 ```
 
