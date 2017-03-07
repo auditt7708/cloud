@@ -37,12 +37,12 @@ Editoren
 * [angular-labelauty](https://tablelist.github.io/angular-labelauty/#example)
 * [angular-file-upload](http://angular-file-upload.appspot.com/)
 * [codebeautify](http://codebeautify.org/)
-* http://a5hik.github.io/ng-sortable/#/sprint
-* http://vitalets.github.io/angular-xeditable/#editable-row
+* [ng-sortable Tasks](http://a5hik.github.io/ng-sortable/#/sprint)
+* [angular-xeditable](http://vitalets.github.io/angular-xeditable/#editable-row)
 * [textangular](http://textangular.com/)
-* https://www.firebase.com/docs/web/libraries/angular/
-* http://lorenzofox3.github.io/smart-table-website/#section-intro
-* https://github.com/TheSharpieOne/angular-validation-match
-* https://select2.github.io/examples.html
+* [firebase](https://www.firebase.com/docs/web/libraries/angular/)
+* [smart-table-website](http://lorenzofox3.github.io/smart-table-website/#section-intro) # Gut
+* [Angular Validation: Match](https://github.com/TheSharpieOne/angular-validation-match)
+* [The jQuery replacement for select boxes ](https://select2.github.io/examples.html)
 * [WhatsApp Clone with Meteor CLI and Ionic] (https://angular-meteor.com/tutorials/whatsapp/meteor/bootstrapping)
 
