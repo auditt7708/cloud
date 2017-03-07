@@ -1,7 +1,21 @@
+Installation
+===
+
+Da es nicht immer auf Anhieb möglich ist mit der node auf anhieb zuzugreifen und alle notwedigen automatisiet einzurichten kann man mit : 
+`ansible myhost --sudo -m raw -a "yum install -y python2 python-simplejson"`
+alle Voraussetzungen für Ansible einrichten **myhost** ist hier der zielhost und **python-simplejson** ein Playbook das alle Abhängigkeiten einrichtet. 
+
+
 Installation Ubuntu
 ===
 
 Für Ubuntu kann man [PPA](https://launchpad.net/~ansible/+archive/ansible) verwenden um auf ein aktuelles release zu kommen
+Repo für Ubuntu xenial:
+```
+deb http://ppa.launchpad.net/ansible/ansible/ubuntu xenial main 
+deb-src http://ppa.launchpad.net/ansible/ansible/ubuntu xenial main 
+```
+
 Repo einrichten und update durchführen:
 
 ```
@@ -22,13 +36,34 @@ Da hier auch die quellen vorhanden sind kann man auch sich das Packet wie folgt 
 make deb
 ```
 
-
 Installation RHEL/Centos
 ===
 
 Installation mit [Pip](https://pypi.python.org/pypi/pip)
 ===
-Die [pip](https://pypi.python.org/pypi/pip) installation ist 
+Die [pip](https://pypi.python.org/pypi/pip) Installation ist recht einfach aber  `easy_install`  muss vorhanden sein so haben die meisten Distributionen in der bootstrap Variante nicht dabei und auch noch nicht in der Netinstall, gerade seit dem die Pakete größer werden werden hier kaum mehr Extras eingerichtet.
+
+Einfach mal mit dem [Packetmanager](../packetmanager) nach `easy_install` suchen .
+
+Wenn dann installiert ist kann man wie folgt [Ansible](../ansible) installieren. 
+
+```
+sudo easy_install pip
+sudo pip install ansible
+```
+
+ansible fireball Installation
+===
+Auf dem node kann mit ansible fireball  die Verarbeitungsgeschwindigkeit massiv erhöt werden.
+
+Quellen:
+* [ansible fireball](https://linux.die.net/man/3/ansible.fireball)
+
+Playbooks
+===
+
+Quellen 
+* [playbooks von ansile doc ](http://docs.ansible.com/ansible/playbooks.html)
 
 Zero Downtime Deployment
 =========================
