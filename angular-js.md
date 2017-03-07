@@ -1,19 +1,21 @@
 
 Autorisation 
-===
+====
 
 * [angular2-token](https://github.com/neroniaky/angular2-token)
 
 Tabelen
-===
+====
 * [ng-table](http://ng-table.com/#/loading/demo-external-array)
 * [ng2-smart-table](https://akveo.github.io/ng2-smart-table/)
 
-=== KanBan board
+KanBan board
+====
 * [Building-a-Kanban-board-application-using-AngularJ](https://www.codeproject.com/Articles/810892/Building-a-Kanban-board-application-using-AngularJ)
 * [Angular-Kanban](https://github.com/DlhSoftTeam/Angular-Kanban)
 
-=== Gantt Diagramm Chart etc
+Gantt Diagramm Chart etc
+====
 * [GanttChartView](http://dlhsoft.com/GanttChartHyperLibrary/GanttChartView.html)
 * [gantt/angular](http://demos.telerik.com/kendo-ui/gantt/angular)
 * [angular-gantt](https://www.angular-gantt.com/demo/)
@@ -21,13 +23,14 @@ Tabelen
 * [NetworkDiagramView](http://dlhsoft.com/GanttChartHyperLibrary/NetworkDiagramView.html)
 * [angular-2-gantt-chart-component-typescript-php-mysql](https://code.daypilot.org/11244/angular-2-gantt-chart-component-typescript-php-mysql)
 
-=== Editoren
+Editoren
+====
 * [ui-tinymce](https://github.com/angular-ui/ui-tinymce)
 * [json-editor](http://jeremydorn.com/json-editor/)
 * [angularjsoneditor.oqbox](http://angularjsoneditor.oqbox.com/#)
 *
 
-Sources: 
+**Sources:**
 * [angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter)
 * [tutsway web Programming](http://www.tutsway.com/snippets.php)
 * [accordion](https://ng-semantic.herokuapp.com/#/elements/accordion)
