@@ -56,8 +56,15 @@
 ### VirtualBox
 #### Virtualbox-ISO
 
+## Beispiele Comunity Frameworks 
 
-## 
+* [drbd-centos7-ansible und Packer](https://github.com/woltere/drbd-centos7-ansible)
+* [Packker Builds boxcutter](https://github.com/boxcutter)
+* [Debian and Ubuntu virtual machine images for Vagrant, VirtualBox and QEMU](https://github.com/tylert/packer-build)
+* [Racker is an opinionated Ruby DSL for generating Packer templates](https://github.com/aspring/racker)
+* [A Ruby model that lets you build Packer configurations in Ruby](https://github.com/ianchesal/packer-config)
+
+## Dokumentation
 
 * [Packer Templats](https://github.com/travis-ci/packer-templates)
 * [server-vm-images-ansible-and-packer](https://www.jeffgeerling.com/blog/server-vm-images-ansible-and-packer)
