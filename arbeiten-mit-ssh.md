@@ -15,6 +15,8 @@ fi
 
 ```
 
+
+
 ```
 # GitLab.com server
 Host gitlab.com
@@ -25,7 +27,5 @@ IdentityFile ~/.ssh/config/private-key-filename-01
 Host gitlab.company.com
 RSAAuthentication yes
 IdentityFile ~/.ssh/config/private-key-filename
-
-
 
 ```
