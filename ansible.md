@@ -1,3 +1,35 @@
+Installation Ubuntu
+===
+
+Für Ubuntu kann man [PPA](https://launchpad.net/~ansible/+archive/ansible) verwenden um auf ein aktuelles release zu kommen
+Repo einrichten und update durchführen:
+
+```
+sudo add-apt-repository ppa:ansible/ansible
+sudo apt-get update
+```
+
+Installation 
+```
+$ sudo apt-get install software-properties-common
+$ sudo apt-add-repository ppa:ansible/ansible
+$ sudo apt-get update
+$ sudo apt-get install ansible
+```
+
+Da hier auch die quellen vorhanden sind kann man auch sich das Packet wie folgt bauen 
+```
+make deb
+```
+
+
+Installation RHEL/Centos
+===
+
+Installation mit Pip
+===
+
+
 Zero Downtime Deployment
 =========================
 * [ansible-zero-downtime-deployment](https://jaxenter.de/ansible-zero-downtime-deployment-50085)
