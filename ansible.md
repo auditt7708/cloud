@@ -26,9 +26,9 @@ make deb
 Installation RHEL/Centos
 ===
 
-Installation mit Pip
+Installation mit [Pip](https://pypi.python.org/pypi/pip)
 ===
-
+Die [pip](https://pypi.python.org/pypi/pip) installation ist 
 
 Zero Downtime Deployment
 =========================
