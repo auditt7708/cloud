@@ -59,6 +59,8 @@ Auf dem node kann mit ansible fireball  die Verarbeitungsgeschwindigkeit massiv 
 Quellen:
 * [ansible fireball](https://linux.die.net/man/3/ansible.fireball)
 
+
+
 Playbooks
 ===
 
