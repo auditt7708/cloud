@@ -35,6 +35,18 @@ Dokumentationen
 * [Sicherheit](../sicherheit)
 * [Netzwerke](../netzwerke)
 
+## Tools
+* [tmuxcheatsheet](https://tmuxcheatsheet.com/)
+* [cool-retro-term](https://github.com/Swordfish90/cool-retro-term )
+* [Bookmark für die Konsole](https://itsfoss.com/buku-command-line-bookmark-manager-linux/)
+* [no-more-secrets](https://github.com/bartobri/no-more-secrets)
+* [terminix](https://github.com/gnunn1/terminix)
+* [cmatrix](http://www.asty.org/cmatrix/)
+* [termite](https://github.com/thestinger/termite)
+* [terminix-web](https://gnunn1.github.io/terminix-web/)
+* [TermKit](https://github.com/unconed/TermKit)
+* [Xiki makes the shell console more friendly and powerful](http://xiki.org/ )
+
 ### System [Entwicklung](../entwicklung)
 * [Services](../services)
 * [DNS] (../dns)
@@ -96,6 +108,8 @@ desk = tobkern-desktop tobkern-desktop-win10
 **Sources :**
 
  *  http://www.gtkdb.de/index_34_2792.html
+
+
 
 ToDu
 ====
