@@ -59,13 +59,19 @@ Auf dem node kann mit ansible fireball  die Verarbeitungsgeschwindigkeit massiv 
 Quellen:
 * [ansible fireball](https://linux.die.net/man/3/ansible.fireball)
 
+Playbooks
+===
 
+
+Administration
+===
 
 Playbooks
 ===
 
 Quellen 
 * [playbooks von ansile doc ](http://docs.ansible.com/ansible/playbooks.html)
+* [gc3-uzh-ch](https://github.com/gc3-uzh-ch/ansible-playbooks)
 
 Zero Downtime Deployment
 =========================
