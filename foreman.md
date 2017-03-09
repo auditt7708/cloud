@@ -43,7 +43,9 @@ echo "Configore foreman"
 foreman-rake db:migrate
 foreman-rake db:seed
 
-/etc/foreman/settings.yaml
+echo "deactivate selinux !!!!"
+
+setenforce 0
 
 ```
 
