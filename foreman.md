@@ -1,6 +1,28 @@
 Installation
 =======
 
+Install epel release
+```
+yum install epel-release
+```
+
+Install Software collection
+```
+yum install centos-release-scl
+```
+
+Base Install script 
+```
+#/bin/bash
+
+echo "Install epel Repo"
+su -c 'rpm -Uvh http://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm'
+
+echo "Install Software collection"
+
+yum install centos-release-scl
+```
+
 **Allgemeine Informationen**
 
 Für Ubuntu/Debian werden nicht alle fitures unterstützt.
