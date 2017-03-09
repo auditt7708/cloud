@@ -1,6 +1,12 @@
 Installation
 =======
 
+**Allgemeine Informationen**
+
+Für Ubuntu/Debian werden nicht alle fitures unterstützt.
+
+### Installation unter Centos 7
+
 Install epel release
 ```
 yum install epel-release
@@ -22,12 +28,6 @@ echo "Install Software collection"
 
 yum install centos-release-scl
 ```
-
-**Allgemeine Informationen**
-
-Für Ubuntu/Debian werden nicht alle fitures unterstützt.
-
-**Installation unter Centos 7**
 
 
 **Quellen:**
