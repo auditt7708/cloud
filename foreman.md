@@ -24,9 +24,37 @@ Base Install script
 echo "Install epel Repo"
 su -c 'rpm -Uvh http://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm'
 
-echo "Install Software collection"
+echo "Install foreman Repo"
+http://yum.theforeman.org/releases/1.14/el7/x86_64/foreman-release.rpm
 
+echo "Install Software collection"
 yum install centos-release-scl
+
+echo "$(hostname -I) $(hostname -f)" > /etc/hosts
+
+echo "Install foreman"
+yum -y install foreman-installer
+
+
+echo "Puppet NTP Module"
+puppet module install -i /etc/puppet/environments/production/modules saz/ntp
+
+echo "Configore foreman"
+foreman-rake db:migrate
+foreman-rake db:seed
+
+/etc/foreman/settings.yaml
+
+```
+
+**Quellen**
+* [foreman-on-centos-7-or-rhel-7](https://syslint.com/blog/tutorial/how-to-install-and-configure-foreman-on-centos-7-or-rhel-7/)
+* [googel paste foreman ](https://groups.google.com/forum/#!topic/foreman-users/6xFo8mzDOF0)
+
+
+### Firewall für Foreman einrichten 
+```
+
 ```
 
 
