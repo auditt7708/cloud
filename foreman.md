@@ -105,7 +105,12 @@ exit
 
 **Quellen:**
 
-
 ### Foreman Konfigurationen
 
 * [homent4](../foreman-examples)
+
+
+### Foreman CI Quellen
+
+* [Jenkins ci.theforeman.org](http://ci.theforeman.org/)
+* []()
