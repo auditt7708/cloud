@@ -67,6 +67,8 @@ Der foreman-installer wird sich (weil da Python die Konformität Prüft) ohne ei
 ### Fehler 
 
 `The environment must be purely alphanumeric, not ''`
+Lösung:
+[6091-the-environment-must-be-purely-alphanumeric](https://ask.puppet.com/question/6091/the-environment-must-be-purely-alphanumeric/)
 
 
 ### Puppet Module für Foreman
