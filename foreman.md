@@ -17,7 +17,7 @@ Install Software collection
 yum install centos-release-scl
 ```
 
-Base Install script 
+### Base Install script 
 ```
 #/bin/bash
 
@@ -35,7 +35,6 @@ echo "$(hostname -I) $(hostname -f)" > /etc/hosts
 echo "Install foreman"
 yum -y install foreman-installer
 
-
 echo "Puppet NTP Module"
 puppet module install -i /etc/puppet/environments/production/modules saz/ntp
 
@@ -49,18 +48,34 @@ echo "deactivate selinux !!!!"
 setenforce 0
 
 ```
+Quellen zur Installation
+* [how-to-install-foreman-with-puppet-in-centos-and-ubuntu](https://www.unixmen.com/how-to-install-foreman-with-puppet-in-centos-and-ubuntu/)
+
 ### Netzwerk Konfiguration
 
 Der foreman-installer wird sich (weil da Python die Konformität Prüft) ohne eine RFC konforme [FQDN](https://de.wikipedia.org/wiki/Fully-Qualified_Host_Name) sich weigern eine Installation durchzuführen, daher muss noch ein passender Eintrag local in der /etc/hosts eingerichtet werden.
-
 
 **Quellen**
 * [foreman-on-centos-7-or-rhel-7](https://syslint.com/blog/tutorial/how-to-install-and-configure-foreman-on-centos-7-or-rhel-7/)
 * [googel paste foreman ](https://groups.google.com/forum/#!topic/foreman-users/6xFo8mzDOF0)
 
-
 ### Firewall für Foreman einrichten 
 ```
+# source : https://www.unixmen.com/how-to-install-foreman-with-puppet-in-centos-and-ubuntu/
+firewall-cmd --permanent --add-port=53/tcp
+firewall-cmd --permanent --add-port=67-69/udp
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd --permanent --add-port=443/tcp
+firewall-cmd --permanent --add-port=3000/tcp
+firewall-cmd --permanent --add-port=3306/tcp
+firewall-cmd --permanent --add-port=5910-5930/tcp
+firewall-cmd --permanent --add-port=5432/tcp
+firewall-cmd --permanent --add-port=8140/tcp
+firewall-cmd --permanent --add-port=8443/tcp
+
+#Restart Firewall to take effect the changes.
+
+firewall-cmd --reload
 
 ```
 
@@ -114,3 +129,6 @@ exit
 
 * [Jenkins ci.theforeman.org](http://ci.theforeman.org/)
 * []()
+
+
+### 
