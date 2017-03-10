@@ -44,7 +44,8 @@ foreman-rake db:migrate
 foreman-rake db:seed
 
 echo "deactivate selinux !!!!"
-
+# sollte noch eine Seite für selinux ins wiki kommen mit einem Eintrag für die selinux policy
+# Qulle: https://github.com/theforeman/foreman-selinux
 setenforce 0
 
 ```
@@ -60,8 +61,11 @@ setenforce 0
 ```
 The environment must be purely alphanumeric, not ''
 
-**Quellen:**
 
+
+### Puppet Module für Foreman
+* [theforeman/foreman](https://forge.puppet.com/theforeman/foreman)
+* []()
 
 Plugins Einrichten
 ===========
