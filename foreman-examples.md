@@ -1,5 +1,5 @@
 ```
- foreman_url: https://foreman.example.com
+  foreman_url: https://foreman.example.com
   puppetrun: true
   unattended: true
   authentication: true
@@ -50,11 +50,9 @@
   server_ssl_chain: /etc/puppetlabs/puppet/ssl/certs/ca.pem
   server_ssl_cert: /etc/puppetlabs/puppet/ssl/certs/foreman.example.com.pem
   server_ssl_certs_dir: ''
-  server_ssl_key:
-/etc/puppetlabs/puppet/ssl/private_keys/foreman.example.com.pem
-client_ssl_cert: /etc/puppetlabs/puppet/ssl/certs/foreman.example.com.pem
-  client_ssl_key:
-/etc/puppetlabs/puppet/ssl/private_keys/foreman.example.com.pem
+  server_ssl_key: /etc/puppetlabs/puppet/ssl/private_keys/foreman.example.com.pem
+  client_ssl_cert: /etc/puppetlabs/puppet/ssl/certs/foreman.example.com.pem
+  client_ssl_key: /etc/puppetlabs/puppet/ssl/private_keys/foreman.example.com.pem
   keepalive: true
   max_keepalive_requests: 100
   keepalive_timeout: 5
@@ -77,8 +75,7 @@ client_ssl_cert: /etc/puppetlabs/puppet/ssl/certs/foreman.example.com.pem
   pam_service: foreman
   ipa_manage_sssd: true
   websockets_encrypt: true
-  websockets_ssl_key:
-/etc/puppetlabs/puppet/ssl/private_keys/foreman.example.com.pem
+  websockets_ssl_key: /etc/puppetlabs/puppet/ssl/private_keys/foreman.example.com.pem
   websockets_ssl_cert: /etc/puppetlabs/puppet/ssl/certs/foreman.example.com.pem
   logging_level: info
   loggers: {}
@@ -126,7 +123,7 @@ ensure_packages_version: present
   foreman_ssl_cert: 
   foreman_ssl_key: 
   trusted_hosts:
-  - foreman.example.com
+      - foreman.example.com
   ssl_disabled_ciphers: []
   manage_sudoersd: true
   use_sudoersd: true
@@ -154,30 +151,29 @@ ensure_packages_version: present
   puppet_url: https://foreman.example.com:8140
   puppet_ssl_ca: /etc/puppetlabs/puppet/ssl/certs/ca.pem
   puppet_ssl_cert: /etc/puppetlabs/puppet/ssl/certs/foreman.example.com.pem
-  puppet_ssl_key:
-/etc/puppetlabs/puppet/ssl/private_keys/foreman.example.com.pem
+  puppet_ssl_key: /etc/puppetlabs/puppet/ssl/private_keys/foreman.example.com.pem
   puppet_use_environment_api: 
   templates: false
-logs: true
+  logs: true
   logs_listen_on: https
   tftp: true
   tftp_listen_on: https
   tftp_managed: true
   tftp_manage_wget: true
   tftp_syslinux_filenames:
-  - /usr/share/syslinux/chain.c32
-  - /usr/share/syslinux/mboot.c32
-  - /usr/share/syslinux/menu.c32
-  - /usr/share/syslinux/memdisk
-  - /usr/share/syslinux/pxelinux.0
+    - /usr/share/syslinux/chain.c32
+    - /usr/share/syslinux/mboot.c32
+    - /usr/share/syslinux/menu.c32
+    - /usr/share/syslinux/memdisk
+    - /usr/share/syslinux/pxelinux.0
   tftp_root: /var/lib/tftpboot
   tftp_dirs:
-  - /var/lib/tftpboot/pxelinux.cfg
-  - /var/lib/tftpboot/grub
-  - /var/lib/tftpboot/grub2
-  - /var/lib/tftpboot/boot
-  - /var/lib/tftpboot/ztp.cfg
-  - /var/lib/tftpboot/poap.cfg
+    - /var/lib/tftpboot/pxelinux.cfg
+    - /var/lib/tftpboot/grub
+    - /var/lib/tftpboot/grub2
+    - /var/lib/tftpboot/boot
+    - /var/lib/tftpboot/ztp.cfg
+    - /var/lib/tftpboot/poap.cfg
   tftp_servername: 
   dhcp: false
   dhcp_listen_on: https
@@ -185,7 +181,8 @@ logs: true
   dhcp_provider: isc
   dhcp_subnets: []
   dhcp_option_domain:
-  - example.com
+    - example.com
+   - home.oshsl.de
   dhcp_search_domains: 
   dhcp_interface: eth0
   dhcp_gateway: 192.168.100.1
@@ -211,7 +208,7 @@ logs: true
   dns_tsig_principal: foremanproxy/foreman.example.com@EXAMPLE.COM
   dns_forwarders: []
   libvirt_network: default
-bmc_listen_on: https
+  bmc_listen_on: https
   bmc_default_provider: ipmitool
   realm: false
   realm_listen_on: https
@@ -228,7 +225,7 @@ bmc_listen_on: https
   oauth_consumer_key: A7n2ENAEaGPSCne7AXBGWuRuXF8EQPfo
   oauth_consumer_secret: x8BmCKvVhFksW25GJKErkJiFpKbRrpoS
   puppet_use_cache: 
-puppet:
+  puppet:
   version: present
   user: puppet
   group: puppet
@@ -264,7 +261,7 @@ puppet:
   module_repository: 
   configtimeout: 
   ca_server: 
-postrun_command: 
+  postrun_command: 
   dns_alt_names: []
   use_srv_records: false
   srv_domain: example.com
@@ -280,9 +277,9 @@ postrun_command:
   auth_template: puppet/auth.conf.erb
   allow_any_crl_auth: false
   auth_allowed:
-  - $1
+     - $1
   client_package:
-  - puppet-agent
+    - puppet-agent
   agent: false
   remove_lock: true
   client_certname: foreman.example.com
@@ -293,8 +290,12 @@ postrun_command:
   environment: production
   server: true
   server_admin_api_whitelist:
-  - localhost
-  - foreman.example.com
+    - localhost
+    - foreman.example.com
+    - srv2.example.com
+    - tobkern-desktop.example.com
+    - spacewalk.example.com
+    - rp4.example.com
   server_user: puppet
   server_group: puppet
   server_dir: /etc/puppetlabs/puppet
@@ -305,6 +306,10 @@ postrun_command:
   server_ca_client_whitelist:
   - localhost
   - foreman.example.com
+    - srv2.example.com
+    - tobkern-desktop.example.com
+    - spacewalk.example.com
+    - rp4.example.com
   server_http: true
   server_http_port: 8139
   server_http_allow: []
