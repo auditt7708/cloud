@@ -51,7 +51,7 @@ setenforce 0
 ```
 ### Netzwerk Konfiguration
 
-Der foreman-installer wird ohne eine  [FQDN](https://de.wikipedia.org/wiki/Fully-Qualified_Host_Name) sich weigern eine Installation durchzuführen, daher muss noch ein passender Eintrag in der /etc/hosts 
+Der foreman-installer wird sich (weil da Python die Konformität Prüft) ohne eine RFC konforme [FQDN](https://de.wikipedia.org/wiki/Fully-Qualified_Host_Name) sich weigern eine Installation durchzuführen, daher muss noch ein passender Eintrag local in der /etc/hosts eingerichtet werden.
 
 
 **Quellen**
@@ -64,7 +64,6 @@ Der foreman-installer wird ohne eine  [FQDN](https://de.wikipedia.org/wiki/Fully
 
 ```
 The environment must be purely alphanumeric, not ''
-
 
 
 ### Puppet Module für Foreman
