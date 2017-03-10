@@ -2,11 +2,7 @@ Jenkins
 =======
 
 ## Dateien und Verzeichnisse 
-
-
 Home verzeichnis : `/var/lib/jenkins`
-
-
 
 Jenkins Plugins
 =============
@@ -16,7 +12,50 @@ adds a post build step to push RPMs to Spacewalk or RHN satelite servers. It req
 
 * [SCP](https://wiki.jenkins-ci.org/display/JENKINS/SCP+plugin)
 ploads build artifacts to repository sites using SCP (SSH) protocol. First you should define SCP hosts on hudson global config page. 
+* [workflow-aggregator](https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin)
+* []()
+* []()
+* []()
+* []()
+* []()
+* []()
+* []()
+* []()
 
+
+Jenkins Jobs
+===
+* [jenkins-php](http://jenkins-php.org/installation.html)
+* []()
+* []()
+* []()
+* []()
+* []()
+
+Jenkins Piblines
+===
+ *[COMPATIBILITY mit pipeline-plugin](https://github.com/jenkinsci/pipeline-plugin/blob/master/COMPATIBILITY.md)
+* [Jenkins pipeline Buch](https://jenkins.io/doc/book/pipeline/)
+* [Continuous Delivery mit Jenkins Workflow](https://dzone.com/refcardz/continuous-delivery-with-jenkins-workflow)
+* [Pipeline syntax](https://jenkins.io/doc/book/pipeline/syntax/)
+* [Pipeline schnitte Refarens](https://jenkins.io/doc/pipeline/steps/)
+* [pipeline shared-libraries ](https://jenkins.io/doc/book/pipeline/shared-libraries/)
+* [Docker Piplien Demo](https://github.com/jenkinsci/workflow-aggregator-plugin/blob/master/demo/README.md)
+* [continuous_delivery_with_jenkins_pipeline](https://go.cloudbees.com/docs/cloudbees-documentation/cookbook/book.html#ch13__continuous_delivery_with_jenkins_pipeline)
+* [TUTORIAL](https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md)
+* [top-10-best-practices-jenkins-pipeline-plugin](https://www.cloudbees.com/blog/top-10-best-practices-jenkins-pipeline-plugin)
+*[hello-world](https://jenkins.io/doc/pipeline/tour/hello-world/)
+*[]()
+
+
+Jenkins Toturial Jenkins Docukentation
+===
+* [tutorialspoint](https://www.tutorialspoint.com/jenkins/jenkins_installation.htm)
+* [jenkins-2-0-von-ci-nach-cd-mit-pipelines](https://blog.openknowledge.de/2016/05/jenkins-2-0-von-ci-nach-cd-mit-pipelines/)
+* [Jenkins als CI Werkzeug](http://home.edvsz.fh-osnabrueck.de/skleuker/CSI/Werkzeuge/Jenkins/)
+* [Use+Jenkins](https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins)
+* []()
+* []()
 
 ToDoes
 * [von-continuous-integration-zu-continuous-delivery-mit-jenkins-pipeline-teil1](https://www.informatik-aktuell.de/entwicklung/methoden/von-continuous-integration-zu-continuous-delivery-mit-jenkins-pipeline-teil-1.html)
