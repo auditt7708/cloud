@@ -9,3 +9,6 @@
 * [repositories](../repositories)
 * [Tftp](../tftp)
 * [OpenLDAP](../openldap)
+* [IPXE](../ipxe)
+* [PXE](../pxe)
+
