@@ -49,6 +49,10 @@ echo "deactivate selinux !!!!"
 setenforce 0
 
 ```
+### Netzwerk Konfiguration
+
+Der foreman-installer wird ohne eine  [FQDN](https://de.wikipedia.org/wiki/Fully-Qualified_Host_Name) sich weigern eine Installation durchzuführen, daher muss noch ein passender Eintrag in der /etc/hosts 
+
 
 **Quellen**
 * [foreman-on-centos-7-or-rhel-7](https://syslint.com/blog/tutorial/how-to-install-and-configure-foreman-on-centos-7-or-rhel-7/)
