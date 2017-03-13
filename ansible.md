@@ -91,8 +91,18 @@ Auf dem node kann mit ansible fireball  die Verarbeitungsgeschwindigkeit massiv 
 **Wichtige Documentation für ansible **
 * [module-index](http://docs.ansible.com/ansible/modules_by_category.html#module-index)
 * []()
+* []()
+* []()
+* []()
+* []()
 
 **Ansible Beispiele**
 * [mongodb cluster](https://github.com/ansible/ansible-examples/tree/master/mongodb)
+* [directory-layout](https://docs.ansible.com/ansible/playbooks_best_practices.html#directory-layout)
+* [non-ssh-connection-types z.B Docker](http://docs.ansible.com/ansible/intro_inventory.html#non-ssh-connection-types)
+* [developing_api für eigene Scripte](http://docs.ansible.com/ansible/dev_guide/developing_api.html)
+* []()
+* []()
+* []()
 * []()
 * []()
