@@ -93,6 +93,6 @@ Auf dem node kann mit ansible fireball  die Verarbeitungsgeschwindigkeit massiv 
 * []()
 
 **Ansible Beispiele**
-* []()
+* [mongodb cluster](https://github.com/ansible/ansible-examples/tree/master/mongodb)
 * []()
 * []()
