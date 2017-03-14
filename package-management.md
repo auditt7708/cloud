@@ -1,4 +1,4 @@
-| Task | apt Debian | zypp | yun/dnf | pacman | 
+| Task | [apt-get](../apt-get) Debian | [zypper](../zypper) Suse | [yum](../yum)/[dnf](..(dnf) | [pacman](../pacman) | 
 | :---: | :---: | :---: | :---: | :---: |
 |**Managing software**|||||
 |Install new software from package repository|apt-get install pkg|zypper install pkg|yum install pkg|pacman -S pkg|
