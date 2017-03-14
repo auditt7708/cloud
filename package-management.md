@@ -20,8 +20,13 @@
 |Add repository|(edit /etc/apt/sources.list)|zypper addrepo path name|(add repo to /etc/yum.repos.d/)|(edit /etc/pacman.conf)|
 |Remove repository|(edit /etc/apt/sources.list)|zypper removerepo name|(remove repo from /etc/yum.repos.d/)|(edit /etc/pacman.conf)|
 
+# Paket Manager
 
-
+| Distribution | Low-Level Tool | High-Level Tool |
+| :------: | :------: | :------: | :------: |
+| Debian und derivate|[dpkg](../dpkg)| [apt-get](./apt-get) / [aptitude](../aptitude)|
+|CentOS|[rpm](../rpm)|[yum](../yum)|
+|openSUSE|[rpm](../rpm)|[zypper](../zypper)|
 
 Lösungen
 * [tasksel anpassen eigene erstellen](https://www.theurbanpenguin.com/creating-tasksel-custom-tasks-ubuntu-16-04/)
