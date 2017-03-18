@@ -7,6 +7,11 @@ Container Services
 * [Docker](https://gitlab.com/tobkern1980/home-net4-environment/wikis/docker)
 * [OpenVZ](https://openvz.org/Main_Page)
 
+Container Networking
+===
+[contiv](https://github.com/contiv)
+[auth_proxy](https://github.com/rhim/auth_proxy)
+
 Test Automation
 =============
 * [testautomation-im-bereich-continuous-delivery.](https://www.informatik-aktuell.de/entwicklung/methoden/testautomation-im-bereich-continuous-delivery.html)
@@ -57,7 +62,6 @@ Continuous Operations
 
 hashicorp Tools
 =============
-
 * [Packer](../packer)
 * [Vagrant](../vagrant)
 * [Terraform](../terraform)
