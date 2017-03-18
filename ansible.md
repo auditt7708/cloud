@@ -65,9 +65,10 @@ Auf dem node kann mit ansible fireball  die Verarbeitungsgeschwindigkeit massiv 
 ## Playbooks
 
 **Quellen**
+
 * [playbooks von ansile doc ](http://docs.ansible.com/ansible/playbooks.html)
 * [gc3-uzh-ch](https://github.com/gc3-uzh-ch/ansible-playbooks)
-* []()
+* [ansible-pacemaker](https://github.com/styopa/ansible-pacemaker)
 * []()
 * []()
 
