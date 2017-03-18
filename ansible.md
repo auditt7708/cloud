@@ -101,7 +101,7 @@ Auf dem node kann mit ansible fireball  die Verarbeitungsgeschwindigkeit massiv 
 * [directory-layout](https://docs.ansible.com/ansible/playbooks_best_practices.html#directory-layout)
 * [non-ssh-connection-types z.B Docker](http://docs.ansible.com/ansible/intro_inventory.html#non-ssh-connection-types)
 * [developing_api für eigene Scripte](http://docs.ansible.com/ansible/dev_guide/developing_api.html)
-* []()
+* [angular-drag-and-drop-lists](https://github.com/ansible/angular-drag-and-drop-lists)
 * []()
 * []()
 * []()
