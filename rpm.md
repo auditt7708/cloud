@@ -36,3 +36,6 @@ rpm --rebuilddb
 rpmdb_verify Packages
 ```
 
+**Quellen:**
+[RHEL Packaging - (making life easier with RPM)](https://jnovy.fedorapeople.org/scl-utils/scl.pdf)
+[]()
