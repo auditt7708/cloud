@@ -38,4 +38,4 @@ rpmdb_verify Packages
 
 **Quellen:**
 [RHEL Packaging - (making life easier with RPM)](https://jnovy.fedorapeople.org/scl-utils/scl.pdf)
-[]()
+[sec-Yum-Transaction_History](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/sec-Yum-Transaction_History.html#sec2-Yum-Transaction_History-Listing)
