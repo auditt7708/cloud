@@ -19,6 +19,8 @@ Builds
 
 Dokumentationen
 ===============
+[redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
+
 
 ## Planung und Support
 
