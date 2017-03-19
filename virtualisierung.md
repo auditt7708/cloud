@@ -1,12 +1,37 @@
-KVM
-====
+# KVM
 
 #### [ibvirt](../libvirt)
 
 #### [Qemu](../qemu)
 
-Images
-======
+# [Image Formate](../images)
+
+Über die Jahre wurden immer wieder neuer Standards für die Speicherung der Virtuellen Festplatten umgesetzt Heute kann man Sie wie Folgt Klassifizieren
+
+1. Read only Images z.B ISO .
+2. Raw Daten werden 1 zu 1 Block orientiert auf einen Datenträger geschrieben. Lesen und Schreiben ist möglich.
+3. High Level Images sind mit einigen Futures erweitert und haben eine Struktur zur besseren Administration.
+
+### Verschlüsselung
+Es kommt immer wieder vor , dass der Auftraggeber die Anforderung hat das die gespeicherten Daten in Verschlüsselter Form vorhanden sein müssen hier gibt es mit libvirt ein System zum Management der Verschlüsselten Images, da andernfalls immer jemand das secret manuell eingeben müsste 
+
+### Gold Image
+
+Ein Gold Image oder auch im Englischen als Base Image bekannt, ist spezielles Image welches als Basis für andre Images dient.
+In der Praxis endsthet als erstes ein 1:1-Klone das sogenannte Clone Image, da es nach dem Klonen genau wie das Gold Image ist können Änderungen am Gold Image in das Delta Image gespeichert werden 
+
+**Secret mit virsh anlegen**
+
+Das einrichten des sectres ist recht einfach mit: 
+`` virsh secret-define secret.xml `` 
+
+haben wir schon das Secret hinterlegt nun muss [virsh](../virsh) noch wissen welche Images es mit dem Erstellten secret öffnen/Starten kann.
+Wenn man sich in der Konsole befunden hat wird sich [virsh](../virsh) schon automatisch ein Image aussuchen das meist auch Richtig ist, kann aber mit 
+``virsh secret-list``
+kontrolliert werden.
+Insebondere wenn ein image nachträglich verschlüsselt wurde wird es nicht immer automatisch auch vom [virsh](../virsh) festgestellt, wenn einen nachbearbeitung notwendig wird muss die XML Datei manuel angepasst werden 
+
+
 
 ### Images Builder 
 * [Packer](../packer)
