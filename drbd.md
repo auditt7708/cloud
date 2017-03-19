@@ -37,6 +37,8 @@ z.B. wird hier einfach der mount von /var/drbd nach /mnt/drbd geändert .
 *Es muss natürlich schon das Verzeichnis existieren*
 `pcs resource update fs_drbd0  filesystem device=/dev/drbd0 directory=/mnt/drbd fstype=ext4`
 
+** String für die Verschlüsselung Erstellen **
+* [gen-32-alphanum-string](https://github.com/kernt/inshelp/blob/master/drbd/gen-32-alphanum-string.sh)
 
 Berechtigungen Matrix
 ===================
