@@ -1,3 +1,10 @@
+** Neue PV anlegen einer vg hinzufügen, lv vg zuordnen**
+```
+pvcreate /dev/sdb1
+vgcreate diskpool /dev/sdb1
+lvcreate -L 10GB -n testLV diskpool
+```
+
 **Neue Festplatte hinzufügen**
 `pvcreate /dev/sda`
 
