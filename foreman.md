@@ -51,6 +51,12 @@ setenforce 0
 Quellen zur Installation
 * [how-to-install-foreman-with-puppet-in-centos-and-ubuntu](https://www.unixmen.com/how-to-install-foreman-with-puppet-in-centos-and-ubuntu/)
 
+### Provision KVM VM ohne  DHCP
+
+Hier mit Centos in version 7 
+```
+```
+
 ### Netzwerk Konfiguration
 
 Der foreman-installer wird sich (weil da Python die Konformität Prüft) ohne eine RFC konforme [FQDN](https://de.wikipedia.org/wiki/Fully-Qualified_Host_Name) sich weigern eine Installation durchzuführen, daher muss noch ein passender Eintrag local in der /etc/hosts eingerichtet werden.
