@@ -81,7 +81,7 @@ Hier kann es in der Praxis am einfachsten sein seine VM's aufzurollen, Vorausset
 Hier kann man nun seine URL angeben und bei URLOptionen die Kernel Optionen 
 
 ```
-ks=http://foremanserver.tld/unattended/provision?static=yes ksdevice=bootif network kssendmac ip=192.168.1.2 netmask=255.255.255.0 gateway=192.168.1.1 dns=192.168.1.1
+ks=http://srv2.example.com/~tobkern/iso/unattended/anaconda/anaconda-ks.cfg ksdevice=bootif network kssendmac ip=192.168.4.52 netmask=255.255.255.0 gateway=192.168.4.1 dns=192.168.4.14
 ```
 
 **Schritt 3 von 5 **
