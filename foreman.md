@@ -52,10 +52,47 @@ Quellen zur Installation
 * [how-to-install-foreman-with-puppet-in-centos-and-ubuntu](https://www.unixmen.com/how-to-install-foreman-with-puppet-in-centos-and-ubuntu/)
 
 ### Provision KVM VM ohne  DHCP
+Daten:
 
-Hier mit Centos in version 7 
+
+
+Hier mit CentOS in Version 7
+
+Mit dem virt-manager kann man die Erstellung der VM so einrichten, dass man direkt den Kernel lädt und ihm eine Antwortdatei über die Kernel Argumente übergibt.
+Dadurch kann man vollautomatisch ein Grundsystem einrichten. 
+
+Um es durchzuführen sind folgende schritte notwendig: 
+
+Um sich besser oritiren zu können hab ich die vom Assistenten benutzten schritte als Überschrift übernommen.
+
+**Schritt 1 von 5**
+im Virtual Machine Manager Rechtsklick auf die Verbindung, dort wählt man Neu und nun kann man wählen wie das Beitreibsystem gestartet werden soll.
+Da diese Optionen wichtig sind auch im Detail zu verstehen nun erst mal alle Möglichkeiten  noch genau erklärt.
+1. Lokales Installationsmedium (ISO-Abbild oder CDROM)
+  Unter **CD-Rom oder DVD benutzen** wird das Gerät vom Wirt Computer benutzt also ohne dort jemanden zu haben der einem die Disk ins Laufwerk schiebt kaum eine Möglichkeit bei  in der Praxis.
+
+Mit **ISO-Abbild benutzen** kann man ein iso auswählen zu dem es einen [Speicherdatenträger](../virt-manager-speicherdatentraeger) gibt.
+wenn keine Auswahl Möglichkeiten  über ISO-Abbild benutzen -> Durchsuchen gibt weiter unter [Speicherdatenträger](../virt-manager-speicherdatentraeger)
+
+2. Installation vom Netzwerk (HTTP, FTP oder NFS)
+Hier kann es in der Praxis am einfachsten sein seine VM's aufzurollen, Voraussetzung ist eine URL die mit allen notwendigen Installationsdateien lesbar ist.
+
+**Schritt 2 von 5 **
+Hier kann man nun seine URL angeben und bei URLOptionen die Kernel Optionen 
+
 ```
+ks=http://foremanserver.tld/unattended/provision?static=yes ksdevice=bootif network kssendmac ip=192.168.1.2 netmask=255.255.255.0 gateway=192.168.1.1 dns=192.168.1.1
 ```
+
+**Schritt 3 von 5 **
+Hier einfach mal weiter die Speicher- und CPU-Einstellungen können auch noch nachträglich angepasst werden, wer genau weiß was er benötigt kann hier natürlich gleich alles eintragen.
+
+**Schritt 4 von 5 **
+Für unser beispiel soll ein vm mit einem 12GB Image reichen.
+
+**Schritt 5 von 5 **
+Wichtig ist hier den Hacken bei **Konfiguration bearbeiten vor der Installation ** zu setzen !
+Als Name  sollte man ändern um die vm später auch wieder zu finden Z.b.  cent7-gold da wir hier gerade ein [gold Image](../gold-image) erstellen.
 
 ### Netzwerk Konfiguration
 
