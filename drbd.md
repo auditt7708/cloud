@@ -3,6 +3,14 @@ Daten
 
 Clustername = testcluster
 
+# Installation von drbd
+
+1. drbdadm create-md drbd0
+2. drbdadm up drbd0
+3. drbd-overview oder cat /proc/drbd zum Status Prüfen
+4. drbdadm -- --overwrote-dtat-of-peer primary drbd0   um dem master festzulegen
+5. mkfs.xfs /dev/drbd0 um abschließend zu formatieren .
+
 
 drbd Administration
 ================
