@@ -1,9 +1,6 @@
-[Cluster-Beispiele] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/cluster-beispiele)
+# Installation und Konfiguration
 
-Installation und Konfiguration
-========================
-
-* [Drbd](https://gitlab.com/tobkern1980/home-net4-environment/wikis/Drbd)
+* [Drbd](../drbd)
 
 Pacemaker wird mit und seinen Abhängigkeiten installiert 
 
@@ -20,9 +17,15 @@ systemctl enable pcsd.service
 ```
 
 Cluster Resource anlegen
-====================
+====
+## Cluster mit drbd
 
-### Cluster mit drbd
+###
+
+Wichtig ist zu prüfen , dass der drbd Service nicht Läuft 
+`systemctl disable drbd`
+
+und das , dass drbd drive nicht gemountet ist. 
 
 **Virtuelle IP einrichten**
 `pcs resource create VirtualIP ocf:heartbeat:IPaddr2 ip=192.168.4.140 cidr_netmask=24 nic=eth0 op monitor interval=30s`
@@ -78,7 +81,7 @@ Hier muss das Netzwerk `10.0.0.0/24`  entsprechend angepasst werden
 Szenarios 
 ========
 
-Einen Neuen Node Hinzufügen
+**Einen Neuen Node Hinzufügen**
 
 1.  Installation und Konfiguration
 2.  hacluster Password einrichten 
@@ -87,7 +90,7 @@ Einen Neuen Node Hinzufügen
 5. `pcs cluster setup --start --name testcluster $NEWNODE --transport udpu` auf dem Aktiven Node durchführen
 6. 
 
-Neuen Cluster einrichten
+**Neuen Cluster einrichten**
 
 1. Installation und Konfiguration
 2. hacluster Password einrichten 
@@ -95,16 +98,13 @@ Neuen Cluster einrichten
 4. Alle Services Aktivieren
 
 
-pacemaker Programmierung
-
-
-
 Quellen
-=======
-* https://www.21x9.org/centos7-two-node-cluster-corosyncpacemakerdrbd/
-* http://www.learnitguide.net/2016/07/how-to-install-and-configure-drbd-on-linux.html
-* http://clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Clusters_from_Scratch/ch07.html
-* http://crmsh.github.io/man-3/
-* http://www.unixarena.com/2016/01/rhel7-configuring-gfs2-on-pacemakercorosync-cluster.html
-* http://www.unixarena.com/2016/08/configuring-nfs-ha-using-redhat-cluster-pacemaker-rhel-7.html
-* http://www.unixarena.com/2016/01/rhel-7-configure-fencing-pacemaker.html
+====
+* [centos7-two-node-cluster-corosyncpacemakerdrbd](https://www.21x9.org/centos7-two-node-cluster-corosyncpacemakerdrbd/)
+* [how-to-install-and-configure-drbd-on-linux](http://www.learnitguide.net/2016/07/how-to-install-and-configure-drbd-on-linux.html)
+* [Clusters_from_Scratch](http://clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Clusters_from_Scratch/ch07.html)
+* [Manpage crmsh](http://crmsh.github.io/man-3/)
+* [rhel7-configuring-gfs2-on-pacemakercorosync-cluster](http://www.unixarena.com/2016/01/rhel7-configuring-gfs2-on-pacemakercorosync-cluster.html)
+* [configuring-nfs-ha-using-redhat-cluster-pacemaker-rhel-7](http://www.unixarena.com/2016/08/configuring-nfs-ha-using-redhat-cluster-pacemaker-rhel-7.html)
+* [rhel-7-configure-fencing-pacemaker](http://www.unixarena.com/2016/01/rhel-7-configure-fencing-pacemaker.html)
+* [Cluster-Beispiele] (https://gitlab.com/tobkern1980/home-net4-environment/wikis/cluster-beispiele)
