@@ -10,6 +10,6 @@
 
 [Openshift Images Benutzen](../openshift-benutzen-images)
 
-[openshift Entwicklung](../openshift-entwicklung)
+[Openshift Entwicklung](../openshift-entwicklung)
 
-[openshift REST api](../openshift-rest-api)
+[Openshift REST api](../openshift-rest-api)
