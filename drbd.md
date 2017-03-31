@@ -69,5 +69,6 @@ drbdadm secondary all
 
 `drbdadm -- --overwrite-data-of-peer primary drbd0`
 
-**Quellen: **
+**Quellen:**
+
 * https://www.hastexo.com/resources/hints-and-kinks/solve-drbd-split-brain-4-steps/
