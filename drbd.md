@@ -11,7 +11,6 @@ Clustername = testcluster
 4. drbdadm -- --overwrote-dtat-of-peer primary drbd0   um dem master festzulegen
 5. mkfs.xfs /dev/drbd0 um abschließend zu formatieren .
 
-
 drbd Administration
 ================
 
@@ -39,13 +38,12 @@ drbd Administration
 
 `pcs cluster setup --start --name testcluster store1 store2 --transport udpu`
 
-
 **Resource bearbeiten** 
 z.B. wird hier einfach der mount von /var/drbd nach /mnt/drbd geändert .
 *Es muss natürlich schon das Verzeichnis existieren*
 `pcs resource update fs_drbd0  filesystem device=/dev/drbd0 directory=/mnt/drbd fstype=ext4`
 
-** String für die Verschlüsselung Erstellen **
+** String für die Verschlüsselung Erstellen**
 * [gen-32-alphanum-string](https://github.com/kernt/inshelp/blob/master/drbd/gen-32-alphanum-string.sh)
 
 Berechtigungen Matrix
@@ -59,7 +57,7 @@ Da es zu Fehlern kommt wenn die Berechtigungen nicht korrekt gesetzt werden komm
 
 
 Fehler Behebung
-==============
+=====
 
 Splitbrain Fehler  sowie ein Fehler auftritt der irgendetwas in der Richtung nennt, kann man folgendes versuchen : 
 
@@ -71,7 +69,5 @@ drbdadm secondary all
 
 `drbdadm -- --overwrite-data-of-peer primary drbd0`
 
-
 **Quellen: **
 * https://www.hastexo.com/resources/hints-and-kinks/solve-drbd-split-brain-4-steps/
-
