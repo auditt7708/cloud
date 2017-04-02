@@ -1,3 +1,5 @@
+* [Foreman discovery image](../foreman-discovery-image)
+
 Installation
 =======
 
