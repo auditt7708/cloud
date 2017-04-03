@@ -58,3 +58,11 @@ Bilder  musik  Projekte  Software  truetypes  videos
 |image-brick1|ubuntu-vg|49,12Gb|
 |root|ubuntu-vg|170Gb|
 |swap_1|ubuntu-vg|3,96Gb|
+
+# Planung für DRBD
+
+| DRBD Device | Dateisystem | Zweck|
+| :--------: | :--------: | :--------: |
+|/dev/drbd0|xfs|nfs, smb mount|
+|/dev/drbd1|ext4|dokumente|
+|/dev/drbd2|xfs|Datenbanken,etc|
