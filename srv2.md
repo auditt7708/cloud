@@ -1,7 +1,4 @@
-Services
-=======
-
-**Virtuelle Maschinen**
+# Virtuelle Maschinen
 
 | Adresse | Service |
 | :--------: | :--------: |
@@ -14,7 +11,7 @@ Services
 | openldap.example.com   | [openldap](https://gitlab.com/tobkern1980/home-net4-environment/wikis/openldap)    |
 | jenkins.example.com   | [jenkins](https://gitlab.com/tobkern1980/home-net4-environment/wikis/jenkins)    |
 
-**FsTab**
+# FsTab
 
 | Quelle | Mount | Type | options | dump | pass| 
 | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
@@ -24,7 +21,7 @@ Services
 |UUID=df0e85d2-e5e6-4877-8bba-63349d5dcf99|    /mnt/data2| xfs| defaults |   0|         0|
 |UUID=7de030c6-c807-4866-9490-d7d4bc2f954a|    /mnt/media|  ext4| defaults |  0 |       0|
 
-Verzeichnisse und Zweck
+# Verzeichnisse und Zweck
 
 **/mnt/backup/**
 BAckup der localen systeme. 
@@ -48,5 +45,16 @@ Mount für drbd
 Erstes unterverzeichnis ist 
 Bilder  musik  Projekte  Software  truetypes  videos
 
+# LVM 
 
+** LVS**
 
+| LV | VG | Größe|
+| :--------: | :--------: | :--------: |
+|backup|drbdpool|1T|
+|data|drbdpool|500Gb|
+|dokumente|drbdpool|50Gb|
+|media|drbdpool|1T|
+|image-brick1|ubuntu-vg|49,12Gb|
+|root|ubuntu-vg|170Gb|
+|swap_1|ubuntu-vg|3,96Gb|
