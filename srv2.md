@@ -45,6 +45,16 @@ Mount für drbd
 Erstes unterverzeichnis ist 
 Bilder  musik  Projekte  Software  truetypes  videos
 
+# df ausgabe 
+
+
+| Dateisystem | Größe | Benutzt | Verf. | Verw% | Eingehängt auf| 
+| :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
+|/dev/sdc3| 1008G |   445G|  513G|   47%| /mnt/media|
+|/dev/sdc4| 654G   | 160G|  495G  | 25%| /mnt/data2
+|/dev/mapper/drbdpool-backup| 1008G |   9,1G|  948G   | 1% |/mnt/backup|
+|/dev/mapper/drbdpool-data  |  500G   | 133G  |368G  | 27% |/mnt/data|
+
 # LVM 
 
 **LVS Umgebung**
