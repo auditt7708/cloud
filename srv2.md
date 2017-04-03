@@ -47,7 +47,7 @@ Bilder  musik  Projekte  Software  truetypes  videos
 
 # LVM 
 
-** LVS**
+**LVS Umgebung**
 
 | LV | VG | Größe|
 | :--------: | :--------: | :--------: |
