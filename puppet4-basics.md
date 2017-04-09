@@ -7,7 +7,7 @@ Wie wird es nun umgesetzt...
 In diesem Kapitel werde ich mit einigen wichtigen Beispielen wie dein Code style compliant wird.
 
 
-Vertiefung
+# Vertiefung
 
 Stell sicher, das du in deiner manifests Datei nur zwei Leerzeichen benutzt  (keine tabs), wie folgt:
 
