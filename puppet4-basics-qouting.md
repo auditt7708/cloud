@@ -42,3 +42,4 @@ ensure => installed,
 enable => true,
 ensure => running,
 ```
+# [Puppet4 Module Benutzen](../puppet4-basics-modules)
