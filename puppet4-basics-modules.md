@@ -1,0 +1,77 @@
+Eines der wichtigsten Dinge, die Sie tun können, um Ihre Puppet manifests klarer und besser Administrieren zu können ist, sie in Module zu organisieren.
+
+Module sind fassen Puppet-Code zusammen, die alle Daten enthalten, die notwendig sind, um eine Aufgabe zu implementieren. 
+Module können flache Dateien, Vorlagen, Puppenmanifeste, kundenspezifische Deklarationen, augeas lenses und benutzerdefinierte Puppetypen und Provider enthalten.
+
+Das Trennen von Sachen in Module macht es einfacher, Code wiederzuverwenden und zu teilen. 
+Es ist auch der logistische Weg, um Ihre Manifeste zu organisieren. In diesem Beispiel erstellen wir ein Modul zur Verwaltung von memcached, einem Speicher-Caching-System, das häufig mit Web-Anwendungen verwendet wird.Ich habe dieses oft als Beispiel wiedergefunden so sollte also es möglichst einfach sein sich in andere Bücher , Kurse etc. zurecht zu finde , es soll aber kein Kopieren sein andere werke !
+
+Als Tipp für Programmierer sollte ich noch erwähnen , dass es sich um Puppet Bezeichnungen geht und die Umsetzen Teilweise Puppet spezifisch ist und so nicht in jede Programmiersprache umgesetzt wird !
+
+# Packtische Durchführung
+
+1. Ein Verzeichnis für unser neues Modul erstellen
+`mkdir -p .puppet/modules`
+
+2. Wechsel in das erstellte verzeichnis 
+`cd .puppet/modules`
+
+3. Genariren der Standard Daten für unser Modul.
+`puppet module generate test-memcached`
+
+Zur Vereinfachung kann man hier auch noch einen Sybolischen link erstellen: 
+`ln –s test-memcached memcached`
+
+Jetzt Editieren wir `memcached/manifests/init.pp` wie folgt ab 
+
+```
+class memcached {
+  package { 'memcached':
+    ensure => installed,
+  }
+
+  file { '/etc/memcached.conf':
+    source  => 'puppet:///modules/memcached/memcached.conf',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    require => Package['memcached'],
+  }
+  service { 'memcached':
+    ensure  => running,
+    enable  => true,
+    require => [Package['memcached'],
+                File['/etc/memcached.conf']],
+  }
+}
+```
+Erstellen der `modules/test-memcached/files` Verzeichnises und einer datei mit der bezeuichnung `memcached.conf` mit folgendem inhalt.
+
+```
+-m 64
+-p 11211
+-u nobody
+-l 127.0.0.1
+```
+
+Anpassen der `site.pp` zur folgendem inhalt .
+```
+node default {
+  include memcached
+}
+```
+
+Wir möchten, dass dieses Modul memcached installiert. 
+Wir müssen die Puppet mit Root-Rechten ausführen, und wir werden dafür sudo benutzen. 
+Wir müssen Puppet darauf hinweisen wo wir unser Modul haben. 
+Um das Modul in unserem Home-Verzeichnis finden zu können.
+Werden wir dies auf der Kommandozeile angeben, wenn wir Puppet ausführen, wie im folgenden Code-Snippet gezeigt:
+```
+sudo puppet apply --modulepath=/home/$HOME/.puppet/modules /home/$HOME/.puppet/manifests/site.pp
+
+Abschließend überprüfen wir den Status vom memcached
+
+`sudo service memcached status`
+```
+
+# Wie es Functioniert
