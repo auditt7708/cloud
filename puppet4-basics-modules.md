@@ -74,4 +74,31 @@ Abschließend überprüfen wir den Status vom memcached
 `sudo service memcached status`
 ```
 
-# Wie es Functioniert
+# Wie es Funktioniert
+
+Als wir das Modul mit dem Puppet-Modul-Generator-Befehl erstellt haben, haben wir den Namen `test-memcached` verwendet. 
+Der Name vor dem Bindestrich ist Ihr Benutzername oder Ihr Benutzername auf Puppet forge (ein Online-Repository von Modulen). 
+Damit Puppet in der Lage ist, das Modul mit dem Namen memcached zu finden, machten wir eine symbolische Verknüpfung zwischen test-memcached und memcached.
+
+Module haben eine spezielle Verzeichnis Struktur. 
+Nicht alle Verzeichnisse müssen vorhanden sein.
+Hier ein Beispiel der Struktur:
+```
+modules/
+  └MODULE_NAME/  never use a dash (-) in a module name
+     └examples/ example usage of the module
+     └files/ flat files used by the module
+     └lib/
+        └facter/ define new facts for facter
+        └puppet/
+           └parser/
+              └functions/ define a new puppet function, like sort() 
+           └provider/ define a provider for a new or existing type
+           └util/ define helper functions (in ruby)
+           └type/ define a new type in puppet
+     └manifests/
+        └init.pp  class MODULE_NAME { }
+     └spec/ rSpec tests
+     └templates/ erb template files used by the module
+```
+
