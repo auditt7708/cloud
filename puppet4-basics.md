@@ -129,5 +129,5 @@ Hello, world!
 
 ```
 
-# Überprüfen deiner manifests mit Puppet-lint
+# Überprüfen deiner manifests mit [Puppet-lint](../puppet4-basics-lint)
 
