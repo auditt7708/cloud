@@ -7,7 +7,7 @@ Wie wird es nun umgesetzt...
 In diesem Kapitel werde ich mit einigen wichtigen Beispielen wie dein Code style compliant wird.
 
 
-# Vertiefung
+Vertiefung
 
 Stell sicher, das du in deiner manifests Datei nur zwei Leerzeichen benutzt  (keine tabs), wie folgt:
 
@@ -17,28 +17,9 @@ service {'httpd':
 }
 ```
 
-# [Quoting](../puppet4-basics-qouting)
 
-# False
-Es gibt nur eine Sache in Puppet den wert False hat nähmlich `false` ohne irgendwelche weiteren Zeichen.
-Aus `"false"` machet Puppet `true`.
-Und aus `"true"` macht Puppet `true`.
+# [False](../puppet4-basics-false)
 
-Hier ein beispiel :
-```
-if "false" {
-  notify { 'True': }
-}
-if 'false' {
-  notify { 'Also true': }
-}
-if false {
-  notify { 'Not true': }
-}
-```
-
-Wenn dieser Code durch Puppe ausgeführt wird, werden die ersten beiden Meldungen ausgelöst. 
-Die endgültige Benachrichtigung wird nicht ausgelöst; Es ist die einzige, die falsch auswertet, da `notify` nur bei einem positivem Ergebnis auslöst wird .
 
 # Variablen
 Variablen müssen immer in geschweiften klammern sein z.b. '${PHP7ENV}.conf'
