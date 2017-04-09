@@ -17,9 +17,9 @@ service {'httpd':
 }
 ```
 
-
 # [False](../puppet4-basics-false)
 
+# [Qouting](../puppet4-basics-qouting)
 
 # Variablen
 Variablen müssen immer in geschweiften klammern sein z.b. '${PHP7ENV}.conf'
