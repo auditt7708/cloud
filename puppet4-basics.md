@@ -45,4 +45,6 @@ service {'httpd':
 
 # [Puppet4 Verwenden von Selektoren und Case-Anweisungen](../puppet-selektoren-case)
 
-# [Puppet den in Operator verwenden](../puppet4-basics-in-operator)
+# [Puppet4 den in Operator verwenden](../puppet4-basics-in-operator)
+
+# [Puppet4 Verwenden von regulären Ausdrucksersetzungen](../puppet4-basics-regex-substitutions)
