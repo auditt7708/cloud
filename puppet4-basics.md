@@ -38,3 +38,5 @@ service {'httpd':
 # [Puppet4 Einsetzen von Templates](../puppet4-templates)
 
 # [Puppet4 irritieren über mehrere Items](../puppet4-basics-irritieren-multi-items)
+
+# [Puppet4 IF anweisung einsetzen](../puppet4-if)
