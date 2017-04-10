@@ -8,7 +8,7 @@
 ##[Puppet4 Management von Ressourcen und Dateien](../puppet4-ressourcen-datein)
 ##[Puppet4 Applikationen Verwalten](../puppet4-applikationen)
 ##[Puppet4 Nodes Verwalten](../puppet4-nodes)
-##[Puppet4 Zusätzliche Tools](../puppet4-tools)
+##[Puppet4 Externe Tools und das Puppet Ecosystem](../puppet4-externe-tools-ecosystem)
 ##[Puppet4 Monitoring, Reporting und Fehlersuche](../puppet-monitorin-reporting-fehlersuche)
 
 #Docker
