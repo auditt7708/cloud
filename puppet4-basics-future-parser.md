@@ -102,15 +102,16 @@ Wenn wir dieses Manifest anwenden, sehen wir, dass nur die Elemente 4 und 5 im E
 `Notice: Filtered array is [4, 5]`
 
 #### Iterator-Funktion Map
-Map wird verwendet, um eine Funktion auf jedes Element des Arrays anzuwenden. Zum Beispiel, wenn wir (aus irgendeinem unbekannten Grund) das Quadrat aller Elemente des Arrays berechnen wollten, würden wir die Karte wie folgt verwenden:
+`map` wird verwendet, um eine Funktion auf jedes Element des Arrays anzuwenden. 
+Zum Beispiel, wenn wir (aus irgendeinem unbekannten Grund) das Quadrat aller Elemente des Arrays berechnen wollten, würden wir die Karte wie folgt verwenden:
 `$map = map ($count) | $i | { $i * $i } notice("Square of array is $map")`
 
 Das Ergebnis der Anwendung dieses Manifests ist ein neues Array mit jedem Element des ursprünglichen Arrays quadriert (multipliziert mit sich selbst), wie in der folgenden Befehlszeilenausgabe gezeigt:
-
 `Notice: Square of array is [1, 4, 9, 16, 25]`
 
 #### Iterator-Funktion Slice
-Slice ist nützlich, wenn Sie verwandte Werte im selben Array in einer sequentiellen Reihenfolge gespeichert haben. Zum Beispiel, wenn wir die Ziel- und Portinformationen für eine Firewall in einem Array hatten, konnten wir sie in Paare aufteilen und Operationen auf diesen Paaren durchführen:
+Slice ist nützlich, wenn Sie verwandte Werte im selben Array in einer sequentiellen Reihenfolge gespeichert haben. 
+Zum Beispiel, wenn wir die Ziel- und Portinformationen für eine Firewall in einem Array hatten, konnten wir sie in Paare aufteilen und Operationen auf diesen Paaren durchführen:
 ```
 $firewall_rules = ['192.168.0.1','80','192.168.0.10','443']
 slice ($firewall_rules,2) |$ip, $port| { notice("Allow $ip on $port") }
@@ -121,11 +122,26 @@ Wenn es angewendet wird, wird dieses Manifest die folgenden Hinweise hervorbring
 Notice: Allow 192.168.0.1 on 80
 Notice: Allow 192.168.0.10 on 443
 ```
+
 Um dies zu einem nützlichen Beispiel zu machen, erstellen Sie eine neue Firewall-Ressource im Block des Slice anstelle von notice:
 ```
 slice ($firewall_rules,2) |$ip, $port| { firewall {"$port from $ip": dport  => $port, source => "$ip", action => 'accept', }
 }
 ```
 
-Andere Futures
-Bei Puppet gibt es immer wieder neue futures die man unter [experiments_future](http://docs.puppetlabs.com/puppet/latest/reference/experiments_future.html) finden kann
+#### Iterator-Funktion each
+`each` wird verwendet, um über die Elemente des Arrays zu iterieren, aber es fehlt die Fähigkeit, die Ergebnisse wie die anderen Funktionen zu erfassen. 
+`each` ist der einfachste Fall, wo man einfach etwas mit jedem Element des Arrays machen möchte, wie im folgenden Code-Snippet gezeigt:
+`each ($count) |$c| { notice($c) }`
+
+Wie erwartet, führt dies die Benachrichtigung für jedes Element des `$count` Arrays wie folgt aus:
+```
+Notice: 1
+Notice: 2
+Notice: 3
+Notice: 4
+Notice: 5
+```
+
+## Andere Futures
+Bei Puppet gibt es immer wieder neue futures die man unter [experiments_overview](https://docs.puppet.com/puppet/4.9/experiments_overview.html) finden kann.
