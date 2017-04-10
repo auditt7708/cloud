@@ -122,7 +122,7 @@ Der einleitende `source` Parameter sagt Puppet in welchen Dateien es nachsehen s
 `└memcached.conf `
 
 
-# Templates
+## Templates
 
 Wenn Sie eine Vorlage als Teil des Moduls verwenden müssen, legen Sie sie in das Vorlagenverzeichnis des Moduls an und verweisen darauf wie folgt:
 
@@ -137,6 +137,8 @@ Puppet wird die Datei am folgendem Ort suchen:
 MODULEPATH/memcached/templates/memcached.conf.erb
 ```
 
-Facts, functions, types, and providers
+## Facts, functions, types, and providers
+Module können auch eigene facts, eigene functionen, eigene typen, und provider beinhalten.
 
 Weiteres dazu unter [Puppet4 Externe Tools und das Puppet Ecosystem](../puppet4-externe-tools-ecosystem)
+
