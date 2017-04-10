@@ -36,3 +36,5 @@ service {'httpd':
 # [Puppet4 Standard zur Benennung einhalten](../puppet4-standart-bezeichnung)
 
 # [Puppet4 Einsetzen von Templates](../puppet4-templates)
+
+# [Puppet4 Irritieren über mehrere items](../puppet4-basics-iretating-multi-items)
