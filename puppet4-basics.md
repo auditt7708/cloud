@@ -48,3 +48,5 @@ service {'httpd':
 # [Puppet4 den in Operator verwenden](../puppet4-basics-in-operator)
 
 # [Puppet4 Verwenden von regulären Ausdrucksersetzungen](../puppet4-basics-regex-substitutions)
+
+# [Puppet4 Arbeiten mit dem future Parser](../puppet4-basics-future-parser)
