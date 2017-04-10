@@ -101,5 +101,42 @@ modules/
      └spec/ rSpec tests
      └templates/ erb template Datein die vom modul genutzt werden
 ```
+Alle manifests Dateien befinden sich im manifests Verzeichnis. In unserem Fall, die `memcached` Klasse in der Datei `manifests/init.pp` die Automatisch importiert wird.
+
+Innerhalb der `memcached` Klasse , haben wir einen verweis zur `memcached.conf` Datei.
+
+```
+file { '/etc/memcached.conf':
+  source => 'puppet:///modules/memcached/memcached.conf',
+}
+```
+
+Der einleitende `source` Parameter sagt Puppet in welchen Dateien es nachsehen soll
+
+`MODULEPATH/ (/home/thomas/.puppet/modules)`
+
+`└memcached/`
+
+`└files/`
+
+`└memcached.conf `
 
 
+# Templates
+
+Wenn Sie eine Vorlage als Teil des Moduls verwenden müssen, legen Sie sie in das Vorlagenverzeichnis des Moduls an und verweisen darauf wie folgt:
+
+```
+file { '/etc/memcached.conf':
+  content => template('memcached/memcached.conf.erb'),
+}
+```
+
+Puppet wird die Datei am folgendem Ort suchen: 
+```
+MODULEPATH/memcached/templates/memcached.conf.erb
+```
+
+Facts, functions, types, and providers
+
+Weiteres dazu unter [Puppet4 Externe Tools und das Puppet Ecosystem](../puppet4-externe-tools-ecosystem)
