@@ -44,3 +44,5 @@ service {'httpd':
 # [Puppet4 Reguläre Ausdrücke in IF Anweisungen einsetzen](../puppet4-if-regex)
 
 # [Puppet4 Verwenden von Selektoren und Case-Anweisungen](../puppet-selektoren-case)
+
+# [Puppet den in Operator verwenden](../puppet4-basics-in-operator)
