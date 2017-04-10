@@ -37,4 +37,4 @@ service {'httpd':
 
 # [Puppet4 Einsetzen von Templates](../puppet4-templates)
 
-# [Puppet4 Irritieren über mehrere items](../puppet4-basics-iretating-multi-items)
+# [Puppet4 irritieren über mehrere Items](../puppet4-basics-irritieren-multi-items)
