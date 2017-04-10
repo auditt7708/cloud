@@ -10,3 +10,39 @@ Hier einige tips wie man dinge in ihren manifests benen kann:
 5. Das Modul, das Benutzer verwaltet, sollte `user` benannt werden.
 6. Innerhalb des Benutzerbausteins deklariere deine virtuellen Benutzer im `user::virtuell` (für mehrere virtuelle Benutzer und andere Ressourcen, siehe [Puppet4 Benutzer und virtuelle Ressourcen](../puppet4-benutzer-virtuelleressourcen)).
 7. Innerhalb des User-Moduls sollten Unterklassen für bestimmte Benutzergruppen nach der Gruppe benannt werden, z.B. `user::sysadmins` oder `user::contractors`.
+8. Wenn Sie Puppet verwenden, um die Konfigurationsdateien für verschiedene Dienste bereitzustellen, benennen Sie die Datei nach dem Dienst, aber mit einem Suffix, das angibt, welche Art von Datei es ist, zum Beispiel:
+* Apache init script: `apache.init`
+
+* Logrotate config snippet für Rails: `rails.logrotate`
+
+* Nginx vhost Datei for mywizzoapp: `mywizzoapp.vhost.nginx`
+
+* MySQL Konfig für standalone server: `standalone.mysql`
+
+9. Wenn Sie eine andere Version einer Datei je nach Betriebssystem Release bereitstellen müssen, können Sie beispielsweise eine Namenskonvention wie folgt verwenden:
+```
+memcached.lucid.conf
+memcached.precise.conf
+```
+
+10. Sie können Puppet nutzen um automatisch die entsprechende Version auszuwählen:
+```
+source = > "puppet:///modules/memcached
+  /memcached.${::lsbdistrelease}.conf",
+```
+
+11. Wenn eine Verwaltung der Releases von z.B Ruby Versionen  notwendig ist, benenne die Klasse gefold von der Release Version. Zum Beispiel `ruby192` oder `ruby186`.
+
+##Weiterführendes
+
+Puppet-Community unterhält eine Reihe von Best-Practice-Richtlinien für Ihre Puppet-Infrastruktur, die einige Hinweise auf Namenskonventionen enthält:
+* (Puppet best_practices)[http://docs.puppetlabs.com/guides/best_practices.html]
+
+Einige Leute bevorzugen es, mehrere Klassen auf einem Node zu enthalten, indem sie eine durch Kommas getrennte Liste verwenden, anstatt getrennte Include-Anweisungen, zum Beispiel:
+
+```
+ node 'server014' inherits 'server' {
+    include mail::server, repo::gem, repo::apt, zabbix
+  }
+
+```
