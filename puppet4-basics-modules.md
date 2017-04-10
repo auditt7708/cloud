@@ -85,20 +85,21 @@ Nicht alle Verzeichnisse müssen vorhanden sein.
 Hier ein Beispiel der Struktur:
 ```
 modules/
-  └MODULE_NAME/  never use a dash (-) in a module name
-     └examples/ example usage of the module
-     └files/ flat files used by the module
+  └MODULE_NAME/  niemals (-) in einenm module namen benutzen
+     └examples/ Beispiele zum benutzen des Modules
+     └files/ datein die vom modul benutzt werden
      └lib/
-        └facter/ define new facts for facter
+        └facter/ definiert neue facts für facter
         └puppet/
            └parser/
-              └functions/ define a new puppet function, like sort() 
-           └provider/ define a provider for a new or existing type
-           └util/ define helper functions (in ruby)
-           └type/ define a new type in puppet
+              └functions/ definiert eine neue puppet funktion, wie sort() 
+           └provider/ definiert einen provider für einen neuen oder existirenden type
+           └util/ definiert helfer funktionen (in ruby)
+           └type/ definiert ein neuen type in puppet
      └manifests/
         └init.pp  class MODULE_NAME { }
      └spec/ rSpec tests
-     └templates/ erb template files used by the module
+     └templates/ erb template Datein die vom modul genutzt werden
 ```
+
 
