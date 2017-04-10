@@ -40,3 +40,5 @@ service {'httpd':
 # [Puppet4 irritieren über mehrere Items](../puppet4-basics-irritieren-multi-items)
 
 # [Puppet4 IF anweisung einsetzen](../puppet4-if)
+
+# [Puppet4 Reguläre Ausdrücke in IF Anweisungen einsetzen](../puppet4-if-regex)
