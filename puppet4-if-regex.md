@@ -16,9 +16,30 @@ if $::architecture =~ /64/ {
 ## Wie es Funktioniert
 
 Die Puppet behandelt den Text, der zwischen den Schrägstrichen als regulärer Ausdruck geliefert wird, und spezifiziert den dazu übereinstimmenden Text.
-Wenn der Ausdrück passt wird die `if` Anweisung erfolgreich und der Code zwischen den ersten zwei geschweiften Klammern abgearbeitet andernfalls wird der Code zwischen den zweiten geschweiften Klammern abgearbeitet.
-Bei disem beispiel haben wir einen regulären exdruck benutzt um unterschiedliche Linx distrubutionnen und die unterschiedlichen bezeichnungen zur 64bit unterstützung abzufangen die sich je nach distribution `amd64` oder x86_64 nennen.
+Wenn der Ausdruck passt wird die `if` Anweisung erfolgreich und der Code zwischen den ersten zwei geschweiften Klammern abgearbeitet andernfalls wird der Code zwischen den zweiten geschweiften Klammern abgearbeitet.
+Bei diesem Beispiel haben wir einen regulären Ausdruck benutzt um unterschiedliche Linux Distributionen und die unterschiedlichen Bezeichnungen zur 64bit Unterstützung abzufragen die sich je nach Distribution `amd64` oder `x86_64` nennen.
 
-Wenn wirs möchten das etwas ausgeführt wird wenn etwas nicht passt benutze `!~` stadt `=~`
-`~` ist hier ein Parameter recht häufig zu verwirrung führt `!~` bedeutet "nicht gleich" und `=~` in etwa "gleich ungefähr" was etwas uneindeutig ist und zu nicht vorhersargbaren ergebnissen führen kann.
-Ein der wenigen einsatzgebite für `=~`  ist einen Benutzer sucht dort möchte man ja auch wenn man den Namen nicht so genau kenn alle alternativen Namen angezeigt bekommen was man hiermit erreichen würde
+Wenn wir möchten das etwas ausgeführt wird, wenn etwas nicht passt, benutzt man `!~` statt `=~`
+`~` ist hier ein Parameter der recht häufig zu Verwirrung führt `!~` bedeutet "nicht ungefähr" und `=~` in etwa "gleich ungefähr" was etwas uneindeutig ist und zu nicht vorhersagbaren Ergebnissen führen kann.
+
+Ein der wenigen Praktischen einsetze zur Administration für `=~`  ist z.B Wir suchen einen Benutzer den Namen kennen wir nur ungefähr und möchten alle alternativen Namen angezeigt bekommen, was man hiermit erreicht würde aber kein definierter zustand , dass würde etwas Intelligents an dieser stelle benötigen was theoretisch möglich ist aber viel zu aufwendig ist im Operativen Betrieb.
+
+## Erfassen von Mustern
+
+Sie können nicht nur Text mit einem regulären Ausdruck anpassen, sondern auch den übereinstimmenden Text erfassen und in einer Variablen speichern:
+```
+$input = 'Puppet is better than manual configuration'
+if $input =~ /(.*) is better than (.*)/ {
+  notify { "You said '${0}'. Looks like you're comparing ${1}
+    to ${2}!": }
+}
+```
+
+Der vorangehende Code erzeugt diese Ausgabe:
+` You said 'Puppet is better than manual configuration'. Looks like you're comparing Puppet to manual configuration! `
+
+Die Variable `$0` speichert den gesamten übereinstimmenden Text (vorausgesetzt, der Gesamtausdruck war erfolgreich). 
+Wenn Sie Klammern um irgendeinen Teil des regulären Ausdrucks setzen, schafft es eine Gruppe, und alle zusammenpassenden Gruppen werden auch in Variablen gespeichert. 
+Die erste abgestimmte Gruppe wird `$1` gespeichert , die zweite `$2`, und so weiter, wie im vorigen Beispiel gezeigt.
+
+Als Basis dient die Ruby Syntax mit allen Besonderheiten von Ruby !
