@@ -21,67 +21,13 @@ service {'httpd':
 
 # [Qouting](../puppet4-basics-qouting)
 
-# Variablen
-Variablen müssen immer in geschweiften klammern sein z.b. '${PHP7ENV}.conf'
+# [Variablen](../puppet4-basics-variablen)
 
-Beispiel für eine Server Quelle : 
+# [Parameter](../puppet4-basics-parameter)
 
-```
-source => "puppet:///modules/webserver/${brand}.conf",
-```
+# Symlinks(../puppet4-basics-symlinks)
 
-Puppet`s Parser muss immer unterscheiden können was ein charachter ist und was ein teil einer Variablen ist die geschweiften klammern machen es für den Parser eindeutig
-
-# Parameter
-Jede Zeile bei der defenierung der Parameter sollte mit einen Komma enden. 
-
-Beispiel : 
-```
-service { 'memcached':
-  ensure => running,
-  enable => true,
-}
-```
-
-Es vereinfacht die Spätere Erweiterung der definieren der Parameter da die ja in der Praxis immer zahlreicher werden. 
-
-Wenn Sie eine Ressource mit einem einzigen Parameter deklarieren, machen Sie die Deklaration alle auf einer Zeile und ohne komma, wie im folgenden Snippet gezeigt:
-
-`package { 'puppet': ensure => installed }`
-
-Gibt es mehr als einen Parameter dann gibt man  jedem Parameter seine eigene Zeile:
-
-```
-package { 'rake':
-  ensure   => installed,
-  provider => gem,
-  require  => Package['rubygems'],
-}
-```
-
-Um den Code einfacher lesbar zu machen, benutzen Sie die Parameterpfeile in Übereinstimmung mit dem längsten Parameter wie folgt ein:
-
-```
-file { "/var/www/${app}/shared/config/rvmrc":
-  owner   => 'deploy',
-  group   => 'deploy',
-  content => template('rails/rvmrc.erb'),
-  require => File["/var/www/${app}/shared/config"],
-}
-```
-
-# Symlinks
-Bei der Deklaration von Dateiressourcen, die Symlinks sind, verwenden Sie `ensure => link` und legen Sie das Zielattribut wie folgt fest:
-
-
-```
-file { '/etc/php5/cli/php.ini':
-  ensure => link,
-  target => '/etc/php.ini',
-}
-```
-
-# manifest Erstellen
+# manifests Erstellen
 
 Wenn du schon einen Puppencode hast (bekannt als Puppet manifest), kannst du diesen Abschnitt überspringen und weiter zum nächsten gehen. 
 Wenn nicht, werden wir sehen, wie man ein einfaches Manifest erstellt und anwendet.
