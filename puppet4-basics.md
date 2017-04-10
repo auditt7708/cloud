@@ -32,3 +32,5 @@ service {'httpd':
 # Überprüfen deiner manifests mit [Puppet-lint](../puppet4-basics-lint)
 
 # [Puppet Module erstellen](puppet4-basics-modules)
+
+# [Puppet4 Standard zur Benennung einhalten](../../puppet4-standart-bezeichnung)
