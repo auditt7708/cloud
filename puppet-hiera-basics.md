@@ -16,6 +16,7 @@ package { 'hiera':
 Wie es geht...
 
 1. Hiera wird aus einer yaml Datei, `/etc/puppet/hiera.yaml` konfiguriert. Erstellen Sie die Datei und fügen Sie die folgenden Code als eine minimale Konfiguration hinzu:
+
 ```
 ---
 :hierarchy:
@@ -28,6 +29,7 @@ Wie es geht...
 
 2. Erstellen Sie die Datei `common.yaml`, die in der Hierarchie referenziert wird:
 
+
 ```
 root@puppet:/etc/puppet# mkdir hieradata
 root@puppet:/etc/puppet# vim hieradata/common.yaml
@@ -36,6 +38,7 @@ message: 'Default Message'
 ```
 
 3. Bearbeiten Sie die Datei `site.pp` und fügen Sie eine Benachrichtigungsressource hinzu, die auf dem Hiera Wert basiert:
+
 
 ```
 node default {
@@ -46,6 +49,7 @@ node default {
 ```
 
 4. Wenden Sie das Manifest auf einen Testknoten an:
+
 ```
 t@ckbk:~$ sudo puppet agent -t
 Info: Retrieving pluginfacts
