@@ -6,6 +6,7 @@
 ##### [Zertifikate mit mehreren DNS Namen](../puppet-zert-multi-dns-names)
 ##### [Puppet mit passenger zum Laufen Bringen](../puppet-passenger)
 ##### [Die Umgebung einrichten](../puppet-umgebung)
+##### [PuppetDB Einrichten](../pupet-puppetdb-konfiguration)
 ##### [Konfiguration von Hiera](../puppet-hiera-basics)
 ##### [Setzen von Nose speziefichen Hiera Daten](../puppet-hiera-node-specific)
 ##### [Geheime Daten in Hiera speichern mit hiera-gpg](../puppet-hiera-sec-data-hiera-gpg)
