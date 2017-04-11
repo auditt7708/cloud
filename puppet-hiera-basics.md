@@ -1,78 +1,88 @@
-PuppetDB ist eine Datenbank für Puppet, die verwendet wird, um Informationen über Nodes zu speichern, die mit einem Puppet-Master (Puppet version >= 4 Puppet Sever) verbunden sind. 
-PuppetDB ist auch ein Speicherbereich für exportierte Ressourcen. 
-Exportierte Ressourcen sind Ressourcen, die auf Nodes definiert sind, aber auf andere Nodes angewendet werden.
-Der einfachste Weg zur Installation von PuppetDB ist die Verwendung des PuppetDB Moduls von Puppet-Labs. Von diesem Punkt an werden wir davon ausgehen, dass Sie die `puppet.example.com` Maschine benutzen und eine Passenger basierte Konfiguration von Puppet haben.
+Hiera ist ein Informations-Repository für Puppet. Mit Hiera können Sie eine hierarchische Kategorisierung von Daten über Ihre Knoten, die außerhalb Ihrer Manifeste beibehalten wird, haben. Dies ist sehr nützlich für den Austausch von Code und Umgang mit Ausnahmen, die in jede Puppet-Bereitstellung kriechen wird.
 
 ### Fertig werden
 
-Installieren Sie das PuppetDB-Modul in der Produktionsumgebung, die Sie im vorherigen Rezept erstellt haben. 
-Wenn Sie keine Verzeichnisumgebungen erstellt haben, machen Sie sich keine Sorgen, mit der Puppenmodulinstallation wird das Modul an die richtige Stelle für Ihre Installation mit dem folgenden Befehl installiert:
+Hiera sollte bereits als Abhängigkeit von deinem Puppenmeister installiert worden sein. Wenn es noch nicht ist, installieren Sie es mit Puppet:
+```
+root@puppet:~# puppet resource package hiera ensure=installed
+package { 'hiera':
+  ensure => '1.3.4-1puppetlabs1',
+}
 
 ```
-root@puppet:~# puppet module install puppetlabs-puppetdb
-Notice: Preparing to install into /etc/puppet/environments/production/modules ...
-Notice: Downloading from https://forgeapi.puppetlabs.com ...
-Notice: Installing -- do not interrupt ...
-/etc/puppet/environments/production/modules
-└─┬ puppetlabs-puppetdb (v3.0.1)
-  ├── puppetlabs-firewall (v1.1.3)
-  ├── puppetlabs-inifile (v1.1.3)
-  └─┬ puppetlabs-postgresql (v3.4.2)
-    ├─┬ puppetlabs-apt (v1.6.0)
-    │ └── puppetlabs-stdlib (v4.3.2)
-    └── puppetlabs-concat (v1.1.0)
-```
-
 Wie es geht...
 
-Nun, da unser Puppet-Master das PuppetDB-Modul installiert hat, müssen wir das PuppetDB-Modul an unseren Puppet-Master anwenden, das können wir im site manifest machen. 
-Füge folgendes zu deiner (Produktion) `site.pp` hinzu:
+1. Hiera wird aus einer yaml-Datei, /etc/puppet/hiera.yaml konfiguriert. Erstellen Sie die Datei und fügen Sie die folgenden als eine minimale Konfiguration hinzu:
+```
+---
+:hierarchy:
+  - common
+:backends:
+  - yaml
+:yaml:
+  :datadir: '/etc/puppet/hieradata'
+```
+
+2. Erstellen Sie die Datei common.yaml, die in der Hierarchie referenziert wird:
 
 ```
-node puppet {
-  class { 'puppetdb': }
-  class { 'puppetdb::master::config': 
-    puppet_service_name => 'apache2',
-  }
+root@puppet:/etc/puppet# mkdir hieradata
+root@puppet:/etc/puppet# vim hieradata/common.yaml
+---
+message: 'Default Message'
+```
+3. Bearbeiten Sie die Datei site.pp und fügen Sie eine Benachrichtigungsressource hinzu, die auf dem Hiera-Wert basiert:
+```
+node default {
+  $message = hiera('message','unknown')
+  notify {"Message is $message":}
 }
-```
-
-Führen Sie den `puppet agent` aus, um die `puppetdb` Klasse und die `puppetdb::master::config` Klasse anzuwenden:
 
 ```
-root@puppet:~# puppet agent -t
-Info: Caching catalog for puppet
-Info: Applying configuration version '1410416952'
-...
-Info: Class[Puppetdb::Server::Jetty_ini]: Scheduling refresh of Service[puppetdb]
-Notice: Finished catalog run in 160.78 seconds
 
+4. Wenden Sie das Manifest auf einen Testknoten an:
+```
 ```
 
 #### Wie es funktioniert...
 
-Das PuppetDB-Modul ist ein hervorragendes Beispiel dafür, wie eine komplexe Konfigurationsaufgabe puppetiert (ja ein Kunstwort) werden kann. 
-Einfach durch Hinzufügen der `puppetdb` Klasse zu unserem Puppet-Master-Knoten, Puppet installiert und konfiguriert `postgresql` und `puppetdb`.
-
-Als wir die `puppetdb::master::config-Klasse` angerufen haben, setzen wir die Variable `puppet_service_name` auf `apache2`, das ist, weil wir Puppet mit Passenger laufen lassen. 
-Ohne diese Zeile würde unser Agent versuchen, den Puppetmaster-Prozess anstelle von `apache2` zu starten.
-
-Der Agent richtet dann die Konfigurationsdateien für PuppetDB und konfiguriert Puppet, um PuppetDB zu verwenden. Wenn Sie auf `/etc/puppet/puppet.conf` schauen, sehen Sie die folgenden zwei neuen Zeilen:
+Hiera verwendet eine Hierarchie, um durch einen Satz von Yaml-Dateien zu suchen, um die entsprechenden Werte zu finden. Wir haben diese Hierarchie in hiera.yaml mit dem einzigen Eintrag für common.yaml definiert. Wir haben die hiera-Funktion in site.pp verwendet, um den Wert für die Nachricht zu verfolgen und diesen Wert in der Variablen $ message zu speichern. Die für die Definition der Hierarchie verwendeten Werte können beliebige Fakten sein, die über das System definiert sind. Eine gemeinsame Hierarchie wird als dargestellt
 
 ```
-storeconfigs = true
-storeconfigs_backend = puppetdb
+:hierarchy:
+  - hosts/%{hostname}
+  - os/%{operatingsystem}
+  - network/%{network_eth0}
+  - common
 ```
 
 ### Es gibt mehr...
 
-Nun, da PuppetDB konfiguriert ist und wir einen erfolgreichen Agenten am laufen gehabt haben, hat PuppetDB Daten, die wir abfragen können:
+Hiera kann für die automatische Parametrierung mit parametrisierten Klassen verwendet werden. Zum Beispiel, wenn Sie eine Klasse namens Kochbuch :: Beispiel mit einem Parameter namens Verleger haben, können Sie die folgenden in einer Hiera yaml Datei, um automatisch diesen Parameter:
+
+`cookbook::example::publisher: 'PacktPub'`
+
+Eine andere häufig verwendete Tatsache ist die Umgebung, die Sie auf die Umgebung des Clientknotens unter Verwendung von% {environment} verweisen können, wie in der folgenden Hierarchie gezeigt:
 
 ```
-root@puppet:~# puppet node status puppet
-puppet
-Currently active
-Last catalog: 2014-09-11T06:45:25.267Z
-Last facts: 2014-09-11T06:45:22.351Z
+:hierarchy:
+hosts/%{hostname}
+os/%{operatingsystem}
+environment/%{environment}
+common
+```
+
+### Tip
+Eine gute Faustregel ist, die Hierarchie auf 8 Ebenen oder weniger zu begrenzen. Denken Sie daran, dass jedes Mal, wenn ein Parameter mit Hiera durchsucht wird, alle Ebenen durchsucht werden, bis eine Übereinstimmung gefunden wird.
+
+Die Standard-Hiera-Funktion gibt die erste Übereinstimmung an den Suchschlüssel zurück, Sie können auch hiera_array und hiera_hash verwenden, um alle in Hiera gespeicherten Werte zu durchsuchen und zurückzugeben.
+
+Hiera kann auch von der Befehlszeile aus wie in der folgenden Befehlszeile angezeigt werden (beachten Sie, dass derzeit die Kommandozeile Hiera Dienstprogramm verwendet /etc/hiera.yaml als Konfigurationsdatei, während der Puppet Master verwendet /etc/puppet/hiera.yaml) Aufrechtzuerhalten.
+
+```
+root@puppet:/etc/puppet# rm /etc/hiera.yaml 
+root@puppet:/etc/puppet# ln -s /etc/puppet/hiera.yaml /etc/
+root@puppet:/etc/puppet# hiera message
+Default Message
 ```
 
