@@ -107,8 +107,17 @@ Managed by puppet 3.6.2
 
 ```
 
-Wie es funktioniert...
+### Wie es funktioniert...
 
-Zuerst sorgt unser `bootstrap.pp` Manifest dafür, dass Git installiert ist. Das Manifest fährt dann fort, um sicherzustellen, dass die `ssh` Schlüssel für den Git-Benutzer auf git.example.com im Heimatverzeichnis des Puppet-Benutzers (/ var / lib / puppet standardmäßig) installiert ist. Das Manifest stellt dann sicher, dass der Host-Schlüssel für git.example.com vom Puppet-Benutzer vertraut wird. Bei ssh konfiguriert sorgt der Bootstrap dafür, dass / etc / puppet / cookbook existiert und ein Verzeichnis ist.
+Zuerst sorgt unser `bootstrap.pp` Manifest dafür, dass Git installiert ist. 
+Das Manifest fährt dann fort, um sicherzustellen, dass die `ssh` Schlüssel für den Git-Benutzer auf git.example.com im Heimatverzeichnis des Puppet-Benutzers (`/var/lib/puppet` standardmäßig) installiert ist. 
+Das Manifest stellt dann sicher, dass der Host-Schlüssel für `git.example.com` vom Puppet-Benutzer vertraut wird. 
+Bei ssh konfiguriert sorgt der Bootstrap dafür, dass `/etc/puppet/cookbook` existiert und ein Verzeichnis ist.
 
-Wir verwenden dann einen exec, um Git das Repository in / etc / puppet / cookbook zu klonen. Mit all dem Code an Ort und Stelle, dann rufen wir Puppe bewerben eine letzte Zeit, um den Code aus dem Repository zu implementieren. In einer Produktionseinstellung verteilen Sie das bootstrap.pp manifest auf alle Ihre Knoten, möglicherweise über einen internen Webserver, mit einer Methode ähnlich wie curl http: //puppet/bootstrap.pp> bootstrap.pp && puppet apply bootstrap.pp
+Wir verwenden dann einen exec, um Git das Repository in `/etc/puppet/cookbook` zu klonen. Mit all dem Code an Ort und Stelle, dann rufen wir Puppe bewerben eine letzte Zeit, um den Code aus dem Repository zu implementieren. In einer Produktionseinstellung verteilen Sie das bootstrap.pp manifest auf alle Ihre Knoten, möglicherweise über einen internen Webserver, mit einer Methode ähnlich wie curl http://puppet/bootstrap.pp> bootstrap.pp && puppet apply bootstrap.pp
+
+### Es gibt mehr...
+
+Nun, da Sie ein zentrales Git-Repository für Ihre Puppet Manifeste haben, können Sie mehrere Kopien davon an verschiedenen Orten ausprobieren und an ihnen arbeiten, bevor Sie Ihre Änderungen begehen. Zum Beispiel, wenn Sie in einem Team arbeiten, kann jedes Mitglied seine eigene lokale Kopie des Repo und synchronisieren Änderungen mit den anderen über den zentralen Server. Sie können auch GitHub als Ihren zentralen Git-Repository-Server verwenden. GitHub bietet kostenlose Git-Repository-Hosting für öffentliche Repositories, und Sie können für GitHub's Premium-Service bezahlen, wenn Sie nicht möchten, dass Ihr Puppet-Code öffentlich zugänglich ist.
+
+Im nächsten Abschnitt werden wir unser Git-Repository sowohl für zentrale als auch dezentrale Puppen-Konfigurationen nutzen.
