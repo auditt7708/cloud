@@ -1,8 +1,11 @@
-Hiera ist ein Informations-Repository für Puppet. Mit Hiera können Sie eine hierarchische Kategorisierung von Daten über Ihre Knoten, die außerhalb Ihrer Manifeste beibehalten wird, haben. Dies ist sehr nützlich für den Austausch von Code und Umgang mit Ausnahmen, die in jede Puppet-Bereitstellung kriechen wird.
+Hiera ist ein Informations-Repository für Puppet. 
+Mit Hiera können Sie eine hierarchische Kategorisierung von Daten über Ihre Knoten, die außerhalb Ihrer Manifeste beibehalten wird, haben. 
+Dies ist sehr nützlich für den Austausch von Code und deployments .
 
 ### Fertig werden
 
-Hiera sollte bereits als Abhängigkeit von deinem Puppenmeister installiert worden sein. Wenn es noch nicht ist, installieren Sie es mit Puppet:
+Hiera sollte bereits als Abhängigkeit von deinem Puppet Master installiert worden sein. Wenn es noch nicht ist, installieren Sie es mit Puppet:
+
 ```
 root@puppet:~# puppet resource package hiera ensure=installed
 package { 'hiera':
@@ -12,7 +15,7 @@ package { 'hiera':
 ```
 Wie es geht...
 
-1. Hiera wird aus einer yaml-Datei, /etc/puppet/hiera.yaml konfiguriert. Erstellen Sie die Datei und fügen Sie die folgenden als eine minimale Konfiguration hinzu:
+1. Hiera wird aus einer yaml Datei, `/etc/puppet/hiera.yaml` konfiguriert. Erstellen Sie die Datei und fügen Sie die folgenden Code als eine minimale Konfiguration hinzu:
 ```
 ---
 :hierarchy:
@@ -23,7 +26,7 @@ Wie es geht...
   :datadir: '/etc/puppet/hieradata'
 ```
 
-2. Erstellen Sie die Datei common.yaml, die in der Hierarchie referenziert wird:
+2. Erstellen Sie die Datei `common.yaml`, die in der Hierarchie referenziert wird:
 
 ```
 root@puppet:/etc/puppet# mkdir hieradata
@@ -31,7 +34,9 @@ root@puppet:/etc/puppet# vim hieradata/common.yaml
 ---
 message: 'Default Message'
 ```
-3. Bearbeiten Sie die Datei site.pp und fügen Sie eine Benachrichtigungsressource hinzu, die auf dem Hiera-Wert basiert:
+
+3. Bearbeiten Sie die Datei `site.pp` und fügen Sie eine Benachrichtigungsressource hinzu, die auf dem Hiera Wert basiert:
+
 ```
 node default {
   $message = hiera('message','unknown')
@@ -42,6 +47,15 @@ node default {
 
 4. Wenden Sie das Manifest auf einen Testknoten an:
 ```
+t@ckbk:~$ sudo puppet agent -t
+Info: Retrieving pluginfacts
+Info: Retrieving plugin
+...
+Info: Caching catalog for cookbook-test
+Info: Applying configuration version '1410504848'
+Notice: Message is Default Message
+Notice: /Stage[main]/Main/Node[default]/Notify[Message is Default Message]/message: defined 'message' as 'Message is Default Message'
+Notice: Finished catalog run in 0.06 seconds
 ```
 
 #### Wie es funktioniert...
