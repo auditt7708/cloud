@@ -1,114 +1,83 @@
-Manchmal ein Puppet Klasse muss über einen anderen kennen oder zumindest zu wissen, ob es vorhanden ist. Zum Beispiel kann eine Klasse, die die Firewall verwaltet müssen wissen, ob der Knoten ein Web-Server ist.
+Eine häufige Anforderung ist, eine bestimmte Gruppe von Ressourcen vor anderen Gruppen anzuwenden (zum Beispiel einer Paket-Repository oder eine benutzerdefinierte Ruby-Version zu installieren), oder nach der anderen (zum Beispiel der Bereitstellung eine Anwendung, sobald ihre Abhängigkeiten installiert sind). Puppet der Laufstufe Funktion ermöglicht es Ihnen, dies zu tun.
 
-Marionette tagged Funktion werden Ihnen sagen , ob eine benannte Klasse oder Ressource für diesen Knoten im Katalog vorhanden ist. Sie können auch beliebige Tags zu einem Knoten oder Klasse und prüfen , ob das Vorhandensein dieser Tags anwenden. Tags sind eine weitere metaparameter ähnlich requireund notifywir eingeführt in Kapitel 1 , Puppet Sprache und Stil . Metaparameters werden bei der Erstellung des Puppet Katalog verwendet , sind aber kein Attribut der Ressource , an die sie gebunden sind.
+Standardmäßig werden alle Ressourcen in Ihrem Manifest in einer einzigen Stufe genannt angewandt main. Wenn Sie eine Ressource müssen vor allen anderen angewendet werden, können Sie es zu einem neuen Fahrstufe zuweisen, bevor kommen angegeben wird main. In ähnlicher Weise könnten Sie einen Lauf Stufe definieren , die nach kommt main. In der Tat können Sie so viele Laufstufen definieren , wie Sie Puppet benötigen und erklären , welche Reihenfolge sie in angewendet werden.
 
-## Wie es geht...
+In diesem Beispiel werden wir Stufen verwenden Sie eine Klasse, um sicherzustellen, angewendet erste und eine andere letzte.
 
-Um Ihnen zu helfen herauszufinden , ob Sie auf einem bestimmten Knoten oder eine Klasse von Knoten alle Knoten ausgeführt werden automatisch mit dem Knotennamen markiert und die Namen der Klassen , die sie enthalten. Hier ist ein Beispiel , das zeigt, wie Sie nutzen taggeddiese Informationen zu erhalten:
+### Wie es geht…
 
-Fügen Sie den folgenden Code in Ihre site.ppDatei (ersetzt cookbookmit Ihrem Gerät hostname):
+Hier sind die Schritte , um ein Beispiel für die Verwendung Lauf zu erstellen stages:
+
+1. Erstellen Sie die Datei `modules/admin/manifests/stages.pp` mit folgendem Inhalt:
 ```
-  node 'Kochbuch' {
-    wenn markiert ( ‚Kochbuch‘) {
-      benachrichtigen { ‚getaggt Kochbuch‘:}
+  class admin::stages {
+    stage { 'first': before => Stage['main'] }
+    stage { 'last': require => Stage['main'] }
+    class me_first {
+      notify { 'This will be done first': }
+    }
+    class me_last {
+      notify { 'This will be done last': }
+    }
+    class { 'me_first':
+      stage => 'first',
+    }
+    class { 'me_last':
+      stage => 'last',
     }
   }
-
-```
-Run Puppet:
-
-```
-root @ Kochbuch: ~ # Puppenmittel -vt
-Info: Caching-Katalog für Kochbuch
-Info: Anwenden von Konfigurationsversion ‚1410848350‘
-Hinweis: getaggt Kochbuch
-Hinweis: Fertig Katalog Lauf in 1,00 Sekunden
-
 ```
 
-Die Knoten sind auch automatisch mit den Namen aller Klassen , die sie zusätzlich zu mehreren anderen automatischen Tags enthalten markiert. Sie können verwendet werden, taggedum herauszufinden , welche Klassen auf dem Knoten enthalten sind.
-
-Sie sind nicht nur darauf beschränkt , die Tags automatisch angewendet von Puppet zu überprüfen. Sie können auch Ihre eigenen hinzufügen. Auf einen beliebigen Tag auf einem Knoten gesetzt ist , verwenden , um die tagFunktion, wie im folgenden Beispiel:
-
-Ändern Sie bitte Ihre site.pp Datei wie folgt:
-
+2. Ändern Sie bitte Ihre site.ppDatei wie folgt:
 ```
   node 'Kochbuch' {
-    -Tag ( 'Tagging')
-    Klasse { 'tag_test':}
-  }
-
-```
-Fügen Sie ein tag_testModul mit der folgenden init.pp(oder faul sein und fügen Sie die folgende Definition zu Ihrem site.pp):
-
-```
-  Klasse tag_test {
-    wenn markiert ( 'Tagging') {
-      benachrichtigen { 'enthält, node / Klasse markiert wurde.':}
-    }
-  }
-
-```
-Run Puppet:
-
-
-```
-root @ Kochbuch: ~ # Puppenmittel -vt
-Info: Caching-Katalog für Kochbuch
-Info: Anwenden von Konfigurationsversion ‚1410851300‘
-Hinweis: enthält Knoten / Klasse markiert wurde.
-Hinweis: Fertig Katalog Lauf in 0,22 Sekunden
-
-```
-Sie können auch Tags verwenden , um zu bestimmen , welche Teile des Manifests anzuwenden. Wenn Sie die Verwendung --tagsOption auf der Puppet - Befehlszeile wird Puppet gilt nur jene Klassen oder mit den spezifischen Tags versehen Ressourcen , die Sie enthalten. Zum Beispiel können wir unsere definieren cookbookKlasse mit zwei Klassen:
-
-```
-  Knoten Kochbuch {
     Klasse { 'first_class':}
     Klasse { 'second_class':}
+    Admin umfassen :: Stufen
   }
-  Klasse first_class {
-    benachrichtigen { 'First Class':}
-  }
-  Klasse second_class {
-    benachrichtigen { ‚zweite Klasse‘:}
-  }
-
-```
-Nun , wenn wir laufen puppet agentauf dem cookbookKnoten, sehen wir beide teilen:
-
-```
-root @ Kochbuch: ~ # Puppenmittel -t
-Hinweis: Zweite Klasse
-Hinweis: First Class
-Hinweis: Fertig Katalog Lauf in 0,22 Sekunden
-jetzt bewerbendie first_classund add --tagsFunktion zu der Befehlszeile:
-
-root @ Kochbuch: ~ # Puppenmittel -t --tags first_class
-Hinweis: First Class
-Hinweis: Fertig Katalog Lauf in 0,07 Sekunden
-
-```
-### Es gibt mehr…
-
-Sie können Tags verwenden, um eine Sammlung von Ressourcen zu erstellen und dann die Sammlung für eine andere Ressource eine Abhängigkeit machen. Zum Beispiel, sagen einiger Dienst auf einer Konfigurationsdatei ab, die von einer Anzahl von Datei-Schnipsel gebaut wird, wie im folgende Beispiel:
-
-```
-  Klasse Firewall :: service {
-    service { 'firewall': ... 
-    }
-    Datei <| Tag == 'Firewall-Schnipsel' |> ~> Service [ 'Firewall']
-  }
-  Klasse myapp { 
-    Datei { '/etc/firewall.d/myapp.conf': tag => 'Firewall-Schnipsel', ... 
-    } 
-  }
-
 ```
 
-Hier haben wir festgelegt , dass der firewallDienst benachrichtigt werden soll , wenn eine Datei Ressource markiert firewall-snippetaktualisiert wird. Alles , was wir tun müssen , einen hinzuzufügen firewallConfig - Schnipsel für eine bestimmte Anwendung oder ein Dienst ist es zu markieren firewall-snippet, und Puppet erledigt den Rest.
+3. Puppet run:
+```
+root@cookbook:~# puppet agent -t
+Info: Applying configuration version '1411019225'
+Notice: This will be done first
+Notice: Second Class
+Notice: First Class
+Notice: This will be done last
+Notice: Finished catalog run in 0.43 seconds
+```
+Wie es funktioniert…
 
-Obwohl wir konnten eine Add - notify => Service["firewall"]Funktion zu jedem Schnipsel Ressource , wenn unsere Definition des firewallService überhaupt zu ändern, würden wir die Schnipsel nach unten und entsprechend aktualisieren alle jagen müssen. Der Tag läßt uns die Logik in einem Ort kapseln, die zukünftige Wartung zu machen und Refactoring viel einfacher.
+Lassen Sie sich diesen Code im Detail untersuchen , um zu sehen , was passiert. Zuerst erklären wir die Laufphasen firstund last, wie folgt:
 
-### Hinweis
-Was ist <| tag == 'firewall-snippet' |> syntax? Dies ist eine Ressource Sammler genannt, und es isteine Möglichkeit , eine Gruppe von Ressourcen zu spezifizieren , indem für einige Stück von Daten über sie suchen; in diesem Fall wird der Wert einer Variablen. Sie können mehr über Ressourcensammler finden und den <| |>Operator (manchmal als das Raumschiff Operator bekannt) auf dem Puppet LabsWebseite: http://docs.puppetlabs.com/puppet/3/reference/lang_collectors.html .
+```
+  stage { 'first': before => Stage['main'] }
+  stage { 'last': require => Stage['main'] }
+```
+
+Für die `first` Stage, haben wir festgelegt , dass es vor kommen sollte `main`. Das heißt, jede Ressource markiert in der als `first` in dem vor jeder Ressource angewandt Stufe `main` stage (die Standard - stage).
+
+Die `last` Stage erfordert die `main` stage, so dass keine Ressource in der `last` stage kann in der bis nach jeder Ressource angewandt wird `main` stage.
+
+Wir erklären dann einige Klassen, die wir später in diesem Lauf stages zuordnen werden:
+
+```
+  class me_first {
+    notify { 'This will be done first': }
+  }
+  class me_last {
+    notify { 'This will be done last': }
+  }
+```
+
+Wir können es jetzt setzen alle zusammen und umfassen diese Klassen auf dem Knoten, die Laufstufen für jede Angabe, wie wir dies tun:
+
+```
+  class { 'me_first': stage => 'first',
+  }
+  class { 'me_last': stage => 'last',
+  }
+```
+
+Beachten Sie, dass in den `class` Erklärungen für `me_first` und `me_last` wir mussten nicht angeben , dass sie einen nehmen `stage` Parameter. Der `stage` Parameter ist ein weiterer metaparameter, was bedeutet , kann es ohne explizit deklariert werden müssen zu jeder Klasse oder Ressource angewandt werden. Wenn wir liefen `puppet agent` auf unserem Puppet Node, teilen die von der `me_first` Klasse vor der benachrichtigt angewandt wurde von `first_class` und `second_class`. Die benachrichtigt `me_last` wurde nach der angelegten mainBühne, so dass es nach dem beide benachrichtigt kommt von `first_class` und second_class. Wenn Sie laufen `puppet agent` mehrere Male, werden Sie sehen, dass die benachrichtigt aus `first_class` und `second_class` nicht immer in der gleichen Reihenfolge erscheinen , aber die me_firstKlasse wird immer an erster Stelle und die `me_last` Klasse wird immer zuletzt kommen.
