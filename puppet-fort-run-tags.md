@@ -80,4 +80,43 @@ Wir können es jetzt setzen alle zusammen und umfassen diese Klassen auf dem Kno
   }
 ```
 
-Beachten Sie, dass in den `class` Erklärungen für `me_first` und `me_last` wir mussten nicht angeben , dass sie einen nehmen `stage` Parameter. Der `stage` Parameter ist ein weiterer metaparameter, was bedeutet , kann es ohne explizit deklariert werden müssen zu jeder Klasse oder Ressource angewandt werden. Wenn wir liefen `puppet agent` auf unserem Puppet Node, teilen die von der `me_first` Klasse vor der benachrichtigt angewandt wurde von `first_class` und `second_class`. Die benachrichtigt `me_last` wurde nach der angelegten mainBühne, so dass es nach dem beide benachrichtigt kommt von `first_class` und second_class. Wenn Sie laufen `puppet agent` mehrere Male, werden Sie sehen, dass die benachrichtigt aus `first_class` und `second_class` nicht immer in der gleichen Reihenfolge erscheinen , aber die me_firstKlasse wird immer an erster Stelle und die `me_last` Klasse wird immer zuletzt kommen.
+Beachten Sie, dass in den `class` Erklärungen für `me_first` und `me_last` mussten  wir nicht angeben , dass sie einen Parameter `stage` nehmen sollen. 
+Der `stage` Parameter ist ein weiterer metaparameter, was bedeutet, es kann ohne explizit deklariert werden müssen zu jeder Klasse oder Ressource angewandt werden. 
+Wenn wir `puppet agent` auf unserem Puppet Node laufen lassen, teilen wir der `me_first` Klasse mit das  `first_class` zuerst Laufen soll und `second_class` danach. 
+Die `me_last` benachrichtigung wurde nach der angelegten `main` Stage durchgeführt, so dass beide nach dem sie benachrichtigt  wurden von `first_class` und danach die `second_class`. 
+Wenn der `puppet agent` mehrere Male läuft, werden Sie sehen, dass die Benachrichtigungen aus `first_class` und `second_class` nicht immer in der gleichen Reihenfolge erscheinen , aber die `me_first` Klasse wird immer an erster Stelle und die `me_last` Klasse wird immer zuletzt angezeigt.
+
+
+### Es gibt mehr…
+
+Sie können so viele Stages definieren, wie Sie möchten, und richten Sie jede Bestellung für sie ein. Dies kann ein kompliziertes Manifest, das sonst viele explizite Abhängigkeiten zwischen Ressourcen erfordern würde, erheblich vereinfachen. 
+Vorsicht vor versehentlicher Einführung von Abhängigkeitszyklen; Wenn du dir etwas zu einer Stage zuweist, machst du automatisch alles in früheren Stadien abhängig.
+
+Sie können Ihre Stationen in der `site.pp` Datei stattdessen definieren, so dass es auf der obersten Ebene des Manifests einfach ist zu sehen, welche Stufen verfügbar sind.
+
+Gary Larizza hat eine hilfreiche Einführung geschrieben die Stufen verwendet, auf ihrer Website:
+
+http://garylarizza.com/blog/2011/03/11/using-run-stages-with-puppet/
+
+Ein Vorbehalt: Viele Leute mögen es nicht, Stages zu benutzen, denn das Gefühl, dass die Puppet bereits eine ausreichende Ressourcenkontrolle bereitstellt, und dass die Einsatzstufen ununterbrochen Ihren Code sehr schwer zu befolgen machen können. 
+Die Verwendung von Stages sollte möglichst auf ein Minimum reduziert werden. Es gibt ein paar wichtige Beispiele, wo die Verwendung von Stages weniger Komplexität schafft. 
+Die bemerkenswerteste ist, wenn eine Ressource das System verwendet, um Pakete auf dem System zu installieren. Es hilft, eine Paket-Management-Stage zu haben, die vor der Haupt Stage kommt. 
+Wenn Pakete in der Haupt- (Standard-) Stage definiert sind, können Ihre Manifeste auf die aktualisierten Paketverwaltungs konfigurationsinformationen zählen, die vorhanden sind. 
+Zum Beispiel, für ein Yum-basiertes System, würden Sie eine yum repos Bühne erstellen, die vor dem Haupt Stage kommt. Sie können diese Abhängigkeit mit Pfeilen `->` angeben, wie im folgenden Code-Snippet gezeigt:
+```
+  stage {'yumrepos': }
+  Stage['yumrepos'] -> Stage['main']
+```
+
+Wir können dann eine Klasse erstellen, die ein Yum Repository (yumrepo) Ressource erstellt und sie dem yumrepos Stage wie folgt zuordnet:
+```
+  class {'yums': stage => 'yumrepos',
+  }
+  class yums {
+    notify {'always before the rest': }
+    yumrepo {'testrepo': baseurl => 'file:///var/yum', ensure  => 'present',
+    }
+  }
+```
+
+Für Apt-basierte Systeme wäre das gleiche Beispiel ein stage, in dem Apt-Quellen definiert sind. Der Schlüssel mit stages ist es, ihre Definitionen in deiner `site.pp` Datei zu behalten, wo sie sehr sichtbar sind und sie nur sparsam verwenden, wo man garantieren kann, dass man keine Abhängigkeit kreise einführt.
