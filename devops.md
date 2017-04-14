@@ -10,6 +10,9 @@ itil
 * [itil-und-devops-machen-it-fit-fuer-die-digitalisierung](https://www.informatik-aktuell.de/entwicklung/methoden/itil-und-devops-machen-it-fit-fuer-die-digitalisierung.html)
 
 
+### Konfigurations Management
+* [devops-puppet-docker-kubernetes](../devops-puppet-docker-kubernetes)
+
 Tools
 ===
 
