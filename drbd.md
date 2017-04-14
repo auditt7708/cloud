@@ -56,7 +56,7 @@ Da es zu Fehlern kommt wenn die Berechtigungen nicht korrekt gesetzt werden komm
 |/etc/drbd.d/global_common.conf | 644 | root:root |
 
 
-Fehler Behebung
+[Split-Brain Fehler Behebung](../drbd-split-Brain)
 =====
 
 Splitbrain Fehler  sowie ein Fehler auftritt der irgendetwas in der Richtung nennt, kann man folgendes versuchen : 
