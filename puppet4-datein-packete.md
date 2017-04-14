@@ -2,14 +2,14 @@ In diesem Kapitel werden wir sehen, wie man kleine Änderungen an Dateien vornim
 
 In diesem Kapitel werden wir folgende Rezepte abdecken:
 
-[Schnelles Editieren von Konfigurationsdateien](../puppet-fort-files-packages-edit)
-[Bearbeiten von INI-Style-Dateien mit puppetlabs-inifile](../puppet-fort-files-packages-inifile)
-[Mit Hilfe von Augeas können Sie Konfigurationsdateien zuverlässig bearbeiten](../puppet-fort-files-packages-augeas)
-[Erstellen von Konfigurationsdateien mit Snippets](../puppet-fort-files-packages-snoppets)
-[Verwenden von ERB-Vorlagen](../puppet-fort-files-packages-erb-tpl)
-[Verwenden von Array-Iteration in Vorlagen](../puppet-fort-files-packages-array-tpl)
-[EPP-Vorlagen verwenden](../puppet-fort-files-packages-epp-tpl)
-[Verwenden von GnuPG zum Verschlüsseln von Geheimnissen](../puppet-fort-files-packages-gnupg-sec)
-[Installieren von Paketen aus einem Drittanbieter-Repository](../puppet-fort-files-packages-3nd-repos)
-[Vergleich von Paketversionen](../puppet-fort-files-packages-paketversionen)
+#### [Schnelles Editieren von Konfigurationsdateien](../puppet-fort-files-packages-edit)
+#### [Bearbeiten von INI-Style-Dateien mit puppetlabs-inifile](../puppet-fort-files-packages-inifile)
+#### [Mit Hilfe von Augeas können Sie Konfigurationsdateien zuverlässig bearbeiten](../puppet-fort-files-packages-augeas)
+#### [Erstellen von Konfigurationsdateien mit Snippets](../puppet-fort-files-packages-snoppets)
+#### [Verwenden von ERB-Vorlagen](../puppet-fort-files-packages-erb-tpl)
+#### [Verwenden von Array-Iteration in Vorlagen](../puppet-fort-files-packages-array-tpl)
+#### [EPP-Vorlagen verwenden](../puppet-fort-files-packages-epp-tpl)
+#### [Verwenden von GnuPG zum Verschlüsseln von Geheimnissen](../puppet-fort-files-packages-gnupg-sec)
+#### [Installieren von Paketen aus einem Drittanbieter-Repository](../puppet-fort-files-packages-3nd-repos)
+#### [Vergleich von Paketversionen](../puppet-fort-files-packages-paketversionen)
 
