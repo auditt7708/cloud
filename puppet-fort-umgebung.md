@@ -46,19 +46,21 @@ Notice: Finished catalog run in 0.40 seconds
 Facter bietet eine Standardmethode für Manifestationen, um Informationen über die Knoten zu erhalten, auf die sie angewendet werden. Wenn Sie sich auf eine Tatsache in einem Manifest beziehen, wird die Puppe Facter abfragen, um den aktuellen Wert zu erhalten und ihn in das Manifest einzufügen. Futt Fakten sind Top-Umfang Variablen.
 
 ### Tip
-Verweisen Sie immer auf Tatsachen mit führenden Doppelkolonien, um sicherzustellen, dass Sie die Tatsache und nicht eine lokale Variable verwenden:
+Verweisen Sie immer auf fatcts mit führenden Doppelkolonien, um sicherzustellen, dass Sie die Tatsache und nicht eine lokale Variable verwenden:
 
 `$::hostname` nicht `$hostname`
 
 ### Es gibt mehr…
 
-Sie können auch Fakten in ERB-Vorlagen verwenden. Beispielsweise möchten Sie den Hostnamen des Knotens in eine Datei einfügen oder eine Konfigurationseinstellung für eine Anwendung ändern, die auf der Speichergröße des Knotens basiert. Wenn Sie Fact-Namen in Vorlagen verwenden, denken Sie daran, dass sie kein Dollarzeichen brauchen, denn das ist Ruby, nicht Puppet:
+Sie können auch Fakten in ERB-Vorlagen verwenden. Beispielsweise möchten Sie den Hostnamen des Knotens in eine Datei einfügen oder eine Konfigurationseinstellung für eine Anwendung ändern, die auf der Speichergröße des Nodes basiert. Wenn Sie fact Namen in Vorlagen verwenden, denken Sie daran, dass sie kein Dollarzeichen brauchen, denn das ist Ruby, nicht Puppet:
+
 ```
 $KLogPath <%= case @kernelversion when '2.6.31' then
 '/var/run/rsyslog/kmsg' else '/proc/kmsg' end %>
 ```
 
-Wenn Sie auf Tatsachen verweisen, verwenden Sie die @ Syntax. Variablen, die im gleichen Umfang wie der Funktionsaufruf zur Vorlage definiert sind, können auch mit der @ Syntax referenziert werden. Out of scope Variablen sollten die scope-Funktion verwenden. Um beispielsweise die mysql :: port-Variable zu verweisen, die wir früher in den mysql-Modulen definiert haben, verwenden Sie Folgendes:
+Wenn Sie auf fatcts verweisen, verwenden Sie die `@` Syntax. Variablen, die im gleichen Umfang wie der Funktionsaufruf zur Vorlage definiert sind, können auch mit der `@` Syntax referenziert werden. Out of scope Variablen sollten die `scope` Funktion verwenden. 
+Um beispielsweise auf die `mysql::port` Variable zu verweisen, die wir früher in den `mysql´ Modulen definiert haben, verwenden Sie Folgendes:
 
 `MySQL Port = <%= scope['::mysql::port'] %>`
 
