@@ -60,6 +60,11 @@ Continuous Operations
 * [Continuous-Operations Meaning ](https://www.boem.gov/Continuous-Operations/)
 * [continuous-operations bigr](http://bigr.io/continuous-operations/)
 
+Konfigurations Managemnet
+=========================
+* [devops-puppet-docker-kubernetes](../devops-puppet-docker-kubernetes)
+
+
 hashicorp Tools
 =============
 * [Packer](../packer)
