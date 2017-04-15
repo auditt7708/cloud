@@ -1,6 +1,7 @@
-Manchmal scheint es, wie jede Anwendung hat eine eigene subtil verschiedene Konfigurationsdateiformat, und das Schreiben von regulären Ausdrücken zu analysieren und zu modifizieren alle von ihnen kann ein langwieriges Geschäft sein.
+Manchmal scheint es, jede Anwendung hat ein eigenes Konfigurationsdateiformat, und das Schreiben von regulären Ausdrücken zum analysieren und zum modifizieren von allen von ihnen kann ein langwieriges Geschäft sein.
 
-Zum Glück ist Augeas hier zu helfen. Augeas ist ein System, das die Arbeit mit verschiedenen Konfigurationsdateiformaten vereinfacht, indem man sie alle als einen einfachen Baum von Werten darstellt. Mit der Augeas-Unterstützung von Puppet können Sie `augeas` Ressourcen erstellen, die die erforderlichen Konfigurationsänderungen intelligent und automatisch vornehmen können.
+Zum Glück ist Augeas hier um zu helfen. Augeas ist ein System, das die Arbeit mit verschiedenen Konfigurationsdateiformaten vereinfacht, indem man sie alle als einen einfachen Baum von Werten darstellt. 
+Mit der Augeas-Unterstützung von Puppet können Sie `augeas` Ressourcen erstellen, die die erforderlichen Konfigurationsänderungen intelligent und automatisch vornehmen können.
 
 ### Wie es geht…
 
@@ -39,7 +40,7 @@ Notice: /Stage[main]/Base/Augeas[enable-ip-forwarding]/returns: executed success
 Notice: Finished catalog run in 2.27 seconds
 ```
 
-3. Prüfen Sie, ob die Einstellung korrekt angewendet wurde:
+3. Prüfen Sie, ob die Einstellung korrekt angewendet wurden:
 
 ```
 [root@cookbook ~]# sysctl -p |grep ip_forward
@@ -55,11 +56,11 @@ Wir erklären eine Augeas-Ressource namens enable-ip-forwarding:
 Wir geben an, dass wir Änderungen in der Datei /etc/sysctl.conf vornehmen möchten:
 `incl => '/etc/sysctl.conf',`
 
-Als nächstes geben wir das Objektiv an, das auf dieser Datei verwendet werden soll. Augeas verwendet Dateien mit dem Namen Linsen, um eine Konfigurationsdatei in eine Objektdarstellung zu übersetzen. Augeas Schiffe mit mehreren Linsen, sie befinden sich in `/usr/share/augeas/` Linsen standardmäßig. Bei der Angabe des Objektivs in einer `augeas` Ressource wird der Name des Objektivs aktiviert und hat das `.lns` Suffix. In diesem Fall werden wir die `Sysctl` -Linse wie folgt spezifizieren:
+Als nächstes geben wir die lens an, das auf dieser Datei verwendet werden soll. Augeas verwendet Dateien mit dem Namen lens, um eine Konfigurationsdatei in eine Objektdarstellung zu übersetzen. Augeas arbeitet mit mehreren lenses, sie befinden sich standardmäßig in `/usr/share/augeas/`. Bei der Angabe des Objektivs in einer `augeas` Ressource wird der Name des Objektivs aktiviert und hat das `.lns` Suffix. In diesem Fall werden wir die `Sysctl` lens wie folgt spezifizieren:
 
 `lens => 'Sysctl.lns',`
 
-Der Parameter `changes` gibt die Änderungen an, die wir machen möchten. Sein Wert ist ein Array, weil wir mehrere Änderungen gleichzeitig liefern können. In diesem Beispiel gibt es nur Änderung, also ist der Wert ein Array von einem Element:
+Der Parameter `changes` gibt die Änderungen an, die wir machen möchten. Sein Wert ist ein Array, weil wir mehrere Änderungen gleichzeitig haben können. In diesem Beispiel gibt es nur eine Änderung, also ist der Wert ein Array von einem Element:
 `changes => ['set net.ipv4.ip_forward 1'],`
 
 Im Allgemeinen nehmen die Änderungen von Augeas folgende Form an:
@@ -71,12 +72,13 @@ In diesem Fall wird die Einstellung in eine Zeile wie folgt in /etc/sysctl.conf 
 
 ### Es gibt mehr…
 
-Ich habe `/etc/sysctl.conf` als Beispiel gewählt, weil es eine Vielzahl von Kernel-Einstellungen enthalten kann und Sie können diese Einstellungen für alle Arten von verschiedenen Zwecken und in verschiedenen Puppenklassen ändern. Vielleicht möchten Sie die IP-Weiterleitung wie im Beispiel für eine Router-Klasse aktivieren, aber Sie möchten auch den Wert von `net.core.somaxconn` für eine Load-Balancer-Klasse abstimmen.
+Ich habe `/etc/sysctl.conf` als Beispiel gewählt, weil es eine Vielzahl von Kernel-Einstellungen enthalten kann und Sie können diese Einstellungen für alle Arten von verschiedenen Zwecken und in verschiedenen Puppetklassen ändern. Vielleicht möchten Sie die IP-Weiterleitung wie im Beispiel für eine Router-Klasse aktivieren, aber Sie möchten auch den Wert von `net.core.somaxconn` für eine Load-Balancer-Klasse abstimmen.
 
-Dies bedeutet, dass die Pendelung der Datei `/etc/sysctl.conf` und die Verteilung als Textdatei nicht funktioniert, da Sie je nach Einstellung, die Sie ändern möchten, mehrere verschiedene und widersprüchliche Versionen haben können. Augeas ist die richtige Lösung hier, weil man `augeas` Ressourcen an verschiedenen Orten definieren kann, die die gleiche Datei ändern und sie nicht in Konflikt stehen.
+Dies bedeutet, dass die Pupetisirung der Datei `/etc/sysctl.conf` und die Verteilung als Textdatei nicht funktioniert, da Sie je nach Einstellung, die Sie ändern möchten, mehrere verschiedene und widersprüchliche Versionen haben können. Augeas ist die richtige Lösung hier, weil man `augeas` Ressourcen an verschiedenen Orten definieren kann, die die gleiche Datei ändern und sie nicht in Konflikt stehen.
 
 Für weitere Informationen über die Verwendung von Puppet und Augeas, siehe die Seite auf der Puppet Labs Website http://projects.puppetlabs.com/projects/1/wiki/Puppet_Augeas.
 
-Ein anderes Projekt, das Augeas nutzt, ist Augeasprovider. Augeasprovider verwendet Augeas, um mehrere Typen zu definieren. Einer dieser Typen ist `sysctl`, mit diesem Typ können Sie sysctl Änderungen machen, ohne zu wissen, wie man die Änderungen in Augeas zu schreiben. Weitere Informationen finden Sie auf der Forge unter https://forge.puppetlabs.com/domcleal/augeasproviders.
+Ein anderes Projekt, das Augeas nutzt, ist Augeasproviders. 
+Augeasproviders verwendet Augeas, um mehrere Typen zu definieren. Einer dieser Typen ist `sysctl`, mit diesem Typ können Sie sysctl Änderungen machen, ohne zu wissen, wie man die Änderungen in Augeas schreibt. Weitere Informationen finden Sie auf der Forge unter https://forge.puppetlabs.com/domcleal/augeasproviders.
 
-Lernen, wie man Augeas benutzt, kann ein wenig verwirrend sein. Augeas bietet ein Kommandozeilen-Tool, `augtool`, die verwendet werden können, um sich mit Änderungen in Augeas kennen zu lernen.
+Lernen, wie man Augeas benutzt, kann ein wenig verwirrend sein. Augeas bietet ein Kommandozeilen-Tool, `augtool`, die verwendet werden können, um sich mit Änderungen in Augeas vertraut zu machen.
