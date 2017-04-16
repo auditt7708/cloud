@@ -5,9 +5,6 @@ Es ist eine gemeinsame Anforderung für Drittanbieter und Auftragnehmer, Änderu
 
 Eine Antwort besteht darin, die Geheimnisse mit dem GnuPG-Tool zu verschlüsseln, so dass jede geheime Information im Puppet Repo ohne den entsprechenden Schlüssel nicht entzifferbar ist (für alle praktischen Zwecke). Dann verteilen wir den Schlüssel sicher auf die Personen oder Maschinen, die es brauchen.
 
-### Fertig werden
-
-Zuerst benötigen Sie einen Verschlüsselungsschlüssel(encryption key), also folgen Sie diesen Schritten, um einen zu generieren. Wenn du bereits einen GnuPG-Schlüssel hast, den du benutzen möchtest, geh weiter zum nächsten Abschnitt. Um diesen Abschnitt abzuschließen, müssen Sie den Befehl gpg installieren:
 
 ### Fertig werden
 
@@ -57,7 +54,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
 You need a Passphrase to protect your secret key.
 ```
 
-Hit gebe zweimal hier, um eine leere Passphrase zu haben:
+Bestätigen Sie zweimal hier mit enter, um eine leere Passphrase zu haben:
 ```
 You don't want a passphrase - this is probably a *bad* idea!
 I will do it anyway.  You can change your passphrase at any time,
@@ -75,7 +72,7 @@ uid                  Thomas Uphill <thomas@narrabilis.com>
 sub   2048R/E2440023 2014-10-01
 ```
 
-3. Sie können eine Nachricht wie diese sehen, wenn Ihr System nicht mit einer Quelle der Zufälligkeit konfiguriert ist:
+3. Sie können eine Nachricht wie diese sehen, wenn Ihr System nicht mit einer Quelle der random(Zufälligkeits Erzeugung) konfiguriert ist:
 ```
 We need to generate a lot of random bytes. It is a good idea to perform
 some other action (type on the keyboard, move the mouse, utilize the
@@ -83,7 +80,8 @@ disks) during the prime generation; this gives the random number
 generator a better chance to gain enough entropy.
 ```
 
-4. In diesem Fall installieren und starten Sie eine zufällige Anzahl Generator Daemon wie haveged oder rng-Tools. Kopiere die gpg-Taste, die du gerade in das Puppet-User-Account deines Puppet-Masters geschrieben hast:
+4. In diesem Fall installieren und starten Sie einen Generator Daemon wie `haveged` oder `rng-tools`. 
+Kopiere die gpg key, die du gerade in den `puppet` User-Account deines Puppet-Masters geschrieben hast:
 ```
 t@mylaptop ~ $ scp -r .gnupg puppet@puppet.example.com:
 gpg.conf                                      100% 7680     7.5KB/s   00:00    
@@ -144,7 +142,7 @@ Notice: Finished catalog run in 0.27 seconds
 
 ### Wie es funktioniert...
 
-Zuerst haben wir eine benutzerdefinierte Funktion erstellt, damit die Puppe die geheimen Dateien mit GnuPG entschlüsseln kann:
+Zuerst haben wir eine benutzerdefinierte Funktion erstellt, damit die Puppet die geheimen Dateien mit GnuPG entschlüsseln kann:
 ```
 module Puppet::Parser::Functions
   newfunction(:secret, :type => :rvalue) do |args|
@@ -153,7 +151,7 @@ module Puppet::Parser::Functions
 end
 ```
 
-Der vorhergehende Code erzeugt eine Funktion namens `secret`, die einen Dateipfad als Argument annimmt und den entschlüsselten Text zurückgibt. Es verwaltet keine Verschlüsselungsschlüssel, so dass Sie sicherstellen müssen, dass der `puppet` benutzer den notwendigen Schlüssel installiert hat. Sie können dies mit folgendem Befehl überprüfen:
+Der vorhergehende Code erzeugt eine Funktion namens `secret`, die einen Dateipfad als Argument annimmt und den entschlüsselten Text zurückgibt. Es verwaltet keine Verschlüsselungsschlüssel(encryption keys), so dass Sie sicherstellen müssen, dass der `puppet` Benutzer den notwendigen Schlüssel installiert hat. Sie können dies mit folgendem Befehl überprüfen:
 ```
 puppet@puppet:~ $ gpg --list-secret-keys
 /var/lib/puppet/.gnupg/secring.gpg
@@ -162,19 +160,19 @@ sec   2048R/F1C1EE49 2014-10-01
 uid                  Thomas Uphill <thomas@narrabilis.com>
 ssb   2048R/E2440023 2014-10-01
 ```
-Nachdem wir die `secret` Funktion und den erforderlichen Schlüssel eingerichtet haben, verschlüsseln wir nun eine Nachricht an diesen Schlüssel:
+Nachdem wir die `secret` Funktion und den erforderlichen Schlüssel eingerichtet haben, verschlüsseln wir nun eine Nachricht mit diesen Schlüssel:
 `tuphill@mylaptop ~/puppet $ gpg -e -r thomas@narrabilis.com secret_message`
 
-Dies erzeugt eine verschlüsselte Datei, die nur von jemandem mit Zugriff auf den geheimen Schlüssel gelesen werden kann (oder Puppe, die auf einer Maschine läuft, die den geheimen Schlüssel hat).
+Dies erzeugt eine verschlüsselte Datei, die nur von jemandem mit Zugriff auf den geheimen Schlüssel gelesen werden kann (oder Puppet, die auf einer Maschine läuft, die den geheimen Schlüssel hat).
 
 Wir rufen dann die `secret` Funktion auf, diese Datei zu entschlüsseln und den Inhalt zu erhalten:
 
 
 ### Es gibt mehr...
 
-Sie sollten die `secret` Funktion oder so etwas verwenden, um vertrauliche Daten in Ihrem Puppet Repo zu schützen: Passwörter, AWS-Anmeldeinformationen, Lizenzschlüssel, auch andere geheime Schlüssel wie SSL-Host-Schlüssel.
+Sie sollten die `secret` Funktion oder so etwas ähnliches verwenden, um vertrauliche Daten in Ihrem Puppet Repo zu schützen: Passwörter, AWS-Anmeldeinformationen, Lizenzschlüssel, auch andere geheime Schlüssel wie SSL-Host-Schlüssel.
 
-Sie können entscheiden, einen einzigen Schlüssel zu verwenden, den Sie auf Maschinen drängen, wie sie gebaut werden, vielleicht als Teil eines Bootstrap-Prozesses, wie er in der Bootstrapping-Puppe mit Bash-Rezept in Kapitel 2, Puppet Infrastructure beschrieben wurde. Für noch mehr Sicherheit können Sie gern einen neuen Schlüssel für jede Maschine oder Gruppe von Maschinen erstellen und ein bestimmtes Geheimnis nur für die Maschinen verschlüsseln, die es benötigen.
+Sie können entscheiden, einen einzigen Schlüssel zu verwenden, den Sie auf Maschinen erzeugen, wie sie gebaut werden, vielleicht als Teil eines Bootstrap-Prozesses, wie er in der Bootstrapping-Puppet mit Bash-Rezept [Puppet4 Infrastruktur](../puppet4-infrastruktur) beschrieben wurde. Für noch mehr Sicherheit können Sie gern einen neuen Schlüssel für jede Maschine oder Gruppe von Maschinen erstellen und ein bestimmtes Geheimnis nur für die Maschinen verschlüsseln, die es benötigen.
 
 Zum Beispiel könnten Ihre Webserver ein bestimmtes Geheimnis benötigen, das Sie nicht auf einer anderen Maschine zugänglich machen möchten. Sie können einen Schlüssel für Webserver erstellen und die Daten nur für diesen Schlüssel verschlüsseln.
 
