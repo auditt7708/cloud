@@ -1,10 +1,11 @@
-Im vorherigen Beispiel haben wir gesehen, dass man Ruby verwenden kann, um je nach Ergebnis eines Ausdrucks unterschiedliche Werte in Vorlagen zu interpolieren. Aber du bist nicht darauf beschränkt, immer einen Wert zu bekommen. Sie können viele von ihnen in ein Puppet-Array setzen und dann die Vorlage generieren einige Inhalte für jedes Element des Arrays mit einer Schleife.
+Im vorherigen Beispiel haben wir gesehen, dass man Ruby verwenden kann, um je nach Ergebnis eines Ausdrucks unterschiedliche Werte in Vorlagen zu interpolieren. 
+Aber du bist nicht darauf beschränkt, immer einen Wert zu bekommen. Sie können viele von ihnen in ein Puppet-Array setzen und dann die Vorlage generieren einige Inhalte für jedes Element des Arrays mit einer Schleife.
 
 #### Wie es geht…
 
 Gehen Sie folgendermaßen vor, um ein Beispiel für die Iteration über Arrays zu erstellen:
 
-1. Ändern Sie Ihre site.pp-Datei wie folgt:
+1. Ändern Sie Ihre `site.pp` Datei wie folgt:
 
 
 ```
@@ -16,7 +17,7 @@ Gehen Sie folgendermaßen vor, um ein Beispiel für die Iteration über Arrays z
   }
 ```
 
-2.Erstellen Sie die Dateimodule / base / templates / addresslist.erb mit folgendem Inhalt:
+2.Erstellen Sie die Datei `module/base/templates/addresslist.erb` mit folgendem Inhalt:
 
 ```
 <% @ipaddresses.each do |ip| -%>
@@ -42,7 +43,7 @@ Notice: Finished catalog run in 0.30 seconds
   IP address 10.0.75.207 is present.
 ```
 
-Wie es funktioniert…
+### Wie es funktioniert…
 
 In der ersten Zeile der Vorlage verweisen wir auf die Array `ipaddresses` und rufen ihre `each` Methode auf:
 `<% @ipaddresses.each do |ip| -%>`
@@ -52,7 +53,7 @@ In Ruby erzeugt dies eine Schleife, die einmal für jedes Element des Arrays aus
 In unserem Beispiel enthält das  `ipaddresses` Array drei Elemente, so dass die folgende Zeile dreimal ausgeführt wird, einmal für jedes Element:
 `IP address <%= ip %> is present.`
 
-Dies führt zu drei Ausgangsleitungen:
+Dies führt zu drei Ausgaben:
 ```
 IP address 192.168.0.1 is present.
 IP address 158.43.128.1 is present.
@@ -62,7 +63,7 @@ Die letzte Zeile beendet die Schleife:
 `<% end -%>`
 
 #### Hinweis:
-Beachten Sie, dass die erste und die letzte Zeile mit -%> statt nur%> enden, wie wir vorher gesehen haben. Die Wirkung der - ist, die neue Linie zu unterdrücken, die sonst bei jedem Durchlauf durch die Schleife erzeugt würde, was uns unerwünschte leere Zeilen in der Datei gibt.
+Beachten Sie, dass die erste und die letzte Zeile mit `-%>` statt nur `%>` enden, wie wir vorher gesehen haben. Die Wirkung des `-` ist, die neue Zeile zu unterdrücken, die sonst bei jedem Durchlauf durch die Schleife erzeugt würde, was uns unerwünschte leere Zeilen in der Datei bescheren würde.
 
 ### Es gibt mehr…
 
