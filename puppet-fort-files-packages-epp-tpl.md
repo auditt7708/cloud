@@ -38,7 +38,9 @@ Mit dem zukünftigen Parser werden die Funktionen `epp` und `inline_epp` definie
 ### Es gibt mehr...
 
 Sowohl `epp` als auch `inline_epp` erlauben es, dass Variablen innerhalb des Funktionsaufrufs überschrieben werden. Ein zweiter Parameter für den Funktionsaufruf kann verwendet werden, um Werte für Variablen festzulegen, die im Rahmen des Funktionsaufrufs verwendet werden. Zum Beispiel können wir den Wert von `$message` mit dem folgenden Code überschreiben:
-```file {'/tmp/epp-test':
+
+```
+file {'/tmp/epp-test':
   content => epp('/home/tuphill/puppet/epp-test.epp',
     { 'message' => "override $message"} )
 }
