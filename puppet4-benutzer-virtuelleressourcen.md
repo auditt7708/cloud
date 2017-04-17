@@ -11,3 +11,4 @@ In diesem Kapitel werden wir folgende Rezepte abdecken:
 ### [Verwalten des SSH-Zugriffs der Benutzer](../puppet-fort-user-virtuelle-ressourcen-ssh)
 ### [Verwalten der Benutzeranpassungsdateien](../puppet-fort-user-virtuelle-ressourcen-benutzer-anpassen)
 ### [Verwenden von exportierten Ressourcen](../puppet-fort-user-virtuelle-ressourcen-export)
+
