@@ -1,6 +1,7 @@
-Wenn du ein Puppet-Modul schreibst, um irgendeine Software oder einen Service zu verwalten, musst du nicht von vorne anfangen. Community-beigefügte Module sind auf der Puppet Forge-Website für viele beliebte Anwendungen verfügbar. Manchmal ist ein Community-Modul genau das, was Sie brauchen und Sie können herunterladen und starten Sie es sofort sofort. In den meisten Fällen müssen Sie einige Änderungen an Ihren speziellen Bedürfnissen und Umgebung vornehmen.
+Wenn du ein Puppet-Modul schreibst, um irgendeine Software oder einen Service zu verwalten, musst du nicht von vorne anfangen. Community-beigefügte Module sind auf der Puppet Forge-Website für viele beliebte Anwendungen verfügbar. Manchmal ist ein Community-Modul genau das, was Sie brauchen und Sie können es herunterladen und sofort sofort starten. In den meisten Fällen müssen Sie einige Änderungen an Ihren speziellen Bedürfnissen und Umgebung vornehmen.
 
-Wie alle gemeinschaftlichen Bemühungen gibt es einige hervorragende und einige weniger als ausgezeichnete Module auf der Forge. Sie sollten den README-Bereich des Moduls lesen und entscheiden, ob das Modul bei der Installation arbeiten soll. Mindestens stellen Sie sicher, dass Ihre Distribution unterstützt wird. Puppetlabs hat eine Reihe von Modulen eingeführt, die unterstützt werden, das heißt, wenn Sie ein Unternehmenskunden sind, werden sie Ihre Nutzung des Moduls in Ihrer Installation unterstützen. Darüber hinaus beschäftigen sich die meisten Forge-Module mit mehreren Betriebssystemen, Distributionen und einer Vielzahl von Anwendungsfällen. In vielen Fällen, nicht mit einem Schmiede-Modul ist wie neu erfinden das Rad. Eine Einschränkung ist jedoch, dass Forge-Module komplexer sein können als Ihre lokalen Module. Du solltest den Code lesen und ein Gefühl dafür bekommen, was das Modul macht. Zu wissen, wie das Modul funktioniert, hilft Ihnen, es später zu debuggen.
+Wie alle gemeinschaftlichen Bemühungen gibt es einige hervorragende und einige weniger ausgezeichnete Module auf der Forge Seite. Sie sollten den README-Bereich des Moduls lesen und entscheiden, ob Sie das Modull benutzen möchten. Mindestens sollten Sie sicher stellen, dass Ihre Distribution unterstützt wird. Puppetlabs hat eine Reihe von Modulen eingeführt, die unterstützt werden, das heißt, wenn Sie ein Unternehmenskunden sind, werden sie Ihre Nutzung des Moduls in Ihrer Installation unterstützen. Darüber hinaus beschäftigen sich die meisten Forge-Module mit mehreren Betriebssystemen, Distributionen und einer Vielzahl von Anwendungsfällen. 
+In vielen Fällen, nicht mit einer neuentwicklung ist wie das Rad neu erfinden. Eine Einschränkung ist jedoch, dass Forge-Module komplexer sein können als Ihre lokalen Module. Du solltest den Code lesen und ein Gefühl dafür bekommen, was das Modul macht. Zu wissen, wie das Modul funktioniert, hilft Ihnen, es später zu debuggen.
 
 ### Wie es geht...
 
@@ -25,13 +26,13 @@ Notice: Installing -- do not interrupt ...
 
 ```
 
-Das Modul ist nun bereit, in Ihren Manifesten zu verwenden; Die meisten guten Module kommen mit einer `README`-Datei, um Ihnen zu zeigen, wie dies zu tun ist.
+Das Modul ist nun bereit, in Ihren manifest zu verwenden; Die meisten guten Module kommen mit einer `README`-Datei, um Ihnen zu zeigen, wie dies zu tun ist und einige Informationen wie sie z.B Default werte überschreiben können.
 
 ### Wie es funktioniert...
 
 Sie können nach Modulen suchen, die mit dem Paket oder der Software übereinstimmen, für die Sie sich mit dem Puppenmodul-Suchbefehl `puppet module search` interessieren. Um ein bestimmtes Modul zu installieren, verwenden Sie die Installation des Puppenmoduls `puppet module install`. Sie können die Option `-i `hinzufügen, um Puppet zu erzählen, wo Sie Ihr Modulverzeichnis finden können.
 
-Du kannst die Schmiede durchsuchen, um zu sehen, was bei http://forge.puppetlabs.com/ verfügbar ist.
+Du kannst Forge durchsuchen, um zu sehen, was bei http://forge.puppetlabs.com/ verfügbar ist.
 
 Weitere Informationen zu unterstützten Modulen finden Sie unter https://forge.puppetlabs.com/supported.
 
@@ -39,19 +40,20 @@ Die aktuelle Liste der unterstützten Module finden Sie unter https://forge.pupp
 
 ### Es gibt mehr...
 
-Module auf dem Forge enthalten eine Datei `metadata.json`, die das Modul beschreibt und welche Betriebssysteme das Modul unterstützt. Diese Datei enthält auch eine Liste der Module, die vom Modul benötigt werden.
+Module auf dem Forge enthalten eine Datei `metadata.json`, die das Modul beschreibt und welche Betriebssysteme das Modul unterstützt. 
+Diese Datei enthält auch eine Liste der Module, die vom Modul benötigt werden.
 
 ### Notiz
-Diese Datei wurde zuvor als Modulfile und nicht im JSON-Format bezeichnet. Das alte Modulefile-Format wurde in Version 3.6 abgelehnt.
+Diese Datei wurde zuvor als Modulfile und nich als JSON-Format bezeichnet. Das alte Modulefile-Format wurde in Version 3.6 entfernt.
 
-Wie wir in unserem nächsten Abschnitt sehen werden, werden bei der Installation eines Moduls aus dem Forge automatisch die erforderlichen Abhängigkeiten automatisch installiert.
+Wie wir in unserem nächsten Abschnitt sehen werden, werden bei der Installation eines Moduls aus dem Forge automatisch die erforderlichen Abhängigkeiten installiert.
 
-Nicht alle öffentlich verfügbaren Module sind auf Puppet Forge. Einige andere großartige Orte, um auf GitHub zu sehen sind:
+Nicht alle öffentlich verfügbaren Module sind auf Puppet Forge. Einige andere großartige Orte, um auf GitHub zu finden sehen sind:
 
 * https://github.com/camptocamp
 
 * https://github.com/example42 
 
-Obwohl nicht eine Sammlung von Modulen als solche, die Puppet Cookbook Website hat viele nützliche und beleuchtende Code Beispiele, Muster und Tipps, die von der bewundernswerten Dean Wilson:
+Obwohl nicht eine Sammlung von Modulen als solche, die Puppet Cookbook Website hat viele nützliche und erhellende Code Beispiele, Muster und Tipps, die von Dean Wilson:
 
 Http://www.puppetcookbook.com/
