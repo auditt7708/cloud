@@ -1,13 +1,16 @@
-So weit, sahen wir, was die Marionette tun kann, und die Ordnung, dass es Dinge macht, aber nicht, wenn es sie tut. Eine Möglichkeit, dies zu kontrollieren, ist, den `schedule` Metaparameter zu verwenden. Wenn Sie die Anzahl der Zeiten, in denen eine Ressource innerhalb eines bestimmten Zeitraums angewendet wird, begrenzen, kann der `schedule` helfen. Beispielsweise:
+So weit, haben wir gesehen, was Puppet für uns tun kann, und die Ordnung, dass es Dinge umsetzt, aber nicht, wenn es sie durchführt. 
+Eine Möglichkeit, dies zu kontrollieren, ist, den `schedule` Metaparameter zu verwenden. Wenn Sie die Anzahl der Zeiten, in denen eine Ressource innerhalb eines bestimmten Zeitraums angewendet wird, begrenzen, kann `schedule` helfen. Beispielsweise:
 ```
 exec { "/usr/bin/apt-get update":
     schedule => daily,
 }
 ```
 
-Die wichtigste Sache, um über `schedule` zu verstehen ist, dass es nur stoppen kann eine Ressource angewendet werden. Es garantiert nicht, dass die Ressource mit einer bestimmten Frequenz angewendet wird. Zum Beispiel hat die `exec` Ressource, die in dem vorherigen Code-Snippet gezeigt wird, `schedule => daily`, aber dies stellt nur eine obere Grenze für die Anzahl von Malen dar, die die `exec` Ressource pro Tag ausführen kann. Es wird nicht mehr als einmal am Tag angewendet. Wenn du überhaupt keine Puppe betreibst, wird die Ressource überhaupt nicht angewendet. Die Verwendung des Stundenplans ist beispielsweise auf einer Maschine sinnlos, die für die Ausführung des Agenten alle 4 Stunden konfiguriert ist (über die `runinterval` Konfigurationseinstellung).
+Die wichtigste Sache, um `schedule` zu verstehen ist, dass es  nur eine Ressource stoppen kann die auch benutzt wird. Es garantiert nicht, dass die Ressource mit einer bestimmten Frequenz angewendet wird. Zum Beispiel hat die `exec` Ressource, die in dem vorherigen Code-Snippet gezeigt wird, `schedule => daily`, aber dies stellt nur eine obere Grenze für die Anzahl von wiederhollungen dar, die die `exec` Ressource pro Tag ausführt werden kann. 
+Es wird nicht mehr als einmal am Tag angewendet. Wenn du überhaupt kein Puppet betreibst, wird die Ressource überhaupt nicht angewendet. 
+Die Verwendung des Stundenplans ist beispielsweise auf einer Maschine sinnlos, die für die Ausführung des Agenten alle 4 Stunden konfiguriert ist ( `runinterval` über die Konfigurationseinstellung).
 
-Das heißt, der `schedule` wird am besten verwendet, um die Ressourcen vom Laufen zu beschränken, wenn sie nicht oder nicht müssen; Zum Beispiel möchten Sie vielleicht sicherstellen, dass `apt-get update` nicht mehr als einmal pro Stunde ausgeführt wird. Es gibt einige eingebaute Zeitpläne für Sie zu verwenden:
+Das heißt, der `schedule` wird am besten verwendet, um die Ressourcen vom Laufen zu beschränken, wenn sie nicht laufen oder laufen nicht müssen; Zum Beispiel möchten Sie vielleicht sicherstellen, dass `apt-get update` nicht mehr als einmal pro Stunde ausgeführt wird. Es gibt einige eingebaute Zeitpläne um Sie  zu verwenden:
 
 * hourly
 
@@ -19,7 +22,7 @@ Das heißt, der `schedule` wird am besten verwendet, um die Ressourcen vom Laufe
 
 * never 
 
-Allerdings können Sie diese ändern und erstellen Sie Ihre eigenen benutzerdefinierten `schedule`, mit der Zeitplan Ressource. Wir werden sehen, wie dies im folgenden Beispiel zu tun ist. Nehmen wir an, wir wollen sicherstellen, dass eine `exec` Ressource, die einen Wartungsauftrag darstellt, nicht während der Sprechstunden laufen wird, wenn sie die Produktion beeinträchtigen könnte.
+Allerdings können Sie diese ändern und erstellen Sie Ihre eigenen benutzerdefinierten `schedule`(Studen Pläne), mit der Zeitplan Ressource. Wir werden sehen, wie dies im folgenden Beispiel zu tun ist. Nehmen wir an, wir wollen sicherstellen, dass eine `exec` Ressource, die einen Wartungsauftrag darstellt, nicht während der Sprechstunden(User müssen da etwas Zeitbegrenzt nutzen meist einen Dienst) laufen wird,die die Produktion beeinträchtigen könnte.
 
 ### Wie es geht...
 
@@ -39,7 +42,7 @@ node 'cookbook' {
 }
 ```
 
-2. Laufpuppe ausführen Was du sehen wirst, hängt von der Tageszeit ab. Wenn es derzeit außerhalb der Öffnungszeiten ist, die Sie definiert haben, wird Puppet die Ressource wie folgt anwenden:
+2. Puppet run ausführen. Was du sehen wirst, hängt von der Tageszeit ab. Wenn es derzeit außerhalb der Öffnungszeiten ist, die Sie definiert haben, wird Puppet die Ressource wie folgt anwenden:
 ```
 [root@cookbook ~]# date
 Fri Jan  2 23:59:01 PST 2015
@@ -64,11 +67,11 @@ Notice: Finished catalog run in 0.09 seconds
 ### Wie es funktioniert...
 
 Ein Zeitplan besteht aus drei Bits:
-* Der Zeitraum (stündlich, täglich, wöchentlich oder monatlich)
+* Der Zeitraum(`period`) (stündlich(hourly), täglich(daily), wöchentlich(weekly) oder monatlich(monthly))
 
-* Der Bereich (standardmäßig auf den ganzen Zeitraum, kann aber ein kleinerer Teil davon sein)
+* Der Bereich(`range`) (standardmäßig auf den ganzen Zeitraum, kann aber ein kleinerer Teil davon sein)
 
-* Die Wiederholungszählung (wie oft die Ressource darf innerhalb des Bereichs angewendet werden, die Voreinstellung ist 1 oder einmal pro Periode)
+* Die Wiederholungszählung(`repeat`) zählt(wie oft die Ressource darf innerhalb des Bereichs angewendet werden, die Voreinstellung ist 1 oder einmal pro Periode)
 
 Unser kundenspezifischer Zeitplan, der `outside-office-hours` genannt wird, liefert diese drei Parameter:
 ```
@@ -85,22 +88,22 @@ Die `period`(Periode) ist `daily`(täglich), und der `range`(Bereich) ist defini
 00:00-09:00
 ```
 
-Der `schedule`, der mit `outside-office-hours` benannt ist, steht nun für uns zur Verfügung, um mit jeder Ressource zu arbeiten, so als ob es in Puppe wie die `daily`(Tages) oder `hourly`(Stunden) Pläne eingebaut wurde. In unserem Beispiel vergeben wir diesen Zeitplan der `exec`-Ressource mit dem `schedule`-Metaparameter:
+Der `schedule`, der mit `outside-office-hours` benannt ist, steht nun für uns zur Verfügung, um mit jeder Ressource zu arbeiten, so als ob es in Puppet wie die `daily`(Tages) oder `hourly`(Stunden) Pläne eingebaut wurde. In unserem Beispiel vergeben wir diesen Zeitplan der `exec` Ressource mit dem `schedule`-Metaparameter:
 ```
 notify { 'Doing some maintenance':
   schedule => 'outside-office-hours',
 }
 ```
 
-Ohne diesen `schedule` würde die Ressource jedes Mal angewendet, wenn die Puppe läuft. Mit ihm wird die Puppe die folgenden Parameter überprüfen, um zu entscheiden, ob die Ressource angewendet werden soll oder nicht:
+Ohne diesen `schedule` würde die Ressource jedes Mal angewendet, wenn die Puppe läuft. Mit ihm wird Puppet die folgenden Parameter überprüfen, um zu entscheiden, ob die Ressource angewendet werden soll oder nicht:
 
 * Ob die Zeit im zulässigen Bereich liegt
 
 * Ob die Ressource bereits in dieser Periode die maximal zulässige Anzahl der Zeiten durchgeführt hat
 
-Zum Beispiel, betrachten wir, was passiert, wenn die Puppe um 4 Uhr, 5 Uhr und 6 Uhr an einem bestimmten Tag läuft:
+Zum Beispiel, betrachten wir, was passiert, wenn Puppet um 4 Uhr, 5 Uhr und 6 Uhr an einem bestimmten Tag läuft:
 
-* 4 Uhr .: Es ist außerhalb der erlaubten Zeitspanne, so dass Puppe nichts tun wird
+* 4 Uhr .: Es ist außerhalb der erlaubten Zeitspanne, so dass Puppet nichts tun wird
 
 * 5 Uhr .: Es ist innerhalb der erlaubten Zeitspanne, und die Ressource wurde noch nicht in diesem Zeitraum ausgeführt, so wird Puppet die Ressource anwenden
 
@@ -116,4 +119,4 @@ period => hourly,
 repeat => 6,
 ```
 
-Denken Sie daran, dass dies nicht garantieren, dass der Job sechs Mal pro Stunde läuft. Es setzt einfach eine obere Grenze; Egal wie oft Puppe läuft oder sonst etwas passiert, wird der Job nicht laufen, wenn es schon sechsmal in dieser Stunde gelaufen ist. Wenn die Puppe nur einmal am Tag läuft, wird der Job nur einmal ausgeführt. So `schedule`(Zeitplan) ist am besten verwendet, um sicherzustellen, dass Dinge nicht zu bestimmten Zeiten passieren (oder nicht überschreiten eine gegebene Frequenz).
+Denken Sie daran, dass dies nicht garantiert, dass der Job sechs Mal pro Stunde läuft. Es setzt einfach eine obere Grenze; Egal wie oft Puppe läuft oder sonst etwas passiert, wird der Job nicht laufen, wenn es schon sechsmal in dieser Stunde gelaufen ist. Wenn Puppet nur einmal am Tag läuft, wird der Job nur einmal ausgeführt. So ein `schedule`(Zeitplan) wird am besten verwendet, um sicherzustellen, dass Dinge nicht zu bestimmten Zeiten passieren (oder nicht eine gegebene Frequenz überschreiten ).
