@@ -65,7 +65,7 @@ Mit einer externen Datenbank
 Installation durchführen
 `spacewalk-setup`
 
-Nach der Installation startet spacewalk nicht automatisch
+Nach der Installation startet Spacewalk nicht automatisch
 `/usr/sbin/spacewalk-service start`
 
 
@@ -80,7 +80,7 @@ muss aber auf dem Server noch um den Activation Key erweitert werden
 **Allgemeine Schritte für alle Distributionen**
 
 1. Erstelle einen  base channel in Spacewalk (Channels > Manage Software Channels > Create New Channel)
-2.  Erstelle einen activation key (Systems > Activation Keys > Create Key) with the new base channel. When creating a registration key do not use the generate function, create a human-readable version. eg: fedora-server-channel. This makes your installation more understandable and provides greater logical consistency to the whole system. On the other hand, if you want to prevent people from getting access to your channels, letting Spacewalk to generate random activation key name is the best way to go.
+2. Erstelle einen activation key (Systems > Activation Keys > Create Key) with the new base channel. When creating a registration key do not use the generate function, create a human-readable version. eg: fedora-server-channel. This makes your installation more understandable and provides greater logical consistency to the whole system. On the other hand, if you want to prevent people from getting access to your channels, letting Spacewalk to generate random activation key name is the best way to go.
 
 
 SSL Cert vom Server zum Client Kopieren
@@ -99,7 +99,7 @@ Installation der client tools
 * https://github.com/spacewalkproject/spacewalk/wiki/RegisteringClients
 * https://fedorahosted.org/spacewalk/wiki/RegisteringClients#Debian
 
-**Client installation bei RHEL/CentOS**
+**Client Installation bei RHEL/CentOS**
 
 Repositories  RHEL 7 / SL 7 / CentOS 7
 `rpm -Uvh http://yum.spacewalkproject.org/latest-client/RHEL/7/x86_64/spacewalk-client-repo-2.6-0.el7.noarch.rpm`
@@ -116,7 +116,7 @@ Register dein System zum Spacewalk benutze den key den du zuvor erstellst
 `rhnreg_ks --serverUrl=http://spacewalk.example.com/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey= 	1-59e7b1cb8bc200f7ea676bd6f81e9495`
 
 Erweiterte Konfiguration vom Spacewalk Server 
-=======================================
+=========
 
 ### Remote-Befehl
 Voraussetzung ist dafür: 
@@ -158,12 +158,11 @@ Errata -> Manage Errata -> Unpublished to find them
 
 **Spacewalk Hostnamen Ändern**
  
-
 **Quellen:**
 * https://fedorahosted.org/spacewalk/wiki/SpacewalkHostnameRename
 
 Spacewalk Administration
-======================
+===========
 
 ###  Spacewalk-Konfiguration - Bootstrap
 Ort :  Admin -> Spacewalk Konfiguration -> Bootstrap-Skript
@@ -177,7 +176,7 @@ Speicherort des SSL-Zertifikats /var/www/html/pub/RHN-ORG-TRUSTED-SSL-CERT
 
 rhnreg_ks = Wird benutzt für die  registration der clients zum Spacewalk Server
 
-**Sources: **
+**Sources:**
 * http://spacewalk.redhat.com/
 * http://jensd.be/566/linux/install-and-use-spacewalk-2-3-on-centos-7
 * https://fedorahosted.org/spacewalk/wiki/HowToInstall
