@@ -81,4 +81,20 @@ Wir können sehen, dass die `docker0`-Schnittstelle die IP aus dem gleichen Subn
 14. Wir sind alle eingestellt, um zwei Container in jedem der Gastgeber und sie sollten in der Lage zu kommunizieren. Lassen Sie uns einen Container in `minion1` erstellen und erhalten Sie seine IP-Adresse:
 `docker run -it centos bash`
 
-15. 
+15. Erstellen Sie nun einen weiteren Container in `minion2` und ping den Container in `minion1` wie folgt:
+`docker run -it centos bash`
+
+### Wie es funktioniert…
+
+Mit Flannel konfigurieren wir zunächst das Overlay mit dem `10.0.0.0/16` Netzwerk. Dann nimmt jeder Host ein zufälliges `/24` Netzwerk auf; Zum Beispiel, in unserem Fall, `minion2` bekommt die `10.0.62.0/24` Subnetz und so weiter. Einmal konfiguriert, bekommt ein Container im Host die IP-Adresse aus dem gewählten Subnetz. Flanell kapselt die Pakete und sendet sie an entfernte Hosts mit UDP.
+
+Auch bei der Installation kopiert Flannel eine Konfigurationsdatei (`flannel.conf`) innerhalb `/usr/lib/systemd/system/docker.service.d/`, die Docker verwendet, um sich selbst zu konfigurieren.
+
+
+### Siehe auch
+
+* Das Diagramm von Flannel GitHub, um Ihnen zu helfen, die Theorie der Operationen unter https://github.com/coreos/flannel/blob/master/packet-01.png zu verstehen
+
+* Die Dokumentation auf der CoreOS-Website unter https://coreos.com/blog/introducing-rudder/
+
+* Scott Colliers Blog-Post über die Einstellung Flannel auf Fedora auf http://www.colliernotes.com/2015/01/flannel-and-docker-on-fedora-getting.html
