@@ -8,4 +8,4 @@ Benutzbares CI benötigt Informationen über das Projekt und baut Anweisungen in
 * build_image: Dies ist ein Docker-Bild zu verwenden, um zu bauen
 
 * language: Hier wird die Programmiersprache angezeigt
-* * versions: : Sie können verschiedene Versionen der Sprache angeben, um in einer einzigen Build-Anweisung getestet zu werden.
+* > versions: : Sie können verschiedene Versionen der Sprache angeben, um in einer einzigen Build-Anweisung getestet zu werden.
