@@ -2,7 +2,7 @@ In [Arbeiten mit Docker Images](../docker-arbeiten-mit-docker-images), sahen wir
 
 Einfache Bedienung ist alles gut, aber bevor man in die Produktion geht, ist die Leistung einer der wichtigsten Aspekte, die berücksichtigt werden. In diesem Kapitel werden wir die Performance-Auswirkungen von Docker sehen und welchen Ansatz wir verfolgen können, um verschiedene Subsysteme zu benchmarken. Bei der Leistungsbewertung müssen wir die Leistung von Docker mit folgendem vergleichen:
 
-* Bare metal
+> Bare metal
 
 * Virtual machine
 
