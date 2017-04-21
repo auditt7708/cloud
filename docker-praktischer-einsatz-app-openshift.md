@@ -53,7 +53,6 @@ $ sudo chmod a+rwX "$OPENSHIFTCONFIG"
 ```
 
 5. Erstellen Sie die Pod aus der hallo-pod.json Definition:
-
 `$ osc create -f hello-pod.json `
 
 6. Verbinden Sie mit dem Pod:
