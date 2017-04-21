@@ -48,4 +48,42 @@ $ osc project test
 6. Dies wird den Build nicht auslösen. Um den Aufbau Ihrer Anwendung zu starten, führen Sie den folgenden Befehl aus:
 `$ osc start-build ruby-sample-build `
 
-7. 
+7. Überwachen Sie den Build und warten Sie, bis der Status abgeschlossen ist (dies kann einige Minuten dauern):
+`$ osc get builds `
+
+8. Holen Sie sich die Liste der Dienstleistungen:
+`$ osc get services`
+
+### Wie es funktioniert…
+
+Im Bereich `BuildConfig` (`Ruby-Sample-Build`) haben wir unsere Quelle als `ruby-hello-world` Git Repo (`git://github.com/openshift/ruby-hello-world.git`) und unser Image als `openshift/ruby-20-centos7` So nimmt der Build-Prozess das Bild auf, und mit dem STI-Builder entsteht ein neues Bild namens `origin-ruby-sample` nach dem Aufbau unserer Quelle auf `openshift/ruby-20-centos7`. Das neue Bild wird dann in die Docker-Registry geschoben, die wir früher erstellt haben.
+
+Mit `DeploymentConfig` werden auch Frontend- und Backend-Pods eingesetzt und mit entsprechenden Services verknüpft.
+
+### Es gibt mehr…
+
+* Der vorherige Frontend-Service kann über die Service-IP und den entsprechenden Port angesprochen werden, ist aber nicht von der Außenwelt zugänglich. Um es zugänglich zu machen, geben wir unserer App einen FQDN; Zum Beispiel im folgenden Beispiel ist es definiert als `www.example.com`:
+
+`osc get services`
+
+* OpenShift v3 bietet einen HAProxy Router, der über FQDN dem entsprechenden Pod zuordnen kann. Weitere Informationen finden Sie unter http://docs.openshift.org/latest/architecture/core_objects/routing.html. Sie benötigen auch einen Eintrag im externen DNS, um den hier vorgesehenen FQDN aufzulösen.
+
+* OpenShift v3 Origin ist auch eine Management-GUI. Um unsere eingesetzte App auf der GUI anzuschauen, binden Sie den Benutzernamen `test-admin` auf die Ansichtsrolle im Standard-Namespace, damit Sie den Fortschritt in der Webkonsole beobachten können:
+`$ openshift ex policy add-role-to-user view test-admin`
+
+Dann, über den Browser, verbinden Sie mit `https://<host>:8443/console` und melden Sie sich über den test-admin Benutzer an, indem Sie ein Passwort eingeben. Da Vagrant den Verkehr von Port `8443` auf dem Host-Rechner an die VM weiterleitet, solltest du in der Lage sein, über den Host zu verbinden, auf dem VM läuft. Dann wählen Sie OpenShift 3 Sample als Projekt und erforschen:
+
+![openshift-services](https://www.packtpub.com/graphics/9781788297615/graphics/4862OS_05_14.jpg)
+
+* Im Multiple-Node-Setup können deine Pods auf verschiedenen Systemen geplant werden. OpenShift v3 verbindet Pods, obwohl der Overlay-Netzwerk-Pod, der auf einem Knoten läuft, auf einen anderen zugreifen kann. Es heißt `openshift-sdn`. Weitere Informationen finden Sie unter https://github.com/openshift/openshift-sdn.
+
+### Siehe auch
+
+Weitere Informationen finden Sie unter https://github.com/openshift/origin
+
+* Das OpenShift 3 Beta 3 Video Tutorial unter https://blog.openshift.com/openshift-3-beta-3-training-commons-briefing-12/
+
+* Das neueste OpenShift Training unter https://github.com/openshift/training
+
+* Die OpenShift v3 Dokumentation unter http://docs.openshift.org/latest/welcome/index.html
+
