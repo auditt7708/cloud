@@ -95,10 +95,6 @@ Ein aktualisierter Leistungsvergleich von virtuellen Maschinen und Linux-Contain
 
      Http://blogs.vmware.com/performance/2014/10/docker-containers-performance-vmware-vsphere.html
 
-### Übersicht
-
-[Benchmarking CPU Leistung](../docker-performence-cpu)
-
 
 Um das Benchmarking zu machen, müssen wir ähnliche Arbeitsbelastungen auf verschiedenen Umgebungen (Bare Metal / VM / Docker) durchführen und dann die Ergebnisse mit Hilfe verschiedener Performance-Statistiken sammeln. Um die Dinge zu vereinfachen, können wir gemeinsame Benchmark-Skripte schreiben, die verwendet werden können, um auf verschiedenen Umgebungen laufen zu können. Wir können auch Dockerfiles erstellen, um Container mit Workload-Generierungsskripts abzureiben. Zum Beispiel hat der Autor in der Performance-Analyse von Docker auf Red Hat Enterprise Linux Artikel, der früher aufgeführt ist (https://github.com/jeremyeder/docker-performance/blob/master/Dockerfiles/Dockerfile), eine Dockerfile verwendet Um ein CentOS-Bild zu erstellen und die Containerumgebungsvariable zu verwenden, um Docker- und Nicht-Docker-Umgebung für das Benchmark-Skript run-sysbench.sh auszuwählen.
 
@@ -106,7 +102,9 @@ Ebenso werden Dockerfiles und verwandte Skripte von IBM für ihre Studie unter h
 
 Wir werden einige der Docker-Dateien und Skripte verwenden, die zuvor in den Rezepten dieses Kapitels erwähnt wurden.
 
-### Übersicht
+### Übersicht 
+
+[Benchmarking CPU Leistung](../docker-performence-cpu)
 
 [Benchmarking der Plattenleistung](../docker-performence-plattenleistung)
 
