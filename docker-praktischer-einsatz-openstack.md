@@ -87,4 +87,34 @@ Aus dem vorigen Kommando können wir sehen, dass das Containerformat Docker ist.
 * Jetzt können Sie eine Instanz mit einem `Cirros` Image mit Horizon oder aus der Befehlszeile erstellen und den Container mit der Docker-Befehlszeile ansehen.
 
 * Um ein Image nach Glance zu importieren, kannst du so etwas wie folgendes machen:
-1. Machen  einen pull das gewünschte Bild von Docker Hub:
+1. Machen  einen pull des gewünschten Images von Docker Hub:
+`$ docker pull fedora `
+
+2. Importieren Sie das Image (derzeit kann nur admin das Image importieren):
+```
+$ source openrc 
+$ export OS_USERNAME=admin 
+$ sudo docker save fedora | glance image-create --is-public=True --container-format=docker --disk-format=raw --name fedora 
+```
+```
+source openrc
+export OS_USERNAME=admin
+sudo docker save fedora | glance image-create --is-public=True --container-format=docker --disk-format=raw --name fedore
+```
+
+* Es gibt einen Mangel an Integration mit Cinder und Neutron, aber die Dinge sind schnell aufholen.
+
+* Bei der Installation, wenn du das ¸AttributeError: 'module' object has no attribute 'PY2' error`, dann führen Sie die folgenden Befehle, um es zu beheben:
+```
+$ pip uninstall  six 
+$ pip install --upgrade   six 
+
+```
+
+### Siehe auch
+
+* Die Dokumentation auf der OpenStack-Website unter https://wiki.openstack.org/wiki/Docker.
+
+* Docker ist auch einer der Ressourcentypen für OpenStack Heat. Erfahren Sie mehr darüber unter http://docs.openstack.org/developer/heat/template_guide/contrib.html#dockerinc-resource.
+
+* Es gibt ein interessantes Projekt in OpenStack namens Kolla, das sich auf die Bereitstellung von OpenStack-Diensten über Docker-Container konzentriert. Weitere Informationen finden Sie unter https://github.com/stackforge/kolla/.
