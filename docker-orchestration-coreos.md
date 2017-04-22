@@ -12,11 +12,12 @@ Im Wesentlichen bietet CoreOS Plattformen, um einen kompletten Anwendungs stapel
 
 Lassen Sie uns im Einzelnen besprechen:
 
->* **etcd**: Von der GitHub-Seite von etcd (https://github.com/coreos/etcd/#etcd). Etcd ist ein hoch >verfügbarer Key-Value-Store für gemeinsame Konfiguration und Service Discovery. Es ist inspiriert von >Apache ZooKeeper und Doozer mit einem Fokus auf Sein:
+>* **etcd**: Von der GitHub-Seite von etcd (https://github.com/coreos/etcd/#etcd). Etcd ist ein hoch >verfügbarer Key-Value-Store für gemeinsame Konfiguration und Service Discovery. Es ist inspiriert von >Apache ZooKeeper und Doozer. :
 >
 >> * **Simple**: Curl-fähige User-API (HTTP plus JSON)
 >> * **Secure**: Optional SSL client certificate authentication
->> *  **Fast**: Benchmark von 1.000s von Schriften pro Instanz 
+>> *   **Fast**: Benchmark von 1.000s von Schriften pro Instanz 
+>> * **Reliable**: Richtige Verteilung mit Raft
 > 
 > Es ist in Go geschrieben und verwendet den Raft Consensus Algorithmus (https://raftconsensus.github.io/), > um ein hochverfügbares repliziertes Protokoll zu verwalten. 
 > Etcd kann unabhängig von CoreOS verwendet werden. Wir können:
