@@ -14,7 +14,6 @@ Lassen Sie uns im Einzelnen besprechen:
 
 * **etcd**: Von der GitHub-Seite von etcd (https://github.com/coreos/etcd/#etcd). Etcd ist ein hoch verfügbarer Key-Value-Store für gemeinsame Konfiguration und Service Discovery. Es ist inspiriert von Apache ZooKeeper und Doozer mit einem Fokus auf Sein:
 
-> 1. **Simple**: Curl-fähige User-API (HTTP plus JSON)
-2. **Secure**: Optional SSL client certificate authentication
-3. **Fast**: Benchmark von 1.000s von Schriften pro Instanz
-4. 
+>> * **Simple**: Curl-fähige User-API (HTTP plus JSON)
+>> * **Secure**: Optional SSL client certificate authentication
+>> *  **Fast**: Benchmark von 1.000s von Schriften pro Instanz 
