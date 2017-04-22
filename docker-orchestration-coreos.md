@@ -28,7 +28,7 @@ Lassen Sie uns im Einzelnen besprechen:
 >> 
 >> * Starten Sie Docker-Container
 >> 
->> * Registrieren von Diensten, die von Containern in etc
+>> * Registrieren von Diensten, wie von Containern in etc
 >> 
 >> Systemd verwaltet Unit-Dateien. Eine Beispiel unit datei sieht wie folgt aus:
 ```
@@ -49,6 +49,12 @@ LimitNPROC=1048576
 [Install] 
 WantedBy=multi-user.target 
 ```
->Diese unit datei startet den Docker-Daemon mit dem Befehl, der in `ExecStart` auf Fedora 21 erwähnt wird. Der Docker-Daemon startet nach dem `network target` und den `docker socket` Diensten. `docker socket` ist eine Voraussetzung für den Docker-Daemon. Systemd-Ziele sind Möglichkeiten, Prozesse zu gruppieren, damit sie gleichzeitig starten können. Mehrbenutzer ist eines der Ziele, mit denen die vorherige Einheitsdatei registriert ist. Für weitere Details können Sie sich die Upstream-Dokumentation von Systemd unter http://www.freedesktop.org/wiki/Software/systemd/ anschauen.
+>Diese unit datei startet den Docker Daemon mit dem Befehl `ExecStart`, der auf Fedora 21 erwähnt wird. Der Docker-Daemon startet nach dem `network target` und den `docker socket` Diensten. `docker socket` ist eine Voraussetzung für den Docker-Daemon. Systemd targets sind Möglichkeiten, Prozesse zu gruppieren, damit sie gleichzeitig starten können. `multi-user` ist eines der targets, mit denen die vorherige unit datei registriert ist. Für weitere Details können Sie sich die Upstream-Dokumentation von Systemd unter http://www.freedesktop.org/wiki/Software/systemd/ ansehen.
 >
+> * **Fleet**: Fleet (https://coreos.com/using-coreos/clustering/) ist der Cluster-Manager, der System auf der Cluster-Ebene steuert. Systemd Unit-Dateien werden mit einigen flottenspezifischen Eigenschaften kombiniert, um das Ziel zu erreichen. Aus der Flottendokumentation (https://github.com/coreos/fleet/blob/master/Documentation/architecture.md):
+>
+> Zitat: 
+> "Jedes System im fleet-Cluster läuft mit einem einzigen `fleetd` Daemon, jeder Dämon kapselt zwei Rollen: die engine und den Agenten, eine engine, der in erster Linie Entscheidungen trift, während ein Agent Einheiten ausführt. Sowohl die engine als auch der Agent verwenden das modell, snapshot des "acurrent state" und des desired state(gewünschten Zustandes) und die notwendige Arbeit, um die Erstere gegen die letzteren zu mutieren. "
+> 
+> `etcd` ist der einzige Datenspeicher in einem `fleet` cluster. Alle persistenten und kurzlebigen Daten werden in etcd gespeichert; Unit-Dateien, Cluster-Präsenz, Unit Status und so weiter. Etcd wird auch für alle internen kommunikationen zwischen fleet engines und agenten verwendet.
 > 
