@@ -16,10 +16,12 @@ Lassen Sie uns im Einzelnen besprechen:
 >> *   **Fast**: Benchmark von 1.000s von Schriften pro Instanz 
 >> * **Reliable**: Richtige Verteilung mit Raft
 > 
-> Es ist in Go geschrieben und verwendet den Raft Consensus Algorithmus (https://raftconsensus.github.io/), > um ein hochverfügbares repliziertes Protokoll zu verwalten. 
+> Es ist in Go geschrieben und verwendet den Raft Consensus Algorithmus (https://raftconsensus.github.io/), > um ein hochverfügbares repliziertes Protokoll zu verwalten.
 > Etcd kann unabhängig von CoreOS verwendet werden. Wir können:
->> * Richten Sie einen Einzel- oder Multinode-Cluster ein. Weitere Informationen hierzu finden Sie unter https://github.com/coreos/etcd/blob/master/Documentation/clustering.md.
+>
+>> * Einen Einzel- oder Multinode-Cluster einrichten. Weitere Informationen hierzu finden Sie unter https://github.com/coreos/etcd/blob/master/Documentation/clustering.md.
 >>
->> * Zugriff mit CURL und verschiedenen Bibliotheken, gefunden unter https://github.com/coreos/etcd/blob/master/Documentation/libraries-and-tools.md. 
->> 
->> 
+>> * Zugriff mit CURL und verschiedenen Bibliotheken, närares unter https://github.com/coreos/etcd/blob/master/Documentation/libraries-and-tools.md. 
+> 
+> * **Container runtime**: CoreOS unterstützt Docker als Container-Laufzeitumgebung. Im Dezember 2014 gab CoreOS eine neue Container-Laufzeit Rocket (https://coreos.com/blog/rocket/) bekannt. Lassen Sie uns unsere Diskussion auf Docker beschränken, die derzeit auf allen CoreOS-Maschinen installiert ist.
+> * **systemd**: `Systemd` ist ein init-System zum Starten, Stoppen und Verwalten von Prozessen. In CoreOS ist es gewohnt:
