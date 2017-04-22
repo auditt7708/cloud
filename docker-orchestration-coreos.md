@@ -17,3 +17,11 @@ Lassen Sie uns im Einzelnen besprechen:
 >> * **Simple**: Curl-fähige User-API (HTTP plus JSON)
 >> * **Secure**: Optional SSL client certificate authentication
 >> *  **Fast**: Benchmark von 1.000s von Schriften pro Instanz 
+> 
+> Es ist in Go geschrieben und verwendet den Raft Consensus Algorithmus (https://raftconsensus.github.io/), > um ein hochverfügbares repliziertes Protokoll zu verwalten. 
+> Etcd kann unabhängig von CoreOS verwendet werden. Wir können:
+>> * Richten Sie einen Einzel- oder Multinode-Cluster ein. Weitere Informationen hierzu finden Sie unter >>https://github.com/coreos/etcd/blob/master/Documentation/clustering.md.
+>>
+>> * Zugriff mit CURL und verschiedenen Bibliotheken, gefunden unter >>https://github.com/coreos/etcd/blob/master/Documentation/libraries-and-tools.md. 
+>> 
+>> 
