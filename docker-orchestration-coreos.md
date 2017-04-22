@@ -49,4 +49,6 @@ LimitNPROC=1048576
 [Install] 
 WantedBy=multi-user.target 
 ```
+>Diese unit datei startet den Docker-Daemon mit dem Befehl, der in `ExecStart` auf Fedora 21 erwähnt wird. Der Docker-Daemon startet nach dem `network target` und den `docker socket` Diensten. `docker socket` ist eine Voraussetzung für den Docker-Daemon. Systemd-Ziele sind Möglichkeiten, Prozesse zu gruppieren, damit sie gleichzeitig starten können. Mehrbenutzer ist eines der Ziele, mit denen die vorherige Einheitsdatei registriert ist. Für weitere Details können Sie sich die Upstream-Dokumentation von Systemd unter http://www.freedesktop.org/wiki/Software/systemd/ anschauen.
 >
+> 
