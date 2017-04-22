@@ -31,23 +31,6 @@ Lassen Sie uns im Einzelnen besprechen:
 >> * Registrieren von Diensten, die von Containern in etc
 >> 
 >> Systemd verwaltet Unit-Dateien. Eine Beispiel unit datei sieht wie folgt aus:
->>
->> ```
->>[Unit] 
->>Description=Docker Application Container Engine 
->>Documentation=http://docs.docker.com 
->>After=network.target docker.socket 
->>Requires=docker.socket 
->>
->>[Service] 
->>Type=notify 
->>EnvironmentFile=-/etc/sysconfig/docker 
->>EnvironmentFile=-/etc/sysconfig/docker-storage 
->>ExecStart=/usr/bin/docker -d -H fd:// $OPTIONS $DOCKER_STORAGE_OPTIONS 
->>LimitNOFILE=1048576 
->>LimitNPROC=1048576 
->>
->>[Install] 
->>WantedBy=multi-user.target 
->>```
->>
+```
+
+```
