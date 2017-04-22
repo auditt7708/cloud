@@ -58,3 +58,100 @@ WantedBy=multi-user.target
 > 
 > `etcd` ist der einzige Datenspeicher in einem `fleet` cluster. Alle persistenten und kurzlebigen Daten werden in etcd gespeichert; Unit-Dateien, Cluster-Präsenz, Unit Status und so weiter. Etcd wird auch für alle internen kommunikationen zwischen fleet engines und agenten verwendet.
 > 
+
+Jetzt kennen wir alle Bausteine von CoreOS. Lassen Sie uns CoreOS auf unserem lokalen System/Laptop ausprobieren. Um die Dinge einfach zu halten, werden wir Vagrant benutzen, um die Umgebung zu einzurichten.
+
+### Fertig werden
+
+1. Installiere VirtualBox auf dem System (https://www.virtualbox.org/) und Vagrant (https://www.vagrantup.com/). Die Anweisungen, diese beiden Dinge zu konfigurieren, liegen außerhalb des Umfangs dieses Buches.
+
+2. Klone das `coreos-vagrant` Repository:
+```
+$ git clone https://github.com/coreos/coreos-vagrant.git 
+$ cd coreos-vagrant
+```
+
+3. Kopiere die Beispieldatei `user-data.sample` in `user-data` und setze das Token ein, um den Cluster zu booten:
+
+4. Wenn wir den CoreOS-Cluster mit mehr als einem Knoten konfigurieren, benötigen wir einen Token, um den Cluster zu booten, um den anfänglichen usw-Führer auszuwählen. Dieser Service wird vom CoreOS Team kostenlos zur Verfügung gestellt. Wir müssen nur `https://discovery.etcd.io/new` im Browser öffnen, um das Token zu erhalten und es in der `user-data` Datendatei wie folgt zu aktualisieren:
+```
+![haed-user-data](https://www.packtpub.com/graphics/9781788297615/graphics/4862OS_08_04.jpg)
+
+5. Kopiere `config.rb.sample` in `config.rb` und tauche die folgende Zeile aus:
+`$num_instances=1`
+es sollte folgender maßen aussehen
+`$num_instances=3`
+
+Wir werden Vagrant bitten, drei cluster Nodes einzurichten. Standardmäßig ist Vagrant so konfiguriert, dass die VM-Bilder aus der Alpha-Version erhalten werden. Wir können es von Beta zu Stable ändern, indem wir den Parameter `$update_channel` in Vagrantfile aktualisieren. Für dieses Rezept wählte ich stabil.
+
+### Wie es geht…
+
+1. Führen Sie den folgenden Befehl aus, um den Cluster einzurichten:
+`$ vagrant up ` 
+
+Überprüfen Sie nun den Status, indem Sie den folgenden Befehl verwenden:
+`vagrant status`
+
+2. Melden Sie sich mit SSH in einer der VMs an, schauen Sie sich den Status der Dienste an und listen Sie die Maschinen im Cluster auf:
+```
+$ vagrant ssh core-01 
+$ systemctl status etcd fleet
+$ fleetctl list-machines
+```
+
+`fleetctl list-machines`
+
+3. Erstellen Sie eine Service-Unit-Datei namens `myapp.service` mit folgendem Inhalt:
+```
+[Unit] 
+Description=MyApp 
+After=docker.service 
+Requires=docker.service 
+
+[Service] 
+TimeoutStartSec=0 
+ExecStartPre=-/usr/bin/docker kill busybox1 
+ExecStartPre=-/usr/bin/docker rm busybox1 
+ExecStartPre=/usr/bin/docker pull busybox 
+ExecStart=/usr/bin/docker run --name busybox1 busybox /bin/sh -c "while true; do echo Hello World; sleep 1; done" 
+ExecStop=/usr/bin/docker stop busybox1
+
+```
+
+4. Lassen Sie uns jetzt den Service für den scheduler einreichen und den Service starten:
+```
+$ fleetctl submit myapp.service
+$ fleetctl start myapp.service
+$ fleetctl list-units
+```
+
+`fleetctl submit myapp.service`
+
+`fleetctl start myapp.service`
+
+Wie wir sehen können, hat unser Service auf einem der Nodes im Cluster begonnen.
+
+### Wie es funktioniert…
+
+Vagrant verwendet die Cloud-Konfigurationsdatei (`user-data`), um die VMs zu booten. Da sie das gleiche Token haben, um den Cluster zu booten, wählen sie den Ersten und starten ihn. 
+Dann, mit `fleetctl`, das ist das fleet-Cluster-Management-Tool, legen wir die Unit Datei für die Terminierung, die auf einem der Knoten beginnt.
+
+### Es gibt mehr…
+
+* Mit der Cloud-Konfigurationsdatei in diesem Rezept können wir `etcd` und `fleet` auf allen VMs starten. Wir können wählen, um etcd nur auf ausgewählte Knoten laufen und dann konfigurieren Arbeiter Knoten mit `fleet` zu verbinden, um etcd Servern. Dies kann durch die Einstellung der Cloud-Konfigurationsdatei erfolgen. Weitere Informationen finden Sie unter https://coreos.com/docs/cluster-management/setup/cluster-architectures/.
+
+* Mit der `fleet` können wir die Dienste für die Hochverfügbarkeit konfigurieren. Weitere Informationen finden Sie unter https://coreos.com/docs/launching-containers/launching/fleet-unit-files/.
+
+Obwohl dein Service auf dem Host läuft, kannst du ihn nicht von der Außenwelt erreichen. Sie müssen eine Art Router und Wildcard-DNS-Konfiguration hinzufügen, um Ihren Service von der Außenwelt zu erreichbar zu machen.
+
+### Siehe auch
+
+* Die CoreOS-Dokumentation für weitere Details unter https://coreos.com/docs/
+
+* Die Visualisierung des RAFT consensus algorithmus auf http://thesecretlivesofdata.com/raft
+
+* So konfiguriert man die Cloud-Konfigurationsdatei unter https://coreos.com/docs/cluster-management/setup/cloudinit-cloud-config/ und https://coreos.com/validate/
+
+* Dokumentation auf systemd unter https://coreos.com/docs/launching-containers/launching/getting-started-with-systemd/
+
+* Wie man Container mit Flotte auf https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/
