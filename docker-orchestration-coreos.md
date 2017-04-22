@@ -25,3 +25,28 @@ Lassen Sie uns im Einzelnen besprechen:
 > 
 > * **Container runtime**: CoreOS unterstützt Docker als Container-Laufzeitumgebung. Im Dezember 2014 gab CoreOS eine neue Container-Laufzeit Rocket (https://coreos.com/blog/rocket/) bekannt. Lassen Sie uns unsere Diskussion auf Docker beschränken, die derzeit auf allen CoreOS-Maschinen installiert ist.
 > * **systemd**: `Systemd` ist ein init-System zum Starten, Stoppen und Verwalten von Prozessen. In CoreOS ist es gewohnt:
+>> 
+>> * Starten Sie Docker-Container
+>> 
+>> * Registrieren von Diensten, die von Containern in etc
+>> 
+>> Systemd verwaltet Unit-Dateien. Eine Beispiel unit datei sieht wie folgt aus:
+>> ```
+>> [Unit] 
+Description=Docker Application Container Engine 
+Documentation=http://docs.docker.com 
+After=network.target docker.socket 
+Requires=docker.socket 
+
+[Service] 
+Type=notify 
+EnvironmentFile=-/etc/sysconfig/docker 
+EnvironmentFile=-/etc/sysconfig/docker-storage 
+ExecStart=/usr/bin/docker -d -H fd:// $OPTIONS $DOCKER_STORAGE_OPTIONS 
+LimitNOFILE=1048576 
+LimitNPROC=1048576 
+
+[Install] 
+WantedBy=multi-user.target 
+```
+>>
