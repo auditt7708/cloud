@@ -2,10 +2,10 @@ CoreOS (https://coreos.com/) ist eine Linux-Distribution, für Container wie Doc
 
 Im Wesentlichen bietet CoreOS Plattformen, um einen kompletten Anwendungs stapel zu hosten. Wir können CoreOS auf verschiedenen Cloud-Anbietern, bare metal und in der VM-Umgebung aufbauen. Schauen wir uns die Bausteine von CoreOS an:
 
-> * etcd
-> * Container Laufzeitumgebubng
-> * Systemd
-> * Fleet
+* etcd
+* Container Laufzeitumgebubng
+* Systemd
+* Fleet
 
 Lassen Sie uns im Einzelnen besprechen:
 
