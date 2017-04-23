@@ -29,3 +29,36 @@ Schauen wir uns einige der wichtigsten Komponenten und Konzepte von Kubernetes a
 >
 > Master kommuniziert auch mit etcd, was ein verteiltes Schlüsselwertpaar ist. Etcd wird verwendet, um die Konfigurationsinformationen zu speichern, die sowohl von Master als auch von Knoten verwendet werden. Die Watch-Funktionalität von etcd wird verwendet, um die Änderungen im Cluster zu benachrichtigen. Etcd kann auf Master oder auf einem anderen Satz von Systemen gehostet werden.
 >
+> * **Services**: In Kubernetes bekommt jeder Pod seine eigene IP-Adresse, und Pods werden jedes Mal erstellt und zerstört, basierend auf der Replikationscontroller-Konfiguration. Also, können wir uns nicht auf die IP-Adresse eines Pods verlassen, um eine App zu versorgen. Um dieses Problem zu überwinden, definiert Kubernetes eine Abstraktion, die einen logischen Satz von Pods und Richtlinien definiert, um darauf zuzugreifen. Diese Abstraktion heißt Service. Labels werden verwendet, um den logischen Satz zu definieren, der ein Dienst verwaltet.
+>
+> * **Labels**: Labels sind Schlüsselwertpaare, die an Objekten angebracht werden können, mit denen wir eine Teilmenge von Objekten auswählen. Zum Beispiel kann ein Service alle Pods mit dem Label `mysql` auswählen.
+> 
+> * **Volumes**: Ein Volume ist ein Verzeichnis, das für die Container in einem Pod zugänglich ist. Es ist ähnlich wie Docker-Bände, aber nicht das gleiche. In Kubernetes werden verschiedene Arten von Volumes unterstützt, von denen einige EmptyDir (kurzlebig), HostDir, GCEPersistentDisk und NFS sind. Aktive Entwicklung ist, um mehr Arten von Bänden zu unterstützen. Weitere Details finden Sie unter https://kubernetes.io/docs/user-guide/volumes/.
+> 
+
+Kubernetes kann auf VMs, physischen Maschinen und der Cloud installiert werden. Für die komplette Matrix, werfen Sie einen Blick auf https://github.com/GoogleCloudPlatform/kubernetes/tree/master/docs/getting-started-guides. In diesem Rezept werden wir sehen, wie man es auf VMs installiert, mit Vagrant mit VirtualBox-Provider. Dieses Rezept und die folgenden Rezepte von Kubernetes, wurden auf v0.17.0 von Kubernetes versucht.
+
+### Fertig werden
+* Installiere die neuesten Vagrant> = 1.6.2 von http://www.vagrantup.com/downloads.html.
+
+* Installiere die neueste VirtualBox von https://www.virtualbox.org/wiki/Downloads. Detaillierte Anleitungen zum Einrichten dieses Gerätes liegen außerhalb des Umfangs dieses Buches.
+
+### Wie es geht…
+
+Führen Sie den folgenden Befehl aus, um Kubernetes auf Vagrant VMs einzurichten:
+```
+$ export KUBERNETES_PROVIDER=vagrant
+$ export VAGRANT_DEFAULT_PROVIDER=virtualbox
+$ curl -sS https://get.k8s.io | bash
+
+```
+
+### Wie es funktioniert…
+
+Das bash-Skript, das aus dem `curl`-Befehl heruntergeladen wurde, lädt zuerst die neueste Kubernetes-Version herunter und führt dann das Skript ./kubernetes/cluster/kube-up.sh bash aus, um die `KUBERNETES_PROVIDER` einzurichten. Wie wir Vagrant als KUBERNETES_PROVIDER spezifiziert haben, lädt das Skript zuerst die Vagrant Bilder herunter und konfiguriert dann mit Salt (http://saltstack.com/) einen Master und einen Knoten (Minion) VM. Die Initialisierung dauert ein paar Minuten.
+
+Vagrant erstellt eine Berechtigungsdatei in `~/.kubernetes_vagrant_auth` zur Authentifizierung.
+
+### Es gibt mehr…
+
+Ähnlich wie bei ./cluster/kube-up.sh gibt es weitere Hilfskripts, um verschiedene Operationen von der Host-Maschine selbst auszuführen. Stellen Sie sicher, dass Sie sich im Kubernetes-Verzeichnis befinden, das mit der vorherigen Installation erstellt wurde, während Sie die folgenden Befehle ausführen:
