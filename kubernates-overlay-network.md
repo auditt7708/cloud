@@ -377,13 +377,15 @@ eth0      Link encap:Ethernet  HWaddr 02:42:c0:a8:3a:08
 root@0cd2a2f73d8e:/# ping 192.168.65.2
 PING 192.168.4.10 (192.168.4.10) 56(84) bytes of data.
 64 bytes from 192.168.4.10: icmp_seq=2 ttl=62 time=0.967 ms
-64 bytes from 192.168.4.10: icmp_seq=3 ttl=62 time=1.00 ms```
+64 bytes from 192.168.4.10: icmp_seq=3 ttl=62 time=1.00 ms
+```
 
 **Container 2 auf host 2 (10.42.1.172)**
 
 
 ``` 
 root@619b3ae36d77:/# ifconfig eth0
+
 eth0      Link encap:Ethernet  HWaddr 02:42:c0:a8:04:0a
           inet addr:192.168.65.2  Bcast:0.0.0.0  Mask:255.255.255.0
           inet6 addr: fe80::42:c0ff:fea8:40a/64 Scope:Link
