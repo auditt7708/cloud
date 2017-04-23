@@ -8,7 +8,7 @@ Kubernetes wird mit mehreren Komponenten wie folgt konstruiert:
 
 * Kubernetes-Nodes
 
-* ctcd
+* etcd
 
 * Overlay-Netzwerk (flannel)
 
