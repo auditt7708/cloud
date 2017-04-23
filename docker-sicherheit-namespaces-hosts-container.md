@@ -25,11 +25,11 @@ Docker erstellt keine separaten Namensräume für Container, wenn solche Argumen
 
 ### Es gibt mehr...
 
-Für Hosts, die gebaut werden, um nur Container laufen zu lassen, wie z.B Project Atomic (http://www.projectatomic.io/), die wir in Kapitel 8, Docker Orchestrations- und Hosting-Plattformen gesehen haben, haben keine Debugging-Tools wie tcpdump und Sysstat auf dem Host-System. So haben wir Container mit diesen Tools erstellt und haben Zugriff auf Host-Ressourcen. In solchen Fällen wird das Teilen von Namespaces zwischen dem Host und dem Container praktisch. Sie können mehr darüber über die folgenden Links lesen:
+Für Hosts, die gebaut werden, um nur Container laufen zu lassen, wie z.B Project Atomic (http://www.projectatomic.io/), die wir in [Docker Orchestration und Hosting](../docker-Orchestration-hosting) gesehen haben, haben wir Debugging-Tools wie tcpdump und Sysstat auf dem Host-System. So haben wir Container mit diesen Tools erstellt und haben Zugriff auf Host-Ressourcen. In solchen Fällen wird das Teilen von Namespaces zwischen dem Host und dem Container praktisch. Sie können mehr darüber über die folgenden Links lesen:
 
-Http://developerblog.redhat.com/2014/11/06/introducing-a-super-privileged-container-concept/
+* Http://developerblog.redhat.com/2014/11/06/introducing-a-super-privileged-container-concept/
 
-Http://developerblog.redhat.com/2015/03/11/introducing-the-rhel-container-for-rhel-atomic-host/
+* Http://developerblog.redhat.com/2015/03/11/introducing-the-rhel-container-for-rhel-atomic-host/
 
 ### Siehe auch
 
