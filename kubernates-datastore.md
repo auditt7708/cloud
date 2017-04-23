@@ -267,8 +267,32 @@ Die minimale Konfiguration ist wie folgt:
 
 |NAME|Zweck|Beispiel|Notiz|
 | :---: | :---: | :---: | :---: |
-|||||
-|||||
-|||||
-|||||
-|||||
+| `ETCD_NAME` |Instance name| `myhappy-etcd` ||
+| `ETCD_DATA_DIR` |Data file path|`/var/lib/etcd/myhappy.etcd`|File path must be owned by etcd user|
+| `ETCD_LISTEN_CLIENT_URLS` |TCP port number| `http://0.0.0.0:8080` |Specifying `0.0.0.0`, binds all IP address, otherwise use localhost to accept only same machine|
+| `ETCD_ADVERTISE_CLIENT_URLS` |Advertise this etcd URL to other cluster instances| http://localhost:8080 |Use for clustering configuration|
+
+
+Beachten Sie, dass Sie die Exportrichtlinie verwenden müssen, wenn Sie das init-basierte Linux verwenden möchten, um Umgebungsvariablen wie folgt festzulegen:
+
+```
+$ cat /etc/etcd/etcd.conf
+
+export ETCD_NAME=myhappy-etcd
+export ETCD_DATA_DIR="/var/lib/etcd/myhappy.etcd"
+export ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:8080"
+export ETCD_ADVERTISE_CLIENT_URLS="http://localhost:8080"
+```
+
+Auf der anderen Seite braucht systemd basiertes Linux die Exportrichtlinie nicht wie folgt:
+```
+$ cat /etc/etcd/etcd.conf
+ETCD_NAME=myhappy-etcd
+ETCD_DATA_DIR="/var/lib/etcd/myhappy.etcd"
+ETCD_LISTEN_CLIENT_URLS="http://0.0.0.0:8080"
+ETCD_ADVERTISE_CLIENT_URLS="http://localhost:8080"
+```
+
+### Siehe auch
+
+In diesem Abschnitt wurde beschrieben, wie Sie etc. konfigurieren können. Es ist einfach und einfach zu bedienen über die RESTful API, aber mächtig. Allerdings muss man sich dessen Sicherheit und Verfügbarkeit bewusst sein. Die folgenden Rezepte beschreiben, wie sichergestellt wird, dass etcd sicher und robust ist:
