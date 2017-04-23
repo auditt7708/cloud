@@ -330,6 +330,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 ```
 
 Lass uns ein bisschen tiefer gehen, um zu sehen, wie etcd die flannel-Subnetz-Informationen speichert. Sie können die Netzwerkkonfiguration mit dem Befehl `etcdctl` in etcd abrufen:
+
 ```
 # get network config
 $ etcdctl get /coreos.com/network/config
@@ -363,7 +364,8 @@ Lass uns einen einfachen Test durchführen, indem wir zwei einzelne Container la
 
 **Container 1 auf host 1 (10.42.1.171)**
 
-```root@0cd2a2f73d8e:/# ifconfig eth0
+```
+root@0cd2a2f73d8e:/# ifconfig eth0
 eth0      Link encap:Ethernet  HWaddr 02:42:c0:a8:3a:08
           inet addr:192.168.50.2  Bcast:0.0.0.0  Mask:255.255.255.0
           inet6 addr: fe80::42:c0ff:fea8:3a08/64 Scope:Link
