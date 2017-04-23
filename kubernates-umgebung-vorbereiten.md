@@ -9,7 +9,7 @@ Es gibt verschiedene Lösungen für die Schaffung eines solchen Kubernetes-Clust
 >>
 >> * Vagrant
 >>
->> *Linux-Maschine
+>> * Linux-Maschine
 >
 > * Hosted Lösung, die beinhaltet:
 >
