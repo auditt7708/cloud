@@ -395,3 +395,19 @@ eth0      Link encap:Ethernet  HWaddr 02:42:c0:a8:04:0a
           collisions:0 txqueuelen:0
           RX bytes:648 (648.0 B)  TX bytes:648 (648.0 
 ```
+
+Wir können sehen, dass zwei Container mit Ping miteinander kommunizieren können. Lassen Sie uns das Paket mit `tcpdump` in `host2` beobachten, das ein Befehlszeilentool ist, das helfen kann, Verkehr in einem Netzwerk zu Dumpen:
+```
+# install tcpdump in container
+$ yum install -y tcpdump
+
+# observe the UDP traffic from host2
+$ tcpdump host 10.42.1.172 and udp
+11:20:10.324392 IP 10.42.1.171.52293 > 10.42.1.172.6177: UDP, length 106
+11:20:10.324468 IP 10.42.1.172.47081 > 10.42.1.171.6177: UDP, length 106
+11:20:11.324639 IP 10.42.1.171.52293 > 10.42.1.172.6177: UDP, length 106
+11:20:11.324717 IP 10.42.1.172.47081 > 10.42.1.171.6177: UDP, length 106
+```
+
+Der Verkehr zwischen den Containern ist in UDP durch Port `6177` unter Verwendung von Flanneld eingekapselt.
+
