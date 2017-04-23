@@ -10,4 +10,18 @@ Schauen wir uns einige der wichtigsten Komponenten und Konzepte von Kubernetes a
 
 > * **Node/Minion**: Ein Knoten, der früher als Minion bekannt war, ist ein Arbeiterknoten im Kubernetes-Cluster und wird über Master verwaltet. Pods werden auf einem Knoten bereitgestellt, der die notwendigen Dienste hat, um sie auszuführen:
 >
->> * 
+>> * Docker, um Container auszuführen
+>>
+>> * Kubelet, um mit meister zu interagieren
+>>
+>> * Proxy (kube-Proxy), der den Service mit dem entsprechenden Pod verbindet
+>>
+>
+> * **Master**: Master beherbergt Cluster-Level-Control-Services wie die folgenden:
+>
+>> 
+>> * API-Server: Dies hat RESTful APIs, um mit Master und Knoten zu interagieren. Dies ist die einzige Komponente, die mit der etcd-Instanz spricht.
+>>
+>> * Scheduler: Dies plant Aufträge in Clustern, wie z. B. das Erstellen von Pods auf Knoten.
+>> 
+>> * Replikations-Controller: Damit wird sichergestellt, dass die benutzerdefinierte Anzahl von Pod-Repliken zu einem beliebigen Zeitpunkt ausgeführt wird. Um Replikate mit dem Replikationscontroller zu verwalten, müssen wir eine Konfigurationsdatei mit der Replikatzahl für einen Pod definieren.
