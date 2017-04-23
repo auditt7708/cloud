@@ -62,3 +62,31 @@ Vagrant erstellt eine Berechtigungsdatei in `~/.kubernetes_vagrant_auth` zur Aut
 ### Es gibt mehr…
 
 Ähnlich wie bei ./cluster/kube-up.sh gibt es weitere Hilfskripts, um verschiedene Operationen von der Host-Maschine selbst auszuführen. Stellen Sie sicher, dass Sie sich im Kubernetes-Verzeichnis befinden, das mit der vorherigen Installation erstellt wurde, während Sie die folgenden Befehle ausführen:
+
+* Holen Sie sich die Liste der Nodes:
+`$ ./cluster/kubectl.sh get nodes`
+
+* Holen Sie sich die Liste der Pods:
+`$ ./cluster/kubectl.sh get pods`
+
+* Holen Sie sich die Liste der services:
+`$ ./cluster/kubectl.sh get services`
+
+* Erhalten Sie die Liste der Replikationscontroller:
+`$ ./cluster/kubectl.sh get replicationControllers`
+
+* Zerstöre den vagabunden cluster:
+`$ ./cluster/kube-down.sh`
+
+* Dann bringen Sie den vagabunden Cluster zurück:
+`$ ./cluster/kube-up.sh`
+
+Sie sehen einige `pods`, `services` und `replicationControllers` aufgeführt, wie Kubernetes sie für den internen Gebrauch erstellt.
+
+### Siehe auch
+
+* Einrichten der vagabunden Umgebung unter https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/getting-started-guides/vagrant.md
+
+* Die Kubernetes Bedienungsanleitung unter https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/user-guide.md
+
+* Kubernetes API Konventionen unter https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/api-conventions.md
