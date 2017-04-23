@@ -10,7 +10,7 @@ Manchmal wird es notwendig, eine Docker-Binärdatei aus der Quelle zum Testen ei
 
 3. Vergewissern Sie sich, dass Docker auf dem Host läuft, auf dem Sie den Code erstellen und dass Sie  über den Docker-Client darauf zugreifen können, da der Build, den wir hier besprechen, in einem Container passiert.
 
-Wie es geht…
+### Wie es geht…
 
 1. Gehe in das geklonte Verzeichnis:
 `$ cd docker`
