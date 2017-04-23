@@ -361,9 +361,9 @@ Im Folgenden finden Sie eine Illustration, wie ein Paket von **Pod1** durch das 
 
 Lass uns einen einfachen Test durchführen, indem wir zwei einzelne Container laufen lassen, um zu sehen, ob Flanell gut funktioniert. Angenommen, wir haben zwei Hosts (10.42.1.171 und 10.42.1.172) mit verschiedenen Subnetzen, die von Flannel mit dem gleichen etcd Backend zugewiesen werden und haben Docker ausgeführt von Docker laufen -ein ubuntu / bin / bash in jedem Host:
 
-|Container 1 auf host 1 (10.42.1.171)|Container 2 auf host 2 (10.42.1.172)|
-| :----: | :---: |
-|```root@0cd2a2f73d8e:/# ifconfig eth0
+**Container 1 auf host 1 (10.42.1.171)**
+
+```root@0cd2a2f73d8e:/# ifconfig eth0
 eth0      Link encap:Ethernet  HWaddr 02:42:c0:a8:3a:08
           inet addr:192.168.50.2  Bcast:0.0.0.0  Mask:255.255.255.0
           inet6 addr: fe80::42:c0ff:fea8:3a08/64 Scope:Link
@@ -375,7 +375,13 @@ eth0      Link encap:Ethernet  HWaddr 02:42:c0:a8:3a:08
 root@0cd2a2f73d8e:/# ping 192.168.65.2
 PING 192.168.4.10 (192.168.4.10) 56(84) bytes of data.
 64 bytes from 192.168.4.10: icmp_seq=2 ttl=62 time=0.967 ms
-64 bytes from 192.168.4.10: icmp_seq=3 ttl=62 time=1.00 ms```|``` oot@619b3ae36d77:/# ifconfig eth0
+64 bytes from 192.168.4.10: icmp_seq=3 ttl=62 time=1.00 ms```
+
+**Container 2 auf host 2 (10.42.1.172)**
+
+
+``` 
+root@619b3ae36d77:/# ifconfig eth0
 eth0      Link encap:Ethernet  HWaddr 02:42:c0:a8:04:0a
           inet addr:192.168.65.2  Bcast:0.0.0.0  Mask:255.255.255.0
           inet6 addr: fe80::42:c0ff:fea8:40a/64 Scope:Link
@@ -383,4 +389,5 @@ eth0      Link encap:Ethernet  HWaddr 02:42:c0:a8:04:0a
           RX packets:8 errors:0 dropped:0 overruns:0 frame:0
           TX packets:8 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:0
-          RX bytes:648 (648.0 B)  TX bytes:648 (648.0 ```|
+          RX bytes:648 (648.0 B)  TX bytes:648 (648.0 
+```
