@@ -27,7 +27,7 @@
 #Kubernates
 
 #### [Richte dein eigenes Kubernates ein](../kubernates-einrichten)
-#### [Durch Kubernates Verbindungen](../kubernates-verbindugen)
+#### [Durch Kubernates Verbindungen](../kubernates-konzepte)
 #### [Spielen mit Containern](../kubernates-container)
 #### [Einrichten eines Hochverfügbaren Clusters](../kubernates-ha-einrichten)
 #### [Einrichten einer Continuous Delivery Pipeline](../kubernates-cd-pipline)
