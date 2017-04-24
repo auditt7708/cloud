@@ -1,8 +1,8 @@
-Knoten ist der Sklave im Kubernetes-Cluster. Um den Meister einen Knoten unter seiner Aufsicht zu lassen, installiert der Knoten einen Agenten namens Kubelet, um sich an einen bestimmten Master zu registrieren. Nach der Registrierung, Daemon Kubelet behandelt auch Container-Operationen und Berichte Ressourcen-Utilities und Container-Status an den Master. Der andere Dämon, der auf dem Knoten läuft, ist der Kube-Proxy, der TCP / UDP-Pakete zwischen Containern verwaltet. In diesem Abschnitt zeigen wir Ihnen, wie Sie einen Knoten konfigurieren können.
+Ein Node ist der Slave im Kubernetes-Cluster. Um den Meister einen Node unter seiner Aufsicht zu lassen, installiert der Node einen Agenten namens Kubelet, um sich an einen bestimmten Master zu registrieren. Nach der Registrierung, behandelt der Daemon Kubelet auch Container-Operationen und Berichte Ressourcen-Utilities und Container-Status an den Master. Der andere Dämon, der auf dem Node läuft, ist der Kube-Proxy, der TCP/UDP-Pakete zwischen Containern verwaltet. In diesem Abschnitt zeigen wir Ihnen, wie Sie einen Node konfigurieren können.
 
 ### Fertig werden
 
-Da der Knoten der Arbeiter von Kubernetes ist und die wichtigste Aufgabe Container ist, muss man sicherstellen, dass Docker und Flanneld am Anfang installiert sind. Kubernetes setzt auf Docker, die Anwendungen in Containern laufen lassen. Und durch Flanschen können die Hülsen auf getrennten Knoten miteinander kommunizieren.
+Da der Node der Arbeiter von Kubernetes ist und die wichtigste Aufgabe Container sind, muss man sicherstellen, dass Docker und flanneld am Anfang installiert sind. Kubernetes setzt auf Docker, die Anwendungen in Containern laufen lassen. Und durch flanneld können die pods auf getrennten nodes miteinander kommunizieren.
 
 Nachdem Sie die beiden Daemons installiert haben, sollte die Netzwerkschnittstelle docker0 entsprechend der Datei `/run/flannel/subnet.env` unter demselben LAN wie `flannel0` sein:
 
@@ -69,22 +69,21 @@ DOCKER_OPT_MTU="--mtu=8973"
 DOCKER_NETWORK_OPTIONS=" --bip=192.168.31.1/24 --mtu=8973 "
 ```
 
-Sobald Sie das Docker-Service-Skript auf ein korrektes geändert haben, stoppen Sie den Docker-Dienst, reinigen Sie die Netzwerkschnittstelle und starten Sie es erneut.
+Sobald Sie das Docker-Service-Skript auf ein korrektes geändert haben, stoppen Sie den Docker-Dienst, bereinigen Sie die Netzwerkschnittstelle und starten Sie es erneut.
 
-Weitere Einzelheiten zum Flanneld-Setup und zur Docker-Integration finden Sie im Rezept. Erstellen eines Overlay-Netzwerks.
-
-Sie können sogar einen Master an den Knoten konfigurieren. Installiere einfach die notwendigen Dämonen.
+Sie können sogar einen Master an den Node konfigurieren. Installiere einfach die notwendigen Dämonen.
 
 ### Wie es geht…
 
-Sobald Sie verifizieren, dass Docker und flanneld gut auf Ihrem Knotenhost gehen, fahren Sie fort, das Kubernetes Paket für den Knoten zu installieren. Wir decken sowohl RPM- als auch Tarball-Setup ab.
-Installation
+Sobald Sie überprüft haben, dass Docker und flanneld gut auf Ihrem Knotenhost gehen, fahren Sie fort, das Kubernetes Paket für den Node zu installieren. Wir decken sowohl RPM- als auch Tarball-Setup ab.
 
-Dies ist das gleiche wie die Kubernetes Master-Installation, Linux OS mit dem Kommandozeilen-Tool yum, das Paket-Management-Dienstprogramm, kann leicht installieren das Knotenpaket. Auf der anderen Seite sind wir auch in der Lage, die neueste Version zu installieren, indem wir eine Tarball-Datei herunterladen und Binärdateien in das angegebene Systemverzeichnis kopieren, das für jede Linux-Distribution geeignet ist. Sie können die Lösungen für Ihre Bereitstellung ausprobieren.
+### Installation
+
+Dies ist das gleiche wie die Kubernetes Master-Installation, Linux OS mit dem Kommandozeilen-Tool `yum`, das Paket-Management-Dienstprogramm, kann leicht  das Nodenpaket installieren. Auf der anderen Seite sind wir auch in der Lage, die neueste Version zu installieren, indem wir eine Tarball-Datei herunterladen und Binärdateien in das angegebene Systemverzeichnis kopieren, das für jede Linux-Distribution geeignet ist. Sie können die Lösungen für Ihre Bereitstellung ausprobieren.
 
 ### CentOS 7 oder Red Hat Enterprise Linux 7
 
-1. Zuerst werden wir das Paket `kubernetes-node` installieren, was wir für den Knoten benötigen:
+1. Zuerst werden wir das Paket `kubernetes-node` installieren, was wir für den Node benötigen:
 ```
 // install kubernetes node package
 $ yum install kubernetes-node
@@ -140,13 +139,13 @@ KUBELET_API_SERVER="--api_servers=<master endpoint>:8080"
 KUBELET_ARGS=""
 
 ```
-Wir öffnen die Kubelet-Adresse für alle Schnittstellen und den angeschlossenen Master standort.
+Wir öffnen die Kubelet-Adresse für alle Schnittstellen und den verbundenen Master standort.
 
 4. Dann ist es gut, Dienste mit dem Befehl `systemd` zu starten. Es gibt keine Abhängigkeit zwischen `kubelet` und `kube-proxy`:
 ```
 Wir öffnen die Kubelet-Adresse für alle Schnittstellen und den angeschlossenen Masterstandort.
 
-Dann ist es gut, Dienste mit dem Befehl systemd zu starten. Es gibt keine Abhängigkeit zwischen kubelet und kube-proxy:
+Dann ist es gut, Dienste mit dem Befehl systemd zu starten. Es gibt keine Abhängigkeit zwischen `kubelet` und `kube-proxy`:
 ```
 ### Andere Linux-Optionen
 
@@ -183,7 +182,7 @@ logfile=/var/log/kubernetes.log
 
 ```
 
-3. Achten Sie darauf, die Master-URL / IP für den Zugriff auf den Kubernetes API-Server zur Verfügung zu stellen. Wenn Sie versuchen, ein Knotenpaket auch auf dem Master-Host zu installieren, was bedeutet, dass Master auch als Knoten arbeitet, sollte der API-Server auf dem lokalen Host arbeiten. Wenn ja, können Sie `localhost` oder `127.0.0.1` bei `<master endpoint>` anhängen:
+3. Achten Sie darauf, die Master-URL / IP für den Zugriff auf den Kubernetes API-Server zur Verfügung zu stellen. Wenn Sie versuchen, ein Knotenpaket auch auf dem Master-Host zu installieren, was bedeutet, dass Master auch als Node arbeitet kann, sollte der API-Server auf dem lokalen Host arbeiten. Dann können Sie `localhost` oder `127.0.0.1` bei `<master endpoint>` anhängen:
 
 ```
 start() {
@@ -220,7 +219,7 @@ stop() {
 
 ```
 
-4. Die folgenden Zeilen sind für die allgemeine Daemon-Management, indem sie sie in das Skript, um die Funktionalitäten zu erhalten:
+4. Die folgenden Zeilen sind für das allgemeine Daemon-Management, indem sie sie in das Skript, um die Funktionalitäten erweitern die Sie brauchen:
 ```
 # See how we were called.
 case "$1" in
@@ -268,7 +267,7 @@ ip-10-97-217-56.sdi.trendnet.org   kubernetes.io/hostname=ip-10-97-217-56.sdi.tr
 ```
 ### Siehe auch
 
-Es wird auch empfohlen, die Rezepte über die Architektur der Cluster- und Systemumgebung zu lesen. Da der Kubernetesknoten wie ein Arbeiter ist, der Aufgaben erhält und den anderen zuhört; Sie sollten nach den anderen Komponenten gebaut werden. Es ist gut für Sie, sich mit dem ganzen System vertraut zu machen, bevor Sie Knoten knüpfen. Darüber hinaus können Sie auch die Ressource in Knoten verwalten. Bitte überprüfen Sie die folgenden Rezepte für weitere Informationen:
+Es wird auch empfohlen, die Rezepte über die Architektur der Cluster- und Systemumgebung zu lesen. Da der Kubernetesknoten wie ein Arbeiter ist, der Aufgaben erhält und den anderen zuhört; Sie sollten nach den anderen Komponenten gebaut werden. Es ist gut für Sie, sich mit dem ganzen System vertraut zu machen, bevor Sie Nodes einrichten. Darüber hinaus können Sie auch die Ressource in Nodes verwalten. Bitte überprüfen Sie die folgenden Rezepte für weitere Informationen:
 
 *      Architektur erforschen
 
