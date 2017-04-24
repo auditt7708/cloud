@@ -1,7 +1,8 @@
 Die Arbeit mit Kubernetes ist ganz einfach, entweder mit Command Line Interface (CLI) oder API (RESTful). In diesem Abschnitt wird die Kubernetes-Steuerung von CLI beschrieben. Die CLI, die wir in diesem Kapitel verwendet haben, ist Version 1.1.3.
-Fertig werden
 
-Nachdem Sie den Kubernetes-Master installiert haben, können Sie einen Befehl kubectl wie folgt ausführen. Es zeigt die kubectl und Kubernetes Master Versionen (beide 1.1.3).
+### Fertig werden
+
+Nachdem Sie den Kubernetes-Master installiert haben, können Sie einen Befehl `kubectl` wie folgt ausführen. Es zeigt die kubectl und Kubernetes Master Versionen (beide 1.1.3).
 
 ```
 % kubectl version
@@ -16,16 +17,16 @@ Kubectl verbindet den Kubernetes API Server mit RESTful API. Standardmäßig ver
 
 ### Tip
 
-Wenn Sie kubectl über das Netzwerk verwenden, müssen Sie die Authentifizierung und Autorisierung für den API-Server berücksichtigen. Siehe Kapitel 7, Erweiterte Clusterverwaltung.
+Wenn Sie kubectl über das Netzwerk verwenden, müssen Sie die Authentifizierung und Autorisierung für den API-Server berücksichtigen. Siehe [Erweiterte Cluster Administration](../kubernates-adv-administration).
 
 ### Wie es funktioniert…
 
 Kubectl ist der einzige Befehl für Kubernetes-Cluster und steuert den Kubernetes-Cluster-Manager. Weitere Informationen finden Sie unter http://kubernetes.io/docs/user-guide/kubectl-overview/. Jeder Container- oder Kubernetes-Clusterbetrieb kann durch einen Befehl kubectl ausgeführt werden.
 
-Darüber hinaus erlaubt kubectl die Eingabe von Informationen entweder über die optionalen Argumente der Befehlszeile oder über die Datei (use -f option), aber es wird dringend empfohlen, die Datei zu verwenden, da Sie den Kubernetes-Cluster als Code pflegen können:
+Darüber hinaus erlaubt kubectl die Eingabe von Informationen entweder über die optionalen Argumente der Befehlszeile oder über die Datei (-f option), aber es wird dringend empfohlen, die Datei zu verwenden, da Sie den Kubernetes-Cluster als Code pflegen können:
 `kubectl [command] [TYPE] [NAME] [flags]`
 
-Die Attribute des vorhergehenden Befehls werden wie folgt erklärt:
+Die Attribute des vorhergehenden Befehls werden wie folgt erleutert:
 
 * `command`: Gibt die Operation an, die Sie auf einer oder mehreren Ressourcen ausführen möchten.
 
