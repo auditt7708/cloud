@@ -41,14 +41,16 @@ Um einen solchen Dienst zu erstellen, geben Sie den folgenden Befehl ein:
 
 Das `--labels` Tag `expose` im Unterkomando ist für die Kennzeichnung der Dienste mit Schlüsselwertpaaren. Es wird verwendet, um die Dienste zu markieren. Um den Selektor des Dienstes zu definieren, verwenden Sie den Tag `--selector`. Ohne den Selektor für den Dienst einzustellen, wäre der Selektor derselbe wie die Labels der Ressource. Im vorigen Bild hätte der Selektor ein Zusatzetikett: **Version=1.0**.
 
-Um den Service-Port freizulegen, senden wir eine Portnummer mit dem Tag -port im Unterbefehl aus. Der Dienst nimmt die Container-Portnummer als exponierter Port, wenn keine bestimmte Nummer zugewiesen ist. Auf der anderen Seite zeigt das Tag --target-Port den Container-Port für den Service an. Während sich der Zielport von dem exponierten Port des Containers unterscheidet, erhält der Benutzer eine leere Antwort. Zur gleichen Zeit, wenn wir nur den Service-Port zuordnen, wird der Ziel-Port kopieren. Wenn man das vorhergehende Bild als Beispiel nennt, wird der Verkehr auf den Container-Port 8080 gerichtet, vorausgesetzt, wir verwenden nicht das Tag -Target-Port, was einen verweigerten Verbindungsfehler hervorbringt.
+Um den Service-Port freizugeben, senden wir eine Portnummer mit dem Tag `--port` im Unterbefehl aus. Der Dienst nimmt die Container-Portnummer als exponierter Port, wenn keine bestimmte Nummer zugewiesen ist. Auf der anderen Seite zeigt das Tag `--target-Port` den Container-Port für den Service an. Während sich der Zielport von dem exponierten Port des Containers unterscheidet, erhält der Benutzer eine leere Antwort. Zur gleichen Zeit, wenn wir nur den Service-Port zuordnen, wird der Ziel-Port kopiert. Wenn man das vorhergehende image als Beispiel nimmt, wird der Verkehr auf den Container-Port `8080` gerichtet, vorausgesetzt, wir verwenden nicht das Tag `--target-port`, was einen verweigerten Verbindungsfehler hervorbringt.
 
 ### Erstellen von Diensten für verschiedene Ressourcen
 
-Sie können einen Dienst an einen Pod, einen Replikationscontroller und einen Endpunkt außerhalb des Kubernetes-Systems oder einen anderen Dienst anhängen. Wir zeigen Ihnen diese, eins nach dem anderen, auf den nächsten Seiten. Die Diensterstellung ist im Format: kubectl expose RESOURCE_TYPE RESOURCE_NAME [TAGS] oder kubectl expose -f CONFIGURATION_FILE [TAGS]. Einfach ausgedrückt, die Ressourcentypen pod, Replikationscontroller und Service werden vom Unterbefehl unterstützt. So ist die Konfigurationsdatei, die der Typbegrenzung folgt.
-Erstellen eines Dienstes für eine Pod
+Sie können einen Dienst an einen Pod, einen replication controller  und einen Endpunkt außerhalb des Kubernetes-Systems oder einen anderen Dienst anhängen. Wir zeigen Ihnen diese, eins nach dem anderen, auf den nächsten Seiten. 
+Die Diensterstellung ist im Format: `kubectl expose RESOURCE_TYPE RESOURCE_NAME [TAGS]` oder `kubectl expose -f CONFIGURATION_FILE [TAGS]`. Einfach ausgedrückt, die Ressourcentypen pod, Replikationscontroller und Service werden vom Unterbefehl `expose` unterstützt. So ist die Konfigurationsdatei, die der Typbegrenzung folgt.
 
-Die Pods, die durch den Service abgeschirmt sind, müssen Etiketten enthalten, denn der Service nimmt dies als notwendige Bedingung auf der Grundlage des Selektors:
+### Erstellen eines Dienstes für eine Pod
+
+Die Pods, die durch den Service abgeschirmt sind, müssen Labels enthalten, denn der Service nimmt dies als notwendige Bedingung auf der Grundlage des Selektors:
 ```
 // Create a pod, and add labels to it for the selector of service.
 # kubectl run nginx-pod --image=nginx --port=80 --restart="Never" --labels="app=nginx"
@@ -85,14 +87,14 @@ NAME          CLUSTER_IP        EXTERNAL_IP   PORT(S)    SELECTOR    AGE
 service-pod   192.168.195.195   <none>        8000/TCP   app=nginx   11s
 ```
 
-Wie Sie in diesen Befehlen sehen, öffnen wir einen Service mit Port `8000` ausgesetzt. Der Grund, warum wir den Container-Port angeben, ist so, dass der Service `8000` nicht als Container-Port übernimmt. Um zu überprüfen, ob der Dienst funktionsfähig ist oder nicht, gehen Sie mit dem folgenden Befehl in einer internen Netzwerkumgebung (die mit dem Kubernetes-Cluster CIDR installiert wurde) vor.
+Wie Sie in diesen Befehlen sehen, öffnen wir einen Service mit Port `8000`. Der Grund, warum wir den Container-Port angeben, ist weil, dass der Service `8000` nicht als Container-Port übernimmt. Um zu überprüfen, ob der Dienst funktionsfähig ist oder nicht, gehen Sie mit dem folgenden Befehl in einer internen Netzwerkumgebung (die mit dem Kubernetes-Cluster CIDR installiert wurde) wie folgt vor.
 
 ```
 // accessing by services CLUSTER_IP and PORT
 # curl 192.168.195.195:8000
 ```
 
-Erstellen eines Dienstes für den Replikationscontroller und Hinzufügen einer externen IP
+### Erstellen eines Dienstes für den Replikationscontroller und Hinzufügen einer externen IP
 
 Ein Replikationscontroller ist der ideale Ressourcentyp für einen Service. Für Pods, die von der Replikationssteuerung überwacht werden, verfügt das Kubernetes-System über einen Controller-Manager, um den Lebenszyklus von ihnen zu betrachten. Es ist auch hilfreich für die Aktualisierung der Version oder des Status des Programms durch die Bindung bestehender Dienste an einen anderen Replikations-Controller:
 ```
