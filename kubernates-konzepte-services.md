@@ -1,20 +1,20 @@
-Der Netzwerkdienst ist eine Anwendung, die Anfragen empfängt und eine Lösung bietet. Clients greifen über eine Netzwerkverbindung auf den Service zu. Sie müssen die Architektur des Dienstes nicht kennen oder wie es läuft. Das einzige, was die Kunden zu überprüfen haben, ist, ob der Endpunkt des Dienstes kontaktierbar ist, und folgen Sie dann seiner Nutzungsrichtlinie, um Probleme zu lösen. Der Kubernetes Service hat ähnliche Ideen. Es ist nicht notwendig, jeden Pod zu verstehen, bevor er ihre Funktionalitäten erreicht. Für Komponenten außerhalb des Kubernetes-Systems greifen sie nur auf den Kubernetes-Service mit einem exponierten Netzwerkanschluss zu, um mit laufenden Pods zu kommunizieren. Es ist nicht notwendig, sich der IPs und Häfen der Container bewusst zu sein. Deshalb können wir für unsere Containerprogramme ein Null-Downtime-Update erfüllen, ohne zu kämpfen:
+Der Netzwerkdienst ist eine Anwendung, die Anfragen empfängt und eine Lösung bietet. Clients greifen über eine Netzwerkverbindung auf den Service zu. Sie müssen die Architektur des Dienstes nicht kennen oder wie es läuft. Das einzige, was die Kunden zu überprüfen haben, ist, ob der Endpunkt des Dienstes kontaktierbar ist, und folgen Sie dann seiner Nutzungsrichtlinie, um Probleme zu lösen. Der Kubernetes Service hat ähnliche Ideen. Es ist nicht notwendig, jeden Pod zu verstehen, bevor er ihre Funktionalitäten erreicht. Für Komponenten außerhalb des Kubernetes-Systems greifen sie nur auf den Kubernetes-Service mit einem exponierten Netzwerkanschluss zu, um mit laufenden Pods zu kommunizieren. Es ist nicht notwendig, sich der IPs und ports der Container bewusst zu sein. Deshalb können wir für unsere Containerprogramme ein Null-Downtime-Update erfüllen, ohne zu schwierigkeiten:
 
 ![rep-con-service-pods](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_02_02.jpg)
 
 Das vorangehende Bild zeigt die Grundstruktur des Dienstes und realisiert folgende Konzepte:
 
-* Wie beim Replikationscontroller leitet der Service die Pods, die Etiketten mit dem Selektor des Servers enthalten. Mit anderen Worten, die von der Dienstleistung ausgewählten Pods basieren auf ihren Etiketten.
+* Wie beim replication controller leitet der Service die Pods, die Labels mit dem Selektor des Servers enthalten. Mit anderen Worten, die von der Dienstleistung ausgewählten Pods basieren auf ihren Labels.
 
 * Die Belastung der an die Dienste gesendeten Anfragen verteilt sich auf vier Pods.
 
-* Der Replikationscontroller stellt sicher, dass die Anzahl der laufenden Pods den gewünschten Zustand erfüllt. Es überwacht die Hülsen für den Service, um sicherzustellen, dass jemand die Aufgaben aus dem Dienst übernimmt.
+* Der replication controller stellt sicher, dass die Anzahl der laufenden Pods den gewünschten Zustand erfüllt. Es überwacht die Pods für den Service, um sicherzustellen, dass jemand die Aufgaben aus dem Dienst übernimmt.
 
 In diesem Rezept, werden Sie lernen, wie man Dienstleistungen zusammen mit Ihren Pods zu schaffen.
 
 ### Fertig werden
 
-Vor dem Anwenden von Diensten ist es wichtig zu prüfen, ob alle Ihre Knoten im System kube-proxy betreiben. Daemon kube-proxy arbeitet als Netzwerk-Proxy im Knoten. Es hilft, Service-Einstellungen wie IPs oder Ports auf jedem Knoten zu reflektieren. Um zu überprüfen, ob der Kube-Proxy aktiviert ist oder nicht, können Sie den Status des Daemons oder die laufenden Prozesse auf dem Knoten mit einem bestimmten Namen überprüfen:
+Vor dem Anwenden von Diensten ist es wichtig zu prüfen, ob alle Ihre Nodes im System `kube-proxy` betreiben. Daemon `kube-proxy` arbeitet als Netzwerk-Proxy im Knoten. Es hilft, Service-Einstellungen wie IPs oder Ports auf jedem Knoten zu reflektieren. Um zu überprüfen, ob der `kube-Proxy` aktiviert ist oder nicht, können Sie den Status des Daemons oder die laufenden Prozesse auf dem Knoten mit einem bestimmten Namen überprüfen:
 ```
 // check the status of service kube-proxy 
 # service kube-proxy status
@@ -25,15 +25,16 @@ oder
 // grep "kube-proxy" or "hyperkube proxy"
 # ps aux | grep "kube-proxy"
 ```
-Zur Demonstration in späteren Abschnitten können Sie auch eine private Netzwerkumgebung auf dem Masterknoten installieren. Die Dämonen, die sich auf die Netzwerkeinstellungen beziehen, sind flanneld und kube-proxy. Es ist einfacher für Sie, die Operation und Überprüfung auf einer einzigen Maschine zu tun. Andernfalls überprüfen Sie bitte Kubernetes-Dienste auf einem Knoten, der standardmäßig ein internes Netzwerk bereit hat.
-Wie es geht…
+Zur Demonstration in späteren Abschnitten können Sie auch eine private Netzwerkumgebung auf dem Masterknoten installieren. Die Dämonen, die sich auf die Netzwerkeinstellungen beziehen, sind `flanneld` und `kube-proxy`. Es ist einfacher für Sie, die Operation und Überprüfung auf einer einzigen Maschine durchzuführen. Andernfalls überprüfen Sie bitte Kubernetes-Dienste auf einem Node, der standardmäßig ein internes Netzwerk bereits hat.
 
-Wir können einen neuen Kubernetes-Service über die CLI oder eine Konfigurationsdatei definieren und erstellen. Hier werden wir erklären, wie man die Dienste nach Befehl einsetzt. Die Unterbefehle aussetzen und beschreiben werden in den folgenden Befehlen für verschiedene Szenarien verwendet. Die Version von Kubernetes, die wir in diesem Rezept verwendet haben, ist 1.1.3. Für die Erstellung von Dateiformaten gehen Sie bitte auf die Bearbeitung von Konfigurationsdateien in Kapitel 3, Spielen mit Containern für eine ausführliche Diskussion.
+### Wie es geht…
 
-Bei der Erstellung von Diensten gibt es zwei Konfigurationen, mit denen wir darauf achten müssen: Eines ist das Etikett, das andere ist der Hafen. Wie das folgende Bild zeigt, haben der Service und die Pod ihre eigenen Key-Value-Etiketten und Ports. Seien Sie versichert, korrekte Tags für diese Einstellungen zu verwenden:
+Wir können einen neuen Kubernetes-Service über die CLI oder eine Konfigurationsdatei definieren und erstellen. Hier wird erklärt, wie man die Dienste mit Befehlen einsetzt. Die Unterbefehle `expose` und `describe` werden in den folgenden Befehlen für verschiedene Szenarien verwendet. Die Version von Kubernetes, die wir in diesem Rezept verwenden, ist 1.1.3. Für die Erstellung von Dateiformaten gehen Sie bitte auf die Bearbeitung von Konfigurationsdateien [Spielen mit Containern](../kubernates-container) für eine ausführliche Diskussion.
+
+Bei der Erstellung von Diensten gibt es zwei Konfigurationen, bei denen wir auf folgendes achten müssen: Eines ist das Label, das andere ist der Pod. Wie das folgende Bild zeigt, hat der Service und die Pod ihre eigenen Key-Value-Label und Ports. Seien Sie sicher, die korrekten Tags für diese Einstellungen zu verwenden:
 ![create-service](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_02_03.jpg)
 
-Um einen solchen Dienst zu erstellen, drücken Sie den folgenden Befehl:
+Um einen solchen Dienst zu erstellen, geben Sie den folgenden Befehl ein:
 ```
 # kubectl expose pod <POD_NAME> --labels="Name=Amy-log-service" --selector="App=LogParser,Owner=Amy" --port=8080 --target-port=80
 ```
