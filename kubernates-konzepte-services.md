@@ -39,7 +39,7 @@ Um einen solchen Dienst zu erstellen, geben Sie den folgenden Befehl ein:
 # kubectl expose pod <POD_NAME> --labels="Name=Amy-log-service" --selector="App=LogParser,Owner=Amy" --port=8080 --target-port=80
 ```
 
-Das -Labels-Tag befindet sich im Unterbeleg für die Kennzeichnung der Dienste mit Schlüsselwertpaaren. Es wird verwendet, um die Dienste zu markieren. Um den Selektor des Dienstes zu definieren, verwenden Sie den Tag - Selektor. Ohne den Selektor für den Dienst einzustellen, wäre der Selektor derselbe wie die Etiketten der Ressource. Im vorigen Bild hätte der Selektor ein Zusatzetikett: Version = 1.0.
+Das `--labels` Tag `expose` im Unterkomando ist für die Kennzeichnung der Dienste mit Schlüsselwertpaaren. Es wird verwendet, um die Dienste zu markieren. Um den Selektor des Dienstes zu definieren, verwenden Sie den Tag `--selector`. Ohne den Selektor für den Dienst einzustellen, wäre der Selektor derselbe wie die Labels der Ressource. Im vorigen Bild hätte der Selektor ein Zusatzetikett: **Version=1.0**.
 
 Um den Service-Port freizulegen, senden wir eine Portnummer mit dem Tag -port im Unterbefehl aus. Der Dienst nimmt die Container-Portnummer als exponierter Port, wenn keine bestimmte Nummer zugewiesen ist. Auf der anderen Seite zeigt das Tag --target-Port den Container-Port für den Service an. Während sich der Zielport von dem exponierten Port des Containers unterscheidet, erhält der Benutzer eine leere Antwort. Zur gleichen Zeit, wenn wir nur den Service-Port zuordnen, wird der Ziel-Port kopieren. Wenn man das vorhergehende Bild als Beispiel nennt, wird der Verkehr auf den Container-Port 8080 gerichtet, vorausgesetzt, wir verwenden nicht das Tag -Target-Port, was einen verweigerten Verbindungsfehler hervorbringt.
 
