@@ -58,3 +58,7 @@ Dieser einfache Befehl erstellt einen Replikationscontroller nach Bild nginx aus
 | `--attach[=false]` |Für den Replikationscontroller wird Ihr Terminal an eine der Replikaten angehängt und das Laufzeitprotokoll aus dem Programm angezeigt. Die Voreinstellung ist, den ersten Container in der Pod zu befragen, genauso wie Dockers anhängen. Einige Protokolle aus dem System zeigen den Status des Containers an.| `--attach` |
 |`-i , --stdin[=false]`|Aktivieren Sie den interaktiven Modus des Containers. Die Replik muss 1 sein.|`-i`|
 | `--tty=[false]` |Zu jedem Container eine neue `tty` (neue Controlling-Terminal) zuordnen. Sie müssen den interaktiven Modus aktivieren, indem Sie das Flag -i oder --stdin anhängen.|`--tty`|
+
+Der Unterbefehl `run` wird standardmäßig einen Replikationscontroller erstellen, da der Flag `--restart`, der als `Always` vorgegeben ist, bedeutet, dass die generierten Objekte immer ausgelöst und ausgeführt werden, um die gewünschten Nummern des Replikationscontrollers zu erfüllen.
+
+Beispielsweise können Sie einen Replikationscontroller starten und dann neue Funktionen hinzufügen oder Konfigurationen ändern:
