@@ -143,7 +143,7 @@ test-edit    nginx-rc       nginx      app=nginx,run=after-edit   3          7m
 ```
 ### Entfernen eines replication controller
 
-Um replication controller aus dem System zu entfernen, können Sie sich auf den Unterbefehl löschen. Der ähnliche Unterbefehlsstopp ist abgelehnt und von delete abgedeckt. Während wir löschen, um die Ressource zu entfernen, entfernt sie die Zielobjekte kräftig und ignoriert alle Anfragen für die Zielobjekte gleichzeitig:
+Um replication controller aus dem System zu entfernen, können Sie den Unterbefehl `delete` benutzen. Der ähnliche Unterbefehl `stop` ist veraltet und wurde von `delete` abgelöst. Während wir `delete` verwenden, um die Ressource zu entfernen, verwenden sie `delete` die Zielobjekte forciert und dabei ignoriert er gleichzeitig alle Anfragen für die Zielobjekte :
 ```
 // A replication controller that we want to remove has 5 replicas
 # kubectl get rc
@@ -169,13 +169,12 @@ test-delete-vctnk   1/1       Terminating   0          1m
 test-delete-vsikc   0/1       Terminating   0          1m
 test-delete-ye07h   1/1       Terminating   0          1m
 ```
-
-Wir finden, dass die Reaktionszeit ziemlich kurz ist und die Wirkung auch sofort ist.
+Man kann sagen, dass die Reaktionszeit ziemlich kurz ist und die Umsetzung auch sofort ist.
 
 ### Tip
 Entfernen von Pods aus dem Replikationscontroller
 
-Es ist unmöglich, den Replikationscontroller zu entfernen oder zu skalieren, indem er Pods darauf löscht, denn während ein Pod entfernt wird, ist der Replikationscontroller nicht in seinem gewünschten Status, und der Controller Manager wird ihn bitten, einen anderen zu erstellen. Dieses Konzept wird in folgenden Befehlen dargestellt:
+Es ist unmöglich, den Replikationscontroller zu entfernen oder zu skalieren, indem man Pods darauf löscht, denn während ein Pod entfernt wird, ist der Replikationscontroller nicht in seinem gewünschten Status, und der Controller Manager wird ihn bitten, einen anderen zu erstellen. Dieses Konzept wird in folgenden Befehlen dargestellt:
 ```
 // Check replication controller and pod first
 # kubectl get rc,pod
@@ -196,7 +195,7 @@ test-delete-pod-oxngk   1/1       Running       0          1m
 ```
 ### Wie es funktioniert…
 
-Der replication controller definiert einen Satz von Pods durch eine Pod-Vorlage und Etiketten. Wie Sie aus früheren Abschnitten wissen, verwaltet der replication controller nur die Hülsen durch ihre Etiketten. Es ist möglich, dass die Pod-Vorlage und die Konfiguration des Pods anders sind. Und es bedeutet auch, dass eigenständige Pods in eine Controller-Gruppe durch Label-Modifikation hinzugefügt werden können. Nach den folgenden Befehlen und Ergebnissen, lasst uns dieses Konzept auf Selektoren und Labels bewerten:
+Der replication controller definiert einen Satz von Pods durch eine Pod-Vorlage und Labels. Wie Sie aus früheren Abschnitten wissen, verwaltet der replication controller nur die pods durch ihre Labels. Es ist möglich, dass die Pod-Vorlage und die Konfiguration des Pods anders sind. Und es bedeutet auch, dass eigenständige Pods in eine Controller-Gruppe durch Label-Modifikation hinzugefügt werden können. Nach den folgenden Befehlen und Ergebnissen, lasst uns dieses Konzept auf Selektoren und Labels testen:
 ```
 // Two pod existed in system already, they have the same label app=nginx
 # kubectl get pod -L app -L owner
