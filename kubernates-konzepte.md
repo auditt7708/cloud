@@ -4,7 +4,7 @@ In diesem Kapitel werden wir mit der erstellung unterschiedlicher Ressourcen auf
 
 * [Ein Überblick über die Kontrolle von Kubernetes](../kubernates-konzepte-kontrolle)
 * [Arbeiten mit pods](../kubernates-konzepte-pods)
-* [Arbeiten mit einem replication controller](../kubernates-konzepte- replication-controller)
+* [Arbeiten mit einem replication controller](../kubernates-konzepte-replication-controller)
 * [Arbeiten mit services](../kubernates-konzepte-services)
 * [Arbeiten mit volumes](../kubernates-konzepte-volumes)
 * [Arbeiten mit secrets](../kubernates-konzepte-secrets)
