@@ -194,3 +194,97 @@ Deshalb erstellen wir den Service über eine Konfigurationsdatei:
     }
 }
 ```
+Das Wichtigste ist, dass in der Vorlage kein Selektor definiert ist. Das ist recht vernünftig, da die Endpunkte nicht im Kubernetes-System sind. Die Beziehung zwischen Endpunkten und Service wird durch Ressourcenname aufgebaut. Wie Sie sehen können, muss der Name des Dienstes mit dem Namen des Endpunkts identisch sein:
+```
+# kubectl create -f service-ep.json
+service "service-foreign-ep" created
+// Check the details in service
+# kubectl describe svc service-foreign-ep
+Name:      service-ep
+Namespace:    default
+Labels:      <none>
+Selector:    <none>
+Type:      ClusterIP
+IP:      192.168.234.21
+Port:      <unnamed>  80/TCP
+Endpoints:    <FOREIGN_IP>:80
+Session Affinity:  None
+No events.
+```
+Schließlich wird der no-selector-Dienst für den externen Endpunkt angelegt. Überprüfen Sie das Ergebnis mit <FOREIGN_IP>: 80.
+
+### Erstellen eines Dienstes mit Sitzungsaffinität basierend auf einem anderen Dienst
+
+Durch den Unterbefehl `expose` wir auch die Einstellungen eines Dienstes auf einen anderen kopieren:
+
+```
+// Check the service we created for replication controller in previous section
+# kubectl describe svc service-rc
+Name:      service-rc
+Namespace:    default
+Labels:      run=nginx-rc
+Selector:    run=nginx-rc
+Type:      ClusterIP
+IP:      192.168.126.5
+Port:      <unnamed>  80/TCP
+Endpoints:    192.168.45.3:80,192.168.47.2:80
+Session Affinity:  None
+No events.
+//Create a new service with different name and service port
+# kubectl expose svc service-rc --port=8080 --target-port=80 --name=service-2nd --session-affinity="ClientIP"
+service "service-2nd" exposed
+```
+Der neue Service namens `service-2nd` wird mit Service Port `8080` zurückgesetzt und Session Affinity ist aktiviert:
+```
+# kubectl describe svc service-2nd
+Name:      service-2nd
+Namespace:    default
+Labels:      run=nginx-rc
+Selector:    run=nginx-rc
+Type:      ClusterIP
+IP:      192.168.129.65
+Port:      <unnamed>  8080/TCP
+Endpoints:    192.168.45.3:80,192.168.47.2:80
+Session Affinity:  ClientIP
+No events.
+```
+
+Derzeit ist das `ClientIP` die einzige geschätzte Einstellung für die Tag `--session-affinity`. Während die Session-Affinität zum `ClientIP` aktiviert ist, wird statt des Round-Robins die Anforderung, von welcher Endpunkt der Service gesendet werden soll, vom `ClientIP` entschieden. Wenn zum Beispiel die Anfragen vom Client im CIDR-Bereich `192.168.45.0/24 `an den Service-Service-2 gesendet werden, werden sie auf den Endpunkt `192.168.45.3:80` übertragen.
+
+### Erstellen eines Dienstes in einem anderen Typ
+
+Es gibt drei Arten von Service: **ClusterIP**, **NodePort** und **LoadBalancer**:
+![service-different-type](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_02_04.jpg)
+
+```
+// Create a service with type NodePort, attaching to the replication controller we created before
+# kubectl expose rc nginx-rc --name=service-nodeport --type="NodePort"
+service "service-nodeport" exposed
+# kubectl describe svc service-nodeport
+Name:      service-nodeport
+Namespace:    default
+Labels:      run=nginx-rc
+Selector:    run=nginx-rc
+Type:      NodePort
+IP:      192.168.57.90
+Port:      <unnamed>  80/TCP
+NodePort:    <unnamed>  31841/TCP
+Endpoints:    192.168.45.3:80,192.168.47.2:80
+Session Affinity:  None
+No events.
+
+```
+
+Im vorherigen Fall wird der Netzwerkanschluss `31841`, der auf einem Knoten exponiert ist, zufällig vom System zugewiesen; Der Standard-Port-Bereich ist `30000` bis `32767`. Beachten Sie, dass der Port auf jedem Knoten im System ausgesetzt ist, also ist es gut, auf den Service über `<NODE_IP>:31841` zuzugreifen, zum Beispiel über den Domain-Namen eines Knotens wie `kube-node1:31841`
+
+### Löschen eines Dienstes
+
+Sie können einfach mit dem Unterbefehl löschen, in Fällen, in denen Sie einen Dienst beenden möchten:
+```
+# kubectl delete svc <SERVICE_NAME>
+service "<SERVICE_NAME>" deleted
+```
+
+### Wie es funktioniert…
+
+Die Hauptdarsteller im Kubernetes-System, die die Serviceumgebung durchführen, sind flanneld und kube-proxy. Daemon flanneld baut ein Cluster-Netzwerk auf, indem es eine Subnet-Lease aus einem vorkonfigurierten Adressraum zuteilt und die Netzwerkkonfiguration in etcd speichert, während der Kube-Proxy die Endpunkte von Diensten und Pods leitet.
