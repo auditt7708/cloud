@@ -9,15 +9,10 @@ Kubernetes führt Volumen ein, das mit einem Pod über Container-Neustarts lebt.
 * flocker
 * glusterfs
 * rbd
-
 * gitRepo
-
 * awsElasticBlockStore
-
 * gcePersistentDisk
-
 * secret
-
 * downwardAPI
 
 In diesem Abschnitt gehen wir durch die Details von emptyDir, hostPath, nfs und glusterfs. Geheimnis, das verwendet wird, um Anmeldeinformationen zu speichern, wird im nächsten Abschnitt eingeführt. Die meisten von ihnen haben ähnliche Kubernetes-Syntax mit einem anderen Backend.
