@@ -582,8 +582,7 @@ Kubernetes mounts `/var/lib/kubelet/pods/<id>/volumes/kubernetes.io~nfs/< persis
 
 ### Siehe auch
 
-Volumes werden in Container-Spezifikationen in Pods oder Replikations-Controller gesetzt. Schauen Sie sich die folgenden Rezepte an, um Ihr Gedächtnis zu treniren:
+Volumes werden in Container-Spezifikationen in Pods oder Replikations-Controller gesetzt. Schauen Sie sich die folgenden Rezepte an, um Ihr Gedächtnis zu trainieren:
 
-* Arbeiten mit Hülsen
-
+* Arbeiten mit pods
 * Arbeiten mit einem replication controller
