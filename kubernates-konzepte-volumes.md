@@ -334,10 +334,163 @@ Mit `docker inspect` Sie sollten in der Lage sein, die angehängte Quelle zu seh
 
 ### iscsi
 
-Das iscsi-Volume wird verwendet, um die vorhandene iSCSI an Ihren Pod zu montieren. Im Gegensatz zu nfs-Volumen darf das iscsi-Volumen nur in einem einzigen Container im Read-Write-Modus montiert werden. Die Daten werden über den Lebenszyklus der Pod gehalten:
+Das `iscsi` Volume wird verwendet, um die vorhandene iSCSI an Ihren Pod zu montieren. Im Gegensatz zu `nfs` Volumen darf das `iscsi` Volumen nur in einem einzigen Container im Read-Write-Modus gemountet werden. Die Daten werden über den Lebenszyklus der Pods erhalten:
+
 |Feld Name|Feld Defination|
 |`targetPortal`|IP-Adresse des iSCSI target portals|
 |`iqn`|IQN des target portal|
 |`Lun`|Target LUN fürs mounten|
 |`fsType`|File system typ des LUN Dateisystems|
 |`readOnly`| read-only mounten oder nicht, default ist false|
+
+### flocker
+
+Flocker ist ein Open-Source-Container-Datenvolumenmanager. Das `flocker` Volumen wird zum Zielknoten verschoben, wenn sich der Container bewegt. Vor der Verwendung von Flocker mit Kubernetes ist der Flocker-Cluster (Flocker-Kontrolldienst, Flocker-Dataset-Agent, Flocker-Container-Agent) erforderlich. Die offizielle Website von Flocker (https://docs.clusterhq.com/de/1.8.0/install/index.html) enthält detaillierte Installationsanweisungen.
+
+Nachdem Sie Ihren Flocker-Cluster bereit gemacht haben, erstellen Sie einen Dataset und geben Sie den Dataset-Namen in der Flocker-Volume-Definition in der Konfigurationsdatei von Kubernetes an:
+|Feld Name| Feld Beschreibung|
+| :---: | :---: |
+|`datasetName`|Target dataset name in Flocker|
+
+### rbd
+
+Ceph RADOS Block Device (http://docs.ceph.com/docs/master/rbd/rbd/) könnte in deinem Pod gemountet werden, indem du rbd volume benutzt. Sie müssen Ceph installieren, bevor Sie das rbd-Volume verwenden. Die Definition von rbd-Datenträgerunterstützung ist geheim, um Authentifizierungs secrets zu behalten:
+
+|Feld Name|Feld Beschreibung|Default Wert|
+| :---: | :---: | :---: |
+|`monitors`|Cepth monitors|keiner|
+|`pool`|Der name des RADOS Pools|keiner|
+|`image`| Das image das von rpd erstellt wurde|`rbd`|
+|`user`|RADOS user Name|`admin`|
+|`keyring`|Der Pfad zum keyring, wird überschrieben wenn ein secret name verfügbar ist|`/etc/ceph/keyring`|
+|`secretName`|Secret Name|keiner|
+|`fsType`|File system Typ| keiner|
+|`readOnly`|Setzen in read only modus|False|
+
+### GitRepo
+
+Die `gitRepo` Lautstärke wird als leeres Wörterbuch und Git klonen ein Repository mit einer gewissen Revision in einem Pod für Sie zu verwenden:
+
+|Feld Name|Feld Beschreibung|
+| :---: | :---: |
+|`repository`|Dein repository mit SSH oder HTTPS|
+|`Revision`|Die revision des repositories|
+|`readOnly`|Angabe ob read-only oder nicht|
+
+
+### AwsElasticBlockStore
+
+`awsElasticBlockStore` Volume unterstützt ein AWS-EBS-Volume in einem Pod. Um es zu benutzen, musst du deinen Pod auf AWS EC2 mit der gleichen Verfügbarkeitszone mit EBS laufen lassen. Denn jetzt unterstützt EBS nur die Anbindung an ein EC2 in der Natur, so dass es bedeutet, dass man kein einzelnes EBS-Volume an mehrere EC2-Instanzen anhängen kann:
+
+|Feld Name|Feld Beschreibung|
+| :---: | :---: |
+|`volumeID`|EBS volume info - `aws://<availability-zone>/<volume-id>`|
+|`fsType`|File system Typ|
+|`readOnly`|Angabe ob read-only oder nicht|
+
+### GcePersistentDisk
+
+Ähnlich wie bei `awsElasticBlockStore` muss die Pod mit dem `gcePersistentDisk`-Volume auf GCE mit demselben Projekt und der Zone laufen. Die `gcePersistentDisk` unterstützt nur einen einzigen Schreiber, wenn readOnly = false:
+
+|Feld Name|Feld Beschreibung|
+| :---: | :---: |
+|`pdName`|GCE persistent disk Name|
+|`fsType`|File system Typ|
+|`readOnly`|Angabe ob read-only oder nicht|
+
+### downwardAPI
+
+Das `downwardAPI` Volume ist ein Kubernetes-Volume-Plugin mit der Möglichkeit, einige Pod-Informationen in einer Klartextdatei in einen Container zu speichern. Die aktuellen unterstützenden Metadaten des `downwardAPI` Volumes sind:
+
+* metadata.annotations
+
+* metadata.namespace
+
+* metadata.name
+
+* metadata.labels
+
+Die Definition des `downwardAPI` ist eine Liste von Items. Ein Element enthält einen `path` und `fieldRef`. Kubernetes werden dann die im `FeldRef` aufgelisteten Metadaten auf eine Datei namens `path` unter `mountPath` abgeben und den `<volume name>` in das angegebene Ziel einfügen:
+```
+        {
+            "Source": "/var/lib/kubelet/pods/<id>/volumes/kubernetes.io~downward-api/<volume name>",
+            "Destination": "/tmp",
+            "Mode": "",
+            "RW": true
+        }
+```
+
+Für die IP der Pod, mit der Umgebungsvariable, um in der Pod-Spezifikation zu verbreiten wäre viel einfacher:
+```
+spec:
+  containers:
+    - name: envsample-pod-info
+      env:
+        - name: MY_POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+```
+
+Für weitere Beispiele schau dir den Beispielordner in Kubernetes GitHub an (https://github.com/kubernetes/kubernetes/tree/master/docs/user-guide/downward-api), der mehr Beispiele für Umgebungsvariablen und `downwardAPI` Datenträger enthält .
+
+### Es gibt mehr…
+
+In früheren Fällen musste der Benutzer die Details des storage consumer kennen. Kubernetes stellt `PersistentVolume(PV)` zur Verfügung, um die Details des storage consumer und des storage consumer zu abstrahieren. Kubernetes unterstützt derzeit die PV-Typen wie folgt:
+
+* GCEPersistentDisk
+
+* AWSElasticBlockStore
+
+* NFS
+
+* iSCSI
+
+* RBD (Ceph Block Device)
+
+* GlusterFS
+
+* HostPath ( geht nicht in multi-node clustern)
+
+### PersistentVolume
+
+Die Darstellung des persistenten Volumens ist in der folgenden Grafik dargestellt. Zuerst regelt der Administrator die Spezifikation eines `PersistentVolums`. Zweitens bieten sie Verbraucheranforderungen für die Lagerung durch `PersistentVolumeClaim` an. Schließlich nimmt die Pod das Volumen durch die Referenz des `PersistentVolumeClaim`:
+
+![persistent-volume-claims](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_02_05.jpg)
+
+Der Administrator muss das persistente Volumen zuerst reservieren und zuordnen.
+
+Hier ist ein Beispiel mit NFS:
+
+```
+// example of PV with NFS
+# cat pv.yaml
+  apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    name: pvnfs01
+  spec:
+    capacity:
+      storage: 3Gi
+    accessModes:
+      - ReadWriteOnce
+    nfs:
+      path: /
+      server: <your nfs server>
+    persistentVolumeReclaimPolicy: Recycle
+
+// create the pv
+# kubectl create -f pv.yaml
+persistentvolume "pvnfs01" created
+```
+
+Wir können sehen, dass es hier drei Parameter gibt: `capacity`, `accessModes` und `persistentVolumeReclaimPolicy`. `capacity` ist die Größe dieser PV. `AccessModes` basiert auf der Fähigkeit des Speicheranbieters und kann bei der Bereitstellung auf einen bestimmten Modus eingestellt werden. Zum Beispiel unterstützt NFS mehrere Leser und Schreiber gleichzeitig, so dass wir die `accessModes` als `ReadWriteOnce`, `ReadOnlyMany` oder `ReadWriteMany` angeben können. Die `accessModes` eines Volumes können jeweils auf einen Modus eingestellt werden. `PersistentVolumeReclaimPolicy` wird verwendet, um das Verhalten zu definieren, wenn PV freigegeben wird. Derzeit ist die unterstützte Richtlinie Retain und `Recycle` für nfs und `hostPath`. Sie müssen die Lautstärke selbst im Retain-Modus reinigen. Auf der anderen Seite wird Kubernetes die Lautstärke im `Recycle` Modus schrubben.
+
+PV ist eine Ressource wie Knoten. Wir könnten kubectl bekommen pv, um aktuelle bereitgestellte PVs zu sehen:
+```
+// list current PVs
+# kubectl get pv
+NAME      LABELS    CAPACITY   ACCESSMODES   STATUS    CLAIM               REASON    AGE
+pvnfs01   <none>    3Gi        RWO           Bound     default/pvclaim01             37m
+```
+
