@@ -197,7 +197,7 @@ Deshalb erstellen wir den Service über eine Konfigurationsdatei:
     }
 }
 ```
-Das Wichtigste ist, dass in der Vorlage kein Selektor definiert ist. Das ist recht vernünftig, da die Endpunkte nicht im Kubernetes-System sind. Die Beziehung zwischen Endpunkten und Service wird durch Ressourcenname aufgebaut. Wie Sie sehen können, muss der Name des Dienstes mit dem Namen des Endpunkts identisch sein:
+Das Wichtigste ist, dass in der Vorlage kein Selektor definiert ist. Das ist zu empfehlen, da die Endpunkte nicht im Kubernetes-System sind. Die Beziehung zwischen Endpunkten und Service wirden durch Ressourcenname aufgebaut. Wie Sie sehen können, muss der Name des Dienstes mit dem Namen des Endpunkts identisch sein:
 ```
 # kubectl create -f service-ep.json
 service "service-foreign-ep" created
@@ -216,7 +216,7 @@ No events.
 ```
 Schließlich wird der no-selector-Dienst für den externen Endpunkt angelegt. Überprüfen Sie das Ergebnis mit <FOREIGN_IP>: 80.
 
-### Erstellen eines Dienstes mit Sitzungsaffinität basierend auf einem anderen Dienst
+### Erstellen eines Dienstes mit sessin affinität basierend auf einem anderen Dienst
 
 Durch den Unterbefehl `expose` wir auch die Einstellungen eines Dienstes auf einen anderen kopieren:
 
@@ -252,7 +252,7 @@ Session Affinity:  ClientIP
 No events.
 ```
 
-Derzeit ist das `ClientIP` die einzige geschätzte Einstellung für die Tag `--session-affinity`. Während die Session-Affinität zum `ClientIP` aktiviert ist, wird statt des Round-Robins die Anforderung, von welcher Endpunkt der Service gesendet werden soll, vom `ClientIP` entschieden. Wenn zum Beispiel die Anfragen vom Client im CIDR-Bereich `192.168.45.0/24 `an den Service-Service-2 gesendet werden, werden sie auf den Endpunkt `192.168.45.3:80` übertragen.
+Derzeit ist das `ClientIP` die einzige verfügbare Einstellung für den Tag `--session-affinity`. Während die Session-Affinität zum `ClientIP` aktiviert ist, wird statt des Round-Robins die Anforderung, von welcher Endpunkt der Service gesendet werden soll, vom `ClientIP` entschieden. Wenn zum Beispiel die Anfragen vom Client im CIDR-Bereich `192.168.45.0/24 `an den Service-Service-2 gesendet werden, werden sie auf den Endpunkt `192.168.45.3:80` übertragen.
 
 ### Erstellen eines Dienstes in einem anderen Typ
 
@@ -278,7 +278,7 @@ No events.
 
 ```
 
-Im vorherigen Fall wird der Netzwerkanschluss `31841`, der auf einem Knoten exponiert ist, zufällig vom System zugewiesen; Der Standard-Port-Bereich ist `30000` bis `32767`. Beachten Sie, dass der Port auf jedem Knoten im System ausgesetzt ist, also ist es gut, auf den Service über `<NODE_IP>:31841` zuzugreifen, zum Beispiel über den Domain-Namen eines Knotens wie `kube-node1:31841`
+Im vorherigen Fall wird der Netzwerkanschluss `31841`, der auf einem Node exponiert ist, zufällig vom System zugewiesen; Der Standard-Port-Bereich ist `30000` bis `32767`. Beachten Sie, dass der Port auf jedem Knoten im System ausgesetzt ist, also ist es gut, auf den Service über `<NODE_IP>:31841` zuzugreifen, zum Beispiel über den Domain-Namen eines Knotens wie `kube-node1:31841`
 
 ### Löschen eines Dienstes
 
@@ -290,4 +290,4 @@ service "<SERVICE_NAME>" deleted
 
 ### Wie es funktioniert…
 
-Die Hauptdarsteller im Kubernetes-System, die die Serviceumgebung durchführen, sind flanneld und kube-proxy. Daemon flanneld baut ein Cluster-Netzwerk auf, indem es eine Subnet-Lease aus einem vorkonfigurierten Adressraum zuteilt und die Netzwerkkonfiguration in etcd speichert, während der Kube-Proxy die Endpunkte von Diensten und Pods leitet.
+Die Hauptdarsteller im Kubernetes-System, die die Serviceumgebung durchführen, sind `flanneld` und `kube-proxy`. Daemon `flanneld` baut ein Cluster-Netzwerk auf, indem es eine Subnet-Lease aus einem vorkonfigurierten Adressraum zuteilt und die Netzwerkkonfiguration in `etcd` speichert, während der `kube-proxy` die Endpunkte von Diensten und Pods leitet.
