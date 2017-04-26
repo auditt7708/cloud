@@ -21,6 +21,7 @@ Fertig werden
 Die Speicheranbieter sind erforderlich, wenn Sie beginnen, das Volumen in Kubernetes zu verwenden, außer für emptyDir, das gelöscht wird, wenn der Pod entfernt wird. Für andere Speicheranbieter müssen Ordner, Server oder Cluster gebaut werden, bevor sie in der Pod-Definition verwendet werden.
 
 Unterschiedliche Datenträgertypen haben unterschiedliche Speicheranbieter:
+
 |Volume Typ|Storage Provider|
 | :---: | :---: |
 |`emptyDir`|Local host|
