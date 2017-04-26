@@ -31,8 +31,8 @@ Unterschiedliche Datenträgertypen haben unterschiedliche Speicheranbieter:
 |`flocker`|Flocker cluster|
 |`glusterfs`|GlusterFS cluster|
 |`rbd`|Ceph cluster|
-| gitRepo |Git repository|
+|`gitRepo` |Git repository|
 |`awsElasticBlockStore`|AWS EBS|
 |`gcePersistentDisk`|GCE persistent disk|
 |`secret`|Kubernetes configuration file|
-|downwardAPI|Kubernetes pod information|
+|`downwardAPI`|Kubernetes pod information|
