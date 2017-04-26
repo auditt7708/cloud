@@ -486,7 +486,7 @@ persistentvolume "pvnfs01" created
 
 Wir können sehen, dass es hier drei Parameter gibt: `capacity`, `accessModes` und `persistentVolumeReclaimPolicy`. `capacity` ist die Größe dieser PV. `AccessModes` basiert auf der Fähigkeit des Speicheranbieters und kann bei der Bereitstellung auf einen bestimmten Modus eingestellt werden. Zum Beispiel unterstützt NFS mehrere Leser und Schreiber gleichzeitig, so dass wir die `accessModes` als `ReadWriteOnce`, `ReadOnlyMany` oder `ReadWriteMany` angeben können. Die `accessModes` eines Volumes können jeweils auf einen Modus eingestellt werden. `PersistentVolumeReclaimPolicy` wird verwendet, um das Verhalten zu definieren, wenn PV freigegeben wird. Derzeit ist die unterstützte Richtlinie Retain und `Recycle` für nfs und `hostPath`. Sie müssen die Lautstärke selbst im Retain-Modus reinigen. Auf der anderen Seite wird Kubernetes die Lautstärke im `Recycle` Modus schrubben.
 
-PV ist eine Ressource wie Knoten. Wir könnten kubectl bekommen pv, um aktuelle bereitgestellte PVs zu sehen:
+PV ist eine Ressource wie Knoten. Wir könnten `kubectl get pv`, um aktuelle bereitgestellte PVs zu sehen:
 ```
 // list current PVs
 # kubectl get pv
@@ -494,3 +494,99 @@ NAME      LABELS    CAPACITY   ACCESSMODES   STATUS    CLAIM               REASO
 pvnfs01   <none>    3Gi        RWO           Bound     default/pvclaim01             37m
 ```
 
+
+Als nächstes müssen wir `PersistentVolume` mit `PersistentVolumeClaim` binden, um es als Volumen in den Pod zu bringen:
+
+```
+// example of PersistentVolumeClaim
+# cat claim.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvclaim01
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+// create the claim
+# kubectl create -f claim.yaml
+persistentvolumeclaim "pvclaim01" created
+
+// list the PersistentVolumeClaim (pvc)
+# kubectl get pvc
+NAME        LABELS    STATUS    VOLUME    CAPACITY   ACCESSMODES   AGE
+pvclaim01   <none>    Bound     pvnfs01   3Gi        RWO           59m
+```
+Die Einschränkungen von `accessModes` und `storage` können in der `PersistentVolumeClaim` gesetzt werden. Wenn der Anspruch erfolgreich `Bound` ist, wird sein Status `Unbound` wenden; Umgekehrt, wenn der Status Ungebunden ist, bedeutet dies, dass derzeit keine PV mit den Anfragen übereinstimmt.
+
+Dann können wir die PV als Volumen mit `PersistentVolumeClaim` anbringen:
+```
+// example of mounting into Pod
+# cat nginx.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    project: pilot
+    environment: staging
+    tier: frontend
+spec:
+  containers:
+    -
+      image: nginx
+      imagePullPolicy: IfNotPresent
+      name: nginx
+      volumeMounts:
+      - name: pv
+        mountPath: "/usr/share/nginx/html"
+      ports:
+      - containerPort: 80
+  volumes:
+    - name: pv
+      persistentVolumeClaim:
+        claimName: "pvclaim01"
+
+// create the pod
+# kubectl create -f nginx.yaml
+pod "nginx" created
+```
+Die Syntax ähnelt dem anderen Datenträgertyp. Füge einfach den `ClaimName` des `persistentVolumeClaim` in die Volume-Definition hinzu. Wir sind alle da! Überprüfen Sie die Details, um zu sehen, ob wir es erfolgreich montiert haben:
+
+```
+// check the details of a pod
+# kubectl describe pod nginx
+...
+Volumes:
+  pv:
+    Type:  PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  pvclaim01
+    ReadOnly:  false
+...
+
+```
+Wir können sehen, dass wir ein Volume in der Pod nginx mit Typ `pv` `pvclaim01` montiert haben. Verwenden Sie `docker inspect`, um zu sehen, wie es montiert ist:
+```
+     "Mounts": [
+        {
+            "Source": "/var/lib/kubelet/pods/<id>/volumes/kubernetes.io~nfs/pvnfs01",
+            "Destination": "/usr/share/nginx/html",
+            "Mode": "",
+            "RW": true
+        },
+      ...
+    ]
+```
+
+Kubernetes mounts `/var/lib/kubelet/pods/<id>/volumes/kubernetes.io~nfs/< persistentvolume name>` in das Ziel in der Pod.
+
+### Siehe auch
+
+Volumes werden in Container-Spezifikationen in Pods oder Replikations-Controller gesetzt. Schauen Sie sich die folgenden Rezepte an, um Ihr Gedächtnis zu treniren:
+
+* Arbeiten mit Hülsen
+
+* Arbeiten mit einem replication controller
