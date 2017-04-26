@@ -369,7 +369,7 @@ Ceph RADOS Block Device (http://docs.ceph.com/docs/master/rbd/rbd/) könnte in d
 
 ### GitRepo
 
-Die `gitRepo` Lautstärke wird als leeres Wörterbuch und Git klonen ein Repository mit einer gewissen Revision in einem Pod für Sie zu verwenden:
+Das `gitRepo` Volume wird als leeres dictionary gemountet und Git clone ein Repository mit einer bestimmten Revision in einem Pod um Sie zu verwenden:
 
 |Feld Name|Feld Beschreibung|
 | :---: | :---: |
@@ -380,7 +380,7 @@ Die `gitRepo` Lautstärke wird als leeres Wörterbuch und Git klonen ein Reposit
 
 ### AwsElasticBlockStore
 
-`awsElasticBlockStore` Volume unterstützt ein AWS-EBS-Volume in einem Pod. Um es zu benutzen, musst du deinen Pod auf AWS EC2 mit der gleichen Verfügbarkeitszone mit EBS laufen lassen. Denn jetzt unterstützt EBS nur die Anbindung an ein EC2 in der Natur, so dass es bedeutet, dass man kein einzelnes EBS-Volume an mehrere EC2-Instanzen anhängen kann:
+`awsElasticBlockStore` Volume unterstützt ein AWS-EBS-Volume in einem Pod. Um es zu nutzen, musst du deinen Pod auf AWS EC2 mit der gleichen Verfügbarkeit Zone mit EBS laufen lassen. Denn jetzt unterstützt EBS nur die Anbindung an ein EC2 in der Praxis, so dass es bedeutet, dass man kein einzelnes EBS-Volume an mehrere EC2-Instanzen anhängen kann:
 
 |Feld Name|Feld Beschreibung|
 | :---: | :---: |
@@ -390,7 +390,7 @@ Die `gitRepo` Lautstärke wird als leeres Wörterbuch und Git klonen ein Reposit
 
 ### GcePersistentDisk
 
-Ähnlich wie bei `awsElasticBlockStore` muss die Pod mit dem `gcePersistentDisk`-Volume auf GCE mit demselben Projekt und der Zone laufen. Die `gcePersistentDisk` unterstützt nur einen einzigen Schreiber, wenn readOnly = false:
+Ähnlich wie bei `awsElasticBlockStore` muss die Pod mit dem `gcePersistentDisk`-Volume auf GCE mit demselben Projekt und Zone laufen. Die `gcePersistentDisk` unterstützt nur einen einzigen Schreibenden zugriff, wenn `readOnly=false`:
 
 |Feld Name|Feld Beschreibung|
 | :---: | :---: |
@@ -403,14 +403,11 @@ Die `gitRepo` Lautstärke wird als leeres Wörterbuch und Git klonen ein Reposit
 Das `downwardAPI` Volume ist ein Kubernetes-Volume-Plugin mit der Möglichkeit, einige Pod-Informationen in einer Klartextdatei in einen Container zu speichern. Die aktuellen unterstützenden Metadaten des `downwardAPI` Volumes sind:
 
 * metadata.annotations
-
 * metadata.namespace
-
 * metadata.name
-
 * metadata.labels
 
-Die Definition des `downwardAPI` ist eine Liste von Items. Ein Element enthält einen `path` und `fieldRef`. Kubernetes werden dann die im `FeldRef` aufgelisteten Metadaten auf eine Datei namens `path` unter `mountPath` abgeben und den `<volume name>` in das angegebene Ziel einfügen:
+Die Definition des `downwardAPI` ist eine Liste von Items. Ein Element enthält einen `path` und `fieldRef`. Kubernetes werden dann die im `FeldRef` aufgelisteten Metadaten auf eine Datei namens `path` unter `mountPath` übergeben und den `<volume name>` in das angegebene Ziel einfügen:
 ```
         {
             "Source": "/var/lib/kubelet/pods/<id>/volumes/kubernetes.io~downward-api/<volume name>",
@@ -420,7 +417,7 @@ Die Definition des `downwardAPI` ist eine Liste von Items. Ein Element enthält 
         }
 ```
 
-Für die IP der Pod, mit der Umgebungsvariable, um in der Pod-Spezifikation zu verbreiten wäre viel einfacher:
+Um für die IP den Pod, mit der Umgebungsvariable, in der Pod-Spezifikation zu verbreiten  wäre es viel einfacher folgendes durchzuführen:
 ```
 spec:
   containers:
