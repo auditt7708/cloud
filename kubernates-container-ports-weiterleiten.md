@@ -1,0 +1,2 @@
+Pods konnten versehentlich gestoppt werden, so dass die IP des Pods geändert werden konnte. Wenn wir den Port für einen Pod oder einen Replikationscontroller freigeben, erstellen wir einen Kubernetes Service, der als Proxy oder Load Balancer fungiert. Kubernetes wird eine virtuelle IP erstellen, die die Anfrage von Clients erhalten und den Traffic auf die Pods in einem Service verletzen wird. Lassen Sie uns überprüfen, wie dies zu tun. Zuerst erstellen wir einen Replikationscontroller namens my-first-nginx:
+
