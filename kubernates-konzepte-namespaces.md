@@ -1,9 +1,11 @@
-Der Name einer Ressource ist eine eindeutige Kennung innerhalb eines Namespaces im Kubernetes-Cluster. Die Verwendung eines Kubernetes-Namespaces könnte Namespaces für verschiedene Umgebungen im selben Cluster isolieren. Es gibt Ihnen die Flexibilität, eine isolierte Umgebung zu schaffen und Ressourcen auf verschiedene Projekte und Teams zu verteilen.
+Der Name einer Ressource ist eine eindeutige Kennung innerhalb eines Namespaces im Kubernetes-Cluster. Die Verwendung eines Kubernetes-Namespaces kann Namespaces für verschiedene Umgebungen im selben Cluster isolieren. 
+Es gibt Ihnen die Flexibilität, eine isolierte Umgebung zu schaffen und Ressourcen auf verschiedene Projekte und Teams zu verteilen.
 
-Pods, Services, Replikationscontroller sind in einem bestimmten Namespace enthalten. Einige Ressourcen wie Knoten und PVs gehören nicht zu einem Namespace.
-Fertig werden
+Pods, Services, replication controller sind in einem bestimmten Namespace enthalten. Einige Ressourcen wie Nodes und PVs gehören nicht zu einem Namespace.
 
-Standardmäßig hat Kubernetes einen Namensraum namens default erstellt. Alle Objekte, die ohne Angabe von Namespaces erstellt wurden, werden in Standard-Namespaces gesetzt. Sie können kubectl verwenden, um Namespaces aufzulisten:
+### Fertig werden
+
+Standardmäßig hat Kubernetes einen Namensraum namens `default` erstellt. Alle Objekte, die ohne Angabe von Namespaces erstellt wurden, werden in den default Namespaces gesetzt. Sie können kubectl verwenden, um Namespaces aufzulisten:
 ```
 // check all namespaces
 # kubectl get namespaces
@@ -20,7 +22,7 @@ Der Name eines Namespaces muss ein DNS-Label sein und den folgenden Regeln folge
 
 ### Wie es geht…
 
-1. Nachdem Sie unseren gewünschten Namen ausgewählt haben, erstellen wir einen Namensraum namens `new-namespace` mit der Konfigurationsdatei:
+1. Nachdem wir unseren gewünschten Namen ausgewählt haben, erstellen wir einen Namensraum namens `new-namespace` mit der Konfigurationsdatei:
 ```
 # cat newNamespace.yaml
 apiVersion: v1
@@ -40,8 +42,7 @@ NAME            LABELS    STATUS    AGE
 default         <none>    Active    8d
 new-namespace   <none>    Active    12m
 ```
-
-Sie können jetzt sehen, dass wir zwei Namespaces haben.
+Wir können jetzt sehen, dass wir zwei Namespaces haben.
 
 3. Lass uns den nginx Replikations controller ausführen, der in[Richte dein eigenes Kubernates ein](../kubernates-einrichten) in einem neuen Namespace beschrieben ist:
 ```
@@ -55,7 +56,7 @@ Sie können jetzt sehen, dass wir zwei Namespaces haben.
 NAME                                    READY     STATUS        RESTARTS   AGE
 ```
 
-5. Es gibt keine Hülsen laufen! Lass uns wieder mit dem Parameter `--namespace` laufen:
+5. Es laufen keine pods ! Lass uns wieder mit dem Parameter `--namespace` nachsehen:
 ```
 // to list pods in all namespaces
 # kubectl get pods --all-namespaces
@@ -69,7 +70,7 @@ nginx-ns0ig   1/1       Running   0          18m
 ```
 Wir können jetzt unsere pods sehen.
 
-Wenn Sie in der Befehlszeile kein Namensraum angeben, wird Kubernetes die Ressourcen im Standard-Namespace erstellen. Wenn du Ressourcen nach der Konfigurationsdatei erstellen möchtest, kannst du einfach nur bei der Erstellung von `kubectl create` angeben:
+Wenn Sie in der Befehlszeile kein Namensraum angeben, wird Kubernetes die Ressourcen im Standard-Namespace erstellen. Wenn du Ressourcen nach der Konfigurationsdatei erstellen möchtest, kannst du es einfach bei der Erstellung von `kubectl create` angeben:
 ```
 # kubectl create -f myResource.yaml --namespace=new-namespace
 ```
@@ -85,7 +86,8 @@ current-context: ""
 ```
 Es zeigt, dass wir jetzt keine Kontexteinstellung haben.
 
-2. Egal ob es sich um einen aktuellen Kontext handelt oder nicht, mit `set-context` könnte ein neues erstellen oder das bestehende überschreiben:
+2. Egal ob es sich um einen aktuellen Kontext handelt oder nicht, mit `set-context` könnte wir ein neues erstellen oder das bestehende überschreiben:
+`# kubectl config set-context <current context or new context name> --namespace=new-namespace`
 
 3. Nachdem Sie den Kontext mit einem neuen Namespace gesetzt haben, können wir die aktuelle Konfiguration überprüfen:
 ```
@@ -160,7 +162,7 @@ current-context: new-context
 
 Wird es ein Problem sein?
 
-4. Lass uns einen `nginx` replication controller  wieder laufen lassen.
+4. Lass uns einen `nginx` replication controller  wieder laufen.
 ```
 # kubectl run nginx --image=nginx
 Error from server: namespaces "new-namespace" not found
@@ -188,7 +190,7 @@ Labels:        run=nginx
 Status:        Running
 ...
 ```
-Wir können sehen, dass der Pod derzeit im Namespace läuft: Standard. Alles sieht gut aus
+Wir können sehen, dass der Pod derzeit im Namespace: default läuft. Alles sieht gut aus
 
 ### Es gibt mehr…
 
@@ -203,7 +205,7 @@ No resource quota.
 
 No resource limits.
 ```
-Ressourcenquoten und Limits sind nicht standardmäßig festgelegt. Kubernetes unterstützt die Einschränkung für einen Container oder Pod. LimitRanger im Kubernetes API Server muss aktiviert werden, bevor die Constraint gesetzt wird. Sie können entweder eine Befehlszeile oder eine Konfigurationsdatei verwenden, um es zu aktivieren:
+Ressourcen quota und Limits sind nicht standardmäßig festgelegt. Kubernetes unterstützt die Einschränkung für einen Container oder Pod. `LimitRanger` im Kubernetes API Server muss aktiviert werden, bevor die Constraint gesetzt wird. Sie können entweder eine Befehlszeile oder eine Konfigurationsdatei verwenden, um es zu aktivieren:
 ```
 // using command line-
 # kube-apiserver --admission-control=LimitRanger
@@ -218,7 +220,8 @@ KUBE_ADMISSION_CONTROL="--admission_control=NamespaceLifecycle,NamespaceExists,L
 
 Das folgende ist ein gutes Beispiel für das Erstellen einer Grenze in einem Namespace.
 
-Wir werden dann die Ressourcen in einem Pod mit den Werten `2` als `max` und `200m` als `min` für `cpu` und `1Gi` als `max` und `6Mi` als `min` für `memory` beschränken. Für den Container ist die `cpu` zwischen `100m` - `2` begrenzt und der Speicher liegt zwischen `3Mi` - `1Gi`. Wenn das `max` gesetzt ist, müssen Sie bei der Ressourcenerstellung das Limit in der Pod / Container-Spezifikation angeben. Wenn die `min` gesetzt ist, muss die anforderung während der pod / container-anstellung angegeben werden. Der `default`- und `defaultRequest`-Abschnitt in `LimitRange` wird verwendet, um die Standardgrenze und die Anforderung in der Containerspezifikation anzugeben:
+Wir werden dann die Ressourcen in einem Pod mit den Werten `2` als `max` und `200m` als `min` für `cpu` und `1Gi` als `max` und `6Mi` als `min` für `memory` beschränken. 
+Für den Container ist die `cpu` zwischen `100m` - `2` begrenzt und der Speicher liegt zwischen `3Mi` - `1Gi`. Wenn das `max` gesetzt ist, müssen Sie bei der Ressourcenerstellung das Limit in der Pod / Container-Spezifikation angeben. Wenn die `min` gesetzt ist, muss die anforderung während der pod / container-anstellung angegeben werden. Der `default`- und `defaultRequest`-Abschnitt in `LimitRange` wird verwendet, um die Standardgrenze und die Anforderung in der Containerspezifikation anzugeben:
 ```
 # cat limits.yaml
 apiVersion: v1
@@ -260,7 +263,7 @@ Nachdem das `LimitRange` erstellt wurde, können wir diese wie bei jeder anderen
 NAME      AGE
 limits    22m
 ```
-Wenn du den neuen Namespace beschreibst, kannst du nun die Einschränkung sehen:
+Wenn du den neuen Namespace beschreibst hast, kannst du nun die Einschränkung sehen:
 
 ```
 # kubectl describe namespace new-namespace
@@ -278,7 +281,7 @@ Resource Limits
  Container  cpu       100m   2     200m      300m   -
  Container  memory    3Mi      1Gi  100Mi      200Mi   -
 ```
-Alle in diesem Namensraum erstellten Pods und Container müssen den hier aufgeführten Ressourcengrenzen folgen. Wenn die Definitionen gegen die Regel verstoßen, wird ein Validierungsfehler entsprechend geworfen.
+Alle in diesem Namensraum erstellten Pods und Container müssen den hier aufgeführten Ressourcen Grenzen folgen. Wenn die Definitionen gegen die Regel verstoßen, wird ein Validierungsfehler entsprechend ausgeworfen.
 
 ### LimitRange löschen
 
