@@ -3,17 +3,11 @@ Dateien in einem Container sind kurzlebig. Wenn der Container beendet ist, sind 
 Kubernetes führt Volumen ein, das mit einem Pod über Container-Neustarts lebt. Es unterstützt die folgenden verschiedenen Arten von Netzwerk-Festplatten:
 
 * emptyDir
-
 * hostPath
-
 * nfs
-
 * iscsi
-
 * flocker
-
 * glusterfs
-
 * rbd
 
 * gitRepo
