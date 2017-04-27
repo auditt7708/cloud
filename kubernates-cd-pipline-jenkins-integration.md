@@ -62,7 +62,7 @@ Die Aufgabe von Kubernetes besteht darin, einige Programme zu behandeln, die üb
 
 > 1. Add **Docker Build and Publish** zuerst, um Ihr Programm als Image zu bauen. Ein Repository-Name ist ein erforderliches Element. In diesem Fall verwenden wir Docker Hub als Registry; Bitte nennen Sie Ihr Repository als `DOCKERHUB_ACCOUNT:YOUR_CUSTOMIZED_NAME`. Zum Beispiel, `nosus:sleeper`. Das Hinzufügen eines Tags, wie z. B. `v$BUILD_NUMBER`, könnte Ihr Docker-Image mit der Jenkins-Buildnummer markieren. Lassen Sie Docker Host URI und Server Anmeldeinformationen leer, wenn Ihre Jenkins Server bereits das Docker Paket installiert haben. Aber wenn Sie den Anweisungen auf der vorherigen Seite folgen, um den Jenkins-Server als Container zu installieren, überprüfen Sie bitte die folgenden Tipps für detaillierte Einstellungen dieser beiden Elemente. Lassen Sie die Docker-Registrierungs-URL leer, da wir Docker Hub als Docker-Registrierung verwendet haben. Legen Sie jedoch eine neue Berechtigung fest, damit Ihr Docker Hub auf die Berechtigung zugreift.
 >
-> 2. Als nächstes fügen Sie einen Shell Block für den Aufruf der Kubernetes-API hinzu. Wir setzen zwei API-Anrufe für unseren Zweck: man soll einen Kubernetes-Job mit der JSON-Formatvorlage erstellen und der andere ist zu fragen, ob der Job erfolgreich abgeschlossen ist oder nicht:
+> 2. Als nächstes fügen Sie einen Shell Block für den Aufruf der Kubernetes-API hinzu. Wir setzen zwei API-Anrufe für unseren Zweck: man solle einen Kubernetes-Job mit der JSON-Formatvorlage erstellen und der andere ist zu fragen, ob der Job erfolgreich abgeschlossen ist oder nicht:
 >
 >
 ```
@@ -80,4 +80,55 @@ done
 return $returnValue
 ```
 >
+
+Wir werden auch eine `while` Schleife für eine 3-minütige Timeout-Begrenzung hinzufügen. Die regelmäßige Überprüfung des Status des Jobs ist ein einfacher Weg zu wissen, ob es fertig ist. Wenn Sie nicht die Nachricht **succeeded:1** rechtzeitig bekommen, beurteilen Sie den Job als Misserfolg.
+
+###### Tip
+
+Legen Sie Docker Host URI und Server Credential für einen containerisierten Jenkins Server fest
+
+Wenn Sie Docker-Maschine zum Erstellen Ihrer Docker-Umgebung verwenden (z. B. ein OS X-Benutzer), geben Sie diesen Befehl in Ihrem Terminal ein:
+```
+$ docker-machine env
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/YOUR_ACCOUNT/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
+```
+
+Führen Sie diesen Befehl aus, um Ihre Shell zu konfigurieren:
+
+`# eval $(docker-machine env)`
+
+Standardmäßig erhalten Sie die vorherigen Informationen. Bitte fügen Sie den Wert von `$DOCKER_HOST` in das Element Docker Host URI ein. Dann überprüfen Sie Ihr Verzeichnis `$DOCKER_CERT_PATH`:
+```
+$ ls /Users/carol/.docker/machine/machines/default
+boot2docker.iso cert.pem        default         id_rsa          key.pem         server.pem
+ca.pem          config.json     disk.vmdk       id_rsa.pub      server-key.pem
+```
+Bestimmte Dateien, die hier aufgeführt sind, können für Sie die Erlaubnis erhalten. Bitte klicken Sie auf die Schaltfläche **Add** neben **Registry credentials** und fügen Sie den Inhalt eines Teils der vorherigen Dateien ein, wie im folgenden Screenshot gezeigt:
+
+![jenkins-add-credentials-ca](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_13.jpg)
+
+Nachdem Sie Projektkonfigurationen beendet haben, können Sie auf Speichern klicken und dann auf Jetzt klicken, um das Ergebnis zu überprüfen. Sie können finden, dass Ihr Bild auch an Docker Hub geuploaded(push) wird:
+
+![git-nosus-sleeper](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_14.jpg)
+
+### Bereitstellung eines Programms
+
+Deploying eines dockerisierten Programms über den Jenkins-Server hat ähnliche Konfigurationen in den Einstellungen des Projekts. Wir bereiten ein einfaches nginx Programm vor, um es zu versuchen! Öffnen Sie ein neues Jenkins-Projekt für neue Einstellungen wie folgt:
+
+1. Bei **Source Code Management** wählen Sie Git; Setzen Sie den Wert https://github.com/kubernetes-cookbook/nginx-demo.git in **Repository URL**.
+
+2. Bei **Build** brauchen wir auch zwei **Build**-Schritte. Sie sind wie folgt:
+>
+> 1. Füge ein **Docker Build and Publish** zuerst hinzu; Wir werden `nosus:nginx-demo` setzen als repository name. Geben Sie an **Docker Host URI** und **Server credentials** entsprechende Werte an.
+>
+> 2. Wir benötigen einen **Execute shell** zum Aufruf der Kubernetes API. Es gibt zwei API-Anrufe in den Bereich: Der erste ist für die Schaffung eines Pod und die andere ist für die Schaffung eines Dienstes, um die Pod zu freizugeben:
+>```
+#create a pod
+curl -XPOST -d'{"apiVersion": "v1","kind": "Pod","metadata": {"labels":{"app": "nginx"},"name": "nginx-demo"},"spec": {"containers": [{"image": "nosus/nginx-demo","imagePullPolicy": "Always","name": "nginx-demo","ports": [{"containerPort": 80,"name": "http"}]}],"restartPolicy": "Always"}}' http:// YOUR_KUBERNETES_MASTER_ENDPOINT/api/v1/namespaces/default/pods
+#create a service
+curl -XPOST -d'{"apiVersion": "v1","kind": "Service","metadata": {"name": "nginx-demo"},"spec": {"ports": [{"port": 8081,"protocol": "TCP","targetPort": 80}],"selector": {"app": "nginx"},"type": "NodePort"}}' http://YOUR_KUBERNETES_MASTER_ENDPOINT /api/v1/namespaces/default/services
+```
 >
