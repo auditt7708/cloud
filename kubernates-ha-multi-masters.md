@@ -133,3 +133,218 @@ KUBELET_ARGS="--register-node=false --allow-privileged=true --config /etc/kubern
 ```
 >>
 >
+
+Auf der anderen Seite, ändern Sie Ihre Skript-Datei von `init` Service-Management und fügen Sie die Tags nach dem Daemon `kubelet`. Zum Beispiel haben wir folgende Einstellungen in `/etc/init.d/kubelet`:
+```
+# cat /etc/init.d/kubelet
+prog=/usr/local/bin/kubelet
+lockfile=/var/lock/subsys/`basename $prog`
+hostname=`hostname`
+logfile=/var/log/kubernetes.log
+
+start() {
+       # Start daemon.
+       echo $"Starting kubelet: "
+       daemon $prog \
+               --api-servers=127.0.0.1:8080 \
+               --register-node=false \
+               --allow-privileged=true \
+               --config=/etc/kubernetes/manifests \
+               > ${logfile} 2>&1 &
+     (ignored)
+```
+
+Es ist gut, deinen Kubelet-Service im gestoppten Zustand zu halten, da wir ihn nach der Konfiguration der Scheduler und des Controller-Managers starten werden.
+
+### Die Konfigurationsdateien fertig stellen
+
+Wir benötigen drei Vorlagen als Konfigurationsdateien: Pod Master, Scheduler und Controller Manager. Diese Dateien sollten an bestimmten Orten platziert werden.
+
+Pod Master behandelt die Wahlen, um zu entscheiden, welcher Master den Scheduler-Daemon läuft und welcher Master den Controller Manager-Daemon leitet. Das Ergebnis wird in den etcd-Servern aufgezeichnet. Die Vorlage des Pod-Masters wird in das Kubelet-Konfigurationsverzeichnis gelegt, um sicherzustellen, dass der Pod-Master direkt nach dem Start des Kubeletts erstellt wird:
+```
+# cat /etc/kubernetes/manifests/podmaster.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+ name: podmaster
+ namespace: kube-system
+spec:
+ hostNetwork: true
+ containers:
+ - name: scheduler-elector
+   image: gcr.io/google_containers/podmaster:1.1
+   command: ["/podmaster", "--etcd-servers=<ETCD_ENDPOINT>", "--key=scheduler", "--source-file=/kubernetes/kube-scheduler.yaml", "--dest-file=/manifests/kube-scheduler.yaml"]
+   volumeMounts:
+   - mountPath: /kubernetes
+     name: k8s
+     readOnly: true
+   - mountPath: /manifests
+     name: manifests
+ - name: controller-manager-elector
+   image: gcr.io/google_containers/podmaster:1.1
+   command: ["/podmaster", "--etcd-servers=<ETCD_ENDPOINT>", "--key=controller", "--source-file=/kubernetes/kube-controller-manager.yaml", "--dest-file=/manifests/kube-controller-manager.yaml"]
+   terminationMessagePath: /dev/termination-log
+   volumeMounts:
+   - mountPath: /kubernetes
+     name: k8s
+     readOnly: true
+   - mountPath: /manifests
+     name: manifests
+ volumes:
+ - hostPath:
+     path: /srv/kubernetes
+   name: k8s
+ - hostPath:
+     path: /etc/kubernetes/manifests
+   name: manifests
+```
+
+In der Konfigurationsdatei von pod master werden wir eine Pod mit zwei Containern einsetzen, die beiden Wähler für verschiedene Dämonen. Der Pod `podmaster` wird in einem neuen Namensraum namens `kube-System` erstellt, um Pods für Dämonen und Anwendungen zu trennen. Wir müssen einen neuen Namespace erstellen, bevor wir Ressourcen mit Vorlagen erstellen. Es ist auch erwähnenswert, dass der Pfad `/srv/kubernetes` ist, wo wir die Konfigurationsdateien der Dämonen setzen. Der Inhalt der Dateien ist wie die folgenden Zeilen:
+```
+# cat /srv/kubernetes/kube-scheduler.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+ name: kube-scheduler
+ namespace: kube-system
+spec:
+ hostNetwork: true
+ containers:
+ - name: kube-scheduler
+   image: gcr.io/google_containers/kube-scheduler:34d0b8f8b31e27937327961528739bc9
+   command:
+   - /bin/sh
+   - -c
+   - /usr/local/bin/kube-scheduler --master=127.0.0.1:8080 --v=2 1>>/var/log/kube-scheduler.log 2>&1
+   livenessProbe:
+     httpGet:
+       path: /healthz
+       port: 10251
+     initialDelaySeconds: 15
+     timeoutSeconds: 1
+   volumeMounts:
+   - mountPath: /var/log/kube-scheduler.log
+     name: logfile
+   - mountPath: /usr/local/bin/kube-scheduler
+     name: binfile
+ volumes:
+ - hostPath:
+     path: /var/log/kube-scheduler.log
+   name: logfile
+ - hostPath:
+     path: /usr/local/bin/kube-scheduler
+   name: binfile
+
+```
+
+Es gibt einige spezielle Elemente in der Vorlage, wie Namespace und zwei angehängte Dateien gesetzt. Einer ist eine Protokolldatei; Die Streaming-Ausgabe kann auf die lokale Seite zugegriffen und gespeichert werden. Die andere ist die Ausführungsdatei. Der Container kann den aktuellen Kube-Scheduler auf dem lokalen Host nutzen:
+```
+# cat /srv/kubernetes/kube-controller-manager.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+ name: kube-controller-manager
+ namespace: kube-system
+spec:
+ containers:
+ - command:
+   - /bin/sh
+   - -c
+   - /usr/local/bin/kube-controller-manager --master=127.0.0.1:8080 --cluster-cidr=<KUBERNETES_SYSTEM_CIDR> --allocate-node-cidrs=true --v=2 1>>/var/log/kube-controller-manager.log 2>&1
+   image: gcr.io/google_containers/kube-controller-manager:fda24638d51a48baa13c35337fcd4793
+   livenessProbe:
+     httpGet:
+       path: /healthz
+       port: 10252
+     initialDelaySeconds: 15
+     timeoutSeconds: 1
+   name: kube-controller-manager
+   volumeMounts:
+   - mountPath: /srv/kubernetes
+     name: srvkube
+     readOnly: true
+   - mountPath: /var/log/kube-controller-manager.log
+     name: logfile
+   - mountPath: /usr/local/bin/kube-controller-manager
+     name: binfile
+ hostNetwork: true
+ volumes:
+ - hostPath:
+     path: /srv/kubernetes
+   name: srvkube
+ - hostPath:
+     path: /var/log/kube-controller-manager.log
+   name: logfile
+ - hostPath:
+     path: /usr/local/bin/kube-controller-manager
+   name: binfile
+```
+
+Die Konfigurationsdatei des Controller-Managers ähnelt der des Schedulers. Denken Sie daran, die CIDR-Serie Ihres Kubernetes-Systems im Daemon-Befehl bereitzustellen.
+
+Um die Vorlagen erfolgreich bearbeiten zu können, sind noch einige Vorkonfigurationen erforderlich, bevor Sie den Pod-Master starten:
+
+* Erstellen Sie leere Log-Dateien. Andernfalls wird der Container anstelle des Dateiformats den Pfad als Verzeichnis betrachten und den Fehler der pod-Erstellung verursachen:
+```
+// diese Befehle auf jedem Master ausführen
+# Touch /var/log/kube-scheduler.log
+# Touch /var/log/kube-controller-manager.log
+```
+
+* Erstellen Sie den neuen Namespace. Der neue Namespace ist von der Standardeinstellung getrennt. Wir werden die Pod für die Systemnutzung in diesem Namespace setzen:
+```
+// Just execute this command in a master, and other masters can share this update.
+# kubectl create namespace kube-system
+// Or
+# curl -XPOST -d'{"apiVersion":"v1","kind":"Namespace","metadata":{"name":"kube-system"}}' "http://127.0.0.1:8080/api/v1/namespaces"
+```
+
+### Starten des Kubeletts und Drehen von Daemons auf!
+
+Bevor wir Kubelet für unsere Pod Master und zwei Master-Besitz Dämonen, bitte stellen Sie sicher, dass Sie Docker und Flanneld begann zuerst:
+```
+# Now, it is good to start kubelet on every masters
+# service kubelet start
+```
+
+Warten Sie eine Weile; Sie erhalten einen Pod-Master, der auf jedem Master läuft und Sie werden endlich ein Paar Scheduler und Controller Manager bekommen:
+```
+# Pods im Namespace überprüfen "kube-system"
+# Kubectl bekommen pod --namespace = kube-system
+NAME READY STATUS RESTARTS ALTER
+Kube-controller-manager-kube-master1 1/1 Laufen 0 3m
+Kube-scheduler-kube-master2 1/1 Laufen 0 3m
+Podmaster-kube-master1 2/2 Laufen 0 1m
+Podmaster-kube-master2 2/2 Laufen 0 1m
+```
+
+Glückwünsche! Sie haben Ihr Multimaster-Kubernetes-System erfolgreich aufgebaut. Und die Struktur der Maschinen sieht aus wie folgendes Bild:
+
+![multi-master-node-schema](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_04_02.jpg)
+
+Sie können sehen, dass jetzt ein einzelner Knoten nicht mit der gesamten Anforderungslast umgehen muss. Außerdem sind die Dämonen nicht in einem Meister überfüllt; Sie können an verschiedene Meister verteilt werden und jeder Meister hat die Fähigkeit, die Erholung zu machen. Versuche, einen Meister zu schließen; Sie werden feststellen, dass Ihr Scheduler und Controller Manager noch Dienstleistungen erbringt.
+
+### Wie es funktioniert…
+
+Überprüfen Sie das Protokoll des Container-Pod-Masters. Du bekommst zwei Arten von Nachrichten, eine für wen hält den Schlüssel und einen ohne Schlüssel zur Hand:
+```
+// Get the log with specified container name
+# kubectl logs podmaster-kube-master1 -c scheduler-elector --namespace=kube-system
+I0211 15:13:46.857372       1 podmaster.go:142] --whoami is empty, defaulting to kube-master1
+I0211 15:13:47.168724       1 podmaster.go:82] key already exists, the master is kube-master2, sleeping.
+I0211 15:13:52.506880       1 podmaster.go:82] key already exists, the master is kube-master2, sleeping.
+(ignored)
+# kubectl logs podmaster-kube-master1 -c controller-manager-elector --namespace=kube-system
+I0211 15:13:44.484201       1 podmaster.go:142] --whoami is empty, defaulting to kube-master1
+I0211 15:13:50.078994       1 podmaster.go:73] key already exists, we are the master (kube-master1)
+I0211 15:13:55.185607       1 podmaster.go:73] key already exists, we are the master (kube-master1)
+(ignored)
+```
+Der Master mit dem Schlüssel sollte den jeweiligen Dämon und den besagten Scheduler oder Controller Manager übernehmen. Diese aktuelle Hochverfügbarkeitslösung für den Master wird durch die Lease-Lock-Methode in etcd realisiert:
+![psp-etcd](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_04_03.jpg)
+
+Das vorhergehende Schleifenbild zeigt den Fortschritt der Lease-Lock-Methode an. Zwei Zeiträume sind bei dieser Methode wichtig: **SLEEP** ist der Zeitraum für die Überprüfung der Sperre und **Time to Live (TTL)** ist der Zeitraum des Leasingablaufs. Wir können sagen, dass, wenn der Dämon-laufende Master abgestürzt ist, der schlimmste Fall für den anderen Meister, der seinen Job übernimmt, die Zeit **SLEEP + TTL** erfordert. Standardmäßig ist **SLEEP** 5 Sekunden und TTL ist 30 Sekunden.
+
+###### Notiz
+Man kann noch einen Blick auf den Quellcode von pod master für mehr Konzepte werfen (podmaster.go: https://github.com/kubernetes/contrib/blob/master/pod-master/podmaster.go).
+
