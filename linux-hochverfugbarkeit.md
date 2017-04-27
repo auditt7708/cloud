@@ -7,15 +7,15 @@
 ## [BTRFS Dateisystem](../btrfs)
 
 # [Hochverfügbarkeits-Cluster](../ha-cluster)
-## [Typen von Clustern](../cluster-typen)
-## [Hochverfügbarkeit und deren Grundlagen](../ha-grundlagen)
-## [Cluster Softwarelösungen](../cluster-software)
-## [NTP](../ntp)
-## [Cluster und deren Kommunikation](../cluster-kommunikation)
-## [Management von Cluster-Ressourcen](../cluster-mgmnt-ressourcen)
-## [OCFRessurce-Agenten](../cluster-ocf-agenten)
-## []()
+* [Typen von Clustern](../cluster-typen)
+* [Hochverfügbarkeit und deren Grundlagen](../ha-grundlagen)
+* [Cluster Softwarelösungen](../cluster-software)
+* [NTP](../ntp)
+* [Cluster und deren Kommunikation](../cluster-kommunikation)
+* [Management von Cluster-Ressourcen](../cluster-mgmnt-ressourcen)
+* [OCFRessurce-Agenten](../cluster-ocf-agenten)
 
+# Cluster Dateisysteme
 # [Hochverfügbare Storage-Cluster](../ha-storage)
 ## [DRBD](../drbd)
 ## [GlusterFS](../glusterfs)
