@@ -281,4 +281,61 @@ service "my-calc-service" created
 
 ### Frontend WebUI
 
-Frontend WebUI verwendet auch den replication controller und den Dienst, aber er stellt den Port (TCP Port `30080`) bereit, um von einem externen Webbrowser darauf zuzugreifen:
+Frontend WebUI verwendet auch den replication controller und den service, und er stellt den Port (TCP Port `30080`) bereit, um von einem externen Webbrowser darauf zugreifen zu können:
+```
+$ cat my-frontend.yaml 
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: my-frontend-rc
+spec:
+  replicas: 2
+  selector:
+        app: my-frontend
+  template:
+    metadata:
+      labels:
+        app: my-frontend
+    spec:
+      containers:
+      - name: my-frontend
+        image: hidetosaito/my-frontend
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-frontend-service
+
+spec:
+  ports:
+    - protocol: TCP
+      port: 5000
+      nodePort: 30080
+  type: NodePort
+  selector:
+     app: my-frontend
+
+$ sudo kubectl create -f my-frontend.yaml 
+replicationcontroller "my-frontend-rc" created
+service "my-frontend-service" created
+```
+
+Sie haben Ihren Dienst einem externen Port auf allen Knoten in Ihrem Cluster angeboten. Wenn Sie diesen Dienst dem externen Internet verfügbar machen möchten, müssen Sie möglicherweise Firewall-Regeln für den Service-Port (s) (TCP-Port `30080`) einrichten, um den Verkehr zu erlauben. Weitere Informationen finden Sie unter http://releases.k8s.io/release-1.1/docs/user-guide/services-firewalls.md.
+
+Versuchen wir, mit einem Webbrowser auf mein Frontend zuzugreifen. Sie können auf die IP-Adresse des Kubernetes-Knotens zugreifen. Geben Sie die Portnummer `30080` wie folgt an:
+![Access to the Frontend WebUI](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_06.jpg)
+Access to the Frontend WebUI
+
+Wenn Sie auf die Schaltfläche Hinzufügen klicken, wird ein Parameter an microservices (`my-calc`) weitergeleitet. Microservices berechnen die Addition (ja, nur eine Ergänzung!) Und dann das Ergebnis zurück zum Frontend WebUI wie folgt:
+![Get a result from microservices and render the HTML](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_07.jpg)
+Get a result from microservices and render the HTML
+
+So ist es jetzt einfach, die Anzahl der Repliken für die Frontend WebUI und Microservices unabhängig einzustellen. Zum Beispiel reichen WebUI-Repliken von 2 bis 8 und Mikroservice-Repliken reichen von 2 bis 16.
+
+Auch wenn es notwendig ist, einige Bugs zu beheben, zum Beispiel gibt es ein Frontend, um den Eingabeparameter zu überprüfen, um zu überprüfen, ob es numerisch oder String ist (ja, wenn Sie String eingeben und dann senden, wird es einen Fehler zeigen!); Es wird den Bau nicht beeinträchtigen und den Zyklus bei Microservices einsetzen:
+![The frontend WebUI and microservices diagram](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_08.jpg)
+The frontend WebUI and microservices diagram
+
+Darüber hinaus, wenn Sie einen zusätzlichen Microservice hinzufügen möchten, z. B. Subtrahieren von Microservices, müssen Sie möglicherweise ein anderes Docker-Image erstellen und ihn mit einem anderen Replikations-Controller und Service bereitstellen, so dass es unabhängig von den aktuellen Microservices ist.
+
+Dann können Sie Ihr eigenes Microservices-Ökosystem ansammeln, um es für eine andere Anwendung wieder zu verwenden.
