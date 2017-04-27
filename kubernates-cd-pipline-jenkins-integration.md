@@ -56,7 +56,23 @@ Die Aufgabe von Kubernetes besteht darin, einige Programme zu behandeln, die üb
 1. Bei der **Source Code Management** wählen Sie **Git**, setzen Sie die **HTTPS-URL** Ihres GitHub-Repositorys auf die **Repository-URL**. Zum Beispiel https://github.com/kubernetes-cookbook/sleeper.git. Und Sie werden feststellen, dass die WARNING-Nachricht für ein öffentliches Repository verschwunden ist. Oder Sie müssen eine Berechtigung hinzufügen.
 
 2. Bei Build benötigen wir die folgenden zwei Schritte:
-> 1. Add Docker Build und Publish zuerst, um Ihr Programm als Bild zu bauen. Ein Repository-Name ist ein erforderliches Element. In diesem Fall verwenden wir Docker Hub als Registry; Bitte nennen Sie Ihr Repository als `DOCKERHUB_ACCOUNT:YOUR_CUSTOMIZED_NAME`. Zum Beispiel, `nosus:sleeper`. Das Hinzufügen eines Tags, wie z. B. v $ BUILD_NUMBER, könnte Ihr Docker-Bild mit der Jenkins-Buildnummer markieren. Lassen Sie Docker Host URI und Server Anmeldeinformationen leer, wenn Ihre Jenkins Server bereits das Docker Paket installiert haben. Aber wenn Sie den Anweisungen auf der vorherigen Seite folgen, um den Jenkins-Server als Container zu installieren, überprüfen Sie bitte die folgenden Tipps für detaillierte Einstellungen dieser beiden Elemente. Lassen Sie die Docker-Registrierungs-URL leer, da wir Docker Hub als Docker-Registrierung verwendet haben. Legen Sie jedoch eine neue Berechtigung fest, damit Ihr Docker Hub auf die Berechtigung zugreift.
+
+> 1. Add **Docker Build and Publish** zuerst, um Ihr Programm als Image zu bauen. Ein Repository-Name ist ein erforderliches Element. In diesem Fall verwenden wir Docker Hub als Registry; Bitte nennen Sie Ihr Repository als `DOCKERHUB_ACCOUNT:YOUR_CUSTOMIZED_NAME`. Zum Beispiel, `nosus:sleeper`. Das Hinzufügen eines Tags, wie z. B. `v$BUILD_NUMBER`, könnte Ihr Docker-Image mit der Jenkins-Buildnummer markieren. Lassen Sie Docker Host URI und Server Anmeldeinformationen leer, wenn Ihre Jenkins Server bereits das Docker Paket installiert haben. Aber wenn Sie den Anweisungen auf der vorherigen Seite folgen, um den Jenkins-Server als Container zu installieren, überprüfen Sie bitte die folgenden Tipps für detaillierte Einstellungen dieser beiden Elemente. Lassen Sie die Docker-Registrierungs-URL leer, da wir Docker Hub als Docker-Registrierung verwendet haben. Legen Sie jedoch eine neue Berechtigung fest, damit Ihr Docker Hub auf die Berechtigung zugreift.
 >
-> 2. 
+> 2. Als nächstes fügen Sie einen Shell Block für den Aufruf der Kubernetes-API hinzu. Wir setzen zwei API-Anrufe für unseren Zweck: man soll einen Kubernetes-Job mit der JSON-Formatvorlage erstellen und der andere ist zu fragen, ob der Job erfolgreich abgeschlossen ist oder nicht:
+> 
+'''
+#run a k8s job
+curl -XPOST -d'{"apiVersion":"extensions/v1beta1","kind": "Job","metadata":{"name":"sleeper"}, "spec": {"selector": {"matchLabels": {"image": "ubuntu","test": "jenkins"}},"template": {"metadata": {"labels": {"image": "ubuntu","test": "jenkins"}},"spec": {"containers": [{"name": "sleeper","image": "nosus/sleeper"}],"restartPolicy": "Never"}}}}' http://YOUR_KUBERNETES_MASTER_ENDPOINT/apis/extensions/v1beta1/namespaces/default/jobs
+#check status
+count=1
+returnValue=-1
+while [ $count -lt 60 ]; do
+  curl -XGET http://YOUR_KUBERNETES_MASTER_ENDPOINT/apis/extensions/v1beta1/namespaces/default/jobs/sleeper | grep "\"succeeded\": 1" && returnValue=0 && break
+  sleep 3
+count=$(($count+1))
+done
+
+return $returnValue
+```
 >
