@@ -196,9 +196,11 @@ Wir werden `jq` als JSON-Parser verwenden, um die redundanten Informationen zu r
   }
 }
 ```
+
 Wir können sehen, dass der Netzwerkmodus als zugeordneter Containermodus eingestellt ist. Der Netzwerkbrückenbehälter ist `Container: 71073c074a761a33323bb6601081d44a79ba7de3dd59345fc33a36b00bca613f`.
 
 Lass uns eine andere Einstellung über den Container sehen `nginx_8800`:
+
 ```
 // inspect nginx_8800
 # docker inspect 80a77983f6e1 | jq '.[]| {NetworkMode: .HostConfig.NetworkMode, NetworkSettings: .NetworkSettings}'
@@ -287,6 +289,7 @@ Wir werden feststellen, dass der Netzwerkmodus auf Standard eingestellt ist und 
 ### Pod-to-Pod-Kommunikation
 
 Da jeder Pod seine eigene IP-Adresse hat, macht es die Kommunikation zwischen Pods einfach. Im vorigen Kapitel verwenden wir flannel als Overlay-Netzwerk, das für jeden Node unterschiedliche Netzwerksegmente definiert. Jedes Paket ist in ein UDP-Paket eingekapselt, so dass jede Pod-IP routbar ist. Das Paket von **Pod1** wird durch das **veth** (virtuelle Netzwerkschnittstelle) Gerät gehen, das mit **docker0** und Routen zu **flannel0** verbindet. Der Verkehr wird durch flanneld eingekapselt und an den Host (**10.42.1.172**) des Ziel-Pods gesendet:
+
 https://www.packtpub.com/graphics/9781788297615/graphics/B05161_03_03.jpg
 
 ### Pod-to-Service-Kommunikation
@@ -337,7 +340,7 @@ No events.
 Die virtuelle IP des Dienstes ist `192.168.235.209`, die den Port `80` frei gibt. Der Dienst sendet dann den Verkehr in zwei Endpunkte 192.168.20.2:80 und `192.168.55.5:80`. Die Abbildung ist wie folgt:
 ![ports-forward-02](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_03_04.jpg)
 
-```
+
 
 `kube-proxy` ist ein Dämon, der als Netzwerk-Proxy auf jedem Knoten arbeitet. Es hilft, die Einstellungen von Diensten, wie IPs oder Ports, auf jedem Knoten abzubilden. Es werden die entsprechenden iptables Regeln erstellt:
 
