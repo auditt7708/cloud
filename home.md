@@ -6,13 +6,20 @@ Eigene Services
 wget https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AACrvW1tDHmkCqhMCphKabfha/preseed/installer-tobkern-desktop.example.com_2017-02-10.preseed?dl=1 -o installer-tobkern-desktop.example.com_2017-02-10.preseed
 ```
 
-Lokale Umgebung
-=============
+# Lokale Umgebung
+
+###### Homenet drbdcluster
+#### Nodes
+
+* [srv2 pcs Gui](https://srv2.example.com:2224/manage) 
+* [tobkern-desktop pcs Gui](https://tobkern-desktop.example.com:2224/manage)
+
+
 
 * [Dashboard](http://192.168.4.14/~tobkern/startmin-master/pages/server.html)
 * [ISO's](http://srv2.example.com/~tobkern/iso/)
 
-Builds 
+##### Builds 
 
 [![build status](https://gitlab.com/tobkern1980/home-net4-environment/badges/master/build.svg)](https://gitlab.com/tobkern1980/home-net4-environment/commits/master)
 
