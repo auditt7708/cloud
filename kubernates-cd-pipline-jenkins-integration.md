@@ -64,6 +64,7 @@ Die Aufgabe von Kubernetes besteht darin, einige Programme zu behandeln, die üb
 >
 > 2. Als nächstes fügen Sie einen Shell Block für den Aufruf der Kubernetes-API hinzu. Wir setzen zwei API-Anrufe für unseren Zweck: man soll einen Kubernetes-Job mit der JSON-Formatvorlage erstellen und der andere ist zu fragen, ob der Job erfolgreich abgeschlossen ist oder nicht:
 >
+>
 '''
 #run a k8s job
 curl -XPOST -d'{"apiVersion":"extensions/v1beta1","kind": "Job","metadata":{"name":"sleeper"}, "spec": {"selector": {"matchLabels": {"image": "ubuntu","test": "jenkins"}},"template": {"metadata": {"labels": {"image": "ubuntu","test": "jenkins"}},"spec": {"containers": [{"name": "sleeper","image": "nosus/sleeper"}],"restartPolicy": "Never"}}}}' http://YOUR_KUBERNETES_MASTER_ENDPOINT/apis/extensions/v1beta1/namespaces/default/jobs
@@ -78,4 +79,5 @@ done
 
 return $returnValue
 ```
+>
 >
