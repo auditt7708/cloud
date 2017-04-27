@@ -125,12 +125,54 @@ Deploying eines dockerisierten Programms über den Jenkins-Server hat ähnliche 
 > 1. Füge ein **Docker Build and Publish** zuerst hinzu; Wir werden `nosus:nginx-demo` setzen als repository name. Geben Sie an **Docker Host URI** und **Server credentials** entsprechende Werte an.
 >
 > 2. Wir benötigen einen **Execute shell** zum Aufruf der Kubernetes API. Es gibt zwei API-Anrufe in den Bereich: Der erste ist für die Schaffung eines Pod und die andere ist für die Schaffung eines Dienstes, um die Pod zu freizugeben:
->```
+>
+```
 #create a pod
 curl -XPOST -d'{"apiVersion": "v1","kind": "Pod","metadata": {"labels":{"app": "nginx"},"name": "nginx-demo"},"spec": {"containers": [{"image": "nosus/nginx-demo","imagePullPolicy": "Always","name": "nginx-demo","ports": [{"containerPort": 80,"name": "http"}]}],"restartPolicy": "Always"}}' http:// YOUR_KUBERNETES_MASTER_ENDPOINT/api/v1/namespaces/default/pods
 #create a service
 curl -XPOST -d'{"apiVersion": "v1","kind": "Service","metadata": {"name": "nginx-demo"},"spec": {"ports": [{"port": 8081,"protocol": "TCP","targetPort": 80}],"selector": {"app": "nginx"},"type": "NodePort"}}' http://YOUR_KUBERNETES_MASTER_ENDPOINT /api/v1/namespaces/default/services
 ```
+>
 
+Fühlen Sie sich frei, den Endpunkt des Kubernetes Service zu überprüfen, den Sie gerade mit Jenkins geschaffen haben! Es ist noch besser, wenn du einen Git Server Webhook mit Jenkins hinzufügst. Sie können direkt das letzte Ergebnis erhalten, nachdem jeder Code uploadet(push) wurde!
 
+### Wie es funktioniert…
 
+Der Jenkins-Server kommuniziert mit dem Kubernetes-System über seine RESTful API. Sie können auch einen Blick auf mehr Funktionalitäten über die URL: `http://YOUR_KUBERNETES_MASTER_ENDPOINT:KUBE_API_PORT/swagger_ui`. Hallo! Die API-Liste wird nur in Ihrem Server gespeichert!
+
+Auf der anderen Seite ist es möglich, dass Sie das Plugin namens **HTTP Request Plugin** (https://wiki.jenkins-ci.org/display/JENKINS/HTTP+Request+Plugin) installieren, um die Kubernetes API-Aufrufe zu erfüllen. Wir werden das nicht erklären, da die `POST`-Funktion der aktuellen Version die JSON-Format-payload nicht nutzen konnte. Sie können immer noch versuchen, die anderen Arten von API-Aufrufe mit diesem Plugin zu nutzen.
+
+Derzeit gibt es keine Plugins, die in der Lage sind, die Kubernetes-Aufgaben vollständig einzusetzen. Deshalb ist der Bauvorgang so ein fall Kopfschmerzen für die langen Curl-Befehle. Es ist auch eine Inspiration, dass Sie für andere Systeme oder Dienstleistungen mit Ihrem Kubernetes System über die RESTful API kombinieren können.
+
+### Es gibt mehr…
+
+Sie können feststellen, dass im Abschnitt Bereitstellen eines Programms, wenn wir das gleiche Projekt wieder aufbauen, der Kubernetes-API-Aufruf eine Fehlerreaktion zurückgibt, die antwortet bedeutet, dass der Pod und der Dienst bereits vorhanden sind. In dieser Situation hat Kubernetes keine rolling Update-API für die Live-Aktualisierung unseres Programms.
+
+Dennoch gibt es auf dem Aspekt der Infrastruktur zwei Ideen für die Integration von Kubernetes:
+
+* Ein Jenkins Plugin namens **Kubernetes Plugin** (https://wiki.jenkins-ci.org/display/JENKINS/Kubernetes+Plugin) hilft, Jenkins slaves dynamisch zu erstellen.
+
+* Du kannst versuchen, deinen Kubernetes Master als Jenkins Slave zu machen! Infolgedessen ist es wunderbar, Pods ohne komplizierte API-Aufrufe zu erstellen. Es gibt kein Problem, ein rolling Update zu verwenden!
+
+In die Version 1.2 von Kubernetes, gibt es eine neue Ressource-Typ deployment, die Pods und Replikatsets steuert, die die neue Lösung für die Verwaltung Ihrer Pods sein sollte. Die Bereitstellung hat folgende Funktionen:
+
+* Gewünschter Zustand und verfügbarer Zustand, um anzuzeigen, ob die Pods gebrauchsfertig sind
+* Rolling Update für die Pods für jede Änderung
+* Es ist fähig, auf die vorherige Revision des Einsatzes zurückzukehren
+
+Ressource-Bereitstellung ist in der API-Version Erweiterungen `/v1beta1`. Kubernetes unterstützt seinen API-Aufruf für Update und Rollback. Bitte nehmen Sie die folgenden API-Aufrufe als Referenz:
+```
+// Create a deployment 
+curl -XPOST  -d "{\"metadata\":{\"name\":\"nginx-123\"},\"spec\":{\"replicas\":2,\"template\":{\"metadata\":{\"labels\":{\"app\":\nginx\"}},\"spec\":{\"containers\":[{\"name\":\"nginx-deployment\",\"image\":\"nosus/nginx-demo:v$BUILD_NUMBER\",\"ports\":[{\"containerPort\": 80}]}]}}}}" YOUR_KUBERNETES_MASTER_ENDPOINT /v1beta1/namespaces/default/deployments
+```
+
+Für Update-Implementierungen wird ein Patch-Call der API verwendet. Hier werden wir die Image version ändern. Einige Details zum Patch-Betrieb finden Sie unter https://github.com/kubernetes/kubernetes/blob/master/docs/devel/api-conventions.md:
+
+```
+// Update a deployment
+curl -H "Content-Type: application/strategic-merge-patch+json" -XPATCH -d '{"spec":{"template":{"spec":{"containers":[{"name":"nginx-deployment","image":"nosus/nginx-demo:v1"}]}}}}' YOUR_KUBERNETES_MASTER_ENDPOINT /apis/extensions/v1beta1/namespaces/default/deployments/nginx-deployment
+// Rollback the deployment
+curl -H "Content-Type: application/json" -XPOST -d '{"name":"nginx-deployment","rollbackTo":{"revision":0}}' YOUR_KUBERNETES_MASTER_ENDPOINT /apis/extensions/v1beta1/namespaces/default/deployments/nginx-deployment/rollback
+```
+
+Im letzten API-Aufruf rollen wir die Bereitstellung auf die ursprüngliche Version zurück, die als Version `0 `angegeben ist. Versuchen Sie einfach, die neue Ressourcentyp deployment selbst zu benutzen!
