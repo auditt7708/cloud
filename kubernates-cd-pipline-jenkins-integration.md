@@ -31,6 +31,7 @@ Wir werden Kubernetes zum Arbeitsplatz machen, um Testcontainer zum laufen zu br
 ### Erstellen Sie Ihr Jenkins Projekt
 
 Als Programm-Build werden wir für jedes Programm ein einziges Jenkins-Projekt erstellen. Jetzt kannst du im Menü auf der linken Seite auf **New Item** klicken. In diesem Rezept wählen Sie **Freestyle-Projekt**; Es ist gut genug für die Build beispiele später. Benennen Sie das Projekt und klicken Sie auf **OK**:
+
 ![jenkins-freestyle-projekt01](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_10.jpg)
 
 Dann sehen Sie auf der Konfigurationsseite folgende Kategorien von der Kategorien Seite:
@@ -42,9 +43,11 @@ Dann sehen Sie auf der Konfigurationsseite folgende Kategorien von der Kategorie
 * Post-build Actions 
 
 Mit diesen Einstellungen kann Ihr Projekt flexibler und näher an die Anforderungen angepasst werden, die Sie benötigen. Wir werden uns aber nur auf die `Source Code Management`- und `Build` Teile konzentrieren, um unsere Anforderungen zu erfüllen. Source Code Management ist, wo wir unsere Codebasis Lage definieren. In den späteren Abschnitten wählen wir Git und setzen das entsprechende Repository ein:
+
 ![jenkins-git-repo](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_11.jpg)
 
 In der Kategorie **Build** werden mehrere Schritte wie **Docker Build und Publish** und **Execute Shell** dazu beitragen, Docker Images zu bauen, Images in die Docker Registry zu uploaden(push) und das Kubernetes System auszulösen, um die Programme auszuführen:
+
 ![jenkins-docker-build-git](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_12.jpg)
 
 Die folgenden zwei Szenarien zeigen, wie Sie die Konfigurationen für das Ausführen Ihrer Programme auf den Kubernetes-Systemen festlegen können.
@@ -60,8 +63,8 @@ Die Aufgabe von Kubernetes besteht darin, einige Programme zu behandeln, die üb
 > 1. Add **Docker Build and Publish** zuerst, um Ihr Programm als Image zu bauen. Ein Repository-Name ist ein erforderliches Element. In diesem Fall verwenden wir Docker Hub als Registry; Bitte nennen Sie Ihr Repository als `DOCKERHUB_ACCOUNT:YOUR_CUSTOMIZED_NAME`. Zum Beispiel, `nosus:sleeper`. Das Hinzufügen eines Tags, wie z. B. `v$BUILD_NUMBER`, könnte Ihr Docker-Image mit der Jenkins-Buildnummer markieren. Lassen Sie Docker Host URI und Server Anmeldeinformationen leer, wenn Ihre Jenkins Server bereits das Docker Paket installiert haben. Aber wenn Sie den Anweisungen auf der vorherigen Seite folgen, um den Jenkins-Server als Container zu installieren, überprüfen Sie bitte die folgenden Tipps für detaillierte Einstellungen dieser beiden Elemente. Lassen Sie die Docker-Registrierungs-URL leer, da wir Docker Hub als Docker-Registrierung verwendet haben. Legen Sie jedoch eine neue Berechtigung fest, damit Ihr Docker Hub auf die Berechtigung zugreift.
 >
 > 2. Als nächstes fügen Sie einen Shell Block für den Aufruf der Kubernetes-API hinzu. Wir setzen zwei API-Anrufe für unseren Zweck: man soll einen Kubernetes-Job mit der JSON-Formatvorlage erstellen und der andere ist zu fragen, ob der Job erfolgreich abgeschlossen ist oder nicht:
-> 
->'''
+>
+'''
 #run a k8s job
 curl -XPOST -d'{"apiVersion":"extensions/v1beta1","kind": "Job","metadata":{"name":"sleeper"}, "spec": {"selector": {"matchLabels": {"image": "ubuntu","test": "jenkins"}},"template": {"metadata": {"labels": {"image": "ubuntu","test": "jenkins"}},"spec": {"containers": [{"name": "sleeper","image": "nosus/sleeper"}],"restartPolicy": "Never"}}}}' http://YOUR_KUBERNETES_MASTER_ENDPOINT/apis/extensions/v1beta1/namespaces/default/jobs
 #check status
@@ -74,5 +77,5 @@ count=$(($count+1))
 done
 
 return $returnValue
->```
+```
 >
