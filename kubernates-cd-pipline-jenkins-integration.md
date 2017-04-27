@@ -131,4 +131,6 @@ curl -XPOST -d'{"apiVersion": "v1","kind": "Pod","metadata": {"labels":{"app": "
 #create a service
 curl -XPOST -d'{"apiVersion": "v1","kind": "Service","metadata": {"name": "nginx-demo"},"spec": {"ports": [{"port": 8081,"protocol": "TCP","targetPort": 80}],"selector": {"app": "nginx"},"type": "NodePort"}}' http://YOUR_KUBERNETES_MASTER_ENDPOINT /api/v1/namespaces/default/services
 ```
->
+
+
+
