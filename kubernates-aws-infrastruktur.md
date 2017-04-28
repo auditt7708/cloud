@@ -100,21 +100,8 @@ Sicherheitsgruppe ist eine Art Firewall, um eine Regel einzurichten, die entwede
 | :---: | :--: | :---: |
 |` My Kubernetes master SG `|* `8080/tcp `|* `My Kubernetes node `|
 |` My Kubernetes node SG `|* `30000-32767/tcp (Service)`|* `0.0.0.0/0 `|
-|` My etcd SG`|
-* `7001/tcp`
-* `4001/tcp`
-* `2379/tcp`
-* `2380/tcp`
-|
-* `My etcd SG`
-* `My Kubernetes master SG`
-* `My Kubernetes node SG `
-|
-|` My flannel SG `|
-* ` 8285/udp `
-* ` 8472/udp `
-|
-* `     My flannel SG `|
+|` My etcd SG`|* `7001/tcp` * `4001/tcp` * `2379/tcp` * `2380/tcp`| * `My etcd SG` * `My Kubernetes master SG` * `My Kubernetes node SG `|
+|` My flannel SG `| * ` 8285/udp ` * ` 8472/udp `| * `     My flannel SG `|
 |` My ssh SG `|* ` 22/tcp `|* `0.0.0.0/0 `|
 
 Klicken Sie auf der AWS-Konsole auf Sicherheitsgruppen im linken Navigationsbereich, erstellen Sie fünf Sicherheitsgruppen und fügen Sie Inbound Rules wie folgt hinzu:
