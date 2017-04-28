@@ -1,0 +1,337 @@
+Continuous Delivery ist ein Konzept, das zum ersten Mal in das Buch eingeführt wurde: Continuous Delivery: Zuverlässige Software Releases durch Build, Test und Deployment Automation von Jez Humble und David Farley geschrieben. Durch die Automatisierung des Tests, der Erstellung und der Bereitstellung kann das Tempo der Software-Veröffentlichung die Zeit zum Markt sein. Es hilft auch bei der Zusammenarbeit zwischen Entwicklern, Operationen und Testern, wodurch Kommunikationsaufwand und Bugs reduziert werden. CD-Pipeline zielt darauf ab, ein zuverlässiger und wiederholbarer Prozess und Werkzeuge für die Bereitstellung von Software zu sein.
+
+Kubernetes ist eines der Ziele in der CD-Pipeline. In diesem Abschnitt wird beschrieben, wie Sie Ihre neue Release-Software in Kubernetes von Jenkins und Kubernetes bereitstellen können.
+
+### Fertig werden
+
+Jenkins zu kennen ist Voraussetzung für diesen Abschnitt. Weitere Informationen zum Aufbau und Aufbau von Jenkins von Grund auf finden Sie im Abschnitt "Integrieren mit Jenkins" in diesem Kapitel. Wir verwenden die Probe **Flask** (http://flask.pocoo.org) app my-calc erwähnt in Moving monolithischen zu microservices Abschnitt. Vor der Einrichtung unserer Continuous Delivery Pipeline mit Kubernetes, sollten wir wissen, was Kubernetes Einsatz ist. Die Bereitstellung in Kubernetes könnte eine bestimmte Anzahl von Pods und Replikationscontroller-Repliken erzeugen. Wenn eine neue Software freigegeben wird, können Sie dann Updates aktualisieren oder die Pods neu erstellen, die in der Deployment-Konfigurationsdatei aufgeführt sind, die sicherstellen kann, dass Ihr Service immer am Leben ist.
+
+Genau wie Jobs ist die Bereitstellung ein Teil der Erweiterungs-API-Gruppe und immer noch in der `v1beta`-Version. Um eine Bereitstellungsressource zu aktivieren, legen Sie beim Start den folgenden Befehl in der API-Serverkonfiguration fest. Wenn Sie den Server bereits gestartet haben, ändern Sie einfach die Konfigurationsdatei `/etc/kubernetes/apiserver` und starten den `kube-apiserver`-Dienst neu. Bitte beachten Sie, dass es dennoch noch die `v1beta1` Version unterstützt:
+
+`--runtime-config=extensions/v1beta1/deployments=true`
+
+Nachdem der API-Dienst erfolgreich gestartet wurde, konnten wir mit dem Aufbau des Dienstes beginnen und das Beispiel my-calc app erstellen. Diese Schritte sind erforderlich, da das Konzept der Continuous Delivery ist, um Ihre Software aus dem Quellcode zu liefern, zu bauen, zu testen und in die gewünschte Umgebung zu bringen. Wir müssen zuerst die Umgebung schaffen.
+
+Sobald wir den ersten `docker push` Befehl in der Docker-Registrierung haben, beginnen wir mit der Erstellung einer Bereitstellung namens `my-calc-deployment`:
+```
+# cat my-calc-deployment.yaml
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: my-calc-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: my-calc
+    spec:
+      containers:
+      - name: my-calc
+        image: msfuko/my-calc:1
+        ports:
+        - containerPort: 5000
+
+// create deployment resource 
+# kubectl create -f deployment.yaml
+deployment "my-calc-deployment" created
+```
+Erstellen Sie auch einen Service, um den Port der Außenwelt auszusetzen:
+
+```
+# cat deployment-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-calc
+spec:
+  ports:
+    - protocol: TCP
+      port: 5000
+  type: NodePort
+  selector:
+     app: my-calc
+// create service resource
+# kubectl create -f deployment-service.yaml
+You have exposed your service on an external port on all nodes in your cluster. If you want to expose this service to the external internet, you may need to set up firewall rules for the service port(s) (tcp:31725) to serve traffic.
+service "my-calc" created
+
+```
+
+### Wie es geht…
+
+Um die Pipeline Continuous Delivery einzurichten, führen Sie die folgenden Schritte aus:
+
+1. Zuerst starten wir ein Jenkins-Projekt namens Deploy-My-Calc-K8S wie im folgenden Screenshot gezeigt:
+![new-jenkins-projekt](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_18.jpg)
+
+2. Dann importiere die Quellcode-Informationen in den Abschnitt **Source Code Management**:
+![source-code-management](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_19.jpg)
+
+3. Als nächstes fügen Sie die gezielten Docker-Registrierungsinformationen in das **Docker Build and Publish** in dem Build-Schritt ein:
+![jenkins-docker-biold-bublish](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_20.jpg)
+
+4. Fügen Sie am Ende den Abschnitt **Execute Shell** im Schritt Build`` und legen Sie den folgenden Befehl fest:
+```
+curl -XPUT -d'{"apiVersion":"extensions/v1beta1","kind":"Deployment","metadata":{"name":"my-calc-deployment"},"spec":{"replicas":3,"template":{"metadata":{"labels":{"app":"my-calc"}},"spec":{"containers":[{"name":"my-calc","image":"msfuko/my-calc:${BUILD_NUMBER}","ports":[{"containerPort":5000}]}]}}}}' http://54.153.44.46:8080/apis/extensions/v1beta1/namespaces/default/deployments/my-calc-deployment
+```
+Lassen Sie uns den Befehl hier erklären; Es ist eigentlich der gleiche Befehl mit der folgenden Konfigurationsdatei, nur mit einem anderen Format und Start-Methode. Einer ist mit der RESTful API, eine andere ist mit dem Befehl `kubectl`.
+
+5. Das  `${BUILD_NUMBER} tag` ist eine Umgebungsvariable in Jenkins, die als aktuelle Imagenummer des Projekts exportiert wird:
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: my-calc-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: my-calc
+    spec:
+      containers:
+      - name: my-calc
+        image: msfuko/my-calc:${BUILD_NUMBER}
+        ports:
+         containerPort: 5000
+```
+
+6. Nach dem Speichern des Projektes und wir konnten unseren Bau beginnen. Klicken Sie auf **Build Now**. Dann zieht Jenkins den Quellcode aus deinem Git-Repository, baut und uploaded(pushed) das Image. Am Ende rufen Sie die RESTful API von Kubernetes an:
+```
+# showing the log in Jenkins about calling API of Kubernetes
+...
+[workspace] $ /bin/sh -xe /tmp/hudson3881041045219400676.sh
++ curl -XPUT -d'{"apiVersion":"extensions/v1beta1","kind":"Deployment","metadata":{"name":"my-cal-deployment"},"spec":{"replicas":3,"template":{"metadata":{"labels":{"app":"my-cal"}},"spec":{"containers":[{"name":"my-cal","image":"msfuko/my-cal:1","ports":[{"containerPort":5000}]}]}}}}' http://54.153.44.46:8080/apis/extensions/v1beta1/namespaces/default/deployments/my-cal-deployment
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  1670  100  1407  100   263   107k  20534 --:--:-- --:--:-- --:--:--  114k
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "my-calc-deployment",
+    "namespace": "default",
+    "selfLink": "/apis/extensions/v1beta1/namespaces/default/deployments/my-calc-deployment",
+    "uid": "db49f34e-e41c-11e5-aaa9-061300daf0d1",
+    "resourceVersion": "35320",
+    "creationTimestamp": "2016-03-07T04:27:09Z",
+    "labels": {
+      "app": "my-calc"
+    }
+  },
+  "spec": {
+    "replicas": 3,
+    "selector": {
+      "app": "my-calc"
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "app": "my-calc"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "my-calc",
+            "image": "msfuko/my-calc:1",
+            "ports": [
+              {
+                "containerPort": 5000,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst"
+      }
+    },
+    "strategy": {
+      "type": "RollingUpdate",
+      "rollingUpdate": {
+        "maxUnavailable": 1,
+        "maxSurge": 1
+      }
+    },
+    "uniqueLabelKey": "deployment.kubernetes.io/podTemplateHash"
+  },
+  "status": {}
+}
+Finished: SUCCESS
+```
+
+7. Überprüfen Sie es mit der `kubectl`-Befehlszeile nach wenigen Minuten:
+```
+// check deployment status
+# kubectl get deployments
+NAME                UPDATEDREPLICAS   AGE
+my-cal-deployment   3/3               40m
+```
+Wir können sehen, dass es eine Bereitstellung namens `my-cal-deployment` gibt.
+
+8. Mit `kubectl` beschreiben können Sie die Details überprüfen:
+```
+// check the details of my-cal-deployment
+# kubectl describe deployment my-cal-deployment
+Name:        my-cal-deployment
+Namespace:      default
+CreationTimestamp:    Mon, 07 Mar 2016 03:20:52 +0000
+Labels:        app=my-cal
+Selector:      app=my-cal
+Replicas:      3 updated / 3 total
+StrategyType:      RollingUpdate
+RollingUpdateStrategy:	  1 max unavailable, 1 max surge, 0 min ready seconds
+OldReplicationControllers:  <none>
+NewReplicationController:	deploymentrc-1448558234 (3/3 replicas created)
+Events:
+  FirstSeen  LastSeen  Count  From        SubobjectPath  Reason  Message
+  ─────────  ────────  ─────  ────        ─────────────  ──────    ───────
+  46m    46m    1  {deployment-controller }      ScalingRC  Scaled up rc deploymentrc-3224387841 to 3
+  17m    17m    1  {deployment-controller }      ScalingRC  Scaled up rc deploymentrc-3085188054 to 3
+  9m    9m    1  {deployment-controller }      ScalingRC  Scaled up rc deploymentrc-1448558234 to 1
+  2m    2m    1  {deployment-controller }      ScalingRC  Scaled up rc deploymentrc-1448558234 to 3
+```
+Wir konnten eine interessante Einstellung namens `RollingUpdateStrategy` sehen. Wir haben `1 max unavailable`, `1 max surge` und `0 min ready seconds`. Es bedeutet, dass wir unsere Strategie einrichten können, um das Update zu rollen. Derzeit ist es die Standardeinstellung. Höchstens ein Pod ist während des Einsatzes nicht verfügbar, ein Pod könnte neu erstellt werden, und null Sekunden, um auf den neu geschaffenen Pod zu warten, um bereit zu sein. Wie wäre es mit Replikations-Controller? Wird es richtig erstellt?
+
+```
+// check ReplicationController
+# kubectl get rc
+CONTROLLER                CONTAINER(S)   IMAGE(S)               SELECTOR                                                          REPLICAS   AGE
+deploymentrc-1448558234   my-cal         msfuko/my-cal:1        app=my-cal,deployment.kubernetes.io/podTemplateHash=1448558234    3          1m
+```
+
+Wir konnten vorher sehen, dass wir drei Repliken in diesem RC mit dem Namen `deploymentrc-${id}` haben. Lassen Sie uns auch die Pod überprüfen:
+```
+// check Pods
+# kubectl get pods
+NAME                            READY     STATUS           RESTARTS   AGE
+deploymentrc-1448558234-qn45f   1/1       Running          0          4m
+deploymentrc-1448558234-4utub   1/1       Running       0          12m
+deploymentrc-1448558234-iz9zp   1/1       Running       0          12m
+```
+
+Wir könnten herausfinden, Deployment Trigger RC-Erstellung, und RC Trigger Pods Schaffung. Überprüfen Sie die Antwort von unserer App `my-calc`:
+
+```
+# curl http://54.153.44.46:31725/
+Hello World!
+```
+
+Angenommen, wir haben eine neu veröffentlichte Anwendung. Wir machen `Hello world!` `Hello Calculator!`. Nachdem Sie den Code in GitHub gedrückt haben, könnte Jenkins entweder durch den SCM-Webhook ausgelöst, periodisch ausgeführt oder manuell ausgelöst werden:
+
+```
+[workspace] $ /bin/sh -xe /tmp/hudson877190504897059013.sh
++ curl -XPUT -d{"apiVersion":"extensions/v1beta1","kind":"Deployment","metadata":{"name":"my-calc-deployment"},"spec":{"replicas":3,"template":{"metadata":{"labels":{"app":"my-calc"}},"spec":{"containers":[{"name":"my-calc","image":"msfuko/my-calc:2","ports":[{"containerPort":5000}]}]}}}} http://54.153.44.46:8080/apis/extensions/v1beta1/namespaces/default/deployments/my-calc-deployment
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  1695  100  1421  100   274  86879  16752 --:--:-- --:--:-- --:--:-- 88812
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "my-calc-deployment",
+    "namespace": "default",
+    "selfLink": "/apis/extensions/v1beta1/namespaces/default/deployments/my-calc-deployment",
+    "uid": "db49f34e-e41c-11e5-aaa9-061300daf0d1",
+    "resourceVersion": "35756",
+    "creationTimestamp": "2016-03-07T04:27:09Z",
+    "labels": {
+      "app": "my-calc"
+    }
+  },
+  "spec": {
+    "replicas": 3,
+    "selector": {
+      "app": "my-calc"
+    },
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "app": "my-calc"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "my-calc",
+            "image": "msfuko/my-calc:2",
+            "ports": [
+              {
+                "containerPort": 5000,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "imagePullPolicy": "IfNotPresent"
+          }
+        ],
+        "restartPolicy": "Always",
+        "terminationGracePeriodSeconds": 30,
+        "dnsPolicy": "ClusterFirst"
+      }
+    },
+    "strategy": {
+      "type": "RollingUpdate",
+      "rollingUpdate": {
+        "maxUnavailable": 1,
+        "maxSurge": 1
+      }
+    },
+    "uniqueLabelKey": "deployment.kubernetes.io/podTemplateHash"
+  },
+  "status": {}
+}
+Finished: SUCCESS
+```
+
+Wie es funktioniert…
+
+Lass uns die letzte Aktion fortsetzen. Wir haben ein neues Bild mit dem Tag `$BUILD_NUMBER` erstellt und Kubernetes ausgelöst, um einen Replikationscontroller durch eine Bereitstellung zu ersetzen. Lassen Sie uns das Verhalten des Replikationscontrollers beachten:
+```
+# kubectl get rc
+CONTROLLER                CONTAINER(S)   IMAGE(S)               SELECTOR                                                          REPLICAS   AGE
+deploymentrc-1705197507   my-calc        msfuko/my-calc:1       app=my-calc,deployment.kubernetes.io/podTemplateHash=1705197507   3          13m
+deploymentrc-1771388868   my-calc        msfuko/my-calc:2       app=my-calc,deployment.kubernetes.io/podTemplateHash=1771388868   0          18s
+```
+Wir können sehen, Deployment erstellen Sie einen anderen RC namens `deploymentrc-1771388868`, dessen Pod-Nummer ist derzeit 0. Warten Sie eine Weile und lassen Sie uns noch einmal überprüfen:
+
+```
+# kubectl get rc
+CONTROLLER                CONTAINER(S)   IMAGE(S)               SELECTOR                                                          REPLICAS   AGE
+deploymentrc-1705197507   my-calc        msfuko/my-calc:1       app=my-calc,deployment.kubernetes.io/podTemplateHash=1705197507   1          15m
+deploymentrc-1771388868   my-calc        msfuko/my-calc:2       app=my-calc,deployment.kubernetes.io/podTemplateHash=1771388868   3          1m
+```
+
+Die Anzahl der Pods in RC mit dem alten Bild `my-calc:1` reduziert auf 1 und das neue Bild erhöht sich auf 3:
+```
+# kubectl get rc
+CONTROLLER                CONTAINER(S)   IMAGE(S)               SELECTOR                                                          REPLICAS   AGE
+deploymentrc-1705197507   my-calc        msfuko/my-calc:1       app=my-calc,deployment.kubernetes.io/podTemplateHash=1705197507   0          15m
+deploymentrc-1771388868   my-calc        msfuko/my-calc:2       app=my-calc,deployment.kubernetes.io/podTemplateHash=1771388868   3          2m
+```
+
+Nach ein paar Sekunden sind die alten Hülsen alle weg und die neuen Pods ersetzen sie, um den Nutzern zu dienen. Lassen Sie uns die Antwort durch den Service überprüfen:
+```
+# curl http://54.153.44.46:31725/
+Hello Calculator!
+
+```
+Die Pods haben das neue Bild einzeln aktualisiert. Im Folgenden ist die Illustration, wie es funktioniert Basierend auf `RollingUpdateStrategy` ersetzt Kubernetes Pods eins nach dem anderen. Nachdem die neue Pod erfolgreich gestartet ist, wird die alte Hülse zerstört. Die Blase in der Zeitleiste Pfeil zeigt das Timing der Protokolle, die wir auf der vorherigen Seite bekommen haben. Am Ende werden die neuen Hülsen alle alten Hülsen ersetzen:
+![pods](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_21.jpg)
+
+### Es gibt mehr…
+
+Die Bereitstellung befindet sich noch in der Beta-Version, während einige Funktionen noch in der Entwicklung sind, z. B. das Löschen einer Bereitstellungsressource und die Wiederherstellung der Strategieunterstützung. Allerdings gibt es die Möglichkeit, Jenkins, um die Continuous Delivery Pipeline zur Verfügung zu stellen. Es ist ziemlich einfach und stellt sicher, dass alle Dienste immer online sind, um zu aktualisieren. Weitere Informationen zur RESTful API finden Sie unter `http://YOUR_KUBERNETES_MASTER_ENDPOINT:KUBE_API_PORT/swagger-ui/#!/v1beta1/listNamespacedDeployment`.
