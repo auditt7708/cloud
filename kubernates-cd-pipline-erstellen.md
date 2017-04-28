@@ -69,16 +69,16 @@ Um die Pipeline Continuous Delivery einzurichten, führen Sie die folgenden Schr
 2. Dann importiere man die Quellcode-Informationen in den Abschnitt **Source Code Management**:  
    ![source-code-management](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_19.jpg)
 
-3. Als nächstes fügen Sie die Docker-Registrierungsinformationen in das **Docker Build and Publish** in dem Build-Schritt ein:  
+3. Als nächstes fügen Sie die Docker-Registrierungsinformationen in das **Docker Build and Publish** in den **Build**-Schritt ein:  
    ![jenkins-docker-biold-bublish](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_20.jpg)
 
-4. Fügen Sie am Ende den Abschnitt **Execute Shell** im Schritt Build\`\` und legen Sie den folgenden Befehl fest:
+4. Fügen Sie am Ende den Abschnitt **Execute Shell** im Schritt **Build** und legen Sie den folgenden Befehl an:
 
    ```
    curl -XPUT -d'{"apiVersion":"extensions/v1beta1","kind":"Deployment","metadata":{"name":"my-calc-deployment"},"spec":{"replicas":3,"template":{"metadata":{"labels":{"app":"my-calc"}},"spec":{"containers":[{"name":"my-calc","image":"msfuko/my-calc:${BUILD_NUMBER}","ports":[{"containerPort":5000}]}]}}}}' http://54.153.44.46:8080/apis/extensions/v1beta1/namespaces/default/deployments/my-calc-deployment
    ```
 
-   Lassen Sie uns den Befehl hier erklären; Es ist eigentlich der gleiche Befehl mit der folgenden Konfigurationsdatei, nur mit einem anderen Format und Start-Methode. Einer ist mit der RESTful API, eine andere ist mit dem Befehl `kubectl`.
+   Lassen Sie uns den Befehl hier erklären; Es ist eigentlich der gleiche Befehl mit der folgenden Konfigurationsdatei, nur mit einem anderen Format und Start-Methode. Einer ist mit der RESTful API, eine ander ist der Befehl `kubectl`.
 
 5. Das  `${BUILD_NUMBER} tag` ist eine Umgebungsvariable in Jenkins, die als aktuelle Imagenummer des Projekts exportiert wird:
 
@@ -101,8 +101,78 @@ Um die Pipeline Continuous Delivery einzurichten, führen Sie die folgenden Schr
          containerPort: 5000
    ```
 
-6. Nach dem Speichern des Projektes und wir konnten unseren Bau beginnen. Klicken Sie auf **Build Now**. Dann zieht Jenkins den Quellcode aus deinem Git-Repository, baut und uploaded\(pushed\) das Image. Am Ende rufen Sie die RESTful API von Kubernetes an:  
-   \`\`\`
+6. Nach dem Speichern des Projektes können wir unseren Bau beginnen. Klicken Sie auf **Build Now**. Dann downloadet\(pull\) Jenkins den Quellcode aus deinem Git-Repository, baut und uploaded\(pushed\) das Image. Am Ende rufen Sie die RESTful API von Kubernetes auf:  
+   `# showing the log in Jenkins about calling API of Kubernetes`
+
+   ```
+   ...
+   [workspace] $ /bin/sh -xe /tmp/hudson3881041045219400676.sh
+   + curl -XPUT -d'{"apiVersion":"extensions/v1beta1","kind":"Deployment","metadata":{"name":"my-cal-deployment"},"spec":{"replicas":3,"template":{"metadata":{"labels":{"app":"my-cal"}},"spec":{"containers":[{"name":"my-cal","image":"msfuko/my-cal:1","ports":[{"containerPort":5000}]}]}}}}' http://54.153.44.46:8080/apis/extensions/v1beta1/namespaces/default/deployments/my-cal-deployment
+     % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                    Dload  Upload   Total   Spent    Left  Speed
+
+     0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+   100  1670  100  1407  100   263   107k  20534 --:--:-- --:--:-- --:--:--  114k
+   {
+     "kind": "Deployment",
+     "apiVersion": "extensions/v1beta1",
+     "metadata": {
+       "name": "my-calc-deployment",
+       "namespace": "default",
+       "selfLink": "/apis/extensions/v1beta1/namespaces/default/deployments/my-calc-deployment",
+       "uid": "db49f34e-e41c-11e5-aaa9-061300daf0d1",
+       "resourceVersion": "35320",
+       "creationTimestamp": "2016-03-07T04:27:09Z",
+       "labels": {
+         "app": "my-calc"
+       }
+     },
+     "spec": {
+       "replicas": 3,
+       "selector": {
+         "app": "my-calc"
+       },
+       "template": {
+         "metadata": {
+           "creationTimestamp": null,
+           "labels": {
+             "app": "my-calc"
+           }
+         },
+         "spec": {
+           "containers": [
+             {
+               "name": "my-calc",
+               "image": "msfuko/my-calc:1",
+               "ports": [
+                 {
+                   "containerPort": 5000,
+                   "protocol": "TCP"
+                 }
+               ],
+               "resources": {},
+               "terminationMessagePath": "/dev/termination-log",
+               "imagePullPolicy": "IfNotPresent"
+             }
+           ],
+           "restartPolicy": "Always",
+           "terminationGracePeriodSeconds": 30,
+           "dnsPolicy": "ClusterFirst"
+         }
+       },
+       "strategy": {
+         "type": "RollingUpdate",
+         "rollingUpdate": {
+           "maxUnavailable": 1,
+           "maxSurge": 1
+         }
+       },
+       "uniqueLabelKey": "deployment.kubernetes.io/podTemplateHash"
+     },
+     "status": {}
+   }
+   Finished: SUCCESS
+   ```
 
    # showing the log in Jenkins about calling API of Kubernetes
 
