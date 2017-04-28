@@ -1,4 +1,4 @@
-#Puppet 4
+# Puppet 4
 
 ##### [Puppet4 Sprache und Syntax](../puppet4-basics)
 ##### [Puppet4 Infrastruktur](../puppet4-infrastruktur)
@@ -11,7 +11,7 @@
 ##### [Puppet4 Externe Tools und das Puppet Ecosystem](../puppet4-externe-tools-ecosystem)
 ##### [Puppet4 Monitoring, Reporting und Fehlersuche](../puppet-monitorin-reporting-fehlersuche)
 
-#Docker
+# Docker
 
 #### [Einleitung und Installation](../docker-einleitung-und-Installation)
 #### [Arbeiten mit Docker Container](../docker-arbeiten-mit-docker)
@@ -24,7 +24,7 @@
 #### [Docker Sicherheit](../docker-sicherheit)
 #### [Hilfe bekommen and Tips und Tricks](../docker-hilfe-tips-tricks)
 
-#Kubernates
+# Kubernates
 
 #### [Richte dein eigenes Kubernates ein](../kubernates-einrichten)
 #### [Durch Kubernates Verbindungen](../kubernates-konzepte)
