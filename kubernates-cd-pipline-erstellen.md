@@ -4,13 +4,13 @@ Kubernetes ist eines der Ziele in der CD-Pipeline. In diesem Abschnitt wird besc
 
 ### Fertig werden
 
-Jenkins zu kennen ist die Voraussetzung für diesen Abschnitt. Vor der Einrichtung unserer Continuous Delivery Pipeline mit Kubernetes, sollten wir wissen, was Kubernetes Einsatz ist. Die Bereitstellung in Kubernetes könnte eine bestimmte Anzahl von Pods und Replikationscontroller-Repliken erzeugen. Wenn eine neue Software freigegeben wird, können Sie dann Updates aktualisieren oder die Pods neu erstellen, die in der Deployment-Konfigurationsdatei aufgeführt sind, mit denen man sicherstellen kann, dass Ihr Service immer am Leben ist.
+Die Voraussetzung für diesen Abschnitt ist es Jenkins zu kennen. Vor der Einrichtung unserer Continuous Delivery Pipeline mit Kubernetes, sollten wir wissen, was Kubernetes macht. Die Bereitstellung in Kubernetes könnte eine bestimmte Anzahl von Pods und Replikationscontroller-Repliken erzeugen. Wenn eine neue Software freigegeben wird, können Sie dann Updates aktualisieren oder die Pods neu erstellen, die in der Deployment-Konfigurationsdatei aufgeführt sind, mit denen man sicherstellen kann, dass Ihr Service immer leuft .
 
-Genau wie Jobs ist die Bereitstellung ein Teil der Erweiterungs-API-Gruppe und immer noch in der `v1beta`-Version. Um eine Bereitstellungsressource zu aktivieren, legen Sie beim Start den folgenden Befehl in der API-Serverkonfiguration fest. Wenn Sie den Server bereits gestartet haben, ändern Sie einfach die Konfigurationsdatei `/etc/kubernetes/apiserver` und starten den `kube-apiserver`-Dienst neu. Bitte beachten Sie, dass es dennoch noch die `v1beta1` Version unterstützt:
+Genau wie Jobs ist deployment ein Teil der extensions API Gruppe und ist immer noch in der `v1beta`-Version. Um eine deployment ressource zu aktivieren, legen Sie beim Start den folgenden Befehl in der API-Serverkonfiguration fest. Wenn Sie den Server bereits gestartet haben, ändern Sie einfach die Konfigurationsdatei `/etc/kubernetes/apiserver` und starten den `kube-apiserver`-Dienst neu. Bitte beachten Sie, eventuell kann man später die erweiterung normal benutzen und bekommt dann Fehlermeldungen :
 
 `--runtime-config=extensions/v1beta1/deployments=true`
 
-Nachdem der API-Dienst erfolgreich gestartet wurde, konnten wir mit dem Aufbau des Dienstes beginnen und das Beispiel my-calc app erstellen. Diese Schritte sind erforderlich, da das Konzept der Continuous Delivery ist, um Ihre Software aus dem Quellcode zu liefern, zu bauen, zu testen und in die gewünschte Umgebung zu bringen. Wir müssen zuerst die Umgebung schaffen.
+Nachdem der API-Dienst erfolgreich gestartet wurde, konnten wir mit dem Aufbau des Dienstes beginnen und das Beispiel **my-calc** app erstellen. Diese Schritte sind erforderlich, da das Konzept der _Continuous Delivery_ ist, um Ihre Software aus dem Quellcode zu liefern, zu bauen, und zu testen und danach in die gewünschte Umgebung\(Testen ,Productiv oder Entwicklung \) zu bringen. Wir müssen zuerst die Umgebung schaffen.
 
 Sobald wir den ersten `docker push` Befehl in der Docker-Registrierung haben, beginnen wir mit der Erstellung einer Bereitstellung namens `my-calc-deployment`:
 
@@ -38,7 +38,7 @@ spec:
 deployment "my-calc-deployment" created
 ```
 
-Erstellen Sie auch einen Service, um den Port der Außenwelt auszusetzen:
+Erstellen Sie auch einen Service, um den Port der Außenwelt verfügbar zu machen:
 
 ```
 # cat deployment-service.yaml
@@ -63,13 +63,13 @@ service "my-calc" created
 
 Um die Pipeline Continuous Delivery einzurichten, führen Sie die folgenden Schritte aus:
 
-1. Zuerst starten wir ein Jenkins-Projekt namens Deploy-My-Calc-K8S wie im folgenden Screenshot gezeigt:  
+1. Zuerst starten wir ein Jenkins-Projekt namens `Deploy-My-Calc-K8S` wie im folgenden Screenshot gezeigt:  
    ![new-jenkins-projekt](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_18.jpg)
 
-2. Dann importiere die Quellcode-Informationen in den Abschnitt **Source Code Management**:  
+2. Dann importiere man die Quellcode-Informationen in den Abschnitt **Source Code Management**:  
    ![source-code-management](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_19.jpg)
 
-3. Als nächstes fügen Sie die gezielten Docker-Registrierungsinformationen in das **Docker Build and Publish** in dem Build-Schritt ein:  
+3. Als nächstes fügen Sie die Docker-Registrierungsinformationen in das **Docker Build and Publish** in dem Build-Schritt ein:  
    ![jenkins-docker-biold-bublish](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_05_20.jpg)
 
 4. Fügen Sie am Ende den Abschnitt **Execute Shell** im Schritt Build\`\` und legen Sie den folgenden Befehl fest:
