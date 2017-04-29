@@ -14,4 +14,26 @@ Wie es geht…
 
 ### Lassen Sie uns eine PXE-Boot-Umgebung einrichten:
 
-    Die erste Komponente, die wir konfigurieren werden, ist der TFTP-Server. Dies ist eine abgespeckte Version von FTP. TFTP eignet sich hervorragend für das Booten von Netzwerken, wo Sie einen unidirektionalen Datenfluss haben, der einfach und schnell ausgeliefert werden muss. Wir werden den TFTP Server benutzen, der mit Ubuntu 14.04 versendet wird. Um es zu installieren, geben Sie den folgenden Befehl ein:
+1. Die erste Komponente, die wir konfigurieren werden, ist der TFTP-Server. Dies ist eine abgespeckte Version von FTP. TFTP eignet sich hervorragend für das Booten von Netzwerken, wo Sie einen unidirektionalen Datenfluss haben, der einfach und schnell ausgeliefert werden muss. Wir werden den TFTP Server benutzen, der mit Ubuntu 14.04 versendet wird. Um es zu installieren, geben Sie den folgenden Befehl ein:
+`$ sudo apt-get install tftpd-hpa`
+
+Dadurch werden die Pakete und deren Abhängigkeiten installiert.
+
+2. Als nächstes müssen wir unseren TFTP-Server konfigurieren. Verwenden Sie Ihren bevorzugten Editor, bearbeiten Sie die TFTP-Konfigurationsdatei unter `/etc/default/tftpd-hpa`. Standardmäßig sollte es dem ähneln:
+```
+# /etc/default/tftpd-hpa
+TFTP_USERNAME="tftp"
+TFTP_DIRECTORY="/var/lib/tftpboot"
+TFTP_ADDRESS="[::]:69"
+TFTP_OPTIONS="--secure"
+```
+Sie müssen dies ändern, damit es als Daemon laufen kann. Passen Sie die Datei an, um die folgende Zeile hinzuzufügen:
+```
+# /etc/default/tftpd-hpa
+RUN_DAEMON="yes"
+TFTP_USERNAME="tftp"
+TFTP_DIRECTORY="/var/lib/tftpboot"
+TFTP_ADDRESS="[::]:69"
+TFTP_OPTIONS="--secure"
+```
+
