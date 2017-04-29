@@ -19,6 +19,10 @@ OpenSCAP = [OpebSCAP](https://github.com/theforeman/puppet-foreman_scap_client)
 * [Syntax checks for Puppet manifests and templates](https://rubygems.org/gems/puppet-syntax)
 * [Librarian-puppet is a bundler for your puppet infrastructure](http://www.rubydoc.info/gems/librarian-puppet/2.2.3)
 * [A Test Kitchen Provisioner for Puppet](http://www.rubydoc.info/gems/kitchen-puppet/1.48.0)
+* [
+
+Puppet's accceptance testing harness
+](https://rubygems.org/gems/beaker)
 
 # Documentation
 * [puppetcookbook](https://www.puppetcookbook.com/posts/install-rubygem.html)
