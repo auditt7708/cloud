@@ -1,4 +1,3 @@
-
 ![docker-weave-net-01](https://www.packtpub.com/graphics/9781786461148/graphics/B05453_07_01.jpg)
 
 Du brauchst ein paar Gastgeber, vorzugsweise mit einigen von ihnen auf verschiedenen Subnetzen. Es wird davon ausgegangen, dass die in diesem Labor verwendeten Docker-Hosts in ihrer Standardkonfiguration sind. In einigen Fällen können die Änderungen, die wir machen, verlangen, dass Sie einen Root-Level-Zugriff auf das System haben.
@@ -133,4 +132,37 @@ user@docker4:~$ weave launch-router 192.168.50.101
 In jedem Fall geben wir den zuvor verbundenen Weave-Node als Peer des Nodes an, den wir zu verbinden versuchen. In unserem Fall sieht unser Join-Muster aus wie das folgendes Bild:
 ![multilayer-sw-01](https://www.packtpub.com/graphics/9781786461148/graphics/B05453_07_03.jpg)
 
+Allerdings hätten wir jeden Knoten jedem anderen bestehenden Knoten beitreten und das gleiche Ergebnis erzielen können. Das heißt, das Verbinden von Knoten `docker2`, `docker3` und `docker4` zu `docker1` hätte den gleichen Endzustand ergeben. Dies liegt daran, dass Weave nur mit einem bestehenden Knoten sprechen muss, um Informationen über den aktuellen Stand des Weave-Netzwerks zu erhalten. Da alle vorhandenen Mitglieder diese Informationen haben, spielt es keine Rolle, mit wem sie reden, um einem neuen Knoten zum Weave-Netzwerk beizutreten. Wenn wir den Status eines der Weave-Knoten jetzt überprüfen, sollten wir sehen, dass wir insgesamt vier Peers haben:
+```
+user@docker4:~$ weave status
+        Version: 1.7.1 (up to date; next check at 2016/10/11 03:25:22)
+
+        Service: router
+       Protocol: weave 1..2
+           Name: 42:ec:92:86:1a:31(docker4)
+     Encryption: disabled
+  PeerDiscovery: enabled
+        Targets: 1
+    Connections: 3 (3 established)
+          Peers: 4 (with 12 established connections)
+ TrustedSubnets: none 
+…<Additional output removed for brevity>… 
+user@docker4:~$
+```
+
+Wir können sehen, dass dieser Knoten drei Verbindungen hat, einen zu jedem der anderen verbundenen Knoten. Das gibt uns insgesamt vier Peers mit zwölf Verbindungen, drei pro Weave-Knoten. Also trotz nur Konfigurieren Peering zwischen drei Knoten, wir am Ende mit einem vollen Mesh für Container-Konnektivität zwischen allen Hosts:
+
+![m-sw-02](https://www.packtpub.com/graphics/9781786461148/graphics/B05453_07_04.jpg)
+
+Jetzt ist die Konfiguration von Weave komplett, und wir haben ein volles Mesh-Netzwerk zwischen all unseren Weave-fähigen Docker-Hosts. Sie können die Verbindungen überprüfen, die jeder Host mit den anderen Peers mit dem Befehl `weave status connections` hat:
+```
+user@docker1:~$ weave status connections
+-> 192.168.50.102:6783   established fastdp 42:ec:92:86:1a:31(docker4)
+<- 10.10.10.102:45632    established fastdp e6:b1:90:cd:76:da(docker2)
+<- 192.168.50.101:38411  established fastdp ae:af:a6:36:18:37(docker3)
+user@docker1:~$ 
+```
+Sie werden feststellen, dass diese Konfiguration nicht die Konfiguration eines eigenständigen Schlüsselwertspeichers erfordert.
+
+Es ist auch anzumerken, dass Weave Peers manuell mit dem Weave CLI `Connect` verwaltet und Command `forget` kann. Wenn Sie ein vorhandenes Mitglied des Weave-Netzwerks nicht angeben, wenn Sie Weave instanziieren, können Sie die Weave-Verbindung verwenden, um eine manuelle Verbindung zu einem vorhandenen Mitglied herzustellen. Auch wenn du ein Mitglied aus dem Weave-Netzwerk entfernst und es nicht erwarten wirst zurückzukehren, kannst du dem Netzwerk mitteilen, dass er den Peer mit dem `forget`-Befehl ganz vergessen darf.
 
