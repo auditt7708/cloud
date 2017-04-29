@@ -108,9 +108,94 @@ Klicken Sie auf der AWS-Konsole auf Sicherheitsgruppen im linken Navigationsbere
 ![aws-sec-group](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_06_09.jpg)
 
 Rulen Name 
-- My Kubernetes master SG 
+* My Kubernetes master SG 
 Inbound Protocol und Portnummer
-- 
+*       8080/tcp 
 Quelle
-- 
+*       My Kubernetes node 
+
+Rulen Name 
+* My Kubernetes master SG 
+Inbound Protocol und Portnummer
+*  
+Quelle
+*  
+
+Rulen Name 
+* `My Kubernetes node SG`
+Inbound Protocol und Portnummer
+*  `30000-32767/tcp (Service)` 
+Quelle
+*  `0.0.0.0/0`
+
+Rulen Name 
+* `My etcd SG` 
+Inbound Protocol und Portnummer
+* `7001/tcp` 
+* `4001/tcp`
+* `2379/tcp`
+* `2380/tcp `
+Quelle
+*  `My etcd SG`
+*  `My Kubernetes master SG`
+*  `My Kubernetes node SG`
+
+Rulen Name 
+* `My flannel SG`
+Inbound Protocol und Portnummer
+*  ` 8285/udp `
+*  ` 8472/udp `
+Quelle
+*  `My flannel SG `
+
+Rulen Name 
+* `My ssh SG`
+Inbound Protocol und Portnummer
+*  `22/tcp`
+Quelle
+*  `0.0.0.0/0`
+
+
+Klicken Sie auf der AWS-Konsole auf **Security Groups** im linken Navigationsbereich, erstellen Sie fünf **Security Groups** und fügen Sie Inbound Rules wie folgt hinzu:
+![aws-create-sec-group](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_06_09.jpg)
+
+Wie es funktioniert…
+
+Sobald Sie Ihre eigene VPC und verwandte Subnetze und Sicherheitsgruppen erstellt haben, können Sie die EC2-Instanz starten, um Ihren eigenen Kubernetes-Cluster einzurichten. Beachten Sie, dass die EC2-Instanzen wie folgt gestartet und mit Subnetzen und Sicherheitsgruppen verknüpft werden sollen:
+
+Instance
+* etcd
+Subnetz
+* Private
+Sicherheitz Gruppe
+* `My etcd SG`
+* `My ssh SG`
+
+Instance
+* Kubernetes node (with flannel)
+Subnetz
+* Public
+Sicherheitz Gruppe
+* `My flannel SG `
+* `My Kubernetes node SG`
+* `My ssh SG`
+
+Instance
+* Kubernetes master (with flannel)
+Subnetz
+* Private
+Sicherheitz Gruppe
+* `My flannel SG`
+* `My Kubernetes master SG`
+* `My ssh SG`
+
+![igw-net](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_06_10.jpg)
+
+### Siehe auch
+
+In diesem Rezept haben Sie gelernt, wie Sie Amazon Web Services registrieren und wie Sie Ihre eigene Infrastruktur erstellen können. AWS bietet eine riesige Anzahl von Dienstleistungen; Allerdings hat es eine Menge Dokumentation und verwandte Webinare online. Es wird empfohlen, dass Sie lesen und beobachten, um die besten Praktiken zu verstehen, um die AWS-Infrastruktur zu nutzen. Im Folgenden finden Sie eine Liste guter Ressourcen:
+
+* https://www.youtube.com/user/AmazonWebServices
+* https://aws.amazon.com/blogs/aws/
+* http://www.slideshare.net/AmazonWebServices 
 
