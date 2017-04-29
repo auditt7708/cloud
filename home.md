@@ -1,50 +1,35 @@
-Eigene Services
-=============
+## Eigene Services
 
 **Dropbox tobkern-desktop preseed Datei :**
 ```
 wget https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AACrvW1tDHmkCqhMCphKabfha/preseed/installer-tobkern-desktop.example.com_2017-02-10.preseed?dl=1 -o installer-tobkern-desktop.example.com_2017-02-10.preseed
 ```
 
-# Lokale Umgebung
+### Lokale Umgebung
 
-###### Homenet drbdcluster
-#### Nodes
+##### Homenet drbdcluster
+###### Nodes
 
 * [srv2 pcs Gui](https://srv2.example.com:2224/manage) 
 * [tobkern-desktop pcs Gui](https://tobkern-desktop.example.com:2224/manage)
-
-
-
 * [Dashboard](http://192.168.4.14/~tobkern/startmin-master/pages/server.html)
 * [ISO's](http://srv2.example.com/~tobkern/iso/)
 
-##### Builds 
-
+###### Builds 
 [![build status](https://gitlab.com/tobkern1980/home-net4-environment/badges/master/build.svg)](https://gitlab.com/tobkern1980/home-net4-environment/commits/master)
-
 
 Dokumentationen
 ===============
 [redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
 
-
-## Planung und Support
-
-```
-                              - Management
--- Operations Manager    -- Service Manager
-
-```
-
-## Umgebung
+#### Umgebung
 * [Dashboard](../dashboard)
 * [Hosts](../hosts)
 * [collaboration](../collaboration)
 * [Sicherheit](../sicherheit)
 * [Netzwerke](../netzwerke)
 
-## Tools
+#### [Tools](../linux-system-tools)
 * [tmuxcheatsheet](https://tmuxcheatsheet.com/)
 * [cool-retro-term](https://github.com/Swordfish90/cool-retro-term )
 * [Bookmark für die Konsole](https://itsfoss.com/buku-command-line-bookmark-manager-linux/)
@@ -57,7 +42,7 @@ Dokumentationen
 * [Xiki makes the shell console more friendly and powerful](http://xiki.org/ )
 * [katello](https://gitlab.com/tobkern1980/home-net4-environment/wikis/katello)
 
-### System [Entwicklung](../entwicklung)
+#### System [Entwicklung](../system-development)
 * [Services](../services)
 * [DNS] (../dns)
 * [sicherheit](../sicherheit)
@@ -110,15 +95,11 @@ Host Gruppen
 ===========
 
 srvs = srv1 srv2
-
 rps = rp1 rp2 rp3 rp4 
-
 desk = tobkern-desktop tobkern-desktop-win10
 
 **Sources :**
-
  *  http://www.gtkdb.de/index_34_2792.html
-
 
 
 ToDu
