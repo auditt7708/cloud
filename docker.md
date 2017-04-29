@@ -1,26 +1,22 @@
-Docker UCF
-=========
-
-Meine Installation bei Git 
+### Meine Installation bei Git 
 * [dockerfiles](https://github.com/kernt/dockerfiles)
 * [docker-tools](https://github.com/kernt/docker-tools)
 * [Configuring Docker Remote API with TLS on CoreOS](http://blog.jameskyle.org/2014/04/coreos-docker-remote-api-tls/)
 * [Remote access to Docker with TLS](https://sheerun.net/2014/05/17/remote-access-to-docker-with-tls/)
 * [Securing Docker’s Remote](https://dzone.com/articles/securing-docker%E2%80%99s-remote-api)
-* []()
 
-Datein und verzeichnisse
-===
+## Datein und verzeichnisse
 
 ~/.docker/daemon.json = json Konfiguration für einen Benutzer 
 
-### Networkking
+## Networkking
 * [weave](../docker-networking-weave-net-install-konfiguration)
 
-Neue Projekte ToDu
-===
 
+## Sonstiges muss ich noch Ordnen
+* [UI server for Contiv](https://github.com/rhim/auth_proxy)
 
+###### Neue Projekte ToDu
 * [ ]  restya Kanban Board
 * [ ]  BIGSQL Postgresql
 * [ ]  web2ldap
