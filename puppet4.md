@@ -17,6 +17,7 @@ wget https://rubygems.org/rubygems/rubygems-2.6.11.tgz $$ \
 tar -xzvf rubygems-2.6.11.tgz && \
 cd  rubygems-2.6.11
 ruby ./setup.rb
+```
 
 Ausgabe der Installation 
 ```
