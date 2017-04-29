@@ -1,3 +1,9 @@
+# Konfigurations Management
+##### [Puppet Allgemein](../puppet)
+
+# Puppet 3
+##### [Puppet 3 Besonderheiten](../puppet3)
+
 # Puppet 4
 
 ##### [Puppet4 Sprache und Syntax](../puppet4-basics)
