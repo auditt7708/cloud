@@ -107,12 +107,10 @@ Sicherheitsgruppe ist eine Art Firewall, um eine Regel einzurichten, die entwede
 Klicken Sie auf der AWS-Konsole auf Sicherheitsgruppen im linken Navigationsbereich, erstellen Sie fünf Sicherheitsgruppen und fügen Sie Inbound Rules wie folgt hinzu:
 ![aws-sec-group](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_06_09.jpg)
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      | | Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 | |
+Rulen Name 
+- My Kubernetes master SG 
+Inbound Protocol und Portnummer
+- 
+Quelle
+- 
+
