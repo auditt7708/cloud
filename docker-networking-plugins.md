@@ -1,13 +1,13 @@
 #### Übersicht
 Folgende Plugins sind einsetzbar :
 
-Weave
-Project Calico
-Nuage Networks
-Cisco
-VMware
-Microsoft
-Midokura
+* Weave 
+* Project Calico 
+* Nuage Networks 
+* Cisco 
+* VMware 
+* Microsoft 
+* Midokura 
 
 Um ein Networking plugin zu nutzen müssen wir es folgender massen einbinden 
 ```
