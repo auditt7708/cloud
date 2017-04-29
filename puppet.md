@@ -1,15 +1,11 @@
-# Puppet Installation
-
-[Puppet 4 Installation via Ruby gem](../puppet4-gem-install)
-
-
-# Puppet Einsetzen
-[Puppet 4 Basics](../puppet4-basics)
+# Puppet Basics
+* [Puppet 4 Installation via Ruby gem](../puppet4-gem-install)
+* [Puppet 4 Basics](../puppet4-basics)
 
 # Module
 OpenSCAP = [OpebSCAP](https://github.com/theforeman/puppet-foreman_scap_client)
 
-# Tools
+# Tools Hilfen
 *[librarian-puppet](http://librarian-puppet.com/)
-
-**Quellen:**
+*[puppetexplorer](https://github.com/dalen/puppetexplorer)
+*[puppetboard](https://github.com/voxpupuli/puppetboard)
