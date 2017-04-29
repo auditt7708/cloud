@@ -6,6 +6,6 @@
 OpenSCAP = [OpebSCAP](https://github.com/theforeman/puppet-foreman_scap_client)
 
 # Tools Hilfen
-*[librarian-puppet](http://librarian-puppet.com/)
-*[puppetexplorer](https://github.com/dalen/puppetexplorer)
-*[puppetboard](https://github.com/voxpupuli/puppetboard)
+* [librarian-puppet](http://librarian-puppet.com/)
+* [puppetexplorer](https://github.com/dalen/puppetexplorer)
+* [puppetboard](https://github.com/voxpupuli/puppetboard)
