@@ -1,7 +1,7 @@
 #### Übersicht
 Folgende Plugins sind einsetzbar :
 
-* Weave 
+* [weave](https://gitlab.com/tobkern1980/home-net4-environment/wikis/docker-networking-weave-net-install-konfiguration) 
 * Project Calico 
 * Nuage Networks 
 * Cisco 
