@@ -1,3 +1,6 @@
+## Automatisierung
+* [Automatisierung von post-installation](../preseed-post-installation-tasks)
+
 Debian/ Ubuntu Preseed
 
 xenial.seed Ubuntu 16.04
