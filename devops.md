@@ -11,5 +11,8 @@
 * [devops-puppet-docker-kubernetes](../devops-puppet-docker-kubernetes)
 * [Puppet Allgemein](../puppet)
 
+# Automatic Testing
+* [selenium GUI Testing](../selenium-gui-tasting)
+
 # Tools
 * [quattor](http://www.quattor.org/documentation/)
