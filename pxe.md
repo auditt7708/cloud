@@ -1,20 +1,23 @@
 # Automatisierte Installation mit PXE-Boot und einer Preseed-Datei
 
-Nun, da wir ein gespiegeltes Repository von Paketen haben, können wir es auch verwenden, um die Dateien zu bedienen, die unsere Hosts über das Netzwerk aufbauen. Das Erstellen von Bare-Metal-Servern über das Netzwerk hat viele Vorteile, so dass Sie einfach einen Bare-Metal-Server booten und über DHCP konfigurieren und ein Betriebssystem installieren können, ohne zusätzliche Interaktionen. Das PXE-Booten ermöglicht den Einsatz von völlig diskless Clients, die booten und über das Netzwerk laufen können.
+Nun, da wir ein gespiegeltes Repository von Paketen haben, können wir es auch verwenden, um die Dateien zu bedienen, die unsere Hosts über das Netzwerk aufbauen. Das Erstellen von Bare-Metal-Servern über das Netzwerk hat viele Vorteile, so dass Sie einfach einen Bare-Metal-Server booten und über DHCP konfigurieren und ein Betriebssystem installieren können, ohne zusätzliche Interaktionen. Das PXE-Booten ermöglicht den Einsatz von diskless Clients, die booten und nur über das Netzwerk laufen können.
 
-Dies ist ein sehr langes Rezept, aber es ist erforderlich. Obwohl es relativ einfach ist, eine PXE-Boot-Umgebung einzurichten, benötigt es mehrere Elemente. Im Laufe dieses Rezepts werden Sie drei Hauptkomponenten erstellen: einen Apache-Server, einen DHCP-Server (Dynamic Host Configuration Protocol) und einen TFTP-Server (Trivial File Transfer Protocol). Alle diese werden zusammenarbeiten, um die benötigten Dateien zu bedienen, damit ein Client booten und Ubuntu installieren kann. Obwohl es hier mehrere Komponenten gibt, können sie alle bequem auf einem einzigen Server laufen.
+Dies ist ein sehr langes Rezept, aber es ist erforderlich. Obwohl es relativ einfach ist, eine PXE-Boot-Umgebung einzurichten, benötigt es mehrere Elemente. Im Laufe dieses Rezepts werden Sie drei Hauptkomponenten erstellen: einen Apache-Server, einen DHCP-Server (Dynamic Host Configuration Protocol) und einen TFTP-Server (Trivial File Transfer Protocol). Alle diese werden zusammenarbeiten, um die benötigten Dateien zu bedienen, damit ein Client booten und z.B Ubuntu installieren kann. Obwohl es hier mehrere Komponenten gibt, können sie alle bequem auf einem einzigen Server laufen.
 
-Eine Alternative zu diesem Rezept ist das Schusterprojekt (https://cobbler.github.io). Cobbler bietet die meisten dieser Elemente aus der Box und fügt eine leistungsfähige Management-Schicht auf die Oberseite; Allerdings ist es sehr beeindruckt, wie es funktioniert und muss ausgewertet werden, um zu sehen, wie es in Ihre Umgebung passt, aber es lohnt sich, es zu betrachten.
+Eine Alternative zu diesem Rezept ist das Projekt (https://cobbler.github.io). Cobbler bietet die meisten dieser Elemente from the Box und fügt eine leistungsfähige Management-Schicht auf die Obersteebene ein; Allerdings ist es sehr umfangreich, wie es funktioniert und muss ausgewertet werden, um zu sehen, wie es in Ihre Umgebung passt, aber es lohnt sich, es zu testen.
 
 Es lohnt sich zu bedenken, dass dieses Rezept für Bare-Metal-Server-Installationen konzipiert ist, und im Allgemeinen ist es nicht der beste Weg, um virtualisierte oder Cloud-basierte Server zu verwalten. In solchen Fällen bietet der Hypervisor oder Provider fast sicher eine bessere und optimiertere Installationsmethode für die Plattform an.
-Fertig werden
+
+### Fertig werden
 
 Um diesem Rezept zu folgen, empfiehlt es sich, einen Host mit einer sauberen Installation von Ubuntu 14.04 zu haben. Idealerweise sollte dieser Host mindestens 20 GB oder mehr Festplatte haben, denn zumindest muss er das Ubuntu-Setup-Medium enthalten.
-Wie es geht…
+
+### Wie es geht…
 
 ### Lassen Sie uns eine PXE-Boot-Umgebung einrichten:
 
-1. Die erste Komponente, die wir konfigurieren werden, ist der TFTP-Server. Dies ist eine abgespeckte Version von FTP. TFTP eignet sich hervorragend für das Booten von Netzwerken, wo Sie einen unidirektionalen Datenfluss haben, der einfach und schnell ausgeliefert werden muss. Wir werden den TFTP Server benutzen, der mit Ubuntu 14.04 versendet wird. Um es zu installieren, geben Sie den folgenden Befehl ein:
+1. Die erste Komponente, die wir konfigurieren werden, ist der TFTP-Server. Dies ist eine abgespeckte Version von FTP. TFTP eignet sich hervorragend für das Booten von Netzwerken, wo Sie einen unidirektionalen Datenfluss haben, der einfach und schnell ausgeliefert werden muss. Wir werden den TFTP Server benutzen, der mit Ubuntu 14.04 mitgeliefert wird. Um es zu installieren, geben Sie den folgenden Befehl ein:
+
 `$ sudo apt-get install tftpd-hpa`
 
 Dadurch werden die Pakete und deren Abhängigkeiten installiert.
@@ -30,6 +33,7 @@ TFTP_OPTIONS="--secure"
 ```
 
 Sie müssen dies ändern, damit es als Daemon laufen kann. Passen Sie die Datei an, um die folgende Zeile hinzuzufügen:
+
 ```
 # /etc/default/tftpd-hpa
 RUN_DAEMON="yes"
@@ -39,10 +43,11 @@ TFTP_ADDRESS="[::]:69"
 TFTP_OPTIONS="--secure"
 ```
 
-3. Damit kann der Prozess in einem dämonisierten Modus gestartet werden. Beachten Sie auch das TFTP-Verzeichnis. Wenn Sie gewählt haben, um Ihr Installationsmedium an einem anderen Ort zu speichern, müssen Sie dieses Verzeichnis ändern. Schließlich starten Sie den TFTP-Server mit folgendem Befehl:
+3. Damit kann der Prozess in einem deamon Modus gestartet werden kann. Beachten Sie auch das TFTP-Verzeichnis. Wenn Sie gewählt haben, um Ihr Installationsmedium an einem anderen Ort zu speichern, müssen Sie dieses Verzeichnis ändern. Schließlich starten Sie den TFTP-Server mit folgendem Befehl:
 `$ sudo service tftpd start`
 
-4.Nun, da wir unseren TFTP-Server konfiguriert haben, müssen wir ihm einige Daten geben, um zu dienen. In diesem Fall werden wir die Ubuntu-Installationsdateien in unser TFTP-Verzeichnis kopieren, damit sie den Clients PXE-Booten mit diesem Server dienen können. Wenn du noch nicht kommst, lade die Ubuntu 14.04 installiere ISO von Ubuntu auf deinen TFTP Server; Sie können es herunterladen von: http://www.ubuntu.com/download/server. Sobald Sie es heruntergeladen haben, gehen Sie vor und montieren Sie es auf das `mnt`-Verzeichnis mit dem folgenden Befehl:
+4.Nun, da wir unseren TFTP-Server konfiguriert haben, müssen wir ihm einige Daten geben, um zu das system mit daten bedienen zu können. In diesem Fall werden wir die Ubuntu-Installationsdateien in unser TFTP-Verzeichnis kopieren, damit sie den Clients PXE-Booten mit diesem Server dienen können. Wenn du noch nicht kommst, lade die Ubuntu 14.04 installiere ISO von Ubuntu auf deinen TFTP Server; Sie können es herunterladen von: http://www.ubuntu.com/download/server. Sobald Sie es heruntergeladen haben, gehen Sie vor und mounteSie es auf das `mnt`-Verzeichnis mit dem folgenden Befehl:
+
 `$ sudo mount -o loop <location of ISO> /mnt`
 
 5. Sobald die ISO montiert ist, können Sie sie in das TFTP-Stammverzeichnis kopieren. Du brauchst eigentlich nicht das ganze ISO-Image, nur den Inhalt des `netboot`-Verzeichnisses. Kopiere es mit folgendem Befehl:
@@ -50,7 +55,8 @@ TFTP_OPTIONS="--secure"
 
 Beachten Sie, dass ich es an den Standardspeicherort für den TFTP-Server kopiere. Dies ist konfigurierbar, wenn Sie das ISO-Image auf dem zentralen Speicher wie einem NFS-Server behalten möchten.
 
-6. Schließlich müssen wir eine kleine Bearbeitung zu den Dateien machen, die wir kopiert haben, um unsere Clients von unserer `PreSeed`-Datei zu booten. Öffnen Sie die folgende Konfigurationsdatei in Ihrem bevorzugten Editor:
+6. Schließlich müssen wir eine kleine Bearbeitung zu den Dateien machen, die wir kopiert haben, um unsere Clients von unserer `PreSeed` Datei zu booten. Öffnen Sie die folgende Konfigurationsdatei in Ihrem bevorzugten Editor:
+
 `/var/lib/tftpboot/pxelinux.cfg/default`
 
 Fügen Sie folgendes ein:
@@ -59,6 +65,7 @@ label linux
         kernel ubuntu-installer/amd64/linux
         append preseed/url=http://<<NAME OF BOOT SERVER>>/ks.cfg vga=normal initrd=ubuntu-installer/amd64/initrd.gz ramdisk_size=16432 root=/dev/rd/0 rw  --
 ```
+
 Es gibt ein paar Dinge über die vorherige Konfiguration zu beachten. Erstens basiert es auf der 64-Bit-Installation von Ubuntu, so dass sich Ihre Architektur unterscheiden kann. Zweitens, beachten Sie die Zeile, die liest:
 `pressed/url=http:// <<NAME OF BOOT SERVER>>//ks.cfg`
 
