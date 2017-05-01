@@ -1,14 +1,14 @@
-## Eigene Services
+## [Eigene Services](../homenet4-services)
 
 **Dropbox tobkern-desktop preseed Datei :**
 ```
 wget https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AACrvW1tDHmkCqhMCphKabfha/preseed/installer-tobkern-desktop.example.com_2017-02-10.preseed?dl=1 -o installer-tobkern-desktop.example.com_2017-02-10.preseed
 ```
 
-### Lokale Umgebung
+### [Lokale Umgebung](../homnet4)
 
-##### Homenet drbdcluster
-###### Nodes
+##### [Homenet drbdcluster](../homenet4-drbdcluster)
+###### [Nodes](../homnet4-nodes)
 
 * [srv2 pcs Gui](https://srv2.example.com:2224/manage) 
 * [tobkern-desktop pcs Gui](https://tobkern-desktop.example.com:2224/manage)
