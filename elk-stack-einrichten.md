@@ -21,6 +21,7 @@ Quellen:
 * []()
 
 ## [Logstash](../elk-stack-logstash)
+* [Input Dataset](../elk-stack-logstsh-input-dataset)
 
 ## [Kibana](../elk-stackkibana)
 
