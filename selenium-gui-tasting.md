@@ -1,1 +1,1 @@
-* [packtpub](https://www.packtpub.com/mapt/book/networking_and_servers/9781785882876/6/ch06lvl1sec95/automated-gui-testing)
+* [automated-gui-testing](../automated-gui-testing)
