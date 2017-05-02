@@ -24,6 +24,8 @@ Quellen:
 * [Input Dataset](../elk-stack-logstsh-input-dataset)
 
 ## [Kibana](../elk-stackkibana)
+* [Visualisierung mit Kibana version 4](../elk-stack-kibana4-visualisierung)
+* [Visualisierung mit Kibana version 5](../elk-stack-kibana5-visualisierung)
 
 
 |Upgrade Von|Upgrade Nach | Supported Upgrade Type | 
