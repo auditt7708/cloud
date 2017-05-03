@@ -1,11 +1,12 @@
-Logstash hat eine Vielzahl von Plugins zu helfen, integrieren sie mit einer Vielzahl von Input-und Output-Quellen. Lassen Sie uns die verschiedenen Plugins erkunden.
+Logstash hat eine Vielzahl von Plugins um zu helfen, wir integrieren sie mit einer Vielzahl von Input-und Output-Quellen. Lassen Sie uns die verschiedenen Plugins erkunden.
 
 ### Auflisten aller Plugins in Logstash
 
 Sie können den folgenden Befehl ausführen, um alle verfügbaren Plugins in Ihrer installierten Logstash-Version aufzulisten:
+
 `bin/plugin list`
 
-Außerdem können Sie alle Plugins mit einem Namensfragment auflisten, indem Sie diesen Befehl ausführen:
+Außerdem können Sie alle Plugins mit einem `namensfragment` auflisten, indem Sie diesen Befehl ausführen:
 `bin/plugin list <namefragment>`
 
 Um alle Plugins für Gruppennamen, Input, Output oder Filter aufzulisten, können wir diesen Befehl ausführen:
@@ -15,7 +16,7 @@ bin/plugin list --group output
 
 ```
 
-Bevor Sie verschiedene Plugin-Konfigurationen erkunden, werfen wir einen Blick auf die Datentypen und bedingten Ausdrücke, die in verschiedenen Logstash-Konfigurationen verwendet werden.
+Bevor Sie verschiedene Plugin-Konfigurationen erkunden, werfen wir einen Blick auf die Datentypen und bedingten Ausdrücke, die in verschiedenen Logstash-Konfigurationen verwendet werden müssen.
 
 ### Datentypen für Plugin-Eigenschaften
 
@@ -24,11 +25,9 @@ Ein Logstash-Plugin erfordert bestimmte Einstellungen oder Eigenschaften. Diese 
 #### Array
 
 Ein Array ist die Erfassung von Werten für eine Eigenschaft.
-
-Ein Beispiel lässt sich wie folgt sehen:
+Ein Beispiel lässt sich wie folgt ansehen:
 
 `path => ["value1","value2"]`
-
 
 ###### Hinweis
 
@@ -37,38 +36,38 @@ Das Zeichen `=>` ist der Zuweisungsoperator, der für alle Eigenschaften von Kon
 ### Boolesch werte
 
 Ein boolescher Wert ist entweder `true` oder `false` (ohne Anführungszeichen).
-
 Ein Beispiel lässt sich wie folgt sehen:
+
 `periodic_flush => false`
 
 #### Codec
-Codec ist eigentlich kein Datentyp, sondern eine Möglichkeit, Daten am Eingang oder Ausgang zu codieren oder zu dekodieren.
+Codec ist eigentlich kein Datentyp, sondern eine Möglichkeit, Daten am Eingang(input) oder Ausgang(output) zu codieren oder zu dekodieren.
 
-Ein Beispiel lässt sich wie folgt sehen:
+Ein Beispiel lässt sich wie folgt veranschaulichen:
 `codec => "json"`
 
-Diese Instanz legt fest, dass dieser Codec am Ausgang alle Ausgabe im JSON-Format kodiert.
+Diese Instanz legt fest, dass dieser Codec am Ausgang alle Ausgaben im JSON-Format kodiert.
 
 #### Hash
 
 Hash ist im Grunde eine Key-Value-Paar-Sammlung. Es wird als `"key" => "value"` angegeben und mehrere Werte in einer Sammlung werden durch ein Leerzeichen getrennt.
 
-Ein Beispiel lässt sich wie folgt sehen:
+Ein Beispiel lässt sich wie folgt veranschaulichen:
 ```
 match => {
 "key1" => "value1" "key2" => "value2"}
 ```
 #### String
 
-String stellt eine Folge von Zeichen dar, die in Anführungszeichen eingeschlossen sind.
+String stellt eine Folge von Zeichen dar, die von Anführungszeichen eingeschlossen sind.
 
-Ein Beispiel lässt sich wie folgt sehen:
+Ein Beispiel lässt sich wie folgt veranschaulichen:
 `value => "Welcome to ELK"` 
 
 #### Kommentare 
 Kommentare beginnen mit dem `#` Zeichen.
 
-Ein Beispiel lässt sich wie folgt sehen:
+Ein Beispiel lässt sich wie folgt veranschaulichen:
 `#this represents a comment`
 
 #### Feldreferenzen
@@ -77,7 +76,7 @@ Felder können mit [`field_name`] oder verschachtelten Feldern mit [`level1`] [`
 
 #### Logstash-Bedingungen
 
-Logstash-Bedingungen werden verwendet, um Ereignisse oder Protokollzeilen unter bestimmten Bedingungen zu filtern. Bedingungen in Logstash werden wie andere Programmiersprachen behandelt und arbeiten mit `if`, `if else` und `else` Aussagen. Mehrere, `if else` andere Blöcke verschachtelt werden können.
+Logstash-Bedingungen werden verwendet, um Ereignisse oder Protokollzeilen unter bestimmten Bedingungen zu filtern. Bedingungen in Logstash werden wie andere Programmiersprachen behandelt und arbeiten mit `if`, `if else` und `else` Aussagen. Mehrere, `if else` andere Blöcke können auch verschachtelt werden.
 
 Die Syntax für die Bedingungen ist wie folgt:
 
@@ -111,9 +110,11 @@ filter {
   }
 }
 ```
+
 Mehrere Ausdrücke können in einer einzigen Anweisung mit booleschen Operatoren angegeben werden.
 
-Ein Beispiel lässt sich wie folgt sehen:
+Ein Beispiel lässt sich wie folgt veranschaulichen:
+
 ```
 output {
   # Send Email on Production Errors
@@ -135,7 +136,7 @@ Im Folgenden sind Typen von Logstash-Plugins aufgeführt:
 *  Output 
 *  Codec 
 
-Nun wollen wir einen Blick auf einige der wichtigsten Input-, Output-, Filter-und Codec-Plugins, die nützlich sein wird für den Bau der meisten der Log-Analyse Pipeline Use Cases.
+Nun wollen wir einen Blick auf einige der wichtigsten Input-, Output-, Filter-und Codec-Plugins, die nützlich sein wirden für den Bau der meisten der Log-Analysen Pipeline Use Cases.
 
 #### Eingabe-Plugins
 
