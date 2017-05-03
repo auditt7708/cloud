@@ -1,6 +1,6 @@
 ## Übersicht
 * [Konfiguration von Logstash](../elk-stack-logstash-konfiguration)
-* [](../elk-stack-logstash)
+* [Plugins](../elk-stack-logstash-plugins)
 * [](../elk-stack-logstash)
 * [](../elk-stack-logstash)
 * [](../elk-stack-logstash)
