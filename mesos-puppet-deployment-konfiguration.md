@@ -14,6 +14,7 @@ Am Ende dieses Moduls haben Sie einen hochverfügbaren Mesos-Cluster mit drei Me
 Wir können mehrere Puppet-Module kombinieren, um Mesos und ZooKeeper zu verwalten. Führen wir die folgenden Schritte aus:
 
 1. Erstellen Sie zunächst eine Puppetfile mit folgendem Inhalt:
+
 ```
 forge 'http://forge.puppetlabs.com'
 mod 'apt',
@@ -37,6 +38,7 @@ mod 'stdlib',
 mod 'zookeeper',
   :git => 'https://github.com/deric/puppet-zookeeper', :ref => 'v0.3.5'
 ```
+
 Jetzt können wir die Profile und Rollen Muster für beide Mesos Meister und Sklaven schreiben. Auf den Master-Maschinen wird es auch die Verwaltung von ZooKeeper, Marathon und Chronos beinhalten.
 
 2. Erstellen Sie für die Master die folgende Rolle:
@@ -52,6 +54,7 @@ class role::mesos::master {
 ```
 
 3. Als nächstes erstellen Sie die folgende Rolle für die Slaves:
+
 ```
 class role::mesos::slave {
   include profile::mesos::slave
@@ -59,5 +62,109 @@ class role::mesos::slave {
 ```
 
 
+4. Erstellen Sie das folgende Profil für ZooKeeper:
+```
+class profile::zookeeper {
+  include ::java
+  class { '::zookeeper':
+    require => Class['java'],
+  }
+}
+```
 
-* [packethub](https://www.packtpub.com/mapt/book/big_data_and_business_intelligence/9781785886249/5/ch05lvl1sec48/deploying-and-configuring-mesos-cluster-using-puppet)
+5. Erstellen Sie das folgende Profil für Mesos-Meister:
+```
+class profile::mesos::master {
+  class { '::mesos':
+    repo => 'mesosphere',
+  }
+
+  class { '::mesos::master':
+    env_var => {
+      'MESOS_LOG_DIR' => '/var/log/mesos',
+    },
+    require => Class['profile::zookeeper'],
+  }
+}
+```
+
+6. Als nächstes erstellen Sie das folgende Profil für Mesos-Slaves:
+```
+class profile::mesos::slave {
+  class { '::mesos':
+    repo => 'mesosphere',
+  }
+  class { '::mesos::slave':
+    env_var => {
+      'MESOS_LOG_DIR' => '/var/log/mesos',
+    },
+  }
+}
+```
+Dies sind die grundlegenden Dinge, die wir brauchen, um einen Mesos-Cluster zu starten. Um Chronos und Marathon zu verwalten, müssen auch die folgenden Profile aufgenommen werden.
+
+
+7. Erstellen Sie ein Profil für Chronos, wie folgt:
+```
+class profile::mesos::master::chronos {
+  package { 'chronos':
+    ensure  => '2.3.2-0.1.20150207000917.debian77',
+    require => Class['profile::mesos::master'],
+  }
+
+  service { 'chronos':
+    ensure  => running,
+    enable  => true,
+    require => Package['chronos'],
+  }
+}
+```
+
+8. Erstellen Sie nun ein Profil für Marathon über den folgenden Code:
+```
+class profile::mesos::master::marathon {
+  package { 'marathon':
+    ensure  => '0.7.6-1.0',
+    require => Class['profile::mesos::master'],
+  }
+
+  service { 'marathon':
+    ensure  => running,
+    enable  => true,
+    require => Package['marathon'],
+  }
+}
+
+```
+
+Bisher enthalten die Rollen und Profile keine Informationen über die Maschinen, die wir für die Einrichtung des Clusters verwenden werden. Diese Informationen werden mit Hiera kommen. Die Hiera-Daten für den Master würden etwas ähnliches aussehen:
+```
+---
+classes:
+  - role::mesos::master
+
+mesos::master::options:
+  quorum: '2'
+mesos::zookeeper: 'zk://master1:2181,master2:2181,master3:2181/mesos'
+zookeeper::id: 1
+zookeeper::servers: ['master1:2888:3888', 'master2:2888:3888', 'master3:2888:3888']
+```
+
+Bei der Einrichtung eines hochverfügbaren Clusters werden die Master-Rechner Master 1, Master 2 bzw. Master 3 genannt.
+
+9. Hiera-Daten für Slave würde etwas ähnliches wie folgt aussehen:
+```
+---
+classes:
+  - role::mesos::slave
+
+mesos::slave::checkpoint: true
+mesos::zookeeper: 'zk://master1:2181,master2:2181,master3:2181/mesos'
+```
+Jetzt können wir einen Puppenlauf auf jedem der Maschinen einrichten, um Mesos, ZooKeeper, Chronos und Marathon zu installieren und zu konfigurieren.
+
+Die Installation des Moduls ist wie bei jedem Puppet-Modul wie folgt:
+
+`$ puppet module install deric-mesos`
+
+Nach erfolgreicher Ausführung können wir erwarten, dass das Mesos Paket installiert wird und der `mesos-master` Service im Cluster konfiguriert wird.
