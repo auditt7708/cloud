@@ -19,7 +19,7 @@ In diesem Beispiel erstellen wir ein neues Git-Repository auf einem Server, der 
 5. Installiere Git auf einem Knoten und lade die neueste Version aus unserem Git Repository herunter.
 
 
-Wie es geht...
+### Wie es geht...
 
 Folge diesen Schritten:
 
