@@ -1,18 +1,21 @@
 Wir möchten es so schnell und einfach wie möglich machen, Puppet auf eine Maschine anzuwenden. 
 Dafür werden wir ein kleines Skript schreiben, das den `puppet apply` Befehlt mit den dafür benötigten Parametern umgibt. Wir werden das Skript bereitstellen, wo es für Puppet selbst benötigt wird.
 
-Wie es geht...
+### Wie es geht...
 
 Folge diesen Schritten:
 
-1. In deinem Puppet-Repo kannst du die für ein Puppenmodul benötigten Verzeichnisse erstellen:
+1. In deinem Puppet-Repo kannst du die für einPuppet modul benötigten Verzeichnisse erstellen:
 ```
 t@mylaptop ~$ cd puppet/modules
 t@mylaptop modules$ mkdir -p puppet/{manifests,files}
 ```
 
 2. Erstellen Sie die Module `/puppet/files/papply.sh` mit folgendem Inhalt:
-`#!/bin/sh sudo puppet apply /etc/puppet/cookbook/manifests/site.pp \--modulepath=/etc/puppet/cookbook/modules $*`
+```
+#!/bin/bash 
+sudo puppet apply /etc/puppet/cookbook/manifests/site.pp \--modulepath=/etc/puppet/cookbook/modules $*
+```
 
 3. Erstellen Sie die Module `/puppet/manifests/init.pp` mit folgendem Inhalt:
 ```
@@ -77,10 +80,10 @@ Notice: Finished catalog run in 0.09 seconds
 ```
 
 Nun, wann immer du Puppet laufen lassen musst, kannst du einfach `papply` aufrufen. 
-In der Zukunft, wenn wir Puppet änderungen anwenden, werde ich `papply` nutzen, anstelle des vollständigen Puppenbefehls anzugeben.
+In der Zukunft, wenn wir Puppet Änderungen anwenden, werde ich `papply` nutzen, anstelle des vollständigen Puppenbefehls anzugeben.
 
 
-##### Wie es funktioniert
+### Wie es funktioniert
 
 Wie Sie gesehen haben, um Puppet auf einer Maschine auszuführen und eine bestimmte Manifest-Datei anzuwenden, verwenden wir den Befehl `puppet apply`:
 `puppet apply manifests/site.pp`
