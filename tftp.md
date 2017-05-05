@@ -24,7 +24,6 @@ neu gestartet werden.
 **Test ob der Server Läuft**
 `pgrep -lf tftpd`
 
-
 ## Konfiguration
 
 ### Boot Images
