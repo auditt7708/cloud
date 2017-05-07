@@ -1,4 +1,4 @@
-PuppetDB ist eine Datenbank für Puppet, die verwendet wird, um Informationen über Nodes zu speichern, die mit einem Puppet-Master (Puppet version >= 4 Puppet Sever) verbunden sind. 
+PuppetDB ist eine Datenbank für Puppet, die verwendet wird, um Informationen über Nodes zu speichern, die mit einem Puppet-Master \(Puppet version &gt;= 4 Puppet Sever\) verbunden sind. 
 PuppetDB ist auch ein Speicherbereich für exportierte Ressourcen. 
 Exportierte Ressourcen sind Ressourcen, die auf Nodes definiert sind, aber auf andere Nodes angewendet werden.
 Der einfachste Weg zur Installation von PuppetDB ist die Verwendung des PuppetDB Moduls von Puppet-Labs. Von diesem Punkt an werden wir davon ausgehen, dass Sie die `puppet.example.com` Maschine benutzen und eine Passenger basierte Konfiguration von Puppet haben.
@@ -23,10 +23,10 @@ Notice: Installing -- do not interrupt ...
     └── puppetlabs-concat (v1.1.0)
 ```
 
-Wie es geht...
+### Wie es geht...
 
 Nun, da unser Puppet-Master das PuppetDB-Modul installiert hat, müssen wir das PuppetDB-Modul an unseren Puppet-Master anwenden, das können wir im site manifest machen. 
-Füge folgendes zu deiner (Produktion) `site.pp` hinzu:
+Füge folgendes zu deiner \(Produktion\) `site.pp` hinzu:
 
 ```
 node puppet {
@@ -51,7 +51,7 @@ Notice: Finished catalog run in 160.78 seconds
 
 #### Wie es funktioniert...
 
-Das PuppetDB-Modul ist ein hervorragendes Beispiel dafür, wie eine komplexe Konfigurationsaufgabe puppetiert (ja ein Kunstwort) werden kann. 
+Das PuppetDB-Modul ist ein hervorragendes Beispiel dafür, wie eine komplexe Konfigurationsaufgabe puppetiert \(ja ein Kunstwort\) werden kann. 
 Einfach durch Hinzufügen der `puppetdb` Klasse zu unserem Puppet-Master-Knoten, Puppet installiert und konfiguriert `postgresql` und `puppetdb`.
 
 Als wir die `puppetdb::master::config-Klasse` angerufen haben, setzen wir die Variable `puppet_service_name` auf `apache2`, das ist, weil wir Puppet mit Passenger laufen lassen. 
