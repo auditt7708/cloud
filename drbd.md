@@ -49,21 +49,20 @@ z.B. wird hier einfach der mount von /var/drbd nach /mnt/drbd geändert .
 Berechtigungen Matrix
 ===================
 
-Da es zu Fehlern kommt wenn die Berechtigungen nicht korrekt gesetzt werden kommt, hier alle Dateien mit ihren soll Berechtigungen.
+Da es zu Fehlern kommt wenn die Berechtigungen nicht korrekt gesetzt werden kommt, hier alle Dateien mit ihren soll Berechtigungen. Leider kann man erst im log erkenne das man die rechte nicht gesetzt hat drbd ignoirt einfach eine Konfigutrationds datei die nicht die forgeschriebenen Rechte hat.
 
 | Datei | Rechte | Benutzer |
 | -------- | -------- | -------- |
 |/etc/drbd.d/global_common.conf | 644 | root:root |
 
 
-[Split-Brain Fehler Behebung](../drbd-split-Brain)
-=====
+## [Split-Brain Fehler Behebung](../drbd-split-Brain)
 
-Splitbrain Fehler  sowie ein Fehler auftritt der irgendetwas in der Richtung nennt, kann man folgendes versuchen : 
+Splitbrain Fehler sowie ein Fehler auftritt der irgendetwas in der Richtung nennt, kann man folgendes versuchen : 
 
 **Auf dem secondary ihn nochmal als secondary festlegen:**
+
 `drbdadm secondary drbd0`
-drbdadm secondary all
 
 **Primary Master Festlegen**
 
