@@ -46,14 +46,16 @@ z.B. wird hier einfach der mount von /var/drbd nach /mnt/drbd geändert .
 ** String für die Verschlüsselung Erstellen**
 * [gen-32-alphanum-string](https://github.com/kernt/inshelp/blob/master/drbd/gen-32-alphanum-string.sh)
 
-Berechtigungen Matrix
-===================
+## Berechtiguns Matrix
 
 Da es zu Fehlern kommt wenn die Berechtigungen nicht korrekt gesetzt werden kommt, hier alle Dateien mit ihren soll Berechtigungen. Leider kann man erst im log erkenne das man die rechte nicht gesetzt hat drbd ignoirt einfach eine Konfigutrationds datei die nicht die forgeschriebenen Rechte hat.
 
+(todo!)
 | Datei | Rechte | Benutzer |
 | -------- | -------- | -------- |
 |/etc/drbd.d/global_common.conf | 644 | root:root |
+|/etc/drbd.d|||
+|/etc/drbd.conf|||
 
 
 ## [Split-Brain Fehler Behebung](../drbd-split-Brain)
