@@ -34,12 +34,14 @@ Bei diesem Beispeil werde ich folgendes gerät verwenden `/dev/vg_r0/lv_r0` erse
 
 
 1. Updaten des systems und die benötigten packete Installiren auf beiden Hosts
+
 ```
 yum update
 yum -y install gcc make automake autoconf libxslt libxslt-devel flex rpm-build kernel-devel 
 ```
 
 2.  Installation von drbd auf beiden hosts
+
 ```
 mkdir -p rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS} 
 wget http://oss.linbit.com/drbd/drbd-utils-latest.tar.gz \
@@ -66,7 +68,7 @@ rpm -Uvh drbd-utils-*.rpm drbd-km-*.rpm
 2. drbdadm up drbd0
 3. drbd-overview oder cat /proc/drbd zum Status Prüfen
 4. drbdadm -- --overwrote-dtat-of-peer primary drbd0   um dem master festzulegen
-5. mkfs.xfs /dev/drbd0 um abschließend zu formatieren .
+5. mkfs.xfs /dev/drbd0 um abschließend zu formatieren.
 
 ## drbd Administration
 
