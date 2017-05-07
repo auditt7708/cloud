@@ -6,7 +6,8 @@ Clustername = testcluster
 # Installation von drbd
 
 ## Installation auf Centos 7
-Bei Centos gigt es leider kein Repo mit den Packeten es muss folgendes hinzugefügt werden 
+Bei Centos gigt es leider kein Repo mit den Packeten es muss folgendes hinzugefügt werden :
+
 ```
 sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-elrepo.org
 sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
@@ -19,7 +20,7 @@ sudo yum install drbd84-utils drbd84-utils-sysvinit kmod-drbd84
 Installieren Sie DRBD (Distributed Replicated Block Device), um das Distributed Storage System zu konfigurieren.
 Dieses Beispiel basiert auf der folgenden Umgebung.
 
-'''
+```
 +----------------------+          |          +----------------------+
 | [   DRBD Server#1  ] |10.0.0.51 | 10.0.0.52| [   DRBD Server#2  ] |
 |   node01.srv.world   +----------+----------+   node02.srv.world   |
@@ -67,8 +68,7 @@ rpm -Uvh drbd-utils-*.rpm drbd-km-*.rpm
 4. drbdadm -- --overwrote-dtat-of-peer primary drbd0   um dem master festzulegen
 5. mkfs.xfs /dev/drbd0 um abschließend zu formatieren .
 
-drbd Administration
-================
+## drbd Administration
 
 **Infos**
 
@@ -103,8 +103,7 @@ z.B. wird hier einfach der mount von /var/drbd nach /mnt/drbd geändert .
 ** String für die Verschlüsselung Erstellen**
 * [gen-32-alphanum-string](https://github.com/kernt/inshelp/blob/master/drbd/gen-32-alphanum-string.sh)
 
-Berechtigungen Matrix
-===================
+## Berechtigungen Matrix
 
 Da es zu Fehlern kommt wenn die Berechtigungen nicht korrekt gesetzt werden kommt, hier alle Dateien mit ihren soll Berechtigungen. Leider kann man erst im log erkenne das man die rechte nicht gesetzt hat drbd ignoirt einfach eine Konfigutrationds datei die nicht die forgeschriebenen Rechte hat.
 
