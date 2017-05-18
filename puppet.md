@@ -5,6 +5,9 @@
 # Module
 OpenSCAP = [OpebSCAP](https://github.com/theforeman/puppet-foreman_scap_client)
 
+# Praxis beispeile
+* [devops-puppet-docker-kubernetes](../devops-puppet-docker-kubernetes)
+
 # Tools Hilfen
 * [librarian-puppet](http://librarian-puppet.com/)
 * [puppetexplorer](https://github.com/dalen/puppetexplorer)
