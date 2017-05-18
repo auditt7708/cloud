@@ -20,5 +20,8 @@ OpenSCAP = [OpebSCAP](https://github.com/theforeman/puppet-foreman_scap_client)
 * [A Test Kitchen Provisioner for Puppet](http://www.rubydoc.info/gems/kitchen-puppet/1.48.0)
 * [Puppet's accceptance testing harness](https://rubygems.org/gems/beaker)
 
-# Documentation
+## Documentation
 * [puppetcookbook](https://www.puppetcookbook.com/posts/install-rubygem.html)
+
+### Gute anleitungen und ToDus
+* [install-and-configure-puppet](https://www.linode.com/docs/applications/configuration-management/install-and-configure-puppet)
