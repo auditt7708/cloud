@@ -12,9 +12,9 @@ $TTL 604800
 			4W
 			3H )
 
-@                            IN      NS      rp4.example.com.
-                                IN      MX      10 rp4.example.com.
-                                IN      A       192.168.4.14 
+@                              IN      NS      rp4.example.com.
+                               IN      MX      10 rp4.example.com.
+                               IN      A       192.168.4.14 
 
 r1				IN	A       192.168.4.1
 lp.example.com.			IN	A	192.168.4.10
@@ -24,11 +24,11 @@ rp2                       	IN 	A       192.168.4.12
 rp3                       	IN 	A       192.168.4.13
 rp4				IN	A	192.168.4.14
 
-tobkern-desktop.example.com.		IN	A	192.168.4.21
+tobkern-desktop.example.com.		 IN	  A	  192.168.4.21
 tobkern-desktop-win10.example.com       IN      A       192.168.4.20
 
-ns				IN	CNAME	rp4
-imap				IN	CNAME	rp4
+ns				 IN	 CNAME	  rp4
+imap				 IN	 CNAME	  rp4
 pop3                            IN      CNAME   rp4
 ldapmaster                      IN      CNAME   rp4
 dhcp                            IN      CNAME   rp4
