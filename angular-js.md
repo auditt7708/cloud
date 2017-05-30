@@ -44,5 +44,5 @@ Editoren
 * [smart-table-website](http://lorenzofox3.github.io/smart-table-website/#section-intro) # Gut
 * [Angular Validation: Match](https://github.com/TheSharpieOne/angular-validation-match)
 * [The jQuery replacement for select boxes ](https://select2.github.io/examples.html)
-* [WhatsApp Clone with Meteor CLI and Ionic] (https://angular-meteor.com/tutorials/whatsapp/meteor/bootstrapping)
+* [WhatsApp Clone with Meteor CLI and Ionic](https://angular-meteor.com/tutorials/whatsapp/meteor/bootstrapping)
 
