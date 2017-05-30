@@ -33,7 +33,7 @@ Erstellen Sie das folgende Manifest, nennen es `git.pp`:
 
 2. Wenden Sie diese manifest mit `puppet apply git.pp` an, wird dies Git installieren.
 
-3. Als nächstes erstellen Sie einen Git-Benutzer, den die Knoten verwenden, um sich anzumelden und den letzten Code abzurufen. Wieder machen wir das mit Marionette. Wir erstellen auch ein Verzeichnis, in dem unser Repository (/ home / git / repos) wie im folgenden Code-Snippet angezeigt wird:
+3. Als nächstes erstellen Sie einen Git-Benutzer, den die Nodes verwenden, um sich anzumelden und den letzten Code abzurufen. Wieder machen wir das mit Puppet. Wir erstellen auch ein Verzeichnis, in dem unser Repository (/home/git/repos) wie im folgenden Code-Snippet angezeigt wird:
 ```
 group { 'git': gid => 1111, }
 user {'git': uid => 1111, gid => 1111, comment => 'Git User', home => '/home/git', require => Group['git'], }
@@ -43,7 +43,10 @@ file {'/home/git/repos': ensure => 'directory', owner => 1111, group => 1111, re
 
 4. Nachdem Sie dieses Manifest angewendet haben, melden Sie sich als Git-Benutzer an und erstellen Sie ein leeres Git-Repository mit dem folgenden Befehl:
 ```
-# sudo -iu git git@git $ cd repos git@git $ git init --bare puppet.git Initialized empty Git repository in /home/git/repos/puppet.git/
+sudo -iu git git@git 
+cd repos git@git 
+git init --bare puppet.git 
+#Initialized empty Git repository in /home/git/repos/puppet.git/
 ```
 
 5. Setzen Sie ein Passwort für den Git-Benutzer, wir müssen uns nach dem nächsten Schritt remote anmelden:
