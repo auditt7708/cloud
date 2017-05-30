@@ -1,10 +1,7 @@
-# [Heartbeat](../heartbeat)
-
-# [Corosync](../corosync)
-
-# [Pacemaker](../pacemaker)
-
-# [Gui Cluster Werkzeuge](../cluster-gui-tools)
+* [Heartbeat](../heartbeat)
+* [Corosync](../corosync)
+* [Pacemaker](../pacemaker)
+* [Gui Cluster Werkzeuge](../cluster-gui-tools)
 
 ## [HAWK](../hawk)
 ## [LCMC](../lcmc)
