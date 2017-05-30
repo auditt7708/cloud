@@ -9,4 +9,3 @@ machine github.com
 
 ### gitlab-ci
 * [implementing-gitlab-ci-dot-yml/](https://about.gitlab.com/2015/06/08/implementing-gitlab-ci-dot-yml/)
-* []()
