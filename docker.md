@@ -10,16 +10,24 @@
 ~/.docker/daemon.json = json Konfiguration für einen Benutzer 
 
 ## [Networkking](../docker-networking)
+
 * [weave](../docker-networking-weave-net-install-konfiguration)
 
 
 ## Sonstiges muss ich noch Ordnen
+
 * [UI server for Contiv](https://github.com/rhim/auth_proxy)
 
+## Docker Einrichtung und Konfiguration
+
+* [Docker Dienst auf Centos7](../docker-service-centos7)
+* [Docker Networks auf Centos7](../docker-networking.centos7) 
+
 ###### Neue Projekte ToDu
-* [ ]  restya Kanban Board
-* [ ]  BIGSQL Postgresql
-* [ ]  web2ldap
+* [Rastaya KanBan Board ](../docker-projekt-rastaya)
+* [BIG Postgresql]()
+* [web2ldap](../docker-projekt-web2ldap)
+* [Private Docker Projekte](../docker-projekte)
 
 **Quellen:**
 * [Docker And  FuelPHP](http://ucf.github.io/fuelphp-crash-course/ # Am Beispiel vom FuelPHP)
