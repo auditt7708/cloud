@@ -50,7 +50,7 @@ sudo easy_install pip
 sudo pip install ansible
 ```
 
-# ansible fireball Installation
+## ansible fireball Installation
 
 Auf dem node kann mit ansible fireball  die Verarbeitungsgeschwindigkeit massiv erhöt werden.
 
@@ -60,7 +60,7 @@ Auf dem node kann mit ansible fireball  die Verarbeitungsgeschwindigkeit massiv 
 * []()
 * []()
 
-# Ansible erweiterte Einrichtung 
+## Ansible erweiterte Einrichtung 
 
 ## Playbooks
 

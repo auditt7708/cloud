@@ -1,7 +1,7 @@
 Sie können viel mit dem Setup tun, das Sie bereits haben: Arbeiten Sie an Ihren Puppet manifes als Team, kommunizieren Änderungen über ein zentrales Git-Repository und manuell auf eine Maschine mit dem `papply` Skript anwenden.
 
 Allerdings musst du dich immer noch in jede Maschine einloggen, um die Git Repo zu aktualisieren und Puppet erneut auszuführen. 
-Es wäre hilfreich, jede Maschine selbst zu aktualisieren und Änderungen automatisch vorzunehmen. Dann alles, was Sie tun müssen, ist, eine Änderung in den Repo zu puchen, und es wird zu allen Ihren Maschinen innerhalb einer bestimmten Zeit gehen.
+Es wäre hilfreich, jede Maschine selbst zu aktualisieren und Änderungen automatisch vorzunehmen. Dann alles, was Sie tun müssen, ist, eine Änderung in den Repo zu puschen, und es wird zu allen Ihren Maschinen innerhalb einer bestimmten Zeit gehen.
 
 Der einfachste Weg, dies zu tun ist mit einem Cron Job, der Updates aus dem Repo in regelmäßigen Abständen abholt und dann läuft Puppet, wenn sich etwas geändert hat.
 

@@ -1,4 +1,4 @@
-Working with non-default SSH key pair paths
+## Arbeiten mit nicht Standart ssh keys 
 
 If you used a non-default file path for your GitLab SSH key pair, you must configure your SSH client to find your GitLab SSH private key for connections to your GitLab server (perhaps gitlab.com).
 
@@ -15,7 +15,7 @@ fi
 
 ```
 
-
+Inhalt der `config` datei: 
 
 ```
 # GitLab.com server
