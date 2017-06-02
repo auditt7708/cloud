@@ -1,10 +1,11 @@
-Docker auf einem einzigen Host kann gut für die Entwicklungsumgebung sein, aber der reale Wert kommt, wenn wir mehrere Hosts überspannen. Das ist aber keine leichte Aufgabe. Sie müssen diese Container orchestrieren. Also, in diesem Kapitel werden wir einige der Orchestrierungswerkzeuge und Hosting-Plattformen abdecken.
+Docker auf einem einzigen Host kann gut für die Entwicklungsumgebung sein, aber der reale Wert kommt, wenn wir mehrere Hosts überspannen. 
+Das ist aber keine leichte Aufgabe. Sie müssen diese Container orchestrieren. Also, in diesem Kapitel werden wir einige der Orchestrierungswerkzeuge und Hosting-Plattformen abdecken.
 
 Docker Inc. hat zwei solche Tools angekündigt:
 
 Docker Compose (https://docs.docker.com/compose), um Apps zu erstellen, die aus mehreren Containern und Docker Swarm (https://docs.docker.com/swarm/) bestehen, um mehrere Docker-Hosts zu gruppieren. Docker Compose wurde zuvor als fig (http://www.fig.sh/) bezeichnet.
 
-CoreOS (https://coreos.com/) erstellt etcd (https://github.com/coreos/etcd) für Konsens und Service Discovery, fleet (https://coreos.com/using-coreos/clustering) zu implementieren von Container in einem Cluster und Flanell (https://github.com/coreos/flannel) für Overlay-Netzwerke.
+CoreOS (https://coreos.com/) erstellt etcd (https://github.com/coreos/etcd) für Konsens und Service Discovery, fleet (https://coreos.com/using-coreos/clustering) ist zum implementieren von Container in einem Cluster und Flanell (https://github.com/coreos/flannel) für Overlay-Netzwerke.
 
 Google hat Kubernetes (http://kubernetes.io/) für die Docker-Orchestrierung gestartet. 
 Kubernetes bietet Mechanismen für Anwendungsbereitstellung, Terminierung, Aktualisierung, Wartung und Skalierung.
@@ -15,7 +16,7 @@ Auch Microsoft kündigte ein spezialisiertes Betriebssystem für Docker an (http
 
 Apache Mesos (http://mesos.apache.org/), die Ressourcen-Management und Scheduling über ganze Rechenzentrum und Cloud-Umgebungen bietet auch Unterstützung für Docker (http://mesos.apache.org/documentation/latest/docker- Containerizer /).
 
-VMware startete auch den Containerspezifischen Host VMware Photon (http://vmware.github.io/photon/).
+VMware startete auch den Container-spezifischen Host VMware Photon (http://vmware.github.io/photon/).
 
 Das ist definitiv ein sehr interessanter Raum, aber die Richtlinienmanagement-Tools vieler Orchestrierungsmotoren machen das Leben von Entwicklern und Betreibern nicht einfach. Sie müssen verschiedene Werkzeuge und Formate lernen, wenn sie sich von einer Plattform zur anderen bewegen. Es wäre toll, wenn wir einen Standard haben könnten, um Composite-, Multicontainer-Apps zu erstellen und zu starten. Das Project Atomic Community scheint an einer solchen Plattform-neutralen Spezifikation namens Nulecule (https://github.com/projectatomic/nulecule/) zu arbeiten. Eine gute Beschreibung über Nulecule finden Sie unter http://www.projectatomic.io/blog/2015/05/announcing-the-nulecule-specification-for-composite-applications/:
 
@@ -30,22 +31,13 @@ Alle vorangehenden Werkzeuge und Plattformen benötigen für sich selbst separat
 
 ### Übersicht
 
-[Ausführen von Anwendungen mit Docker Compose](../docker-orchestration-compose)
-
-[Cluster mit Docker Swarm einrichten](../docker-orchestration-swarm)
-
-[CoreOS für Docker-Orchestrierung einrichten](../docker-orchestration-coreos)
-
-[Einrichten eines Projektes Atomic Host](../docker-orchestration-atomic-host)
-
-[Atom-Update / Rollback mit Project Atomic durchführen](../docker-orchestration-atomic-update-rollback)
-
-[Hinzufügen von mehr Speicher für Docker in Project Atomic](../docker-orchestration-atomic-speicher)
-
-[Cockpit für Project Atomic einrichten](../docker-orchestration-atomic-cockpit)
-
-[Einrichten eines Kubernetes-Clusters](../docker-orchestration-kubernates-cluster)
-
-[Skalierung auf und ab in einem Kubernetes-Cluster](../docker-orchestration-kubernetes-skalierung)
-
-[Einrichten von WordPress mit einem Kubernetes-Cluster](../docker-orchestration-kubernetes-wordpress-)
+* [Ausführen von Anwendungen mit Docker Compose](../docker-orchestration-compose)
+* [Cluster mit Docker Swarm einrichten](../docker-orchestration-swarm)
+* [CoreOS für Docker-Orchestrierung einrichten](../docker-orchestration-coreos)
+* [Einrichten eines Projektes Atomic Host](../docker-orchestration-atomic-host)
+* [Atom-Update / Rollback mit Project Atomic durchführen](../docker-orchestration-atomic-update-rollback)
+* [Hinzufügen von mehr Speicher für Docker in Project Atomic](../docker-orchestration-atomic-speicher)
+* [Cockpit für Project Atomic einrichten](../docker-orchestration-atomic-cockpit)
+* [Einrichten eines Kubernetes-Clusters](../docker-orchestration-kubernates-cluster)
+* [Skalierung auf und ab in einem Kubernetes-Cluster](../docker-orchestration-kubernetes-skalierung)
+* [Einrichten von WordPress mit einem Kubernetes-Cluster](../docker-orchestration-kubernetes-wordpress-)
