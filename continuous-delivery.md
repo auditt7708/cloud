@@ -19,3 +19,7 @@ Links:
 * [StarterSquad auf Github](https://github.com/StarterSquad/prudentia)
 * [Wo continuous deployment endet](https://www.gesellix.net/post/where-continuous-deployment-ends/)
 
+
+
+# Werzeuge
+* [fabric8 ci/cd Tool von RedHead](../fabric8)
