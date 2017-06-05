@@ -1,7 +1,12 @@
 * [Foreman discovery image](../foreman-discovery-image)
 
-Installation
-=======
+## Administration 
+* [Forman Installation](../forman-installation)
+* [Foreman Plugins](../foreman-plugins)
+* [Foreman Smart Proxy](../foreman-add-)
+* []()
+* []()
+* []()
 
 **Allgemeine Informationen**
 
