@@ -183,4 +183,4 @@ exit
 
 **Quellen:**
 [foreman-host-builder](https://github.com/xnaveira/foreman-host-builder)
-[]()
+[Foreman API version 1.15](https://theforeman.org/api/1.15/index.html)
