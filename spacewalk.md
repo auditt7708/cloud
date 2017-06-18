@@ -50,12 +50,12 @@ gpgkey=http://www.jpackage.org/jpackage.asc
 EOF
 ```
 
-** Installation **
+** Installation**
 ` yum -y install spacewalk-setup-postgresql`
 
 muss meistens 2 mal versucht werden .
 
-** Konfiguration vom Spacewalk Server**
+**Konfiguration vom Spacewalk Server**
 Mit einer lokalen Datenbank .
 `spacewalk-setup`
 
@@ -106,7 +106,7 @@ Repositories  RHEL 7 / SL 7 / CentOS 7
 `BASEARCH=$(uname -i)`
 `rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm`
 
-Install Klient packete
+Install Client packete
 `yum -y install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin`
 
 Install Spacewalk's CA zertificate auf dem server um  SSL Kommunication zu ermöglichen (rpm version anpassen)
