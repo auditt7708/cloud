@@ -41,6 +41,7 @@ Dokumentationen
 * [TermKit](https://github.com/unconed/TermKit)
 * [Xiki makes the shell console more friendly and powerful](http://xiki.org/ )
 * [katello](https://gitlab.com/tobkern1980/home-net4-environment/wikis/katello)
+* [kickstart](../kickstart)
 
 #### System [Entwicklung](../system-development)
 * [Services](../services)
