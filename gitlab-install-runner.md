@@ -7,7 +7,7 @@ Ein Registry ist ein wichtiger Teil der Herstellung von CI Arbeit. Es bietet ein
 
 Ab GitLab 8.0 ist GitLab CI vollständig in das Hauptpaket integriert. Es gibt nichts anderes zu installieren oder zu aktivieren in GitLab, um diese Funktionen zur Verfügung zu stellen, mit einer Ausnahme. Die letzte Komponente, die benötigt wird, ist ein GitLab Runner.
 
-### Installieren des GitLab Runner auf Ubuntu
+## Installieren des GitLab Runner auf Ubuntu
 
 Es ist die Aufgabe des GitLab Runners, die eigentlichen Bildaufbauten auszuführen. Jeder Build wird in die Warteschlange gestellt und verarbeitet. Es ist möglich, mehrere Läufer zu verwenden, um mehrere Builds parallel durchzuführen. Läufer können markiert werden, um bestimmte Aufgaben wie das Erstellen von Docker-Bildern oder das Erstellen einer Anwendung für Microsoft Windows auszuführen.
 
@@ -27,7 +27,7 @@ Das Skript wird den GPG-Schlüssel von GitLab dem apt-Schlüsselbund hinzufügen
 
 Der Läufer muss nicht auf dem GitLab Server sein. Wenn load ein Problem ist, können Läufer auf mehreren Servern oder auf Cloud-Providern installiert werden. Es ist auch möglich, dass GitLab automatisch die Nummernläufer auf jedem von Docker Machine unterstützten Anbieter skaliert. Weitere Informationen finden Sie unter https://docs.gitlab.com/runner/install/autoscaling.html.
 
-Registrierung eines runners
+## Registrierung eines runners
 
 Sobald der runner installiert ist, muss er bei GitLab registriert sein. Es gibt zwei Möglichkeiten, es zu tun. Die erste ist, sie für ein einziges Projekt zu registrieren. In diesem Fall wird der Läufer nur für die Builds des spezifischen Projekts laufen. Die andere Möglichkeit ist, sie global zu registrieren. Damit wird der runner für jedes Projekt in GitLab zur Verfügung gestellt. Es gibt Vor- und Nachteile für beide Ansätze, aber sie schließen sich nicht gegenseitig aus. Es ist möglich, einen oder mehrere globale runner für den allgemeinen Gebrauch und andere speziell für ein Projekt zu konfigurieren.
 
@@ -61,13 +61,13 @@ $ sudo gitlab-ci-multi-runner register -n \
 
 Der Läufercontainer muss im privilegierten Modus laufen, um die Buildcontainer auszuführen.
 
-### Aktivieren eines Docker-Repositorys
+## Aktivieren eines Docker-Repositorys
 
 Die nächste Sache, die vor dem Beginn des Build-Prozesses eingerichtet wird, besteht darin, eine Docker-Registry zu aktivieren. GitLab bietet einen Registrierungsdienst an, der pro Projektbasis aktiviert werden kann. Wenn es bereits eingerichtet ist oder Sie GitLab.com verwenden, gehen Sie zu Projekt bearbeiten und stellen Sie sicher, dass das Feld neben Container Registry überprüft wird.
 
 Die GitLab-Registry ist eine gute Wahl wegen der Integration mit GitLab und dem CI-Prozess. Andere Register können, falls gewünscht, verwendet werden. Wenn ein anderes Registry verwendet wird, richte ein Konto für den Läufer ein, der Rechte hat, neue Bilder in die Registry zu schieben.
 
-### Hinzufügen des Projekts zum Repository
+## Hinzufügen des Projekts zum Repository
 
 Schließlich muss das Projekt dem Git-Repository in GitLab hinzugefügt werden. Dies geschieht mit Standard `git` Befehlen. Im Folgenden ist das grundlegende Skript. Wenn die Docker-Konfiguration bereits in Git ist, werden nur die letzten beiden Befehle benötigt. Achten Sie darauf, die URL der Fernbedienung zu ändern, die mit Ihrem Repository übereinstimmt:
 ```
@@ -87,7 +87,7 @@ COPY index.html /usr/share/nginx/html/
 
 Vollständige Beispiele für das in diesem Abschnitt beschriebene CI-Verfahren sind auf GitLab verfügbar. Jeder Zweig ist ein komplettes Beispiel für jeden Schritt. Laden Sie die Beispiele aus https://gitlab.com/perlstalker/ci-demo herunter.
 
-### Erstellen von .gitlab-ci.yml
+## Erstellen von .gitlab-ci.yml
 
 CI wird über eine Datei mit dem Namen `gitlab-ci.yml` im Stammverzeichnis des Repositorys konfiguriert. Diese YAML-Datei definiert die Build-Stufen, Variablen und Jobs, die zum Erstellen, Testen und Bereitstellen des Bildes benötigt werden. Es können beliebig viele Aufträge definiert und Aufträge parallel ausgeführt werden. Ausführliche Informationen zu den Optionen, die in `.gitlab-ci.yml` verfügbar sind, finden Sie unter https://docs.gitlab.com/ce/ci/yaml/README.html.
 
@@ -141,7 +141,7 @@ In diesem Beispiel baut der Läufer zuerst das Bild auf. Das `--pull` Flag wird 
 Der Status des aktuellen Builds sowie der vorherigen Builds steht im **Pipelines** Bereich des Projekts zur Verfügung. Klicken Sie auf irgendeinen Build, um zu bohren und den Status jeder Build-Bühne zu sehen. Wenn Sie auf die Bühne klicken, wird das Build-Log für die Bühne angezeigt. Irgendwelche Fehler, die durch einen fehlgeschlagenen Build erzeugt werden, erscheinen dort:
 ![gitlap-build-status](https://www.packtpub.com/graphics/9781787122123/graphics/image_09_004.jpg)
 
-### Testen des Bildes
+## Testen des Bildes
 
 Einer der Gründe, dass CI ist so beliebt bei Software-Entwickler ist, dass es eine Möglichkeit, automatisch eine Test-Suite gegen den neuen Build, um sicherzustellen, dass es richtig funktioniert. Die Tests bieten ein Maß an Sicherheit zu wissen, dass, was auch immer Änderungen der Entwickler gemacht, diese nicht brechen die Funktionalität der Software. Dies ist genauso wertvoll für Docker-Imges, die auf potenziell Hunderte oder Tausende von Servern eingesetzt werden sollen.
 
