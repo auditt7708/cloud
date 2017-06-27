@@ -1,6 +1,6 @@
 PuppetDB ist eine Datenbank für Puppet, die verwendet wird, um Informationen über Nodes zu speichern, die mit einem Puppet-Master \(Puppet version &gt;= 4 Puppet Sever\) verbunden sind. 
 PuppetDB ist auch ein Speicherbereich für exportierte Ressourcen. 
-Exportierte Ressourcen sind Ressourcen, die auf Nodes definiert sind, aber auf andere Nodes angewendet werden.
+**_Exportierte Ressourcen_** sind Ressourcen, die auf Nodes definiert sind, aber auf andere Nodes angewendet werden.
 Der einfachste Weg zur Installation von PuppetDB ist die Verwendung des PuppetDB Moduls von Puppet-Labs. Von diesem Punkt an werden wir davon ausgehen, dass Sie die `puppet.example.com` Maschine benutzen und eine Passenger basierte Konfiguration von Puppet haben.
 
 ### Fertig werden
