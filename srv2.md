@@ -1,3 +1,10 @@
+# Netwerk Konfiguration
+| Typ | MAC | Gerätebezeichner | DNS-Name | Domäne | IPv4-Subnetz | IPv6-Subnetz | IPv4-Adresse | IPv6-Adresse | 
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Schnittstelle | 70:85:c2:03:2a:53 | enp1s0 | srv2.example.com | example.com | honemenet4(192.168.4.0/24) | keins | keins | keins |
+| Schnittstelle | 70:85:c2:03:2a:53 | enp3s0 | srv2.example.com | example.com | honemenet4(192.168.4.0/24) | keins| keins | keins |
+| team | 70:85:c2:03:2a:53 | team0 | srv2.example.com | example.com | honemenet4(192.168.4.0/24) | keins | 192.168.4.93 | fe80::7285:c2ff:fe03:2a53 |
+
 # Virtuelle Maschinen
 
 | Adresse | Service |
