@@ -2,10 +2,12 @@
 * [Puppet 4 Installation via Ruby gem](../puppet4-gem-install)
 * [Puppet 4 Basics](../puppet4-basics)
 
+# [Puppetdb](./puppetdb)
+
 # Module
 OpenSCAP = [OpebSCAP](https://github.com/theforeman/puppet-foreman_scap_client)
 
-# Praxis beispeile
+# Praxis Beispiele
 * [devops-puppet-docker-kubernetes](../devops-puppet-docker-kubernetes)
 
 # Tools Hilfen
