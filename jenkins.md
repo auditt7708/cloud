@@ -1,5 +1,6 @@
-Jenkins
-=======
+# Jenkins
+*Materialien zum Testen*
+* [Github Centos Pipline Service](https://github.com/CentOS/container-pipeline-service)
 
 ## Dateien und Verzeichnisse 
 Home verzeichnis : `/var/lib/jenkins`
@@ -27,10 +28,6 @@ Jenkins Jobs
 ===
 * [jenkins-php](http://jenkins-php.org/installation.html)
 * []()
-* []()
-* []()
-* []()
-* []()
 
 Jenkins Piblines
 ===
@@ -55,7 +52,7 @@ Jenkins Toturial Jenkins Docukentation
 * [Jenkins als CI Werkzeug](http://home.edvsz.fh-osnabrueck.de/skleuker/CSI/Werkzeuge/Jenkins/)
 * [Use+Jenkins](https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins)
 * []()
-* []()
+
 
 ToDoes
 * [von-continuous-integration-zu-continuous-delivery-mit-jenkins-pipeline-teil1](https://www.informatik-aktuell.de/entwicklung/methoden/von-continuous-integration-zu-continuous-delivery-mit-jenkins-pipeline-teil-1.html)
