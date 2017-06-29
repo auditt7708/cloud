@@ -33,6 +33,12 @@ devices {
 ...
 '''
 
+Prüfen des vorgans ist mit folgender abfrage möglich : 
+```
+sudo lvm dumpconfig | grep write_cache
+	write_cache_state=0
+```
+
 
 
 **Quellen**
