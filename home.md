@@ -6,8 +6,11 @@ wget https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AACrvW1tDHmkCqhMCphKabfha/presee
 ```
 
 ### [Lokale Umgebung](../homnet4)
+* [Storage](../storage)
 
 ##### [Homenet drbdcluster](../homenet4-drbdcluster)
+* [Storage](../storage)
+
 ###### [Nodes](../homnet4-nodes)
 
 * [srv2 pcs Gui](https://srv2.example.com:2224/manage) 
