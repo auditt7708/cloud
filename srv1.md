@@ -22,5 +22,5 @@
 
 # PCS Konfiguration
 
-** Service IP** 
+**Service IP** 
 `pcs resource create VirtualIP ocf:heartbeat:IPaddr2 ip=192.168.4.91 cidr_netmask=24 nic=br0 op monitor interval=30s`
