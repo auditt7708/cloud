@@ -1,7 +1,10 @@
-# Netwerk Konfiguration
+# Netzwerkkonfiguration
 | Typ | MAC | Gerätebezeichner | DNS-Name | Domäne | IPv4-Subnetz | IPv6-Subnetz | IPv4-Adresse | IPv6-Adresse | 
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-|  |  |  |  |  |  |  |  |  |
+| enp1s0 | 70:85:c2:20:31:23 | enp1s0 |  |  |  |  |  |  |
+| enp3s0 | 70:85:c2:20:31:23 | enp1s0 |  |  |  |  |  |  |
+| bond0 |  |  |  |  |  |  |  |  |
+| docker0 | 02:42:76:b0:d9:5f | docker0 |  |  |  |  |  |  |
 
 # Virtuelle Maschinen
 
