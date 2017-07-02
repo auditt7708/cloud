@@ -66,15 +66,15 @@ Bilder  musik  Projekte  Software  truetypes  videos
 
 **LVS Umgebung**
 
-| LV | VG | Größe|
-| :--------: | :--------: | :--------: |
-|backup|drbdpool|1T|
-|data|drbdpool|500Gb|
-|dokumente|drbdpool|50Gb|
-|media|drbdpool|1T|
-|image-brick1|ubuntu-vg|49,12Gb|
-|root|ubuntu-vg|170Gb|
-|swap_1|ubuntu-vg|3,96Gb|
+| LV | VG | Größe| Dateisystem | 
+| :--------: | :--------: | :--------: | :--------: |
+|backup|vg-data-4tb-wd|1T| ext4 |
+|docker|vg-data-4tb-wd|500Gb| xfs/ext4? |
+|drbd|vg-data-4tb-wd|250Gb| xfs |
+|databases|vg-data-4tb-wd|1T| xfs |
+|brick1|vg-data-4tb-wd|50Gb| xfs |
+|root|centos|50Gb| xfs |
+|swap|centos|7,81g| swap |
 
 # Planung für DRBD
 
