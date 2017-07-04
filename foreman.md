@@ -53,16 +53,14 @@ Quellen zur Installation
 ### Provision KVM VM ohne  DHCP
 Daten:
 
-
-
-Hier mit CentOS in Version 7
+Hier mit CentOS in Version
 
 Mit dem virt-manager kann man die Erstellung der VM so einrichten, dass man direkt den Kernel lädt und ihm eine Antwortdatei über die Kernel Argumente übergibt.
 Dadurch kann man vollautomatisch ein Grundsystem einrichten. 
 
 Um es durchzuführen sind folgende schritte notwendig: 
 
-Um sich besser oritiren zu können hab ich die vom Assistenten benutzten schritte als Überschrift übernommen.
+Um sich besser orientieren zu können hab ich die vom Assistenten benutzten schritte als Überschrift übernommen.
 
 **Schritt 1 von 5**
 im Virtual Machine Manager Rechtsklick auf die Verbindung, dort wählt man Neu und nun kann man wählen wie das Beitreibsystem gestartet werden soll.
@@ -77,7 +75,7 @@ wenn keine Auswahl Möglichkeiten  über ISO-Abbild benutzen -> Durchsuchen gibt
 Hier kann es in der Praxis am einfachsten sein seine VM's aufzurollen, Voraussetzung ist eine URL die mit allen notwendigen Installationsdateien lesbar ist.
 
 **Schritt 2 von 5 **
-Hier kann man nun seine URL angeben und bei URLOptionen die Kernel Optionen 
+Hier kann man nun seine URL angeben und bei URL Optionen die Kernel Optionen 
 
 ```
 ks=http://srv2.example.com/~tobkern/iso/unattended/anaconda/anaconda-ks.cfg ksdevice=bootif network kssendmac ip=192.168.4.52 netmask=255.255.255.0 gateway=192.168.4.1 dns=192.168.4.14
@@ -132,10 +130,6 @@ Lösung:
 * [theforeman/foreman](https://forge.puppet.com/theforeman/foreman)
 * []()
 
-Plugins Einrichten
-===========
-
-
 Erweiterte einstellungen
 ===============
 
@@ -163,15 +157,12 @@ exit
 **Quellen:**
 
 ### Foreman Konfigurationen
-
 * [homent4](../foreman-examples)
-
 
 ### Foreman CI Quellen
 
 * [Jenkins ci.theforeman.org](http://ci.theforeman.org/)
 * []()
-
 
 **Quellen:**
 [foreman-host-builder](https://github.com/xnaveira/foreman-host-builder)
