@@ -3,21 +3,12 @@
 ## Administration 
 * [Forman Installation](../forman-installation)
 * [Foreman Plugins](../foreman-plugins)
-* [Foreman Smart Proxy](../foreman-add-)
-* []()
-* []()
-* []()
+* [Foreman Smart Proxy](../foreman-add-smart-proxy)
+* [Foreman Backups](foreman-backup)
 
 **Allgemeine Informationen**
 
 Für Ubuntu/Debian werden nicht alle fitures unterstützt.
-
-### Installation unter Centos 7
-
-Install epel release
-```
-yum install epel-release
-```
 
 Install Software collection
 ```
