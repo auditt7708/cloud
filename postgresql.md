@@ -1,5 +1,6 @@
-Konfiguration
-===
+## Postgresql 96
+###### Quellen: 
+* [YUM_Installation](https://wiki.postgresql.org/wiki/YUM_Installation)
 
 ### Dateien und Verzeichnisse
 
