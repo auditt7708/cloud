@@ -1,10 +1,11 @@
 * [Foreman discovery image](../foreman-discovery-image)
 
 ## Administration 
-* [Forman Installation](../forman-installation)
+* [Foreman Installation](../foreman-installation)
 * [Foreman Plugins](../foreman-plugins)
 * [Foreman Smart Proxy](../foreman-add-smart-proxy)
-* [Foreman Backups](foreman-backup)
+* [Foreman Backups](../foreman-backup)
+* [Foreman Backups](../foreman-restore)
 
 **Allgemeine Informationen**
 
