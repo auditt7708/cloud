@@ -1,6 +1,6 @@
 ## Postgresql 96
 
-++Installation**
+**Installation**
 ```
 wget https://download.postgresql.org/pub/repos/yum/9.6/redhat/rhel-7-x86_64/pgdg-redhat96-9.6-1.noarch.rpm
 sudo rpm -ihv pgdg-redhat96-9.6-1.noarch.rpm
