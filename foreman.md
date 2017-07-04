@@ -5,11 +5,11 @@
 * [Foreman Plugins](../foreman-plugins)
 * [Foreman Smart Proxy](../foreman-add-smart-proxy)
 * [Foreman Backups](../foreman-backup)
-* [Foreman Backups](../foreman-restore)
+* [Foreman Restore](../foreman-restore)
 
 **Allgemeine Informationen**
 
-Für Ubuntu/Debian werden nicht alle fitures unterstützt.
+Für Ubuntu/Debian werden nicht alle features unterstützt.
 
 Install Software collection
 ```
