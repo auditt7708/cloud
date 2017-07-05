@@ -16,7 +16,7 @@ systemctl enable pacemaker.service
 systemctl enable pcsd.service
 ```
 # Corosync vorbereiten 
-* [corosync Konfiguration-centos7](https://gitlab.com/tobkern1980/home-net4-environment/wikis/corosync#konfiguration-centos7)
+* [corosync Konfiguration-centos7](../corosync#konfiguration-centos7)
 
 # Cluster Resource anlegen
 ## Cluster drbd Resource
