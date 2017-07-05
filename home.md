@@ -23,7 +23,7 @@ wget https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AACrvW1tDHmkCqhMCphKabfha/presee
 
 Dokumentationen
 ===============
-[redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
+* [redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
 
 #### Umgebung
 * [Dashboard](../dashboard)
@@ -61,6 +61,7 @@ Dokumentationen
 
 #### Linux [Entwicklung](../entwicklung)
 * [Cluster Beispiele] (../cluster-beispiele)
+* [cluster-software](../cluster-software)
 * [Repositories](../repositories)
 * [User und Gruppen](../user-und-gruppen)
 * [Sudo](../sudo)

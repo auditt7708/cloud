@@ -15,12 +15,11 @@ systemctl enable corosync.service
 systemctl enable pacemaker.service
 systemctl enable pcsd.service
 ```
+# Corosync vorbereiten 
+* [corosync Konfiguration-centos7](https://gitlab.com/tobkern1980/home-net4-environment/wikis/corosync#konfiguration-centos7)
 
-Cluster Resource anlegen
-====
-## Cluster mit drbd
-
-###
+# Cluster Resource anlegen
+## Cluster drbd Resource
 
 Wichtig ist zu prüfen , dass der drbd Service nicht Läuft 
 `systemctl disable drbd`
@@ -37,14 +36,13 @@ und das , dass drbd drive nicht gemountet ist.
 `pcs resource create fs_drbd0 Filesystem device=/dev/drbd0 directory=/var/drbd fstype=ext4`
 
 
-Stopping Cluster Services
-====================
+## Stopping Cluster Services
 
 `pcs cluster stop [--all] [node] [...]`
 Mit `--all` wird auf allen nodes 
 
-Zugang und Zugangsdaten auf die Nodes 
-===============================
+## Zugangsdaten auf die Nodes einrichten
+
 Username : hacluster
 
 hacluster ist ein normaler localer user password kann also mit 
