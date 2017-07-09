@@ -1,2 +1,2 @@
 ## Übersicht
-*[Master Slave Cluster](../mysql-cluster-ms)
+* [Master Slave Cluster](../mysql-cluster-ms)
