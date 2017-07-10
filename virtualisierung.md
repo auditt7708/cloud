@@ -31,8 +31,6 @@ Wenn man sich in der Konsole befunden hat wird sich [virsh](../virsh) schon auto
 kontrolliert werden.
 Insebondere wenn ein image nachträglich verschlüsselt wurde wird es nicht immer automatisch auch vom [virsh](../virsh) festgestellt, wenn einen nachbearbeitung notwendig wird muss die XML Datei manuel angepasst werden 
 
-
-
 ### Images Builder 
 * [Packer](../packer)
 
@@ -66,3 +64,10 @@ Dateisystem erweitern bei xfs Dateisystemen
 
 
 
+## Text Konsolen
+
+**Textkonsole bei Centos ermöglichen**
+`grubby --update-kernel=ALL --args="console=ttyS0"`
+
+Quelle: 
+* [rhel7-access-virtual-machines-console/](https://www.certdepot.net/rhel7-access-virtual-machines-console/)
