@@ -4,6 +4,8 @@
 * [Ansible Variablen](../ansible-variablen)
 * [Ansible Templates](../ansible-templates)
 * [Ansible Statements](../ansible-statements)
+* [Ansible Verzeichnis Leyout](../ansible-verzeichnis-leyout)
+* [Ansible Verzeichnis Leyout](../ansible-verzeichnis-leyout)
 
 ## ansible fireball Installation
 
