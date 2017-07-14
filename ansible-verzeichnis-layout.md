@@ -1,11 +1,14 @@
 ```
 production                # inventory file for production servers
-staging                   # inventory file for staging environment
+staging                   # inventory file for staging environment also entwicklung
+                          # am ende kommt alles in die production Systeme
 
 group_vars/
+   all                    # Überschreiben von variablen für alle Gruppen Variablen
    group1                 # here we assign variables to particular groups
    group2                 # ""
 host_vars/
+   all                    # Überschreiben von Variablen für alle Hosts
    hostname1              # if systems need specific variables, put them here
    hostname2              # ""
 
@@ -40,6 +43,8 @@ roles/
     monitoring/           # ""
     fooapp/               # ""
 ```
+
+Der Vorteil dieser normalen Struktur ist, dass Sie noch relativ selbsterklärend ist. Leider ist hier keine klare Trennung swichen der Produktiven benutzung und Entwicklung zu erkennen der muss hier mit Hilfe von [git](../git) und verschiedener brunches erreicht werden, die man aber nicht automatisch erkennen kann.
 
 ###### Quelle: 
 * [playbooks_best_practices](http://docs.ansible.com/ansible/playbooks_best_practices.html)
