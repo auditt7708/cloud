@@ -28,7 +28,6 @@ Editoren
 * [ui-tinymce](https://github.com/angular-ui/ui-tinymce)
 * [json-editor](http://jeremydorn.com/json-editor/)
 * [angularjsoneditor.oqbox](http://angularjsoneditor.oqbox.com/#)
-*
 
 **Sources:**
 * [angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter)
