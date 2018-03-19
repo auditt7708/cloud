@@ -58,6 +58,7 @@ Dokumentationen
 * [microservices](../microservices)
 * [Logging](../logging)
 * [Sicherheit](../sicherheit)
+* [Vagrant](../vagrant)
 
 #### Linux [Entwicklung](../entwicklung)
 * [Cluster Beispiele] (../cluster-beispiele)
