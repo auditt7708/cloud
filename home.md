@@ -1,6 +1,7 @@
 ## [Eigene Services](../homenet4-services)
 
 **Dropbox tobkern-desktop preseed Datei :**
+
 ```
 wget https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AACrvW1tDHmkCqhMCphKabfha/preseed/installer-tobkern-desktop.example.com_2017-02-10.preseed?dl=1 -o installer-tobkern-desktop.example.com_2017-02-10.preseed
 ```
@@ -26,6 +27,7 @@ Dokumentationen
 * [redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
 
 #### Umgebung
+
 * [Dashboard](../dashboard)
 * [Hosts](../hosts)
 * [collaboration](../collaboration)
@@ -33,6 +35,7 @@ Dokumentationen
 * [Netzwerke](../netzwerke)
 
 #### [Tools](../linux-system-tools)
+
 * [tmuxcheatsheet](https://tmuxcheatsheet.com/)
 * [cool-retro-term](https://github.com/Swordfish90/cool-retro-term )
 * [Bookmark für die Konsole](https://itsfoss.com/buku-command-line-bookmark-manager-linux/)
@@ -47,6 +50,7 @@ Dokumentationen
 * [kickstart](../kickstart)
 
 #### System [Entwicklung](../system-development)
+
 * [Services](../services)
 * [DNS] (../dns)
 * [sicherheit](../sicherheit)
@@ -61,6 +65,7 @@ Dokumentationen
 * [Vagrant](../vagrant)
 
 #### Linux [Entwicklung](../entwicklung)
+* [System Administration](../system-administration)
 * [Cluster Beispiele] (../cluster-beispiele)
 * [cluster-software](../cluster-software)
 * [Repositories](../repositories)
@@ -81,16 +86,20 @@ Dokumentationen
 * [Sicherheit](../sicherheit)
 
 #### Windows [Entwicklung](../entwicklung)
+
 * [Powershell](../powershell-basic)
 
 #### Entwicklungs Methoden
 ### [DevOPS](https://gitlab.com/tobkern1980/home-net4-environment/wikis/devops)
+
 * [Continuous Delivery](../continuous-delivery)
 
 ### container und Cloud
+
 * [mesod](../mesos)
 
 ### Programmierung 
+
 * [Json](../json)
 * [angular-js](../angular-js)
 * [Entwicklung](../entwicklung)
@@ -109,7 +118,6 @@ desk = tobkern-desktop tobkern-desktop-win10
 
 **Sources :**
  *  http://www.gtkdb.de/index_34_2792.html
-
 
 ToDu
 ====
