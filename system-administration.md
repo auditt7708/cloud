@@ -1,5 +1,5 @@
 
-**Reposirory bei apt**
+**Repository bei apt**
 
 ```
 wget -O - 'http://repo.proxysql.com/ProxySQL/repo_pub_key' | apt-key add -
