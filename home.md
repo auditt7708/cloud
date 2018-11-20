@@ -1,11 +1,5 @@
 ## [Eigene Services](../homenet4-services)
 
-**Dropbox tobkern-desktop preseed Datei :**
-
-```
-wget https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AACrvW1tDHmkCqhMCphKabfha/preseed/installer-tobkern-desktop.example.com_2017-02-10.preseed?dl=1 -o installer-tobkern-desktop.example.com_2017-02-10.preseed
-```
-
 ### [Lokale Umgebung](../homnet4)
 * [Storage](../storage)
 
@@ -19,11 +13,8 @@ wget https://www.dropbox.com/sh/f7dhmkn8wh3ycrh/AACrvW1tDHmkCqhMCphKabfha/presee
 * [Dashboard](http://192.168.4.14/~tobkern/startmin-master/pages/server.html)
 * [ISO's](http://srv2.example.com/~tobkern/iso/)
 
-###### Builds 
-[![build status](https://gitlab.com/tobkern1980/home-net4-environment/badges/master/build.svg)](https://gitlab.com/tobkern1980/home-net4-environment/commits/master)
+# Dokumentationen
 
-Dokumentationen
-===============
 * [redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
 
 #### Umgebung
@@ -52,7 +43,7 @@ Dokumentationen
 #### System [Entwicklung](../system-development)
 
 * [Services](../services)
-* [DNS] (../dns)
+* [DNS](../dns)
 * [sicherheit](../sicherheit)
 * [Backup](../backup)
 * [Cloud](../cloud)
