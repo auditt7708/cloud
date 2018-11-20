@@ -96,7 +96,7 @@
 
 **Hilfen und tools**
 * [SSH](../arbeiten-mit-ssh)
-* [gitlab] (../arbeiten-mit-gitlab)
+* [gitlab](../arbeiten-mit-gitlab)
 
 ### Application Services 
 * [tomcat](../tomcat)
