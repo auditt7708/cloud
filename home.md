@@ -100,8 +100,7 @@ Dokumentationen
 
 ### Programmierung 
 
-* [Json](../json)
-* [angular-js](../angular-js)
+* [Web Programmierung](../web-programmierung)
 * [Entwicklung](../entwicklung)
 
 **Hilfen und tools**
