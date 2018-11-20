@@ -1,5 +1,5 @@
 | Task | [apt-get](../apt-get) Debian | [zypper](../zypper) Suse | [yum](../yum) | [dnf](..(dnf) | [pacman](../pacman) | 
-| :---: | :---: | :---: | :---: | :---: |
+| :---: | :---: | :---: | :---: | :---: | :---: |
 |**Managing software**|||||
 |Install new software from package repository|apt-get install pkg|zypper install pkg|yum install pkg|pacman -S pkg|
 |Install new software from package file|dpkg -i pkg|zypper install pkg|yum localinstall pkg|pacman -U pkg|
