@@ -1,3 +1,8 @@
+# Installation und Konfiguration
+
+**Installation mit nmp**
+`npm install -g @angular/cli`
+
 
 Autorisation 
 ====
