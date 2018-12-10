@@ -93,7 +93,7 @@
 
 * [Web Programmierung](../web-programmierung)
 * [Entwicklung](../entwicklung)
-* [Phyton](../phyton)
+* [Python](../python)
 * [ruby](../ruby)
 * [GoLang](../go)
 
