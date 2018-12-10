@@ -58,4 +58,7 @@ Für den eigentlichen Server gipt es diverse Möglichkeiten.
 * [Eigener Server](https://tljh.jupyter.org/en/latest/#the-littlest-jupyterhub)
 * [jupyter Server mit Kubernetes](https://z2jh.jupyter.org/en/stable/)
 * [Github jupyterhub](https://github.com/jupyterhub/jupyterhub)
+* [setting-up-jupyter-notebook-server-as-service-in-ubuntu-16-04](https://aichamp.wordpress.com/2017/06/13/setting-up-jupyter-notebook-server-as-service-in-ubuntu-16-04/)
+* [Using-sudo-to-run-JupyterHub-without-root-privileges](https://github.com/jupyterhub/jupyterhub/wiki/Using-sudo-to-run-JupyterHub-without-root-privileges)
 * [docker Jupyter](https://hub.docker.com/r/jupyterhub/jupyterhub/)
+* [jupyter-notebook-under-pyenv-in-systemd-only-gives-system-python](https://stackoverflow.com/questions/50242491/jupyter-notebook-under-pyenv-in-systemd-only-gives-system-python)
