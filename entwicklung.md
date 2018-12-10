@@ -1,14 +1,6 @@
-Programmiersprachen
-====
+# Programmiersprachen
 
 * [Python](../python)
-* [Ruby] (../ruby)
-* [go](../go)
+* [Ruby](../ruby)
 * [perl](../perl)
-
-
-Web
-===
-
-##### Angular
-[Angular JS](https://gitlab.com/tobkern1980/home-net4-environment/wikis/angular-js)
+* [GoLang](../go)
