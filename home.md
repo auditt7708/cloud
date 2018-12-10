@@ -67,7 +67,7 @@
 * [Deployment] (../deployment)
 * [realmd-and-sssd-active-directory-authentication](../realmd-and-sssd-active-directory-authentication)
 * [repositories](../repositories)
-* [Pressed] (../preseed)
+* [Pressed](../preseed)
 * [virtualisierung](../virtualisierung)
 * [monitoring](../monitoring)
 * [Package Management ](../package-management)
@@ -87,12 +87,15 @@
 
 ### container und Cloud
 
-* [mesod](../mesos)
+* [mesosphere](../mesosphere)
 
 ### Programmierung 
 
 * [Web Programmierung](../web-programmierung)
 * [Entwicklung](../entwicklung)
+* [Phyton](../phyton)
+* [ruby](../ruby)
+* [GoLang](../go)
 
 **Hilfen und tools**
 * [SSH](../arbeiten-mit-ssh)
