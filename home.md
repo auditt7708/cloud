@@ -17,7 +17,7 @@
 
 * [redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
 
-#### Umgebung
+# Umgebung
 
 * [Dashboard](../dashboard)
 * [Hosts](../hosts)
@@ -25,7 +25,7 @@
 * [Sicherheit](../sicherheit)
 * [Netzwerke](../netzwerke)
 
-#### [Tools](../linux-system-tools)
+# [Tools](../linux-system-tools)
 
 * [tmuxcheatsheet](https://tmuxcheatsheet.com/)
 * [cool-retro-term](https://github.com/Swordfish90/cool-retro-term )
@@ -40,7 +40,7 @@
 * [katello](https://gitlab.com/tobkern1980/home-net4-environment/wikis/katello)
 * [kickstart](../kickstart)
 
-#### System [Entwicklung](../system-development)
+# System [Entwicklung](../system-development)
 
 * [Services](../services)
 * [DNS](../dns)
@@ -55,7 +55,7 @@
 * [Sicherheit](../sicherheit)
 * [Vagrant](../vagrant)
 
-#### Linux [Entwicklung](../entwicklung)
+# Linux [Entwicklung](../entwicklung)
 * [System Administration](../system-administration)
 * [Cluster Beispiele] (../cluster-beispiele)
 * [cluster-software](../cluster-software)
@@ -76,41 +76,36 @@
 * [Terminal](../terminal)
 * [Sicherheit](../sicherheit)
 
-#### Windows [Entwicklung](../entwicklung)
+# Windows [Entwicklung](../entwicklung)
 
 * [Powershell](../powershell-basic)
 
-#### Entwicklungs Methoden
-### [DevOPS](https://gitlab.com/tobkern1980/home-net4-environment/wikis/devops)
+# Entwicklungs Methoden
+## [DevOPS](https://gitlab.com/tobkern1980/home-net4-environment/wikis/devops)
 
 * [Continuous Delivery](../continuous-delivery)
 
-### container und Cloud
+# container und Cloud
 
 * [mesosphere](../mesosphere)
 
-### Programmierung 
+# Programmierung 
 
 * [Web Programmierung](../web-programmierung)
 * [Entwicklung](../entwicklung)
-* [Python](../python)
-* [ruby](../ruby)
-* [GoLang](../go)
 
 **Hilfen und tools**
 * [SSH](../arbeiten-mit-ssh)
 * [gitlab](../arbeiten-mit-gitlab)
 
-### Application Services 
+# Application Services 
 * [tomcat](../tomcat)
 * [WildFly](../wildfly)
 
-### Big Data
+# Big Data
 * [hadhoop](../hadhoop)
 
-
-Host Gruppen
-===========
+# Host Gruppen
 
 srvs = srv1 srv2
 rps = rp1 rp2 rp3 rp4 
