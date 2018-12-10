@@ -57,3 +57,5 @@ Für den eigentlichen Server gipt es diverse Möglichkeiten.
 **Quellen:**
 * [Eigener Server](https://tljh.jupyter.org/en/latest/#the-littlest-jupyterhub)
 * [jupyter Server mit Kubernetes](https://z2jh.jupyter.org/en/stable/)
+* [Github jupyterhub](https://github.com/jupyterhub/jupyterhub)
+* [docker Jupyter](https://hub.docker.com/r/jupyterhub/jupyterhub/)
