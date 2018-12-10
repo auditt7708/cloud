@@ -1,3 +1,6 @@
+# IDE Editoren
+* [Jupyter](../jupyter)
+
 
 # Error Fixing
 * [rollbar](https://rollbar.com/)
