@@ -91,7 +91,6 @@
 * [WildFly](../wildfly)
 
 # [Big Data](../bigdata)
-* [hadhoop](../hadhoop)
 
 **Sources :**
  * [Tuturials](http://www.gtkdb.de/index_34_2792.html)
