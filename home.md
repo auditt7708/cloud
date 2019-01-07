@@ -33,14 +33,13 @@
 * [DNS](../dns)
 * [sicherheit](../sicherheit)
 * [Backup](../backup)
-* [Cloud](../cloud)
 * [spacewalk](../spacewalk)
 * [cobbler](../cobbler)
 * [Datenbanken](../datenbanken)
 * [microservices](../microservices)
 * [Logging](../logging)
 * [Sicherheit](../sicherheit)
-* [Vagrant](../vagrant)
+
 
 ## [Linux Entwicklung](../entwicklung)
 * [System Administration](../system-administration)
@@ -74,13 +73,16 @@
 
 # container und Cloud(../container-cloud)
 * [mesosphere](../mesosphere)
+* [Cloud](../cloud)
+* [Vagrant](../vagrant)
 
 # [Programmierung](../Programmierung)
 
 * [Web Programmierung](../web-programmierung)
 * [Entwicklung](../entwicklung)
 
-**Hilfen und tools**
+# [Sicherheit]()
+
 * [SSH](../arbeiten-mit-ssh)
 * [gitlab](../arbeiten-mit-gitlab)
 
@@ -92,7 +94,7 @@
 * [hadhoop](../hadhoop)
 
 **Sources :**
- *  http://www.gtkdb.de/index_34_2792.html
+ * [Tuturials](http://www.gtkdb.de/index_34_2792.html)
 
 ToDu
 ====
