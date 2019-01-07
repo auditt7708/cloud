@@ -1,0 +1,2 @@
+Ignite ist ein verteilter Big-Data Cache für interaktive Abfragen zur Beschleunigung von Abfragen auf häufig genutzte Daten. 
+Er unterstützt HDFS und Spark. Durch die HDFS-Unterstützung können ausgewählte Tabellen/Partitionen in Hive in-memory gehalten werden. 
