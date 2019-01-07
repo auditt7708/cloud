@@ -1,0 +1,1 @@
+ZooKeeper dient der (verteilten) Konfiguration von verteilten Systemen. 
