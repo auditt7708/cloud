@@ -1,6 +1,8 @@
 # Dokumentationen
 
 * [redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
+* [Buecher mit Markdown schreiben CMS](https://www.bookstackapp.com/)
+* []()
 
 # Team Zusammenarbeit
 
@@ -10,6 +12,9 @@
 * [Sicherheit](../sicherheit)
 * [Netzwerke](../netzwerke)
 * [Sozial Media Tools](../sozial-media-tools)
+
+## File Shareing
+* [seafile](https://www.seafile.com/en/features/)
 
 # [Linux Tools](../linux-system-tools)
 
