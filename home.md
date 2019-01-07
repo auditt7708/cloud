@@ -57,14 +57,14 @@
 
 # Linux [Entwicklung](../entwicklung)
 * [System Administration](../system-administration)
-* [Cluster Beispiele] (../cluster-beispiele)
+* [Cluster Beispiele](../cluster-beispiele)
 * [cluster-software](../cluster-software)
 * [Repositories](../repositories)
 * [User und Gruppen](../user-und-gruppen)
 * [Sudo](../sudo)
 * [Preseed](../preseed)
 * [NoSQL](../nosql)
-* [Deployment] (../deployment)
+* [Deployment](../deployment)
 * [realmd-and-sssd-active-directory-authentication](../realmd-and-sssd-active-directory-authentication)
 * [repositories](../repositories)
 * [Pressed](../preseed)
@@ -113,7 +113,6 @@ desk = tobkern-desktop tobkern-desktop-win10
 
 **Sources :**
  *  http://www.gtkdb.de/index_34_2792.html
-
 
 
 ToDu
