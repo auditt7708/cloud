@@ -1,23 +1,8 @@
-## [Eigene Services](../homenet4-services)
-
-### [Lokale Umgebung](../homnet4)
-* [Storage](../storage)
-
-##### [Homenet drbdcluster](../homenet4-drbdcluster)
-* [Storage](../storage)
-
-###### [Nodes](../homnet4-nodes)
-
-* [srv2 pcs Gui](https://srv2.example.com:2224/manage) 
-* [tobkern-desktop pcs Gui](https://tobkern-desktop.example.com:2224/manage)
-* [Dashboard](http://192.168.4.14/~tobkern/startmin-master/pages/server.html)
-* [ISO's](http://srv2.example.com/~tobkern/iso/)
-
 # Dokumentationen
 
 * [redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
 
-# Umgebung
+# Team Zusammenarbeit
 
 * [Dashboard](../dashboard)
 * [Hosts](../hosts)
@@ -25,7 +10,7 @@
 * [Sicherheit](../sicherheit)
 * [Netzwerke](../netzwerke)
 
-# [Tools](../linux-system-tools)
+# [Linux Tools](../linux-system-tools)
 
 * [tmuxcheatsheet](https://tmuxcheatsheet.com/)
 * [cool-retro-term](https://github.com/Swordfish90/cool-retro-term )
@@ -40,9 +25,11 @@
 * [katello](https://gitlab.com/tobkern1980/home-net4-environment/wikis/katello)
 * [kickstart](../kickstart)
 
-# [System Entwicklung](../system-development)
+# Entwicklung 
 
-* [Services](../services)
+## [System Entwicklung](../system-development)
+
+###  [Services](../services)
 * [DNS](../dns)
 * [sicherheit](../sicherheit)
 * [Backup](../backup)
@@ -55,7 +42,7 @@
 * [Sicherheit](../sicherheit)
 * [Vagrant](../vagrant)
 
-# [Linux Entwicklung](../entwicklung)
+## [Linux Entwicklung](../entwicklung)
 * [System Administration](../system-administration)
 * [Cluster Beispiele](../cluster-beispiele)
 * [cluster-software](../cluster-software)
@@ -76,17 +63,16 @@
 * [Terminal](../terminal)
 * [Sicherheit](../sicherheit)
 
-# [Windows Entwicklung](../entwicklung)
+## [Windows Entwicklung](../entwicklung)
 
 * [Powershell](../powershell-basic)
 
-# Entwicklungs Methoden
-## [DevOPS](https://gitlab.com/tobkern1980/home-net4-environment/wikis/devops)
+## Entwicklungs Methoden
 
+# [DevOPS Techniken](https://gitlab.com/tobkern1980/home-net4-environment/wikis/devops)
 * [Continuous Delivery](../continuous-delivery)
 
 # container und Cloud(../container-cloud)
-
 * [mesosphere](../mesosphere)
 
 # [Programmierung](../Programmierung)
@@ -102,18 +88,11 @@
 * [tomcat](../tomcat)
 * [WildFly](../wildfly)
 
-# Big Data
+# [Big Data](../bigdata)
 * [hadhoop](../hadhoop)
-
-# Host Gruppen
-
-srvs = srv1 srv2
-rps = rp1 rp2 rp3 rp4 
-desk = tobkern-desktop tobkern-desktop-win10
 
 **Sources :**
  *  http://www.gtkdb.de/index_34_2792.html
-
 
 ToDu
 ====
