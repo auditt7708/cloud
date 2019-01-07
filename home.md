@@ -27,19 +27,7 @@
 
 # Entwicklung 
 
-## [System Entwicklung](../system-development)
-
-###  [Services](../services)
-* [DNS](../dns)
-* [sicherheit](../sicherheit)
-* [Backup](../backup)
-* [spacewalk](../spacewalk)
-* [cobbler](../cobbler)
-* [Datenbanken](../datenbanken)
-* [microservices](../microservices)
-* [Logging](../logging)
-* [Sicherheit](../sicherheit)
-
+# [System Entwicklung](../system-development)
 
 ## [Linux Entwicklung](../entwicklung)
 * [System Administration](../system-administration)
@@ -49,7 +37,7 @@
 * [User und Gruppen](../user-und-gruppen)
 * [Sudo](../sudo)
 * [Preseed](../preseed)
-* [NoSQL](../nosql)
+
 * [Deployment](../deployment)
 * [realmd-and-sssd-active-directory-authentication](../realmd-and-sssd-active-directory-authentication)
 * [repositories](../repositories)
@@ -60,7 +48,6 @@
 * [Bash](../bash)
 * [Konsolen Tools](../konsolen-tools)
 * [Terminal](../terminal)
-* [Sicherheit](../sicherheit)
 
 ## [Windows Entwicklung](../entwicklung)
 
@@ -71,17 +58,29 @@
 # [DevOPS Techniken](https://gitlab.com/tobkern1980/home-net4-environment/wikis/devops)
 * [Continuous Delivery](../continuous-delivery)
 
+# [Services](../services)
+* [DNS](../dns)
+* [Backup](../backup)
+* [spacewalk](../spacewalk)
+* [cobbler](../cobbler)
+* [Datenbanken](../datenbanken)
+* [NoSQL](../nosql)
+
+* [Logging](../logging)
+* [Sicherheit](../sicherheit)
+
 # container und Cloud(../container-cloud)
 * [mesosphere](../mesosphere)
 * [Cloud](../cloud)
 * [Vagrant](../vagrant)
+* [microservices](../microservices)
 
 # [Programmierung](../Programmierung)
 
 * [Web Programmierung](../web-programmierung)
 * [Entwicklung](../entwicklung)
 
-# [Sicherheit]()
+# [sicherheit](../sicherheit)
 
 * [SSH](../arbeiten-mit-ssh)
 * [gitlab](../arbeiten-mit-gitlab)
