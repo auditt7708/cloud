@@ -1,5 +1,7 @@
 **Tools**
 * [Jenkins](../jenkins)
+* [Maven](../maven)
+* [Gradle](../gradle)
 
 
 Links:
