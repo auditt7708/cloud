@@ -63,6 +63,7 @@
 
 # [DevOPS Techniken](https://gitlab.com/tobkern1980/home-net4-environment/wikis/devops)
 * [Continuous Delivery](../continuous-delivery)
+* [Distributed Task Queue](../distributed-task-queue)
 
 # [Services](../services)
 * [DNS](../dns)
@@ -97,7 +98,7 @@
 
 # [Big Data](../bigdata)
 
-**Sources :**
+**Sources:**
  * [Tuturials](http://www.gtkdb.de/index_34_2792.html)
 
 ToDu
