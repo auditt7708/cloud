@@ -1,3 +1,12 @@
+# Agile, Continuous Delevery und die Dreiwege 
+## Die Wertkette in der Herstellung
+## Die Technologie-Wertkette
+##Die Drei Wege: Die Prinziepien als Basis von DevOps
+
+# Der Erste Weg: Die Prinzipien des Flow
+## Work in Progrss (WIP) begrenzen
+## 
+
 # IT-Entwicklung Architekt
 * [vagrant-puppet-docker-fuer-entwickler-und-architekten](https://www.informatik-aktuell.de/entwicklung/methoden/vagrant-puppet-docker-fuer-entwickler-und-architekten.html)
 * [devops-in-der-praxis-von-continuous-integration-zu-continuous-delivery](https://www.informatik-aktuell.de/entwicklung/methoden/devops-in-der-praxis-von-continuous-integration-zu-continuous-delivery.html)
