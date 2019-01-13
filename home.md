@@ -62,6 +62,7 @@
 ## Entwicklungs Methoden
 
 # [DevOPS Techniken](https://gitlab.com/tobkern1980/home-net4-environment/wikis/devops)
+* [Test Automatiesirung]()
 * [Continuous Delivery](../continuous-delivery)
 * [Distributed Task Queue](../distributed-task-queue)
 
