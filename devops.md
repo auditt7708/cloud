@@ -18,8 +18,9 @@
 * [devops-puppet-docker-kubernetes](../devops-puppet-docker-kubernetes)
 * [Puppet Allgemein](../puppet)
 
-# Automatic Testing
+# Automatic Testing und tracing Errors
 * [selenium GUI Testing](../selenium-gui-tasting)
+* [jaeger Trcing Erros](../jaeger)
 
 # Tools
 * [quattor](http://www.quattor.org/documentation/)
