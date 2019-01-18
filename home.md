@@ -2,7 +2,6 @@
 
 * [redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
 * [Buecher mit Markdown schreiben CMS](https://www.bookstackapp.com/)
-* []()
 
 # Team Zusammenarbeit
 
@@ -43,7 +42,6 @@
 * [User und Gruppen](../user-und-gruppen)
 * [Sudo](../sudo)
 * [Preseed](../preseed)
-
 * [Deployment](../deployment)
 * [realmd-and-sssd-active-directory-authentication](../realmd-and-sssd-active-directory-authentication)
 * [repositories](../repositories)
@@ -73,7 +71,6 @@
 * [cobbler](../cobbler)
 * [Datenbanken](../datenbanken)
 * [NoSQL](../nosql)
-
 * [Logging](../logging)
 * [Sicherheit](../sicherheit)
 
