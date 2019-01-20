@@ -1,6 +1,29 @@
 # Openshift Installation
+Vorbereitungen
+```
+yum -y install centos-release-openshift-origin311.noarch
+yum -y install origin-clients
+```
 
-## Public registry
+## Firewall Einstellungen
+```
+firewall-cmd --permanent --new-zone dockerc
+firewall-cmd --permanent --zone dockerc --add-source 172.17.0.0/16
+firewall-cmd --permanent --zone dockerc --add-port 8443/tcp
+firewall-cmd --permanent --zone dockerc --add-port 53/udp
+firewall-cmd --permanent --zone dockerc --add-port 8053/udp
+firewall-cmd --reload
+```
+
+## [Cluster Konfiguration](https://docs.okd.io/latest/install_config/master_node_configuration.html)
+
+`oc cluster up`
+
+* [Cluster Administration](https://docs.okd.io/latest/getting_started/administrators.html#getting-started-administrators)
+
+# [Nodes Managen](https://docs.okd.io/latest/admin_guide/manage_nodes.html)
+
+# Public registry
 
 /etc/containers/registries.conf
 ```
@@ -13,6 +36,25 @@ registries = []
 [registries.block]
 registries = []
 ```
+
+## [Netzwerk](https://docs.okd.io/latest/admin_guide/managing_networking.html)
+
+## 
+
+# [OpenShift Ansible Broker](https://docs.okd.io/latest/install_config/oab_broker_configuration.html)
+
+# [Host zum Cluter Hinzufügen](https://docs.okd.io/latest/install_config/adding_hosts_to_existing_cluster.html)
+## [Master Host ersetzen](https://docs.okd.io/latest/admin_guide/assembly_replace-master-host.html)
+
+# [Nodes Managen](https://docs.okd.io/latest/admin_guide/manage_nodes.html)
+
+# [Eigene Zertifikate]()
+
+# [Openshift Monitoring]() 
+
+
+
+# [sssd_for_ldap_failover](https://docs.okd.io/latest/install_config/sssd_for_ldap_failover.html)
 
 ## Übersichtsliste
 
