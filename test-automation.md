@@ -19,7 +19,6 @@ Cypress wird am häufigsten mit Selen verglichen. Cypress unterscheidet sich jed
 **Quelle:**
 * [docs.cypress.io](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
 
-
 # [nightwatchjs](../nightwatchjs)
 
 Was ist Nachtwache?
@@ -41,10 +40,9 @@ Nightwatch kommuniziert über eine unruhige HTTP-API mit einem WebDriver-Server 
 
 In den meisten Fällen muss Nightwatch mindestens zwei Anforderungen an den WebDriver-Server senden, um einen Befehl oder eine Assertion ausführen zu können. Die erste Anforderung besteht darin, ein Element mit einem CSS-Selektor (oder einem Xpath-Ausdruck) zu suchen und das nächste auszuführen der tatsächliche Befehl / die tatsächliche Assertion für das angegebene Element.
 
-Installation
+# Installation
 Installieren Sie Node.js
-Von nodejs.org :
-
+Von nodejs.org
 "Node.js ist eine Plattform, die auf der JavaScript-Laufzeitumgebung von Chrome basiert und auf einfache Weise schnelle, skalierbare Netzwerkanwendungen erstellt. Node.js verwendet ein ereignisgesteuertes, nicht blockierendes E / A-Modell, das es leicht und effizient macht und ideal für datenintensive Anwendungen ist -time-Anwendungen, die über verteilte Geräte laufen. "
 
 Installationspakete und Anweisungen für die meisten wichtigen Betriebssysteme finden Sie auf der Website nodejs.org . Denken Sie daran, auch das npm- Tool zu installieren , das den Knotenpaket-Manager darstellt und mit dem Installationsprogramm Node.js verteilt wird.
@@ -57,21 +55,6 @@ npmFühren Sie Folgendes aus, um die neueste Version mithilfe des Befehlszeilent
 
 * -gOption hinzufügen , um den nightwatchRunner global in Ihrem System verfügbar zu machen .
 * --save-devOption hinzufügen , um sie nightwatchals devDependencyin Ihrem package.json zu speichern .
-
-# [puppeteer ](../puppeteer)
-Most things that you can do manually in the browser can be done using Puppeteer! 
-Here are a few examples to get you started:
-
-    Generate screenshots and PDFs of pages.
-    Crawl a SPA (Single-Page Application) and generate pre-rendered content (i.e. "SSR" (Server-Side Rendering)).
-    Automate form submission, UI testing, keyboard input, etc.
-    Create an up-to-date, automated testing environment. Run your tests directly in the latest version of Chrome using the latest JavaScript and browser features.
-    Capture a timeline trace of your site to help diagnose performance issues.
-    Test Chrome Extensions.
-
-**Quelle:**
-* [puppeteer ](https://pptr.dev/)
-
 
 ## WebDriver Service
 WebDriver Binary	Browser	Beschreibung
@@ -166,6 +149,20 @@ Die Verwendung beider Konfigurationsdateien ist auch möglich, wobei `nightwatch
 
 Quelle: 
 * [nightwatchjs](http://nightwatchjs.org/gettingstarted/)
+
+# [puppeteer ](../puppeteer)
+Most things that you can do manually in the browser can be done using Puppeteer! 
+Here are a few examples to get you started:
+
+    Generate screenshots and PDFs of pages.
+    Crawl a SPA (Single-Page Application) and generate pre-rendered content (i.e. "SSR" (Server-Side Rendering)).
+    Automate form submission, UI testing, keyboard input, etc.
+    Create an up-to-date, automated testing environment. Run your tests directly in the latest version of Chrome using the latest JavaScript and browser features.
+    Capture a timeline trace of your site to help diagnose performance issues.
+    Test Chrome Extensions.
+
+**Quelle:**
+* [puppeteer ](https://pptr.dev/)
 
 # [testcafe](../testcafe)
 Testen Sie 
