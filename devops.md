@@ -24,3 +24,4 @@
 
 # Tools
 * [quattor](http://www.quattor.org/documentation/)
+* [Eclipse für Container Entwicklung](https://www.eclipse.org/che/docs/che-6/quick-start.html)
