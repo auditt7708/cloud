@@ -21,6 +21,7 @@ options:
   role_skeleton_path: null
   verbosity: 0
 ```
+
 Die Optionnen bedeuten folgendes: 
 
 
@@ -39,22 +40,22 @@ Geben Sie einen Pfad zu einem Verzeichnis im lokalen Dateisystem an, in dem Ansi
 
 **options**
 
-    Verschiedene Konfigurationsoptionen werden hier festgelegt, einschließlich: local_tmp, role_skeleton, role_skeleton_path, verbosity.
+Verschiedene Konfigurationsoptionen werden hier festgelegt, einschließlich: local_tmp, role_skeleton, role_skeleton_path, verbosity.
 
-    **local_tmp**
+**local_tmp**
 
-        Pfad, den Mazer für temporären Arbeitsbereich verwenden kann, um beispielsweise Archivdateien zu erweitern.
+Pfad, den Mazer für temporären Arbeitsbereich verwenden kann, um beispielsweise Archivdateien zu erweitern.
 
-    **role_skeleton_path**
+**role_skeleton_path**
 
-        Pfad zu einer Rollenstruktur, die mit dem Befehl init verwendet werden soll. Überschreibt die Standardrollenstruktur.
+Pfad zu einer Rollenstruktur, die mit dem Befehl init verwendet werden soll. Überschreibt die Standardrollenstruktur.
 
-    **role_skeleton_ignore**
+**role_skeleton_ignore**
 
-        Liste der Dateinamensmuster, die beim Kopieren des Inhalts des Rollen-Skelettpfads ignoriert werden sollen.
+Liste der Dateinamensmuster, die beim Kopieren des Inhalts des Rollen-Skelettpfads ignoriert werden sollen.
 
-    **verbosity**
+**verbosity**
 
-        Steuert den Standardwert der von Mazer zurückgegebenen Ausgabe.
+Steuert den Standardwert der von Mazer zurückgegebenen Ausgabe.
 
 
