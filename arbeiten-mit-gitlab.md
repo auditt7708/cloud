@@ -1,5 +1,5 @@
-Apart from changing to SSH you can also keep using HTTPS, if you don't mind to put your password in clear text. 
-Put this in your ~/.netrc and it won't ask for your username/password (at least on Linux and Mac):
+Abgesehen von der Umstellung auf SSH können Sie auch weiterhin HTTPS verwenden, wenn Sie nichts dagegen haben, Ihr Passwort in Klartext zu speichen.
+Fügen Sie dies in Ihre `~/.netrc` ein und es wird nicht nach Ihrem Benutzernamen/Passwort gefragt (zumindest unter Linux und Mac):
 
 ```
 machine github.com
