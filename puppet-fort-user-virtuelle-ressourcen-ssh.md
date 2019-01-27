@@ -7,6 +7,7 @@ Um dies mit virtuellen Benutzern zu kombinieren, wie im vorherigen Abschnitt bes
 Gehen Sie folgendermaßen vor, um die Klasse Ihrer virtuellen Benutzer auf den SSH-Zugriff zu erweitern:
 
 1. Erstellen Sie ein neues Modul ssh_user, um unsere ssh_user Definition zu enthalten. Erstellen Sie die Module / ssh_user / manifests / init.pp Datei wie folgt:
+
 ```
 define ssh_user($key,$keytype) {
   user { $name:
@@ -36,6 +37,7 @@ define ssh_user($key,$keytype) {
 ```
 
 2. Ändern Sie Ihre Module / user / manifests / virtual.pp Datei, kommentieren Sie die vorherige Definition für Benutzer thomas, und ersetzen Sie sie mit den folgenden:
+
 ```
 @ssh_user { 'thomas':
   key     => 'AAAAB3NzaC1yc2E...XaWM5sX0z',
@@ -44,6 +46,7 @@ define ssh_user($key,$keytype) {
 ```
 
 3. Ändern Sie Ihre `modules/user/manifests/sysadmins.pp` Datei wie folgt:
+
 ```
 class user::sysadmins {
     realize(Ssh_user['thomas'])
@@ -60,6 +63,7 @@ node 'cookbook' {
 ```
 
 5. Puppet run:
+
 ```
 cookbook# puppet agent -t
 Info: Caching catalog for cookbook.example.com
@@ -73,7 +77,6 @@ Notice: Finished catalog run in 0.11 seconds
 
 Für jeden Benutzer in unserem `user::virtual` Klasse müssen wir erstellen:
 
-
 * Das Benutzerkonto selbst
 
 * Das Home-Verzeichnis des Benutzers und das .ssh-Verzeichnis
@@ -81,6 +84,7 @@ Für jeden Benutzer in unserem `user::virtual` Klasse müssen wir erstellen:
 * Die Datei .ssh / authorized_keys des Benutzers
 
 Wir könnten getrennte Ressourcen deklarieren, um alle diese für jeden Benutzer zu implementieren, aber es ist viel einfacher, stattdessen eine Definition zu erstellen, die sie in eine einzige Ressource verpackt. Durch die Erstellung eines neuen Moduls für unsere Definition können wir von jedem beliebigen Ort (in jedem Bereich) auf ssh_user verweisen:
+
 ```
 define ssh_user ($key, $keytype) { 
   user { $name:
@@ -114,6 +118,7 @@ Als nächstes müssen wir sicherstellen, dass das `.ssh` Verzeichnis im Home-Ver
 ```
 
 Schließlich erstellen wir die Ressource `ssh_authorized_key`, die wiederum den enthaltenen Ordner benötigt (`File["/home/${name}/.ssh"]`). Wir verwenden die Variablen `$key` und `$keytype`, um den Schlüssel und Typ dem Parameter `ssh_authorized_key` Typ zuzuordnen, wie folgt:
+
 ```
   ssh_authorized_key { "${name}_key":
     key     => $key,
@@ -125,6 +130,7 @@ Schließlich erstellen wir die Ressource `ssh_authorized_key`, die wiederum den 
 ```
 
 Wir haben die `$key` und `$keytype` Variablen übergeben, als wir die `ssh_user` Ressource für thomas definiert haben:
+
 ```
 @ssh_user { 'thomas':
   key => 'AAAAB3NzaC1yc2E...XaWM5sX0z',
@@ -136,9 +142,11 @@ Wir haben die `$key` und `$keytype` Variablen übergeben, als wir die `ssh_user`
 Der Wert für `key`, im vorherigen Code-Snippet, ist der öffentliche Schlüssel des ssh-Schlüssels; Es wird normalerweise in einer id_rsa.pub Datei gespeichert.
 
 Nun, mit allem definirungen, müssen wir nur `realize` nutzen , um `thomas` für all diese Ressourcen zu umzusetzen
+
 `realize(Ssh_user['thomas'])`
 
 Beachten Sie, dass diesmal die virtuelle Ressource, die wir realisieren, nicht einfach die `user` ressource ist, wie zuvor, sondern der `ssh_user` definierte Typ, den wir erstellt haben, der den Benutzer und die dazu erforderlichen Ressourcen enthält, um den SSH-Zugriff einzurichten:
+
 ```
 Notice: /Stage[main]/User::Virtual/Ssh_user[thomas]/User[thomas]/ensure: created
 Notice: /Stage[main]/User::Virtual/Ssh_user[thomas]/File[/home/thomas]/ensure: created
