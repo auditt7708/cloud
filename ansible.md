@@ -13,13 +13,13 @@
 
 **Wichtige Documentation für ansible**
 
-* [playbooks von ansile doc ](http://docs.ansible.com/ansible/playbooks.html)
+* [playbooks von ansile doc](http://docs.ansible.com/ansible/playbooks.html)
 * [gc3-uzh-ch](https://github.com/gc3-uzh-ch/ansible-playbooks)
 * [ansible-pacemaker](https://github.com/styopa/ansible-pacemaker)
 * [ansible fireball](https://linux.die.net/man/3/ansible.fireball)
 * [Ansible_access_other_groups_group_vars](https://raymii.org/s/tutorials/Ansible_access_other_groups_group_vars.html)
 * [Only-do-something-if-another-action-changed](https://raymii.org/s/tutorials/Ansible_-_Only-do-something-if-another-action-changed.html)
-* [Ansible and Openstck]https://raymii.org/s/articles/Building_HA_Clusters_With_Ansible_and_Openstack.html)
+* [Ansible and Openstck](https://raymii.org/s/articles/Building_HA_Clusters_With_Ansible_and_Openstack.html)
 * [ansible-zero-downtime-deployment](https://jaxenter.de/ansible-zero-downtime-deployment-50085)
 * [Dynamic Inventory](http://docs.ansible.com/ansible/intro_dynamic_inventory.html#using-inventory-directories-and-multiple-inventory-sources)
 * [playbooks_best_practices](https://docs.ansible.com/ansible/playbooks_best_practices.html)
