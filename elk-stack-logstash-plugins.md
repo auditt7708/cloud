@@ -10,6 +10,7 @@ Außerdem können Sie alle Plugins mit einem `namensfragment` auflisten, indem S
 `bin/plugin list <namefragment>`
 
 Um alle Plugins für Gruppennamen, Input, Output oder Filter aufzulisten, können wir diesen Befehl ausführen:
+
 ```
 bin/plugin list --group <group name>
 bin/plugin list --group output
@@ -44,6 +45,7 @@ Ein Beispiel lässt sich wie folgt sehen:
 Codec ist eigentlich kein Datentyp, sondern eine Möglichkeit, Daten am Eingang(input) oder Ausgang(output) zu codieren oder zu dekodieren.
 
 Ein Beispiel lässt sich wie folgt veranschaulichen:
+
 `codec => "json"`
 
 Diese Instanz legt fest, dass dieser Codec am Ausgang alle Ausgaben im JSON-Format kodiert.
@@ -53,21 +55,25 @@ Diese Instanz legt fest, dass dieser Codec am Ausgang alle Ausgaben im JSON-Form
 Hash ist im Grunde eine Key-Value-Paar-Sammlung. Es wird als `"key" => "value"` angegeben und mehrere Werte in einer Sammlung werden durch ein Leerzeichen getrennt.
 
 Ein Beispiel lässt sich wie folgt veranschaulichen:
+
 ```
 match => {
 "key1" => "value1" "key2" => "value2"}
 ```
+
 #### String
 
 String stellt eine Folge von Zeichen dar, die von Anführungszeichen eingeschlossen sind.
 
 Ein Beispiel lässt sich wie folgt veranschaulichen:
+
 `value => "Welcome to ELK"` 
 
 #### Kommentare 
 Kommentare beginnen mit dem `#` Zeichen.
 
 Ein Beispiel lässt sich wie folgt veranschaulichen:
+
 `#this represents a comment`
 
 #### Feldreferenzen
@@ -103,6 +109,7 @@ Vergleichsoperatoren:
 * Unärerer Operator Include: `!`
 
 Schauen wir uns das mit einem Beispiel an:
+
 ```
 filter {
   if [action] == "login" {
@@ -150,6 +157,7 @@ Das `file` Plugin wird verwendet, um Ereignisse und Protokollzeilen-Dateien in L
 Das Logstash `file` Plugin unterhält `sincedb` Dateien, um die aktuellen Positionen in überwachten Dateien zu verfolgen. Standardmäßig schreibt es `sincedb` Dateien auf `$HOME/.sincedb*` Pfad. Der Standort und die Frequenz können mit `sincedb_path` und `sincedb_write_interval` Eigenschaften des Plugins geändert werden.
 
 Eine möglichst einfache Dateikonfiguration sieht so aus:
+
 ```
 input{
 file{
@@ -166,6 +174,7 @@ Für das Dateieingabe-Plugin stehen folgende Konfigurationsoptionen zur Verfügu
 Es wird verwendet, um ein Feld zu eingehenden Ereignissen hinzuzufügen, sein Werttyp ist `Hash` und der Standardwert ist `{}`.
 
 Nehmen wir die folgende Instanz als Beispiel:
+
 `add_field => { "input_time" => "%{@timestamp}" }`
 
 #### codec
@@ -184,6 +193,7 @@ Es wird verwendet, um ein Trennzeichen anzugeben, das separate Zeilen identifizi
 Um bestimmte Dateitypen aus dem Eingabepfad auszuschließen, ist der Datentyp Array.
 
 Nehmen wir die folgende Instanz als Beispiel:
+
 ```
 path =>["/app/packtpub/logs/*"]
 exclude => "*.gz"
@@ -214,9 +224,11 @@ Diese Option hat nur Auswirkungen, wenn eine Datei zum `"first contact"` gelesen
 Es gibt das Array von Tags an, die zu eingehenden Ereignissen hinzugefügt werden können. Hinzufügen von Tags zu Ihren eingehenden Ereignissen hilft bei der Verarbeitung später bei der Verwendung von Bedingungen. Es ist oft hilfreich, bestimmte Daten als `"processed"` zu markieren und diese Tags zu verwenden, um eine zukünftige Vorgehensweise zu entscheiden.
 
 Zum Beispiel, wenn wir `"processed"` in Tags:
-``tags =>["processed"]`
+
+`tags =>["processed"]`
 
 Im Filter können wir die Voraussetzungen beachten:
+
 ```
 filter{
 if  "processed" in tags[]{
@@ -230,6 +242,7 @@ if  "processed" in tags[]{
 Die `type` Option ist wirklich hilfreich, um die verschiedenen Arten von eingehenden Streams mit Logstash zu verarbeiten. Sie können mehrere Eingabewege für verschiedene Arten von Ereignissen konfigurieren, geben Sie einfach einen `type` namen, und dann können Sie sie separat filtern und verarbeiten.
 
 Nehmen wir die folgende Instanz als Beispiel:
+
 ```
 input {
 file{
@@ -244,6 +257,7 @@ type => "apache"
 ```
 
 Im `filter` können wir je nach Typ filtern:
+
 ```
 filter {
 if [type] == "syslog" {
@@ -267,11 +281,13 @@ Wie im vorigen Beispiel haben wir einen separaten Typ für eingehende Dateien ko
 Das `stdin` Plugin dient zum Streamen von Ereignissen und Protokolllinien von der Standard-Eingabe.
 
 Eine Grundkonfiguration für `stdin` sieht so aus:
+
 ```
 stdin {
 
 }
 ```
+
 Wenn wir stdin so konfigurieren, wird alles, was wir in die Konsole eingeben, als Eingabe in die Logstash-Event-Pipeline gehen. Dies wird vor allem als erste Stufe des Testens der Konfiguration verwendet, bevor die eigentliche Datei oder die Ereigniseingabe eingefügt wird.
 
 ### Konfigurationsoptionen
@@ -299,6 +315,7 @@ Die `typ` konfiguration für `stdin` ist die gleiche wie der `type` im `file` ei
 Möglicherweise müssen Sie einen Twitter-Stream basierend auf einem Thema von Interesse für verschiedene Zwecke, wie Sentiment-Analyse, Trending Themen-Analyse, und so weiter zu analysieren. Das `Twitter` Plugin ist hilfreich, um Ereignisse von der Twitter-Streaming-API zu lesen. Dies erfordert einen Verbraucher Schlüssel, Verbraucher Geheimnis, Keyword, oauth Token und oauth Token Geheimnis zu arbeiten.
 
 Diese Details können durch die Registrierung einer Anwendung auf der Twitter-Entwickler-API-Seite (https://dev.twitter.com/apps/new) erhalten werden:
+
 ```
 twitter {
     consumer_key => "your consumer key here"
@@ -308,6 +325,7 @@ twitter {
     oauth_token_secret => "your oauth token secret here"
 }
 ```
+
 #### Konfigurationsoptionen
 
 Für das `twitter` input plugin stehen folgende Konfigurationsoptionen zur Verfügung:
@@ -337,12 +355,15 @@ Dies ist eine boolesche Konfiguration mit dem Standardwert `false` . Es gibt an,
 Dies ist eine `array` Typ-erforderliche Konfiguration ohne Standardwert. Es gibt eine Reihe von `keywords` , die aus dem Twitter-Stream zu verfolgen sind.
 
 Ein Beispiel lässt sich wie folgt sehen:
+
 `keywords  => ["elk","packtpub"]`
 
 #### oauth_token
+
 Die Option `oauth_token` wird auch von der Twitter dev API Seite erhalten.
 
 ###### Notiz
+
 Nachdem du dein Benutzerschlüssel- und Konsumentengeheimnis bekommen hast, klicke auf **Create My Access Token**, um dein oauth-Token und oauth-Token-Geheimnis zu erstellen.
 
 #### Oauth_token_secret
@@ -362,6 +383,7 @@ Die `tags` Konfiguration für das `twitter` Eingangs-Plugin ist das gleiche wie 
 Das `lumberjack` Plugin ist nützlich, um Ereignisse über das Holzfäller-Protokoll zu erhalten, das im Logstash-Forwarder verwendet wird.
 
 Die grundlegende erforderliche Konfigurationsoption für das `lumberjack` Plugin sieht so aus:
+
 ```
 lumberjack {
     port => 
@@ -369,6 +391,7 @@ lumberjack {
     ssl_key => 
 }
 ```
+
 ###### Tip
 Holzfäller oder Logstash Forwarder ist ein leichter Log-Absender, der verwendet wird, um Log-Events aus Quellsystemen zu versenden. Logstash ist ein sehr speicherbedingter Prozess, so dass die Installation auf jedem Knoten, von wo aus Sie Daten versenden möchten, nicht empfohlen wird. Logstash Forwarder ist eine leichte Version von Logstash, die eine geringe Latenz, sichere und zuverlässige Übertragung bietet und eine geringe Ressourcennutzung bietet.
 
@@ -401,12 +424,14 @@ Dies ist eine Nummer Typ erforderlich Konfiguration und es gibt den Port zu laus
 Es gibt den Pfad zum SSL-Zertifikat an, das für die Verbindung verwendet werden soll. Es ist eine erforderliche Einstellung.
 
 Ein Beispiel ist wie folgt:
+
 `ssl_certificate => "/etc/ssl/logstash.pub"`
 
 ##### ssl_key
 Es gibt den Pfad zum SSL-Schlüssel an, der für die Verbindung verwendet werden muss. Es ist auch eine erforderliche Einstellung.
 
 Ein Beispiel ist wie folgt:
+
 `ssl_key => "/etc/ssl/logstash.key"`
 
 #### Ssl_key_passphrase
@@ -428,6 +453,7 @@ Das `redis` Plugin dient zum Lesen von Ereignissen und Protokollen aus der `redi
 Redis wird häufig in ELK Stack als Broker für eingehende Protokolldaten aus dem Logstash Forwarder verwendet, was hilft, Daten zu warten, bis der Indexer bereit ist, Protokolle zu erfassen. Dies hilft, das System unter starker Last zu kontrollieren.
 
 Die Grundkonfiguration des redis-Eingangs-Plugins sieht wie folgt aus:
+
 ```
 redis {
 }
@@ -451,9 +477,10 @@ Die Option `data_type` kann einen Wert als `"list"`, `"channel"` oder `"pattern_
 
 Aus der Logstash-Dokumentation zum `redis` Plugin (https://www.elastic.co/guide/de/logstash/current/plugins-inputs-redis.html):
 
-"Wenn `redis_type` eine `list` ist, dann werden wir den Schlüssel BLPOP.Wenn `redis_type` `channel` ist, dann werden wir den Schlüssel abmelden.Wenn `redis_type` ist `pattern_channel`, dann werden wir PSUBSCRIBE zum Schlüssel."
+Wenn `redis_type` eine `list` ist, dann werden wir den Schlüssel BLPOP.Wenn `redis_type` `channel` ist, dann werden wir den Schlüssel abmelden.Wenn `redis_type` ist `pattern_channel`, dann werden wir PSUBSCRIBE zum Schlüssel.
 
 ###### Tip
+
 Bei der Verwendung von `redis` auf der Consumer- und Publisher-Seite sollten `key` und `data_type` auf beiden Seiten gleich sein.
 
 #### host
@@ -485,6 +512,7 @@ Logstash bietet eine Vielzahl von Output-Plugins, die dazu beitragen, eingehende
 Das `csv` Plugin wird verwendet, um eine `csv` Datei als Ausgabe zu schreiben, wobei die Felder in `csv` und der Pfad der Datei angegeben werden.
 
 Die Grundkonfiguration des `csv` Ausgangs-Plugins sieht so aus:
+
 ```
 csv {
     fields => ["date","open_price","close_price"]
@@ -505,6 +533,7 @@ Es wird verwendet, um die Daten zu codieren, bevor es aus Logstash geht. Der Sta
 Die Option `csv_options` wird verwendet, um erweiterte Optionen für die `csv` Ausgabe festzulegen. Es beinhaltet das Ändern der Standardspalte und der Zeilen-Trennzeichen.
 
 Ein Beispiel ist wie folgt:
+
 `csv_options => {"col_sep" => "\t" "row_sep" => "\r\n"}` 
 
 #### fieldes
@@ -524,6 +553,7 @@ Die `path` einstellung ist eine erforderliche Einstellung und wird verwendet, um
 Das `file` ausgabe-Plugin, genau wie das `file` Eingabe-Plugin, wird verwendet, um Ereignisse in eine Datei im Dateisystem zu schreiben.
 
 Die Grundkonfiguration des Dateianausgangs-Plugins sieht wie folgt aus:
+
 ```
 file
 {
@@ -547,6 +577,7 @@ Die meisten dieser Konfigurationsoptionen wurden früher behandelt und sind mit 
 Das `email` Plugin ist ein sehr wichtiges Ausgangs-Plugin, da es sehr nützlich ist, E-Mails für bestimmte Ereignisse und Fehlerszenarien zu senden.
 
 Die grundlegende erforderliche Konfiguration sieht so aus:
+
 ```
 email {
     to => "abc@example.com"
@@ -595,6 +626,7 @@ Die `subject` gibt den Betreff für die E-Mail an. Der Standardwert ist `""`.
 Das `elastiksearch` Plugin ist das wichtigste Plugin, das in ELK Stack verwendet wird, denn es ist, wo Sie Ihre Ausgabe schreiben möchten, um gespeichert zu werden, um später in Kibana zu analysieren.
 
 Die Grundkonfiguration für das Elastiksearch Plugin sieht so aus:
+
 ```
 elasticsearch {
 }
@@ -629,12 +661,14 @@ ganglia ist ein Monitoring-Tool, das verwendet wird, um die Leistung eines Clust
 Das `ganglia` Ausgangs-Plugin in Logstash wird verwendet, um Metriken an den `gmond` Service zu senden, basierend auf Ereignissen in Protokollen.
 
 Die grundlegende `ganglia` Output-Plugin-Konfiguration sieht so aus:
+
 ```
 ganglia {
     metric => 
     value => 
 }
 ```
+
 ### Konfigurationsoptionen
 
 Für das Ganglien-Plugin stehen folgende Konfigurationsoptionen zur Verfügung
@@ -654,6 +688,7 @@ Die `value` option gibt den Wert der verwendeten Metrik an.
 ### Jira
 
 Das `jira` Plugin kommt bei der Logstash-Installation nicht standardmäßig zur Verfügung, kann aber problemlos von einem Plugin `install` befehl wie folgt installiert werden:
+
 `bin/plugin install logstash-output-jira`
 
 Das `jira` Plugin wird verwendet, um Ereignisse an eine JIRA-Instanz zu senden, die JIRA-Tickets basierend auf bestimmten Ereignissen in Ihren Protokollen erstellen kann. Um dies zu verwenden, muss die JIRA-Instanz REST-API-Aufrufe akzeptieren, da sie intern die JIRA REST-API verwendet, um die Ausgabeereignisse von Logstash zu JIRA zu übergeben.
@@ -696,11 +731,13 @@ Wie auf der Hortonworks Kafka Seite (http://hortonworks.com/hadoop/kafka/) erkl�
 Das `kafka` Ausgangs-Plugin wird verwendet, um bestimmte Ereignisse zu einem Thema auf `kafka` zu schreiben. Es nutzt die Kafka Producer API, um Nachrichten zu einem Thema auf dem Broker zu schreiben.
 
 Die grundlegende `kafka` Konfiguration sieht so aus:
+
 ```
 kafka {
     topic_id => 
 }
 ```
+
 #### Konfigurationsoptionen
 
 Es gibt viele `kafka` spezifische Konfigurationsoptionen, die aus der offiziellen Dokumentation erhalten werden können, aber die einzige erforderliche Konfiguration ist `topic_id`.
@@ -757,6 +794,7 @@ In RabbitMQ sendet der Produzent immer Nachrichten an einen Austausch, und der A
 Das `rabbitmq` Plugin drückt die Ereignisse von Protokollen an die RabbitMQ-Börse.
 
 Die Grundkonfiguration des `rabbitmq` Plugins sieht so aus:
+
 ```
 rabbitmq {
     exchange => 
@@ -770,6 +808,7 @@ rabbitmq {
 Das `stdout` Plugin schreibt die Ausgabeereignisse an die Konsole. Es wird verwendet, um die Konfiguration zu debuggen, um die Ereignisausgabe von Logstash zu testen, bevor sie mit anderen Systemen integriert wird.
 
 Die Grundkonfiguration sieht so aus:
+
 ```
 output {
   stdout {}
@@ -784,6 +823,7 @@ Wie das `Jira` Plugin ist das auch ein Community-Plugin und wird nicht mit Logst
 `bin/plugin install logstash-output-mongodb`
 
 Die Grundkonfiguration für das `mongodb` Ausgangs-Plugin ist:
+
 ```
 mongodb {
     collection => 
@@ -831,10 +871,12 @@ Bei ELK ist es sehr wichtig, dem Ereignis den richtigen Zeitstempel zuzuordnen, 
 Wenn das `date` filter nicht gesetzt ist, wird Logstash einen Zeitstempel zuweisen, wenn das erste Mal das Ereignis sieht oder wenn die Datei gelesen wird.
 
 Die Grundkonfiguration des `date` filters sieht wie folgt aus:
+
 ```
 date {
 } 
 ```
+
 #### Konfigurationsoptionen
 Die Konfigurationsoptionen für das Datumsfilter sind bereits in einem Beispiel enthalten
 [Aufbau Ihrer ersten Daten-Pipeline mit ELK](../elk-stack-data-pipeline)
@@ -844,6 +886,7 @@ Die Konfigurationsoptionen für das Datumsfilter sind bereits in einem Beispiel 
 Der `drop` filter wird verwendet, um alles zu fallen, was den Bedingungen für diesen Filter entspricht.
 
 Nehmen wir die folgende Instanz als Beispiel:
+
 ```
 filter {
 if [fieldname == "test"] {
@@ -872,8 +915,8 @@ Der `geoip` Filter wird verwendet, um die geografische Lage der im eingehenden E
 
 Maxmind ist ein Unternehmen, das sich auf Produkte spezialisiert hat, die gebaut wurden, um nützliche Informationen aus IP-Adressen zu erhalten. GeoIP ist ihr IP-Intelligenzprodukt, mit dem der Standort einer IP-Adresse verfolgt wird. Alle Logstash-Versionen haben eine MaxMinds GeoLite-Stadtdatenbank mit ihnen ausgeliefert. Es ist auch unter http://dev.maxmind.com/geoip/legacy/geolite/ verfügbar.
 
-
 Die Grundkonfiguration des `geoip` Filters sieht so aus:
+
 ``` 
 geoip {
     source => 
@@ -890,7 +933,7 @@ Die `source` option ist eine erforderliche Einstellung, die vom `string` Typ ist
 
 #### grok
 
-Die `grok`Option ist bei weitem das beliebteste und leistungsstärkste Plugin, das Logstash hat. Es kann jedes unstrukturierte Log-Ereignis analysieren und es in einen strukturierten Satz von Feldern umwandeln, die weiter verarbeitet und in der Analyse verwendet werden können.
+Die `grok` Option ist bei weitem das beliebteste und leistungsstärkste Plugin, das Logstash hat. Es kann jedes unstrukturierte Log-Ereignis analysieren und es in einen strukturierten Satz von Feldern umwandeln, die weiter verarbeitet und in der Analyse verwendet werden können.
 
 Es wird verwendet, um jede Art von Protokollen zu analysieren, sei es Apache-Logs, MySQL-Protokolle, benutzerdefinierte Anwendungsprotokolle oder einfach nur unstrukturierter Text in Ereignissen.
 
@@ -901,6 +944,7 @@ Alle verfügbaren `grok` Muster sind erhältlich unter:
 Https://github.com/logstash-plugins/logstash-patterns-core/tree/master/patterns
 
 Einige Beispiele für die `grok` Muster sind wie folgt:
+
 ```
 HOSTNAME \b(?:[0-9A-Za-z][0-9A-Za-z-]{0,62})(?:\.(?:[0-9A-Za-z][0-9A-Za-z-]{0,62}))*(\.?|\b)
 DAY (?:Mon(?:day)?|Tue(?:sday)?|Wed(?:nesday)?|Thu(?:rsday)?|Fri(?:day)?|Sat(?:urday)?|Sun(?:day)?)
@@ -909,7 +953,9 @@ HOUR (?:2[0123]|[01]?[0-9])
 MINUTE (?:[0-5][0-9])
 ```
 
+
 Die vorangehenden `grok` Muster können direkt verwendet werden, um Felder diesem Typens mit einem Operator wie folgt zu markieren:
+
 `%{HOSTNAME:host_name}`
 
 Hier ist `host_name` der Feldname, den wir dem Teil des Protokollereignisses zuordnen wollen, der den Hostnamen wie string darstellt.
@@ -929,14 +975,17 @@ Angenommen, Sie möchten die Anzahl der in einem Ereignis übertragenen Bytes da
 Hier bezieht sich `bytes_transferred` auf den tatsächlichen Wert der im Log-Ereignis übertragenen Bytes.
 
 Lassen Sie uns einen Blick darauf werfen, wie wir eine Zeile aus HTTP-Protokollen darstellen können:
+
 `54.3.245.1 GET /index.html 14562  0.056`
 
 Das `grok` Muster würde wie folgt dargestellt:
+
 ```
 %{IP:client_ip} %{WORD: request_method } %{URIPATHPARAM:uri_path} %{NUMBER:bytes_transferred} %{NUMBER:duration}
 ```
 
 Die grundlegende `grok` Konfiguration für das vorhergehende Ereignis sieht so aus:
+
 ```
 filter{
 grok{
@@ -966,12 +1015,14 @@ Http://grokdebug.herokuapp.com und http://grokconstructor.appspot.com/
 Der `mutate` Filter ist ein wichtiges Filter-Plugin, das die Umbenennung, das Entfernen, Ersetzen und Ändern von Feldern bei einem eingehenden Ereignis unterstützt. Es wird auch speziell verwendet, um den Datentyp von Feldern zu konvertieren, zwei Felder zu verschmelzen und Text von Kleinbuchstaben in Großbuchstaben umzuwandeln und umgekehrt.
 
 Die Grundkonfiguration des `mutierte` Filters sieht so aus:
+
 ```
 filter {
 mutate {
 }
 }
 ```
+
 #### Konfigurationsoptionen
 
 Es gibt verschiedene Konfigurationsmöglichkeiten für `mutate` und die meisten von ihnen werden unter dem Namen verstanden:
@@ -1000,6 +1051,7 @@ Die `sleep`Option wird verwendet, um Logstash im `sleep`-Modus für die angegebe
 Nehmen wir die folgende Instanz als Beispiel:
 
 Wenn wir Logstash für 1 Sekunde für jedes fünfte Event verarbeiten lassen wollen, können wir es so konfigurieren:
+
 ```
 filter {
   sleep {
@@ -1030,6 +1082,7 @@ Werfen wir einen Blick auf einige Details über einige der am häufigsten verwen
 ### json
 
 Wenn Ihr Eingabeereignis oder Ausgabeereignis aus vollständigen `json`Dokumenten besteht, ist das Json-Codec-Plugin hilfreich. Es kann definiert werden als:
+
 ```
 input{
 stdin{
@@ -1038,7 +1091,9 @@ codec => json{
 }
 }
 ```
+
 Oder es kann einfach definiert werden als:
+
 ```
 input{
 stdin{
@@ -1050,6 +1105,7 @@ codec => "json"
 ### line
 
 Der `line` codec wird verwendet, um jede Zeile in einer Eingabe als Ereignis zu lesen oder jedes ausgehende Ereignis als eine Zeile zu decodieren. Es kann definiert werden als:
+
 ```
 input{
 stdin{
@@ -1074,6 +1130,7 @@ codec => "line"
 Der `multiline` Codec ist sehr hilfreich für bestimmte Arten von Veranstaltungen, wo Sie gerne mehr als eine Zeile als ein Ereignis zu nehmen. Das ist sehr hilfreich in Fällen wie Java Exceptions oder Stack Traces.
 
 Beispielsweise kann die folgende Konfiguration eine vollständige Stapelüberwachung als ein Ereignis ausführen:
+
 ```
 input {
   file {
