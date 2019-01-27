@@ -32,11 +32,13 @@ Im Folgenden sind die Schritte zur Wiederherstellung unserer Daten aufgeführt:
 
 
 Zuerst müssen wir Elasticsearch konfigurieren, um einen neuen Pfad zu einem Repository des Snapshots zu registrieren. Um dies zu tun, musst du die `elasticsearch.yml` bearbeiten, die sich hier befindet:
+
 `ELASTICSEARCH_HOME/conf/elasticsearch.yml`
 
 Hier stellt `ELASTICSEARCH_HOME` den Pfad zu Ihrem Elasticsearch-Installationsordner dar.
 
 Fügen Sie am Ende der Datei folgende Einstellungen hinzu:
+
 `path.repo: ["/PATH_TO_CHAPTER_3_SOURCE/basic_logstash_repository"]`
 
 `Basic_logstash_repository` enthält die Daten in Form eines Snapshots. Sie können nun Elasticsearch neu starten, um die Änderungen zu berücksichtigen.
@@ -57,6 +59,7 @@ In unserem Fall verwenden wir die Snapshot / Restore API, um unseren Index zu er
               "compress": true
               }
             }
+``` 
 
 2. Einmal registriert, versuchen Sie, die Liste der Schnappschüsse zur Verfügung zu stellen, um die Registrierung richtig zu überprüfen:
 `GET _snapshot/basic_logstash_repository/_all`
@@ -90,12 +93,15 @@ Sie sollten die Beschreibung unseres Schnappschusses erhalten:
 ```
 
 3. Starten Sie nun den Wiederherstellungsvorgang mit folgendem Aufruf:
+
 `POST /_snapshot/basic_logstash_repository/snapshot_201608031111/_restore`
 
 Sie können den Status des Wiederherstellungsvorgangs mit folgendem Aufruf anfordern:
+
 `GET /_snapshot/basic_logstash_repository/snapshot_201608031111/_status`
 
 In unserem Fall ist das Datenvolumen so klein, dass die Wiederherstellung nur eine Sekunde dauern sollte, also könntest du die Erfolgsnachricht direkt bekommen und kein Zwischenzustand:
+
 ```
  {
       "snapshots": [
@@ -157,7 +163,9 @@ In unserem Fall ist das Datenvolumen so klein, dass die Wiederherstellung nur ei
       ]
     }
 ```
+
 An dieser Stelle solltest du den neu erstellten Index auflisten können. Noch in der Konsole, geben Sie den folgenden Befehl:
+
 `GET _cat/indices/basic*`
 
 So soll die Konsole in diesem Stadium aussehen:
@@ -170,6 +178,7 @@ Die Antwort zeigt an, dass unser Index erstellt wurde und enthält 300.000 Dokum
 Es könnte hier unterschiedliche Ansätze geben, welche Index-Topologie wir verwenden sollten: Da die Daten Zeitstempel haben, könnten wir zB Tagesindizes oder Wochenindizes erstellen. Dies ist in einer Produktionsumgebung sehr verbreitet, da die aktuellsten Daten oft am häufigsten verwendet werden. Wenn also die letzten sieben Tage der Protokolle die wichtigsten sind und Sie täglich Indizes haben, ist es sehr praktisch, Routinen einzurichten, die entweder die alten Indizes archivieren oder entfernen (älter als sieben Tage).
 
 Wenn wir uns den Inhalt unseres Index anschauen, ist hier ein Beispiel für einen Dokumentenauszug:
+
 ```
 "@timestamp": "2015-03-11T21:24:20.000Z", 
 "host": "Astaire.local", 
@@ -209,6 +218,7 @@ Wenn wir uns den Inhalt unseres Index anschauen, ist hier ein Beispiel für eine
   "patch": "1700" 
 }
 ``` 
+
 Das Dokument beschreibt eine gegebene Benutzerverbindung zur Website und besteht aus HTTP-Metadaten wie der Version, dem Rückkehrcode, dem Verb, dem User-Agenten mit der Beschreibung des verwendeten Betriebssystems und dem verwendeten Gerät und sogar der Lokalisierungsinformation.
 
 Die Analyse jedes Dokuments würde es nicht ermöglichen, das Verhalten der Nutzer zu verstehen. Hier kommt Kibana ins Spiel, indem wir uns erlauben, Visualisierungen zu erstellen, die Daten zusammenfassen und Einsichten zeigen.
@@ -276,7 +286,6 @@ Bereichsdiagramme sind nützlich, um akkumulative Daten über die Zeit anzuzeige
 
 Bandwidth by country
 
-
 Wir werden uns anschauen, wie wir diese Informationen im Rahmen der Bandbreitenanalyse später im Kapitel nutzen können.
 
 **Datentabelle - Anfragen von Agenten**
@@ -315,6 +324,7 @@ Sobald das Dashboard erstellt ist, ist die Idee, es Fragen zu stellen, indem es 
 **Bandbreitenanalyse**
 
 Sie haben vielleicht in der Bandbreite nach Land bemerkt, dass das Niveau zwischen August 2015 und Ende März 2015 niedrig ist und dann plötzlich aus einem unbekannten Grund deutlich zunimmt. Wir sehen eine deutliche Erhöhung der heruntergeladenen Daten, dargestellt durch den Pfeil auf dem Diagramm:
+
 ![Bandwidth increase](https://www.packtpub.com/graphics/9781786463005/graphics/image_04_012.jpg)
 Bandwidth increase
 
