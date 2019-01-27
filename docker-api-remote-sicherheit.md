@@ -9,47 +9,56 @@ Stellen Sie sicher, dass die openssl-Bibliothek installiert ist.
 ### Wie es geht...
 
 1. Erstellen Sie ein Verzeichnis auf Ihrem Host, um unsere CA und andere verwandte Dateien:
+
 ```
 $ mkdirc-p /etc/docker
 $ cd  /etc/docker
 ```
 
 2. Erstellen Sie die privaten und öffentlichen Schlüssel der CA:
+
 ```
 $ openssl genrsa -aes256 -out ca-key.pem 2048 
 $ openssl req -new -x509 -days 365 -key ca-key.pem -sha256 -out ca.pem 
 ```
 
 3. Nun, lassen Sie uns die Server-Taste und Zertifikat Signierung Anfrage. Stellen Sie sicher, dass `Common Name` mit dem Hostname des Docker-Daemon-Systems übereinstimmt. In unserem Fall ist es `dockerhost.example.com`.
+
 ```
 $ openssl genrsa -out server-key.pem 2048 
 $ openssl req -subj "/CN=dockerhost.example.com" -new -key server-key.pem -out server.csr 
 ```
 
 4. Um Verbindungen von 127.0.0.1 und einen bestimmten Host zu ermöglichen, z. B. 10.70.1.67, erstellen Sie eine Erweiterungskonfigurationsdatei und unterzeichnen den öffentlichen Schlüssel mit unserer CA:
+
 ```
 $ echo subjectAltName = IP:10.70.1.67,IP:127.0.0.1 > extfile.cnf 
 $ openssl x509 -req -days 365 -in server.csr -CA ca.pem -CAkey ca-key.pem    -CAcreateserial -out server-cert.pem -extfile extfile.cnf 
 ```
 
 5. Für die Clientauthentifizierung erstellen Sie einen Clientschlüssel und eine Zertifikatsignierungsanforderung:
+
 ```
 $ openssl genrsa -out key.pem 2048 
 $ openssl req -subj '/CN=client' -new -key key.pem -out client.csr 
 ```
 
 6. Um den Schlüssel für die Client-Authentifizierung geeignet zu machen, erstellen Sie eine Erweiterungs-Konfigurationsdatei und unterzeichnen den öffentlichen Schlüssel:
+
 ```
 $ echo extendedKeyUsage = clientAuth > extfile_client.cnf 
 $ openssl x509 -req -days 365 -in client.csr -CA ca.pem -CAkey ca-key.pem  -CAcreateserial -out cert.pem -extfile_client.cnf 
 ```
+
 7. Nach der Erstellung von cert.pem und server-cert.pem können wir die Zertifikatsignierungsanforderungen sicher entfernen:
 `$ rm -rf client.csr server.csr `
 
 8. Um die Sicherheit zu schützen und die Schlüssel vor versehentlichem Schaden zu schützen, ändern wir die Berechtigungen:
+
 `$ chmod -v 0600 ca-key.pem key.pem server-key.pem ca.pem server-cert.pem cert.pem`
 
 9. Stoppen Sie den Dämon, wenn es auf `dockerhost.example.com` läuft. Dann starten Sie den Docker-Daemon manuell aus `/etc/docker`:
+
 ```
 $ pwd
    /etc/docker
@@ -57,6 +66,7 @@ $ pwd
 ```
 
 10. Von einem anderen Terminal aus gehen Sie zu `/etc/docker`. Führen Sie den folgenden Befehl aus, um eine Verbindung zum Docker-Daemon herzustellen:
+
 ```
 $ cd /etc/docker
 $ docker --tlsverify --tlscacert=ca.pem --tlscert=cert.pem --tlskey=key.pem -H=127.0.0.1:2376 version
@@ -73,6 +83,7 @@ Wir setzen die TLS-Verbindung zwischen dem Docker-Daemon und dem Client für ein
 ### Es gibt mehr…
 
 * Um den Docker-Daemon einzurichten, um mit der TLS-Konfiguration standardmäßig zu beginnen, müssen wir die Docker-Konfigurationsdatei aktualisieren. Zum Beispiel, auf Fedora, aktualisierst du den `OPTIONS`-Parameter wie folgt in `/etc/sysconfig/docker`:
+
 ```
 OPTIONS='--selinux-enabled -H tcp://0.0.0.0:2376 --tlsverify     --tlscacert=/etc/docker/ca.pem --tlscert=/etc/docker/server-cert.pem --tlskey=/etc/docker/server-key.pem' 
 ```
