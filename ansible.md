@@ -12,6 +12,7 @@
 * [Zero Downtime Deployment](../ansible-zero-downtime-deployment)
 * [Ansible Mazer](../ansible-mazer)
 * [Ansible Rolen](../ansible-rolen)
+* [Ansible Galaxy](../ansible-galaxy)
 
 **Wichtige Documentation für ansible**
 
