@@ -813,7 +813,7 @@ Die Grundkonfiguration sieht so aus:
 output {
   stdout {}
 }
-`` 
+```
 
 ### Mongodb
 
