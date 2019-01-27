@@ -47,6 +47,6 @@ In allen vorangegangenen Fällen sendet das Docker-Python-Modul RESTful-Anfragen
 
 Sie können verschiedene Benutzeroberflächen, die für Docker geschrieben wurden, erkunden. Einige von ihnen sind wie folgt:
 
-* Shipyard (http://shipyard-project.com/)- geschrieben in Python
+* [Shipyard](http://shipyard-project.com/)- geschrieben in Python
 
-* DockerUI (https://github.com/crosbymichael/dockerui) - geschrieben in JavaScript mit AngularJS
+* [DockerUI](https://github.com/crosbymichael/dockerui) - geschrieben in JavaScript mit AngularJS
