@@ -10,6 +10,8 @@
 * [Ansible Cluster](../ansible-cluster)
 * [Ansible Inventory](../ansible-inventory)
 * [Zero Downtime Deployment](../ansible-zero-downtime-deployment)
+* [Ansible Mazer](../ansible-mazer)
+* [Ansible Rolen](../ansible-rolen)
 
 **Wichtige Documentation für ansible**
 
