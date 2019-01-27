@@ -4,8 +4,8 @@ Host für Sicherung ist der share1
 
 Amanda
 =======
-* []()
-* []()
+* [amanda Homepage](http://www.amanda.org/)
+* [Build_a_Basic_Configuratio](http://wiki.zmanda.com/index.php/GSWA/Build_a_Basic_Configuration)
 
 
 [Bacula](../bacula)
