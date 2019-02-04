@@ -19,4 +19,7 @@ Hier ist eine Beispiel wie eine solche datei aufgebaut ist
 - src: https://github.com/myprojekt/ansible-powerdns.git
 ```
 
-`src: ` muss hier eine erreichbare http|https Quelle sein. Alternativ sind aber alternative qullen möglich.
+In diesem Beispiel muss `- src: ` eine erreichbare http|https Quelle sein. 
+Alternativ sind aber alternative quellen möglich.
+
+
