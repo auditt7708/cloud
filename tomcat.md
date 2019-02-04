@@ -1,12 +1,23 @@
-# Tomcat 
+# Tomcat
+ERinfache grundlagen zur einrichtung.
 
 # Tomcat Cluster
+Cluster einrichten bei Tomcat 
 
 # Tomcat Reverse Proxy
+Tomcat als setup mit reverse proxy nutzen 
 
-# Tomcat Logging 
+# Tomcat [Logging](../logging)
 
-Datei: server.xml 
+Mit tomcat logs Praktikabel einrichten 
+
+## loging wie [syslog](../syslog)
+
+## loging mit [logstsh](../logstah)
+
+## loging mit [graylog](../graylog)
+
+Zu anpassende Datei für änderungen am loggin ist immer die `server.xml` im Verzeichnis `` .
 
 ```
 
