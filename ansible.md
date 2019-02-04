@@ -1,7 +1,8 @@
 # Übersicht
 * [Ansible Installation und Konfiguration](../ansible-install-konfiguration)
 * [Ansible requirements ](../ansible-erweitert-requirements)
-* [Ansible Variablen](../ansible-variablen)
+* [Ansible Variablen Facts Filter ](../ansible-variablen)
+* [Ansibel Inventory und Hosts](../ansible-hosts)
 * [Ansible Templates](../ansible-templates)
 * [Ansible Statements](../ansible-statements)
 * [Ansible Verzeichnis Layout](../ansible-verzeichnis-layout)
