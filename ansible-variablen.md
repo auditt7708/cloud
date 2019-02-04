@@ -13,7 +13,7 @@
 
 **Prüfen ob Nativ oder VM**
 
-`ansible localhost -m setup -a 'filter=facter_virtual'`
+`ansible localhost -m setup -a 'filter=facter_virtual' `
 
 **Alle Netzwerk Informationen Abberufen**
 
