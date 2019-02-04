@@ -1,3 +1,7 @@
+# Von Ansible vordevinierte Variablen 
+
+
+# Filter Beispiele 
 
 **Facts nach /tmp/facts Speichern**
 
