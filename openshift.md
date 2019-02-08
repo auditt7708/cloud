@@ -1,11 +1,46 @@
 # Openshift Installation
+
 Vorbereitungen
 ```
 yum -y install centos-release-openshift-origin311.noarch
 yum -y install origin-clients
 ```
 
+# Linux Installation
+
+## Linux Umbebung 
+`export KUBECONFIG=/home/$USER/.minishift/minishift-kube-config`
+
+# Windows Installation
+
+minsihift start
+
+## Windows Fehler nach der Installation 
+Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: no such file or directory, imagestream import credentials will not be setup
+
+
+
+## Windows Umgebung 
+
+**Variable KUBECONFIG**
+`export KUBECONFIG=/Users/john/tmp/minishift-kube-config`
+
+**Varable PATH**
+
+`set PATH=%PATH%;"D:\Program Files (x86)\openshift-origin-v1.0.3"`
+
+
 ## Firewall Einstellungen
+
+> Hier die einstellungen zur  Firewall die notwendig sind, damit [Openshift](../openshift) erreichbar. 
+
+**Lösung**
+`` 
+
+**iptabels**
+
+
+**firewalld**
 ```
 firewall-cmd --permanent --new-zone dockerc
 firewall-cmd --permanent --zone dockerc --add-source 172.17.0.0/16
