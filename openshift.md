@@ -13,6 +13,23 @@ yum -y install origin-clients
 
 `export KUBECONFIG=/home/$USER/.minishift/minishift-kube-config`
 
+## Fehler nach Linux Installation 
+
+> Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: no such file or directory, imagestream import credentials will not be setup
+
+**Lösung**
+`` 
+
+> Could not set oc CLI context for 'minishift' profile: Error during setting 'minishift' as active profile: The specified path to the kube config 'C:\Users\Softg\.minishift\machines\minishift_kubeconfig' does not exist
+
+**Lösung**
+`` 
+
+> Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: no such file or directory, imagestream import credentials will not be setup
+
+**Lösung**
+`` 
+
 # Windows Installation
 
 minsihift start
