@@ -60,6 +60,7 @@ minsihift start
 
 `set PATH=%PATH%;"D:\Program Files (x86)\openshift-origin-v1.0.3"`
 
+`$Env:PATH = "C:\Users\Softg\.minishift\cache\oc\v3.11.43\windows;$Env:PATH" ` 
 
 ## Firewall Einstellungen
 
