@@ -1,6 +1,7 @@
 # Openshift Installation
 
 Vorbereitungen
+
 ```
 yum -y install centos-release-openshift-origin311.noarch
 yum -y install origin-clients
@@ -8,7 +9,8 @@ yum -y install origin-clients
 
 # Linux Installation
 
-## Linux Umbebung 
+## Linux Umbebung
+
 `export KUBECONFIG=/home/$USER/.minishift/minishift-kube-config`
 
 # Windows Installation
@@ -23,6 +25,7 @@ Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: 
 ## Windows Umgebung 
 
 **Variable KUBECONFIG**
+
 `export KUBECONFIG=/Users/john/tmp/minishift-kube-config`
 
 **Varable PATH**
@@ -32,10 +35,8 @@ Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: 
 
 ## Firewall Einstellungen
 
-> Hier die einstellungen zur  Firewall die notwendig sind, damit [Openshift](../openshift) erreichbar. 
+> Hier die einstellungen zur  Firewall die notwendig sind, damit [Openshift](../openshift) erreichbar ist. 
 
-**Lösung**
-`` 
 
 **iptabels**
 
@@ -87,8 +88,6 @@ registries = []
 
 # [Openshift Monitoring]() 
 
-
-
 # [sssd_for_ldap_failover](https://docs.okd.io/latest/install_config/sssd_for_ldap_failover.html)
 
 ## Übersichtsliste
@@ -102,10 +101,8 @@ registries = []
 * [Openshift Entwicklung](../openshift-entwicklung)
 * [Openshift REST api](../openshift-rest-api)
 
-
 **Quellen**
+
 * [openshift-kubernetes-automated-performance-tests-part-3/](https://developers.redhat.com/blog/2019/01/16/openshift-kubernetes-automated-performance-tests-part-3/)
 * [Red Hat Openshift](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8-beta/html/building_running_and_managing_containers/enabling-container-settings_building-running-and-managing-containers)
-
-
 
