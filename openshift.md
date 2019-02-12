@@ -13,6 +13,14 @@ yum -y install origin-clients
 
 `export KUBECONFIG=/home/$USER/.minishift/minishift-kube-config`
 
+## Installation unter CentOS7
+
+Für docker muss in der **** Unsichere Repositories aktiviert sein.
+
+`--insecure-registry 172.30.0.0/16`
+
+**Quelle:** [platform-as-code-with-openshift-terraform](https://medium.com/@fabiojose/platform-as-code-with-openshift-terraform-1da6af7348ce)
+
 ## Fehler nach Linux Installation 
 
 > Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: no such file or directory, imagestream import credentials will not be setup
