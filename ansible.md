@@ -11,6 +11,8 @@
 * [Ansible Cluster](../ansible-cluster)
 * [Ansible Inventory](../ansible-inventory)
 * [Ansible Authentifikation](../ansible-authentifikation)
+* [Ansible Paterns](../ansible-pattern)
+* [Ansible Filter](../ansible-filter)
 * [Ansible Sozial Authentifikation](../ansible-social-auth)
 * [Zero Downtime Deployment](../ansible-zero-downtime-deployment)
 * [Ansible Mazer](../ansible-mazer)
