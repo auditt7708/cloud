@@ -1,4 +1,40 @@
 # Jenkins
+
+## Nach der Installation 
+
+So sollte er nicht eingerichtet sein 
+```
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+c30df8355aee45cbbcadceb2ad1cb0ab
+
+This may also be found at: /root/.jenkins/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+```
+
+Er wird nämlich als User root ausgeführt.
+
+
+Wenn man ein Packet der Distribution ausgeführt sollte es dazu den Benutzer jenkins geben.
+Folgender massen kann es Prüfen.
+
+`getent  passwd jenkins`
+
+
+
+
+## Jenkins Fehlersuche
+
+`java -jar jenkins.war  --httpsPort=8443 --httpPort=-1 --httpsCertificate=fullchain.pem --httpsPrivateKey=privkey-rsa.pem `
+
 **Materialien zum Testen**
 * [Github Centos Pipline Service](https://github.com/CentOS/container-pipeline-service)
 
