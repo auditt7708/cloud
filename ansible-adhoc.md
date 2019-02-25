@@ -1,0 +1,5 @@
+# Parallelisieren und Shell Kommandos
+
+****
+
+****
