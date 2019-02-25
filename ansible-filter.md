@@ -18,21 +18,21 @@
 
 **Alle Netzwerk Informationen Abberufen**
 
-`ansible localhost -m setup -a 'gather_subset=network,virtual'
+`ansible localhost -m setup -a 'gather_subset=network,virtual' `
 
 **Benutzer Verzeichnis ausgeben**
 
-`ansible localhost -m setup -a 'filter=ansible_user_dir'`
+`ansible localhost -m setup -a 'filter=ansible_user_dir' `
 
-**Alle Details zu Netzwerk Schnittstellen ausgeben alte variante**
+**Alle Details zu Netzwerk Schnittstellen ausgeben alte Variante**
 
 `ansible localhost -m setup -a 'filter=ansible_eth*'`
 
-**Alle Details zu Netzwerk Schnittstellen ausgeben neue variante**
+**Alle Details zu Netzwerk Schnittstellen ausgeben neue Variante**
 
 `ansible localhost -m setup -a 'filter=ansible_enp*'`
 
-**Details zu default IPv6 Interfae abfrufen**
+**Details zu default IPv6 Interface aufrufen**
 
 `ansible localhost -m setup -a 'filter=ansible_default_ipv6'`
 
@@ -50,19 +50,19 @@
 
 **Distribution anzeigen lassen**
 
-`ansible localhost -m setup -a 'filter=ansible_distribution`
+`ansible localhost -m setup -a 'filter=ansible_distribution'`
 
 **Major version der Distribution ausgeben**
 
-`ansible localhost -m setup -a 'filter=ansible_distribution_major_version`
+`ansible localhost -m setup -a 'filter=ansible_distribution_major_version'`
 
 **Release name ausgeben**
 
-`ansible localhost -m setup -a 'filter=ansible_distribution_release`
+`ansible localhost -m setup -a 'filter=ansible_distribution_release' `
 
 **Abfrage ob sich etwas verändert hat**
 
-`ansible localhost -m setup -a 'filter=changed`
+`ansible localhost -m setup -a 'filter=changed'`
 
 **Abfrage mit filter**
 
