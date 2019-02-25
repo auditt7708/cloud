@@ -1,8 +1,8 @@
-# Eigenis gerüst schreiben 
+# Beispiele zur anwendung
 
-**Template git Projeckt verwenden**
+**Initales Projeckt verwenden**
 
-`ansible-galaxy init --role-skeleton biodec.template/ -p . biodec.role_name`
+`ansible-galaxy init--role-skeleton biodec.template/ -p . biodec.role_name`
 
 
 
