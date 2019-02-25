@@ -1,5 +1,5 @@
 # Installation
-Die installation wird mit [Pyhton pip](../pip) durchgeführt.
+Die installation wird mit [Python pip](../python-pip) durchgeführt.
 
 `pip install mazer`
 
