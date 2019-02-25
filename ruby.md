@@ -1,3 +1,27 @@
+# Installation Distributions unabhängig
+**Centos7 Abhängigkeiten** 
+```
+yum install gcc-c++ patch readline readline-devel zlib zlib-devel \
+   libyaml-devel libffi-devel openssl-devel make \
+   bzip2 autoconf automake libtool bison iconv-devel sqlite-devel
+```
+
+## Installation
+```
+# echo progress-bar >> ~/.curlrc && \
+curl -sSL https://rvm.io/mpapis.asc | gpg2 --import - && \
+curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import - && \
+curl -L get.rvm.io | bash -s stable && \
+source /etc/profile.d/rvm.sh && \
+rvm reload && \
+rvm requirements run && \
+rvm install 2.6 && \
+rvm docs generate-ri && \
+rvm use 2.6 --default
+```
+
+* [RVM Installation](https://rvm.io/rvm/install)
+
 Testing
 ===
 
