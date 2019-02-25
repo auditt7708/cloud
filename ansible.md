@@ -18,6 +18,7 @@
 * [Ansible Mazer](../ansible-mazer)
 * [Ansible Rolen](../ansible-rolen)
 * [Ansible Galaxy](../ansible-galaxy)
+* [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
 
 **Wichtige Documentation für ansible**
 
