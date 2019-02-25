@@ -1,3 +1,5 @@
+
+
 Centos7 
 ceph.repo
 
@@ -101,7 +103,7 @@ Packete auf allen Systemen
 | cell 1   | cell 2   |
 | cell 3   | cell 4   |
 
-Packete für Centos 7, drbd  und nfs
+Pakete für CentOS 7, drbd  und nfs
 
 Wichtig für drbd http://elrepo.org/tiki/tiki-index.php 
 
@@ -122,3 +124,8 @@ Packete für Centos 7, drbd , nfs und glusterfs server
 | beide   | tree   |
 | beide   | tmux   |
 | beide   | cell 2   |
+
+
+**Quellen:**
+
+* [Sammlung von Packetquellen](https://pkgs.org/)
