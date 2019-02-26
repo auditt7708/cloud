@@ -19,6 +19,7 @@
 * [Ansible Rolen](../ansible-rolen)
 * [Ansible Galaxy](../ansible-galaxy)
 * [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
+* [Ansible Vault](../ansible-vault)
 
 **Wichtige Documentation für ansible**
 
