@@ -1,12 +1,14 @@
 # Parallelisieren und Shell Kommandos
 
 **SSH Agent einrichten**
+
 ```
 ssh-agent bash && \
 ssh-add ~/.ssh/id_rsa
 ```
 
 **Previligirte ausführen mit password abfrage**
+
 `ansible atlanta -a "/usr/bin/foo" -u username --become --become-user otheruser [--ask-become-pass]`
 
 # Datei Tranfer
