@@ -1,7 +1,8 @@
-Services
-=======
+# Services
 
-
-| Addresse | Service |
-| :--------: | :--------: |
-| 192.168.4.20   | vim     |
+| Addresse | Port | Service |
+| :--------: | :----:| :--------: |
+| 192.168.4.21 | | vim          |
+| 192.168.4.21 | | Tomcat9 prod |
+| 192.168.4.21 | | Tomcat9 stage|
+| 192.168.4.21 | | Tomcat9 dev  |
