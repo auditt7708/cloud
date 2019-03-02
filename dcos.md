@@ -14,7 +14,7 @@ Die Tabelle unten zeit die Hardware Voraussetzungen für den master node:
 |Persistenter Speicher | 120 GB | 120 GB|
 
 ## Einrichtung 
-Verzeichnis erstellen unter /opt/
+Verzeichnis erstellen unter _/opt/_
 
 `mkdir -p genconf`
 
@@ -34,8 +34,8 @@ Die Tabelle unten zeit die Hardware Voraussetzungen für den agent.
 | :---------: | :-----: | :-----------: |
 |Nodes 	      | 1       |    6 oder mehr|
 |Prozessor    | 2 cores |    2 cores    |
-|Arbeitsspeicher |  16 GB RAM  |   16 GB RAM |
-|Persistenter Speicher| 60 GB |	  60 GB  |
+|Arbeitsspeicher | 16 GB RAM  | 16 GB RAM |
+|Persistenter Speicher| 60 GB |	60 GB  |
 
 # Ansible
 * [DCOS Ansible](https://github.com/dcos/dcos-ansible)
