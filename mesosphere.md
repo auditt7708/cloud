@@ -1,4 +1,6 @@
-# [DC/OS](../dcos)
-OS für Computer centren
+# Übersicht
 
-# [Mesos](../mesos)
+##  [DC/OS](../dcos)
+OS für Computer Zentren
+
+## [Mesos](../mesos)
