@@ -15,5 +15,3 @@
 
 * [FQDN des ISP](x4d084861.dyn.telefonica.de)
 
-### Locale Umgebung
-* [kibana](http://elk-stack.example.com:5601)
