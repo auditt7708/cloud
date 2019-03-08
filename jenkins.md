@@ -29,8 +29,6 @@ Folgender massen kann es Prüfen.
 `getent  passwd jenkins`
 
 
-
-
 ## Jenkins Fehlersuche
 
 `java -jar jenkins.war  --httpsPort=8443 --httpPort=-1 --httpsCertificate=fullchain.pem --httpsPrivateKey=privkey-rsa.pem `
@@ -42,7 +40,6 @@ Folgender massen kann es Prüfen.
 Home verzeichnis : `/var/lib/jenkins`
 
 ## Jenkins Plugins
-
 
 * [rhnpush ](https://wiki.jenkins-ci.org/display/JENKINS/rhnpush+Plugin)
 adds a post build step to push RPMs to Spacewalk or RHN satelite servers. It requires rhnpush to be installed on the slave
@@ -68,6 +65,11 @@ ploads build artifacts to repository sites using SCP (SSH) protocol. First you s
 * [top-10-best-practices-jenkins-pipeline-plugin](https://www.cloudbees.com/blog/top-10-best-practices-jenkins-pipeline-plugin)
 *[hello-world](https://jenkins.io/doc/pipeline/tour/hello-world/)
 
+# Jenkins Berechtigungen
+
+Berechtigungen für Github 
+Dazu wird ein _New personal access token_ unter -> USER -> Settings -> Developer Settings -> Personel access tokens mit den Berechtigungen _admin:repo_hook_ erstellt.
+ 
 
 ### Jenkins Toturial Jenkins Docukentation
 * [tutorialspoint](https://www.tutorialspoint.com/jenkins/jenkins_installation.htm)
