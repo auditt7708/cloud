@@ -1,3 +1,23 @@
+# Installation
+
+Voraussetzugen 
+
+| Service | Version | 
+| :---: | :---: | 
+|docker|18.06|
+
+## Speziefische Version von Docker Installieren
+
+### Ubuntu 
+**Verfügbare Versionsn anzeigen lassen**
+`apt-cache madison docker-ce`
+
+### Ubuntu User einrichten
+`sudo usermod -aG docker your-user`
+
+**Version Installieren**
+`apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io`
+
 # [kubelet](../kubelet)
 
 
