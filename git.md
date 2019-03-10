@@ -1,12 +1,13 @@
 # Git 
 
-**Anpassen einer Fehlerhaften commit massage vor push zu remote**
-Hier bietet sich `--amend` an 
-Syntax: `git commit --amend`
+**Anpassen einer Fehlerhaften commit Massage vor dem  push zum  remote System**
 
-Beispiel: `git commit --amend -m "New commit message"`
+> Hier bietet sich `--amend` an 
+> Syntax: `git commit --amend`
 
-Hienweis: Bevor das kommendo abgeszt wird muss sichergesteltsein, dass 
+> Beispiel: `git commit --amend -m "New commit message"`
+
+Hinweis: Bevor das Kommando abgesetzt wird muss sichergestellt sein, dass 
 
 **Ändern der remote URL(URI) bei git für remote repository**
 Git remote set-url wird benutzt um die remote url zu ändern
