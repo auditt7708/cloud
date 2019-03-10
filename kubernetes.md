@@ -1,10 +1,13 @@
 # Installation
 
-Voraussetzugen 
+Voraussetzungen 
 
 | Service | Version | 
 | :---: | :---: | 
 |docker|18.06|
+
+## Erste Initiale Einrichtung 
+
 
 ## Speziefische Version von Docker Installieren
 
@@ -18,19 +21,20 @@ Voraussetzugen
 **Version Installieren**
 `apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io`
 
-# [kubelet](../kubelet)
+# CentOS Installation
 
+
+# [kubelet](../kubelet)
 
 * [kubelet.service](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwj64dSQ3dzgAhWCZFAKHaFwB5MQFjAAegQIABAB&url=https%3A%2F%2Fgithub.com%2Fkubernetes%2Fcontrib%2Fblob%2Fmaster%2Finit%2Fsystemd%2Fkubelet.service&usg=AOvVaw2GG-cG-fHta3SfPAWLvANN)
 
 # [Kubernetes Dashboard](https://github.com/kubernetes/dashboard)
 
-
 # kubeadm-upgrade
 
 * [](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/)
 
-# Autentifiziren mit Bootstrap Tokens
+# Authentifizieren mit Bootstrap Tokens
 
 * [bootstrap-tokens](https://kubernetes.io/docs/reference/access-authn-authz/bootstrap-tokens/#configmap-signing)
 
