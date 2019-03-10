@@ -65,19 +65,28 @@ ploads build artifacts to repository sites using SCP (SSH) protocol. First you s
 * [top-10-best-practices-jenkins-pipeline-plugin](https://www.cloudbees.com/blog/top-10-best-practices-jenkins-pipeline-plugin)
 *[hello-world](https://jenkins.io/doc/pipeline/tour/hello-world/)
 
-# Jenkins Berechtigungen
+# Jenkins Sicherheit
+
+## Https mit Jenkins
+
+**Quelle:**
+
+* [ttps mit Jenkins und Let's Encrypt
+](https://github.com/hughperkins/howto-jenkins-ssl/blob/master/letsencrypt.md)
+
+## Jenkins Berechtigungen
 
 Berechtigungen für Github 
 Dazu wird ein _New personal access token_ unter -> USER -> Settings -> Developer Settings -> Personel access tokens mit den Berechtigungen _admin:repo_hook_ erstellt.
  
+**Jenkins Toturial Jenkins Docukentation**
 
-### Jenkins Toturial Jenkins Docukentation
 * [tutorialspoint](https://www.tutorialspoint.com/jenkins/jenkins_installation.htm)
 * [jenkins-2-0-von-ci-nach-cd-mit-pipelines](https://blog.openknowledge.de/2016/05/jenkins-2-0-von-ci-nach-cd-mit-pipelines/)
 * [Jenkins als CI Werkzeug](http://home.edvsz.fh-osnabrueck.de/skleuker/CSI/Werkzeuge/Jenkins/)
 * [Use+Jenkins](https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins)
 
-ToDoes
+**ToDoes**
 * [von-continuous-integration-zu-continuous-delivery-mit-jenkins-pipeline-teil1](https://www.informatik-aktuell.de/entwicklung/methoden/von-continuous-integration-zu-continuous-delivery-mit-jenkins-pipeline-teil-1.html)
 * [von-continuous-integration-zu-continuous-delivery-mit-jenkins-pipeline-teil2](https://www.informatik-aktuell.de/entwicklung/methoden/von-continuous-integration-zu-continuous-delivery-mit-jenkins-pipeline-teil-2.html)
 * [von-continuous-integration-zu-continuous-delivery-mit-jenkins-pipeline-teil3](https://www.informatik-aktuell.de/entwicklung/methoden/von-continuous-integration-zu-continuous-delivery-mit-jenkins-pipeline-teil-3.html)
