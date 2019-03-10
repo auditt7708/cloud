@@ -51,4 +51,5 @@ Zu anpassende Datei für änderungen am loggin ist immer die `server.xml` im Ver
 
 # Tomcat Tools
 * [webjars](https://www.webjars.org/) WebJars are client-side web libraries (e.g. jQuery & Bootstrap) packaged into JAR (Java Archive) files.
+* [tomcatmanager](https://pypi.org/project/tomcatmanager/)
 
