@@ -38,4 +38,7 @@
 * [directory-layout](https://docs.ansible.com/ansible/playbooks_best_practices.html#directory-layout)
 * [non-ssh-connection-types z.B Docker](http://docs.ansible.com/ansible/intro_inventory.html#non-ssh-connection-types)
 * [developing_api für eigene Scripte](http://docs.ansible.com/ansible/dev_guide/developing_api.html)
+* [Ansible Web Tools](https://ansible.sivel.net/)
+* [centos-opstools](https://github.com/centos-opstools?page=5)
+* [opstools-ansible](https://opstools-ansible.readthedocs.io/en/latest/)
 
