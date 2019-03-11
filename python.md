@@ -31,8 +31,6 @@ cd ~/my_new_project
 **Virtuelles Umgebung aktivieren **
 `source my_project_venv/bin/activate`
 
-
-
 # IDE Editoren
 * [Jupyter](../jupyter)
 
