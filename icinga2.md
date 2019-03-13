@@ -1,5 +1,4 @@
-Icinga2 Konfiguration
-===
+## Icinga2 Konfiguration
 
 ### Service Monitoring
 

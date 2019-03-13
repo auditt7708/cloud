@@ -1,4 +1,4 @@
-# DC/OS 
+# DC/OS](../dcos) [Mesos](../mesos) 
 
 # Hardware Voraussetzungen
 

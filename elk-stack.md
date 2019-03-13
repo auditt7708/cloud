@@ -1,8 +1,26 @@
-Local [kibana](http://elk-stack.example.com:5601)
+# ELK Stack
 
 Die ELK-Plattform ist eine komplette Log Analytics-Lösung, die auf einer Kombination von drei Open-Source-Tools - Elasticsearch, Logstash und Kibana - aufgebaut ist. 
 ELK nutzt den Open Source Stack von Elasticsearch für tiefe Suche und Datenanalytik; Logstash für das zentrale Protokollierungsmanagement, das das Verschicken und Weiterleiten der Protokolle von mehreren Servern, Protokollanreicherung und Parsing beinhaltet; 
 Und schließlich Kibana für kraftvolle und schöne Datenvisualisierungen. ELK-Stack wird derzeit gepflegt und aktiv unterstützt von der Firma Elastic (ehemals Elasticsearch).
+
+# [elk-stack-logstash](../elk-stack-logstash)
+
+# [elk-stack-data-pipeline](../elk-stack-data-pipeline)
+
+# [elk-stack-einrichten](../elk-stack-einrichten)
+
+# [elk-stack-kibana-visualisierung](../elk-stack-kibana-visualisierung)
+
+# [elk-stack-kibana5-apache-log](../elk-stack-kibana5-apache-log)
+
+# [elk-stack-logstash-konfiguration](../elk-stack-logstash-konfiguration)
+
+# [elk-stack-logstash-plugins](../elk-stack-logstash-plugins)
+
+# [elk-stack-logstsh-input-dataset](../elk-stack-logstsh-input-dataset)
+
+# [elk-stack-logstash](../elk-stack-logstash)
 
 Schauen wir uns einen kurzen Überblick über jedes dieser Systeme:
 

@@ -2,9 +2,8 @@
 
 * [Json](../json)
 
-# JS
+# [JS](../javascript)
 Java Script Frameforks und andere hilfen
-
 * [angular-js](../angular-js)
 
 # CDN
