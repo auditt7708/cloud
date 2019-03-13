@@ -1,4 +1,4 @@
-# DC/OS](../dcos) [Mesos](../mesos)
+# [DC/OS](../dcos) [Mesos](../mesos)
 
 # [Deploying and configuring a Mesos cluster using Puppet](../mesos-puppet-deployment-konfiguration)
 
@@ -10,7 +10,7 @@
 
 # [Monitoring the Mesos cluster using Nagios](../mesos-monitoring-nagios)
 
-# [mesos-ansible-deployment-konfiguration])(../mesos-ansible-deployment-konfiguration)
+# [mesos-ansible-deployment-konfiguration](../mesos-ansible-deployment-konfiguration)
 
 # [Cassandra on Mesos](../mesos-cassandra)
 

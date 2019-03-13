@@ -127,7 +127,6 @@ Voraussetzungen
 
 # CentOS Installation
 
-
 # [kubelet](../kubelet)
 
 * [kubelet.service](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwj64dSQ3dzgAhWCZFAKHaFwB5MQFjAAegQIABAB&url=https%3A%2F%2Fgithub.com%2Fkubernetes%2Fcontrib%2Fblob%2Fmaster%2Finit%2Fsystemd%2Fkubelet.service&usg=AOvVaw2GG-cG-fHta3SfPAWLvANN)
@@ -136,7 +135,7 @@ Voraussetzungen
 
 # kubeadm-upgrade
 
-* [](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/)
+* [kubeadm-upgrade](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/)
 
 # Authentifizieren mit Bootstrap Tokens
 

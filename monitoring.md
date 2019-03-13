@@ -1,4 +1,4 @@
-# Icinga2(../icinga2)
+# [Icinga2](../icinga2)
 
 **Quellen:**
 * [monitoring-das-maechtigste-werkzeug](https://www.informatik-aktuell.de/entwicklung/methoden/monitoring-das-maechtigste-werkzeug-fuer-cloud-microservices-und-business.html)
