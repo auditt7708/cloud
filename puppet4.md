@@ -1,5 +1,6 @@
 ## SSL connect Fehler certificate verify failed 
 Meldung:
+
 ```
  gem update --system
 ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
@@ -8,10 +9,11 @@ ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
 ```
 
 Fehler kommt z.B bei dem versuch puppet zu installieren 
-Installation bei Puppet version 4.10
+ - Puppet version 4.10
 
 
-Download und Entpacken der Aktuellen version von rubygem 
+Download und Entpacken der Aktuellen version von rubygem
+
 ```
 wget https://rubygems.org/rubygems/rubygems-2.6.11.tgz $$ \
 tar -xzvf rubygems-2.6.11.tgz && \
@@ -19,7 +21,8 @@ cd  rubygems-2.6.11
 ruby ./setup.rb
 ```
 
-Ausgabe der Installation 
+Ausgabe der Installation
+
 ```
 gem install puppet 
 Fetching: facter-2.4.6.gem (100%)

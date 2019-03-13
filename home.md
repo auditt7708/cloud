@@ -1,18 +1,19 @@
-# Dokumentationen
+# Eigene Systeme, Notizen und Services
 
 * [redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
 * [Buecher mit Markdown schreiben CMS](https://www.bookstackapp.com/)
+* [Hosts](../hosts)
 
 # Team Zusammenarbeit
 
 * [Dashboard](../dashboard)
-* [Hosts](../hosts)
+
 * [collaboration](../collaboration)
 * [Sicherheit](../sicherheit)
 * [Netzwerke](../netzwerke)
 * [Sozial Media Tools](../sozial-media-tools)
 
-## File Shareing
+# File Sharing
 * [seafile](https://www.seafile.com/en/features/)
 
 # [Linux Tools](../linux-system-tools)
@@ -30,30 +31,42 @@
 * [katello](https://gitlab.com/tobkern1980/home-net4-environment/wikis/katello)
 * [kickstart](../kickstart)
 
-# Entwicklung 
 
-# [System Entwicklung](../system-development)
-
-## [Linux Entwicklung](../entwicklung)
-* [System Administration](../system-administration)
-* [Cluster Beispiele](../cluster-beispiele)
-* [cluster-software](../cluster-software)
-* [Repositories](../repositories)
+# Linux Basis
 * [User und Gruppen](../user-und-gruppen)
 * [Sudo](../sudo)
-* [Preseed](../preseed)
-* [Deployment](../deployment)
-* [realmd-and-sssd-active-directory-authentication](../realmd-and-sssd-active-directory-authentication)
-* [repositories](../repositories)
-* [Pressed](../preseed)
-* [virtualisierung](../virtualisierung)
-* [monitoring](../monitoring)
 * [Package Management ](../package-management)
 * [Bash](../bash)
 * [Konsolen Tools](../konsolen-tools)
 * [Terminal](../terminal)
 
-## [Windows Entwicklung](../entwicklung)
+# [monitoring](../monitoring)
+* [Icinga2](../icinga2)
+
+# [Virtualisierung](../virtualisierung)
+* [virtualisierung](../virtualisierung)
+
+# [Entwicklung](../entwicklung)
+
+## [System Entwicklung](../system-development)
+* [System Administration](../system-administration)
+
+## [Linux Entwicklung](../entwicklung)
+
+## Linux Cluster
+* [Cluster Beispiele](../cluster-beispiele)
+* [cluster-software](../cluster-software)
+
+# Automatiesierung und Deployment
+* [Repositories](../repositories)
+* [Preseed](../preseed)
+* [Deployment](../deployment)
+* [realmd-and-sssd-active-directory-authentication](../realmd-and-sssd-active-directory-authentication)
+* [repositories](../repositories)
+* [Pressed](../preseed)
+
+
+# [Windows Entwicklung](../entwicklung)
 
 * [Powershell](../powershell-basic)
 
@@ -101,7 +114,7 @@
 **Sources:**
  * [Tuturials](http://www.gtkdb.de/index_34_2792.html)
 
-ToDu
-====
+###### ToDu
+
 * [ ]  https://github.com/evilstreak/markdown-js für die wiki integrieren .
 * [ ]  https://github.com/markdown-it/markdown-it zum parsen .

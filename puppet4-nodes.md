@@ -1,4 +1,6 @@
-So mächtig wie Puppet ist die Konfiguration eines einzelnen Servers zu verwalten, ist es noch nützlicher bei der Koordinierung vieler Maschinen. In diesem Kapitel werden wir die Möglichkeiten zur Verwendung von Puppet erforschen, um Ihnen dabei zu helfen, hochverfügbare Cluster zu erstellen, Dateien in deinem Netzwerk zu teilen, automatisierte Firewalls einzurichten und Load-Balancing zu nutzen, um mehr aus den Maschinen herauszuholen. Wir verwenden exportierte Ressourcen als Kommunikation zwischen Knoten.
+So mächtig wie Puppet ist die Konfiguration eines einzelnen Servers zu verwalten, ist es noch nützlicher bei der Koordinierung vieler Maschinen. 
+In diesem Kapitel werden wir die Möglichkeiten zur Verwendung von Puppet erforschen, um Ihnen dabei zu helfen, hochverfügbare Cluster zu erstellen, Dateien in deinem Netzwerk zu teilen, automatisierte Firewalls einzurichten und Load-Balancing zu nutzen, um mehr aus den Maschinen herauszuholen. 
+Wir verwenden exportierte Ressourcen als Kommunikation zwischen Knoten.
 
 ## Übersicht
 
