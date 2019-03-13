@@ -2,7 +2,7 @@ Der Datenspeicher, etcd, arbeitet für das Speichern der Informationen von Kuber
 
 ### Fertig werden
 
-Bevor wir mit dem Sammeln des Protokolls von etcd beginnen, sollten wir die Server von ELK vorbereiten. Gehen Sie bitte zurück zu dem Sammelanwendungsprotokollrezept in [Sammeln von Anwendungsprotokollen](../kubernates-logging-monitorring-anwendungsprotokollen), um zu überprüfen, wie man ELK einrichtet und seine grundlegende Verwendung umsetzt.
+Bevor wir mit dem Sammeln des Protokolls von etcd beginnen, sollten wir die Server von ELK vorbereiten. Gehen Sie bitte zurück zu dem Sammelanwendungsprotokollrezept in [Sammeln von Anwendungsprotokollen](../kubernetes-logging-monitorring-anwendungsprotokollen), um zu überprüfen, wie man ELK einrichtet und seine grundlegende Verwendung umsetzt.
 
 Auf der anderen Seite setzen Sie bitte Ihren Kubernetes-Service Port von Elasticsearch zur verfügung, wenn Ihre etcd-Server einzelne Maschinen über den Kubernetes-Cluster sind. Sie können die Servicevorlage für Elasticsearch wie folgt ändern:
 

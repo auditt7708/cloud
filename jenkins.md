@@ -96,7 +96,7 @@ Dazu wird ein _New personal access token_ unter -> USER -> Settings -> Developer
 
 
 # Doku übersicht 
-* [kubernates-cd-pipline-jenkins-integration](../kubernates-cd-pipline-jenkins-integration)
+* [kubernetes-cd-pipline-jenkins-integration](../kubernetes-cd-pipline-jenkins-integration)
 * [selenium tests mit jenkins](../selenium-tests-jenkins)
-* [kubernates-cd-pipline-erstellen](../kubernates-cd-pipline-erstellen)
+* [kubernetes-cd-pipline-erstellen](../kubernetes-cd-pipline-erstellen)
 * [Übersetzung von Pipeline as Code with Jenkins](../jenkins-pipline-as-code)

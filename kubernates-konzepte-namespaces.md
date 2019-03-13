@@ -44,7 +44,7 @@ new-namespace   <none>    Active    12m
 ```
 Wir können jetzt sehen, dass wir zwei Namespaces haben.
 
-3. Lass uns den nginx Replikations controller ausführen, der in[Richte dein eigenes Kubernates ein](../kubernates-einrichten) in einem neuen Namespace beschrieben ist:
+3. Lass uns den nginx Replikations controller ausführen, der in[Richte dein eigenes kubernetes ein](../kubernetes-einrichten) in einem neuen Namespace beschrieben ist:
 ```
 // run a nginx RC in namespace=new-namespace
 # kubectl run nginx --image=nginx --namespace=new-namespace

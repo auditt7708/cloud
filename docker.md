@@ -138,7 +138,7 @@
 
 # [docker-Orchestration-hosting](../docker-Orchestration-hosting)
 
-# [docker-orchestration-kubernates-cluster](../docker-orchestration-kubernates-cluster)
+# [docker-orchestration-kubernetes-cluster](../docker-orchestration-kubernetes-cluster)
 
 # [docker-orchestration-kubernetes-skalierung](../docker-orchestration-kubernetes-skalierung)
 

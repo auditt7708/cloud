@@ -6,7 +6,7 @@ Der Masterknoten dient als Kernel komponente im Kubernetes-System. Zu seinen Auf
 * Überwachung der laufenden Aufgaben
 
 Drei Haupt daemons unterstützen den MAster, der die vorangehenden Aufgaben erfüllt, die im folgenden Bild nummeriert sind:
-![multimaster-kubernates](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_04_01.jpg)
+![multimaster-kubernetes](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_04_01.jpg)
 
 Wie Sie sehen können, ist der Meister der Kommunikator zwischen Worker und clients. Daher wird es ein Problem sein, wenn der Master-Knoten abstürzt. Ein Multimaster-Kubernetes-System ist nicht nur fehlertolerant(fault tolerant,), sondern auch _workload-balanced_. Es gibt nicht mehr nur einen API-Server für den Zugriff auf Knoten und Clients, die Anfragen senden. Mehrere API-Server-Dämonen in getrennten Master-Nodes würden dazu beitragen, die Aufgaben gleichzeitig zu lösen und die Reaktionszeit zu verkürzen.
 
@@ -31,7 +31,7 @@ In diesem Rezept werden wir ein Zwei-Master-System, das ähnliche Methoden bei d
 Jetzt führen wir Sie Schritt für Schritt durch den Aufbau eines Multimaster-Systems. Doch zuvor müssen Sie einen Load Balancer Server für den Master einsetzen.
 
 ###### Notiz
-Um über den Einsatz des Load Balancers zu erfahren und das System auf AWS zu bauen, schau bitte das Gerüst der Kubernetes Infrastruktur im AWS Rezept in [Einrichten von Kubernates bei AWS](../kubernates-aws-einrichten) nach, wie man einen Master Load Balancer baut.
+Um über den Einsatz des Load Balancers zu erfahren und das System auf AWS zu bauen, schau bitte das Gerüst der Kubernetes Infrastruktur im AWS Rezept in [Einrichten von kubernetes bei AWS](../kubernetes-aws-einrichten) nach, wie man einen Master Load Balancer baut.
 
 ### Vorbereiten mehrerer Masternodes
 

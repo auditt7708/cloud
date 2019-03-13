@@ -3,7 +3,7 @@ In diesem Kapitel erfahren Sie, wie Sie alle Komponenten auf beliebten Public Cl
 
 ### Übersicht
 
-* [Aufbau der Kubernetes-Infrastruktur in AWS](../kubernates-aws-infrastruktur)
-* [Verwalten von Anwendungen mit AWS OpsWorks](../kubernates-aws-opsworks)
-* [Auto-Bereitstellung von Kubernetes durch Chef Rezepte](../kubernates-aws-autodeploy-chef)
-* [Verwenden von AWS CloudFormation für die schnelle Bereitstellung](../kubernates-aws-cloudformation-provisioning)
+* [Aufbau der Kubernetes-Infrastruktur in AWS](../kubernetes-aws-infrastruktur)
+* [Verwalten von Anwendungen mit AWS OpsWorks](../kubernetes-aws-opsworks)
+* [Auto-Bereitstellung von Kubernetes durch Chef Rezepte](../kubernetes-aws-autodeploy-chef)
+* [Verwenden von AWS CloudFormation für die schnelle Bereitstellung](../kubernetes-aws-cloudformation-provisioning)

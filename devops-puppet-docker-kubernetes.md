@@ -30,14 +30,14 @@
 ##### [Docker Sicherheit](../docker-sicherheit)
 ##### [Hilfe bekommen and Tips und Tricks](../docker-hilfe-tips-tricks)
 
-# Kubernates
+# kubernetes
 
-##### [Richte dein eigenes Kubernates ein](../kubernates-einrichten)
-##### [Durch Kubernates Verbindungen](../kubernates-konzepte)
-##### [Spielen mit Containern](../kubernates-container)
-##### [Einrichten eines Hochverfügbaren Clusters](../kubernates-ha-einrichten)
-##### [Einrichten einer Continuous Delivery Pipeline](../kubernates-cd-pipline)
-##### [Einrichten von Kubernates bei AWS](../kubernates-aws-einrichten)
-##### [Erweiterte Cluster Administration](../kubernates-adv-administration)
-##### [Logging und Monitorring](../kubernates-logging-monitorring)
+##### [Richte dein eigenes kubernetes ein](../kubernetes-einrichten)
+##### [Durch kubernetes Verbindungen](../kubernetes-konzepte)
+##### [Spielen mit Containern](../kubernetes-container)
+##### [Einrichten eines Hochverfügbaren Clusters](../kubernetes-ha-einrichten)
+##### [Einrichten einer Continuous Delivery Pipeline](../kubernetes-cd-pipline)
+##### [Einrichten von kubernetes bei AWS](../kubernetes-aws-einrichten)
+##### [Erweiterte Cluster Administration](../kubernetes-adv-administration)
+##### [Logging und Monitorring](../kubernetes-logging-monitorring)
 

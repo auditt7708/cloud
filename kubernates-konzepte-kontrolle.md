@@ -17,7 +17,7 @@ Kubectl verbindet den Kubernetes API Server mit RESTful API. Standardmäßig ver
 
 ### Tip
 
-Wenn Sie kubectl über das Netzwerk verwenden, müssen Sie die Authentifizierung und Autorisierung für den API-Server berücksichtigen. Siehe [Erweiterte Cluster Administration](../kubernates-adv-administration).
+Wenn Sie kubectl über das Netzwerk verwenden, müssen Sie die Authentifizierung und Autorisierung für den API-Server berücksichtigen. Siehe [Erweiterte Cluster Administration](../kubernetes-adv-administration).
 
 ### Wie es funktioniert…
 

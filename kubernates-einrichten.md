@@ -2,10 +2,10 @@ Willkommen auf der Reise von Kubernetes! In diesem ersten Abschnitt erfahren Sie
 
 ### Übersicht
 
-* [Architektur erforschen](../kubernates-architektur-erforschen)
-* [Vorbereitung der Umgebung](../kubernates-umgebung-vorbereiten)
-* [Einrichten eines Datastors](../kubernates-datastore)
-* [Erstellen eines Overlay-Netzwerks](../kubernates-overlay-network)
-* [Master konfigurieren](../kubernates-master-einrichten)
-* [Konfigurieren von Nodes](../kubernates-nodes-einrichten)
-* [Laufen Sie Ihren ersten Container in Kubernetes](../kubernates-erster-container)
+* [Architektur erforschen](../kubernetes-architektur-erforschen)
+* [Vorbereitung der Umgebung](../kubernetes-umgebung-vorbereiten)
+* [Einrichten eines Datastors](../kubernetes-datastore)
+* [Erstellen eines Overlay-Netzwerks](../kubernetes-overlay-network)
+* [Master konfigurieren](../kubernetes-master-einrichten)
+* [Konfigurieren von Nodes](../kubernetes-nodes-einrichten)
+* [Laufen Sie Ihren ersten Container in Kubernetes](../kubernetes-erster-container)

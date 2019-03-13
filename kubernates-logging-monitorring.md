@@ -2,7 +2,7 @@ Da DevOps, Logging und Monitoring sind, was wir immer im Auge behalten. Diese er
 
 ### Übersicht 
 
-* [Sammeln von Anwendungsprotokollen](../kubernates-logging-monitorring-anwendungsprotokollen)
-* [Arbeiten mit Kubernetes-Protokollen](../kubernates-logging-monitorring-kubernates-protokolle)
-* [Arbeiten mit etcd log](../kubernates-logging-monitorring-etcd-log)
-* [Monitoring Master und Nodes](../kubernates-logging-monitorring-master-nodes)
+* [Sammeln von Anwendungsprotokollen](../kubernetes-logging-monitorring-anwendungsprotokollen)
+* [Arbeiten mit Kubernetes-Protokollen](../kubernetes-logging-monitorring-kubernetes-protokolle)
+* [Arbeiten mit etcd log](../kubernetes-logging-monitorring-etcd-log)
+* [Monitoring Master und Nodes](../kubernetes-logging-monitorring-master-nodes)

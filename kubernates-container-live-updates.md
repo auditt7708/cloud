@@ -21,7 +21,7 @@ $ docker build -t <DOCKERHUB_ACCOUNT>/common-nginx . && docker push <DOCKERHUB_A
 $ docker build -t <RESITRY_NAME>/common-nginx . && docker push <RESITRY_NAME>/common-nginx
 
 ```
-Um die Zugriffs-Authentifizierungen der Nodes der privaten Docker-Registrierung hinzuzufügen, nehmen Sie bitte das Arbeiten mit dem privaten Docker-Registrierungsrezept in [Einrichten einer Continuous Delivery Pipeline](../kubernates-cd-pipline) als Referenz.
+Um die Zugriffs-Authentifizierungen der Nodes der privaten Docker-Registrierung hinzuzufügen, nehmen Sie bitte das Arbeiten mit dem privaten Docker-Registrierungsrezept in [Einrichten einer Continuous Delivery Pipeline](../kubernetes-cd-pipline) als Referenz.
 
 ### Wie es geht…
 

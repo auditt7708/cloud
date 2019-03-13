@@ -29,7 +29,7 @@ Zur Demonstration in späteren Abschnitten können Sie auch eine private Netzwer
 
 ### Wie es geht…
 
-Wir können einen neuen Kubernetes-Service über die CLI oder eine Konfigurationsdatei definieren und erstellen. Hier wird erklärt, wie man die Dienste mit Befehlen einsetzt. Die Unterbefehle `expose` und `describe` werden in den folgenden Befehlen für verschiedene Szenarien verwendet. Die Version von Kubernetes, die wir in diesem Rezept verwenden, ist 1.1.3. Für die Erstellung von Dateiformaten gehen Sie bitte auf die Bearbeitung von Konfigurationsdateien [Spielen mit Containern](../kubernates-container) für eine ausführliche Diskussion.
+Wir können einen neuen Kubernetes-Service über die CLI oder eine Konfigurationsdatei definieren und erstellen. Hier wird erklärt, wie man die Dienste mit Befehlen einsetzt. Die Unterbefehle `expose` und `describe` werden in den folgenden Befehlen für verschiedene Szenarien verwendet. Die Version von Kubernetes, die wir in diesem Rezept verwenden, ist 1.1.3. Für die Erstellung von Dateiformaten gehen Sie bitte auf die Bearbeitung von Konfigurationsdateien [Spielen mit Containern](../kubernetes-container) für eine ausführliche Diskussion.
 
 Bei der Erstellung von Diensten gibt es zwei Konfigurationen, bei denen wir auf folgendes achten müssen: Eines ist das Label, das andere ist der Pod. Wie das folgende Bild zeigt, hat der Service und die Pod ihre eigenen Key-Value-Label und Ports. Seien Sie sicher, die korrekten Tags für diese Einstellungen zu verwenden:
 ![create-service](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_02_03.jpg)

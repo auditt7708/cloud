@@ -1,5 +1,5 @@
 Bevor wir auf die Reise des eigenen Clusters gehen, müssen wir die Umgebung vorbereiten, um folgende Komponenten zu bauen:
-![schema-kubernates](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_01_04.jpg)
+![schema-kubernetes](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_01_04.jpg)
 
 Es gibt verschiedene Lösungen für die Schaffung eines solchen Kubernetes-Clusters, zum Beispiel:
 
@@ -41,7 +41,7 @@ Flannel befindet sich nicht in einer Maschine, die in allen Nodes benötigt wird
 
 Die Hardware-Spezifikation jeder Komponente wird in der folgenden Tabelle vorgeschlagen. Bitte beachten Sie, dass es zu einer längeren Reaktionszeit bei der Manipulation des Clusters kommen kann, wenn die Anzahl der Anfragen zwischen dem API-Server und dem Betriebssystem groß ist. In einer normalen Situation können zunehmende Ressourcen dieses Problem lösen:
 
-|Compunente | Kubernates master|etcd|
+|Compunente | kubernetes master|etcd|
 | :---: | :---: | :---: |
 |CPU Anzahl|1|1|
 |RAM GB|2G|2G|

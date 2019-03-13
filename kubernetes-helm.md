@@ -1,5 +1,7 @@
-Helm ist ein Kubernetes Packetmanager 
 
+# Helm
+
+Helm ist ein Kubernetes Packetmanager 
 
 ## Installation auf einem Linux System
 ```
@@ -11,12 +13,10 @@ chmod 700 get_helm.sh
 exit 0 
 ```
 
-
 ## Helm Konfigurieren
 
 Initiale Konfigurations einstellungen anlegen.
 `helm init`
-
 
 ###### Quellen
 * [Helm Projekt Seite]()

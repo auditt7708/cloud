@@ -5,7 +5,7 @@ Kubernetes hat das WebUI-Add-on, das den Status von Kubernetes wie Pod, Replikat
 Die Kubernetes WebUI wird unter `http://<kubernetes master>/u`i verfügbar. Allerdings wird es nicht standardmäßig gestartet, stattdessen gibt es YAML-Dateien in der Release-Binärdatei.
 
 
-![kubernates-master-ui](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_07_01.jpg)
+![kubernetes-master-ui](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_07_01.jpg)
 Zugrif auf  Kubernetes master/ui Seite.
 
 
@@ -36,7 +36,7 @@ service "kube-ui" created
 
 Beachten Sie, dass `kube-ui-svc` eine Art von ClusterIP-Dienst ist. Allerdings ist es mit Kubernetes master (/ui) verbunden. Sie können von außen das Kubernetes-Netzwerk unter `http://<kubernetes master>/ui` erreichen.
 
-![kubernates-ui]https://www.packtpub.com/graphics/9781788297615/graphics/B05161_07_02.jpg)
+![kubernetes-ui]https://www.packtpub.com/graphics/9781788297615/graphics/B05161_07_02.jpg)
 
 Launching the kube-ui/ui shows the dashboard screen
 
@@ -46,12 +46,12 @@ Der kube-ui-Replikationscontroller greift auf den API-Server zu, um die Kubernet
 
 Der folgende Screenshot ist eine Explore-Seite, die Pod-, Replikations-Controller- und Service-Instanzen zeigt:
 
-![kubernates-ui-explore](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_07_03.jpg)
+![kubernetes-ui-explore](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_07_03.jpg)
 
 Wenn du auf einen der Instanzen klickst, zeigt er detaillierte Informationen an, wie im folgenden Screenshot gezeigt. Es zeigt einen Dienst, den Port, Node-Port und Selektoren werden anzeigt. Es ist leicht, einen zugehörigen Replikationscontroller und Pods zu finden:
-!(ui-kubernates-pod-details)[https://www.packtpub.com/graphics/9781788297615/graphics/B05161_07_04.jpg]
+!(ui-kubernetes-pod-details)[https://www.packtpub.com/graphics/9781788297615/graphics/B05161_07_04.jpg]
 
 Darüber hinaus kann die UI uns auch Ereignisse wie folgt anzeigen:
 
-![ui-kubernates-ereignisse](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_07_05.jpg)
+![ui-kubernetes-ereignisse](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_07_05.jpg)
 

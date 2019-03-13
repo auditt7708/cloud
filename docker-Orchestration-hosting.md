@@ -38,6 +38,6 @@ Alle vorangehenden Werkzeuge und Plattformen benötigen für sich selbst separat
 * [Atom-Update / Rollback mit Project Atomic durchführen](../docker-orchestration-atomic-update-rollback)
 * [Hinzufügen von mehr Speicher für Docker in Project Atomic](../docker-orchestration-atomic-speicher)
 * [Cockpit für Project Atomic einrichten](../docker-orchestration-atomic-cockpit)
-* [Einrichten eines Kubernetes-Clusters](../docker-orchestration-kubernates-cluster)
+* [Einrichten eines Kubernetes-Clusters](../docker-orchestration-kubernetes-cluster)
 * [Skalierung auf und ab in einem Kubernetes-Cluster](../docker-orchestration-kubernetes-skalierung)
 * [Einrichten von WordPress mit einem Kubernetes-Cluster](../docker-orchestration-kubernetes-wordpress-)

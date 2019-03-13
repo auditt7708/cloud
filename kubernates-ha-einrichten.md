@@ -2,5 +2,5 @@ Die Vermeidung eines _single point of failure_ ist ein Konzept, das wir immer im
 
 ### Übersicht
 
-* [Clustering mit  etcd](../kubernates-ha-etcd)
-* [Building von meheren mastern](../kubernates-ha-multi-masters)
+* [Clustering mit  etcd](../kubernetes-ha-etcd)
+* [Building von meheren mastern](../kubernetes-ha-multi-masters)

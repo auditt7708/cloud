@@ -70,7 +70,7 @@ Jetzt mach dich bereit, ein Bewerbungsprotokoll an Elasticsearch zu schicken.
 
 ### Wie es geht…
 
-Lassen Sie uns eine Beispielanwendung verwenden, die in der beweglichen monolithischen zu microservices Rezept in [Einrichten einer Continuous Delivery Pipeline](../kubernates-cd-pipline) eingeführt wurden. Bereiten Sie ein Python Flask Programm wie folgt vor:
+Lassen Sie uns eine Beispielanwendung verwenden, die in der beweglichen monolithischen zu microservices Rezept in [Einrichten einer Continuous Delivery Pipeline](../kubernetes-cd-pipline) eingeführt wurden. Bereiten Sie ein Python Flask Programm wie folgt vor:
 ```
 # cat entry.py
 

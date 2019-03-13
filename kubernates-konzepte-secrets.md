@@ -16,7 +16,7 @@ Vor der Verwendung unserer Anmeldeinformationen mit secrets müssen einige Vorsi
 
 ### Wie es geht…
 
-Wir können nur mit Hilfe von Konfigurationsdateien Geheimnisse erzeugen. In diesem Rezept werden wir eine einfache Vorlagendatei liefern und uns auf die Funktionalität konzentrieren. Für verschiedene Vorlagen-Designs, werfen Sie bitte einen Blick auf die Arbeiten mit Konfigurationsdateien Rezept in [Spielen mit Containern](../kubernates-container).
+Wir können nur mit Hilfe von Konfigurationsdateien Geheimnisse erzeugen. In diesem Rezept werden wir eine einfache Vorlagendatei liefern und uns auf die Funktionalität konzentrieren. Für verschiedene Vorlagen-Designs, werfen Sie bitte einen Blick auf die Arbeiten mit Konfigurationsdateien Rezept in [Spielen mit Containern](../kubernetes-container).
 
 ### Ein secret einrichten
 
@@ -190,5 +190,5 @@ $ kubectl delete serviceaccount test-account
 serviceaccount "test-account" deleted
 ```
 
-Auf der anderen Seite kann die Docker-Authentifizierung auch als geheime Daten zum Ziehen(pull) von Images gespeichert werden. Wir werden die Verwendung in der Arbeit mit dem privaten Docker Registry Rezept in [Einrichten einer Continuous Delivery Pipeline](../kubernates-cd-pipline)  diskutieren.
+Auf der anderen Seite kann die Docker-Authentifizierung auch als geheime Daten zum Ziehen(pull) von Images gespeichert werden. Wir werden die Verwendung in der Arbeit mit dem privaten Docker Registry Rezept in [Einrichten einer Continuous Delivery Pipeline](../kubernetes-cd-pipline)  diskutieren.
 

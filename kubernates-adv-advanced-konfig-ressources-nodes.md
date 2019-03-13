@@ -2,7 +2,7 @@ Das Rechenressourcenmanagement ist in jeder Infrastruktur so wichtig. Wir sollte
 
 ### Fertig werden
 
-Bevor Sie mit der Verwaltung von Rechenressourcen beginnen, sollten Sie Ihre Anwendungen gut kennen, um die maximalen Ressourcen zu kennen, die sie benötigen. Bevor wir anfangen, schauen Sie sich die aktuelle Nodeskapazität mit dem Befehl `kubectl ` an, der in>[Richte dein eigenes Kubernates ein](../kubernates-einrichten) beschrieben ist:
+Bevor Sie mit der Verwaltung von Rechenressourcen beginnen, sollten Sie Ihre Anwendungen gut kennen, um die maximalen Ressourcen zu kennen, die sie benötigen. Bevor wir anfangen, schauen Sie sich die aktuelle Nodeskapazität mit dem Befehl `kubectl ` an, der in>[Richte dein eigenes kubernetes ein](../kubernetes-einrichten) beschrieben ist:
 ````
 // check current node capacity
 # kubectl get nodes -o json | jq '.items[] | {name: .metadata.name, capacity: .status.capacity}'

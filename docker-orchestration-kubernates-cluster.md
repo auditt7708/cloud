@@ -1,6 +1,6 @@
 Kubernetes ist ein Open-Source-Container-Orchestrierungswerkzeug über mehrere Nodes im Cluster. Derzeit unterstützt es nur Docker. Es wurde von Google gestartet, und jetzt sind Entwickler von anderen Firmen dazu gekommen. Es bietet Mechanismen für application deployment, Terminierung, Aktualisierung, Wartung und Skalierung. Kubernetes 'Auto-Placement, Auto-Neustart, Auto-Replikation Features stellen sicher, dass der gewünschte Zustand der Anwendung beibehalten wird, die durch den Benutzer definiert sind. Benutzer definieren Anwendungen über YAML- oder JSON-Dateien, die wir später im Rezept sehen werden. Diese YAML- und JSON-Dateien enthalten auch die API-Version (das Feld `apiVersion`), um das Schema zu identifizieren. Das folgende Bild ist das architektonische Diagramm von Kubernetes:
 
-![diagram-kubernates](https://www.packtpub.com/graphics/9781788297615/graphics/4862OS_08_15.jpg)
+![diagram-kubernetes](https://www.packtpub.com/graphics/9781788297615/graphics/4862OS_08_15.jpg)
 
 https://raw.githubusercontent.com/GoogleCloudPlatform/kubernetes/master/docs/architecture.png
 

@@ -3,7 +3,7 @@ Fertig werden
 
 In den folgenden Abschnitten zeigen wir Ihnen, wie Sie Chef-Rezepte mit dem OpsWorks-Stack verwenden können. Deshalb bitte die OpsWorks-Umgebung vorbereiten. Basierend auf den bisherigen Rezepten in diesem Kapitel können wir einen Kubernetes Stack mit folgender Struktur aufbauen:
 
-![kubernates-opsworks-stack](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_06_22.jpg)
+![kubernetes-opsworks-stack](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_06_22.jpg)
 
 Lassen Sie uns überlegen, dass Sie die gleichen Netzwerkeinstellungen im Rezept haben. Erstellen Sie die Kubernetes-Infrastruktur in AWS, was bedeutet, dass die VPC, Subnetze, Routentabellen und Sicherheitsgruppen alle einsatzbereit sind. Dann können wir die Netzwerkumgebung direkt in OpsWorks anwenden.
 
@@ -106,7 +106,7 @@ Die Definition eines Anwendungsstapels in OpsWorks ist einfach und einfach. Bezi
 ### Erstellen von Anwendungsschichten
 
 Nachdem wir den OpsWorks Stack haben, erstellen wir die Applikationsschichten und fügen ELBs hinzu:
-![aws-my-kubernates-cluster](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_06_24.jpg)
+![aws-my-kubernetes-cluster](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_06_24.jpg)
 
 Um Ebenen im Stapel zu erstellen, klicken Sie auf Hinzufügen einer Ebene auf der Vorderseite des Stapels:
 
@@ -379,7 +379,7 @@ Es ist einfach, diese beiden unabhängigen Dämonen in diesem Rezept zu starten.
 ### Rezepte für den Kubernetes-Node
 
 Mit der vorherigen Erfahrung können Sie jetzt leicht verstehen, die Bereitstellung von benutzerdefinierten Rezepten und Chef-Funktionen. Dann werden wir weiter gehen, um die Rezepte für die Kubernetes-Knotenschicht zu betrachten:
-![kubernates-node](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_06_30.jpg)
+![kubernetes-node](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_06_30.jpg)
 
 Neben Flanneld müssen wir Docker zum Laufen von Containern installieren. Jedoch wird ein zusätzliches Rezept `kubernetes::docker` in die Setup-Stufe gestellt.
 ```

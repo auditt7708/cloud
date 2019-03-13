@@ -104,7 +104,7 @@ Node oder slave?
 Die Terminologie des Slaves wird in der Computerindustrie verwendet, um den Cluster-Worker-Nodes darzustellen; Allerdings ist es auch mit Diskriminierung verbunden. Das Kubernetes-Projekt verwendet stattdessen Nodes.
 
 Das folgende Bild zeigt die Rolle und Aufgaben von Daemon-Prozessen im Nodes:
-![kubernates-nodes](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_01_03.jpg)
+![kubernetes-nodes](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_01_03.jpg)
 
 Der Node hat auch mehrere Daemon-Prozesse namens kubelet und kube-proxy, um seine Funktionalitäten zu unterstützen.
 

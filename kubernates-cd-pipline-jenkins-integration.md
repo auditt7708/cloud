@@ -26,7 +26,7 @@ Danach musst du die Git- und Docker-Plugins für Jenkins installieren. Installie
 
 ### Wie es geht…
 
-Wir werden Kubernetes zum Arbeitsplatz machen, um Testcontainer zum laufen zu bringen oder offiziell Container einzusetzen. Derzeit gibt es keine Jenkins-Plugins für den Einsatz von Pods auf den Kubernetes-Systemen. Deshalb werden wir die Kubernetes API für unsere Nutzung aufrufen. Um einen Programmtest durchführen zu können, können wir den Kubernetes-Job verwenden, der in der Sicherstellung der flexiblen Nutzung Ihres Container-Rezepts in [Spielen mit Containern](../kubernates-container) erwähnt wird, die den Job-ähnlichen Pod erstellen wird, der nach Beendigung beendet werden könnte. Es eignet sich zum Testen und Verifizieren. Auf der anderen Seite können wir direkt den  replication controller und den Service für die offizielle Bereitstellung erstellen.
+Wir werden Kubernetes zum Arbeitsplatz machen, um Testcontainer zum laufen zu bringen oder offiziell Container einzusetzen. Derzeit gibt es keine Jenkins-Plugins für den Einsatz von Pods auf den Kubernetes-Systemen. Deshalb werden wir die Kubernetes API für unsere Nutzung aufrufen. Um einen Programmtest durchführen zu können, können wir den Kubernetes-Job verwenden, der in der Sicherstellung der flexiblen Nutzung Ihres Container-Rezepts in [Spielen mit Containern](../kubernetes-container) erwähnt wird, die den Job-ähnlichen Pod erstellen wird, der nach Beendigung beendet werden könnte. Es eignet sich zum Testen und Verifizieren. Auf der anderen Seite können wir direkt den  replication controller und den Service für die offizielle Bereitstellung erstellen.
 
 ### Erstellen Sie Ihr Jenkins Projekt
 
