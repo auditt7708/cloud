@@ -207,4 +207,3 @@ serviceaccount "test-account" deleted
 ```
 
 Auf der anderen Seite kann die Docker-Authentifizierung auch als geheime Daten zum Ziehen(pull) von Images gespeichert werden. Wir werden die Verwendung in der Arbeit mit dem privaten Docker Registry Rezept in [Einrichten einer Continuous Delivery Pipeline](../kubernetes-cd-pipline)  diskutieren.
-

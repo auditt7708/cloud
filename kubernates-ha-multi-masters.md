@@ -1,3 +1,5 @@
+# Kubernates HA Multi Master
+
 Der Masterknoten dient als Kernel komponente im Kubernetes-System. Zu seinen Aufgaben gehören:
 
 * Uploaden(Phushing) und Downlaoden(pulling) von Informationen aus dem Datenspeicher und den etcd-Servern
@@ -10,7 +12,7 @@ Drei Haupt daemons unterstützen den MAster, der die vorangehenden Aufgaben erf�
 
 Wie Sie sehen können, ist der Meister der Kommunikator zwischen Worker und clients. Daher wird es ein Problem sein, wenn der Master-Knoten abstürzt. Ein Multimaster-Kubernetes-System ist nicht nur fehlertolerant(fault tolerant,), sondern auch _workload-balanced_. Es gibt nicht mehr nur einen API-Server für den Zugriff auf Knoten und Clients, die Anfragen senden. Mehrere API-Server-Dämonen in getrennten Master-Nodes würden dazu beitragen, die Aufgaben gleichzeitig zu lösen und die Reaktionszeit zu verkürzen.
 
-### Fertig werden
+## Fertig werden
 
 Hier sind die kurz die Konzepte zum Aufbau eines Multimaster-Systems aufgeführt:
 
@@ -30,8 +32,8 @@ In diesem Rezept werden wir ein Zwei-Master-System, das ähnliche Methoden bei d
 
 Jetzt führen wir Sie Schritt für Schritt durch den Aufbau eines Multimaster-Systems. Doch zuvor müssen Sie einen Load Balancer Server für den Master einsetzen.
 
-###### Notiz
-Um über den Einsatz des Load Balancers zu erfahren und das System auf AWS zu bauen, schau bitte das Gerüst der Kubernetes Infrastruktur im AWS Rezept in [Einrichten von kubernetes bei AWS](../kubernetes-aws-einrichten) nach, wie man einen Master Load Balancer baut.
+> Notiz
+> Um über den Einsatz des Load Balancers zu erfahren und das System auf AWS zu bauen, schau bitte das Gerüst der Kubernetes Infrastruktur im AWS Rezept in [Einrichten von kubernetes bei AWS](../kubernetes-aws-einrichten) nach, wie man einen Master Load Balancer baut.
 
 ### Vorbereiten mehrerer Masternodes
 
@@ -40,7 +42,8 @@ Zuerst installieren Sie einen anderen Master-Node in ihr vorhandenes Kubernetes-
 * Für das  systemd-controlled System stoppen Sie die Dienste direkt über die Befehl `systemctl kube-scheduler stop` und `systemctl kube-controller-manager stop`
 
 * Für die init systemd-controlled System, stoppen Sie den Master-Service zuerst. Als nächstes löschen oder kommentieren Sie die Zeilen über Scheduler und Controller Manager im Initialisierungsskript aus:
-```
+
+```sh
 // Checking current daemon processes on master server
 # service kubernetes-master status
 kube-apiserver (pid 3137) is running...
@@ -84,8 +87,9 @@ In diesem Schritt haben Sie zwei Master im System mit zwei Prozessen des API-Ser
 
 ### Kubelet im Master einrichten
 
-Weil wir den Daemons Scheduler und Controller Manager als Pods installieren werden, ist ein Kubelet-Prozess ein Must-Have-Daemon. Laden Sie die neueste (Version 1.1.4) Kubelet-Binärdatei herunter (https://storage.googleapis.com/kubernetes-release/release/v1.1.4/bin/linux/amd64/kubelet) und legen Sie sie in das Verzeichnis des Systems der Binärdateien:
-```
+Weil wir den Daemons Scheduler und Controller Manager als Pods installieren werden, ist ein Kubelet-Prozess ein Must-Have-Daemon. Laden Sie die neueste (Version 1.1.4) [Kubelet-Binärdatei herunter](https://storage.googleapis.com/kubernetes-release/release/v1.1.4/bin/linux/amd64/kubelet) und legen Sie sie in das Verzeichnis des Systems der Binärdateien:
+
+```sh
 # wget https://storage.googleapis.com/kubernetes-release/release/v1.1.4/bin/linux/amd64/kubelet
 # chmod 755 kubelet
 # mv kubelet /usr/local/bin/
@@ -99,8 +103,8 @@ Später werden wir den `kubelet` Daemon mit bestimmten Parametern und Werten kon
 |Tag Name|Wert|Zweck|
 | :---: | :---: | :---: |
 | `--api-servers` | `127.0.0.1:8080` |Um mit dem API-Server lokal zu kommunizieren.|
-|` --register-node `|`false`|Vermeiden Sie es, diesen Master, den lokalen Host, als Knoten zu registrieren.|
-|`--allow-privileged`|`true`|Um den Containern zu gestatten, den privilegierten Modus anzufordern, was bedeutet, dass Container in der Lage sind, auf das Hostgerät zuzugreifen, insbesondere das Netzwerkgerät in diesem Fall.|
+| `--register-node`|`false`|Vermeiden Sie es, diesen Master, den lokalen Host, als Knoten zu registrieren.|
+| `--allow-privileged`|`true`|Um den Containern zu gestatten, den privilegierten Modus anzufordern, was bedeutet, dass Container in der Lage sind, auf das Hostgerät zuzugreifen, insbesondere das Netzwerkgerät in diesem Fall.|
 | `--config` |`/etc/kubernetes/manifests`|Um lokale Container durch die Vorlagendateien unter diesem angegebenen Verzeichnis zu verwalten.|
 
 Wenn Ihr System von `systemctl` überwacht wird, setzen Sie die vorherigen Parameter in die Konfigurationsdateien:
@@ -109,33 +113,37 @@ Wenn Ihr System von `systemctl` überwacht wird, setzen Sie die vorherigen Param
 > In `/etc/kubernetes/config`:
 >>
 >> * Modifieziren von `KUBE_MASTER` zu `--master=127.0.0.1:8080` :
->> 
-```
+>>
+
+```sh
 KUBE_LOGTOSTDERR="--logtostderr=true"
 KUBE_LOG_LEVEL="--v=0"
 KUBE_ALLOW_PRIV="--allow_privileged=false"
 KUBE_MASTER="--master=127.0.0.1:8080"
-
 ```
+
 >>
 >
 > * In `/etc/kubernetes/kubelet` :
-> 
->> 
+>
+>>
 >> * Setzen Sie den Tag `--api-Server` auf die Variable `KUBELET_API_SERVER`.
 >> * Setzen Sie die anderen drei Tags in die Variable `KUBELET_ARGS` :
 >>
-```
+
+```sh
 KUBELET_ADDRESS="--address=0.0.0.0"
 KUBELET_HOSTNAME="--hostname_override=127.0.0.1"
 KUBELET_API_SERVER="--api_servers=127.0.0.1:8080"
 KUBELET_ARGS="--register-node=false --allow-privileged=true --config /etc/kubernetes/manifests"
 ```
+
 >>
 >
 
 Auf der anderen Seite, ändern Sie Ihre Skript-Datei von `init` Service-Management und fügen Sie die Tags nach dem Daemon `kubelet` hinzu. Zum Beispiel haben wir folgende Einstellungen in `/etc/init.d/kubelet` vorzunehmen:
-```
+
+```sh
 # cat /etc/init.d/kubelet
 prog=/usr/local/bin/kubelet
 lockfile=/var/lock/subsys/`basename $prog`
@@ -161,7 +169,8 @@ Es ist gut, deinen Kubelet-Service im gestoppten Zustand zu lassen, da wir ihn n
 Wir benötigen drei Vorlagen als Konfigurationsdateien: für den Pod Master, Scheduler und Controller Manager. Diese Dateien sollten an bestimmten Orten platziert werden.
 
 Pod Master behandelt die Wahlen, um zu entscheiden, auf welchen Master den Scheduler-Daemon läuft und welcher Master den Controller Manager-Daemon leitet. Das Ergebnis wird in den etcd-Servern aufgezeichnet. Die Vorlage des Pod-Masters wird in das Kubelet-Konfigurationsverzeichnis gelegt, um sicherzustellen, dass der Pod-Master direkt nach dem Start des Kubeletts erstellt wird:
-```
+
+```sh
 # cat /etc/kubernetes/manifests/podmaster.yaml
 apiVersion: v1
 kind: Pod
@@ -200,7 +209,8 @@ spec:
 ```
 
 In der Konfigurationsdatei von pod master werden wir eine Pod mit zwei Containern einsetzen, mit den beiden Wählern für verschiedenen Dämonen. Der Pod `podmaster` wird in einem neuen Namensraum namens `kube-System` erstellt, um Pods für Dämonen und Anwendungen zu trennen. Wir müssen einen neuen Namespace erstellen, bevor wir Ressourcen mit Vorlagen erstellen. Es ist auch wichtig zu wissen, dass der Pfad `/srv/kubernetes` ist, wo wir die Konfigurationsdateien der Dämonen setzen. Der Inhalt der Dateien hat folgenden inhalt:
-```
+
+```sh
 # cat /srv/kubernetes/kube-scheduler.yaml
 apiVersion: v1
 kind: Pod
@@ -238,7 +248,8 @@ spec:
 ```
 
 Es gibt einige spezielle Elemente in der Vorlage, wie Namespace und zwei angehängte Dateien gesetzt. Einer ist eine Protokolldatei; Die Streaming-Ausgabe kann auf der lokalen Seite zugegriffen und gespeichert werden. Die andere ist die Ausführungsdatei. Der Container kann den aktuellen Kube-Scheduler auf dem lokalen Host nutzen:
-```
+
+```sh
 # cat /srv/kubernetes/kube-controller-manager.yaml
 apiVersion: v1
 kind: Pod
@@ -285,7 +296,8 @@ Die Konfigurationsdatei des Controller-Managers ähnelt der des Schedulers. Denk
 Um die Vorlagen erfolgreich bearbeiten zu können, sind noch einige Vorkonfigurationen erforderlich, bevor Sie den Pod-Master starten:
 
 * Erstellen Sie leere Log-Dateien. Andernfalls wird der Container anstelle des Dateiformats den Pfad als Verzeichnis betrachten und den Fehler der pod-Erstellung verursachen:
-```
+
+```sh
 // diese Befehle auf jedem Master ausführen
 # Touch /var/log/kube-scheduler.log
 # Touch /var/log/kube-controller-manager.log
@@ -293,7 +305,7 @@ Um die Vorlagen erfolgreich bearbeiten zu können, sind noch einige Vorkonfigura
 
 * Erstellen Sie den neuen Namespace. Der neue Namespace ist von der Standardeinstellung getrennt. Wir werden die Pod für die Systemnutzung in diesem Namespace setzen:
 
-```
+```sh
 // Just execute this command in a master, and other masters can share this update.
 # kubectl create namespace kube-system
 // Or
@@ -303,13 +315,15 @@ Um die Vorlagen erfolgreich bearbeiten zu können, sind noch einige Vorkonfigura
 ### Starten des Kubeletts und  Daemons
 
 Bevor wir Kubelet für unsere Pod Master und zwei master-owned Dämonens starten, bitte stellen Sie sicher, dass Sie Docker und Flanneld zuerst beginnen:
-```
+
+```sh
 # Now, it is good to start kubelet on every masters
 # service kubelet start
 ```
 
 Warten Sie eine Weile; Sie erhalten einen Pod-Master, der auf jedem Master läuft und Sie werden endlich ein Paar Scheduler und Controller Manager bekommen:
-```
+
+```sh
 # Pods im Namespace überprüfen "kube-system"
 # Kubectl bekommen pod --namespace = kube-system
 NAME READY STATUS RESTARTS ALTER
@@ -328,7 +342,8 @@ Sie können sehen, dass jetzt ein einzelner Node nicht mit der gesamten Anforder
 ### Wie es funktioniert…
 
 Überprüfen Sie das Protokoll des Container-Pod-Masters. Du bekommst zwei Arten von Nachrichten, eine für den der den Schlüssel hält und einen ohne Schlüssel:
-```
+
+```sh
 // Get the log with specified container name
 # kubectl logs podmaster-kube-master1 -c scheduler-elector --namespace=kube-system
 I0211 15:13:46.857372       1 podmaster.go:142] --whoami is empty, defaulting to kube-master1
@@ -341,11 +356,12 @@ I0211 15:13:50.078994       1 podmaster.go:73] key already exists, we are the ma
 I0211 15:13:55.185607       1 podmaster.go:73] key already exists, we are the master (kube-master1)
 (ignored)
 ```
+
 Der Master mit dem Schlüssel sollte den jeweiligen Dämon und den besagten Scheduler oder Controller Manager übernehmen. Diese aktuelle Hochverfügbarkeitslösung für den Master wird durch die Lease-Lock-Methode in etcd realisiert:
+
 ![psp-etcd](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_04_03.jpg)
 
 Das vorhergehende Schleifenbild zeigt den Fortschritt der Lease-Lock-Methode an. Zwei Zeiträume sind bei dieser Methode wichtig: **SLEEP** ist der Zeitraum für die Überprüfung der Sperre und **Time to Live (TTL)** ist der Zeitraum des Leasingablaufs. Wir können sagen, dass, wenn der Dämon-laufende Master abgestürzt ist, der schlimmste Fall für den anderen Meister, der seinen Job übernimmt, die Zeit **SLEEP + TTL** erfordert. Standardmäßig ist **SLEEP** 5 Sekunden und TTL ist 30 Sekunden.
 
-###### Notiz
-Man kann noch einen Blick auf den Quellcode von pod master für mehr Konzepte werfen (podmaster.go: https://github.com/kubernetes/contrib/blob/master/pod-master/podmaster.go).
-
+> Notiz
+> Man kann noch einen Blick auf den Quellcode von pod master für mehr Konzepte werfen [podmaster.go](https://github.com/kubernetes/contrib/blob/master/pod-master/podmaster.go).

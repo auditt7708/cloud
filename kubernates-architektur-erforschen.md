@@ -1,6 +1,8 @@
-Kubernetes ist ein Open-Source-Container-Management-Tool. Es ist ein Go-Lang-basierte (https://golang.org), leichte und tragbare Anwendung. Sie können einen Kubernetes-Cluster auf einem Linux-basierten Betriebssystem einrichten, um die Docker-Container-Anwendungen auf mehreren Hosts zu implementieren, zu verwalten und zu skalieren.
+# Kubernates Architektur Erforschen
 
-### Fertig werden
+Kubernetes ist ein Open-Source-Container-Management-Tool. Es ist ein [Go-Lang-basierte](https://golang.org), leichte und tragbare Anwendung. Sie können einen Kubernetes-Cluster auf einem Linux-basierten Betriebssystem einrichten, um die Docker-Container-Anwendungen auf mehreren Hosts zu implementieren, zu verwalten und zu skalieren.
+
+## Fertig werden
 
 Kubernetes wird mit mehreren Komponenten wie folgt konstruiert:
 
@@ -65,7 +67,6 @@ Scheduler hilft, zu wählen, welcher Container von welchen Knoten ausgeführt wi
 
 * Wieviele container sind am Laufen
 
-
 ### Controller Manager (kube-controller-manager)
 
 Controller Manager führt Cluster-Operationen durch. Beispielsweise:
@@ -76,11 +77,11 @@ Controller Manager führt Cluster-Operationen durch. Beispielsweise:
 
 * Versucht, den aktuellen Status in den gewünschten Status zu ändern
 
-
 ### Befehlszeilenschnittstelle (kubectl)
 
-Nach der Installation von Kubernetes Master können Sie mit dem Kubernetes Command Line Interface kubectl den Kubernetes Cluster steuern. Zum Beispiel gibt `kubectl get cs `den Status jeder Komponente zurück. Auch `kubectl get nodes` gibt eine Liste der Kubernetes-Knoten zurück:
-```
+Nach der Installation von Kubernetes Master können Sie mit dem Kubernetes Command Line Interface kubectl den Kubernetes Cluster steuern. Zum Beispiel gibt `kubectl get cs`den Status jeder Komponente zurück. Auch `kubectl get nodes` gibt eine Liste der Kubernetes-Knoten zurück:
+
+```sh
 //see the ComponentStatuses
 # kubectl get cs
 NAME                 STATUS    MESSAGE              ERROR
@@ -97,11 +98,12 @@ kub-node2   kubernetes.io/hostname=kub-node2   Ready     26d
 
 ### Kubernetes nodes
 
-Der Kubernetes-Knoten ist ein Slave-Knoten im Kubernetes-Cluster. Es wird von Kubernetes-Master gesteuert, um die Container-Anwendung mit Docker (http://docker.com) oder rkt (http://coreos.com/rkt/docs/latest/) in diesem Buch zu steuern. Wir verwenden die Docker-Container-Laufzeit als Standard-Engine.
+Der Kubernetes-Knoten ist ein Slave-Knoten im Kubernetes-Cluster. Es wird von Kubernetes-Master gesteuert, um die Container-Anwendung mit [Docker](http://docker.com) oder [rkt](http://coreos.com/rkt/docs/latest/) in diesem Buch zu steuern. Wir verwenden die Docker-Container-Laufzeit als Standard-Engine.
 
-### Tip
-Node oder slave?
-Die Terminologie des Slaves wird in der Computerindustrie verwendet, um den Cluster-Worker-Nodes darzustellen; Allerdings ist es auch mit Diskriminierung verbunden. Das Kubernetes-Projekt verwendet stattdessen Nodes.
+> Tip
+> Node oder slave?
+> Die Terminologie des Slaves wird in der Computerindustrie verwendet, um den Cluster-Worker-Nodes darzustellen;
+> Allerdings ist es auch mit Diskriminierung verbunden. Das Kubernetes-Projekt verwendet stattdessen Nodes.
 
 Das folgende Bild zeigt die Rolle und Aufgaben von Daemon-Prozessen im Nodes:
 ![kubernetes-nodes](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_01_03.jpg)
@@ -118,13 +120,13 @@ Kubelet ist der Hauptprozess auf dem Kubernetes-Knoten, der mit dem Kubernetes-M
 
 * Führt den HTTP-Server aus, um einfache APIs bereitzustellen
 
-
 ### Proxy (kube-proxy)
 
 Proxy verarbeitet den Netzwerk-Proxy und den Load-Balancer für jeden Container. Es ändert sich, um die Linux-iptables-Regeln (nat-Tabelle) zu ändern, um TCP- und UDP-Pakete über die Container zu steuern.
 
 Nach dem Start des `kube-proxy` Daemons wird er iptables-Regeln konfigurieren. Sie können sehen, `iptables -t nat -L` oder `iptables -t nat -S`, um die nat Tabelle Regeln wie folgt zu überprüfen:
-```
+
+```sh
  //the result will be vary and dynamically changed by kube-proxy
 # sudo iptables -t nat -S
 -P PREROUTING ACCEPT
@@ -155,10 +157,11 @@ Es gibt zwei weitere Komponenten, um die Funktionalitäten der Kubernetes-Nodes,
 
 ### etcd
 
-Der etcd (https://coreos.com/etcd/) ist der verteilte key-value Datenspeicher. Es kann über die RESTful API zugegriffen werden, um den CRUD-Betrieb über das Netzwerk auszuführen. Kubernetes verwendet etcd als Hauptdatenspeicher.
+Der [etcd](https://coreos.com/etcd/) ist der verteilte key-value Datenspeicher. Es kann über die RESTful API zugegriffen werden, um den CRUD-Betrieb über das Netzwerk auszuführen. Kubernetes verwendet etcd als Hauptdatenspeicher.
 
 Sie können die Kubernetes-Konfiguration und den Status in etcd (`/registry`) mit dem Befehl curl wie folgt ermitteln:
-```
+
+```sh
 //example: etcd server is 10.0.0.1 and default port is 2379
 # curl -L "http://10.0.0.1:2379/v2/keys/registry"
 
@@ -177,7 +180,8 @@ Für Overlay-Netzwerk hat Kubernetes mehrere Möglichkeiten, aber mit Flanell is
 ### Flanell
 
 Flanell verwendet auch etcd, um die Einstellungen zu konfigurieren und den Status zu speichern. Sie können auch den Befehl `curl` ausführen, um die Konfiguration (`/coreos.com/network`) und den Status wie folgt zu erfahren:
-```
+
+```sh
 //overlay network CIDR is 192.168.0.0/16
 # curl -L "http://10.0.0.1:2379/v2/keys/coreos.com/network/config"
 
@@ -202,4 +206,3 @@ Die folgenden Rezepte beschreiben die Installation und Konfiguration von verwand
 * Master konfigurieren
 
 * Konfigurieren von Nodes
-

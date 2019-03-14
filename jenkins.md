@@ -32,11 +32,11 @@ Folgender massen kann es Prüfen.
 
 `java -jar jenkins.war  --httpsPort=8443 --httpPort=-1 --httpsCertificate=fullchain.pem --httpsPrivateKey=privkey-rsa.pem`
 
-**Materialien zum Testen**
+## Materialien zum Testen
 
 * [Github Centos Pipline Service](https://github.com/CentOS/container-pipeline-service)
 
-## Dateien und Verzeichnisse 
+## Dateien und Verzeichnisse
 
 Home verzeichnis : `/var/lib/jenkins`
 
@@ -77,9 +77,8 @@ ploads build artifacts to repository sites using SCP (SSH) protocol. First you s
 
 ## Jenkins Berechtigungen
 
-Berechtigungen für Github 
+Berechtigungen für Github
 Dazu wird ein _New personal access token_ unter -> USER -> Settings -> Developer Settings -> Personel access tokens mit den Berechtigungen _admin:repo_hook_ erstellt.
-
 
 ## Jenkins Toturial Jenkins Docukentation
 

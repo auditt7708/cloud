@@ -122,10 +122,6 @@
 
 ## [Big Data](../bigdata)
 
-**Sources:**
+### Sources
+
  * [Tuturials](http://www.gtkdb.de/index_34_2792.html)
-
-### ToDu
-
-* [ ]  https://github.com/evilstreak/markdown-js für die wiki integrieren .
-* [ ]  https://github.com/markdown-it/markdown-it zum parsen .
