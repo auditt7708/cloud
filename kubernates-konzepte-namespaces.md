@@ -1,3 +1,5 @@
+# Kubernates Konzept: namespaces
+
 Der Name einer Ressource ist eine eindeutige Kennung innerhalb eines Namespaces im Kubernetes-Cluster. Die Verwendung eines Kubernetes-Namespaces kann Namespaces für verschiedene Umgebungen im selben Cluster isolieren. 
 Es gibt Ihnen die Flexibilität, eine isolierte Umgebung zu schaffen und Ressourcen auf verschiedene Projekte und Teams zu verteilen.
 
@@ -6,7 +8,8 @@ Pods, Services, replication controller sind in einem bestimmten Namespace enthal
 ### Fertig werden
 
 Standardmäßig hat Kubernetes einen Namensraum namens `default` erstellt. Alle Objekte, die ohne Angabe von Namespaces erstellt wurden, werden in den default Namespaces gesetzt. Sie können kubectl verwenden, um Namespaces aufzulisten:
-```
+
+```sh
 // check all namespaces
 # kubectl get namespaces
 NAME      LABELS    STATUS    AGE
@@ -23,7 +26,8 @@ Der Name eines Namespaces muss ein DNS-Label sein und den folgenden Regeln folge
 ### Wie es geht…
 
 1. Nachdem wir unseren gewünschten Namen ausgewählt haben, erstellen wir einen Namensraum namens `new-namespace` mit der Konfigurationsdatei:
-```
+
+```sh
 # cat newNamespace.yaml
 apiVersion: v1
 kind: Namespace
@@ -35,29 +39,35 @@ metadata:
 ```
 
 2. Nachdem der Namespace erfolgreich erstellt wurde, listen Sie den Namespace erneut auf:
-```
+
+```sh
 // list namespaces
 # kubectl get namespaces
 NAME            LABELS    STATUS    AGE
 default         <none>    Active    8d
 new-namespace   <none>    Active    12m
 ```
+
 Wir können jetzt sehen, dass wir zwei Namespaces haben.
 
-3. Lass uns den nginx Replikations controller ausführen, der in[Richte dein eigenes kubernetes ein](../kubernetes-einrichten) in einem neuen Namespace beschrieben ist:
-```
+3. Lass uns den nginx Replikations controller ausführen, der in [Richte dein eigenes kubernetes ein](../kubernetes-einrichten) in einem neuen Namespace beschrieben ist:
+
+```sh
 // run a nginx RC in namespace=new-namespace
 # kubectl run nginx --image=nginx --namespace=new-namespace
 
 ```
+
 4. Dann lass uns die pods auflisten:
-```
+
+```sh
 # kubectl get pods
 NAME                                    READY     STATUS        RESTARTS   AGE
 ```
 
 5. Es laufen keine pods ! Lass uns wieder mit dem Parameter `--namespace` nachsehen:
-```
+
+```sh
 // to list pods in all namespaces
 # kubectl get pods --all-namespaces
 NAMESPACE      NAME          READY     STATUS    RESTARTS   AGE
@@ -68,10 +78,12 @@ new-namespace  nginx-ns0ig   1/1       Running   0          17m
 NAME          READY     STATUS    RESTARTS   AGE
 nginx-ns0ig   1/1       Running   0          18m
 ```
+
 Wir können jetzt unsere pods sehen.
 
 Wenn Sie in der Befehlszeile kein Namensraum angeben, wird Kubernetes die Ressourcen im Standard-Namespace erstellen. Wenn du Ressourcen nach der Konfigurationsdatei erstellen möchtest, kannst du es einfach bei der Erstellung von `kubectl create` angeben:
-```
+
+```sh
 # kubectl create -f myResource.yaml --namespace=new-namespace
 ```
 
@@ -80,7 +92,8 @@ Wenn Sie in der Befehlszeile kein Namensraum angeben, wird Kubernetes die Ressou
 Es ist möglich, den Standard-Namespace in Kubernetes umzuschalten:
 
 1. Finden Sie Ihren aktuellen Kontext:
-```
+
+```sh
 # kubectl config view | grep current-context
 current-context: ""
 ```
