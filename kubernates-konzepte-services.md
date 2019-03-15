@@ -14,12 +14,12 @@ Das vorangehende Bild zeigt die Grundstruktur des Dienstes und realisiert folgen
 
 In diesem Rezept, werden Sie lernen, wie man Dienstleistungen zusammen mit Ihren Pods zu schaffen.
 
-### Fertig werden
+## Fertig werden
 
 Vor dem Anwenden von Diensten ist es wichtig zu prüfen, ob alle Ihre Nodes im System `kube-proxy` betreiben. Daemon `kube-proxy` arbeitet als Netzwerk-Proxy im Knoten. Es hilft, Service-Einstellungen wie IPs oder Ports auf jedem Knoten zu reflektieren. Um zu überprüfen, ob der `kube-Proxy` aktiviert ist oder nicht, können Sie den Status des Daemons oder die laufenden Prozesse auf dem Knoten mit einem bestimmten Namen überprüfen:
 
 ```sh
-// check the status of service kube-proxy 
+// check the status of service kube-proxy
 # service kube-proxy status
 ```
 
@@ -52,7 +52,7 @@ Um den Service-Port freizugeben, senden wir eine Portnummer mit dem Tag `--port`
 
 ### Erstellen von Diensten für verschiedene Ressourcen
 
-Sie können einen Dienst an einen Pod, einen replication controller  und einen Endpunkt außerhalb des Kubernetes-Systems oder einen anderen Dienst anhängen. Wir zeigen Ihnen diese, eins nach dem anderen, auf den nächsten Seiten. 
+Sie können einen Dienst an einen Pod, einen replication controller  und einen Endpunkt außerhalb des Kubernetes-Systems oder einen anderen Dienst anhängen. Wir zeigen Ihnen diese, eins nach dem anderen, auf den nächsten Seiten.
 Die Diensterstellung ist im Format: `kubectl expose RESOURCE_TYPE RESOURCE_NAME [TAGS]` oder `kubectl expose -f CONFIGURATION_FILE [TAGS]`. Einfach ausgedrückt, die Ressourcentypen pod, Replikationscontroller und Service werden vom Unterbefehl `expose` unterstützt. So ist die Konfigurationsdatei, die der Typbegrenzung folgt.
 
 ### Erstellen eines Dienstes für eine Pod
@@ -67,10 +67,11 @@ pod "nginx-pod" created
 service "service-pod" exposed
 ```
 
-### Tip
-Die Abkürzung von Kubernetes Ressourcen
-
-Bei der Verwaltung von Ressourcen über CLI können Sie ihre Abkürzungen anstelle der vollständigen Namen eingeben, um Zeit zu sparen und Tippfehler zu vermeiden.
+> Tip
+> Die Abkürzung von Kubernetes Ressourcen
+>
+> Bei der Verwaltung von Ressourcen über CLI können Sie ihre Abkürzungen anstelle der vollständigen Namen eingeben,
+> um Zeit zu sparen und Tippfehler zu vermeiden.
 
 |Resourcen typ|alias Abkürzung|
 |Component stati|`cs`|
@@ -148,7 +149,7 @@ Zuerst sollten Sie einen Endpunkt mit einer IP-Adresse haben. Zum Beispiel könn
 ```sh
 // Create an nginx server on another instance with IP address <FOREIGN_IP>
 # docker run -d -p 80:80 nginx
-2a17909eca39a543ca46213839fc5f47c4b5c78083f0b067b2df334013f62002 
+2a17909eca39a543ca46213839fc5f47c4b5c78083f0b067b2df334013f62002
 # docker ps
 CONTAINER ID        IMAGE                                  COMMAND                  CREATED             STATUS              PORTS                         NAMES
 2a17909eca39        nginx                                  "nginx -g 'daemon off"   21 seconds ago      Up 20 seconds       0.0.0.0:80->80/tcp, 443/tcp   goofy_brown
@@ -271,7 +272,7 @@ Session Affinity:  ClientIP
 No events.
 ```
 
-Derzeit ist das `ClientIP` die einzige verfügbare Einstellung für den Tag `--session-affinity`. Während die Session-Affinität zum `ClientIP` aktiviert ist, wird statt des Round-Robins die Anforderung, von welcher Endpunkt der Service gesendet werden soll, vom `ClientIP` entschieden. Wenn zum Beispiel die Anfragen vom Client im CIDR-Bereich `192.168.45.0/24 `an den Service-Service-2 gesendet werden, werden sie auf den Endpunkt `192.168.45.3:80` übertragen.
+Derzeit ist das `ClientIP` die einzige verfügbare Einstellung für den Tag `--session-affinity`. Während die Session-Affinität zum `ClientIP` aktiviert ist, wird statt des Round-Robins die Anforderung, von welcher Endpunkt der Service gesendet werden soll, vom `ClientIP` entschieden. Wenn zum Beispiel die Anfragen vom Client im CIDR-Bereich `192.168.45.0/24`an den Service-Service-2 gesendet werden, werden sie auf den Endpunkt `192.168.45.3:80` übertragen.
 
 ### Erstellen eines Dienstes in einem anderen Typ
 

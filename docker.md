@@ -28,7 +28,7 @@
 
 ## [docker-api-remote-sicherheit](../docker-api-remote-sicherheit)
 
-# [docker-arbeiten-images-apache-dockerfile](../docker-arbeiten-images-apache-dockerfile)
+## [docker-arbeiten-images-apache-dockerfile](../docker-arbeiten-images-apache-dockerfile)
 
 ## [docker-arbeiten-images-auto-github-bitbucket](../docker-arbeiten-images-auto-github-bitbucket)
 
@@ -64,7 +64,7 @@
 
 ## [docker-arbeiten-mit-docker](../docker-arbeiten-mit-docker)
 
-## Docker Benutzen 
+## Docker Benutzen
 
 ## [docker-benutzen-container-exposing-ports](../docker-benutzen-container-exposing-ports)
 
@@ -180,7 +180,7 @@
 
 ## [docker-praktischer-einsatz](../docker-praktischer-einsatz)
 
-## Docker Registry 
+## Docker Registry
 
 ## [docker-registry](../docker-registry)
 
@@ -216,7 +216,7 @@
 
 ## Datein und verzeichnisse
 
-~/.docker/daemon.json = json Konfiguration für einen Benutzer 
+~/.docker/daemon.json = json Konfiguration für einen Benutzer
 
 ## [Networkking](../docker-networking)
 
@@ -224,14 +224,19 @@
 
 * [UI server for Contiv](https://github.com/rhim/auth_proxy)
 
-# [Docker Dienst auf Centos7](../docker-service-centos7)
-# [Docker Networks auf Centos7](../docker-networking.centos7) 
-# [Docker Rastaya KanBan Board ](../docker-projekt-rastaya)
-# [Docker web2ldap](../docker-projekt-web2ldap)
-# [Private Docker Projekte](../docker-projekte)
+## [Docker Dienst auf Centos7](../docker-service-centos7)
+
+## [Docker Networks auf Centos7](../docker-networking.centos7)
+
+## [Docker Rastaya KanBan Board](../docker-projekt-rastaya)
+
+## [Docker web2ldap](../docker-projekt-web2ldap)
+
+## [Private Docker Projekte](../docker-projekte)
 
 **Quellen:**
-* [Docker And  FuelPHP](http://ucf.github.io/fuelphp-crash-course/ # Am Beispiel vom FuelPHP)
+
+* [DockerAndFuelPHP](http://ucf.github.io/fuelphp-crash-course)
 * [dockerfiles](https://github.com/kernt/dockerfiles)
 * [docker-tools](https://github.com/kernt/docker-tools)
 * [Configuring Docker Remote API with TLS on CoreOS](http://blog.jameskyle.org/2014/04/coreos-docker-remote-api-tls/)

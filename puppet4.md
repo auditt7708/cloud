@@ -1,20 +1,23 @@
-## SSL connect Fehler certificate verify failed 
+# Puppet4
+
+## SSL connect Fehler certificate verify failed
+
 Meldung:
 
-```
+```sh
  gem update --system
 ERROR:  While executing gem ... (Gem::RemoteFetcher::FetchError)
     SSL_connect returned=1 errno=0 state=error: certificate verify failed (https://api.rubygems.org/specs.4.8.gz)
 
 ```
 
-Fehler kommt z.B bei dem versuch puppet zu installieren 
- - Puppet version 4.10
+Fehler kommt z.B bei dem versuch puppet zu installieren
 
+* Puppet version 4.10
 
 Download und Entpacken der Aktuellen version von rubygem
 
-```
+```sh
 wget https://rubygems.org/rubygems/rubygems-2.6.11.tgz $$ \
 tar -xzvf rubygems-2.6.11.tgz && \
 cd  rubygems-2.6.11
@@ -23,8 +26,8 @@ ruby ./setup.rb
 
 Ausgabe der Installation
 
-```
-gem install puppet 
+```sh
+gem install puppet
 Fetching: facter-2.4.6.gem (100%)
 Successfully installed facter-2.4.6
 Fetching: hiera-3.3.1.gem (100%)

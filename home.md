@@ -32,7 +32,6 @@
 * [katello](https://gitlab.com/tobkern1980/home-net4-environment/wikis/katello)
 * [kickstart](../kickstart)
 
-
 ## Linux Basis
 
 * [User und Gruppen](../user-und-gruppen)
@@ -63,7 +62,7 @@
 * [Cluster Beispiele](../cluster-beispiele)
 * [cluster-software](../cluster-software)
 
-# Automatiesierung und Deployment
+## Automatiesierung und Deployment
 
 * [Repositories](../repositories)
 * [Preseed](../preseed)
@@ -71,7 +70,6 @@
 * [realmd-and-sssd-active-directory-authentication](../realmd-and-sssd-active-directory-authentication)
 * [repositories](../repositories)
 * [Pressed](../preseed)
-
 
 ## [Windows Entwicklung](../entwicklung)
 
@@ -85,7 +83,7 @@
 * [Continuous Delivery](../continuous-delivery)
 * [Distributed Task Queue](../distributed-task-queue)
 
-# [Services](../services)
+## [Services](../services)
 
 * [DNS](../dns)
 * [Backup](../backup)
@@ -124,4 +122,4 @@
 
 ### Sources
 
- * [Tuturials](http://www.gtkdb.de/index_34_2792.html)
+* [Tuturials](http://www.gtkdb.de/index_34_2792.html)

@@ -168,7 +168,7 @@ Anschließend können Sie die Konfiguration des replication controller im YAML-F
 ```sh
 apiVersion: v1
 kind: replicationcontroller
-spec: 
+spec:
   template:
     spec:
       containers:
