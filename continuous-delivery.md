@@ -1,8 +1,10 @@
-**Tools**
+# Continuous Delivery
+
+## Tools
+
 * [Jenkins](../jenkins)
 * [Maven](../maven)
 * [Gradle](../gradle)
-
 
 Links:
 * [gocd Webseite](https://www.gocd.io/)
@@ -21,7 +23,6 @@ Links:
 * [StarterSquad auf Github](https://github.com/StarterSquad/prudentia)
 * [Wo continuous deployment endet](https://www.gesellix.net/post/where-continuous-deployment-ends/)
 
+## Werzeuge
 
-
-# Werzeuge
 * [fabric8 ci/cd Tool von RedHead](../fabric8)

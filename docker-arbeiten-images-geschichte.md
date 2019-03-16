@@ -1,6 +1,8 @@
+# Docker arbeiten mit Images: Geschichte
+
 Es ist praktisch zu wissen, wie das Bild, das wir verwenden, erstellt wurde. Der `docker history`-Befehl hilft uns, alle Zwischenschichten zu finden.
 
-### Fertig werden
+## Fertig werden
 
 Kopieren oder importieren Sie ein Docker-Bild.
 
@@ -19,10 +21,10 @@ Mit den Metadaten eines Images kann Docker erkennen, wie ein Bild erstellt wird.
 ### Es gibt mehr…
 
 Schauen Sie sich die Commit-Nachricht einer Ebene an, die angewendet wurden:
-```
+
+```sh
 $ docker inspect --format='{{.Comment}}' nkhare/fedora:httpd
-Fedora with HTTPD package 
+Fedora with HTTPD package
 ```
 
 Derzeit gibt es keinen direkten Weg, um die Commit-Nachricht für jede Schicht mit einem einzigen Befehl zu betrachten, aber wir können den `inspect` befehl, den wir früher gesehen haben, für jede Ebene verwenden.
-

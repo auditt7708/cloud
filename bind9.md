@@ -1,12 +1,14 @@
-/etc/bind/db.example.com 
+# Bind9
 
-```
+/etc/bind/db.example.com
+
+```sh
 ;; DB.domainname
 ;; Forwardlookupzone für domainname
 ;;
 $TTL 604800
-@	IN	SOA	rp4.example.com. root.example.com. (
-			94
+@ mIN	SOA	rp4.example.com. root.example.com. (
+		    94
 			8H
 			2H
 			4W

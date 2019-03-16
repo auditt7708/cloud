@@ -1,6 +1,6 @@
-## Cluster Peacemaker Beisliele mit pcs 
+# Cluster Peacemaker Beisliele mit pcs
 
-Vorausetzungen : 
+Vorausetzungen :
 
 * [Peacemaker LVM DRBD NFS](../peacemaker-lvm-drbd-nfs)
 * [Peacemaker-drbd-MySql](../Peacemaker-drbd-MySql)

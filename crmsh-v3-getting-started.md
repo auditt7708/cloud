@@ -1,4 +1,6 @@
-So Sie haben erfolgreich crmsh auf einer oder mehreren Maschinen installiert und nun möchten jetzt einen Basiscluster konfigurieren. 
+# crmsh
+
+So Sie haben erfolgreich crmsh auf einer oder mehreren Maschinen installiert und nun möchten jetzt einen Basiscluster konfigurieren.
 Diese Anleitung soll Schritt-für-Schritt-Anleitungen zur Konfiguration von Herzschrittmacher mit einer einzigen Ressource bereitstellen, die in der Lage ist, zwischen einem Paar von Knoten zu scheitern, und baut dann auf dieser Basis auf, um einige fortgeschrittenere Themen des Clustermanagements abzudecken.
 
 Noch nicht installiert? Bitte folgen Sie den Installationsanweisungen, bevor Sie diese Anleitung fortsetzen. 
@@ -9,11 +11,12 @@ Crm - version
 
 In crmsh 3 wurden die Cluster-Init-Befehle durch die SLE HA-Bootstrap-Skripte ersetzt. Diese verlassen sich auf csync2 für die Konfigurationsdateimanagement, also stellen Sie sicher, dass Sie den Befehl csync2 installiert haben, bevor Sie fortfahren. Diese Anforderung kann in Zukunft entfernt werden.
 
-### Arbeiten mit der crmsh
+## Arbeiten mit der crmsh
+
 * [Technische Übersicht](../crmsh)
 
+### Übersicht
 
-###### Übersicht
 * [Crmsh Home Page](http://crmsh.nongnu.org/)
 * [start-guide](http://crmsh.github.io/start-guide/)
 * [crmsh v3 Manpage](http://crmsh.github.io/man-3/)

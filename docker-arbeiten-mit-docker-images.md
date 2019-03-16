@@ -1,5 +1,6 @@
-In diesem Kapitel werden wir uns auf die Bilder konzentrieren. Wie wir wissen, sind Bilder erforderlich, um Container zu führen. Sie können entweder vorhandene Bilder verwenden oder neue benutzerdefinierte Bilder erstellen. Sie müssen benutzerdefinierte Bilder erstellen, um Ihre Entwicklungs- und Bereitstellungsumgebung anzupassen. Sobald Sie ein Bild erstellen, können Sie es über die öffentliche oder private Registrierung zu teilen. Bevor wir mehr über Docker-Bilder erforschen, schauen wir uns die Ausgabe des `docker info`-Befehls an:
+# Docker arbeiten mit Images: Images
 
+In diesem Kapitel werden wir uns auf die Bilder konzentrieren. Wie wir wissen, sind Bilder erforderlich, um Container zu führen. Sie können entweder vorhandene Bilder verwenden oder neue benutzerdefinierte Bilder erstellen. Sie müssen benutzerdefinierte Bilder erstellen, um Ihre Entwicklungs- und Bereitstellungsumgebung anzupassen. Sobald Sie ein Bild erstellen, können Sie es über die öffentliche oder private Registrierung zu teilen. Bevor wir mehr über Docker-Bilder erforschen, schauen wir uns die Ausgabe des `docker info`-Befehls an:
 
 * Es hat 21 Behälter und 21 Bilder.
 
@@ -11,8 +12,7 @@ Der aktuelle Speicher-Treiber, `devicemapper` und seine damit zusammenhängenden
 
 * Das Benutzerkonto, das in der im nächsten Abschnitt erwähnten Registrierung registriert ist, um Images zu  pull/push platzieren.
 
-
-### Übersicht
+## Übersicht
 
 * [Erstellen eines Kontos mit Docker Hub](../docker-arbeiten-images-konto-docker-hub)
 * [Erstellen eines Bildes aus dem Container](../docker-arbeiten-images-von-container)

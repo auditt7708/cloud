@@ -1,14 +1,17 @@
-**Alias für ALL**
-```
+# Ansible Pattern
+
+## Alias für ALL
+
+```sh
 all
 *
 ```
 
-**Oder Gruppe dbservers**
+## Oder Gruppe dbservers
 
 `webservers:dbservers`
 
-**Host muss ein zwei Gruppen sein. Hier webservers und staging**
+## Host muss ein zwei Gruppen sein. Hier webservers und staging
 
 `webservers:&staging`
 
@@ -16,12 +19,13 @@ all
 
 `webservers:!phoenix`
 
-**Kombination aller Abhängigkeiten**
+## Kombination aller Abhängigkeiten
 
 `webservers:dbservers:&staging:!phoenix`
 
- **Auf Hosts in einer Gruppe via Index verweisen**
-```
+## Auf Hosts in einer Gruppe via Index verweisen
+
+```sh
 webservers[0]       # == cobweb
 webservers[-1]      # == weber
 webservers[0:2]     # == webservers[0],webservers[1]
@@ -31,7 +35,7 @@ webservers[:3]      # == cobweb,webbing,weber
 ```
 
 **Reguläre Ausdrücke benutzen. Muss mit _~_ anfangen.**
-`~(web|db).*\.example\.com` 
+`~(web|db).*\.example\.com`
 
 **Liste von hosts aus einer Datei lesen. Hier ist @ wichtig**
 `ansible-playbook site.yml --limit @retry_hosts.txt`

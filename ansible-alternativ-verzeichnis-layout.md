@@ -1,4 +1,6 @@
-```
+# Ansible Alternatives Verzeichnis layout
+
+```sh
 inventories/
    production/
       hosts               # inventory file for production servers
@@ -32,5 +34,6 @@ roles/
     fooapp/
 ```
 
-###### Quelle: 
+## Quelle
+
 * [playbooks_best_practices](http://docs.ansible.com/ansible/playbooks_best_practices.html)

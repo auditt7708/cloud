@@ -1,3 +1,5 @@
+# Certutil
+
 [Certutil](../certutil)- Manage keys and certificate in both NSS databases and other NSS tokens
 
 ## Installation von [Certutil](../certutil)
@@ -9,7 +11,7 @@
 
 Verzeichnisse erstellen :
 
-```
+```sh
     sudo mkdir -p /etc/pki/tls/certs
     sudo mkdir /etc/pki/tls/private
 ```
@@ -19,4 +21,4 @@ Verzeichnisse erstellen :
 * [redhat certutil](https://access.redhat.com/documentation/en-US/Red_Hat_Directory_Server/8.1/html/Administration_Guide/Managing_SSL-Using_certutil.html)
 * [Man Page Ubuntu](http://manpages.ubuntu.com/manpages/zesty/man1/certutil.1.html)
 * [adding-a-certificate-authority-to-the-trusted-list-in-ubuntu](http://blog.tkassembled.com/410/adding-a-certificate-authority-to-the-trusted-list-in-ubuntu/)
-* [linux_cert_management (https://chromium.googlesource.com/chromium/src/+/master/docs/linux_cert_management.md)
+* [linux_cert_management](https://chromium.googlesource.com/chromium/src/+/master/docs/linux_cert_management.md)

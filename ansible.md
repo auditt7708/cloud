@@ -1,7 +1,10 @@
-# Übersicht
+# Ansible
+
+## Übersicht
+
 * [Ansible Installation und Konfiguration](../ansible-install-konfiguration)
-* [Ansible requirements ](../ansible-erweitert-requirements)
-* [Ansible Variablen Facts Filter ](../ansible-variablen)
+* [Ansible requirements](../ansible-erweitert-requirements)
+* [Ansible Variablen Facts Filter](../ansible-variablen)
 * [Ansibel Inventory und Hosts](../ansible-hosts)
 * [Ansible Templates](../ansible-templates)
 * [Ansible Statements](../ansible-statements)
@@ -21,7 +24,7 @@
 * [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
 * [Ansible Vault](../ansible-vault)
 
-**Wichtige Documentation für ansible**
+## Wichtige Documentation für ansible
 
 * [playbooks von ansile doc](http://docs.ansible.com/ansible/playbooks.html)
 * [gc3-uzh-ch](https://github.com/gc3-uzh-ch/ansible-playbooks)
@@ -41,4 +44,3 @@
 * [Ansible Web Tools](https://ansible.sivel.net/)
 * [centos-opstools](https://github.com/centos-opstools?page=5)
 * [opstools-ansible](https://opstools-ansible.readthedocs.io/en/latest/)
-

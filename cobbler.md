@@ -1,7 +1,6 @@
-## Installation
+# Cobbler Installation
 
-`yum install -y cobbler cobbler-web tftp-server mc screen tmux mc tree vim `
-
+`yum install -y cobbler cobbler-web tftp-server mc screen tmux mc tree vim`
 
 ## Konfiguration
 

@@ -1,4 +1,6 @@
-```
+# Ansible Verzeichnis layout
+
+```sh
 production                # inventory file for production servers
 staging                   # inventory file for staging environment also entwicklung
                           # am ende kommt alles in die production Systeme
@@ -46,5 +48,6 @@ roles/
 
 Der Vorteil dieser normalen Struktur ist, dass Sie noch relativ selbsterklärend ist. Leider ist hier keine klare Trennung swichen der Produktiven benutzung und Entwicklung zu erkennen der muss hier mit Hilfe von [git](../git) und verschiedener brunches erreicht werden, die man aber nicht automatisch erkennen kann.
 
-###### Quelle: 
+## Quelle
+
 * [playbooks_best_practices](http://docs.ansible.com/ansible/playbooks_best_practices.html)

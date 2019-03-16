@@ -1,15 +1,14 @@
-# Uebersicht 
+# Uebersicht
 
 ## Pathname expansion (globbing)
-
 
 * - means 'match any number of characters'. '/' is not matched (and depending on your settings, things like '.' may or may not be matched, see above)
 ? - means 'match any single character'
 [abc] - match any of the characters listed. This syntax also supports ranges, like [0-9]
 
+## Datein Auswerten
 
-**Datein Auswerten**
-```
+```sh
 for filename in *.txt; do
   echo "=== BEGIN: $filename ==="
   cat "$filename"
@@ -17,8 +16,8 @@ for filename in *.txt; do
 done
 ```
 
-
 ## Compound commands
+
 Grouping
 { …; }	command grouping
 ( … )	command grouping in a subshell
@@ -36,6 +35,7 @@ Misc
 select word in …; do …; done	user selections
 
 ## Expansions and substitutions
+
 {A,B,C} {A..C}	Brace expansion
 ~/ ~root/	Tilde expansion
 $FOO ${BAR%.mp3}	Parameter expansion
@@ -46,36 +46,38 @@ Hello <---> Word!	Word splitting
 /data/*-av/*.mp?	Pathname expansion
 
 ## Process substitution
-```
+
+```sh
 <( <LIST> )
 
 >( <LIST> )
 ```
 
-**Example with diff**
+## Example with diff
+
 `diff <(ls "$first_directory") <(ls "$second_directory")`
 
-**Example als counter**
+## Example als counter
 
-```sh 
+```sh
 counter=0
- 
+
 while IFS= read -rN1 _; do
     ((counter++))
 done < <(find /etc -printf ' ')
- 
+
 echo "$counter files"
 ```
 
-**Zuweisung via Parameter**
-```
+## Zuweisung via Parameter
+
+```sh
 f() {
     cat "$1" >"$x"
 }
- 
+
 x=>(tr '[:lower:]' '[:upper:]') f <(echo 'hi there')
 ```
-
 
 ## Parameter expansion
 
@@ -129,9 +131,10 @@ x=>(tr '[:lower:]' '[:upper:]') f <(echo 'hi there')
         ${PARAMETER:+WORD}
         ${PARAMETER+WORD}
 
-**Display error if null or unset**
-*  ${PARAMETER:?WORD}
-*  ${PARAMETER?WORD}
+## Display error if null or unset
+
+* `${PARAMETER:?WORD}`
+* `${PARAMETER?WORD}`
 
 **Get name without extension**
 `${FILENAME%.*}`
@@ -146,7 +149,8 @@ x=>(tr '[:lower:]' '[:upper:]') f <(echo 'hi there')
 `${PATHNAME##*/}`
 
 ## Brace expansion
-```
+
+```sh
 $ echo _{I,want,my,money,back}
 _I _want _my _money _back
 
@@ -165,22 +169,22 @@ _I- _want- _my- _money- _back-
 
 ## Search and replace
 
-```
+```sh
 ${PARAMETER/PATTERN/STRING}
 
 ${PARAMETER//PATTERN/STRING}
 
 ${PARAMETER/PATTERN}
 
-${PARAMETER//PATTERN} 
+${PARAMETER//PATTERN}
 ```
-
-
 
 ## Arrays
 
 **Quellen:**
+
 * [bash-hackers.org](https://wiki.bash-hackers.org/syntax/pe)
 
-#### Tools
+## Tools
+
 * [bash-templater](https://github.com/lavoiesl/bash-templater)

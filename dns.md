@@ -1,17 +1,17 @@
 # Server
+
 * [PowerDNS](../power-dns)
 * [Bind9](../bind9)
 
-# Praktische Beispiele
+## Praktische Beispiele
 
 * [Split DNS](../split-dns)
 
-# Tools und Werzeuge
+## Tools und Werzeuge
 
 * [PowerDNS](https://gitlab.com/tobkern1980/home-net4-environment/wikis/)
 
-
-# Anleitungen 
+## Anleitungen
 
 * http://www.admin-magazine.com/Articles/PowerDNS-The-Other-Open-Source-Name-Server
 * http://www.tokiwinter.com/powerdns-with-bind-backend/

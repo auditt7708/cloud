@@ -1,14 +1,15 @@
+# Docker arbeiten mit Images
+
 Im vorherigen Kapitel, nach der Installation von Docker, zogen wir ein Bild und erstellt einen Container daraus. Das primäre Ziel von Docker ist es, Container zu führen. In diesem Kapitel sehen wir die verschiedenen Operationen, die wir mit Containern wie Start, Stoppen, Auflistung, Löschen und so weiter machen können. Dies wird uns helfen, Docker für verschiedene Anwendungsfälle wie Testen, CI / CD, Einrichtung von PaaS und so weiter zu verwenden, die wir in späteren Kapiteln abdecken werden. Bevor wir anfangen, überprüfen wir die Docker-Installation, indem wir den folgenden Befehl ausführen:
 `$ docker version`
-
 
 Dies gibt die Docker-Client und Server-Version, sowie andere Details.
 
 Ich benutze Fedora 20/21 als meine primäre Umgebung, um die Rezepte zu führen. Sie sollten auch mit dem anderen Umfeld arbeiten.
 
-### Übersicht
+## Übersicht
 
-* [nach einem Image Listing / Suchen ](../docker-benutzen-image-listing-suche)
+* [nach einem Image Listing/Suchen](../docker-benutzen-image-listing-suche)
 * [Image Pulling](../docker-benutzen-image-pulling)
 * [Images auflisten](../docker-benutzen-images-auflisten)
 * [Starten eines Containers](../docker-benutzen-container-starten)

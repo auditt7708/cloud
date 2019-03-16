@@ -1,6 +1,8 @@
+# Docker arbeiten mit Images: Löschen
+
 Um das Image vom Host zu entfernen, können wir den Befehl `docker rmi` verwenden. Allerdings entfernt dies keine Images aus der Registrierung.
 
-### Fertig werden
+## Fertig werden
 
 Stellen Sie sicher, dass ein oder mehrere Docker-Images lokal verfügbar sind.
 
@@ -17,11 +19,10 @@ In unserem Fall ist hier ein Beispiel mit der vorherigen Syntax:
 Wenn du alle containers und images entfernen möchtest, dann mache folgendes; Aber sei sicher , was du tust, da das sehr zerstörerisch ist:
 
 * Um alle Container zu stoppen, verwenden Sie den folgenden Befehl:
-`$ docker stop 'docker ps -q' `
+`$ docker stop 'docker ps -q'`
 
 * Um alle Container zu löschen, verwenden Sie den folgenden Befehl:
-`$ docker rm 'docker ps -a -q' `
+`$ docker rm 'docker ps -a -q'`
 
 * Um alle images zu löschen, verwenden Sie den folgenden Befehl:
 `$ docker rmi 'docker images -q'`
-

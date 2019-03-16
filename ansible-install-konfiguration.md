@@ -1,38 +1,40 @@
 # Installation von Ansible
 
-Da es nicht immer auf Anhieb möglich ist mit der node auf Anhieb zuzugreifen und alle notwendigen automatisiert einzurichten kann man mit : 
+Da es nicht immer auf Anhieb möglich ist mit der node auf Anhieb zuzugreifen und alle notwendigen automatisiert einzurichten kann man mit :
 
 `ansible myhost --sudo -m raw -a "yum install -y python2 python-simplejson"`
 
-alle Voraussetzungen für Ansible einrichten **myhost** ist hier der zielhost und **python-simplejson** ein Playbook das alle Abhängigkeiten einrichtet. 
+alle Voraussetzungen für Ansible einrichten **myhost** ist hier der zielhost und **python-simplejson** ein Playbook das alle Abhängigkeiten einrichtet.
 
 ## Installation Ubuntu
 
 Für Ubuntu kann man [PPA](https://launchpad.net/~ansible/+archive/ansible) verwenden um auf ein aktuelles release zu kommen
 Repo für Ubuntu xenial:
-```
+
+```sh
 deb http://ppa.launchpad.net/ansible/ansible/ubuntu xenial main 
 deb-src http://ppa.launchpad.net/ansible/ansible/ubuntu xenial main 
 ```
 
 **Repo einrichten und update durchführen:**
 
-```
+```sh
 sudo add-apt-repository ppa:ansible/ansible
 sudo apt-get update
 ```
 
 **Add Repository für Ubuntu**
-```
+
+```sh
 $ sudo apt-get install software-properties-common
 $ sudo apt-add-repository ppa:ansible/ansible
 $ sudo apt-get update
 $ sudo apt-get install ansible
 ```
 
-Da hier auch die quellen vorhanden sind kann man auch sich das Packet wie folgt bauen 
-```
+Da hier auch die quellen vorhanden sind kann man auch sich das Packet wie folgt bauen
 make deb
+
 ```
 
 ## Installation RHEL/Centos
@@ -45,8 +47,7 @@ Einfach mal mit dem [Packetmanager](../packetmanager) nach `easy_install` suchen
 
 Wenn dann installiert ist kann man wie folgt [Ansible](../ansible) installieren. 
 
-```
+```sh
 sudo easy_install pip
 sudo pip install ansible
 ```
-

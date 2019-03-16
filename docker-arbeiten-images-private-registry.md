@@ -1,16 +1,18 @@
-Wie wir schon früher gesehen haben, ist die öffentliche Docker-Registrierung die verfügbare Docker Hub (https://registry.hub.docker.com/), über die Benutzer Bilder hochladen / ziehen können. Wir können auch eine private Registrierung entweder in einer lokalen Umgebung oder auf der Cloud. Es gibt ein paar Möglichkeiten, die lokale Registrierung einzurichten:
+# Docker arbeiten mit Images: Private Registry
+
+Wie wir schon früher gesehen haben, ist die öffentliche Docker-Registrierung die verfügbare [Docker Hub](https://registry.hub.docker.com/), über die Benutzer Bilder hochladen / ziehen können. Wir können auch eine private Registrierung entweder in einer lokalen Umgebung oder auf der Cloud. Es gibt ein paar Möglichkeiten, die lokale Registrierung einzurichten:
 
 * Verwenden Sie die Docker-Registrierung von Docker Hub
 
 * Erstellen Sie ein Image aus Dockerfile und führen Sie einen Registrieren Sie den container:
 
-Https://github.com/fedora-cloud/Fedora-Dockerfiles/tree/master/registry
+[Fedora-Dockerfiles/tree/master/registry](Https://github.com/fedora-cloud/Fedora-Dockerfiles/tree/master/registry)
 
 * Konfigurieren Sie das distribution-specifische Paket wie Fedora, das das Docker-Registry-Paket bereitstellt, das Sie installieren und konfigurieren können.
 
 Der einfachste Weg, um es einzurichten, ist durch den Registry-Container selbst.
 
-### Fertig werden
+## Fertig werden
 
 Vergewissern Sie sich, dass der Docker-Daemon auf dem Host läuft und dass Sie über den Docker-Client eine Verbindung herstellen können.
 
@@ -19,22 +21,22 @@ Vergewissern Sie sich, dass der Docker-Daemon auf dem Host läuft und dass Sie �
 1. Um die Registrierung auf dem Container auszuführen, führen Sie den folgenden Befehl aus:
 `$ docker run -p 5000:5000 registry`
 
-2. Um die neu erstellte Registrierung zu testen, führen Sie die folgenden Schritte aus:
-  1. Starten Sie einen Container und seine ID mit dem folgenden Befehl:
-    `	$ ID='docker run -d -i fedora /bin/bash'`
-  2. Falls erforderlich, commiten Sie den neu erstellten Container und nehmen Sie einige Änderungen vor. 
+2.Um die neu erstellte Registrierung zu testen, führen Sie die folgenden Schritte aus:
+ 1.Starten Sie einen Container und seine ID mit dem folgenden Befehl:
+    `$ ID='docker run -d -i fedora /bin/bash'`
+  2.Falls erforderlich, commiten Sie den neu erstellten Container und nehmen Sie einige Änderungen vor.
     Fügen Sie dann diese Änderungen in das lokale Repository ein:
        `$ docker commit $ID fedora-20`
-3. Um das Image in die lokale Registry zu puschen, müssen wir das Bild mit dem Hostnamen oder der IP-Adresse des Registry-Hosts markieren. Lassen Sie uns annehmen, unsere Registry-Host ist Registry-Host; Dann,müssen wir um es zu markieren, verwenden Sie den folgenden Befehl:
+3.Um das Image in die lokale Registry zu puschen, müssen wir das Bild mit dem Hostnamen oder der IP-Adresse des Registry-Hosts markieren. Lassen Sie uns annehmen, unsere Registry-Host ist Registry-Host; Dann,müssen wir um es zu markieren, verwenden Sie den folgenden Befehl:
 `$ docker tag fedora-20 registry-host:5000/nkhare/f20`
 
-4. Da wir HTTPS beim Starten der Registry nicht richtig konfiguriert haben, erhalten wir einen Fehler wie der `ping attempt failed with error: Get https://dockerhost:5000/v1/_ping`. Für unser Beispiel, müssen wir die -`-insecure-registry registry-host: 5000` Option zum Dämon hinzufügen. Wenn du den Docker-Daemon manuell gestartet hast, dann müssen wir den Befehl wie folgt ausführen, um eine unsichere Registry zu ermöglichen:
+4.Da wir HTTPS beim Starten der Registry nicht richtig konfiguriert haben, erhalten wir einen Fehler wie der `ping attempt failed with error: Get https://dockerhost:5000/v1/_ping`. Für unser Beispiel, müssen wir die -`-insecure-registry registry-host: 5000` Option zum Dämon hinzufügen. Wenn du den Docker-Daemon manuell gestartet hast, dann müssen wir den Befehl wie folgt ausführen, um eine unsichere Registry zu ermöglichen:
 `$ docker -d   --insecure-registry registry-host:5000`
 
-5. Um das Bild zu betätigen, verwenden Sie den folgenden Befehl:
+Um das Bild zu betätigen, verwenden Sie den folgenden Befehl:
 `$ docker push registry-host:5000/nkhare/f20`
 
-6. Um einen Pull des Images aus der lokalen Registrierung durchzuführen, führen Sie den folgenden Befehl aus:
+6.Um einen Pull des Images aus der lokalen Registrierung durchzuführen, führen Sie den folgenden Befehl aus:
 `$ docker pull registry-host:5000/nkhare/f20`
 
 ### Wie es funktioniert…
@@ -43,13 +45,13 @@ Der vorherige Befehl, das Image zu pullen, lädt das offizielle Registry-Image v
 
 Die Registry kann auch auf beliebigen Servern mit der Docker-Registry App konfiguriert werden. Die Schritte dazu finden Sie auf der Docker-Registry GitHub Seite:
 
-Https://github.com/docker/docker-registry
+[docker-registry](Https://github.com/docker/docker-registry)
 
 ### Es gibt mehr…
 
 Schauen wir uns die Dockerfile von Docker-Registry an, um zu verstehen, wie das Registry-Image erstellt wird und wie man verschiedene Konfigurationsoptionen festlegt:
 
-```
+```sh
 # VERSION 0.1
 # DOCKER-VERSION  0.7.3
 # AUTHOR:         Sam Alba <sam@docker.com>
@@ -96,7 +98,7 @@ CMD ["docker-registry"]
 
 Mit der vorherigen Dockerfile werden wir:
 
-* Ubuntus Basisbild Benutzen und Packete installieren / aktualisieren 
+* Ubuntus Basisbild Benutzen und Packete installieren / aktualisieren
 
 * Kopiere den Docker-Registry-Quellcode in das Image
 
@@ -110,10 +112,7 @@ Mit der vorherigen Dockerfile werden wir:
 
 * Führen Sie die ausführbare Datei aus
 
-
 Ziele in der Konfigurationsdatei (`/docker-registry/config/config_sample.yml`) bieten verschiedene Möglichkeiten, die Registrierung zu konfigurieren. Mit der vorherigen Dockerfile werden wir den `dev`-Richtung mit den Umgebungsvariablen einstellen. Die verschiedenen Arten von Zielen sind:
-
-
 
 * Local: Dies speichert Daten im lokalen Dateisystem
 
@@ -137,5 +136,4 @@ Ziele in der Konfigurationsdatei (`/docker-registry/config/config_sample.yml`) b
 
 Für jeden der vorherigen Zile stehen verschiedene Konfigurationsoptionen wie Loglevel, Authentifizierung und so weiter zur Verfügung. Die Dokumentation für alle Optionen gibt es auf der GitHub-Seite der Docker-Registry.
 
-Die documentation on GitHub https://github.com/docker/docker-registry ist veraltet
-Neu ist jetzt https://github.com/docker/distribution
+Die documentation on [GitHub](https://github.com/docker/docker-registry) ist veraltet.

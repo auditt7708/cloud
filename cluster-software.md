@@ -1,17 +1,17 @@
-## Cluster Services Übersicht 
+# Cluster Services Übersicht
 
 * [Heartbeat](../heartbeat)
 * [Corosync](../corosync)
 * [Pacemaker](../pacemaker)
 
-## Cluster Werkzeuge 
+## Cluster Werkzeuge
 
 * [Gui Cluster Werkzeuge](../cluster-gui-tools)
 * [HAWK](../hawk)
 * [LCMC](../lcmc)
 * [Pacemaker Web GUI bei pcs](../)
 
-## Proxy Server 
+## Proxy Server
 
 * [Haproxy](../haproxy)
 

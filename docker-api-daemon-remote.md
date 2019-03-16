@@ -1,20 +1,22 @@
+# Docker API Daemon Remote
+
 Wie wir wissen, hat Docker eine Client-Server-Architektur. Wenn wir Docker installieren, starten ein user space Programm und ein Daemon von der gleichen Binärdatei. Der Dämon bindet auf `unix://var/run/docker.sock` standardmäßig auf demselben Host. Dies erlaubt uns nicht, den Dämon remote zugänglich zu machen. Um den Fernzugriff zu ermöglichen, müssen wir den Docker so starten, dass er den Fernzugriff ermöglicht, was durch die entsprechende Änderung der `-H` Flags erfolgen kann.
 
-### Fertig werden
+## Fertig werden
 
 Abhängig von der Linux-Distribution, die Sie ausführen, finden Sie die Docker-Daemon-Konfigurationsdatei, die Sie ändern müssen. Für Fedora,/Red Hat Distributionen wäre es `/etc/sysconfig/docker` und für Ubuntu / Debian Distributionen wäre es wahrscheinlich `/etc/default/docker`.
 
-### Wie es geht…
+## Wie es geht…
 
-1. Bei Fedora 20-Systemen füge die Option `-H tcp://0.0.0.0:2375` in der Konfigurationsdatei (`/etc/sysconfig/docker`) wie folgt hinzu:
+1.Bei Fedora 20-Systemen füge die Option `-H tcp://0.0.0.0:2375` in der Konfigurationsdatei (`/etc/sysconfig/docker`) wie folgt hinzu:
 
 `OPTIONS=--selinux-enabled -H tcp://0.0.0.0:2375`
 
-2. Starten Sie den Docker-Dienst neu. Führen Sie auf Fedora den folgenden Befehl aus:
+2.Starten Sie den Docker-Dienst neu. Führen Sie auf Fedora den folgenden Befehl aus:
 
 `$ sudo systemctl restart docker`
 
-3. Verbinden Sie sich mit dem Docker-Host vom Remote-Client:
+3.Verbinden Sie sich mit dem Docker-Host vom Remote-Client:
 
 `$ docker -H <Docker Host>:2375 info`
 

@@ -1,3 +1,5 @@
+# Docker arbeiten mit Images: Images von Containern
+
 Es gibt ein paar Möglichkeiten, um Bilder zu erstellen, man ist von manuell begehen Schichten und der andere Weg ist durch Dockerfiles. In diesem Rezept sehen wir das ehemalige und Blick auf Dockerfiles später im Kapitel.
 
 Wenn wir einen neuen Container starten, wird eine read/write an sie angeschlossen. Diese Schicht wird zerstört, wenn wir sie nicht retten. In diesem Rezept werden wir sehen, wie wir diese Ebene speichern und ein neues Bild aus dem laufenden oder gestoppten Container mit dem Befehl docker commit erstellen.
@@ -5,15 +7,15 @@ Fertig werden
 
 Um ein Docker-Image zu erhalten, füge einen `docker commit` an.
 
-### Wie es geht…
+## Wie es geht…
 
-1. Um das Commit auszuführen, führen Sie den folgenden Befehl aus:
+1.Um das Commit auszuführen, führen Sie den folgenden Befehl aus:
 `docker commit -a|--author[=""] -m|--message[=""] CONTAINER [REPOSITORY[:TAG]]`
 
-2. Lassen Sie uns einen Container starten und einige Dateien mit dem `install httpd` Paket erstellen/modifizieren:
+2.Lassen Sie uns einen Container starten und einige Dateien mit dem `install httpd` Paket erstellen/modifizieren:
 `docker run -i -t fedora /bin/bash`
 
-3. Dann öffnen Sie ein neues Terminal und erstellen Sie ein neues Image, indem Sie das Commiten:
+3.Dann öffnen Sie ein neues Terminal und erstellen Sie ein neues Image, indem Sie das Commiten:
 `$ docker commit -a "Neependra Khare" -m "Fedora with HTTPD package" 0a15686588ef nkhare/fedora:httpd`
 
 Wie Sie sehen können, wird das neue Image nun mit `nkhare/fedora` als name und `httpd` als Tag an das lokale Repository weitergegeben.
@@ -30,12 +32,13 @@ Mit Commit erstellen wir eine neue Ebene mit den Änderungen, die seit dem Start
 `$ docker diff CONTAINER`
 
 In unserem Fall sehen wir so etwas wie den folgenden Code:
-```
+
+```sh
 $ docker diff 0a15686588ef
 .....
-C /var/log 
-A /var/log/httpd 
-C /var/log/lastlog 
+C /var/log
+A /var/log/httpd
+C /var/log/lastlog
 .....
 ```
 
@@ -47,6 +50,4 @@ Wir können vor jedem Eintrag der Ausgabe ein Präfix sehen. Im Folgenden finden
 
 * D: Wird gesetzt, wenn eine Datei / ein Verzeichnis gelöscht wurde
 
-
-Standardmäßig wird ein Container pausiert, während er das Commit ausführt. Sie können sein Verhalten ändern, indem Sie `--pause=false ` benutzen.
-
+Standardmäßig wird ein Container pausiert, während er das Commit ausführt. Sie können sein Verhalten ändern, indem Sie `--pause=false` benutzen.

@@ -1,12 +1,14 @@
+# Docker Container exposing Ports benutzen
+
 Es gibt eine Reihe von Möglichkeiten, mit denen Ports auf dem Container ausgesetzt werden können. Einer von ihnen ist durch den Run-Befehl, den wir in diesem Kapitel abdecken werden. Die anderen Möglichkeiten sind durch die Docker-Datei und den Befehl --link. Wir werden sie in den anderen Kapiteln erforschen.
 
-### Fertig werden
+## Fertig werden
 
 Vergewissern Sie sich, dass der Docker-Daemon auf dem Host läuft und Sie können über den Docker-Client eine Verbindung herstellen.
 
-### Wie es geht…
+## Wie es geht…
 
-1. Die Syntax zum Freigeben eines Ports ist wie folgt:
+1.Die Syntax zum Freigeben eines Ports ist wie folgt:
 `$ docker run --expose=PORT [ OPTIONS ]  IMAGE[:TAG]  [COMMAND]  [ARG...]`
 
 Um zum Beispiel Port 22 beim Starten eines Containers freizulegen, führen Sie den folgenden Befehl aus:

@@ -4,4 +4,5 @@
 `ansible-playbook site.yml --ask-vault-pass`
 
 **Quellen:**
+
 * [how-to-use-vault-to-protect-sensitive-ansible-data](https://www.digitalocean.com/community/tutorials/how-to-use-vault-to-protect-sensitive-ansible-data-on-ubuntu-16-04)

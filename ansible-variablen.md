@@ -1,4 +1,4 @@
-# Von Ansible vordefinierte Variablen 
+# Von Ansible vordefinierte Variablen
 
 **Quellen:**
 
