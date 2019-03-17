@@ -1,6 +1,5 @@
-Installation
-==========
+# PassBoald Installation
 
+## Source
 
-Source : 
 * https://www.passbolt.com/help/tech/install

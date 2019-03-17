@@ -1,26 +1,29 @@
-Brunches sind ein Weg, um mehrere verschiedene tracks der Entwicklung in einem einzigen Quell-Repository zu halten. 
-Puppet umgebungen sind oft wie Git branches. 
-Sie können den gleichen Code mit leichten Variationen zwischen den unterschidlichen Zweigen haben, so wie Sie verschiedene Module für verschiedene Umgebungen haben können. 
+# Puppet Managemnt mit git
+
+Brunches sind ein Weg, um mehrere verschiedene tracks der Entwicklung in einem einzigen Quell-Repository zu halten.
+Puppet umgebungen sind oft wie Git branches.
+Sie können den gleichen Code mit leichten Variationen zwischen den unterschidlichen Zweigen haben, so wie Sie verschiedene Module für verschiedene Umgebungen haben können.
 In diesem Abschnitt zeigen wir, wie man Git-Zweige benutzt, um Umgebungen auf dem Puppet-Master zu definieren.
 
-### Fertig werden
+## Fertig werden
 
 Im vorherigen Abschnitt haben wir ein Produktionsverzeichnis erstellt, das auf dem Masterzweig basierte. Wir entfernen dieses Verzeichnis jetzt:
 
 `puppet@puppet:/etc/puppet/environments$ mv production production.master`
 
-### Wie es geht...
+## Wie es geht
 
-Ändern Sie den Post-Receiver-Hook, um eine Verzweigungsvariable zu akzeptieren. 
+Ändern Sie den Post-Receiver-Hook, um eine Verzweigungsvariable zu akzeptieren.
 Der Hook wird diese Variable verwenden, um ein Verzeichnis auf dem Puppet Master wie folgt zu erstellen:
-```
+
+```s
 #!/bin/sh
 
 read oldrev newrev refname
 branch=${refname#*\/*\/}
 
 git push puppetmaster $branch
-ssh puppet@puppet.example.com "if [ ! -d 
+ssh puppet@puppet.example.com "if [ ! -d
 /etc/puppet/environments/$branch ]; then git clone
  /etc/puppet/environments/puppet.git
  /etc/puppet/environments/$branch; fi; cd
@@ -28,7 +31,8 @@ ssh puppet@puppet.example.com "if [ ! -d
 ```
 
 Ändern Sie Ihre `README` Datei erneut und puchen Sie auf das Repository auf der maschine `git.example.com`:
-```
+
+```s
 t@mylaptop puppet$ git add README
 t@mylaptop puppet$ git commit -m "Adding README"
 [master 539d9f8] Adding README
@@ -49,28 +53,28 @@ To git@git.example.com:repos/puppet.git
    0d6b49f..539d9f8  master -> master
 ```
 
-### Wie es funktioniert...
+## Wie es funktioniert
 
-Der Hook liest nun den `refname` und analysiert den branch, der aktualisiert wird. 
+Der Hook liest nun den `refname` und analysiert den branch, der aktualisiert wird.
 Wir verwenden diese branch variable, um das Repository in ein neues Verzeichnis zu klonen und den branch auszuprobieren.
 
+## Es gibt mehr
 
-### Es gibt mehr...
-
-Jetzt, wenn wir eine neue Umgebung schaffen wollen, können wir im Git-Repository einen neuen branch erstellen. 
-Der branch wird ein Verzeichnis auf dem Puppet Master erstellen. 
+Jetzt, wenn wir eine neue Umgebung schaffen wollen, können wir im Git-Repository einen neuen branch erstellen.
+Der branch wird ein Verzeichnis auf dem Puppet Master erstellen.
 Jeder branch des Git-Repositories stellt eine Umgebung auf dem Puppenmeister dar:
 
-1. 
-```
+1. git branch und checkout in production
+
+```s
 t@mylaptop puppet$ git branch production
 t@mylaptop puppet$ git checkout production
 Switched to branch 'production'
 ```
 
-2. Aktualisiere den Produktionszweig und drücke zum Git Server wie folgt:
+2.Aktualisiere den Produktionszweig und drücke zum Git Server wie folgt:
 
-```
+```s
 t@mylaptop puppet$ vim README
 t@mylaptop puppet$ git add README
 t@mylaptop puppet$ git commit -m "Production Branch"
@@ -91,5 +95,5 @@ To git@git.example.com:repos/puppet.git
    11db6e5..832f6a9  production -> production
 ```
 
-Jetzt, wenn wir einen neuen branch erstellen, wird im Verzeichnis unserer environment ein entsprechendes Verzeichnis angelegt. 
+Jetzt, wenn wir einen neuen branch erstellen, wird im Verzeichnis unserer environment ein entsprechendes Verzeichnis angelegt.
 Eine Eins-zu-Eins-Abbildung wird zwischen environment und branch hergestellt.

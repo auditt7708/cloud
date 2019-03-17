@@ -1,11 +1,14 @@
+# Puppet MySQL Modul benutzen
+
 MySQL ist ein sehr weit verbreiteter Datenbankserver, und es ist ziemlich sicher, dass Sie irgendwann einen MySQL Server installieren und konfigurieren müssen. Das `puppetlabs-mysql` Modul kann Ihre MySQL-Implementierungen vereinfachen.
 
-### Wie es geht...
+## Wie es geht
 
 Gehen Sie folgendermaßen vor, um das Beispiel zu erstellen:
 
-1. Installiere das `puppetlabs-mysql` Modul:
-```
+1.Installiere das `puppetlabs-mysql` Modul:
+
+```s
 t@mylaptop ~/puppet $ puppet module install -i modules puppetlabs-mysql
 Notice: Preparing to install into /home/thomas/puppet/modules ...
 Notice: Downloading from https://forgeapi.puppetlabs.com ...
@@ -15,20 +18,22 @@ Notice: Installing -- do not interrupt ...
   └── puppetlabs-stdlib (v4.3.2)
 ```
 
-2. Erstellen Sie eine neue Knotendefinition für Ihren MySQL Server:
-```
+2.Erstellen Sie eine neue Knotendefinition für Ihren MySQL Server:
+
+```ruby
 node dbserver {
   class { '::mysql::server':
     root_password    => 'PacktPub',
-    override_options => { 
-      'mysqld' => { 'max_connections' => '1024' } 
+    override_options => {
+      'mysqld' => { 'max_connections' => '1024' }
     }
   }
 }
 ```
 
-3. Führen Sie die Puppe aus, um den Datenbankserver zu installieren und das neue Root-Passwort anzuwenden:
-```
+3.Führen Sie die Puppe aus, um den Datenbankserver zu installieren und das neue Root-Passwort anzuwenden:
+
+```s
 [root@dbserver ~]# puppet agent -t
 Info: Caching catalog for dbserver.example.com
 Info: Applying configuration version '1414566216'
@@ -40,8 +45,9 @@ Notice: /Stage[main]/Mysql::Server::Root_password/File[/root/.my.cnf]/ensure: de
 Notice: Finished catalog run in 35.50 seconds
 ```
 
-4. Vergewissern Sie sich, dass Sie eine Verbindung zur Datenbank herstellen können:
-```
+4.Vergewissern Sie sich, dass Sie eine Verbindung zur Datenbank herstellen können:
+
+```s
 [root@dbserver ~]# mysql
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 11
@@ -58,7 +64,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql>
 ```
 
-### Wie es funktioniert...
+## Wie es funktioniert
 
 Das MySQL-Modul installiert den MySQL-Server und stellt sicher, dass der Server läuft. Es konfiguriert dann das Root-Passwort für MySQL. Das Modul macht noch viele andere Dinge für Sie. Es erstellt eine `.my.cnf` Datei mit dem Root-Benutzer-Passwort. Wenn wir den `mysql` Client ausführen, setzt die .`my.cnf` Datei alle Vorgaben, so dass wir keine Argumente liefern müssen.
 Es gibt mehr...

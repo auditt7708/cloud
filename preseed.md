@@ -1,10 +1,12 @@
-## Automatisierung
+# Automatisierung mit preseed
+
 * [Automatisierung von post-installation](../preseed-post-installation-tasks)
 
-Debian/ Ubuntu Preseed
+Debian/Ubuntu Preseed
 
 xenial.seed Ubuntu 16.04
-```
+
+```s
 ################################################################################
 ### Localization                                                             ###
 ################################################################################
@@ -615,9 +617,9 @@ d-i preseed/late_command string \
     in-target sed -i 's/http:\/\/mirror/ftp:\/\/mirror/g' /etc/apt/sources.list
 ```
 
-SSH Key
+SSH Key verteilen
 
-```
+```s
 d-i preseed/late_command string mkdir -p /target/root/.ssh
 d-i preseed/late_command string cp /cdrom/id_rsa.pub /target/root/.ssh/authorized_keys
 d-i preseed/late_command string chmod -R go-rwx /target/root/.ssh

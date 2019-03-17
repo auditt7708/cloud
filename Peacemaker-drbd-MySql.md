@@ -1,5 +1,7 @@
-# Konfiguration Peacemaker
+# Cluster mit Peacemaker mit DRBD und MySQL
 
-# Konfiguration drbd
+## Konfiguration Peacemaker
 
-# Konfiguration mysql
+## Konfiguration drbd
+
+## Konfiguration mysql

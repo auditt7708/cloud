@@ -1,3 +1,5 @@
+# Puppet für fortgeschrittene: cron benutzen
+
 Sie können viel mit dem Setup tun, das Sie bereits haben: Arbeiten Sie an Ihren Puppet manifes als Team, kommunizieren Änderungen über ein zentrales Git-Repository und manuell auf eine Maschine mit dem `papply` Skript anwenden.
 
 Allerdings musst du dich immer noch in jede Maschine einloggen, um die Git Repo zu aktualisieren und Puppet erneut auszuführen. 

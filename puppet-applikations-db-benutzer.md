@@ -1,10 +1,13 @@
+# Puppet Applikation Datenbank benutzer
+
 Das Verwalten einer Datenbank bedeutet mehr als sicherzustellen, dass der Dienst ausgeführt wird; Ein Datenbankserver ist nichts ohne Datenbanken. Datenbanken benötigen Benutzer und Privilegien. Privilegien werden mit GRANT-Anweisungen behandelt. Wir verwenden das puppetlabs-mysql-Paket, um eine Datenbank und einen Benutzer mit Zugriff auf diese Datenbank zu erstellen. Wir erstellen einen MySQL-User Drupal und eine Datenbank namens Drupal. Wir erstellen eine Tabelle namens nodes und platzieren Sie Daten in diese Tabelle.
 Wie es geht...
 
 Gehen Sie folgendermaßen vor, um Datenbanken und Benutzer zu erstellen:
 
-1. Erstellen Sie eine Datenbankdefinition in Ihrer `dbserver` Klasse:
-```
+1.Erstellen Sie eine Datenbankdefinition in Ihrer `dbserver` Klasse:
+
+```ruby
 mysql::db { 'drupal':
     host    => 'localhost',
     user    => 'drupal',
@@ -19,8 +22,9 @@ mysql::db { 'drupal':
   }
 ```
 
-2. Erlaube dem Drupal-Benutzer, die Knoten-Tabelle zu ändern:
-```
+2.Erlaube dem Drupal-Benutzer, die Knoten-Tabelle zu ändern:
+
+```ruby
 mysql_grant { 'drupal@localhost/drupal.nodes':
     ensure     => 'present',
     options    => ['GRANT'],
@@ -30,15 +34,17 @@ mysql_grant { 'drupal@localhost/drupal.nodes':
   }
 ```
 
-3. Erstellen Sie die Datei `drupal.sql` mit folgendem Inhalt:
-```
+3.Erstellen Sie die Datei `drupal.sql` mit folgendem Inhalt:
+
+```sql
 CREATE TABLE users (id INT PRIMARY KEY AUTO_INCREMENT, title VARCHAR(255), body TEXT);
 INSERT INTO users (id, title, body) VALUES (1,'First Node','Contents of first Node');
 INSERT INTO users (id, title, body) VALUES (2,'Second Node','Contents of second Node');
 ```
 
-4. Führen Sie die Puppe aus, um Benutzer, Datenbank und `GRANT` zu erstellen:
-```
+4.Führen Sie die Puppe aus, um Benutzer, Datenbank und `GRANT` zu erstellen:
+
+```s
 [root@dbserver ~]# puppet agent -t
 Info: Caching catalog for dbserver.example.com
 Info: Applying configuration version '1414648818'
@@ -52,8 +58,9 @@ Notice: /Stage[main]/Main/Node[dbserver]/Mysql::Db[drupal]/Exec[drupal-import]: 
 Notice: Finished catalog run in 10.06 seconds
 ```
 
-5. Vergewissern Sie sich, dass die Datenbank und die Tabelle erstellt wurden:
-```
+5.Vergewissern Sie sich, dass die Datenbank und die Tabelle erstellt wurden:
+
+```s
 [root@dbserver ~]# mysql drupal
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
@@ -80,9 +87,9 @@ mysql> show tables;
 
 ```
 
-6. Vergewissern Sie sich nun, dass unsere Standarddaten in die Tabelle geladen wurden:
+6.Vergewissern Sie sich nun, dass unsere Standarddaten in die Tabelle geladen wurden:
 
-```
+```sql
 mysql> select * from users;
 +----+-------------+-------------------------+
 | id | title       | body                    |
@@ -93,10 +100,11 @@ mysql> select * from users;
 2 rows in set (0.00 sec)
 ```
 
-### Wie es funktioniert...
+## Wie es funktioniert
 
 Wir beginnen mit der Definition der neuen drupal Datenbank:
-```
+
+```sql
   mysql::db { 'drupal':
     host    => 'localhost',
     user    => 'drupal',
@@ -107,7 +115,8 @@ Wir beginnen mit der Definition der neuen drupal Datenbank:
 ```
 
 Wir geben an, dass wir von localhost (wir könnten eine Verbindung zur Datenbank von einem anderen Server) mit dem drupal Benutzer verbinden. Wir geben das Passwort für den Benutzer und geben eine SQL-Datei an, die nach der Erstellung der Datenbank auf die Datenbank angewendet wird. Wir benötigen, dass diese Datei bereits vorhanden ist und die Datei als nächstes definieren
-```
+
+```ruby
 file { '/root/drupal.sql':
     ensure => present,
     source => 'puppet:///modules/mysql/drupal.sql',
@@ -115,7 +124,8 @@ file { '/root/drupal.sql':
 ```
 
 Wir stellen dann sicher, dass der Benutzer die entsprechenden Berechtigungen mit einer `mysql_grant` Anweisung hat:
-```
+
+```ruby
   mysql_grant { 'drupal@localhost/drupal.nodes':
     ensure     => 'present',
     options    => ['GRANT'],
@@ -125,7 +135,7 @@ Wir stellen dann sicher, dass der Benutzer die entsprechenden Berechtigungen mit
   }
 ```
 
-### Es gibt mehr...
+## Es gibt mehr
 
 Mit dem puppetlabs-MySQL und dem puppetlabs-Apache-Modul können wir einen ganzen funktionierenden Webserver erstellen. Das Puppetlabs-Apache-Modul installiert Apache, und wir können auch das PHP-Modul und das MySQL-Modul aufnehmen. Wir können dann das Puppetlabs-Mysql-Modul verwenden, um den MySQL-Server zu installieren und dann die benötigten Drupal-Datenbanken zu erstellen und die Datenbank mit den Daten zu säen.
 

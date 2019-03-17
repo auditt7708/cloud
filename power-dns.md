@@ -1,5 +1,5 @@
-Powerdns api nutzen um RECORDES anzupassen
-======================================
+# [Powerdns](../pdns)
 
 **Quellen:**
-* https://n40lab.wordpress.com/category/powerdns/
+
+* [Wordpress Powerdns](https://n40lab.wordpress.com/category/powerdns/)

@@ -1,11 +1,15 @@
+# Mesos und Cassandra
+
 In diesem Abschnitt wird Cassandra vorgestellt und erklärt, wie man Cassandra auf Mesos einrichtet und dabei auch die Probleme behandelt, die während des Setup-Prozesses häufig auftreten.
-Einführung in Cassandra
+
+## Einführung in Cassandra
 
 Cassandra ist eine Open-Source-, skalierbare NoSQL-Datenbank, die mit keinem einzigen Punkt des Ausfalls vollständig verteilt ist und für die meisten üblichen Anwendungsfälle sehr leistungsfähig ist. Es ist sowohl horizontal als auch vertikal skalierbar. Horizontale Skalierbarkeit oder Scale-Out-Lösung beinhaltet das Hinzufügen von mehr Knoten mit Rohstoff-Hardware zu den bestehenden Cluster, während vertikale Skalierbarkeit oder Scale-up-Lösung bedeutet, mehr CPU und Speicherressourcen zu einem Knoten mit spezialisierten Hardware hinzufügen.
 
 Cassandra wurde von Facebook-Ingenieuren entwickelt, um den Inbox-Such-Use-Case zu adressieren und wurde von Google Bigtable inspiriert, der als Grundlage für sein Speichermodell diente und Amazon DynamoDB, das die Grundlage seines Distributionsmodells war. Es wurde 2008 erschienen und wurde Anfang 2010 zum Apache-Top-Level-Projekt. Es bietet eine Abfrage-Sprache namens Cassandra Query Language oder CQL, die eine SQL-ähnliche Syntax hat, um mit der Datenbank zu kommunizieren.
 
 Cassandra bietet verschiedene Funktionen wie:
+
 * Hohe Leistung
 * Ununterbrochene Uptime (kein einziger Ausfall)
 * Benutzerfreundlichkeit
@@ -22,10 +26,15 @@ Eine große Anzahl von Unternehmen nutzt Cassandra in der Produktion, darunter A
 Cassandra wird am besten benutzt, wenn man braucht:
 
 * No single failure point
+
 * Real-time writes
+
 * Flexibility
+
 * Horizontal scaling
+
 * Reliability
+
 * Ein klar definiertes Tabellenschema in einer NoSQL-Umgebung
 
 Einige der üblichen Anwendungsfälle sind wie folgt:
@@ -41,6 +50,7 @@ Einige der üblichen Anwendungsfälle sind wie folgt:
 ## Performance-Benchmark
 
 Die folgende Performance-Benchmark, die von einer unabhängigen Datenbankfirma durchgeführt wurde, zeigte, dass Cassandra für gemischte operative und analytische Workloads anderen Open Source NoSQL-Technologien (Quelle: www.datastax.com) weit überlegen war:
+
 ![cassabdra-performence](https://www.packtpub.com/graphics/9781785886249/graphics/B05186_09_01.jpg)
 
 ### Cassandra auf Mesos aufstellen
@@ -49,7 +59,7 @@ Dieser Abschnitt behandelt den Prozess der Bereitstellung von Cassandra oben auf
 
 Das Mesosphere-Team hat bereits die notwendigen JAR-Dateien und den Cassandra-Executor in einem Tarball verpackt, der direkt über den Marathon mit dem folgenden JSON-Code an Mesos übergeben werden kann:
 
-```
+```yml
 {
     "healthChecks": [
       {
@@ -97,22 +107,27 @@ Das Mesosphere-Team hat bereits die notwendigen JAR-Dateien und den Cassandra-Ex
 ```
 
 Bearbeiten Sie den JSON-Code, indem Sie `MESOS_ZK` und alle anderen Parameter, die Sie entsprechend ändern müssen, speichern Sie diesen JSON-Code in `cassandra-mesos.json`, und senden Sie ihn dann an Marathon mit dem folgenden Befehl:
-```
-$ curl -X POST -H "Content-Type: application/json" -d cassandra-mesos.json http://marathon-machine:8080/v2/apps
+
+```sh
+curl -X POST -H "Content-Type: application/json" -d cassandra-mesos.json http://marathon-machine:8080/v2/apps
 ```
 
-Einmal eingereicht, wird das Framework bootstrap sich. Wir müssen auch die Port-Bereiche erweitern, die von jedem Mesos-Knoten verwaltet werden, um die Standard-Cassandra-Ports einzuschließen. Wir können die Port-Bereiche als Ressourcen beim Start des Prozesses passieren.
+Einmal eingereicht, wird das Framework bootstrap sich.
+Wir müssen auch die Port-Bereiche erweitern, die von jedem Mesos-Knoten verwaltet werden, um die Standard-Cassandra-Ports einzuschließen.
+Wir können die Port-Bereiche als Ressourcen beim Start des Prozesses passieren.
 
 Hier ist ein Beispiel:
+
 `--resources='ports:[31000-32000,7000-7001,7199-7199,9042-9042,9160-9160]'`
 
-Cassandra auf Mesos bietet einen REST-Endpunkt, um das Setup zu stimmen. Wir können diesen Endpunkt auf Port `18080` standardmäßig aufrufen (sofern nicht geändert).
+Cassandra auf Mesos bietet einen REST-Endpunkt, um das Setup zu stimmen.
+Wir können diesen Endpunkt auf Port `18080` standardmäßig aufrufen (sofern nicht geändert).
 
 ## Eine erweiterte Konfigurationsanleitung
 
 Wie bereits erwähnt, nimmt Cassandra auf Mesos die Laufzeitkonfiguration durch Umgebungsvariablen ein. Wir können die folgenden Umgebungsvariablen verwenden, um die Konfiguration des Frameworks zu booten. Nach dem ersten Durchlauf werden die Konfigurationen aus dem im ZooKeeper gespeicherten Framework-Status gelesen:
 
-```
+```sh
 # name of the cassandra cluster, this will be part of the framework name in Mesos
 CASSANDRA_CLUSTER_NAME=dev-cluster
 
@@ -160,5 +175,6 @@ CASSANDRA_DATA_DIRECTORY=.
 
 Hier sind einige Referenzen:
 
-* https://github.com/mesosphere/cassandra-mesos
-* http://mesosphere.github.io/cassandra-mesos/
+* [Cassandra Mesos](https://github.com/mesosphere/cassandra-mesos)
+
+* [Cassandra Mesos Git](http://mesosphere.github.io/cassandra-mesos/)

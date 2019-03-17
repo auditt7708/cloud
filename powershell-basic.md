@@ -1,40 +1,43 @@
 # Powershell
 
-## Verarbeitung von JSON 
+## Verarbeitung von JSON
 
 Umwandeln von oder nach JSON
 
 ### Von json in ein ziel Formart Umwandeln
-```ps
+
+```powershell
 ConvertFrom-Json
            [-InputObject] <String>
            [-AsHashtable]
            [<CommonParameters>]
 ```
 
-**Example**
+### Example Json Konverter
 
-```ps
+```powershell
 Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 
 DisplayHint : 2
 ...
 ```
 
-Quellen:
+#### Quellen zu Json
+
 * [playing-with-json-and-powershell](https://devblogs.microsoft.com/scripting/playing-with-json-and-powershell/)
 
-**Verarbeitung einer Request via URL**
-```
+## Verarbeitung einer Request via URL
+
+```powershell
 $request = 'http://musicbrainz.org/ws/2/artist/5b11f4ce-a62d-471e-81fc-a69a8278c7da?inc=aliases&fmt=json'
 
 Invoke-WebRequest $request | ConvertFrom-Json | Select name, disambiguation, country
 
 ```
 
-### Umwandeln in json 
+### Umwandeln in json
 
-```
+```Powershell
 ConvertTo-Json
          [-InputObject] <Object>
          [-Depth <Int32>]
@@ -44,9 +47,9 @@ ConvertTo-Json
          [<CommonParameters>]
 ```
 
-**Example**
+### Example Kalender
 
-```
+```powershell
 (Get-UICulture).Calendar | ConvertTo-Json
 
 {
@@ -62,8 +65,9 @@ ConvertTo-Json
 }
 ```
 
-**Example2**
-```
+### Example Kalender als Array
+
+```Powershell
 Get-Date | ConvertTo-Json; Get-Date | ConvertTo-Json -AsArray
 
 {
@@ -77,20 +81,20 @@ Get-Date | ConvertTo-Json; Get-Date | ConvertTo-Json -AsArray
     "DisplayHint": 2,
     "DateTime": "October 12, 2018 11:07:18 PM"
   }
-] 
+]
 ```
 
-**Example3**
+### Example Domain mit Json
 
-```
+```Powershell
 PS C:\> @{Account="User01";Domain="Domain01";Admin="True"} | ConvertTo-Json -Compress
 
 {"Domain":"Domain01","Account":"User01","Admin":"True"}
 ```
 
-**Example4**
+### Example Datum Parameter Umwandeln in Json
 
-```
+```Powershell
 PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 
 {
@@ -126,13 +130,14 @@ PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 
 ## Verarbeitung von YAML
 
-## 
+### Quellen
 
+* [powershell-password-resets](https://4sysops.com/archives/powershell-password-resets/)
 
-**Quellen:**
+* [Reset-password-for-all]https://gallery.technet.microsoft.com/scriptcenter/Reset-password-for-all-412fbc72)
 
-* https://4sysops.com/archives/powershell-password-resets/
-* https://gallery.technet.microsoft.com/scriptcenter/Reset-password-for-all-412fbc72
-* http://windowsitpro.com/powershell/resetting-local-administrator-password-computers
-* https://gallery.technet.microsoft.com/scriptcenter/66a5b38f-cdf1-4126-aa0c-be65e16dd650
+* [resetting-local-administrator-password-computers](http://windowsitpro.com/powershell/resetting-local-administrator-password-computers)
+
+* [scriptcenter](https://gallery.technet.microsoft.com/scriptcenter/66a5b38f-cdf1-4126-aa0c-be65e16dd650)
+
 * [Repositorie für Linux](https://packages.microsoft.com/)

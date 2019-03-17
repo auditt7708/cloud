@@ -1,5 +1,8 @@
-**Neue PV anlegen einer vg hinzufügen, lv vg zuordnen**
-```
+# LVM
+
+## Neue PV anlegen einer vg hinzufügen, lv vg zuordnen
+
+```sh
 pvcreate /dev/sdb1
 vgcreate diskpool /dev/sdb1
 lvcreate -L 10GB -n testLV diskpool
@@ -14,16 +17,18 @@ lvcreate -L 10GB -n testLV diskpool
 **Vergrößern des LV**
 `lvextend -L 1G /dev/mapper/deviceN`
 
-ACHTUNG 1G ist die Größe das Gerät insgesamt hat!
+> ACHTUNG 1G ist die Größe das Gerät insgesamt hat!
 
-**Vergrößern des LV auf die maximale Größe**
-`lvextend -l +100%FREE /dev/mapper/deviceN `
+## Vergrößern des LV auf die maximale Größe**
+
+`lvextend -l +100%FREE /dev/mapper/deviceN`
 
 ### DRBD und LVM
+
 Für den DRBD muss swingend der cache vom lvm deactivate werden da sonst zu inconsistents mit drbd kommt!
 Zuerst muss die `lvm.conf` angepast werden
 
-'''
+```sh
 ...
 devices {
 ...
@@ -31,19 +36,18 @@ devices {
 ...
 }
 ...
-'''
-
-Prüfen des vorgans ist mit folgender abfrage möglich : 
 ```
+
+Prüfen des vorgans ist mit folgender abfrage möglich :
+
+```sh
 sudo lvm dumpconfig | grep write_cache
-	write_cache_state=0
+write_cache_state=0
 ```
 
+### Quellen
 
-
-**Quellen**
 * [LVM_vergrößern](https://www.thomas-krenn.com/de/wiki/LVM_vergrößern)
-
 
 Zusammenfassung der Schritte
 

@@ -1,16 +1,18 @@
-Es wäre schön, wenn wir wüssten, dass es einen Syntaxfehler im Manifest gab, sogar bevor wir es getan haben. 
-Sie können mit Befehl `puppen parser validate` das Manifest überprüfen :
+# Puppet auto syntax git hooks einsetzen
 
-```
+Es wäre schön, wenn wir wüssten, dass es einen Syntaxfehler im Manifest gab, sogar bevor wir es getan haben.
+Sie können mit Befehl `puppet parser validate` das Manifest überprüfen :
+
+```s
 t@ckbk:~$ puppet parser validate bootstrap.pp
 Error: Could not parse for environment production: Syntax error at
  'File'; expected '}' at /home/thomas/bootstrap.pp:3
 ```
 
-Dies ist besonders nützlich, weil ein Irrtum irgendwo im Manifest Puppet davon abhält, auf jedem Node zu laufen, auch auf Nodes, die diesen bestimmten Teil des Manifests nicht verwenden. 
+Dies ist besonders nützlich, weil ein Irrtum irgendwo im Manifest Puppet davon abhält, auf jedem Node zu laufen, auch auf Nodes, die diesen bestimmten Teil des Manifests nicht verwenden.
 So kann das Einchecken eines schlechten Manifests dazu führen, dass die Puppet aufhört, Updates für die Produktion für einige Zeit anzuwenden, bis das Problem entdeckt wird, und das könnte schwerwiegende Folgen haben. Der beste Weg, dies zu vermeiden, ist, die Syntaxprüfung zu automatisieren, indem Sie einen vorangestellten `hook` in Ihrem Versionskontroll-Repo verwenden.
 
-Wie es geht...
+## Wie es geht
 
 Folgt diesen Schritten:
 
@@ -19,7 +21,7 @@ Folgt diesen Schritten:
 
 2. Erstellen Sie die Datei `hooks/check_syntax.sh` mit den folgenden Inhalten (basierend auf einem Skript von Puppet Labs):
 
-```
+```s
 if git rev-parse --quiet --verify HEAD > /dev/null
 then
     against=HEAD
@@ -39,11 +41,11 @@ do
         case $indexfile in
             *.pp )
                 # Check puppet manifest syntax
-                git cat-file blob :0:$indexfile | 
+                git cat-file blob :0:$indexfile |
                   puppet parser validate > $error_msg ;;
             *.erb )
                 # Check ERB template syntax
-                git cat-file blob :0:$indexfile | 
+                git cat-file blob :0:$indexfile |
                   erb -x -T - | ruby -c 2> $error_msg >
                     /dev/null ;;
         esac
@@ -66,19 +68,20 @@ then
 fi
 ```
 
-3. Legen Sie die Berechtigung für das `hook` Skript mit folgendem Befehl fest:
+3.Legen Sie die Berechtigung für das `hook` Skript mit folgendem Befehl fest:
+
 `t@mylaptop:~/puppet$ chmod a+x hooks/check_syntax.sh`
 
-4. Jetzt entweder einen Symlink machen oder kopiere das Skript an den precommit hook in deinem Hhooks Verzeichnis. 
+4.Jetzt entweder einen Symlink machen oder kopiere das Skript an den precommit hook in deinem Hhooks Verzeichnis.
 Wenn dein Git Repo in `~/puppet` ausgecheckt ist, dann schreibe den Symlink nach `~/puppet/hooks/pre-commit` wie folgt:
 
 `t@mylaptop:~/puppet$ ln -s ~/puppet/hooks/check_syntax.sh.git/hooks/pre-commit`
 
-### Wie es funktioniert...
+## Wie es funktioniert
 
 Das `check_syntax.sh` Skript hindert Sie daran, irgendwelche Dateien mit Syntaxfehlern zu begehen, wenn es als Pre-Commit-Hook für Git verwendet wird:
 
-```
+```s
 t@mylaptop:~/puppet$ git commit -m "test commit"
 Error: Could not parse for environment production: Syntax error at
   '}' at line 3

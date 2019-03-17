@@ -1,11 +1,14 @@
+# Puppet Nginx Modul verwenden
+
 Nginx ist ein schneller, leichtgewichtiger Webserver, der in vielen Kontexten über Apache bevorzugt wird, besonders dort, wo hohe Leistung wichtig ist. Nginx ist etwas anders konfiguriert als Apache; Wie Apache aber gibt es ein Forge-Modul, das verwendet werden kann, um nginx für uns zu konfigurieren. Im Gegensatz zu Apache wird das Modul, das für den Gebrauch vorgeschlagen wird, nicht von Puppetlabs geliefert, sondern von James Fryman. Dieses Modul verwendet einige interessante Tricks, um sich selbst zu konfigurieren. Bisherige Versionen dieses Moduls nutzten das `Modul_data` Paket von R.I. Pienaar. Dieses Paket wird verwendet, um hieradata innerhalb eines Moduls zu konfigurieren. Es wird verwendet, um Standardwerte für das nginx-Modul zu liefern. Ich würde nicht empfehlen, mit diesem Modul an dieser Stelle zu beginnen, aber es ist ein gutes Beispiel dafür, wo Modulkonfiguration in der Zukunft geleitet werden kann. Den Modellen die Möglichkeit zu geben, hieradata zu modifizieren, kann sich als nützlich erweisen.
 
-### Wie es geht...
+## Wie es geht
 
 In diesem Beispiel verwenden wir ein Forge-Modul, um nginx zu konfigurieren. Wir laden das Modul herunter und verwenden es, um virtualhosts zu konfigurieren.
 
-1. Laden Sie das `jfryman-nginx` Modul von der Forge herunter:
-```
+1.Laden Sie das `jfryman-nginx` Modul von der Forge herunter:
+
+```s
 t@mylaptop ~ $ cd ~/puppet
 t@mylaptop ~/puppet $ puppet module install -i modules jfryman-nginx
 Notice: Preparing to install into /home/thomas/puppet/modules ...
@@ -18,8 +21,9 @@ Notice: Installing -- do not interrupt ...
   └── puppetlabs-stdlib (v4.3.2)
 ```
 
-2. Ersetzen Sie die Definition für Webserver durch eine nginx-Konfiguration:
-```
+2.Ersetzen Sie die Definition für Webserver durch eine nginx-Konfiguration:
+
+```ruby
 node webserver {
   class {'nginx':}
   nginx::resource::vhost { 'mescalero.example.com':
@@ -38,8 +42,9 @@ node webserver {
 }
 ```
 
-3. Wenn Apache noch auf Ihrem Webserver läuft, hör doch auf:
-```
+3.Wenn Apache noch auf Ihrem Webserver läuft, hör doch auf:
+
+```s
 [root@webserver ~]# puppet resource service httpd ensure=false
 Notice: /Service[httpd]/ensure: ensure changed 'running' to 'stopped'
 service { 'httpd':
@@ -69,8 +74,9 @@ Notice: /Stage[main]/Nginx::Service/Service[nginx]: Triggered 'refresh' from 2 e
 Notice: Finished catalog run in 28.98 seconds
 ```
 
-4. Vergewissern Sie sich, dass Sie den neuen virtualhost erreichen können:
-```
+4.Vergewissern Sie sich, dass Sie den neuen virtualhost erreichen können:
+
+```s
 [root@webserver ~]# curl mescalero.example.com
 <html>
 mescalero.example.com
@@ -78,13 +84,13 @@ http://en.wikipedia.org/wiki/Mescalero
 </html>
 ```
 
-### Wie es funktioniert...
+## Wie es funktioniert
 
 Durch das Installieren des `jfryman-nginx` Moduls werden die Concat-, Stdlib- und APT-Module installiert. Wir rennen Puppet auf unserem Master, um die Plugins zu erstellen, die von diesen Modulen zu unserem laufenden Master hinzugefügt wurden. Die Stdlib und Concat haben Facter und Puppet Plugins, die für das Nginx Modul installiert werden müssen, um richtig zu funktionieren.
 
 Wenn die Plugins synchronisiert sind, können wir dann Puppet Agent auf unserem Webserver ausführen. Als Vorsichtsmaßnahme stoppen wir Apache, wenn es vorher gestartet wurde (wir können nicht nginx und Apache beide auf Port `80` hören). Nachdem Puppenträger ausgegeben wurden, haben wir festgestellt, dass nginx läuft und der virtuelle Host konfiguriert wurde.
 
-### Es gibt mehr...
+## Es gibt mehr
 
 Dieses nginx Modul ist unter aktiver Entwicklung. Es gibt mehrere interessante Lösungen mit dem Modul. Bisherige Releases verwendeten das Modul `ripienaar-module_data`, das es einem Modul ermöglicht, Standardwerte für seine verschiedenen Attribute über ein Hiera-Plugin aufzunehmen. Obwohl es noch in einem frühen Entwicklungsstadium ist, ist dieses System bereits verwendbar und stellt eines der modernsten Module der Forge dar.
 

@@ -1,15 +1,15 @@
 # Openshift Installation
 
-Vorbereitungen
+## Vorbereitungen
 
-```
+```s
 yum -y install centos-release-openshift-origin311.noarch
 yum -y install origin-clients
 ```
 
-# Linux Installation
+## Linux Installation
 
-## Linux Umbebung
+### Linux Umbebung
 
 `export KUBECONFIG=/home/$USER/.minishift/minishift-kube-config`
 
@@ -19,73 +19,75 @@ Für docker muss in der **** Unsichere Repositories aktiviert sein.
 
 `--insecure-registry 172.30.0.0/16`
 
-**Quelle:** [platform-as-code-with-openshift-terraform](https://medium.com/@fabiojose/platform-as-code-with-openshift-terraform-1da6af7348ce)
+### Quelle
 
-## Fehler nach Linux Installation 
+*[platform-as-code-with-openshift-terraform](https://medium.com/@fabiojose/platform-as-code-with-openshift-terraform-1da6af7348ce)
+
+## Fehler nach Linux Installation
 
 > Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: no such file or directory, imagestream import credentials will not be setup
 
-**Lösung**
-`` 
+### Fehler
 
+```sh
 > Could not set oc CLI context for 'minishift' profile: Error during setting 'minishift' as active profile: The specified path to the kube config 'C:\Users\Softg\.minishift\machines\minishift_kubeconfig' does not exist
 
-**Lösung**
-`` 
+Lösung
 
-> Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: no such file or directory, imagestream import credentials will not be setup
+```sh
 
-**Lösung**
-`` 
+Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: no such file or directory, imagestream import credentials will not be setup
+```
 
-# Windows Installation
+## Windows Installation
 
 minsihift start
 
-## Windows Fehler nach der Installation 
+### Windows Fehler nach der Installation
+
 > Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: no such file or directory, imagestream import credentials will not be setup
 
-**Lösung**
-`` 
+#### Lösung
 
+```sh
 > Could not set oc CLI context for 'minishift' profile: Error during setting 'minishift' as active profile: The specified path to the kube config 'C:\Users\Softg\.minishift\machines\minishift_kubeconfig' does not exist
+```
 
-**Lösung**
-`` 
+#### Lösung 'C:\Users\Softg\.minishift\machines\minishift_kubeconfig' does not exist
 
-> Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: no such file or directory, imagestream import credentials will not be setup
+```sh
+Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: no such file or directory, imagestream import credentials will not be setup
 
-**Lösung**
-`` 
+```
 
-## Windows Umgebung 
+## Windows Umgebung
 
-**Variable KUBECONFIG**
+### Variable KUBECONFIG
 
 `export KUBECONFIG=/Users/john/tmp/minishift-kube-config`
 
-**Varable PATH**
+### Varable PATH
 
 `set PATH=%PATH%;"D:\Program Files (x86)\openshift-origin-v1.0.3"`
 
-`$Env:PATH = "C:\Users\Softg\.minishift\cache\oc\v3.11.43\windows;$Env:PATH" ` 
+`$Env:PATH = "C:\Users\Softg\.minishift\cache\oc\v3.11.43\windows;$Env:PATH"`
 
 ## Firewall Einstellungen
 
-> Hier die einstellungen zur  Firewall die notwendig sind, damit [Openshift](../openshift) erreichbar ist. 
+Hier die einstellungen zur  Firewall die notwendig sind, damit [Openshift](../openshift) erreichbar ist.
 
+### iptabels
 
-**iptabels**
+### firewalld
 
-
-**firewalld**
-```
+```s
 firewall-cmd --permanent --new-zone dockerc
 firewall-cmd --permanent --zone dockerc --add-source 172.17.0.0/16
 firewall-cmd --permanent --zone dockerc --add-port 8443/tcp
 firewall-cmd --permanent --zone dockerc --add-port 53/udp
 firewall-cmd --permanent --zone dockerc --add-port 8053/udp
 firewall-cmd --reload
+
 ```
 
 ## [Cluster Konfiguration](https://docs.okd.io/latest/install_config/master_node_configuration.html)
@@ -94,12 +96,14 @@ firewall-cmd --reload
 
 * [Cluster Administration](https://docs.okd.io/latest/getting_started/administrators.html#getting-started-administrators)
 
-# [Nodes Managen](https://docs.okd.io/latest/admin_guide/manage_nodes.html)
+## [Nodes Managen okd Dokumentation](https://docs.okd.io/latest/admin_guide/manage_nodes.html)
 
-# Public registry
+## Public registry
 
 /etc/containers/registries.conf
-```
+
+```s
+
 [registries.search]
 registries = ['registry.redhat.io', 'quay.io', 'docker.io']
 
@@ -112,20 +116,19 @@ registries = []
 
 ## [Netzwerk](https://docs.okd.io/latest/admin_guide/managing_networking.html)
 
-## 
+## [OpenShift Ansible Broker](https://docs.okd.io/latest/install_config/oab_broker_configuration.html)
 
-# [OpenShift Ansible Broker](https://docs.okd.io/latest/install_config/oab_broker_configuration.html)
+## [Host zum Cluter Hinzufügen](https://docs.okd.io/latest/install_config/adding_hosts_to_existing_cluster.html)
 
-# [Host zum Cluter Hinzufügen](https://docs.okd.io/latest/install_config/adding_hosts_to_existing_cluster.html)
 ## [Master Host ersetzen](https://docs.okd.io/latest/admin_guide/assembly_replace-master-host.html)
 
-# [Nodes Managen](https://docs.okd.io/latest/admin_guide/manage_nodes.html)
+## [Nodes Managen](https://docs.okd.io/latest/admin_guide/manage_nodes.html)
 
-# [Eigene Zertifikate]()
+## Eigene Zertifikate
 
-# [Openshift Monitoring]() 
+## Openshift Monitoring
 
-# [sssd_for_ldap_failover](https://docs.okd.io/latest/install_config/sssd_for_ldap_failover.html)
+## [sssd_for_ldap_failover](https://docs.okd.io/latest/install_config/sssd_for_ldap_failover.html)
 
 ## Übersichtsliste
 
@@ -138,8 +141,7 @@ registries = []
 * [Openshift Entwicklung](../openshift-entwicklung)
 * [Openshift REST api](../openshift-rest-api)
 
-**Quellen**
+### Quellen
 
 * [openshift-kubernetes-automated-performance-tests-part-3/](https://developers.redhat.com/blog/2019/01/16/openshift-kubernetes-automated-performance-tests-part-3/)
 * [Red Hat Openshift](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8-beta/html/building_running_and_managing_containers/enabling-container-settings_building-running-and-managing-containers)
-

@@ -1,11 +1,13 @@
-Eine andere Art von Ausdruck, den Sie testen können, `if` Aussagen und andere Bedingungen der reguläre Ausdruck sind. 
+# Puppet4 if und Reguläre ausdrücke
+
+Eine andere Art von Ausdruck, den Sie testen können, `if` Aussagen und andere Bedingungen der reguläre Ausdruck sind.
 Ein regelmäßiger Ausdruck ist eine leistungsfähige Möglichkeit, Strings mit Muster zu vergleichen.
 
-## Pracktische umsetzung 
+## Pracktische umsetzung
 
 Dies ist ein Beispiel für die Verwendung eines regulären Ausdrucks in einer bedingten Anweisung. Dazu fügen folgendes unserer manifests Datei hinzu:
 
-```
+```sh
 if $::architecture =~ /64/ {
   notify { '64Bit OS Installed': }
 } else {
@@ -13,6 +15,7 @@ if $::architecture =~ /64/ {
   fail('Not 64 Bit')
 }
 ```
+
 ## Wie es Funktioniert
 
 Die Puppet behandelt den Text, der zwischen den Schrägstrichen als regulärer Ausdruck geliefert wird, und spezifiziert den dazu übereinstimmenden Text.
@@ -27,7 +30,8 @@ Ein der wenigen Praktischen einsetze zur Administration für `=~`  ist z.B Wir s
 ## Erfassen von Mustern
 
 Sie können nicht nur Text mit einem regulären Ausdruck anpassen, sondern auch den übereinstimmenden Text erfassen und in einer Variablen speichern:
-```
+
+```sh
 $input = 'Puppet is better than manual configuration'
 if $input =~ /(.*) is better than (.*)/ {
   notify { "You said '${0}'. Looks like you're comparing ${1}
@@ -36,10 +40,12 @@ if $input =~ /(.*) is better than (.*)/ {
 ```
 
 Der vorangehende Code erzeugt diese Ausgabe:
-` You said 'Puppet is better than manual configuration'. Looks like you're comparing Puppet to manual configuration! `
 
-Die Variable `$0` speichert den gesamten übereinstimmenden Text (vorausgesetzt, der Gesamtausdruck war erfolgreich). 
-Wenn Sie Klammern um irgendeinen Teil des regulären Ausdrucks setzen, schafft es eine Gruppe, und alle zusammenpassenden Gruppen werden auch in Variablen gespeichert. 
+> You said 'Puppet is better than manual configuration'.
+> Looks like you're comparing Puppet to manual configuration!
+
+Die Variable `$0` speichert den gesamten übereinstimmenden Text (vorausgesetzt, der Gesamtausdruck war erfolgreich).
+Wenn Sie Klammern um irgendeinen Teil des regulären Ausdrucks setzen, schafft es eine Gruppe, und alle zusammenpassenden Gruppen werden auch in Variablen gespeichert.
 Die erste abgestimmte Gruppe wird `$1` gespeichert , die zweite `$2`, und so weiter, wie im vorigen Beispiel gezeigt.
 
 Als Basis dient die Ruby Syntax mit allen Besonderheiten von Ruby !

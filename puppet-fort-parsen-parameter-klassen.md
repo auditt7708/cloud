@@ -1,13 +1,15 @@
-Manchmal ist es sehr nützlich, einen Aspekt einer Klasse zu parametrisieren. 
+# Puppet für fortgeschrittene: gem
+
+Manchmal ist es sehr nützlich, einen Aspekt einer Klasse zu parametrisieren.
 Zum Beispiel müssen Sie möglicherweise verschiedene Versionen eines `gem` Pakets verwalten und anstatt separate Klassen für jedes einzelne Paket zu machen, die sich nur in der Versionsnummer unterscheiden, können Sie die Versionsnummer als Parameter übergeben.
 
-### Wie es geht…
+## Wie es geht…
 
 In diesem Beispiel erstellen wir eine Definition, die Parameter akzeptiert:
 
-1. Deklariere den Parameter als Teil der Klassendefinition:
+1.Deklariere den Parameter als Teil der Klassendefinition:
 
-```
+```ruby
   class eventmachine($version) {
     package { 'eventmachine': provider => gem, ensure   => $version,
     }
@@ -15,17 +17,19 @@ In diesem Beispiel erstellen wir eine Definition, die Parameter akzeptiert:
 
 ```
 
-2. Verwenden Sie die folgende Syntax, um die Klasse auf einen Node aufzunehmen:
-```
+2.Verwenden Sie die folgende Syntax, um die Klasse auf einen Node aufzunehmen:
+
+```ruby
   class { 'eventmachine':
     version => '1.0.3',
   }
 ```
 
-### Wie es funktioniert…
+## Wie es funktioniert…
 
-Die Klasse Definition ` class eventmachine($ version) { ` ist genau wie eine normale Klasse Definition außer es gibt an, dass die Klasse einen Parameter: `$version` annimmt. Innerhalb der Klasse haben wir eine Paketressource definiert:
-```
+Die Klasse Definition `class eventmachine($ version) {` ist genau wie eine normale Klasse Definition außer es gibt an, dass die Klasse einen Parameter: `$version` annimmt. Innerhalb der Klasse haben wir eine Paketressource definiert:
+
+```ruby
   package { 'eventmachine':
     provider => gem,
     ensure   => $version,
@@ -37,9 +41,9 @@ Dies ist ein `gem` Paket, und wir fordern, Version `$version` zu installieren.
 Füge die Klasse auf einen Knoten ein, anstelle der üblichen Include-Syntax:
 `include eventmachine`
 
+## Auf diese Weise wird es eine `class` aussage geben
 
-## Auf diese Weise wird es eine `class` aussage geben:
-```
+```ruby
   class { 'eventmachine':
     version => '1.0.3',
   }
@@ -47,14 +51,15 @@ Füge die Klasse auf einen Knoten ein, anstelle der üblichen Include-Syntax:
 
 Dies hat die gleiche Wirkung, setzt aber auch einen Wert für den Parameter als Version.
 
-### Es gibt mehr…
+## Es gibt mehr
 
 Sie können mehrere Parameter für eine Klasse angeben:
-`  class mysql($package, $socket, $port) {`
+
+`class mysql($package, $socket, $port) {`
 
 Dann liefern sie auf die gleiche Weise:
 
-```
+```ruby
   class { 'mysql':
     package => 'percona-server-server-5.5',
     socket  => '/var/run/mysqld/mysqld.sock',
@@ -62,15 +67,16 @@ Dann liefern sie auf die gleiche Weise:
   }
 ```
 
-### Festlegen von Standardwerten
+## Festlegen von Standardwerten
 
-Sie können auch Standardwerte für einige Ihrer Parameter angeben. Wenn Sie die Klasse ohne Einstellung eines Parameters einfügen, wird der Standardwert verwendet. 
+Sie können auch Standardwerte für einige Ihrer Parameter angeben. Wenn Sie die Klasse ohne Einstellung eines Parameters einfügen, wird der Standardwert verwendet.
 Zum Beispiel, wenn wir eine `mysql` Klasse mit drei Parametern erstellt haben, könnten wir Standardwerte für alle oder alle Parameter wie im Code-Snippet angegeben:
+
 `class mysql($package, $socket, $port='3306') {`
 
 oder alle:
 
-```
+```ruby
   class mysql(
     package = percona-server-server-5.5",
     socket  = '/var/run/mysqld/mysqld.sock',

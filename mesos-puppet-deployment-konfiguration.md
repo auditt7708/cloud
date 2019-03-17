@@ -1,21 +1,28 @@
+# Mesos Deployment mit Puppet
+
 Dieser Teil wird in erster Linie abdecken, wie man einen Mesos-Cluster mit dem Puppet-Konfigurationsmanagement-Tool mit den ZooKeeper- und Mesos-Modulen in den folgenden Repositories einsetzen kann:
 
-* https://github.com/deric/puppet-mesos
-* https://github.com/deric/puppet-zookeeper
+* [Pupppet Mesos](https://github.com/deric/puppet-mesos)
+
+* [Puppet ZooKeeper](https://github.com/deric/puppet-zookeeper)
 
 Puppet ist ein Open-Source-Konfigurationsmanagement-Tool, das auf Windows, Linux und Mac OS läuft. Puppet Labs wurde von Luke Kanies gegründet, der 2005 die Puppe produzierte. Es ist in Ruby geschrieben und als freie Software unter der GNU General Public License (GPL) bis Version 2.7.0 und Apache License 2.0 veröffentlicht. Damit können Systemadministratoren die Standardaufgaben automatisieren, die sie regelmäßig ausführen müssen. Weitere Informationen über Puppet finden Sie unter folgender Adresse:
 
-* https://puppetlabs.com/puppet/puppet-open-source
+* [Puppet Open Source](https://puppetlabs.com/puppet/puppet-open-source)
 
-Der Code wird mit dem Profil- und Rollenmuster organisiert und die Knotendaten werden mit Hiera gespeichert. Hiera ist ein Puppet-Tool, um eine Schlüssel / Wert-Suche der Konfigurationsdaten durchzuführen. Es erlaubt eine hierarchische Konfiguration von Daten in Puppet, die mit nativem Puppencode schwer zu erreichen ist. Außerdem wirkt es als Trennzeichen von Konfigurationsdaten und Code.
+Der Code wird mit dem Profil- und Rollenmuster organisiert und die Knotendaten werden mit Hiera gespeichert.
+Hiera ist ein Puppet-Tool, um eine Schlüssel / Wert-Suche der Konfigurationsdaten durchzuführen.
+Es erlaubt eine hierarchische Konfiguration von Daten in Puppet, die mit nativem Puppencode schwer zu erreichen ist.
+Außerdem wirkt es als Trennzeichen von Konfigurationsdaten und Code.
 
-Am Ende dieses Moduls haben Sie einen hochverfügbaren Mesos-Cluster mit drei Meistern und drei Slaves. Daneben werden Marathon und Chronos auch in gleicher Weise eingesetzt.
+Am Ende dieses Moduls haben Sie einen hochverfügbaren Mesos-Cluster mit drei Meistern und drei Slaves.
+Daneben werden Marathon und Chronos auch in gleicher Weise eingesetzt.
 
 Wir können mehrere Puppet-Module kombinieren, um Mesos und ZooKeeper zu verwalten. Führen wir die folgenden Schritte aus:
 
-1. Erstellen Sie zunächst eine Puppetfile mit folgendem Inhalt:
+1.Erstellen Sie zunächst eine Puppetfile mit folgendem Inhalt:
 
-```
+```sh
 forge 'http://forge.puppetlabs.com'
 mod 'apt',
   :git => 'git://github.com/puppetlabs/puppetlabs-apt.git', :ref => '1.7.0'
@@ -41,8 +48,9 @@ mod 'zookeeper',
 
 Jetzt können wir die Profile und Rollen Muster für beide Mesos Meister und Sklaven schreiben. Auf den Master-Maschinen wird es auch die Verwaltung von ZooKeeper, Marathon und Chronos beinhalten.
 
-2. Erstellen Sie für die Master die folgende Rolle:
-```
+2.Erstellen Sie für die Master die folgende Rolle:
+
+```ruby
 class role::mesos::master {
   include profile::zookeeper
   include profile::mesos::master
@@ -53,17 +61,17 @@ class role::mesos::master {
 }
 ```
 
-3. Als nächstes erstellen Sie die folgende Rolle für die Slaves:
+3.Als nächstes erstellen Sie die folgende Rolle für die Slaves:
 
-```
+```ruby
 class role::mesos::slave {
   include profile::mesos::slave
 }
 ```
 
+4.Erstellen Sie das folgende Profil für ZooKeeper:
 
-4. Erstellen Sie das folgende Profil für ZooKeeper:
-```
+```ruby
 class profile::zookeeper {
   include ::java
   class { '::zookeeper':
@@ -72,8 +80,9 @@ class profile::zookeeper {
 }
 ```
 
-5. Erstellen Sie das folgende Profil für Mesos-Meister:
-```
+5.Erstellen Sie das folgende Profil für Mesos-Meister:
+
+```ruby
 class profile::mesos::master {
   class { '::mesos':
     repo => 'mesosphere',
@@ -88,8 +97,9 @@ class profile::mesos::master {
 }
 ```
 
-6. Als nächstes erstellen Sie das folgende Profil für Mesos-Slaves:
-```
+6.Als nächstes erstellen Sie das folgende Profil für Mesos-Slaves:
+
+```ruby
 class profile::mesos::slave {
   class { '::mesos':
     repo => 'mesosphere',
@@ -101,11 +111,12 @@ class profile::mesos::slave {
   }
 }
 ```
+
 Dies sind die grundlegenden Dinge, die wir brauchen, um einen Mesos-Cluster zu starten. Um Chronos und Marathon zu verwalten, müssen auch die folgenden Profile aufgenommen werden.
 
+7.Erstellen Sie ein Profil für Chronos, wie folgt:
 
-7. Erstellen Sie ein Profil für Chronos, wie folgt:
-```
+```ruby
 class profile::mesos::master::chronos {
   package { 'chronos':
     ensure  => '2.3.2-0.1.20150207000917.debian77',
@@ -120,8 +131,9 @@ class profile::mesos::master::chronos {
 }
 ```
 
-8. Erstellen Sie nun ein Profil für Marathon über den folgenden Code:
-```
+8.Erstellen Sie nun ein Profil für Marathon über den folgenden Code:
+
+```ruby
 class profile::mesos::master::marathon {
   package { 'marathon':
     ensure  => '0.7.6-1.0',
@@ -138,7 +150,8 @@ class profile::mesos::master::marathon {
 ```
 
 Bisher enthalten die Rollen und Profile keine Informationen über die Maschinen, die wir für die Einrichtung des Clusters verwenden werden. Diese Informationen werden mit Hiera kommen. Die Hiera-Daten für den Master würden etwas ähnliches aussehen:
-```
+
+```ruby
 ---
 classes:
   - role::mesos::master
@@ -152,8 +165,9 @@ zookeeper::servers: ['master1:2888:3888', 'master2:2888:3888', 'master3:2888:388
 
 Bei der Einrichtung eines hochverfügbaren Clusters werden die Master-Rechner Master 1, Master 2 bzw. Master 3 genannt.
 
-9. Hiera-Daten für Slave würde etwas ähnliches wie folgt aussehen:
-```
+9.Hiera-Daten für Slave würde etwas ähnliches wie folgt aussehen:
+
+```ruby
 ---
 classes:
   - role::mesos::slave
@@ -161,6 +175,7 @@ classes:
 mesos::slave::checkpoint: true
 mesos::zookeeper: 'zk://master1:2181,master2:2181,master3:2181/mesos'
 ```
+
 Jetzt können wir einen Puppenlauf auf jedem der Maschinen einrichten, um Mesos, ZooKeeper, Chronos und Marathon zu installieren und zu konfigurieren.
 
 Die Installation des Moduls ist wie bei jedem Puppet-Modul wie folgt:

@@ -1,3 +1,5 @@
+# Mesos und hadoop
+
 Dieser Abschnitt wird Hadoop vorstellen, erklären, wie man den Hadoop Stack auf Mesos einrichtet und die Probleme beseitigt, die bei der Einrichtung des Stapels häufig auftreten.
 Einführung in Hadoop
 
@@ -12,7 +14,6 @@ Die folgenden Module bilden das Apache Hadoop Framework:
 * **Hadoop YARN**: Dies ist ein Ressourcen-Manager, um Cluster-Ressourcen zu verwalten (ähnlich wie Mesos)
 
 * **Hadoop MapReduce**: Dies ist ein Verarbeitungsmodell für die parallele Datenverarbeitung im Maßstab
-
 
 ## MapReduce
 
@@ -43,25 +44,29 @@ In diesem Abschnitt wird erklärt, wie man Hadoop auf Mesos einrichtet. Eine bes
 
 Lassen Sie uns die hier erwähnten Schritte folgen:
 
-1. Öffnen Sie das Terminal auf Ihrem Cluster und feuern Sie die folgenden Befehle auf, um Hadoop auf Mesos einzurichten:
-```
+1.Öffnen Sie das Terminal auf Ihrem Cluster und feuern Sie die folgenden Befehle auf, um Hadoop auf Mesos einzurichten:
+
+```sh
 # Install snappy-java package if not alr
 eady installed.
-$ sudo apt-get install libsnappy-dev
+sudo apt-get install libsnappy-dev
 
 # Clone the repository
-$ git clone https://github.com/Mesos/Hadoop
+git clone https://github.com/Mesos/Hadoop
 
-$ cd Hadoop
+cd Hadoop
 
 # Build the Hadoop-Mesos-0.1.0.jar
-$ mvn package
+mvn package
 ```
 
-2. Sobald der vorherige Befehl ausgeführt wird, wird es das `target/Hadoop-Mesos-0.1.0.jar` Jar erstellen.
+2.Sobald der vorherige Befehl ausgeführt wird, wird es das `target/Hadoop-Mesos-0.1.0.jar` Jar erstellen.
 
-Eine Sache, die hier zu beachten ist, dass wenn Sie eine ältere Version von Mesos haben und das Glas gegen diese Version bauen müssen, dann müssen Sie die Datei `pom.xml` mit der entsprechenden Version bearbeiten. Wir können die folgenden Versionen in der Datei `pom.xml` ändern:
-```
+Eine Sache, die hier zu beachten ist, dass wenn Sie eine ältere Version von Mesos haben und das Glas gegen diese Version bauen müssen,
+dann müssen Sie die Datei `pom.xml` mit der entsprechenden Version bearbeiten.
+Wir können die folgenden Versionen in der Datei `pom.xml` ändern:
+
+```xml
   <!-- runtime deps versions -->
   <commons-logging.version>1.1.3</commons-logging.version>
   <commons-httpclient.version>3.1</commons-httpclient.version>
@@ -72,44 +77,48 @@ Eine Sache, die hier zu beachten ist, dass wenn Sie eine ältere Version von Mes
   <snappy-java.version>1.0.5</snappy-java.version>
 ```
 
-3. Jetzt können wir eine Hadoop-Distribution herunterladen. Wie Sie hier sehen können, haben wir das `Hadoop-Mesos jar` mit der Version` hasoop-2.5.0-mr1-cdh5.2.0` kompiliert. Es kann mit folgendem Befehl heruntergeladen werden:
-```
-$ wget 
-http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.5.0-cdh5.2.0.tar.gz
+3.Jetzt können wir eine Hadoop-Distribution herunterladen.
+Wie Sie hier sehen können, haben wir das `Hadoop-Mesos jar` mit der Version `hasoop-2.5.0-mr1-cdh5.2.0` kompiliert.
+Es kann mit folgendem Befehl heruntergeladen werden:
+
+```sh
+wget http://archive.cloudera.com/cdh5/cdh/5/hadoop-2.5.0-cdh5.2.0.tar.gz
 # Extract the contents
-$ tar zxf hadoop-2.5.0-cdh5.2.0.tar.gz
+tar zxf hadoop-2.5.0-cdh5.2.0.tar.gz
 ```
 
-4. Jetzt müssen wir `Hadoop-Mesos-0.1.0.jar` in die Hadoop `share/Hadoop/common/lib` Verzeichnis kopieren. Dies geschieht wie hier gezeigt:
-`$ cp hadoop-Mesos-0.1.0.jar hadoop-2.5.0-cdh5.2.0/share/hadoop/common/lib/`
+4.Jetzt müssen wir `Hadoop-Mesos-0.1.0.jar` in die Hadoop `share/Hadoop/common/lib` Verzeichnis kopieren.
+Dies geschieht wie hier gezeigt: `$ cp hadoop-Mesos-0.1.0.jar hadoop-2.5.0-cdh5.2.0/share/hadoop/common/lib/`
 
-5. Wir müssen nun die Symlinks der CHD5-Distribution aktualisieren, um auf die richtige Version zu verweisen (da sie sowohl MRv1 als auch MRv2 (YARN) enthält) mit den folgenden Befehlssätzen:
+5.Wir müssen nun die Symlinks der CHD5-Distribution aktualisieren, um auf die richtige Version zu verweisen (da sie sowohl MRv1 als auch MRv2 (YARN) enthält) mit den folgenden Befehlssätzen:
+
+```s
+cd hadoop-2.5.0-cdh5.2.0
+mv bin bin-mapreduce2
+mv examples examples-mapreduce2 
+ln -s bin-mapreduce1 bin
+ln -s examples-mapreduce1 examples
+
+pushd etc
+mv hadoop hadoop-mapreduce2
+ln -s hadoop-mapreduce1 Hadoop
+popd
+pushd share/hadoop
+rm mapreduce
+ln -s mapreduce1 mapreduce
+popd
 ```
-$ cd hadoop-2.5.0-cdh5.2.0
-$ mv bin bin-mapreduce2
-$ mv examples examples-mapreduce2 
-$ ln -s bin-mapreduce1 bin
-$ ln -s examples-mapreduce1 examples
 
-$ pushd etc
-$ mv hadoop hadoop-mapreduce2
-$ ln -s hadoop-mapreduce1 Hadoop
-$ popd
-$ pushd share/hadoop
-$ rm mapreduce
-$ ln -s mapreduce1 mapreduce
-$ popd 
-```
+6.Alle Konfigurationen sind nun fertig. Wir können die Hadoop-Distribution auf unser bestehendes Hadoop Distributed File System (HDFS) -System archivieren und hochladen, wo es von Mesos zugänglich ist. Schauen Sie sich die folgenden Befehle an:
 
-6. Alle Konfigurationen sind nun fertig. Wir können die Hadoop-Distribution auf unser bestehendes Hadoop Distributed File System (HDFS) -System archivieren und hochladen, wo es von Mesos zugänglich ist. Schauen Sie sich die folgenden Befehle an:
-
-```
-$ tar czf hadoop-2.5.0-cdh5.2.0.tar.gz hadoop-2.5.0-cdh5.2.0
-$ hadoop fs -put hadoop-2.5.0-cdh5.2.0.tar.gz /hadoop-2.5.0-cdh5.2.0.tar.gz
+```s
+tar czf hadoop-2.5.0-cdh5.2.0.tar.gz hadoop-2.5.0-cdh5.2.0
+hadoop fs -put hadoop-2.5.0-cdh5.2.0.tar.gz /hadoop-2.5.0-cdh5.2.0.tar.gz
 ```
 
 7. Sobald Sie fertig sind, können wir `JobTracker` konfigurieren, um jeden `TaskTracker` Knoten auf Mesos zu starten, indem er die Datei `maped-site.xml` wie folgt editiert:
-```
+
+```xml
 <property>
   <name>mapred.job.tracker</name>
   <value>localhost:9001</value>
@@ -135,16 +144,16 @@ $ hadoop fs -put hadoop-2.5.0-cdh5.2.0.tar.gz /hadoop-2.5.0-cdh5.2.0.tar.gz
   <value>hdfs://localhost:9000/Hadoop-2.5.0-cdh5.2.0.tar.gz</value>
 </property>
 ```
-8. Ein paar Eigenschaften in der `mapred-Site.xml` Datei sind Mesos-spezifisch, wie `mapred.Mesos.master` oder `mapred.Mesos.executor.uri`.
 
-9. Wir können nun den `JobTracker` Dienst starten, indem wir die Mesos-Bibliothek mit folgendem Befehl einschließen:
+8.Ein paar Eigenschaften in der `mapred-Site.xml` Datei sind Mesos-spezifisch, wie `mapred.Mesos.master` oder `mapred.Mesos.executor.uri`.
+
+9.Wir können nun den `JobTracker` Dienst starten, indem wir die Mesos-Bibliothek mit folgendem Befehl einschließen:
 
 `$ MESOS_NATIVE_LIBRARY=/path/to/libMesos.so Hadoop jobtracker`
 
-
 ## Eine erweiterte Konfigurationsanleitung
 
-Weitere Details zu den Konfigurationseinstellungen in Mesos finden Sie unter https://github.com/mesos/hadoop/blob/master/configuration.md.
+Weitere Details zu den Konfigurationseinstellungen in [Mesos](https://github.com/mesos/hadoop/blob/master/configuration.md).
 
 ## Häufige Probleme und Lösungen
 
@@ -154,21 +163,23 @@ Die beiden häufigsten Probleme bei der Einrichtung von Hadoop auf Mesos sind:
 * Build failures
 
 Eine Lösung für diese beiden Probleme wird hier beschrieben:
-* **Missing the Mesos library in the environment**: Wir erhalten einen Ausnahmestapel, wenn wir vergessen, die Mesos-Bibliothek in der Umgebung unter folgender URL zu setzen: https://github.com/mesos/hadoop/issues/25.
+
+* **Missing the Mesos library in the environment**: Wir erhalten einen Fehler, wenn wir vergessen, die Mesos-Bibliothek in der Umgebung unter folgender URL zu setzen: https://github.com/mesos/hadoop/issues/25.
 
 Dies kann durch die Einstellung der folgenden Umgebungsvariablen behoben werden:
-```
-$ export MESOS_NATIVE_LIBRARY=/usr/local/lib/libMesos.so
-$ export MESOS_NATIVE_JAVA_LIBRARY=/usr/local/lib/libMesos.so
+
+```sh
+export MESOS_NATIVE_LIBRARY=/usr/local/lib/libMesos.so
+export MESOS_NATIVE_JAVA_LIBRARY=/usr/local/lib/libMesos.so
 ```
 
-* **The Maven build failure**: Wir werden nicht in der Lage sein, das Paket bei einigen Gelegenheiten zu bauen, weil es Fehler verursacht. Ein Beispiel für einen Build-Fehler finden Sie hier: https://github.com/mesos/hadoop/issues/64.
+* **The Maven build failure**: Wir werden nicht in der Lage sein, das Paket bei einigen Gelegenheiten zu bauen, weil es Fehler verursacht. Ein Beispiel für einen [Build-Fehler](https://github.com/mesos/hadoop/issues/64).
 
 Dies kann vermieden werden, indem man die älteren Maven-Abhängigkeiten aus der Umgebung entfernt und wieder aufbaut.
 
 Hier ist ein Beispiel:
-```
-$ mv ~/.m2 ~/.mv_back
-$ mvn package
-```
 
+```java
+mv ~/.m2 ~/.mv_back
+mvn package
+```

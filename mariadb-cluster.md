@@ -4,7 +4,7 @@
 
 Einricten eines mariadb Repositories _/etc/yum.repos.d/mariadb.repo_ 
 
-```
+```sh
 [mariadb]
 name = MariaDB
 baseurl = http://yum.mariadb.org/10.3/centos7-amd64
@@ -14,36 +14,35 @@ gpgcheck=1
 
 ## Schrit 2 Setzen des SELinux permissive mode
 
-Für die Datenbank sollte SELinux deaktiviert werden: 
+Für die Datenbank sollte SELinux deaktiviert werden:
 
 `sudo setenforce0` 
 
-## Schrit 3 Installation MariaDB Galera Cluster 10 
+## Schrit 3 Installation MariaDB Galera Cluster 10
 
 socat  benutzen mit:
 
-```
+```sh
 sudo yum install socat
 ```
 
-und Galera samz MariaDB Installieren 
-```
+und Galera samz MariaDB Installieren
+
+```sh
 sudo yum install MariaDB-Galera-server MariaDB-client rsync galera
 ```
 
 ## Schrit 4 Einrichten der Sicherheits vorkehrungen für MariaDB
 
-Den service starten: 
-`sudo systemctl start mariadb` 
-
+Den service starten:
+`sudo systemctl start mariadb`
 
 Sichere Konfiguration von der MariaDB
 `mysql_secure_installation`
 
-
 ## Schrit 5 Benuzer für MariaDB Galera Cluster einrichten
 
-```
+```sh
 mysql -u root -p
 
 mysql> DELETE FROM mysql.user WHERE user='';
@@ -56,13 +55,13 @@ mysql> quit
 
 ## Schrit 6 Erstellen einer MariaDB Galera Cluster Konfiguration
 
-Den service stopen: 
+Den service stopen:
 
-`sudo systemctl stop mariadb` 
+`sudo systemctl stop mariadb`
 
-Follgende Konfiguration erfolgd auf allen nodes: 
+Follgende Konfiguration erfolgd auf allen nodes:
 
-```
+```sh
 sudo cat >> /etc/my.cnf.d/server.cnf << EOF
 binlog_format=ROW
 default-storage-engine=innodb
@@ -85,21 +84,21 @@ wsrep_sst_auth=sst_user:dbpass
 EOF
 ```
 
-Hier muss dann aber noch der _wsrep_node_name_ , _wsrep_sst_auth_ , _wsrep_node_address_ und _wsrep_cluster_address_ Parameter für die Nodes angepasst werden. 
+Hier muss dann aber noch der _wsrep_node_name_ , _wsrep_sst_auth_ , _wsrep_node_address_ und _wsrep_cluster_address_ Parameter für die Nodes angepasst werden.
 
 Wenn alle Nodes Eingerichetet sind, kann man den Cluster starten
 
-```
+```sh
 galera_new_cluster
 ```
 
-++Status überprüfen**
+Status überprüfen
 
 `ps -f -u mysql | more`
 
 und mit der DB
 
-```
+```sh
 MariaDB [(none)]> show global status like 'wsrep_cluster_size';
 +--------------------+-------+
 | Variable_name      | Value |
@@ -109,19 +108,19 @@ MariaDB [(none)]> show global status like 'wsrep_cluster_size';
 1 row in set (0.00 sec)
 ```
 
-**Maridb servie starten**
+### Maridb servie starten
 
 `systemctl start mariadb.service`
 
-**Cluster größe Prüfen**
+### Cluster größe Prüfen
 
 `mysql -u root -p -e "show status like 'wsrep%'"`
 
-**Replikation Überprüfen**
+### Replikation Überprüfen
 
 Testdatenbank _clustertest_ anlegen
 
-```
+```sh
 mysql -u root -p -e 'CREATE DATABASE clustertest;'
 mysql -u root -p -e 'CREATE TABLE clustertest.mycluster ( id INT NOT NULL AUTO_INCREMENT, name VARCHAR(50), ipaddress VARCHAR(20), PRIMARY KEY(id));'
 mysql -u root -p -e 'INSERT INTO clustertest.mycluster (name, ipaddress) VALUES ("db1", "1.1.1.1");'
@@ -131,10 +130,10 @@ mysql -u root -p -e 'SELECT * FROM clustertest.mycluster;'
 
 Testen ob alle Nodes die Datenbank übernaommen haben
 
-```
+```sh
 mysql -u root -p -e 'SELECT * FROM clustertest.mycluster;'
-``` 
+```
 
+###Quellen
 
-**Quellen:**
 * [getting-started-with-mariadb-galera-and-mariadb-maxscale-on-centos](https://mariadb.com/resources/blog/getting-started-with-mariadb-galera-and-mariadb-maxscale-on-centos/)

@@ -1,11 +1,15 @@
+# Puppet Verwaltung von Apache
+
 Apache ist der beliebteste Webserver der Welt, also ist es sehr wahrscheinlich, dass ein Teil Ihrer Puppet-Aufgaben die Installation und Verwaltung von Apache beinhalten wird.
 
-### Wie es geht...
+## Wie es geht
 
-Wir installieren und verwenden das `puppetlabs-apache` Modul zum Installieren und Starten von Apache. Dieses Mal, wenn wir `puppet module install` installieren, verwenden wir die Option `-i`, um Puppet zu sagen, das Modul in unserem Modul des Git-Repositorys zu installieren.
+Wir installieren und verwenden das `puppetlabs-apache` Modul zum Installieren und Starten von Apache.
+Dieses Mal, wenn wir `puppet module install` installieren, verwenden wir die Option `-i`, um Puppet zu sagen, das Modul in unserem Modul des Git-Repositorys zu installieren.
 
-1. Installieren Sie das Modul mit `puppet modules install` installieren:
-```
+1.Installieren Sie das Modul mit `puppet modules install` installieren:
+
+```s
 t@mylaptop ~/puppet $ puppet module install -i modules puppetlabs-apache
 Notice: Preparing to install into /home/thomas/puppet/modules ...
 Notice: Downloading from https://forgeapi.puppetlabs.com ...
@@ -16,8 +20,9 @@ Notice: Installing -- do not interrupt ...
   └── puppetlabs-stdlib (v4.3.2)
 ```
 
-2. Fügen Sie die Module zu Ihrem Git-Repository hinzu und commiten Sie es:
-```
+2.Fügen Sie die Module zu Ihrem Git-Repository hinzu und commiten Sie es:
+
+```s
 t@mylaptop ~/puppet $ git add modules/apache modules/concat modules/stdlib
 t@mylaptop ~/puppet $ git commit -m "adding puppetlabs-apache module"
 [production 395b079] adding puppetlabs-apache module
@@ -35,15 +40,18 @@ Total 266 (delta 48), reused 0 (delta 0)
 remote: To puppet@puppet.example.com:/etc/puppet/environments/puppet.git
 remote:    9faaa16..395b079  production -> production
 ```
-3. Erstellen Sie eine Web-Server-Nodedefinition in `site.pp`:
-```
+
+3.Erstellen Sie eine Web-Server-Nodedefinition in `site.pp`:
+
+```ruby
 node webserver {
   class {'apache': }
 }
 ```
 
-4. Führen Sie Puppet aus, um die Standard-Apache-Modulkonfiguration anzuwenden:
-```
+4.Führen Sie Puppet aus, um die Standard-Apache-Modulkonfiguration anzuwenden:
+
+```s
 [root@webserver ~]# puppet agent -t
 Info: Caching certificate for webserver.example.com
 Notice: /File[/var/lib/puppet/lib/puppet/provider/a2mod]/ensure: created
@@ -55,8 +63,9 @@ Notice: /Stage[main]/Apache::Service/Service[httpd]: Triggered 'refresh' from 51
 Notice: Finished catalog run in 11.73 seconds
 ```
 
-5. Überprüfen Sie, ob Sie `webserver.example.com` erreichen können:
-```
+5.Überprüfen Sie, ob Sie `webserver.example.com` erreichen können:
+
+```s
 [root@webserver ~]# curl http://webserver.example.com
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <html>
@@ -71,23 +80,23 @@ Notice: Finished catalog run in 11.73 seconds
 </body></html>
 ```
 
-### Wie es funktioniert...
+### Wie es funktioniert
 
 Durch das Installieren des Puppetlabs-Apache-Moduls aus dem Forge werden sowohl Puppetlabs-Concat als auch Puppetlabs-Stdlib in unser Modulverzeichnis eingerichtet. Das Concat-Modul wird verwendet, um Snippets von Dateien zusammen in einer bestimmten Reihenfolge zu benutzen. Es wird vom Apache-Modul verwendet, um die wichtigsten Apache-Konfigurationsdateien zu erstellen.
 
 Wir haben dann einen Web-Server-Node definiert und die Apache-Klasse auf diesen Node angewendet. Wir haben alle Standardwerte verwendet und lassen das Apache Modul unseren Server als Apache Webserver konfigurieren.
 
-Das Apache-Modul ging dann hin und schrieb alle unsere Apache-Konfigurationen um. Standardmäßig löscht das Modul alle Konfigurationsdateien aus dem Apache-Verzeichnis (`/etc/apache2` oder `/etc/httpd` je nach Verteilung). 
+Das Apache-Modul ging dann hin und schrieb alle unsere Apache-Konfigurationen um. Standardmäßig löscht das Modul alle Konfigurationsdateien aus dem Apache-Verzeichnis (`/etc/apache2` oder `/etc/httpd` je nach Verteilung).
 Das Modul kann viele verschiedene Verteilungen konfigurieren und die Nuancen jeder Verteilung behandeln. Als Benutzer des Moduls müssen Sie nicht wissen, wie sich Ihre Distribution mit der Konfiguration des Apache-Moduls befasst.
 
 Nach dem Aufräumen und Umschreiben der Konfigurationsdateien sorgt das Modul dafür, dass der Apache2-Dienst läuft (`httpd` auf Enterprise Linux (EL)).
 
 Wir haben dann den Webserver mit curl getestet. Es wurde nichts zurückgegeben, sondern eine leere Indexseite. Dies ist das erwartete Verhalten. Normalerweise, wenn wir Apache auf einem Server installieren, gibt es einige Dateien, die eine Standardseite (`welcome.conf` auf EL-basierten Systemen) anzeigen, da das Modul diese Konfigurationen gelöscht hat, sehen wir nur eine leere Seite.
 
-In einer Produktionsumgebung würden Sie die vom Apache-Modul angewendeten Vorgaben ändern. 
+In einer Produktionsumgebung würden Sie die vom Apache-Modul angewendeten Vorgaben ändern.
 Die vorgeschlagene Konfiguration aus dem README ist wie folgt:
 
-```
+```ruby
 class { 'apache':
   default_mods        => false,
   default_confd_files => false,

@@ -1,4 +1,6 @@
-| Task | [apt-get](../apt-get) Debian | [zypper](../zypper) Suse | [yum](../yum) | [dnf](..(dnf) | [pacman](../pacman) | 
+# Package Management
+
+| Task | [apt-get](../apt-get) Debian | [zypper](../zypper) Suse | [yum](../yum) | [dnf](..(dnf) | [pacman](../pacman) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 |**Managing software**|||||
 |Install new software from package repository|apt-get install pkg|zypper install pkg|yum install pkg|pacman -S pkg|
@@ -20,7 +22,7 @@
 |Add repository|(edit /etc/apt/sources.list)|zypper addrepo path name|(add repo to /etc/yum.repos.d/)|(edit /etc/pacman.conf)|
 |Remove repository|(edit /etc/apt/sources.list)|zypper removerepo name|(remove repo from /etc/yum.repos.d/)|(edit /etc/pacman.conf)|
 
-# Paket Manager
+## Paket Manager
 
 | Distribution | Low-Level Tool | High-Level Tool |
 | :------: | :------: | :------: |
@@ -28,7 +30,8 @@
 |CentOS|[rpm](../rpm)|[yum](../yum)|
 |openSUSE|[rpm](../rpm)|[zypper](../zypper)|
 
-Lösungen
+### Lösungen
+
 * [tasksel anpassen eigene erstellen](https://www.theurbanpenguin.com/creating-tasksel-custom-tasks-ubuntu-16-04/)
 * [aptly](https://www.aptly.info/) Debian repo management soll aber auch bald auch RPM können.
 * [pulp](http://pulpproject.org/) kann nebem RPM auch Python Puppet Docker und OSTree software packte Automatisch verwalten

@@ -1,21 +1,22 @@
+# PDNS
 
-### Mysql Datenbamk pdns Einrichtung 
+## Mysql Datenbamk pdns Einrichtung
 
-
+```s
 Datenbank: ``
 User:``
 
 ```
 
+```sql
 GRANT ALL ON pdns.* TO 'pdns'@'localhost' IDENTIFIED BY 'g7KShcbcv4UZQWBk';
 GRANT ALL ON pdns.* TO 'pdns'@'tobkern-desktop.example.com' IDENTIFIED BY 'g7KShcbcv4UZQWBk';
 
-
 ```
 
+## Installations script
 
-### Installations script
-```
+```sh
 DATABASE=pdns
 USERNAME=pdns
 PASSWORD=g7KShcbcv4UZQWBk
@@ -51,5 +52,6 @@ EOF
 sudo pdnssec rectify-zone $ZONE
 ```
 
-###### Quellen: 
+### Quellen
+
 * [foreman-and-powerdns](https://partial.solutions/2015/foreman-and-powerdns.html)

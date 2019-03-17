@@ -1,19 +1,22 @@
+# Puppet Management von heartbeat Nodes
+
 Hochverfügbarkeitsdienste sind diejenigen, die den Ausfall einer einzelnen Maschine oder Netzwerkverbindung überleben können. Die primäre Technik für Hochverfügbarkeit ist Redundanz, sonst bekannt als Wurf Hardware auf das Problem. Obwohl der eventuelle Ausfall eines einzelnen Servers sicher ist, ist der gleichzeitige Ausfall von zwei Servern unwahrscheinlich, dass dies für die meisten Anwendungen eine gute Redundanz bietet.
 
 Eine der einfachsten Möglichkeiten, um ein redundantes Paar von Servern zu erstellen, besteht darin, dass sie eine IP-Adresse mit Heartbeat teilen. Herzschlag ist ein Dämon, der auf beiden Maschinen läuft und regelmäßige Nachrichten - Herzschläge - zwischen den beiden tauscht. Ein Server ist der primäre und hat normalerweise die Ressource; In diesem Fall eine IP-Adresse (bekannt als virtuelle IP oder VIP). Wenn der sekundäre Server einen Herzschlag vom primären Server nicht erkennt, kann er die Adresse übernehmen und die Kontinuität des Dienstes sicherstellen. In real-world-Szenarien können Sie vielleicht mehr Maschinen im VIP beteiligt haben, aber für dieses Beispiel arbeiten zwei Maschinen gut genug.
 
 In diesem Rezept werden wir zwei Maschinen in dieser Konfiguration mit Puppet einrichten, und ich werde erklären, wie man es benutzt, um einen Hochverfügbarkeitsdienst zur Verfügung zu stellen.
 
-### Fertig werden
+## Fertig werden
 
 Du brauchst natürlich zwei Maschinen und eine zusätzliche IP-Adresse als VIP verwenden. Sie können dies in der Regel von Ihrem ISP anfordern, wenn nötig. In diesem Beispiel verwende ich Maschinen namens Kochbuch und Kochbuch2, wobei das Kochbuch das primäre ist. Wir werden die Hosts zur Heartbeat-Konfiguration hinzufügen.
 
-### Wie es geht…
+## Wie es geht
 
 Gehen Sie folgendermaßen vor, um das Beispiel zu erstellen:
 
-1. Erstellen Sie die Datei `modules/heartbeat/manifests/init.pp` mit folgendem Inhalt:
-```
+1.Erstellen Sie die Datei `modules/heartbeat/manifests/init.pp` mit folgendem Inhalt:
+
+```ruby
 # Manage Heartbeat
 class heartbeat {
   package { 'heartbeat':
@@ -41,11 +44,11 @@ class heartbeat {
 }
 ```
 
-2. Erstellen Sie die Datei `modules/heartbeat/manifests/vip.pp` mit folgendem Inhalt:
+2.Erstellen Sie die Datei `modules/heartbeat/manifests/vip.pp` mit folgendem Inhalt:
 
-```
+```ruby
 # Manage a specific VIP with Heartbeat
-class 
+class
   heartbeat::vip($node1,$node2,$ip1,$ip2,$vip,$interface='eth0:1') {
   include heartbeat
 
@@ -63,8 +66,9 @@ class
 }
 ```
 
-3. Erstellen Sie die Datei `modules/heartbeat/templates/vip.ha.cf.erb` mit folgendem Inhalt:
-```
+3.Erstellen Sie die Datei `modules/heartbeat/templates/vip.ha.cf.erb` mit folgendem Inhalt:
+
+```s
 use_logd yes
 udpport 694
 autojoin none
@@ -78,9 +82,9 @@ node <%= @node1 %>
 node <%= @node2 %>
 ```
 
-4. Ändern Sie Ihre `site.pp` Datei wie folgt. Ersetzen Sie die `ip1` und `ip2` Adressen durch die primären IP-Adressen Ihrer beiden Knoten, `vip` mit der virtuellen IP-Adresse, die Sie verwenden werden, und `node1` und `node2` mit den Hostnamen der beiden Knoten. (Heartbeat verwendet den vollqualifizierten Domänennamen eines Knotens, um festzustellen, ob es sich um ein Mitglied des Clusters handelt, also sollten die Werte für `node1` und `node2` mit dem übereinstimmen, was von `facter fqdn` auf jeder Maschine gegeben wird.):
+4.Ändern Sie Ihre `site.pp` Datei wie folgt. Ersetzen Sie die `ip1` und `ip2` Adressen durch die primären IP-Adressen Ihrer beiden Knoten, `vip` mit der virtuellen IP-Adresse, die Sie verwenden werden, und `node1` und `node2` mit den Hostnamen der beiden Knoten. (Heartbeat verwendet den vollqualifizierten Domänennamen eines Knotens, um festzustellen, ob es sich um ein Mitglied des Clusters handelt, also sollten die Werte für `node1` und `node2` mit dem übereinstimmen, was von `facter fqdn` auf jeder Maschine gegeben wird.):
 
-```
+```ruby
 node cookbook,cookbook2 {
   class { 'heartbeat::vip':
     ip1   => '192.168.122.132',
@@ -92,8 +96,9 @@ node cookbook,cookbook2 {
 }
 ```
 
-5. Run Puppet auf jedem der beiden Server:
-```
+5.Run Puppet auf jedem der beiden Server:
+
+```s
 [root@cookbook2 ~]# puppet agent -t
 Info: Retrieving pluginfacts
 Info: Retrieving plugin
@@ -117,23 +122,25 @@ Notice: /Stage[main]/Heartbeat/Firewall[0694 Allow UDP ha-cluster]/ensure: creat
 Notice: Finished catalog run in 12.64 seconds
 ```
 
-6. Überprüfen Sie, dass das VIP auf einem der Knoten läuft (es sollte auf Kochbuch an diesem Punkt sein, beachten Sie, dass Sie den `ip` Befehl verwenden müssen, `ifconfig` wird die Adresse nicht anzeigen):
-```
-7. Wie wir sehen können, hat das Kochbuch die `eth0:1` Schnittstelle aktiv. Wenn du den Herzschlag auf `cookbook` hörst, wird `cookbook2` `eth0:1` erstellen und übernehmen:
-```
+6.Überprüfen Sie, dass das VIP auf einem der Knoten läuft (es sollte auf Kochbuch an diesem Punkt sein, beachten Sie, dass Sie den `ip` Befehl verwenden müssen, `ifconfig` wird die Adresse nicht anzeigen):
+
+7.Wie wir sehen können, hat das Kochbuch die `eth0:1` Schnittstelle aktiv. Wenn du den Herzschlag auf `cookbook` hörst, wird `cookbook2` `eth0:1` erstellen und übernehmen:
+
+```s
 [root@cookbook2 ~]# ip a show dev eth0
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
     link/ether 52:54:00:ee:9c:fa brd ff:ff:ff:ff:ff:ff
     inet 192.168.122.133/24 brd 192.168.122.255 scope global eth0
     inet 192.168.122.200/24 brd 192.168.122.255 scope global secondary eth0:1
-    inet6 fe80::5054:ff:feee:9cfa/64 scope link 
+    inet6 fe80::5054:ff:feee:9cfa/64 scope link
        valid_lft forever preferred_lft forever
 ```
 
 ### Wie es funktioniert…
 
 Wir müssen zuerst Heartbeat installieren, mit der Heartbeat-Klasse:
-```
+
+```ruby
 # Manage Heartbeat
 class heartbeat {
   package { 'heartbeat':
@@ -144,9 +151,10 @@ class heartbeat {
 ```
 
 Als nächstes verwenden wir die `heartbeat::vip` Klasse, um eine bestimmte virtuelle IP zu verwalten:
-```
+
+```s
 # Manage a specific VIP with Heartbeat
-class 
+class
   heartbeat::vip($node1,$node2,$ip1,$ip2,$vip,$interface='eth0:1') {
   include heartbeat
 ```
@@ -154,7 +162,8 @@ class
 Wie Sie sehen können, enthält die Klasse einen `interface` parameter; Standardmäßig wird das VIP auf `eth0:1` konfiguriert, aber wenn du eine andere Schnittstelle verwenden musst, kannst du es mit diesem Parameter übergeben.
 
 Jedes Paar von Servern, die wir mit einer virtuellen IP konfigurieren, verwendet die `heartbeat::vip` Klasse mit denselben Parametern. Diese werden verwendet, um die `haresources` Datei zu erstellen:
-```
+
+```ruby
 file { '/etc/ha.d/haresources':
   content => "${node1} IPaddr::${vip}/${interface}\n",
   notify  => Service['heartbeat'],
@@ -175,10 +184,9 @@ Die Datei wird von Heartbeat wie folgt interpretiert:
 
 * `eth0:1` :Dies ist die virtuelle Schnittstelle, die mit der verwalteten IP-Adresse konfiguriert werden soll
 
-Für weitere Informationen darüber, wie Heartbeat konfiguriert ist, besuchen Sie bitte die hochverfügbare Website unter http://linux-ha.org/wiki/Heartbeat.
-
 Wir werden auch die `ha.cf` Datei erstellen, die Heartbeat mitteilt, wie man zwischen Clusterknoten kommuniziert:
-```
+
+```ruby
 file { '/etc/ha.d/ha.cf':
   content => template('heartbeat/vip.ha.cf.erb'),
   notify  => Service['heartbeat'],
@@ -187,7 +195,9 @@ file { '/etc/ha.d/ha.cf':
 ```
 
 Dazu verwenden wir die Vorlagendatei:
-```
+s
+
+```s
 use_logd yes
 udpport 694
 autojoin none
@@ -204,7 +214,8 @@ node <%= @node2 %>
 Die interessanten Werte sind hier die IP-Adressen der beiden Knoten (`ip1` und `ip2`) und die Namen der beiden Knoten (`node1` und `node2`).
 
 Schließlich schaffen wir eine Instanz von `heartbeat::vip` auf beiden Maschinen und übergeben sie einen identischen Satz von Parametern wie folgt:
-```
+
+```ruby
 class { 'heartbeat::vip':
   ip1   => '192.168.122.132',
   ip2   => '192.168.122.133',
@@ -214,7 +225,7 @@ class { 'heartbeat::vip':
 }
 ```
 
-#### Es gibt mehr...
+## Es gibt mehr
 
 Wenn Heartbeat wie im Beispiel beschrieben eingerichtet ist, wird die virtuelle IP-Adresse standardmäßig auf `cookbook` konfiguriert. Wenn etwas passiert, um dies zu stören (z. B. wenn Sie das `cookbook` stoppen oder neu starten oder den `heartbeat` Dienst beenden oder das Gerät Netzwerkkonnektivität verliert), wird `cookbook2` sofort die virtuelle IP übernehmen.
 
@@ -222,8 +233,8 @@ Die Einstellung `auto_failback` in `ha.cf` regelt, was als nächstes passiert. W
 
 Eine gemeinsame Verwendung für eine Heartbeat-verwaltete virtuelle IP ist die Bereitstellung einer hochverfügbaren Website oder Service. Dazu müssen Sie den DNS-Namen für den Dienst (z. B. `cat-pictures.com`) festlegen, um auf die virtuelle IP zu verweisen. Anfragen für den Service werden an denjenigen der beiden Server weitergeleitet, die derzeit über die virtuelle IP verfügen. Wenn dieser Server nach unten gehen sollte, werden Anfragen auf die andere gehen, ohne sichtbare Unterbrechung im Dienst für Benutzer.
 
-Heartbeat arbeitet für das vorhergehende Beispiel gut, ist aber in dieser Form nicht weit verbreitet. Heartbeat funktioniert nur in zwei Knotenclustern; Für n-Knoten-Cluster sollte das neuere Herzschrittmacher-Projekt verwendet werden. Weitere Informationen über Heartbeat, Herzschrittmacher, Corosync und andere Clustering-Pakete finden Sie unter http://www.linux-ha.org/wiki/Main_Page.
+Heartbeat arbeitet für das vorhergehende Beispiel gut, ist aber in dieser Form nicht weit verbreitet. Heartbeat funktioniert nur in zwei Knotenclustern; Für n-Knoten-Cluster sollte das neuere Herzschrittmacher-Projekt verwendet werden. Weitere Informationen über Heartbeat, Herzschrittmacher, Corosync und andere [Clustering-Pakete](http://www.linux-ha.org/wiki/Main_Page).
 
 Das Verwalten der Clusterkonfiguration ist ein Bereich, in dem exportierte Ressourcen nützlich sind. Jeder Knoten in einem Cluster würde Informationen über sich selbst exportieren, die dann von den anderen Mitgliedern des Clusters gesammelt werden konnten. Mit dem puppetlabs-concat-Modul kannst du eine Konfigurationsdatei mit exportierten Concat-Fragmenten aus allen Knoten im Cluster aufbauen.
 
-Denken Sie daran, die Forge zu betrachten, bevor Sie Ihr eigenes Modul starten. Wenn nichts anderes, bekommst du einige Ideen, die du in deinem eigenen Modul verwenden kannst. Corosync kann mit dem Puppet Labs Modul unter https://forge.puppetlabs.com/puppetlabs/corosync verwaltet werden.
+Denken Sie daran, die Forge zu betrachten, bevor Sie Ihr eigenes Modul starten. Wenn nichts anderes, bekommst du einige Ideen, die du in deinem eigenen Modul verwenden kannst. Corosync kann mit dem Puppet Labs [Modul](https://forge.puppetlabs.com/puppetlabs/corosync) verwaltet werden.

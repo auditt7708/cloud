@@ -1,6 +1,12 @@
-Chef ist sowohl der Name eines Unternehmens als auch der Name eines Konfigurationsmanagement-Tools, das in Ruby und Erlang geschrieben wurde. Es verwendet eine reine Ruby Domain-spezifische Sprache (DSL), um Systemkonfiguration "Rezepte" zu schreiben. In diesem Modul wird erklärt, wie Sie den Apache Mesos Master und den Slave mit dem Chef Kochbuch installieren und konfigurieren können. Chef ist ein Konfigurationsmanagement-Tool, um großflächige Server- und Softwareanwendungen zu automatisieren. Wir werden davon ausgehen, dass der Leser bereits mit Chef vertraut ist. Als Referenz wird folgendes Repository verwendet:
+# Mesos Deployment mit Chef
 
-Https://github.com/everpeace/cookbook-mesos
+Chef ist sowohl der Name eines Unternehmens als auch der Name eines Konfigurationsmanagement-Tools, das in Ruby und Erlang geschrieben wurde.
+Es verwendet eine reine Ruby Domain-spezifische Sprache (DSL), um Systemkonfiguration "Rezepte" zu schreiben.
+In diesem Modul wird erklärt, wie Sie den Apache Mesos Master und den Slave mit dem Chef Kochbuch installieren und konfigurieren können.
+Chef ist ein Konfigurationsmanagement-Tool, um großflächige Server- und Softwareanwendungen zu automatisieren.
+Wir werden davon ausgehen, dass der Leser bereits mit Chef vertraut ist. Als Referenz wird folgendes Repository verwendet:
+
+* [Chef ](Https://github.com/everpeace/cookbook-mesos)
 
 Die Chef-Kochbuch-Version zum Zeitpunkt des Schreibens dieses Buches unterstützt die Ubuntu und CentOS Betriebssysteme. Die CentOS-Version ist experimentell und wird nicht für den Einsatz in einer Produktionsumgebung empfohlen. Ubuntu 14.04 oder höher ist erforderlich, um die Cgroups Isolator- oder Docker-Container-Features zu nutzen. Nur Mesos 0.20.0 und später unterstützt Docker-Containerisierung.
 
@@ -11,6 +17,7 @@ Rezepte
 
 Im Folgenden sind die Rezepte, die von diesem Kochbuch verwendet werden, um Mesos zu installieren und zu konfigurieren:
 
+>
 > * `mesos::default`: Dies installiert Mesos mit dem Quell- oder Mesosphärenrezept, abhängig von der zuvor beschriebenen Typvariable.
 >
 > * `mesos::build_from_source`: Dies installiert Mesos in der üblichen Weise - das heißt, Download-Zip von GitHub, konfigurieren, machen und installieren.
@@ -31,12 +38,13 @@ Wenn wir die Mesosphäre als den zu bauenden Typ auswählen, dann wird der Vorei
 
 * `/etc/mesos/zk`
 * `/etc/defaults/mesos`
-* `/etc/defaults/mesos-master` 
+* `/etc/defaults/mesos-master`
 
 ## Mesos-Master konfigurieren
 
 Mit den Befehlszeilenparametern des `mesos-master` können Sie das `node[:mesos][:master]` Attribut konfigurieren. Ein Beispiel dafür ist:
-```
+
+```sh
 node[:mesos][:master] = {
   :port    => "5050",
   :log_dir => "/var/log/mesos",
@@ -47,23 +55,26 @@ node[:mesos][:master] = {
 ```
 
 Der Befehl `mesos-master` wird mit den in der Konfiguration angegebenen Optionen wie folgt aufgerufen:
+
 `mesos-master --zk=zk://localhost:2181/mesos --port=5050 --log_dir=/var/log/mesos --cluster=MesosCluster`
 
-
 Der Befehl `mesos::slave` stellt Konfigurationen für den `mesos-slave` zur Verfügung und startet die Mesos-Slave-Instanz. Wir können die folgende Variable verwenden, um auf die Datei `mesos-slave-env.sh` zu zeigen:
+
 * `node[:mesos][:prefix]/var/mesos/deploy/mesos-slave-env.sh`
 
 Die Upstart-Konfigurationsdateien für den mesos-Slave sind wie folgt:
 
 * `/etc/mesos/zk`
+
 * `/etc/defaults/mesos`
-* `/etc/defaults/mesos-slave `
+
+* `/etc/defaults/mesos-slave`
 
 Mesos-Slave konfigurieren
 
 Die `mesos-slave` Befehlszeilenoptionen können mit dem `node[:mesos][:slave]` hash konfiguriert werden. Eine Beispielkonfiguration ist hier gegeben:
 
-```` 
+````sh
 node[:mesos][:slave] = {
   :master    => "zk://localhost:2181/mesos",
   :log_dir   => "/var/log/mesos",
@@ -75,13 +86,13 @@ node[:mesos][:slave] = {
 
 Der Befehl `mesos-slave` wird wie folgt aufgerufen:
 
-```
+```sh
 mesos-slave --master=zk://localhost:2181/mesos --log_dir=/var/log/mesos --containerizers=docker,mesos --isolation=cgroups/cpu,cgroups/mem --work_dir=/var/run/work
 ```
 
 Nun, lassen Sie uns einen Blick darauf werfen, wie wir das alles zusammen in eine vagrant Datei stellen und einen eigenständigen Mesos-Cluster starten können. Erstellen Sie eine `Vagrantfile` mit folgendem Inhalt:
 
-```
+```sh
 # -*- mode: ruby -*-
 # vi: set ft=ruby:
 # vagrant plugins required:
@@ -182,6 +193,7 @@ Vagrant.configure("2") do |config|
   end
 end
 ```
-Geben Sie nun den folgenden Befehl ein, um einen voll funktionsfähigen Standalone-Mesos-Cluster zu haben:
-`vagrant up`
 
+Geben Sie nun den folgenden Befehl ein, um einen voll funktionsfähigen Standalone-Mesos-Cluster zu haben:
+
+`vagrant up`

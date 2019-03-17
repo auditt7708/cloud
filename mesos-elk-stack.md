@@ -1,16 +1,26 @@
-In diesem Abschnitt wird der Elasticsearch-Logstash-Kibana (ELK) Stack vorgestellt und erklärt, wie man ihn auf Mesos einrichtet und dabei auch die Probleme behandelt, die während des Setup-Prozesses häufig auftreten.
-Einführung in Elasticsearch, Logstash und Kibana
+# Mesos ELK Stack aufbauen
+
+In diesem Abschnitt wird der Elasticsearch-Logstash-Kibana (ELK) Stack vorgestellt und erklärt,
+wie man ihn auf Mesos einrichtet und dabei auch die Probleme behandelt, die während des Setup-Prozesses häufig auftreten.
+
+## Einführung in Elasticsearch, Logstash und Kibana
 
 Der ELK-Stack, eine Kombination aus Elasticsearch, Logstash und Kibana, ist eine End-to-End-Lösung für Log Analytics. Elasticsearch bietet Suchfunktionen, Logstash ist eine Log-Management-Software, während Kibana als Visualisierungsschicht dient. Der Stapel wird von einer Firma namens Elastic kommerziell unterstützt.
-Elastische Suche
+
+## Suche mit elasticsearch
 
 Elasticsearch ist eine Lucene-basierte Open Source verteilte Suchmaschine für hohe Skalierbarkeit und schnelle Suchanfrage Antwortzeit. Es vereinfacht die Verwendung von Lucene, einer hochleistungsfähigen Suchmaschinenbibliothek, durch die Bereitstellung einer leistungsstarken REST API oben. Einige der wichtigen Konzepte in Elasticsearch werden wie folgt hervorgehoben:
 
 * Dokument: Dies ist ein JSON-Objekt, das in einem Index gespeichert ist
+
 * Index: Dies ist eine Dokumentensammlung
+
 * Typ: Dies ist eine logische Partition eines Index, der eine Kategorie von Dokumenten darstellt
+
 * Feld: Dies ist ein Schlüsselwertpaar innerhalb eines Dokuments
+
 * Mapping: Hier wird jedes Feld mit seinem Datentyp abgebildet
+
 * Shard: Dies ist der physische Ort, an dem die Daten eines Index gespeichert sind (die Daten werden auf einem primären Shard gespeichert und auf einem Satz von Replik-Shards kopiert)
 
 ## Logstash
@@ -18,7 +28,9 @@ Elasticsearch ist eine Lucene-basierte Open Source verteilte Suchmaschine für h
 Dies ist ein Werkzeug, um die von einer Vielzahl von Systemen erzeugten Log-Ereignisse zu sammeln und zu verarbeiten. Es enthält einen umfangreichen Satz von Eingangs- und Ausgangsanschlüssen, um die Protokolle einzubauen und sie zur Analyse zur Verfügung zu stellen. Einige seiner wichtigen Merkmale sind:
 
 * Die Fähigkeit, Protokolle in ein gemeinsames Format für die Benutzerfreundlichkeit zu konvertieren
+
 * Die Fähigkeit, mehrere Log-Formate, einschließlich benutzerdefinierte zu verarbeiten
+
 * Ein reicher Satz von Eingangs- und Ausgangsanschlüssen
 
 ## Kibana
@@ -26,12 +38,15 @@ Dies ist ein Werkzeug, um die von einer Vielzahl von Systemen erzeugten Log-Erei
 Dies ist ein Elasticsearch-basiertes Datenvisualisierungs-Tool mit einer Vielzahl von Charting- und Dashboarding-Funktionen. Es wird durch die in den Elasticsearch-Indizes gespeicherten Daten angetrieben und wird komplett mit HTML und JavaScript entwickelt. Einige seiner wichtigsten Merkmale sind:
 
 * Eine grafische Benutzeroberfläche für Armaturenbrettbau
+
 * Ein reicher Satz von Diagrammen (Karte, Kreisdiagramme, Histogramme und so weiter)
+
 * Die Möglichkeit, Diagramme in Benutzeranwendungen einzubetten
 
 ## Die ELK-Stack-Datenpipeline
 
 Schauen Sie sich das folgende Diagramm an (Quelle: Learning ELK Stack von Packt Publishing):
+
 ![elk-schemata](https://www.packtpub.com/graphics/9781785886249/graphics/B05186_09_02.jpg)
 
 In einer Standard-ELK-Stack-Pipeline werden Protokolle von verschiedenen Applikationsservern über Logstash zu einem zentralen Indexer-Modul transportiert. Dieser Indexer überträgt dann die Ausgabe an einen Elasticsearch-Cluster, wo er direkt abgefragt oder in einem Dashboard visualisiert werden kann, indem er Kibana nutzt.
@@ -45,7 +60,8 @@ Dieser Abschnitt erklärt, wie man Elasticsearch, Logstash und Kibana oben auf M
 Wir werden Marathon einsetzen, um Elasticsearch einzusetzen, und dies kann auf zwei Arten geschehen: durch das Docker-Bild, das sehr zu empfehlen ist, und durch `elasticsearch-mesos jar`. Beide werden im folgenden Abschnitt erklärt.
 
 Wir können die folgende Marathon-Datei verwenden, um Elasticsearch auf Mesos zu implementieren. Es benutzt das Docker-Image:
-```
+
+```sh
 {
   "id": "elasticsearch-mesos-scheduler",
   "container": {
@@ -62,13 +78,17 @@ Wir können die folgende Marathon-Datei verwenden, um Elasticsearch auf Mesos zu
   },
   "instances": 1
 }
-``` 
+```
+
 Stellen Sie sicher, dass der `zookeeper-node` an die Adresse des ZooKeeper-Knotens geändert wird, den Sie auf dem Cluster haben. Wir können dies auf eine `elasticsearch.json` Datei speichern und dann auf Marathon mit dem folgenden Befehl einsetzen:
+
+```sh
+curl -k -XPOST -d @elasticsearch.json -H "Content-Type: application/json" http://marathon-machine:8080/v2/apps
 ```
-$ curl -k -XPOST -d @elasticsearch.json -H "Content-Type: application/json" http://marathon-machine:8080/v2/apps
-```
+
 Wie bereits erwähnt, können wir auch die JAR-Datei verwenden, um Elasticsearch auf Mesos mit der folgenden Marathon-Datei einzusetzen:
-```
+
+```json
 {
   "id": "elasticsearch",
   "cpus": 0.2,
@@ -94,12 +114,16 @@ Wie bereits erwähnt, können wir auch die JAR-Datei verwenden, um Elasticsearch
   ]
 }
 ```
+
 In beiden Fällen ist die Umgebungsvariable `JAVA_OPTS` erforderlich, und wenn sie nicht gesetzt ist, wird es zu Problemen mit dem Java-Heap-Space kommen. Wir können das als `elasticsearch.json` retten und es dem Marathon mit folgendem Befehl unterwerfen:
+
+```s
+curl -k -XPOST -d @elasticsearch.json -H "Content-Type: application/json" http://MARATHON_IP_ADDRESS:8080/v2/apps
 ```
-$ curl -k -XPOST -d @elasticsearch.json -H "Content-Type: application/json" http://MARATHON_IP_ADDRESS:8080/v2/apps
-```
+
 Sowohl das Docker-Bild als auch die JAR-Datei nehmen die folgenden Befehlszeilenargumente ein, ähnlich dem `--zookeeperMesosUrl` Argument:
-```
+
+```s
 --dataDir
          The host data directory used by Docker volumes in the executors. [DOCKER MODE ONLY]
          Default: /var/lib/mesos/slave/elasticsearch
@@ -120,7 +144,7 @@ Sowohl das Docker-Bild als auch die JAR-Datei nehmen die folgenden Befehlszeilen
     --elasticsearchExecutorCpu
          The amount of CPU resource to allocate to the Elasticsearch executor.
          Default: 0.1
-    
+
     --elasticsearchExecutorRam
          The amount of ram resource to allocate to the Elasticsearch executor
          (MB).
@@ -211,7 +235,8 @@ Sowohl das Docker-Bild als auch die JAR-Datei nehmen die folgenden Befehlszeilen
 In diesem Abschnitt erfahren Sie, wie Sie Logstash über Mesos ausführen können. Sobald Logstash auf dem Cluster bereitgestellt wird, kann jedes Programm, das auf Mesos ausgeführt wird, ein Ereignis protokollieren, das dann von Logstash übergeben und an einen zentralen Protokollstandort gesendet wird.
 
 Wir können Logstash als Marathon-Anwendung ausführen und es auf der Mesos mit der folgenden Marathon-Datei einsetzen:
-```
+
+```json
 {
   "id": "/logstash",
   "cpus": 1,
@@ -247,13 +272,14 @@ Wir können Logstash als Marathon-Anwendung ausführen und es auf der Mesos mit 
 
 Hier haben wir das Docker-Image für die Bereitstellung verwendet, dessen Konfigurationen je nach Cluster-Spezifikation geändert werden können. Speichern Sie die vorherige Datei als `logstash.json` und senden Sie sie an Marathon mit dem folgenden Befehl:
 
-```
-$ curl -k -XPOST -d @logstash.json -H "Content-Type: application/json" http://MARATHON_IP_ADDRESS:8080/v2/apps
+```s
+curl -k -XPOST -d @logstash.json -H "Content-Type: application/json" http://MARATHON_IP_ADDRESS:8080/v2/apps
 ```
 
 ## Logstash auf Mesos-Konfigurationen
 
 Logstash und Elasticsearch werden mit der Mesos Version 0.25.0 und später getestet. Wir müssen Logstash zur Liste der Rollen auf jedem Mesos-Master-Rechner hinzufügen. Dies kann mit folgendem Befehl erfolgen:
+
 `$ sudo echo logstash > /etc/mesos-master/roles`
 
 Wenn der Zweck von Logstash darin besteht, `syslog` zu überwachen (ein Meldungsprotokollierungsstandard), dann müssen wir den TCP- und UDP-Port 514 der Ressourcenliste in jedem Mesos-Knoten im Cluster hinzufügen. Dies kann durch Hinzufügen des folgenden Eintrags in der Datei `/etc/mesos-slave/resources` erfolgen:
@@ -261,6 +287,7 @@ Wenn der Zweck von Logstash darin besteht, `syslog` zu überwachen (ein Meldungs
 `ports(logstash):[514-514]`
 
 Um `collectd` zu überwachen, müssen wir den TCP- und UDP-Port `25826` die Ressourcen für die Logstash-Rolle hinzufügen, indem wir die folgende Zeile der Datei `/etc/mesos-slave/resources` hinzufügen:
+
 `ports(logstash):[25826-25826]`
 
 ## Kibana auf Mesos
@@ -268,13 +295,14 @@ Um `collectd` zu überwachen, müssen wir den TCP- und UDP-Port `25826` die Ress
 Wenn wir Kibana auf Mesos laufen lassen, dann wird jede Instanz von Kibana als Docker-Image im Mesos-Cluster laufen. Für jede Instanz von Elasticsearch können eine oder mehrere Instanzen von Kibana eingesetzt werden, um den Nutzern zu dienen.
 
 Wir können Kibana auf dem Mesos-Projekt aus folgendem Repository klonen:
+
 `$ git clone https://github.com/mesos/kibana`
 
 Erstellen Sie das Projekt mit dem folgenden Befehl:
 
-``` 
-$ cd kibana
-$ gradlew jar
+```s
+cd kibana
+gradlew jar
 ```
 
 Dies wird die Kibana JAR-Datei (`kibana.jar`) erzeugen.
@@ -286,14 +314,13 @@ Sobald `kibana.jar` erzeugt wird, können wir es mit folgendem Befehl einsetzen:
 |`-zk`|`-zookeeper`|Dies ist die Mesos ZooKeeper URL (Erforderlich)|
 |`-di`|`-dockerimage`|Dies ist der Name des zu verwendenden Docker-Bildes (Der Standardwert ist `kibana`)|
 |`-v`|`-version`|Dies ist die Version des Kibana Docker Bildes verwendet werden (die Voreinstellung ist `latest`)|
-|`-mem`|` -requiredMem `|Dies ist die Menge an Speicher (in MB), die einer einzigen Kibana-Instanz zugeordnet werden soll (die Voreinstellung ist `128`)|
+|`-mem`|`-requiredMem`|Dies ist die Menge an Speicher (in MB), die einer einzigen Kibana-Instanz zugeordnet werden soll (die Voreinstellung ist `128`)|
 |`-cpu`|`-requiredCpu`|Dies ist die Anzahl der CPUs, die einer einzigen Kibana-Instanz zugewiesen werden sollen (Die Voreinstellung ist `0,1`)|
 |`-disk`|`-requiredDisk`|Dies ist die Menge an Speicherplatz (in MB), die einer einzelnen Kibana-Instanz zugeordnet werden soll (die Voreinstellung ist `25`)|
 |`-es`|`-elasticsearch`|Dies sind die URLs von Elasticsearch, um eine Kibana zum Start zu starten|
 
+### Hier sind einige Quellen
 
-###### Hier sind einige Referenzen:
-
-Http://mesos-elasticsearch.readthedocs.org/en/latest/#elasticsearch-mesos-framework
-Https://github.com/mesos/logstash
-Https://github.com/mesos/kibana
+* [elasticsearch-mesos-framework](Http://mesos-elasticsearch.readthedocs.org/en/latest/#elasticsearch-mesos-framework)
+* [mesos logstash](Https://github.com/mesos/logstash)
+* [mesos kibana](Https://github.com/mesos/kibana)
