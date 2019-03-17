@@ -10,7 +10,7 @@ Konfiguriere den Docker-Daemon und erlaube den Remote-Zugriff, wie im früheren 
 
 In diesem Rezept werden wir uns einige Container-Operationen anschauen:
 
-1. Um die Container aufzulisten, verwenden Sie folgende API:
+1.Um die Container aufzulisten, verwenden Sie folgende API:
 
 `GET /containers/json`
 
