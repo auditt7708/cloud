@@ -26,42 +26,42 @@ Hier einige Beispiele:
 
 * Holen Sie sich das Fedora-Bild von Docker Hub:
 
-```sh
-$ curl -X POST
+```s
+curl -X POST
 http://dockerhost.example.com:2375/images/create?fromImage=fedora
 ```
 
 * Holen Sie sich das WordPress-Bild mit dem neuesten Tag:
 
-```sh
-$  curl -X POST
+```s
+curl -X POST
 http://dockerhost.example.com:2375/images/create?fromImage=wordpress&tag=latest
 ```
 
 * Erstellen Sie ein Image aus der tar-Datei, die auf dem zugänglichen Webserver gehostet wird:
 
-```sh
-$ curl -X POST
+```s
+curl -X POST
 http://dockerhost.example.com:2375/images/create?fromSrc=http://localhost/image.tar
 ```
 
 3.Um ein Image zu erstellen, verwenden Sie die folgende API:
 
-`POST  /commit`
+`POST /commit`
 
 Hier einige Beispiele:
 
 * Erstellen Sie ein Bild aus dem Container (`container id = 704a7c71f77d`)
 
-```sh
-$ curl -X POST
+```s
+curl -X POST
 http://dockerhost.example.com:2375/commit?container=704a7c71f77d
 ```
 
 * Build eines Images von einer Docker file:
 
-```sh
-$  curl -X POST  -H "Content-type:application/tar" --data-binary '@/tmp/Dockerfile.tar.gz'  
+```s
+curl -X POST  -H "Content-type:application/tar" --data-binary '@/tmp/Dockerfile.tar.gz'  
 http://dockerhost.example.com:2375/build?t=apache
 ```
 
@@ -73,8 +73,8 @@ Da die API den Inhalt als tar-Datei erwartet, müssen wir die Docker-Datei in ei
 
 Hier ist ein Beispiel für die vorhergehende Syntax:
 
-```sh
-$ curl -X DELETE
+```s
+curl -X DELETE
 http://dockerhost.example.com:2375/images/wordpress:3.9.1
 ```
 
