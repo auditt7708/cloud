@@ -1,5 +1,7 @@
 # Ansible Vault
 
+Mit der Vault können Sensible daten geschützt werden
+
 **Playbook starten wen es vault-encrypted daten enthält**
 `ansible-playbook site.yml --ask-vault-pass`
 
