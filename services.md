@@ -14,4 +14,7 @@
 * [Apache2](../apache)
 * [Nginx](../nginx)
 * [Proxys](../proxys)
+* [Prometheus](../prometheus)
+* [Grafana](../grafana)
+
 
