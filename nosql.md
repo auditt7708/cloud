@@ -1,6 +1,6 @@
-# [Cassandra](http://cassandra.apache.org/)
+# [Cassandra](../cassandra)
 
-## Redis
+## [Redis](../redis)
 
 ### Redis Links:
 
@@ -12,8 +12,8 @@
 * https://github.com/nicolasff/webdis
 * http://webd.is/
 
-## Solr
+## [Solr](../solr)
 
-### Solr links
+### [Solr](../solr) links
 
 * http://www.linux-magazin.de/Ausgaben/2013/07/SQL-Suchmaschinen/(offset)/6

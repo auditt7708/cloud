@@ -6,25 +6,31 @@ Zugriff auf ein System mit installiertem Docker erhalten.
 ### Wie es geht…
 
 1. Um ein Bild zu ziehen, führen Sie den folgenden Befehl aus:
-`$ docker pull fedora`
+
+`docker pull fedora`
 
 2. Auflisten der vorhandenen Bilder mit folgendem Befehl:
-`$ docker images`
+
+`docker images`
 
 3.Create a container using the pulled image and list the containers as:
+
 `docker run -id --name f21 docker.io/fedora bash`
 
 
 ### Wie es funktioniert…
 
-Docker hat Client-Server-Architektur. Seine Binärdatei besteht aus dem Docker-Client und Server-Daemon, und es kann sich im selben Host befinden. Der Client kann über Sockets oder die RESTful API entweder einem lokalen oder entfernten Docker-Daemon kommunizieren. Der Docker-Dämon baut, läuft und verteilt Container. Wie im folgenden Diagramm gezeigt, sendet der Docker-Client den Befehl an den Docker-Daemon, der auf dem Hostcomputer läuft. Der Docker-Daemon verbindet sich entweder mit dem öffentlichen oder lokalen Index, um die vom Client angeforderten Bilder zu erhalten:
+Docker hat Client-Server-Architektur. Seine Binärdatei besteht aus dem Docker-Client und Server-Daemon, und es kann sich im selben Host befinden. Der Client kann über Sockets oder die RESTful API entweder einem lokalen oder entfernten Docker-Daemon kommunizieren.
+Der Docker-Dämon baut, läuft und verteilt Container. Wie im folgenden Diagramm gezeigt, sendet der Docker-Client den Befehl an den Docker-Daemon, der auf dem Hostcomputer läuft. 
+Der Docker-Daemon verbindet sich entweder mit dem öffentlichen oder lokalen Index, um die vom Client angeforderten Bilder zu erhalten:
 
 ![docker-client-server](https://www.packtpub.com/graphics/9781788297615/graphics/4862OS_01_13.jpg)
+
 Docker Client-Server-Architektur (https://docs.docker.com/introduction/understanding-docker/)
 
 In unserem Fall sendet der Docker-Client eine Anfrage an den auf dem lokalen System laufenden Daemon, der dann mit dem öffentlichen Docker-Index verbindet und das Bild herunterlädt. Einmal heruntergeladen, können wir es ausführen.
 
-### Es gibt mehr…
+## Es gibt mehr
 
 Lassen Sie uns einige Schlüsselwörter erforschen, die wir früher in diesem Rezept angetroffen haben:
 
