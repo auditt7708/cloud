@@ -3,7 +3,6 @@
 * [Pacemaker](../pacemaker)
 * [Jenkins](../jenkins)
 * [Monitoring](../monitoring)
-* [elk-stack](../elk-stack)
 * [FAI](../fai)
 * [ELK Stack](../elk-stack)
 * [DogTag](../dogtag)
@@ -12,4 +11,7 @@
 * [OpenLDAP](../openldap)
 * [IPXE](../ipxe)
 * [PXE](../pxe)
+* [Apache2](../apache)
+* [Nginx](../nginx)
+* [Proxys](../proxys)
 
