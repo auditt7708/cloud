@@ -35,10 +35,6 @@ Starten mit anderem Port
 
 `jupyter notebook --port 9999`
 
-
-
-
-
 damit die Localen Noteboks gehen muss noch:
 
 `python3 -m pip install --upgrade notebook`
@@ -49,7 +45,11 @@ Danach ist der Server via `https://localhost:8000` erreichbar. Benutzer werden v
 
 Für mehrere Benutzer muss ein Privilegierter Benutzer zum starten genommen werden.
 
-### mehrere Benutzer unter jupyter
+## jupyter Updates
+
+`python -m pip install --upgrade pip`
+
+## mehrere Benutzer unter jupyter
 
 ## [jupyter](https://jupyter.org/) Hinter einem Proxy
 
