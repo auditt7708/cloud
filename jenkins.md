@@ -48,11 +48,20 @@ adds a post build step to push RPMs to Spacewalk or RHN satelite servers. It req
 ploads build artifacts to repository sites using SCP (SSH) protocol. First you should define SCP hosts on hudson global config page.
 * [workflow-aggregator](https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin)
 
-### Jenkins Jobs
+## Jenkins Jobs
 
 * [jenkins-php](http://jenkins-php.org/installation.html)
 
-### Jenkins Pipelines
+## Jenkins Sicherheit
+
+Benutzer Zugangsdaten:
+
+* **User** gelten für bestimmte Benutzer
+* **System** gelten Systemweit
+
+### Https mit Jenkins
+
+## Jenkins Pipelines
 
 * [COMPATIBILITY mit pipeline-plugin](https://github.com/jenkinsci/pipeline-plugin/blob/master/COMPATIBILITY.md)
 * [Jenkins pipeline Buch](https://jenkins.io/doc/book/pipeline/)
@@ -65,10 +74,6 @@ ploads build artifacts to repository sites using SCP (SSH) protocol. First you s
 * [TUTORIAL](https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md)
 * [top-10-best-practices-jenkins-pipeline-plugin](https://www.cloudbees.com/blog/top-10-best-practices-jenkins-pipeline-plugin)
 *[hello-world](https://jenkins.io/doc/pipeline/tour/hello-world/)
-
-## Jenkins Sicherheit
-
-## Https mit Jenkins
 
 **Quelle:**
 
