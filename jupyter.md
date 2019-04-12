@@ -45,6 +45,12 @@ Danach ist der Server via `https://localhost:8000` erreichbar. Benutzer werden v
 
 Für mehrere Benutzer muss ein Privilegierter Benutzer zum starten genommen werden.
 
+### Docker benutzen
+
+`docker run --rm -it -p 8888:8888 -v "$(pwd):/notebooks" jupyter/notebook`
+
+> Als vorausetz
+
 ## jupyter Updates
 
 `python -m pip install --upgrade pip`
