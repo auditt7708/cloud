@@ -1,5 +1,8 @@
 # Saltstack
 
+In der Datei `/etc/salt/grains` sind eigene Variablen definiert
+
+
 ## Administration
 
 Status eines Benutzers ausgeben
@@ -30,6 +33,10 @@ Systeme via Grain auswählen
 `sudo salt -G 'os_family:RedHat' test.ping`
 
 ## Saltstack neues rezept erstellen
+
+## Saltstack Debunging
+
+`salt-call --local pkg.group_list -l debug`
 
 ## Eigene grains defieniren
 
