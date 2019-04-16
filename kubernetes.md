@@ -178,6 +178,18 @@ Nur Active namespaces ausgeben
 
 `kubectl get namespaces`
 
+Context ändern -> Umgebung
+
+`kubectl config use-context dev`
+
+Contest als ADMIN wiederherstellen
+
+`kubectl config use-context kubernetes-admin@kubernetes`
+
+Log von pod ansehen
+
+`kubectl logs dns-frontend`
+
 
 
 ## Networking
