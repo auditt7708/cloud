@@ -2,11 +2,15 @@
 
 * [srv1](../srv1)
 * [srv2](../srv2)
+* [srv3](../srv3)
+* [srv4](../srv4)
+* [srv5](../srv)
 * [rp1](../rp1)
 * [rp2](../rp2)
 * [rp3](../rp3)
 * [rp4](../rp4)
 * [r1](../r1)
+* [r2](../r2)
 * [rv1041](../rv1041)
 * [vmd36612](../vmd36612)
 * [tobkern-desktop](../tobkern-desktop)
@@ -14,4 +18,3 @@
 * [elk-stack](../elk-stack)
 
 * [FQDN des ISP](https://x4d084861.dyn.telefonica.de)
-

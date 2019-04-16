@@ -104,11 +104,39 @@
 
 ## Installation
 
-Voraussetzungen
+Voraussetzungen:
 
 | Service | Version |
 | :---: | :---: |
 |docker|18.06|
+|kubeadm|latest|
+
+Repository für CentOS, RHEL oder Fedora anlegen
+
+```s
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+exclude=kube*
+EOF
+```
+
+> Bei CentOS, RHEL oder Fedora muss noch SELinux wie folgt angepasst werden
+>```s
+>
+># Set SELinux in permissive mode (effectively disabling it)
+> setenforce 0
+> sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+>
+> yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+>
+> systemctl enable --now kubelet
+> ```
 
 ## Erste Initiale Einrichtung
 
@@ -135,6 +163,27 @@ Voraussetzungen
 ## [Kubeadm](../kubeadm)
 
 ## [Kubernetes Dashboard](https://github.com/kubernetes/dashboard)
+
+## Administration
+
+kube-system
+
+`kubectl --namespace= get pods`
+
+Alle namespaces ausgeben
+
+`kubectl get pods --all-namespaces`
+
+Nur Active namespaces ausgeben
+
+`kubectl get namespaces`
+
+
+
+## Networking
+
+[flannel](https://github.com/coreos/flannel/blob/master/Documentation/kubernetes.md)
+[contiv](https://contiv.io/)
 
 ## kubeadm-upgrade
 
