@@ -190,8 +190,6 @@ Log von pod ansehen
 
 `kubectl logs dns-frontend`
 
-
-
 ## Networking
 
 [flannel](https://github.com/coreos/flannel/blob/master/Documentation/kubernetes.md)
