@@ -130,6 +130,16 @@ PS C:\> Get-Date | Select-Object -Property * | ConvertTo-Json
 
 ## Verarbeitung von YAML
 
+## Dienste Managen
+
+Details zu Tomcat9-Stage ausgeben
+`Get-Service -Displayname "Tomcat9-Stage"`
+
+Service Tomcat9-Stage löschen
+`sc delete Tomcat9-Stage`
+
+> Ist ein cmd Befehl ein nativer Powershell-Befehl geht nicht
+
 ### Quellen
 
 * [powershell-password-resets](https://4sysops.com/archives/powershell-password-resets/)
