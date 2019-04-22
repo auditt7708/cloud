@@ -192,8 +192,16 @@ Log von pod ansehen
 
 ## Networking
 
-[flannel](https://github.com/coreos/flannel/blob/master/Documentation/kubernetes.md)
-[contiv](https://contiv.io/)
+> kubernetes v1.6 offers 3 ways to expose a service:
+
+    L4 LoadBalancer: Available only on cloud providers such as GCE and AWS
+    Service via NodePort: The NodePort directive allocates a port on every worker node, which proxy the traffic to the respective Pod.
+    L7 Ingress: The Ingress is a dedicated loadbalancer (eg. nginx, HAProxy, traefik, vulcand) that redirects incoming HTTP/HTTPS traffic to the respective endpoints
+
+* [flannel](https://github.com/coreos/flannel/blob/master/Documentation/kubernetes.md)
+* [contiv](https://contiv.io/)
+* [envoy Proxy](https://www.envoyproxy.io/docs/envoy/latest/)
+* [kube-keepalived-vip](https://github.com/kubernetes-retired/contrib/tree/master/keepalived-vip)
 
 ## kubeadm-upgrade
 
@@ -210,3 +218,7 @@ Log von pod ansehen
 * [Kubernetes-Salt-Deployment-Homepage](https://kubernetes.io/docs/admin/salt/)
 
 * [Helm Kubernetes Packetmanager](https://github.com/kubernetes/helm/#install)
+
+* [Kubernetes-cluster-step-by-step](https://icicimov.github.io/blog/kubernetes/Kubernetes-cluster-step-by-step/#ipsec-encryption-between-the-nodes-via-wireguard-optional)
+
+* [Wordpress Application Clustering using Kubernetes with HAProxy and Keepalived](https://severalnines.com/blog/wordpress-application-clustering-using-kubernetes-haproxy-and-keepalived)
