@@ -2,6 +2,12 @@
 
 In der Datei `/etc/salt/grains` sind eigene Variablen definiert
 
+Begriffe: 
+
+* Minions
+* Pillars
+* 
+
 
 ## Administration
 

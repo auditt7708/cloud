@@ -28,6 +28,10 @@ Folgender massen kann es Prüfen.
 
 `getent  passwd jenkins`
 
+### Jenkins Node Konfiguration
+
+* [jenkins-more-than-just-target-practice](https://www.fortynorthsecurity.com/jenkins-more-than-just-target-practice/)
+
 ## Jenkins Fehlersuche
 
 `java -jar jenkins.war  --httpsPort=8443 --httpPort=-1 --httpsCertificate=fullchain.pem --httpsPrivateKey=privkey-rsa.pem`
@@ -42,6 +46,11 @@ Home verzeichnis : `/var/lib/jenkins`
 
 ## Jenkins Plugins
 
+Die Wichtisten:
+
+* Pipeline
+* Ant Plugin
+
 * [rhnpush](https://wiki.jenkins-ci.org/display/JENKINS/rhnpush+Plugin)
 adds a post build step to push RPMs to Spacewalk or RHN satelite servers. It requires rhnpush to be installed on the slave
 * [SCP](https://wiki.jenkins-ci.org/display/JENKINS/SCP+plugin)
@@ -53,6 +62,11 @@ ploads build artifacts to repository sites using SCP (SSH) protocol. First you s
 * [jenkins-php](http://jenkins-php.org/installation.html)
 
 ## Jenkins Sicherheit
+
+Tools:
+
+* [keystore-explorer](http://keystore-explorer.org/features.html)
+
 
 Benutzer Zugangsdaten:
 
@@ -79,6 +93,7 @@ Benutzer Zugangsdaten:
 
 * [ttps mit Jenkins und Let's Encrypt
 ](https://github.com/hughperkins/howto-jenkins-ssl/blob/master/letsencrypt.md)
+* [Jenkins tutorialspoint](https://www.tutorialspoint.com/jenkins/index.htm)
 
 ## Jenkins Berechtigungen
 

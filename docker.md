@@ -1,5 +1,44 @@
 # Docker
 
+Docker Begriffe
+
+Reposirory =
+registry =
+
+Optionen
+
+Image löschen
+
+`docker rmi` 
+
+`docker image rm ID`
+
+Image Speicher und Wiedrherstellen
+
+`docker save -o /mein/Ziel/image.tar`
+
+`docker load -i /meinZeil/image.tar`
+
+Alle abgeleiteten Images löschen
+
+`--no-prune`
+
+## Adminstration
+
+> Ohne angabe bei `CMD` von etwas was auch weiter leuft wird sich der Container sofort beenden
+
+> Images die mit _<None>_ angezeit werden nenen sich Dangling Images und müssen mit dem Schalter `-a` aufgrufen werden
+
+## Datein und verzeichnisse
+
+~/.docker/daemon.json = json Konfiguration für einen Benutzer
+
+## [Networkking](../docker-networking)
+
+* [weave](../docker-networking-weave-net-install-konfiguration)
+
+* [UI server for Contiv](https://github.com/rhim/auth_proxy)
+
 ## [docker-einleitung-und-Installation](../docker-einleitung-und-Installation)
 
 ## [docker-einleitung-und-Installation-anforderungen](../docker-einleitung-und-Installation-anforderungen)
@@ -213,16 +252,6 @@
 ## [docker-tips-tricks-treiber-aendern](../docker-tips-tricks-treiber-aendern)
 
 ## [docker-hilfe-tips-tricks](../docker-hilfe-tips-tricks)
-
-## Datein und verzeichnisse
-
-~/.docker/daemon.json = json Konfiguration für einen Benutzer
-
-## [Networkking](../docker-networking)
-
-* [weave](../docker-networking-weave-net-install-konfiguration)
-
-* [UI server for Contiv](https://github.com/rhim/auth_proxy)
 
 ## [Docker Dienst auf Centos7](../docker-service-centos7)
 
