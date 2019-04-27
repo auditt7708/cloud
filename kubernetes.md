@@ -149,7 +149,7 @@ EOF
 
 ### Ubuntu User einrichten
 
-`sudo usermod -aG docker your-user`
+`sudo usermod -aG docker $USER`
 
 **Version Installieren**
 `apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io`
@@ -190,6 +190,10 @@ Log von pod ansehen
 
 `kubectl logs dns-frontend`
 
+Alle verfügbaren api Resourcen mit zugewiesenen Namespace anzeigen
+
+`kubectl api-resources --namespaced=true`
+
 ## Networking
 
 > kubernetes v1.6 offers 3 ways to expose a service:
@@ -210,6 +214,11 @@ Log von pod ansehen
 ## Authentifizieren mit Bootstrap Tokens
 
 * [bootstrap-tokens](https://kubernetes.io/docs/reference/access-authn-authz/bootstrap-tokens/#configmap-signing)
+
+## [Kubernetes API](../kubernetes-api)
+
+Liste von Zugrifen via [Kubernetes API](../kubernetes-api)
+
 
 ## Dokumentations-Quellen
 

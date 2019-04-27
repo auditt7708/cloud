@@ -1,8 +1,13 @@
-Continuous Delivery ist ein Konzept. Durch die Automatisierung des Tests, der Erstellung und der Bereitstellung kann das Tempo der Software-Veröffentlichung die Zeit zum Markt sein. Es hilft auch bei der Zusammenarbeit zwischen Entwicklern, Operationen und Testern, wodurch Kommunikationsaufwand und Bugs reduziert werden. CD-Pipeline zielt darauf ab, ein zuverlässiger und wiederholbarer Prozess und Werkzeuge für die Bereitstellung von Software zu sein.
+# Kubernetes CD Pipline erstellen
+
+Continuous Delivery ist ein Konzept.
+Durch die Automatisierung des Tests, der Erstellung und der Bereitstellung kann das Tempo der Software-Veröffentlichung die Zeit zum Markt sein.
+Es hilft auch bei der Zusammenarbeit zwischen Entwicklern, Operationen und Testern, wodurch Kommunikationsaufwand und Bugs reduziert werden.
+CD-Pipeline zielt darauf ab, ein zuverlässiger und wiederholbarer Prozess und Werkzeuge für die Bereitstellung von Software zu sein.
 
 Kubernetes ist eines der Ziele in der CD-Pipeline. In diesem Abschnitt wird beschrieben, wie Sie Ihre neue Release-Software in Kubernetes von Jenkins und Kubernetes bereitstellen können.
 
-### Fertig werden
+## Fertig werden
 
 Die Voraussetzung für diesen Abschnitt ist es Jenkins zu kennen. Vor der Einrichtung unserer Continuous Delivery Pipeline mit Kubernetes, sollten wir wissen, was Kubernetes macht. Die Bereitstellung in Kubernetes könnte eine bestimmte Anzahl von Pods und Replikationscontroller-Repliken erzeugen. Wenn eine neue Software freigegeben wird, können Sie dann Updates aktualisieren oder die Pods neu erstellen, die in der Deployment-Konfigurationsdatei aufgeführt sind, mit denen man sicherstellen kann, dass Ihr Service immer leuft .
 
