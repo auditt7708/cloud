@@ -1,21 +1,14 @@
 # Mysql Berechtigungen Setzen
 
-
 ## User Berechtigungen
 
-* ALL PRIVILEGES – Gewährt (grants)  alle privilegen zu einen Benutzer.
-
+* ALL PRIVILEGES – Gewährt (grants) alle privilegen zu einen Benutzer.
 * CREATE – Datenbenken und tabellen anlegen.
-
 * DROP - löschen von databases and tables.
-
 * DELETE - delete Zeilen von einer speziefischen table.
-
 * INSERT - Einfügen in bestimmten Zeilen in tablen.
-
 * SELECT – database lesen.
-
-* UPDATE - Zeilen in Tablen ändern .
+* UPDATE - Zeilen in Tablen ändern.
 
 Neuen Benutzer anlegen
 

@@ -1,15 +1,13 @@
-## Installation 
+# Tftp Installation
 
 |Distribution|Packetname|Info|
 | :---: | :---: | :---: |
 |Debian|tftpd-hpa|Server|
-||||
 
 Installation Übersicht zu den Linux Distributionen
 *[Debain/Ubuntu](../tftpd-install-debian)
 
-
-Nach Jeder Änderung muss der tftp Server mit : 
+Nach Jeder Änderung muss der tftp Server mit :
 
 `/etc/init.d/tftpd-hpa restart`
 
@@ -19,7 +17,7 @@ oder
 
 neu gestartet werden.
 
-#### Test für den Server 
+## Test für den Server
 
 **Test ob der Server Läuft**
 `pgrep -lf tftpd`
@@ -29,7 +27,8 @@ neu gestartet werden.
 ### Boot Images
 
 Debian Boot Image erstellen
-```
+
+```s
 VERSION=8 # jessie, 7.0 for wheezy
 ARCH=amd64 # or any other release architecture
 apt-get install debian-installer-$VERSION-netboot-$ARCH
@@ -39,7 +38,7 @@ apt-get install debian-installer-$VERSION-netboot-$ARCH
 
 Ubuntu Einträge
 
-```
+```s
 label ubuntu16.04_i386_ps
   menu label Ubuntu 16.04 i386 Preseed
   kernel /ubuntu16.04/i386/linux
@@ -53,9 +52,9 @@ label ubuntu16.04_amd64_ps
 
 ## Fehlerbehebung
 
-Um die Logs durch kann entweder 
+Um die Logs durch kann entweder
 
-`tail -f /var/log/syslog` 
+`tail -f /var/log/syslog`
 
 oder systemd systemen
 
@@ -63,6 +62,7 @@ oder systemd systemen
 
 benutzt werden.
 
-Source: 
-* http://www.gtkdb.de/index_34_2792.html
+Source:
+
+* [gtkbd](http://www.gtkdb.de/index_34_2792.html)
 * [Debian tftp Wiki](https://wiki.debian.org/PXEBootInstall?action=show&redirect=DebianInstaller%2FNetbootPXE)

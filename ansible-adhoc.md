@@ -7,11 +7,13 @@ ssh-agent bash && \
 ssh-add ~/.ssh/id_rsa
 ```
 
-## Previligirte ausführen mit password abfrage
+## Previligiertes ausführen mit Password abfrage
 
 `ansible atlanta -a "/usr/bin/foo" -u username --become --become-user otheruser [--ask-become-pass]`
 
 ## Datei Tranfer
+
+`ansible atlante -a "" -u`
 
 ## Direkter Datei Transfer
 
@@ -52,6 +54,8 @@ ssh-add ~/.ssh/id_rsa
 `ansible webservers -m service -a "name=httpd state=stopped"`
 
 ## Zeit limitierte jobs ausführen
+
+``
 
 ### Lan laufenen job in den Hintergrund und später wieder aufnehmen
 

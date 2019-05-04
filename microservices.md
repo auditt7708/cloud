@@ -1,6 +1,6 @@
 # HowTos Packtische Beispiele
 
-*  http://microservices.io/patterns/microservices.html
+* [Patterns mit Microservices](http://microservices.io/patterns/microservices.html)
 
 ## Container Services
 
@@ -18,7 +18,7 @@
 
 ## Container Management
 
-* https://virtuozzo.com/products/devops/ # DevOps Lösung
+* [virtuozzo DevObs](https://virtuozzo.com/products/devops/) # DevOps Lösung
 
 ## continuous-delivery
 
@@ -37,7 +37,7 @@
 
 ## Continuous-Deployment
 
-* [continuous-deployment-von-microservices] (https://www.informatik-aktuell.de/entwicklung/methoden/continuous-deployment-von-microservices.html)
+* [continuous-deployment-von-microservices](https://www.informatik-aktuell.de/entwicklung/methoden/continuous-deployment-von-microservices.html)
 
 ## Delevery Pipelines
 
@@ -58,7 +58,7 @@
 
 ## Continuous Operations
 
-* [Continuous-Operations Meaning ](https://www.boem.gov/Continuous-Operations/)
+* [Continuous-Operations Meaning](https://www.boem.gov/Continuous-Operations/)
 * [continuous-operations bigr](http://bigr.io/continuous-operations/)
 
 ## Konfigurations Managemnet
@@ -67,8 +67,8 @@
 
 ## hashicorp Tools
 
-* [Packer](../packer)
 * [Vagrant](../vagrant)
+* [Packer](../packer)
 * [Terraform](../terraform)
 * [Vault](../vault)
 * [Consul](../consul)

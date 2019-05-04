@@ -1,5 +1,6 @@
 Debian 7
-```
+
+```s
 virt-install \
 --name debian7 \
 --ram 1024 \
@@ -15,7 +16,8 @@ virt-install \
 ```
 
 Debian 8
-```
+
+```s
 virt-install \
 --name debian8 \
 --ram 1024 \
@@ -32,7 +34,7 @@ virt-install \
 
 CentOS 7
 
-```
+```s
 virt-install \
 --name centos7 \
 --ram 1024 \
@@ -48,7 +50,8 @@ virt-install \
 ```
 
 Ubuntu 16.04
-```
+
+```s
 virt-install \
 --name ubuntu1604 \
 --ram 1024 \
@@ -64,7 +67,8 @@ virt-install \
 ```
 
 Ubuntu 14.04
-```
+
+```s
 virt-install \
 --name ubuntu1404 \
 --ram 1024 \
@@ -80,7 +84,8 @@ virt-install \
 ```
 
 OpenSUSE 13
-```
+
+```s
 virt-install \
 --name opensuse13 \
 --ram 1024 \
@@ -95,20 +100,19 @@ virt-install \
 --extra-args 'console=ttyS0,115200n8 serial'
 ```
 
-
 Generic ISO
 
 Download an ISO file and give the filename to the --cdrom= parameter. This is used instead of --location. A VNC console is available on localhost, port 5999 for you to use.
 
 An example for FreeBSD 10. First download the ISO:
 
-```
+```s
 wget http://ftp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/10.1/FreeBSD-10.1-RELEASE-amd64-dvd1.iso
 ```
 
 Then start virt-install:
 
-```
+```s
  virt-install \
 --name freebsd10 \
 --ram 1024 \
@@ -125,13 +129,14 @@ Then start virt-install:
 os-variant
 
 For install use the folloing
-```
+
+```s
 sudo apt install libosinfo-bin
 ```
 
 You can get a list of supported operating system variants with the osinfo-query os command. Below you'll find an example output:
 
-```
+```s
 osinfo-query os
  Short ID             | Name                                               | Version  | ID                                      
 ----------------------+----------------------------------------------------+----------+-----------------------------------------
@@ -146,15 +151,19 @@ osinfo-query os
  winxp                | Microsoft Windows XP                               | 5.1      | http://microsoft.com/win/xp  
 ```
 
-Kickstart and debootstrap
+## Kickstart and debootstrap
 
 If you have a kickstart file set up you can give it directly to the vm using the `--extra-args` parameter:
 
- ```--extra-args "ks=http://server/vm.ks" ```
+```s
+ --extra-args "ks=http://server/vm.ks"
+```
 
 If you don't have a server set up you can inject a file into the initrd and use that for kickstarting:
 
-```--initrd-inject=vm.ks --extra-args "ks=file:/vm.ks" ```
+```s
+--initrd-inject=vm.ks --extra-args "ks=file:/vm.ks"
+```
 
 preseed.cfg is a regular preseed file (as described in the Debian Wiki) in your local filesystem. It must be named preseed.cfg in order for d-i to pick it up from the initrd.
 
@@ -170,7 +179,8 @@ virsh start centos7
 
 Use the virsh list --all to list all available virtual machines, including powered off ones:
 
-$ virsh list --all
+```s
+virsh list --all
  Id    Name                           State
 ----------------------------------------------------
  4     centos7                        running
@@ -178,6 +188,7 @@ $ virsh list --all
  -     win7                           shut off
  -     win98                          shut off
  -     winxp                          shut off
+```
 
 Stopping and removing
 
@@ -193,10 +204,10 @@ virsh undefine centos7
 
 This will remove the configuration. If you don't undefine the VM and want to try the virt-install again it will give an error like this:
 
-ERROR    Guest name 'centos7' is already in use.
+ERROR  Guest name 'centos7' is already in use.
 
 You do manually need to remove the virtual disk after undefining a vm.
 
-
 Sources:
- * virt-install
+
+* virt-install

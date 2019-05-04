@@ -9,20 +9,20 @@
 
 ## Packet Management
 
-* [repositories](https://gitlab.com/tobkern1980/home-net4-environment/wikis/repositories)
+* [repositories](../repositories)
 
 ## Virtuelle Umgebung
 
-* [virt-install](https://gitlab.com/tobkern1980/home-net4-environment/wikis/virt-install)
+* [virt-install](../virt-install)
 
 ## vpn Netzwerk
 
-* [vpn-ssh](https://gitlab.com/tobkern1980/home-net4-environment/wikis/vpn-ssh)
-* [vpn-strongswan](https://gitlab.com/tobkern1980/home-net4-environment/wikis/vpn-strongswan)
+* [vpn-ssh](../vpn-ssh)
+* [vpn-strongswan](../vpn-strongswan)
 
 ## Hosts
 
-* [Hosts](https://gitlab.com/tobkern1980/home-net4-environment/wikis/hosts)
+* [Hosts](../wikis/hosts)
 
 ```s
 Netzwerk 192.168.4.0

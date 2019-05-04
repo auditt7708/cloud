@@ -29,13 +29,12 @@ Für docker muss in der **** Unsichere Repositories aktiviert sein.
 
 ### Fehler
 
-```sh
+```s
 > Could not set oc CLI context for 'minishift' profile: Error during setting 'minishift' as active profile: The specified path to the kube config 'C:\Users\Softg\.minishift\machines\minishift_kubeconfig' does not exist
 
 Lösung
 
-```sh
-
+```s
 Error reading $HOME/.docker/config.json: open /home/docker/.docker/config.json: no such file or directory, imagestream import credentials will not be setup
 ```
 

@@ -6,7 +6,7 @@
 
 Jede Datenbank word in `collections` unterteilt (was in etwa Tebellen endspricht).
 Drin werden dann Dokumente abgelegt
-In der Prazis sollte eine `collection` mit buchstaben oder `_` beginnen und auf keinen fall mit `?` da das `?` für andere zwecke vorbelegt ist .
+In der Prazis sollte eine `collection` mit buchstaben oder `_` beginnen und auf keinen fall mit `?` da das `?` für andere zwecke vorbelegt ist.
 
 ## Dokumente
 

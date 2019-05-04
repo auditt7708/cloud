@@ -14,7 +14,7 @@
 
 ## [BTRFS Dateisystem](../btrfs)
 
-# [Hochverfügbarkeits-Cluster](../ha-cluster)
+## [Hochverfügbarkeits-Cluster](../ha-cluster)
 
 * [Typen von Clustern](../cluster-typen)
 
