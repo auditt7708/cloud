@@ -9,7 +9,7 @@ Optionen
 
 Image löschen
 
-`docker rmi` 
+`docker rmi`
 
 `docker image rm ID`
 
@@ -26,7 +26,6 @@ Alle abgeleiteten Images löschen
 ## Adminstration
 
 > Ohne angabe bei `CMD` von etwas was auch weiter leuft wird sich der Container sofort beenden
-
 > Images die mit _<None>_ angezeit werden nenen sich Dangling Images und müssen mit dem Schalter `-a` aufgrufen werden
 
 ## Datein und verzeichnisse

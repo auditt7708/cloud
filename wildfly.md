@@ -10,5 +10,6 @@ UNter Unix/Linux:
 
 `standalone.sh -Djboss.http.port=<Desired_Port_Number>`
 
-Quellen: 
+Quellen:
+
 * [wildfly-change-default-port](https://www.baeldung.com/wildfly-change-default-port)
