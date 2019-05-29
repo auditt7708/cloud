@@ -24,6 +24,10 @@
 * [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
 * [Ansible Vault](../ansible-vault)
 
+* [Ansible Installation und Konfiguration](../ansible-install-konfiguration)
+  * [Ansible requirements](../ansible-erweitert-requirements)
+    * [Ansible Variablen Facts Filter](../ansible-variablen)
+
 ## Wichtige Documentation für ansible
 
 * [playbooks von ansile doc](http://docs.ansible.com/ansible/playbooks.html)
