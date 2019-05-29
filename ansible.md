@@ -1,34 +1,30 @@
 # Ansible
 
-## Übersicht
-
-* [Ansible Installation und Konfiguration](../ansible-install-konfiguration)
-* [Ansible requirements](../ansible-erweitert-requirements)
-* [Ansible Variablen Facts Filter](../ansible-variablen)
-* [Ansibel Inventory und Hosts](../ansible-hosts)
-* [Ansible Templates](../ansible-templates)
-* [Ansible Statements](../ansible-statements)
-* [Ansible Verzeichnis Layout](../ansible-verzeichnis-layout)
-* [Ansible alternatives Verzeichnis Layout](../ansible-alternativ-verzeichnis-layout)
-* [Ansible Fehlersuche](../ansible-fehlersuche)
-* [Ansible Cluster](../ansible-cluster)
-* [Ansible Inventory](../ansible-inventory)
-* [Ansible Authentifikation](../ansible-authentifikation)
-* [Ansible Paterns](../ansible-pattern)
-* [Ansible Filter](../ansible-filter)
-* [Ansible Sozial Authentifikation](../ansible-social-auth)
-* [Zero Downtime Deployment](../ansible-zero-downtime-deployment)
-* [Ansible Mazer](../ansible-mazer)
-* [Ansible Rolen](../ansible-rolen)
-* [Ansible Galaxy](../ansible-galaxy)
-* [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
-* [Ansible Vault](../ansible-vault)
-
-## test
+## Inhaltsverzeichnis
 
 * [Ansible Installation und Konfiguration](../ansible-install-konfiguration)
   * [Ansible requirements](../ansible-erweitert-requirements)
-    * [Ansible Variablen Facts Filter](../ansible-variablen)
+  * [Ansible Variablen Facts Filter](../ansible-variablen)
+  * [Ansible Paterns](../ansible-pattern)
+  * [Ansible Filter](../ansible-filter)
+* [Ansible Inventory](../ansible-inventory)
+  * [Ansibel Inventory und Hosts](../ansible-hosts)
+* [Ansible Templates](../ansible-templates)
+  * [Ansible Statements](../ansible-statements)
+* [Ansible Verzeichnis Layout](../ansible-verzeichnis-layout)
+  * [Ansible alternatives Verzeichnis Layout](../ansible-alternativ-verzeichnis-layout)
+* [Ansible Fehlersuche](../ansible-fehlersuche)
+* [Ansible Cluster](../ansible-cluster)
+* [Ansible Authentifikation](../ansible-authentifikation)
+* [Ansible Sozial Authentifikation](../ansible-social-auth)
+* [Zero Downtime Deployment](../ansible-zero-downtime-deployment)
+* [Tools](../ansible-tools)
+  * [Ansible Mazer](../ansible-mazer)
+  * [Ansible Rolen](../ansible-rolen)
+  * [Ansible Galaxy](../ansible-galaxy)
+  * [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
+* [Sicherheit](../ansible-sicherheit)
+  * [Ansible Vault](../ansible-vault)
 
 ## Wichtige Documentation für ansible
 
