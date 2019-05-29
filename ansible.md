@@ -18,10 +18,16 @@
 * [Ansible Filter](../ansible-filter)
 * [Ansible Sozial Authentifikation](../ansible-social-auth)
 * [Zero Downtime Deployment](../ansible-zero-downtime-deployment)
+
+Tools 
+
 * [Ansible Mazer](../ansible-mazer)
-* [Ansible Rolen](../ansible-rolen)
-* [Ansible Galaxy](../ansible-galaxy)
-* [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
+  * [Ansible Rolen](../ansible-rolen)
+  * [Ansible Galaxy](../ansible-galaxy)
+  * [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
+
+Sicherheit
+
 * [Ansible Vault](../ansible-vault)
 
 ## Wichtige Documentation für ansible
