@@ -46,3 +46,5 @@
 * [Ansible Web Tools](https://ansible.sivel.net/)
 * [centos-opstools](https://github.com/centos-opstools?page=5)
 * [opstools-ansible](https://opstools-ansible.readthedocs.io/en/latest/)
+* [Ansible  make your complex services simple](http://automationbroker.io/)
+* [ansible-playbook-bundle](https://github.com/ansibleplaybookbundle/ansible-playbook-bundle)
