@@ -7,23 +7,23 @@ all
 *
 ```
 
-## Oder Gruppe dbservers
+Oder Gruppe dbservers
 
 `webservers:dbservers`
 
-## Host muss ein zwei Gruppen sein. Hier webservers und staging
+Host muss ein zwei Gruppen sein. Hier webservers und staging
 
 `webservers:&staging`
 
-**Exclude phoenix **
+Exclude phoenix
 
 `webservers:!phoenix`
 
-## Kombination aller Abhängigkeiten
+Kombination aller Abhängigkeiten
 
 `webservers:dbservers:&staging:!phoenix`
 
-## Auf Hosts in einer Gruppe via Index verweisen
+Auf Hosts in einer Gruppe via Index verweisen
 
 ```sh
 webservers[0]       # == cobweb
@@ -34,15 +34,18 @@ webservers[1:]      # == webbing,weber
 webservers[:3]      # == cobweb,webbing,weber
 ```
 
-**Reguläre Ausdrücke benutzen. Muss mit _~_ anfangen.**
+Reguläre Ausdrücke benutzen. Muss mit _~_ anfangen.
+
 `~(web|db).*\.example\.com`
 
-**Liste von hosts aus einer Datei lesen. Hier ist @ wichtig**
+Liste von hosts aus einer Datei lesen. Hier ist @ wichtig
+
 `ansible-playbook site.yml --limit @retry_hosts.txt`
 
-**Bestimmte gruppe ausschißen**
+Bestimmte gruppe ausschißen
+
 `ansible-playbook site.yml --limit datacenter2`
 
-**Quellen:**
+## Quellen
 
 * [Ansible Pattern](https://docs.ansible.com/ansible/latest/user_guide/intro_patterns.html)
