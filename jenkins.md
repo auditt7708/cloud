@@ -1,5 +1,57 @@
 # Jenkins
 
+## Installation
+
+### mod_proxy
+
+```s
+ProxyPass         /jenkins  http://localhost:8081/jenkins nocanon
+ProxyPassReverse  /jenkins  http://localhost:8081/jenkins
+ProxyRequests     Off
+AllowEncodedSlashes NoDecode
+
+# Local reverse proxy authorization override
+# Most unix distribution deny proxy by default (ie /etc/apache2/mods-enabled/proxy.conf in Ubuntu)
+<Proxy http://localhost:8081/jenkins*>
+  Order deny,allow
+  Allow from all
+</Proxy>
+```
+
+### mod_proxy mit HTTPS
+
+```
+ProxyRequests     Off
+ProxyPreserveHost On
+AllowEncodedSlashes NoDecode
+
+<Proxy http://localhost:8081/jenkins*>
+  Order deny,allow
+  Allow from all
+</Proxy>
+
+ProxyPass         /jenkins  http://localhost:8081/jenkins nocanon
+ProxyPassReverse  /jenkins  http://localhost:8081/jenkins
+ProxyPassReverse  /jenkins  http://your.host.com/jenkins
+```
+
+```s
+ProxyRequests     Off
+ProxyPreserveHost On
+ProxyPass /jenkins/ http://localhost:8081/jenkins/ nocanon
+AllowEncodedSlashes NoDecode
+
+<Location /jenkins/>
+  ProxyPassReverse /
+  Order deny,allow
+  Allow from all
+</Location>
+
+Header edit Location ^http://www.example.com/jenkins/ https://www.example.com/jenkins/
+```
+
+### mod_
+
 ## Nach der Installation
 
 So sollte er nicht eingerichtet sein
