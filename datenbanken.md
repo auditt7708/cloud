@@ -9,5 +9,5 @@
 * [MariaDB MaxScale](../mariadb-maxscale)
 * [BAckup mit mysqldump](../backup-mysqldump.md)
 * [SQL Abfragen für Administratoren](../sql-queries)
-* [SQL Berechtigungen und User einrichten](../mysql-berechtigunegen)
+* [SQL Berechtigungen und User einrichten](../mysql-berechtigungen)
 * [SQL Datenbanken und Benutzer managen](../mysql-mgmnt)

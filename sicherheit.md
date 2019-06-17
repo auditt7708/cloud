@@ -1,8 +1,8 @@
 # PKI Zertifikats Management
 
-* [Openssl](https://gitlab.com/tobkern1980/home-net4-environment/wikis/openssl)
+* [Openssl](../openssl)
 * [letsencrypt](../letsencrypt)
-* [Sudo](https://gitlab.com/tobkern1980/home-net4-environment/wikis/sudo)
+* [Sudo](../sudo)
 
 ## Password Manager
 
@@ -16,7 +16,7 @@ Einige Password Manager mit einer GUI. Ich habe mal eine Weboberfläche auch daz
 * [OpenCA](https://www.openca.org/)
 * [cloudflare cfssl](https://github.com/cloudflare/cfssl)
 * [dogtag](https://www.dogtagpki.org/wiki/PKI_Download)
-* [Passbold](https://gitlab.com/tobkern1980/home-net4-environment/wikis/passbold)
+* [Passbold](../passbold)
 * [keepass.io](https://github.com/SnapServ/keepass.io)
 * [keystore-explorer](http://keystore-explorer.org/features.html)
 
@@ -30,11 +30,11 @@ Einige Password Manager mit einer GUI. Ich habe mal eine Weboberfläche auch daz
 **gpg Key untersuchen**
 `gpg --expert  --edit -key $key`
 
-[Monkeysphere](../monkeysphere)
+* [Monkeysphere](https://web.monkeysphere.info/)
 
 ## [Yubikey](../yubikey)
 
-## [OpenSSH](../arbeiten-mit-ssh)
+## [OpenSSH](../ssh)
 
 ## [OpenSSL](../openssl)
 
@@ -58,6 +58,6 @@ Einige Password Manager mit einer GUI. Ich habe mal eine Weboberfläche auch daz
 
 ## [Firewalld](../firewalld)
 
-## [VPN](../vpm)
+## [VPN](../vpn)
 
 * [wireguard VPN](https://www.wireguard.com/)

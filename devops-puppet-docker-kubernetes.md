@@ -2,11 +2,11 @@
 
 ## [Puppet Allgemein](../puppet)
 
-## Puppet 3
+Versions Veränderungen/Besonderheiten bei Puppet
 
-## [Puppet 3 Besonderheiten](../puppet3)
+## [Puppet 3](../puppet3)
 
-## Puppet 4
+## Puppet 4](../pupprt4)
 
 ## [Puppet4 Sprache und Syntax](../puppet4-basics)
 

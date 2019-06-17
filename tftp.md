@@ -5,7 +5,8 @@
 |Debian|tftpd-hpa|Server|
 
 Installation Übersicht zu den Linux Distributionen
-*[Debain/Ubuntu](../tftpd-install-debian)
+
+* [Debain/Ubuntu](../tftpd-install-debian)
 
 Nach Jeder Änderung muss der tftp Server mit :
 

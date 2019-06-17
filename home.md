@@ -17,7 +17,7 @@
 
 * [seafile](https://www.seafile.com/en/features/)
 
-## [Linux Tools](../linux-system-tools)
+## [Linux System Tools](../linux-system-tools)
 
 * [tmuxcheatsheet](https://tmuxcheatsheet.com/)
 * [cool-retro-term](https://github.com/Swordfish90/cool-retro-term )
@@ -26,20 +26,18 @@
 * [terminix](https://github.com/gnunn1/terminix)
 * [cmatrix](http://www.asty.org/cmatrix/)
 * [termite](https://github.com/thestinger/termite)
-* [terminix-web](https://gnunn1.github.io/terminix-web/)
+* [terminix-web](https://github.com/gnunn1/tilix-web)
 * [TermKit](https://github.com/unconed/TermKit)
 * [Xiki makes the shell console more friendly and powerful](http://xiki.org/ )
 * [katello](https://gitlab.com/tobkern1980/home-net4-environment/wikis/katello)
 * [kickstart](../kickstart)
 
-## Linux Basis
+## [Linux Basis](../linux-basis)
 
 * [User und Gruppen](../user-und-gruppen)
 * [Sudo](../sudo)
 * [Package Management](../package-management)
 * [Bash](../bash)
-* [Konsolen Tools](../konsolen-tools)
-* [Terminal](../terminal)
 
 ## [monitoring](../monitoring)
 

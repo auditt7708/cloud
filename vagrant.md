@@ -1,4 +1,4 @@
-# [Vagrant](../vagent)
+# [Vagrant](../vagrant)
 
 ## [Plugins](../vagrant-plugins)
 

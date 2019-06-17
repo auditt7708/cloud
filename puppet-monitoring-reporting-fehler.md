@@ -1,8 +1,10 @@
+# puppet-monitoring-reporting-fehler
+
 Puppets Fehlermeldungen können manchmal etwas verwirrend sein. Aktualisierte und zunehmend hilfreiche Fehlermeldungen sind ein Grund für die Aktualisierung Ihrer Puppet-Installation, wenn Sie eine Version vor Version 3 ausführen.
 
 Hier sind einige der häufigsten Fehler, die Sie vielleicht begegnen, und was zu tun ist.
 
-### Wie es geht...
+## Wie es geht
 
 Oft ist der erste Schritt einfach, um das Web für die Fehlermeldung Text zu suchen und sehen, welche Erklärungen Sie für den Fehler finden können, zusammen mit jeder hilfreiche Beratung über die Festsetzung es. Hier sind einige der häufigsten rätselhaften Fehler, mit möglichen Erklärungen:
 `Could not retrieve file metadata for XXX: getaddrinfo: Name or service not known`
@@ -30,8 +32,10 @@ Dies kann durch Negativ-Befehlszeilenoptionen verursacht werden, z.B wenn Sie `p
 
 Das hat mir in der Vergangenheit ein bisschen verwirrt. Puppet beschwert sich über eine doppelte Definition, und normalerweise, wenn Sie zwei Ressourcen mit dem gleichen Namen haben, wird Puppet Ihnen gerne sagen, wo sie beide definiert sind. Aber in diesem Fall gibt es die gleiche Datei und Zeilennummer für beide. Wie kann eine Ressource ein Duplikat von sich sein?
 
-Die Antwort ist, wenn es sich um einen definierten Typ handelt (eine Ressource, die mit dem Schlüsselwort `define` wurde). Wenn Sie zwei Instanzen eines definierten Typs erstellen, haben Sie auch zwei Instanzen aller Ressourcen, die in der Definition enthalten sind, und sie müssen unterschiedliche Namen haben. Beispielsweise:
-```
+Die Antwort ist, wenn es sich um einen definierten Typ handelt (eine Ressource, die mit dem Schlüsselwort `define` wurde). Wenn Sie zwei Instanzen eines definierten Typs erstellen, haben Sie auch zwei Instanzen aller Ressourcen, die in der Definition enthalten sind, und sie müssen unterschiedliche Namen haben.
+Beispielsweise:
+
+```pp
 define check_process() {
   exec { 'is-process-running?':
     command => "/bin/ps ax |/bin/grep ${name} >/tmp/pslist.${name}.txt",
@@ -43,14 +47,16 @@ check_process { 'nagios': }
 ```
 
 Wenn wir Puppet laufen lassen, wird der gleiche Fehler zweimal ausgegeben:
-```
+
+```s
 t@mylaptop ~$ puppet apply duplicate.pp
 Error: Duplicate declaration: Exec[is-process-running?] is already declared in file duplicate.pp:4; cannot redeclare at duplicate.pp:4 on node cookbook.example.com
 Error: Duplicate declaration: Exec[is-process-running?] is already declared in file duplicate.pp:4; cannot redeclare at duplicate.pp:4 on node cookbook.example.com
 ```
 
 Weil die `exec`-Ressource heißt `is-process-running?` , Wenn Sie versuchen, mehr als eine Instanz der Definition zu erstellen, wird Puppet verweigern, weil das Ergebnis zwei `exec`-Ressourcen mit dem gleichen Namen wäre. Die Lösung besteht darin, den Namen der Instanz (oder einen anderen eindeutigen Wert) in den Titel jeder Ressource aufzunehmen:
-```
+
+```pp
 exec { "is-process-${name}-running?":
   command => "/bin/ps ax |/bin/grep ${name} >/tmp/pslist.${name}.txt",
 }
@@ -60,4 +66,3 @@ Jede Ressource muss einen eindeutigen Namen haben und einen guten Weg, um dies m
 `"is-process-${name}-running?"`
 
 Die doppelten Anführungszeichen sind erforderlich, wenn Puppet den Wert einer Variablen in einen String interpolieren soll.
-

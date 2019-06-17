@@ -1,14 +1,14 @@
 # Management Tools
 
-## [Ansible](https://gitlab.com/tobkern1980/home-net4-environment/wikis/ansible)
+## [Ansible](../ansible)
 
 * [ansibleplaybook-rancher](https://github.com/joshuacox/ansibleplaybook-rancher)
 
-## [Puppet](https://gitlab.com/tobkern1980/home-net4-environment/wikis/puppet)
+## [Puppet](../puppet)
 
 * [puppet-rancher](https://github.com/nickschuch/puppet-rancher)
 
-## [SaltStack](https://gitlab.com/tobkern1980/home-net4-environment/wikis/saltstack)
+## [SaltStack](../saltstack)
 
 * [rancher-salt](https://github.com/komljen/rancher-salt)
 
@@ -18,7 +18,7 @@
 
 ### Sonstiges
 
-* [Pressed](https://gitlab.com/tobkern1980/home-net4-environment/wikis/preseed)
-* [Templating](https://gitlab.com/tobkern1980/home-net4-environment/wikis/templating)
+* [Pressed](../preseed)
+* [Templating](../templating)
 * [propagit](https://github.com/substack/propagit)
 * [gradle-debian-plugin](https://github.com/gesellix/gradle-debian-plugin)

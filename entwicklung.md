@@ -2,5 +2,4 @@
 
 * [Python](../python)
 * [Ruby](../ruby)
-* [perl](../perl)
-* [GoLang](../go)
+* [GoLang](../go-lang)

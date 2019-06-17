@@ -4,8 +4,8 @@
 
 ## Container Services
 
-* [Docker](https://gitlab.com/tobkern1980/home-net4-environment/wikis/docker)
-* [OpenVZ](https://openvz.org/Main_Page)
+* [Docker](../docker)
+* [OpenVZ](https://openvz.org)
 
 ## Container Networking
 

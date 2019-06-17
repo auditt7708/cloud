@@ -20,10 +20,10 @@ sudo systemctl start postgresql-9.6
 
 ## Fork BIGSQL mit Cluster
 
-|Distribution|Zweck|Ort| Psql Version|
+|Distribution|Zweck|Ort|Psql Version|
 | :---: | :---: | :---: | :---: |
 |Debain/Ubuntu|Basisverzeichnis|/opt/postgresql/$version/|9 BigSQL|
 
-### Quellen zu BigSQL 
+### Quellen zu BigSQL
 
 * [BigSQL Debian](https://www.bigsql.org/docs/deb.jsp)
