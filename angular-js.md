@@ -1,4 +1,4 @@
-# Installation und Konfiguration
+# Angular JS Installation und Konfiguration
 
 ## Installation mit nmp
 

@@ -1,0 +1,1 @@
+# Anzeige einer Hilfe-Datei

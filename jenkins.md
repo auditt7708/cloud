@@ -1,18 +1,22 @@
 # Jenkins
 
+Jenkins ist ein Programm das bei der Umsetzung einer CI/CD Umgebung hilft.
+Im gegensatz zu vielen anderen Alternativen wird ein allgemeiner Anzatz eingesezt was die einarbeitungzeit hier etwas verländern kann.
+Für jenkins gibt viele Plugins die die funktionalätät start erweitern können.
+
 ## Installation
 
 ### mod_proxy
 
 ```s
-ProxyPass         /jenkins  http://localhost:8081/jenkins nocanon
-ProxyPassReverse  /jenkins  http://localhost:8081/jenkins
+ProxyPass         /jenkins  http://localhost.local:8081/jenkins nocanon
+ProxyPassReverse  /jenkins  http://localhost.local:8081/jenkins
 ProxyRequests     Off
 AllowEncodedSlashes NoDecode
 
 # Local reverse proxy authorization override
 # Most unix distribution deny proxy by default (ie /etc/apache2/mods-enabled/proxy.conf in Ubuntu)
-<Proxy http://localhost:8081/jenkins*>
+<Proxy http://localhost.local:8081/jenkins*>
   Order deny,allow
   Allow from all
 </Proxy>
@@ -20,7 +24,7 @@ AllowEncodedSlashes NoDecode
 
 ### mod_proxy mit HTTPS
 
-```
+```s
 ProxyRequests     Off
 ProxyPreserveHost On
 AllowEncodedSlashes NoDecode
@@ -49,8 +53,6 @@ AllowEncodedSlashes NoDecode
 
 Header edit Location ^http://www.example.com/jenkins/ https://www.example.com/jenkins/
 ```
-
-### mod_
 
 ## Nach der Installation
 
@@ -139,12 +141,11 @@ Benutzer Zugangsdaten:
 * [continuous_delivery_with_jenkins_pipeline](https://go.cloudbees.com/docs/cloudbees-documentation/cookbook/book.html#ch13__continuous_delivery_with_jenkins_pipeline)
 * [TUTORIAL](https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md)
 * [top-10-best-practices-jenkins-pipeline-plugin](https://www.cloudbees.com/blog/top-10-best-practices-jenkins-pipeline-plugin)
-*[hello-world](https://jenkins.io/doc/pipeline/tour/hello-world/)
+* [hello-world](https://jenkins.io/doc/pipeline/tour/hello-world/)
 
 **Quelle:**
 
-* [ttps mit Jenkins und Let's Encrypt
-](https://github.com/hughperkins/howto-jenkins-ssl/blob/master/letsencrypt.md)
+* [https mit Jenkins und Let's Encrypt](https://github.com/hughperkins/howto-jenkins-ssl/blob/master/letsencrypt.md)
 * [Jenkins tutorialspoint](https://www.tutorialspoint.com/jenkins/index.htm)
 
 ## Jenkins Berechtigungen

@@ -1,4 +1,4 @@
-# Beispiel Konfigurationen 
+# Beispiel Konfigurationen
 
 * [Jenkins](../haproxy-jenkins)
 

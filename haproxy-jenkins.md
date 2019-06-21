@@ -1,10 +1,13 @@
+# HaProxy mit Jenkins
+
 Beispiel ohne Verschlüsselung auf einem localen system
-```
+
+```s
 # If you already have an haproxy.cfg file, you can probably leave the
-# global and defaults section as-is, but you might need to increase the 
+# global and defaults section as-is, but you might need to increase the
 # timeouts so that long-running CLI commands will work.
-global 
-    maxconn 4096 
+global
+    maxconn 4096
     log 127.0.0.1 local0 debug
 
 defaults
@@ -33,12 +36,13 @@ backend jenkins
 ```
 
 Mit https
-```
+
+```s
 # If you already have an haproxy.cfg file, you can probably leave the
-# global and defaults section as-is, but you might need to increase the 
+# global and defaults section as-is, but you might need to increase the
 # timeouts so that long-running CLI commands will work.
-global 
-    maxconn 4096 
+global
+    maxconn 4096
     log 127.0.0.1 local0 debug
 
 defaults
@@ -50,7 +54,7 @@ defaults
    timeout connect 5s
    timeout client 5min
    timeout server 5min
- 
+
 frontend http-in
     bind *:80
     bind *:443 ssl crt /usr/local/etc/haproxy/ssl/server.pem
