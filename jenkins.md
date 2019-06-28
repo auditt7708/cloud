@@ -4,6 +4,12 @@ Jenkins ist ein Programm das bei der Umsetzung einer CI/CD Umgebung hilft.
 Im gegensatz zu vielen anderen Alternativen wird ein allgemeiner Anzatz eingesezt was die einarbeitungzeit hier etwas verländern kann.
 Für jenkins gibt viele Plugins die die funktionalätät start erweitern können.
 
+Inhaltesverzeichnis
+
+* [jenkins-jenkinsfile](../jenkins-jenkinsfile)
+* [jenkins Pipelins als Code](../jenkins-pipline-as-code)
+* [jenkins-plugin-job-dsl](../jenkins-plugin-job-dsl)
+
 ## Installation
 
 ### mod_proxy
@@ -100,11 +106,10 @@ Home verzeichnis : `/var/lib/jenkins`
 
 ## Jenkins Plugins
 
-Die Wichtisten:
+Die Wichtisten Plugins:
 
 * Pipeline
 * Ant Plugin
-
 * [rhnpush](https://wiki.jenkins-ci.org/display/JENKINS/rhnpush+Plugin)
 adds a post build step to push RPMs to Spacewalk or RHN satelite servers. It requires rhnpush to be installed on the slave
 * [SCP](https://wiki.jenkins-ci.org/display/JENKINS/SCP+plugin)
@@ -120,7 +125,6 @@ ploads build artifacts to repository sites using SCP (SSH) protocol. First you s
 Tools:
 
 * [keystore-explorer](http://keystore-explorer.org/features.html)
-
 
 Benutzer Zugangsdaten:
 
