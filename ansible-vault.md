@@ -7,4 +7,4 @@ Mit der Vault können Sensible daten geschützt werden
 
 **Quellen:**
 
-* [how-to-use-vault-to-protect-sensitive-ansible-data](https://www.digitalocean.com/community/tutorials/how-to-use-vault-to-protect-sensitive-ansible-data-on-ubuntu-16-04)
+* [how-to-use-vault-to-protect-sensitive-ansible-data](https://www.digitalocean.com/community/tutorials how-to-use-vault-to-protect-sensitive-ansible-data-on-ubuntu-16-04)
