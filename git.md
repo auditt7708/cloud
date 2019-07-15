@@ -1,5 +1,11 @@
 # Git
 
+**Begriffe**
+
+- Git directory = Lokaller clone des Repos
+- Git working tree = pull vom Git directory
+- Git Stag = Lokalle änderungen
+
 Anpassen einer Fehlerhaften commit Massage vor dem  push zum  remote System
 
 Hier bietet sich `--amend` an
