@@ -146,3 +146,4 @@ Quellen:
 * [mod_cluster](https://docs.modcluster.io/)
 * [modcluster.io examples/](https://modcluster.io/examples/)
 * [red_hat_jboss mod_cluster](https://access.redhat.com/documentation/en-us/red_hat_jboss_operations_network/3.0/html/manage_jboss_servers/mod_cluster)
+* [how-to-install-wildfly-on-centos-7](* [](https://linuxize.com/post/how-to-install-wildfly-on-centos-7/))

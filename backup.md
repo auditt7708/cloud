@@ -4,6 +4,7 @@ Host für Sicherung ist der share1
 
 ## Amanda
 
+* [rclone file sync](https://rclone.org/)
 * [amanda Homepage](http://www.amanda.org/)
 * [Build_a_Basic_Configuratio](http://wiki.zmanda.com/index.php/GSWA/Build_a_Basic_Configuration)
 * [Bacula](../bacula)
