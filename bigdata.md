@@ -17,3 +17,5 @@ Folgende Erweiterungen sind Optional:
 * [Flink](../flink)
 * [Ignite](../ignite)
 * [JanusGraph](../janusGraph)
+* [Kafka](../kafka)
+* [Knox](../knox)

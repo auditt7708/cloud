@@ -52,7 +52,7 @@ IP Subnetz = 64
 ## vlan
 
 | vlan ID |  netzkerk | Info |
-| :--------: | :--------: | :--------: |
+| :---: | :---: | :---: |
 | 1            | 192.168.4.1       | fallback net|
 | 2            | 192.168.4.2       | development |
 | 3            | 192.168.4.3       | productiv |

@@ -1,6 +1,36 @@
 # Docker
 
-Docker Begriffe
+Inhaltsverzeichnis
+
+## [Docker unter CentOS7](https://coderleaf.wordpress.com/2017/02/10/run-docker-as-user-on-centos7/)
+
+
+`usermod -aG docker $(whoami)`
+
+
+
+Die Datei _/etc/docker/daemon.json_ anpassen um mit einem Normalen Benutzer zu benutzen.
+
+```json
+{
+    "live-restore": true,
+    "group": "docker"
+}
+```
+
+## Docker Sorage unter CentOS 7
+
+Notwendige Pakete installieren
+
+`sudo yum install yum-utils device-mapper-persistent-data lvm2`
+
+Docker activiren und starten und zustand Prüfen.
+
+```
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker
+```
 
 Reposirory =
 registry =
@@ -261,6 +291,10 @@ Alle abgeleiteten Images löschen
 ## [Docker web2ldap](../docker-projekt-web2ldap)
 
 ## [Private Docker Projekte](../docker-projekte)
+
+## Docker Fehlerbehebung
+
+## [Docker Fehler](../docker-fehler)
 
 **Quellen:**
 
