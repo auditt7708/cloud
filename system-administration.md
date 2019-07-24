@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Systemd
 
 ## systemctl
@@ -29,6 +30,127 @@ Mit Hilfe von systemd Path-Units können Dateien oder Verzeichnisse auf Änderun
 ## APT und dep
 
 **Repository bei apt**
+=======
+# System Administrions Tools
+
+Benutzerverwaltung
+
+* [adduser  Hinzufügen eines Benutzers](../adduser)
+* [chsh Änderung der Standard-Shell des Benutzers ("change shell")](../chsh)
+* [deluser Löschung eines Benutzers ("delete user")](../deluser)
+* [groupdel Löschung einer Gruppe ("delete group")](../groupdel)
+* [groupmod Bearbeitung einer Gruppe ("modify group")](../groupmod)
+* [newgrp Änderung der Gruppe des aktuellen Benutzers ("new group")](../newgrp)
+* [passwd Änderung des Passworts eines Benutzers ("password")](../passwd)
+* [usermod Bearbeitung eines Benutzerkontos ("modify user")](../)
+* [chfn erweiterte Benutzerinformationen anpassen](../chfn)
+
+Prozesssteuerung
+
+Service Management
+
+* [Systemd](../systemd)
+
+Grundkommandos
+
+* [cat Verknüpfung von Dateien ("concatenate")](../cat)
+* [cd Wechsel des Arbeitsverzeichnisses ("change directory")](./cd)
+* [cp Kopie von Dateien oder Verzeichnissen ("copy")](../cp)
+* [date Anzeige von Datum und Zeit](../date)
+* [echo Anzeige eines Textes](../echo)
+* [exit Ende der Sitzung](../exit)
+* [info Anzeige einer Hilfe-Datei](../info)
+* [ln Link zu einer Datei oder einem Verzeichnis ("link")](../link)
+* [ls Auflistung von Dateien ("list")](../ls)
+* [man Ausgabe der Handbuchseite zu einem Befehl oder einer Anwendung ("manual")](../man)
+* [mkdir Erzeugung von Verzeichnissen ("make directory")](..(mkdir))
+* [mmv Multiple move (Datei-Mehrfachoperationen mit Hilfe von Wildcard-Mustern)](../mmv)
+* [mv Kopieren einer Datei und Löschen der Ursprungsdatei ("move"); mv im aktuellen Verzeichnis ausgeführt: Umbenennung einer Datei](../mv)
+* [pwd Anzeige des aktuellen Verzeichnisses ("print working directory")](../pwd)
+* [rm Löschen von Dateien und Verzeichnisse ("remove")](../rm)
+* [rmdir Löschen eines leeren Verzeichnisses ("remove directory")](../rmdir)
+* [sudo Root-Rechte für den Benutzer ("substitute user do")](../sudo)
+* [touch Änderung der Zugriffs- und Änderungszeitstempel einer Datei oder eines Verzeichnisses (auch: Erstellen von Dateien)](../touch)
+* [unlink Löschen einer Datei](../unlink)
+
+Netzwerk
+
+* [dig Namensauflösung (DNS)](../)
+* [iwconfig Werkzeug für WLAN-Schnittstellen](../)
+* [ip Anzeigen und Konfiguration von Netzwerkgeräten. Nachfolger von ifconfig](../)
+* [iw der Nachfolger von iwconfig](../)
+* [netstat Auflistung offener Ports und bestehender Netzwerkverbindungen ("network statistics")](../)
+* [ping Prüfen der Erreichbarkeit anderer Rechner über ein Netzwerk](../)
+* [route 🇩🇪 Anzeige und Änderung der Route (Routingtabelle)](../)
+* [ss der Nachfolger von netstat ("socket statistics")](../)
+* [traceroute Routenverfolgung und Verbindungsanalyse](../)
+
+Dateiwerkzeuge
+
+* [basename Rückgabe des Dateinamens](../basename)
+* [lsof Anzeige offener Dateien ("list open files")](../lsof)
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+
+Systemüberwachung
+
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+
+Pager
+
+* [](../)
+* [](../)
+
+witere Nützliche Befehle
+
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+
+Packet Managemnet
+
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+
+RPM
+
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+
+APT und dep
+
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+
+Repository bei apt
+
+* [](../)
+* [](../)
+* [](../)
+* [](../)
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 ```s
 wget -O - 'http://repo.proxysql.com/ProxySQL/repo_pub_key' | apt-key add -

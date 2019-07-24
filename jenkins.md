@@ -1,5 +1,68 @@
 # Jenkins
 
+<<<<<<< HEAD
+=======
+Jenkins ist ein Programm das bei der Umsetzung einer CI/CD Umgebung hilft.
+Im gegensatz zu vielen anderen Alternativen wird ein allgemeiner Anzatz eingesezt was die einarbeitungzeit hier etwas verländern kann.
+Für jenkins gibt viele Plugins die die funktionalätät start erweitern können.
+
+Inhaltesverzeichnis
+
+* [jenkins-jenkinsfile](../jenkins-jenkinsfile)
+* [jenkins Pipelins als Code](../jenkins-pipline-as-code)
+* [jenkins-plugin-job-dsl](../jenkins-plugin-job-dsl)
+
+## Installation
+
+### mod_proxy
+
+```s
+ProxyPass         /jenkins  http://localhost.local:8081/jenkins nocanon
+ProxyPassReverse  /jenkins  http://localhost.local:8081/jenkins
+ProxyRequests     Off
+AllowEncodedSlashes NoDecode
+
+# Local reverse proxy authorization override
+# Most unix distribution deny proxy by default (ie /etc/apache2/mods-enabled/proxy.conf in Ubuntu)
+<Proxy http://localhost.local:8081/jenkins*>
+  Order deny,allow
+  Allow from all
+</Proxy>
+```
+
+### mod_proxy mit HTTPS
+
+```s
+ProxyRequests     Off
+ProxyPreserveHost On
+AllowEncodedSlashes NoDecode
+
+<Proxy http://localhost:8081/jenkins*>
+  Order deny,allow
+  Allow from all
+</Proxy>
+
+ProxyPass         /jenkins  http://localhost:8081/jenkins nocanon
+ProxyPassReverse  /jenkins  http://localhost:8081/jenkins
+ProxyPassReverse  /jenkins  http://your.host.com/jenkins
+```
+
+```s
+ProxyRequests     Off
+ProxyPreserveHost On
+ProxyPass /jenkins/ http://localhost:8081/jenkins/ nocanon
+AllowEncodedSlashes NoDecode
+
+<Location /jenkins/>
+  ProxyPassReverse /
+  Order deny,allow
+  Allow from all
+</Location>
+
+Header edit Location ^http://www.example.com/jenkins/ https://www.example.com/jenkins/
+```
+
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 ## Nach der Installation
 
 So sollte er nicht eingerichtet sein
@@ -46,11 +109,18 @@ Home verzeichnis : `/var/lib/jenkins`
 
 ## Jenkins Plugins
 
+<<<<<<< HEAD
 Die Wichtisten:
 
 * Pipeline
 * Ant Plugin
 
+=======
+Die Wichtisten Plugins:
+
+* Pipeline
+* Ant Plugin
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 * [rhnpush](https://wiki.jenkins-ci.org/display/JENKINS/rhnpush+Plugin)
 adds a post build step to push RPMs to Spacewalk or RHN satelite servers. It requires rhnpush to be installed on the slave
 * [SCP](https://wiki.jenkins-ci.org/display/JENKINS/SCP+plugin)
@@ -67,7 +137,10 @@ Tools:
 
 * [keystore-explorer](http://keystore-explorer.org/features.html)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 Benutzer Zugangsdaten:
 
 * **User** gelten für bestimmte Benutzer
@@ -87,12 +160,20 @@ Benutzer Zugangsdaten:
 * [continuous_delivery_with_jenkins_pipeline](https://go.cloudbees.com/docs/cloudbees-documentation/cookbook/book.html#ch13__continuous_delivery_with_jenkins_pipeline)
 * [TUTORIAL](https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md)
 * [top-10-best-practices-jenkins-pipeline-plugin](https://www.cloudbees.com/blog/top-10-best-practices-jenkins-pipeline-plugin)
+<<<<<<< HEAD
 *[hello-world](https://jenkins.io/doc/pipeline/tour/hello-world/)
 
 **Quelle:**
 
 * [ttps mit Jenkins und Let's Encrypt
 ](https://github.com/hughperkins/howto-jenkins-ssl/blob/master/letsencrypt.md)
+=======
+* [hello-world](https://jenkins.io/doc/pipeline/tour/hello-world/)
+
+**Quelle:**
+
+* [https mit Jenkins und Let's Encrypt](https://github.com/hughperkins/howto-jenkins-ssl/blob/master/letsencrypt.md)
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 * [Jenkins tutorialspoint](https://www.tutorialspoint.com/jenkins/index.htm)
 
 ## Jenkins Berechtigungen
@@ -124,4 +205,8 @@ Dazu wird ein _New personal access token_ unter -> USER -> Settings -> Developer
 * [kubernetes-cd-pipline-jenkins-integration](../kubernetes-cd-pipline-jenkins-integration)
 * [selenium tests mit jenkins](../selenium-tests-jenkins)
 * [kubernetes-cd-pipline-erstellen](../kubernetes-cd-pipline-erstellen)
+<<<<<<< HEAD
 * [Übersetzung von Pipeline as Code with Jenkins](../jenkins-pipline-as-code)
+=======
+* [Übersetzung von Pipeline as Code with Jenkins](../jenkins-pipline-as-code)
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

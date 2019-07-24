@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Beispiel ohne Verschlüsselung auf einem localen system
 ```
 # If you already have an haproxy.cfg file, you can probably leave the
@@ -5,6 +6,18 @@ Beispiel ohne Verschlüsselung auf einem localen system
 # timeouts so that long-running CLI commands will work.
 global 
     maxconn 4096 
+=======
+# HaProxy mit Jenkins
+
+Beispiel ohne Verschlüsselung auf einem localen system
+
+```s
+# If you already have an haproxy.cfg file, you can probably leave the
+# global and defaults section as-is, but you might need to increase the
+# timeouts so that long-running CLI commands will work.
+global
+    maxconn 4096
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
     log 127.0.0.1 local0 debug
 
 defaults
@@ -33,12 +46,22 @@ backend jenkins
 ```
 
 Mit https
+<<<<<<< HEAD
 ```
 # If you already have an haproxy.cfg file, you can probably leave the
 # global and defaults section as-is, but you might need to increase the 
 # timeouts so that long-running CLI commands will work.
 global 
     maxconn 4096 
+=======
+
+```s
+# If you already have an haproxy.cfg file, you can probably leave the
+# global and defaults section as-is, but you might need to increase the
+# timeouts so that long-running CLI commands will work.
+global
+    maxconn 4096
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
     log 127.0.0.1 local0 debug
 
 defaults
@@ -50,7 +73,11 @@ defaults
    timeout connect 5s
    timeout client 5min
    timeout server 5min
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 frontend http-in
     bind *:80
     bind *:443 ssl crt /usr/local/etc/haproxy/ssl/server.pem

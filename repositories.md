@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 
 
 Centos7 
 ceph.repo
 
 ```
+=======
+# Repositories
+
+Centos7
+ceph.repo
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [ceph-noarch]
 name=Ceph noarch packages
 baseurl=https://download.ceph.com/rpm-jewel/el7/noarch
@@ -14,7 +23,12 @@ gpgkey=https://download.ceph.com/keys/release.asc
 ```
 
 CentOS-Gluster-3.8.repo
+<<<<<<< HEAD
 ```
+=======
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [ceph-noarch]
 name=Ceph noarch packages
 baseurl=https://download.ceph.com/rpm-jewel/el7/noarch
@@ -23,7 +37,11 @@ gpgcheck=1
 type=rpm-md
 gpgkey=https://download.ceph.com/keys/release.asc
 
+<<<<<<< HEAD
 [root@store1 yum.repos.d]# cat CentOS-Gluster-3.8.repo
+=======
+# cat CentOS-Gluster-3.8.repo
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 # CentOS-Gluster-3.8.repo
 #
 # Please see http://wiki.centos.org/SpecialInterestGroup/Storage for more
@@ -46,7 +64,12 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Storage
 ```
 
 crmsh.repo
+<<<<<<< HEAD
 ```
+=======
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [network_ha-clustering_Stable]
 name=Stable High Availability/Clustering packages (CentOS_CentOS-7)
 type=rpm-md
@@ -58,7 +81,12 @@ enabled=1
 ```
 
 epel.repo
+<<<<<<< HEAD
 ```
+=======
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [epel]
 name=Extra Packages for Enterprise Linux 7 - $basearch
 #baseurl=http://download.fedoraproject.org/pub/epel/7/$basearch
@@ -85,13 +113,20 @@ failovermethod=priority
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 gpgcheck=1
+<<<<<<< HEAD
 
+=======
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 ```
 
 Packete auf allen Systemen
 
 | OS | Packet |
+<<<<<<< HEAD
 | :--------: | :--------: |
+=======
+| :---: | :---: |
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 | beide   | vim     |
 | beide   | mc      |
 | beide   | tree   |
@@ -105,10 +140,17 @@ Packete auf allen Systemen
 
 Pakete für CentOS 7, drbd  und nfs
 
+<<<<<<< HEAD
 Wichtig für drbd http://elrepo.org/tiki/tiki-index.php 
 
 | Service | Packet |
 | :--------: | :--------: |
+=======
+Wichtig für[drbd](http://elrepo.org/tiki/tiki-index.php)
+
+| Service | Packet |
+| :---: | :---: |
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 | beide   | vim     |
 | beide   | mc      |
 | beide   | tree   |
@@ -118,15 +160,26 @@ Wichtig für drbd http://elrepo.org/tiki/tiki-index.php
 Packete für Centos 7, drbd , nfs und glusterfs server
 
 | Service | Packet |
+<<<<<<< HEAD
 | :--------: | :--------: |
+=======
+| :---: | :---: |
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 | beide   | vim     |
 | beide   | mc      |
 | beide   | tree   |
 | beide   | tmux   |
 | beide   | cell 2   |
 
+<<<<<<< HEAD
 
 **Quellen:**
 
 * [pulp](https://pulpproject.org/)
 * [Sammlung von Packetquellen](https://pkgs.org/)
+=======
+**Quellen:**
+
+* [pulp](https://pulpproject.org/)
+* [Sammlung von Packetquellen](https://pkgs.org/)
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

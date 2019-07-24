@@ -10,13 +10,21 @@ wie wir Terraform installieren können, und dann werden wir überlegen, wie wir 
 Gehen Sie zu [Terraform](https://www.terraform.io/downloads.html), laden Sie die entsprechende Version für Ihre Plattform herunter und entpacken Sie es wie folgt:
 Sie werden feststellen, dass das Terraform-Archiv ein Bündel von Binärdateien ist, sobald Sie sie entpacken, was wie folgt aussieht:
 
+<<<<<<< HEAD
 ![terrform-tools](https:\\www.packtpub.com\graphics\9781785886249\graphics\B05186\_05\_04.jpg\)
+=======
+! [terrform-tools](https:\\www.packtpub.com\graphics\9781785886249\graphics\B05186\_05\_04.jpg\)
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 Fügen Sie nun den Pfad zum Verzeichnis in der Variable PATH hinzu, damit Sie auf den Terraform-Befehl aus jedem Verzeichnis zugreifen können.
 
 Wenn alles gut geht, dann können Sie die Verwendung von Terraform sehen, sobald Sie den Terraform-Befehl im Terminal ausführen: 
 
+<<<<<<< HEAD
 ![terrform-hilfe](https:\\www.packtpub.com\graphics\9781785886249\graphics\B05186\_05\_05.jpg\)
+=======
+! [terrform-hilfe](https:\\www.packtpub.com\graphics\9781785886249\graphics\B05186\_05\_05.jpg\)
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 ### Aufspielen eines Mesos-Clusters mit Terraform auf Google Cloud
 
@@ -65,4 +73,9 @@ $ terraform apply my.plan
 ### Löschendes Clusters
 
 Wir können den folgenden Befehl ausführen, um den Cluster zu zerstören:
+<<<<<<< HEAD
 `$ terraform destroy`
+=======
+
+`$ terraform destroy`
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+# puppet4-datein-packete
+
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 In diesem Kapitel werden wir sehen, wie man kleine Änderungen an Dateien vornimmt, wie man größere Änderungen in einer strukturierten Weise mit dem Augeas-Tool vornehmen kann, wie man Dateien aus verketteten Snippets konstruiert und wie man Dateien aus Vorlagen generiert. Wir lernen auch, wie man Pakete aus zusätzlichen Repositories installiert und wie man diese Repositories verwaltet. Darüber hinaus werden wir sehen, wie man geheime Daten mit Puppet speichern und entschlüsseln kann.
 
 In diesem Kapitel werden wir folgende Rezepte abdecken:
@@ -12,4 +17,7 @@ In diesem Kapitel werden wir folgende Rezepte abdecken:
 * [Verwenden von GnuPG zum Verschlüsseln von Geheimnissen](../puppet-fort-files-packages-gnupg-sec)
 * [Installieren von Paketen aus einem Drittanbieter-Repository](../puppet-fort-files-packages-3nd-repos)
 * [Vergleich von Paketversionen](../puppet-fort-files-packages-paketversionen)
+<<<<<<< HEAD
 
+=======
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

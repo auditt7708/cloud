@@ -1,14 +1,29 @@
+<<<<<<< HEAD
 Wenn Sie eine Menge von Maschinen verwalten, kann die Berichterstattung von Puppet Ihnen einige wertvolle Informationen darüber geben, was tatsächlich dort passiert ist.
 Wie es geht...
+=======
+# puppet-monitoring-reporting-berichte
+
+Wenn Sie eine Menge von Maschinen verwalten, kann die Berichterstattung von Puppet Ihnen einige wertvolle Informationen darüber geben, was tatsächlich dort passiert ist.
+
+## Wie es geht
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 Um Berichte zu aktivieren, füge dies einfach zu einer Client-Puppet.conf hinzu: in den Abschnitten [main] oder [agent]:
 
 `report = true`
 
+<<<<<<< HEAD
 ### Tip:
 In den letzten Versionen (größer als 3,0) der Puppet ist `report=true` die Standardeinstellung.
 
 #### Wie es funktioniert...
+=======
+> Tip
+>> In den letzten Versionen (größer als 3,0) der Puppet ist `report=true` die Standardeinstellung.
+
+## Wie es funktioniert
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 Wenn das Reporting aktiviert ist, erzeugt Puppet eine Reportdatei mit Daten wie:
 
@@ -16,7 +31,11 @@ Wenn das Reporting aktiviert ist, erzeugt Puppet eine Reportdatei mit Daten wie:
 
 * Gesamtzeit für den Lauf
 
+<<<<<<< HEAD
 * Protokollmeldungen ausgegeben während des Laufs 
+=======
+* Protokollmeldungen ausgegeben während des Laufs
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 * Liste aller Ressourcen im Manifest des Clients
 
@@ -24,16 +43,28 @@ Wenn das Reporting aktiviert ist, erzeugt Puppet eine Reportdatei mit Daten wie:
 
 * Ob der Run erfolgreich war oder nicht
 
+<<<<<<< HEAD
 
 Standardmäßig werden diese Berichte auf dem Node unter `/var/lib/puppet/reports` in einem Verzeichnis gespeichert, das nach dem Hostnamen benannt ist, aber Sie können ein anderes Ziel mit der Option `reportdir` angeben. Sie können Ihre eigenen Skripts erstellen, um diese Berichte zu verarbeiten (die sich im Standard-YAML-Format befinden). Wenn wir Puppet Agent auf `cookbook.example.com` ausführen, wird die folgende Datei auf dem Master erstellt:
 `/var/lib/puppet/reports/cookbook.example.com/201411230717.yaml`
 
 ### Es gibt mehr...
+=======
+Standardmäßig werden diese Berichte auf dem Node unter `/var/lib/puppet/reports` in einem Verzeichnis gespeichert, das nach dem Hostnamen benannt ist, aber Sie können ein anderes Ziel mit der Option `reportdir` angeben. Sie können Ihre eigenen Skripts erstellen, um diese Berichte zu verarbeiten (die sich im Standard-YAML-Format befinden). Wenn wir Puppet Agent auf `cookbook.example.com` ausführen, wird die folgende Datei auf dem Master erstellt:
+`/var/lib/puppet/reports/cookbook.example.com/201411230717.yaml`
+
+## Es gibt mehr
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 Wenn Sie mehr als einen Master-Server haben, können Sie alle Ihre Berichte an denselben Server senden, indem Sie `report_server` im Abschnitt `[agent]` von `puppet.conf` angeben.
 
 Wenn Sie nur einen Bericht wünschen, oder wenn Sie die Berichterstattung nicht immer aktivieren möchten, können Sie den `--report` Schalter zur Befehlszeile hinzufügen, wenn Sie den Puppet-Agent manuell ausführen:
+<<<<<<< HEAD
 ```
+=======
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [root@cookbook ~]# puppet agent -t --report
 Notice: Finished catalog run in 0.34 seconds
 ```
@@ -41,7 +72,12 @@ Notice: Finished catalog run in 0.34 seconds
 Sie sehen keine zusätzliche Ausgabe, aber eine Berichtsdatei wird im `report` verzeichnis generiert.
 
 Sie können auch einige Gesamtstatistiken über einen Puppet-Run sehen, indem Sie den `--summarising` switch:
+<<<<<<< HEAD
 ```
+=======
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [root@cookbook ~]# puppet agent -t --report --summarize
 Notice: Finished catalog run in 0.35 seconds
 Changes:
@@ -66,6 +102,12 @@ Config: 1416727291
 
 ```
 
+<<<<<<< HEAD
 ### Weitere Berichtsarten
 
 Puppet kann verschiedene Arten von Berichten mit der Berichtsoption im Abschnitt `[main]` oder `[master]` von `puppet.conf` auf deinen Puppet Master Server generieren. Es gibt mehrere eingebaute Berichtsarten, die unter https://docs.puppetlabs.com/references/latest/report.html aufgeführt sind. Zusätzlich zu den eingebauten Berichtsarten gibt es einige gemeinschaftlich entwickelte Berichte, die sehr nützlich sind. Der Foreman (http://theforeman.org) bietet beispielsweise einen Foreman-Berichtstyp an, den Sie aktivieren können, um Ihre Node berichte an den Foreman weiterzuleiten.
+=======
+## Weitere Berichtsarten
+
+Puppet kann verschiedene Arten von Berichten mit der Berichtsoption im Abschnitt `[main]` oder `[master]` von `puppet.conf` auf deinen Puppet Master Server generieren. Es gibt mehrere eingebaute Berichtsarten, die unter [Puppet Reports](https://docs.puppetlabs.com/references/latest/report.html) aufgeführt sind. Zusätzlich zu den eingebauten Berichtsarten gibt es einige gemeinschaftlich entwickelte Berichte, die sehr nützlich sind. Der [Foreman](http://theforeman.org) bietet beispielsweise einen Foreman-Berichtstyp an, den Sie aktivieren können, um Ihre Node berichte an den Foreman weiterzuleiten.
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

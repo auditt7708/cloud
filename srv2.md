@@ -9,7 +9,11 @@
 ## Virtuelle Maschinen
 
 | Adresse | Service |
+<<<<<<< HEAD
 | :--------: | :--------: |
+=======
+| :---: | :---: |
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 | store.example.com      | [cluster](https://gitlab.com/tobkern1980/home-net4-environment/wikis/store)     |
 | store1.example.com     | [cluster](https://gitlab.com/tobkern1980/home-net4-environment/wikis/store1)    |
 | store2.example.com     | [cluster](https://gitlab.com/tobkern1980/home-net4-environment/wikis/store2)    |
@@ -21,7 +25,11 @@
 
 ## FsTab
 
+<<<<<<< HEAD
 | Quelle | Mount | Type | options | dump | pass| 
+=======
+| Quelle | Mount | Type | options | dump | pass|
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
 |UUID=c1baae53-b55a-4b31-b191-ab80cef17471 | /mnt/data   | xfs  | defaults | 1| 2|
 |/dev/mapper/drbdpool-data                 | /data/brick1| xfs  | defaults | 1| 2|
@@ -41,6 +49,7 @@ Mount für drbd
 Erstes unterverzeichnis ist
 Bilder  musik  Projekte  Software  truetypes  videos
 
+<<<<<<< HEAD
 # df ausgabe 
 
 | Dateisystem | Größe | Benutzt | Verf. | Verw% | Eingehängt auf|
@@ -51,6 +60,18 @@ Bilder  musik  Projekte  Software  truetypes  videos
 |/dev/mapper/drbdpool-data  |  500G   | 133G  |368G  | 27% |/mnt/data|
 
 ## LVM 
+=======
+df ausgabe
+
+| Dateisystem | Größe | Benutzt | Verf. | Verw% | Eingehängt auf|
+| :---: | :---: | :---: | :---: | :---: | :---: |
+|/dev/sdc3|1008G|445G|513G|47%|/mnt/media|
+|/dev/sdc4|654G|160G|495G|25%|/mnt/data2|
+|/dev/mapper/drbdpool-backup|1008G|9,1G|948G|1%|/mnt/backup|
+|/dev/mapper/drbdpool-data|500G|133G|368G|27%|/mnt/data|
+
+## LVM
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 LVS Umgebung
 
@@ -71,5 +92,8 @@ LVS Umgebung
 |/dev/drbd0|xfs|nfs,smb mount|
 |/dev/drbd1|ext4|dokumente|
 |/dev/drbd2|xfs|Datenbanken,etc|
+<<<<<<< HEAD
 
 ## 
+=======
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

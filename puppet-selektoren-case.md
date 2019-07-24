@@ -1,9 +1,20 @@
+<<<<<<< HEAD
+=======
+# puppet-selektoren-case
+
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 Sie irgendeine 'if' bedingte Aussage schreiben, Puppet bietet aber ein paar zusätzliche ausdrücke, um Ihnen zu helfen, Bedingungen leichter auszudrücken: die `selector` und die `case` Anweisung.
 
 Hier einige Beispiele der `selector` und `case` Anweisungen:
 
+<<<<<<< HEAD
 1. Schreiben Sie folgenden Inhalt in ihre manifest Datei: 
 ```
+=======
+1.Schreiben Sie folgenden Inhalt in ihre manifest Datei:
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 $systemtype = $::operatingsystem ? {
   'Ubuntu' => 'debianlike',
   'Debian' => 'debianlike',
@@ -14,10 +25,19 @@ $systemtype = $::operatingsystem ? {
 }
 
 notify { "You have a ${systemtype} system": }
+<<<<<<< HEAD
 ```
 2. und den Folgenden:
 
 ```
+=======
+
+```
+
+2.und den Folgenden:
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 class debianlike {
   notify { 'Special manifest for Debian-like systems': }
 }
@@ -68,6 +88,7 @@ In unserem zweiten Beispiel haben wir die `case` Anweisung verwendet, um entwede
 Wieder vergleicht Puppet den Wert von `$::operatingsystem` mit einer Liste von möglichen Übereinstimmungen. Diese könnten reguläre Ausdrücke oder Strings sein, oder wie in unserem Beispiel kommagetrennte Listen von Strings. 
 Wenn es eine Übereinstimmung findet, wird der zugehörige Code zwischen den geschweiften Klammern ausgeführt. Also, wenn der Wert von `$::operatingsystem` Ubuntu ist, dann wird der Code einschließlich `debianlike` ausgeführt werden.
 
+<<<<<<< HEAD
 
 
 Sobald Sie die grundlegende Verwendung von Selektoren und `case` Anweisungen in den Griff bekommen haben, können die folgenden Tipps hilfreich finden.
@@ -76,6 +97,15 @@ Sobald Sie die grundlegende Verwendung von Selektoren und `case` Anweisungen in 
 ### Reguläre ausdrücke
 Wie bei `if` Anweisungen können Sie reguläre Ausdrücke mit Selektoren und `case` Anweisungen verwenden, und Sie können auch die Werte der übereinstimmenden Gruppen erfassen und auf sie mit `$1`, `$2` und so weiter verweisen:
 ```
+=======
+Sobald Sie die grundlegende Verwendung von Selektoren und `case` Anweisungen in den Griff bekommen haben, können die folgenden Tipps hilfreich finden.
+
+### Reguläre ausdrücke
+
+Wie bei `if` Anweisungen können Sie reguläre Ausdrücke mit Selektoren und `case` Anweisungen verwenden, und Sie können auch die Werte der übereinstimmenden Gruppen erfassen und auf sie mit `$1`, `$2` und so weiter verweisen:
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 case $::lsbdistdescription {
   /Ubuntu (.+)/: {
     notify { "You have Ubuntu version ${1}": }
@@ -87,11 +117,19 @@ case $::lsbdistdescription {
 }
 ```
 
+<<<<<<< HEAD
 
 ### Defaults
 Sowohl Selektoren als auch `case` Anweisungen können Sie einen Default Wert angeben, der gewählt wird, wenn keine der anderen Optionen übereinstimmt (die Style-Anleitung schlägt vor, dass Sie immer eine Default-Klausel definiert haben):
 
 ```
+=======
+## Defaults
+
+Sowohl Selektoren als auch `case` Anweisungen können Sie einen Default Wert angeben, der gewählt wird, wenn keine der anderen Optionen übereinstimmt (die Style-Anleitung schlägt vor, dass Sie immer eine Default-Klausel definiert haben):
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 $lunch = 'Filet mignon.'
 $lunchtype =  $lunch ? {
   /fries/ => 'unhealthy',
@@ -103,12 +141,20 @@ notify { "Your lunch was ${lunchtype}": }
 ```
 
 Die Ausgabe ist folgende:
+<<<<<<< HEAD
 ```
+=======
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 # ~ $ puppet apply lunchtype.pp
 Notice: Your lunch was unknown
 Notice: /Stage[main]/Main/Notify[Your lunch was unknown]/message: defined 'message' as 'Your lunch was unknown'
 ```
 
 Wenn die Standardaktion normalerweise nicht auftritt, verwenden Sie die Funktion `fail()`, um den Puppet run zu stoppen.
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

@@ -1,10 +1,20 @@
+<<<<<<< HEAD
+=======
+# puppet4-externe-tools-ecosystem-librarian
+
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 Wenn du anfängst, Module aus der Schmiede in deiner Puppen-Infrastruktur einzuschließen, versteckst du, welche Versionen Sie installiert haben und die Konsistenz zwischen allen Testbereichen sichergestellt werden kann. Zum Glück können die Werkzeuge, die wir in den nächsten beiden Abschnitten besprechen werden, die Bestellung an Ihr System bringen. Wir werden zunächst mit der Bibliothekar-Puppe beginnen, die eine spezielle Konfigurationsdatei mit dem Namen Puppetfile verwendet, um den Quellort Ihrer verschiedenen Module anzugeben.
 Fertig werden
 
 Wir werden die librarian-puppet installieren, um durch das Beispiel zu arbeiten.
 
 Installiere `librarian-puppet` auf deinem Puppet Master, mit Puppet natürlich:
+<<<<<<< HEAD
 ```
+=======
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 root@puppet:~# puppet resource package librarian-puppet ensure=installed provider=gem
 Notice: /Package[librarian-puppet]/ensure: created
 package { 'librarian-puppet':
@@ -12,6 +22,7 @@ package { 'librarian-puppet':
 }
 ```
 
+<<<<<<< HEAD
 ### Tip:
 Wenn Sie in einer meisterlosen Umgebung arbeiten, installieren Sie `librarian-puppet` auf dem Rechner, von dem aus Sie Ihren Code verwalten werden. Ihre gem install kann fehlschlagen, wenn die Ruby development nicht auf Ihrem Master verfügbar sind. Installiere das `ruby-dev` Paket, um dieses Problem zu beheben (Puppet verwenden, um es zu tun).
 
@@ -21,12 +32,31 @@ Wir verwenden die `librarian-puppet` zum Herunterladen und Installieren eines Mo
 
 1. Erstellen Sie ein Arbeitsverzeichnis für sich selbst. librarian-puppet wird standardmäßig Ihr Modulverzeichnis überschreiben, also arbeiten wir jetzt in einem temporären Standort:
 ```
+=======
+## Tip
+
+Wenn Sie in einer meisterlosen Umgebung arbeiten, installieren Sie `librarian-puppet` auf dem Rechner, von dem aus Sie Ihren Code verwalten werden. Ihre gem install kann fehlschlagen, wenn die Ruby development nicht auf Ihrem Master verfügbar sind. Installiere das `ruby-dev` Paket, um dieses Problem zu beheben (Puppet verwenden, um es zu tun).
+
+## Wie es geht
+
+Wir verwenden die `librarian-puppet` zum Herunterladen und Installieren eines Moduls in diesem Beispiel:
+
+1.Erstellen Sie ein Arbeitsverzeichnis für sich selbst. librarian-puppet wird standardmäßig Ihr Modulverzeichnis überschreiben, also arbeiten wir jetzt in einem temporären Standort:
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 root@puppet:~# mkdir librarian
 root@puppet:~# cd librarian
 ```
 
+<<<<<<< HEAD
 2. Erstellen Sie eine neue Puppetfile mit folgendem Inhalt:
 ```
+=======
+2.Erstellen Sie eine neue Puppetfile mit folgendem Inhalt:
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 #!/usr/bin/env ruby
 #^syntax detection
 
@@ -36,16 +66,30 @@ forge "https://forgeapi.puppetlabs.com"
 mod 'puppetlabs-stdlib'
 ```
 
+<<<<<<< HEAD
 ### Notiz:
 Alternativ können Sie mit der `librarian-puppet init` eine Beispiel-Puppet-Datei erstellen und sie mit unserem Beispiel bearbeiten:
 ```
+=======
+## Notiz
+
+Alternativ können Sie mit der `librarian-puppet init` eine Beispiel-Puppet-Datei erstellen und sie mit unserem Beispiel bearbeiten:
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 root@puppet:~/librarian# librarian-puppet init
       create  Puppetfile
 ```
 
+<<<<<<< HEAD
 3. Führen Sie nun die Bibliothekar-Puppe zum Herunterladen und Installieren des `puppetlabs-stdlib` `modules` im Modulverzeichnis:
 
 ```
+=======
+3.Führen Sie nun die Bibliothekar-Puppe zum Herunterladen und Installieren des `puppetlabs-stdlib` `modules` im Modulverzeichnis:
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 root@puppet:~/librarian# librarian-puppet install
 root@puppet:~/librarian # ls
 modules  Puppetfile  Puppetfile.lock
@@ -53,7 +97,11 @@ root@puppet:~/librarian # ls modules
 stdlib
 ```
 
+<<<<<<< HEAD
 ### Wie es funktioniert...
+=======
+## Wie es funktioniert
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 Die erste Zeile der `Puppetfile` macht die `Puppetfile` zu einer Ruby Quelldatei. Diese sind völlig optional, aber zwingt Redakteure in die Behandlung der Datei, als ob es in Ruby geschrieben wurde (was es ist):
 `#!/usr/bin/env ruby`
@@ -66,7 +114,12 @@ Nun haben wir eine Zeile hinzugefügt, um das `puppetlabs-stdlib` Modul aufzuneh
 `mod 'puppetlabs-stdlib'`
 
 Mit der `Puppetfile` an Ort und Stelle, liefen wir `librarian-puppet` und es heruntergeladen das Modul aus der URL in der Forge-Linie gegeben. Als das Modul heruntergeladen wurde, hat die `librarian-puppet` eine `Puppetfile.lock` Datei erstellt, die den als Quelle verwendeten Speicherort und die Versionsnummer für das heruntergeladene Modul enthält:
+<<<<<<< HEAD
 ```
+=======
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
@@ -76,6 +129,7 @@ DEPENDENCIES
   puppetlabs-stdlib (>= 0)
 ```
 
+<<<<<<< HEAD
 ### Es gibt mehr...
 
 Mit der `Puppetfile` können Sie Module aus anderen Quellen als der Schmiede ziehen. Sie können eine lokale Git-URL oder sogar eine GitHub-URL verwenden, um Module herunterzuladen, die nicht auf der Forge sind. Weitere Informationen zur Bibliothekar-Puppe finden Sie auf der GitHub-Website unter https://github.com/rodjek/librarian-puppet.
@@ -83,3 +137,12 @@ Mit der `Puppetfile` können Sie Module aus anderen Quellen als der Schmiede zie
 Beachten Sie, dass die Bibliothekar-Puppe das Modul-Verzeichnis erstellt und alle Module, die Sie dort platziert haben, entfernt. Die meisten Installationen mit der Bibliothekar-Puppe entscheiden sich dafür, ihre lokalen Module in einem `/lokalen` Unterverzeichnis zu platzieren (`/dist` oder `/companyname` werden auch verwendet).
 
 Im nächsten Abschnitt werden wir über r10k reden, was einen Schritt weiter geht als Bibliothekar und verwaltet Ihr ganzes Umweltverzeichnis.
+=======
+## Es gibt mehr
+
+Mit der `Puppetfile` können Sie Module aus anderen Quellen als der Schmiede ziehen. Sie können eine lokale Git-URL oder sogar eine GitHub-URL verwenden, um Module herunterzuladen, die nicht auf der Forge sind. Weitere Informationen zur Bibliothekar-Puppe finden Sie auf der [GitHub-Website](https://github.com/rodjek/librarian-puppet).
+
+Beachten Sie, dass die Bibliothekar-Puppe das Modul-Verzeichnis erstellt und alle Module, die Sie dort platziert haben, entfernt. Die meisten Installationen mit der Bibliothekar-Puppe entscheiden sich dafür, ihre lokalen Module in einem `/lokalen` Unterverzeichnis zu platzieren (`/dist` oder `/companyname` werden auch verwendet).
+
+Im nächsten Abschnitt werden wir über r10k reden, was einen Schritt weiter geht als Bibliothekar und verwaltet Ihr ganzes Umweltverzeichnis.
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

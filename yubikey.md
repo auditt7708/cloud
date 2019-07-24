@@ -1,0 +1,1 @@
+# Yubiky Server Konfoguration

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Wenn du einen Server hast, der bereits so konfiguriert ist, wie er sein muss oder fast so, kannst du diese Konfiguration als Puppenmanifest erfassen. Der Puppet-Ressource-Befehl erzeugt Puppet-Manifeste aus der vorhandenen Konfiguration eines Systems. Zum Beispiel können Sie `puppet resource` generieren ein Manifest, das alle Benutzer auf dem System gefunden erstellt. Dies ist sehr nützlich, um einen Schnappschuss eines Arbeitssystems zu machen und seine Konfiguration schnell in die Puppe zu bringen.
 
 ### Wie es geht...
@@ -6,6 +7,19 @@ Hier sind einige Beispiele für die Verwendung von `puppet resource`, um Daten a
 
 1. Um das Manifest für einen bestimmten Benutzer zu generieren, führen Sie den folgenden Befehl aus:
 ```
+=======
+# puppet4-externe-tools-ecosystem-ressource-befehl
+
+Wenn du einen Server hast, der bereits so konfiguriert ist, wie er sein muss oder fast so, kannst du diese Konfiguration als Puppenmanifest erfassen. Der Puppet-Ressource-Befehl erzeugt Puppet-Manifeste aus der vorhandenen Konfiguration eines Systems. Zum Beispiel können Sie `puppet resource` generieren ein Manifest, das alle Benutzer auf dem System gefunden erstellt. Dies ist sehr nützlich, um einen Schnappschuss eines Arbeitssystems zu machen und seine Konfiguration schnell in die Puppe zu bringen.
+
+## Wie es geht
+
+Hier sind einige Beispiele für die Verwendung von `puppet resource`, um Daten aus einem laufenden System zu erhalten:
+
+1.Um das Manifest für einen bestimmten Benutzer zu generieren, führen Sie den folgenden Befehl aus:
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [root@cookbook ~]# puppet resource user thomas
 user { 'thomas':
   ensure           => 'present',
@@ -21,8 +35,14 @@ user { 'thomas':
 }
 ```
 
+<<<<<<< HEAD
 2. Führen Sie für einen bestimmten Dienst den folgenden Befehl aus:
 ```
+=======
+2.Führen Sie für einen bestimmten Dienst den folgenden Befehl aus:
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [root@cookbook ~]# puppet resource service sshd
 service { 'sshd':
   ensure => 'running',
@@ -30,18 +50,32 @@ service { 'sshd':
 }
 ```
 
+<<<<<<< HEAD
 3. Führen Sie für ein Paket den folgenden Befehl aus:
 ```
+=======
+3.Führen Sie für ein Paket den folgenden Befehl aus:
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [root@cookbook ~]# puppet resource package kernel
 package { 'kernel':
   ensure => '2.6.32-431.23.3.el6',
 }
 ```
 
+<<<<<<< HEAD
 ### Es gibt mehr...
 
 Sie können die `puppet resource` verwenden, um jede der in der Puppe verfügbaren Ressourcentypen zu untersuchen. In den vorangegangenen Beispielen haben wir ein Manifest für eine bestimmte Instanz des Ressourcentyps generiert, aber Sie können auch die `puppet resource` verwenden, um alle Instanzen der Ressource zu entleeren:
 ```
+=======
+## Es gibt mehr
+
+Sie können die `puppet resource` verwenden, um jede der in der Puppe verfügbaren Ressourcentypen zu untersuchen. In den vorangegangenen Beispielen haben wir ein Manifest für eine bestimmte Instanz des Ressourcentyps generiert, aber Sie können auch die `puppet resource` verwenden, um alle Instanzen der Ressource zu entleeren:
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [root@cookbook ~]# puppet resource service
 service { 'abrt-ccpp':
   ensure => 'running',
@@ -70,9 +104,18 @@ service { 'auditd':
 ```
 
 Dadurch wird der Zustand jedes Dienstes auf dem System ausgegeben. Dies liegt daran, dass jeder Dienst eine aufzählbare Ressource ist. Wenn Sie den gleichen Befehl mit einer Ressource ausführen, die nicht aufzählbar ist, erhalten Sie eine Fehlermeldung:
+<<<<<<< HEAD
 ```
+=======
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [root@cookbook ~]# puppet resource file
 Error: Could not run: Listing all file instances is not supported.  Please specify a file or directory, e.g. puppet resource file /etc
 ```
 
+<<<<<<< HEAD
 Asking Puppet, um jede Datei auf dem System zu beschreiben wird nicht funktionieren; Das ist etwas Bestes übrig für ein Audit-Tool wie `tripwire` (ein System entwickelt, um nach Änderungen an jeder Datei auf dem System, http://www.tripwire.com) zu suchen.
+=======
+Asking Puppet, um jede Datei auf dem System zu beschreiben wird nicht funktionieren; Das ist etwas Bestes übrig für ein Audit-Tool wie `tripwire` (ein System entwickelt, um nach Änderungen an jeder Datei auf dem System, [Tripwire](http://www.tripwire.com) ) zu suchen.
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

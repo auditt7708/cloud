@@ -40,4 +40,9 @@
 
 ### Benutzerberechtigugen ausgeben
 
+<<<<<<< HEAD
 `SHOW GRANTS FOR 'database_user'@'localhost';`
+=======
+`SHOW GRANTS FOR 'database_user'@'localhost';`
+
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

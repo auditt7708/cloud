@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Wie wir im vorigen Kapitel gesehen haben, hat die Datei Ressource einen `recurse` Parameter, der Puppet erlaubt, ganze Verzeichnisbäume zu übertragen. Wir haben diesen Parameter verwendet, um die Dotfiles eines Admin-Benutzers in ihr Home-Verzeichnis zu kopieren. In diesem Abschnitt zeigen wir, wie man `recurse` und einen anderen Parameter `sourceselect` verwendet, um unser vorheriges Beispiel zu erweitern.
 
 ### Wie es geht...
@@ -7,6 +8,20 @@ Wie wir im vorigen Kapitel gesehen haben, hat die Datei Ressource einen `recurse
 1. Entfernen Sie den Parameter `$dotfiles`, entfernen Sie die Bedingung basierend auf `$dotfiles`. Fügen Sie eine zweite Quelle der Home-Verzeichnis `file` hinzu:
 ```
 define admin_user ($key, $keytype) { 
+=======
+# puppet4-ressourcen-datein-verteilen-merging
+
+Wie wir im vorigen Kapitel gesehen haben, hat die Datei Ressource einen `recurse` Parameter, der Puppet erlaubt, ganze Verzeichnisbäume zu übertragen. Wir haben diesen Parameter verwendet, um die Dotfiles eines Admin-Benutzers in ihr Home-Verzeichnis zu kopieren. In diesem Abschnitt zeigen wir, wie man `recurse` und einen anderen Parameter `sourceselect` verwendet, um unser vorheriges Beispiel zu erweitern.
+
+## Wie es geht
+
+Ändern Sie unser Admin-Benutzerbeispiel wie folgt:
+
+1.Entfernen Sie den Parameter `$dotfiles`, entfernen Sie die Bedingung basierend auf `$dotfiles`. Fügen Sie eine zweite Quelle der Home-Verzeichnis `file` hinzu:
+
+```pp
+define admin_user ($key, $keytype) {
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
   $username = $name
   user { $username:
     ensure     => present,
@@ -40,11 +55,21 @@ define admin_user ($key, $keytype) {
 
 ```
 
+<<<<<<< HEAD
 2. Erstellen Sie ein Basisverzeichnis und kopieren Sie alle Systemstandarddateien von `/etc/skel`:
 `t@mylaptop ~/puppet/modules/admin_user/files $ cp -a /etc/skel base`
 
 3. Erstellen Sie eine neue `admin_user` ressource, eine, die kein Verzeichnis definiert hat:
 ```
+=======
+2.Erstellen Sie ein Basisverzeichnis und kopieren Sie alle Systemstandarddateien von `/etc/skel`:
+
+`t@mylaptop ~/puppet/modules/admin_user/files $ cp -a /etc/skel base`
+
+3.Erstellen Sie eine neue `admin_user` ressource, eine, die kein Verzeichnis definiert hat:
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 node 'cookbook' {
   admin_user {'steven':
     key     => 'AAAAB3N...',
@@ -53,8 +78,14 @@ node 'cookbook' {
 }
 ```
 
+<<<<<<< HEAD
 4. Puppet run:
 ```
+=======
+4.Puppet run:
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [root@cookbook ~]# puppet agent -t
 Info: Caching catalog for cookbook.example.com
 Info: Applying configuration version '1413787159'
@@ -69,16 +100,29 @@ Notice: /Stage[main]/Main/Node[cookbook]/Admin_user[steven]/Ssh_authorized_key[s
 Notice: Finished catalog run in 1.11 seconds
 ```
 
+<<<<<<< HEAD
 ### Wie es funktioniert...
 
 Wenn eine `file` Ressource hat die `recurse` Parameter auf sie gesetzt, und es ist ein Verzeichnis, wird Puppet nicht nur das Verzeichnis selbst, sondern alle seine Inhalte (einschließlich Unterverzeichnisse und deren Inhalt). Wie wir im vorherigen Beispiel gesehen haben, wenn eine Datei mehr als eine Quelle hat, wird die erste gefundene Quelldatei verwendet, um die Anforderung zu erfüllen. Das gilt auch für Verzeichnisse.
 
 ### Es gibt mehr...
+=======
+## Wie es funktioniert
+
+Wenn eine `file` Ressource hat die `recurse` Parameter auf sie gesetzt, und es ist ein Verzeichnis, wird Puppet nicht nur das Verzeichnis selbst, sondern alle seine Inhalte (einschließlich Unterverzeichnisse und deren Inhalt). Wie wir im vorherigen Beispiel gesehen haben, wenn eine Datei mehr als eine Quelle hat, wird die erste gefundene Quelldatei verwendet, um die Anforderung zu erfüllen. Das gilt auch für Verzeichnisse.
+
+## Es gibt mehr
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 Durch die Angabe des Parameters `sourceselect` als 'all' wird der Inhalt aller Quellverzeichnisse kombiniert. Zum Beispiel fügen Sie `thomas admin_user` zurück in Ihre Knotendefinition in `site.pp` für Kochbuch:
 
 Nun wieder Puppet ausführen auf dem Node cookbook:
+<<<<<<< HEAD
 ```
+=======
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [root@cookbook thomas]# puppet agent -t
 Info: Caching catalog for cookbook.example.com
 Info: Applying configuration version '1413787770'
@@ -100,7 +144,12 @@ Weil wir das `thomas admin_user` zum Kochbuch zuvor angewendet haben, existierte
 Manchmal möchten Sie Dateien in ein bestehendes Verzeichnis bereitstellen, aber alle Dateien entfernen, die nicht von Puppet verwaltet werden. Ein gutes Beispiel wäre, wenn du `mcollective` in deiner Umgebung einsetzst. Das Verzeichnis, das Client-Anmeldeinformationen besitzt, sollte nur Zertifikate haben, die von der Puppe kommen.
 
 Der Parameter `purge` wird dies für Sie tun. Definiere das Verzeichnis als Ressource in Puppet:
+<<<<<<< HEAD
 ```
+=======
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 file { '/etc/mcollective/ssl/clients':
   purge   => true,
   recurse => true,
@@ -111,7 +160,11 @@ Die Kombination von `recurse` und `purge` entfernt alle Dateien und Unterverzeic
 
 Wenn es Unterverzeichnisse gibt, die Dateien enthalten, die Sie nicht löschen möchten, definieren Sie einfach das Unterverzeichnis als Puppet-Ressource, und es wird allein gelassen werden:
 
+<<<<<<< HEAD
 ```
+=======
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 file { '/etc/mcollective/ssl/clients':
   purge => true,
   recurse => true,
@@ -122,4 +175,9 @@ file { '/etc/mcollective/ssl/clients/local':
 ```
 
 ### Hinweis
+<<<<<<< HEAD
 Seien Sie sich bewusst, dass zumindest in aktuellen Implementierungen von Puppet, rekursive Datei Kopien können ziemlich langsam und legen Sie eine schwere Speicherbelastung auf dem Server. Wenn sich die Daten nicht sehr oft ändern, könnte es besser sein, stattdessen eine `tar`-Datei einzusetzen und auszupacken. Dies kann mit einer Datei-Ressource für die `tar`-Datei und eine exec, die die Datei Ressource erfordert und entpackt das Archiv. Rekursive Verzeichnisse sind weniger ein Problem, wenn sie mit kleinen Dateien gefüllt sind. Puppe ist nicht ein sehr effizienter Dateiserver, so dass große `tar`-Dateien und die Verteilung mit Puppet ist auch keine gute Idee. Wenn Sie große Dateien kopieren müssen, mit dem Betriebssystem Packer ist eine bessere Lösung.
+=======
+
+Seien Sie sich bewusst, dass zumindest in aktuellen Implementierungen von Puppet, rekursive Datei Kopien können ziemlich langsam und legen Sie eine schwere Speicherbelastung auf dem Server. Wenn sich die Daten nicht sehr oft ändern, könnte es besser sein, stattdessen eine `tar`-Datei einzusetzen und auszupacken. Dies kann mit einer Datei-Ressource für die `tar`-Datei und eine exec, die die Datei Ressource erfordert und entpackt das Archiv. Rekursive Verzeichnisse sind weniger ein Problem, wenn sie mit kleinen Dateien gefüllt sind. Puppe ist nicht ein sehr effizienter Dateiserver, so dass große `tar`-Dateien und die Verteilung mit Puppet ist auch keine gute Idee. Wenn Sie große Dateien kopieren müssen, mit dem Betriebssystem Packer ist eine bessere Lösung.
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

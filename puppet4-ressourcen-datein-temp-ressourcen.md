@@ -1,13 +1,28 @@
+<<<<<<< HEAD
+=======
+# puppet4-ressourcen-datein-temp-ressourcen
+
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 Manchmal möchten Sie eine Ressource für die Zeit, so dass es nicht mit anderen Arbeit stören deaktivieren. Zum Beispiel möchten Sie vielleicht eine Konfigurationsdatei auf dem Server optimieren, bis Sie die genauen Einstellungen haben, die Sie wollen, bevor Sie sie in die Puppe überprüfen. Sie wollen nicht, dass die Puppe es mit einer alten Version in der Zwischenzeit überschreibt, also können Sie den Noop Metaparameter auf die Ressource setzen:
 
 `noop => true,`
 
+<<<<<<< HEAD
 ### Wie es geht...
 
 Dieses Beispiel zeigt Ihnen, wie Sie den `noop` Metaparameter verwenden können:
 
 1. Ändern Sie Ihre `site.pp` Datei wie folgt:
 ```
+=======
+## Wie es geht
+
+Dieses Beispiel zeigt Ihnen, wie Sie den `noop` Metaparameter verwenden können:
+
+1.Ändern Sie Ihre `site.pp` Datei wie folgt:
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 node 'cookbook' {
   file { '/etc/resolv.conf':
     content => "nameserver 127.0.0.1\n",
@@ -16,8 +31,14 @@ node 'cookbook' {
 }
 ```
 
+<<<<<<< HEAD
 2. Puppet run:
 ```
+=======
+2.Puppet run:
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [root@cookbook ~]# puppet agent -t
 Info: Caching catalog for cookbook.example.com
 Info: Applying configuration version '1413789438'
@@ -37,12 +58,21 @@ Notice: Stage[main]: Would have triggered 'refresh' from 1 events
 Notice: Finished catalog run in 0.50 seconds
 ```
 
+<<<<<<< HEAD
 ### Wie es funktioniert...
+=======
+## Wie es funktioniert
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 Der `noop` Metaparameter ist auf `true` gesetzt, also für diese besondere Ressource ist es so, als hättest du die Puppe mit der `--noop` Flagge laufen müssen. Puppe stellte fest, dass die Ressource angewendet worden wäre, aber sonst nichts gemacht.
 
 Die nette Sache beim Ausführen des Agenten im Testmodus (`-t`) ist, dass die Puppe ein Diff von dem, was es getan hätte, wenn der `noop` nicht vorhanden war (man kann sagen, Puppe zu zeigen, die diff's ohne mit `-t` mit `--show_diff`; -t impliziert viele verschiedene Einstellungen):
+<<<<<<< HEAD
 ```
+=======
+
+```diff
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 --- /etc/resolv.conf  2014-10-20 00:27:43.095999975 -0400
 +++ /tmp/puppet-file20141020-8439-1lhuy1y-0	2014-10-20 03:17:18.969999979 -0400
 @@ -1,3 +1 @@
@@ -53,4 +83,7 @@ Die nette Sache beim Ausführen des Agenten im Testmodus (`-t`) ist, dass die Pu
 ```
 
 Dies kann beim Debuggen einer Vorlage sehr nützlich sein. Sie können an Ihren Änderungen arbeiten und dann sehen, wie sie auf dem Knoten aussehen würden, ohne sie tatsächlich anzuwenden. Mit dem diff können Sie sehen, ob Ihre aktualisierte Vorlage die richtige Ausgabe erzeugt.
+<<<<<<< HEAD
 
+=======
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

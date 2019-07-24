@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # DC/OS](../dcos) [Mesos](../mesos)
+=======
+# [DC/OS](../dcos) [Mesos](../mesos)
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 ## Hardware Voraussetzungen
 
@@ -19,7 +23,11 @@ Die Tabelle unten zeit die Hardware Voraussetzungen für den master node:
 
 Die Tabelle unten zeit die Hardware Voraussetzungen für den agent.
 
+<<<<<<< HEAD
 |   | Minimal | Empfohlen |
+=======
+| Rescource | Minimal | Empfohlen |
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 | :---: | :---: | :---: |
 |Nodes       | 1       |6 oder mehr|
 |Prozessor    | 2 cores |2 cores  |

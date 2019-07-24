@@ -1,11 +1,24 @@
+<<<<<<< HEAD
 Es wäre toll, wenn wir verifizieren könnten, dass unsere Marionette manifestiert, gewisse Erwartungen, ohne auch nur die Puppe laufen zu müssen. Das `rspec-puppet` Tool ist ein raffiniertes Werkzeug dazu. Auf der Basis von RSpec, einem Test-Framework für Ruby-Programme, können Sie mit `rspec-puppet` Testfälle für Ihre Puppet manifestes schreiben, die besonders nützlich sind, um Regressionen zu fangen (Fehler bei der Festsetzung eines anderen Bugs) und Refactoring-Probleme (Fehler bei der Neuordnung Ihres Codes) .
 
 ### Fertig werden
+=======
+# puppet4-externe-tools-ecosystem-rspec
+
+Es wäre toll, wenn wir verifizieren könnten, dass unsere Marionette manifestiert, gewisse Erwartungen, ohne auch nur die Puppe laufen zu müssen. Das `rspec-puppet` Tool ist ein raffiniertes Werkzeug dazu. Auf der Basis von RSpec, einem Test-Framework für Ruby-Programme, können Sie mit `rspec-puppet` Testfälle für Ihre Puppet manifestes schreiben, die besonders nützlich sind, um Regressionen zu fangen (Fehler bei der Festsetzung eines anderen Bugs) und Refactoring-Probleme (Fehler bei der Neuordnung Ihres Codes).
+
+## Fertig werden
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 Hier ist was du brauchst, um `rspec-puppe` zu installieren.
 
 Führen Sie die folgenden Befehle aus:
+<<<<<<< HEAD
 ```
+=======
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 t@mylaptop~ $ sudo puppet resource package rspec-puppet ensure=installed provider=gem
 Notice: /Package[rspec-puppet]/ensure: created
 package { 'rspec-puppet':
@@ -18,12 +31,22 @@ package { 'puppetlabs_spec_helper':
 }
 ```
 
+<<<<<<< HEAD
 ### Wie es geht...
 
 Lassen Sie uns eine Beispielklasse, `thing` erstellen und einige Tests dafür schreiben.
 
 1. Definiere die `thing` klasse:
 ```
+=======
+## Wie es geht
+
+Lassen Sie uns eine Beispielklasse, `thing` erstellen und einige Tests dafür schreiben.
+
+1.Definiere die `thing` klasse:
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 class thing {
   service {'thing':
     ensure  => 'running',
@@ -42,8 +65,14 @@ class thing {
 }
 ```
 
+<<<<<<< HEAD
 2. Führen Sie die folgenden Befehle aus:
 ```
+=======
+2.Führen Sie die folgenden Befehle aus:
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 t@mylaptop ~/puppet]$cd modules/thing
 t@mylaptop~/puppet/modules/thing $ rspec-puppet-init
  + spec/
@@ -62,8 +91,14 @@ t@mylaptop~/puppet/modules/thing $ rspec-puppet-init
  + Rakefile
 ```
 
+<<<<<<< HEAD
 3. Erstellen Sie die Datei `spec/classes/thing_spec.rb` mit folgendem Inhalt:
 ```
+=======
+3.Erstellen Sie die Datei `spec/classes/thing_spec.rb` mit folgendem Inhalt:
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 require 'spec_helper'
 
 describe 'thing' do
@@ -76,8 +111,14 @@ describe 'thing' do
 end
 ```
 
+<<<<<<< HEAD
 4. Führen Sie die folgenden Befehle aus:
 ```
+=======
+4.Führen Sie die folgenden Befehle aus:
+
+```s
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 t@mylaptop ~/.puppet/modules/thing $ rspec
 ...F
 
@@ -96,7 +137,11 @@ Failed examples:
 rspec ./spec/classes/thing_spec.rb:9 # thing should contain File[/etc/things.conf]
 ```
 
+<<<<<<< HEAD
 ### Wie es funktioniert...
+=======
+## Wie es funktioniert
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 Der Befehl `rspec-puppet-init` erstellt einen Rahmen von Verzeichnissen für Sie, um Ihre Spezifikationen (Testprogramme) einzutragen. Im Moment interessieren wir uns nur für das `spec/classes` Verzeichnis. Hier werden Sie Ihre Klassen-Spezifikationen, eine pro Klasse, benannt nach der Klasse, die es testet, z. B. `thing_spec.rb`.
 
@@ -104,7 +149,12 @@ Der `spec` Code selbst beginnt mit der folgenden Anweisung, die die RSpec-Umgebu
 `require 'spec_helper'`
 
 Dann folgt ein `describe` Block:
+<<<<<<< HEAD
 ```
+=======
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 describe 'thing' do
   ..
 end
@@ -121,7 +171,12 @@ Die `create_class` Assertion wird verwendet, um sicherzustellen, dass die benann
 Die `contain_package` Assertion bedeutet, was es sagt: Die Klasse sollte eine Paket-Ressource namens `thing` enthalten.
 
 Als nächstes testen wir auf die Existenz des `thing` dienstes:
+<<<<<<< HEAD
 ```
+=======
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 it { should contain_service('thing').with(
   'ensure' => 'running'
 ) }
@@ -131,7 +186,12 @@ Der vorhergehende Code enthält tatsächlich zwei Behauptungen. Erstens, dass di
 `contain_service('thing')`
 
 Zweitens, dass der Dienst ein `ensure` Attribut mit dem Wert `running` hat:
+<<<<<<< HEAD
 ```
+=======
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 with(
   'ensure' => 'running'
 )
@@ -139,7 +199,11 @@ with(
 
 Sie können alle Attribute und Werte angeben, die Sie `with` der Methode mit einer kommagetrennten Liste verwenden möchten. Beispielsweise belegt der folgende Code mehrere Attribute einer `file` ressource:
 
+<<<<<<< HEAD
 ```
+=======
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 it { should contain_file('/tmp/hello.txt').with(
   'content' => "Hello, world\n",
   'owner'   => 'ubuntu',
@@ -152,8 +216,14 @@ In unserem `thing` Beispiel müssen wir nur testen, dass die Datei `thing.conf` 
 `it { should contain_file('/etc/thing.conf') }`
 
 Wenn Sie den `rake spec` Befehl ausführen, wird die `rspec-puppet` die relevanten Puppet-Klassen kompilieren, alle benötigten Spezifikationen ausführen und die Ergebnisse anzeigen:
+<<<<<<< HEAD
 ```
 ...F
+=======
+
+```pp
+...
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 Failures:
   1) thing should contain File[/etc/things.conf]
      Failure/Error: it { should contain_file('/etc/things.conf') }
@@ -164,17 +234,26 @@ Finished in 1.66 seconds
 ```
 
 Wie Sie sehen können, haben wir die Datei in unserem Test als `/etc/things.conf` definiert, aber die Datei in den Manifests ist `/etc/thing.conf`, also der Test fehlschlägt. Bearbeiten Sie thing_spec.rb und ändern Sie `/etc/things.conf` zu `/etc/thing.conf`:
+<<<<<<< HEAD
 `  it { should contain_file('/etc/thing.conf') }`
 
 Jetzt rspec wieder laufen lassen:
 
 ```
+=======
+`it { should contain_file('/etc/thing.conf') }`
+
+Jetzt rspec wieder laufen lassen:
+
+```pp
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 t@mylaptop ~/.puppet/modules/thing $ rspec
 ....
 Finished in 1.6 seconds
 4 examples, 0 failures
 ```
 
+<<<<<<< HEAD
 ### Es gibt mehr...
 
 Es gibt viele Bedingungen, die Sie mit rspec überprüfen können. Jeder Ressourcentyp kann mit `contain_<resource type>` (Titel) verifiziert werden. Zusätzlich zur Überprüfung Ihrer Klassen gelten ordnungsgemäß, können Sie auch Funktionen und Definitionen testen, indem Sie die entsprechenden Unterverzeichnisse innerhalb des Spezifikationsverzeichnisses (Klassen, Definitionen oder Funktionen) verwenden.
@@ -182,3 +261,12 @@ Es gibt viele Bedingungen, die Sie mit rspec überprüfen können. Jeder Ressour
 Weitere Informationen über `rspec-puppet` finden Sie hier, einschließlich der vollständigen Dokumentation für die vorhandenen Assertionen und ein Tutorial unter http://rspec-puppet.com/.
 
 Wenn du anfangen willst zu testen, wie dein Code auf Knoten anwendet, musst du ein anderes Werkzeug anschauen, Becher. Beaker arbeitet mit verschiedenen Virtualisierungsplattformen, um temporäre virtuelle Maschinen zu erstellen, auf die Puppencode angewendet wird. Die Ergebnisse werden dann für die Abnahmeprüfung des Puppenkodes verwendet. Diese Methode der Prüfung und Entwicklung zur gleichen Zeit ist bekannt als **Test-driven Entwicklung (TDD)**. Weitere Informationen über Becher finden Sie auf der GitHub-Website unter https://github.com/puppetlabs/beaker.
+=======
+## Es gibt mehr
+
+Es gibt viele Bedingungen, die Sie mit rspec überprüfen können. Jeder Ressourcentyp kann mit `contain_<resource type>` (Titel) verifiziert werden. Zusätzlich zur Überprüfung Ihrer Klassen gelten ordnungsgemäß, können Sie auch Funktionen und Definitionen testen, indem Sie die entsprechenden Unterverzeichnisse innerhalb des Spezifikationsverzeichnisses (Klassen, Definitionen oder Funktionen) verwenden.
+
+Weitere Informationen über `rspec-puppet` finden Sie hier, einschließlich der vollständigen Dokumentation für die vorhandenen Assertionen und ein Tutorial unter [rspec-puppet](http://rspec-puppet.com/).
+
+Wenn du anfangen willst zu testen, wie dein Code auf Knoten anwendet, musst du ein anderes Werkzeug anschauen, Becher. Beaker arbeitet mit verschiedenen Virtualisierungsplattformen, um temporäre virtuelle Maschinen zu erstellen, auf die Puppencode angewendet wird. Die Ergebnisse werden dann für die Abnahmeprüfung des Puppenkodes verwendet. Diese Methode der Prüfung und Entwicklung zur gleichen Zeit ist bekannt als **Test-driven Entwicklung (TDD)**. Weitere Informationen über Becher finden Sie auf der [GitHub-Website](https://github.com/puppetlabs/beaker).
+>>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
