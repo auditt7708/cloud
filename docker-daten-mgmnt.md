@@ -1,12 +1,15 @@
+# Docker Daten Management
+
 Bisher haben wir mit einem einzigen Container gearbeitet und darauf lokal zugegriffen. Aber wenn wir in echte Praktische Fälle wechseln, müssen wir auf den Container von der Außenwelt zugreifen, den externen Speicher im Container freigeben, mit Containern kommunizieren, die auf anderen Hosts laufen und so weiter. In diesem Kapitel werden wir sehen, wie wir einige dieser Anforderungen erfüllen können. Lassen Sie uns beginnen, indem Sie das Standard-Netzwerk-Setup von Docker verstehen und dann zu fortgeschrittenen Anwendungsfällen gehen.
 
 Wenn der Docker-Daemon startet, erstellt er eine virtuelle Ethernet-Bridge mit dem Namen `docker0`. Zum Beispiel werden wir folgendes mit dem Befehl `ip addr` auf dem System sehen, das den Docker-Daemon ausführt:
-```
-6: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+
+```s
+6: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
     link/ether 02:42:53:c7:17:8f brd ff:ff:ff:ff:ff:ff
     inet 172.17.0.1/16 scope global docker0
        valid_lft forever preferred_lft forever
-    inet6 fe80::42:53ff:fec7:178f/64 scope link 
+    inet6 fe80::42:53ff:fec7:178f/64 scope link
        valid_lft forever preferred_lft forever
 ```
 

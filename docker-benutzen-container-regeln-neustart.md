@@ -8,7 +8,7 @@ Vergewissern Sie sich, dass der Docker-Daemon auf dem Host läuft und Sie könne
 
 Sie können die Neustartrichtlinie mit der folgenden Syntax festlegen:
 
-`$ docker run --restart=POLICY [ OPTIONS ]  IMAGE[:TAG]  [COMMAND]  [ARG...] `
+`$ docker run --restart=POLICY [ OPTIONS ]  IMAGE[:TAG]  [COMMAND]  [ARG...]`
 
 Hier ist ein Beispiel für einen Befehl:
 `$ docker run --restart=always -d -i -t fedora /bin/bash`
@@ -25,7 +25,6 @@ Es gibt drei Neustart-Richtlinien zur Auswahl:
 
 Sie können auch eine optionale Neustartzählung mit der `on-failure`-Richtlinie wie folgt eingeben:
 
-`$ Docker run --restart = on-failure: 3 -d -i -t fedora /bin/bash
-`
-Der vorherige Befehl startet den Behälter nur dreimal, wenn ein Fehler auftritt.
+`$ Docker run --restart = on-failure: 3 -d -i -t fedora /bin/bash`
 
+Der vorherige Befehl startet den Behälter nur dreimal, wenn ein Fehler auftritt.

@@ -7,6 +7,7 @@
 * [Gradle](../gradle)
 
 Links:
+
 * [gocd Webseite](https://www.gocd.io/)
 * [spinnaker Webseite](http://www.spinnaker.io/docs/installation-tools)
 * [ovh github Repo](https://github.com/ovh)

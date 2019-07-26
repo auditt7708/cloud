@@ -1,6 +1,9 @@
+# Docker Einleitung und INstallation
+
 Zu Beginn der IT-Revolution wurden die meisten Anwendungen direkt auf der physischen Hardware, über das Host-Betriebssystem eingesetzt. Wegen dieses einzelnen Benutzerraums wurde die Laufzeit zwischen den Anwendungen geteilt. Der Einsatz war stabil, hardware-centric und hatte einen langen Wartungszyklus. Es wurde überwiegend von einer IT-Abteilung geleitet und hat den Entwicklern viel weniger Flexibilität gegeben. In solchen Fällen wurden Hardwareressourcen regelmäßig nicht ausgelastet.
 
 Das folgende Diagramm zeigt eine solche Einrichtung:
+
 ![docker-stack](https://www.packtpub.com/graphics/9781788297615/graphics/4862OS_01_01.jpg)
 
 Traditionelle Anwendungsbereitstellung (https://rhsummit.files.wordpress.com/2014/04/rhsummit2014-application-centric_packaging_with_docker_and_linux_containers-20140412riek7.pdf)
@@ -24,6 +27,7 @@ Docker verwendet Linux's zugrunde liegende Kernel-Features, die die Containerisi
 ![docker-driver](https://www.packtpub.com/graphics/9781788297615/graphics/4862OS_01_04.jpg)
 
 Die Ausführungstreiber und Kernel-Funktionen, die von Docker (http://blog.docker.com/wp-content/uploads/2014/03/docker-execdriver-diagram.png) verwendet werden,
+
 Namensräume
 
 Namensräume sind die Bausteine ​​eines Containers. Es gibt verschiedene Arten von Namespaces und jeder von ihnen isoliert Anwendungen von einander. Sie werden mit dem Klon-Systemaufruf erstellt. Man kann auch an bestehende Namespaces anhängen. Einige der von Docker verwendeten Namespaces wurden in den folgenden Abschnitten erläutert.
@@ -39,20 +43,21 @@ Am container:
 Am Host:
 `ps aux | grep container`
 
-### Der Netznamensraum
+## Der Netznamensraum
 
 Mit dem `pid`-Namespace können wir das gleiche Programm mehrmals in verschiedenen isolierten Umgebungen ausführen; Zum Beispiel können wir verschiedene Fälle von Apache auf verschiedenen Behältern ausführen. Aber ohne den `net`-Namespace, würden wir nicht in der Lage sein, auf Port 80 auf jedem von ihnen zu hören. Der `net`-Namespace erlaubt uns, auf jedem Container unterschiedliche Netzwerkschnittstellen zu haben, was das Problem, das ich bereits erwähnt habe, löst. Loopback-Schnittstellen wären in jedem Container auch anders.
 
 Um die Vernetzung in Containern zu ermöglichen, können wir in zwei verschiedenen `net`-Namespaces Paare von speziellen Schnittstellen erstellen und ihnen erlauben, miteinander zu sprechen. Ein Ende der speziellen Schnittstelle befindet sich im Container und das andere im Host-System. Im Allgemeinen wird die Schnittstelle innerhalb des Containers `eth0` genannt, und im Host-System wird ihm ein zufälliger Name wie `vethcf1a` gegeben. Diese speziellen Schnittstellen werden dann über eine Brücke (`docker0`) auf dem Host verbunden, um die Kommunikation zwischen Containern und Routenpaketen zu ermöglichen.
 
 Innerhalb des Containers würden Sie so etwas wie folgendes sehen:
+
 `ip a`
 
 Innerhalb des Containers würden Sie so etwas wie folgendes sehen:
+
 `ip a`
 
 Also, each net namespace has its own routing table and firewall rules.
-``
 
 Außerdem hat jeder net namespace eine eigene Routingtabelle und Firewall-Regeln.
 
@@ -81,7 +86,6 @@ Es gibt Möglichkeiten, Namespaces zwischen Host und Container und Container und
 **Kontrollgruppen (Cgroups)** bieten Ressourcenbeschränkungen und Buchhaltung für Container. Aus der Linux Kernel Dokumentation:
 
 Kontrollgruppen bieten einen Mechanismus für die aggregating/partitioning von Aufgaben und all ihren zukünftigen Kindern in hierarchische Gruppen mit spezialisiertem Verhalten.
-
 
 In einfachen Worten können sie mit dem Befehl `ulimit` shell oder dem `setrlimit` Systemaufruf verglichen werden. Anstatt die Ressourcengrenze auf einen einzelnen Prozess zu setzen, erlauben cgroups die Begrenzung von Ressourcen auf eine Gruppe von Prozessen.
 
@@ -119,15 +123,15 @@ Nach der Installation können Sie die Liste der Subsysteme und ihren Mount-Punkt
 
 Obwohl wir die tatsächlichen Befehle noch nicht gesehen haben, gehen wir davon aus, dass wir ein paar Container laufen und die Cgroup-Einträge für einen Container erhalten möchten. Um diese zu bekommen, müssen wir zuerst die Container-ID bekommen und dann den Befehl lscgroup verwenden, um die Cgroup-Einträge eines Containers zu erhalten, die wir aus dem folgenden Befehl erhalten können:
 
-#### Hinweis
+## Hinweis
+
 Weitere Informationen finden Sie unter https://docs.docker.com/articles/runmetrics/.
 
-## Das Union Dateisystem 
+## Das Union Dateisystem
 
 Das Dateisystem der Union ermöglicht es, die Dateien und Verzeichnisse von separaten Dateisystemen, die als Ebenen bekannt sind, transparent zu überlagern, um ein neues virtuelles Dateisystem zu erstellen. Beim Starten eines Containers überlagert Docker alle an einem Bild angehängten Layer und erstellt ein schreibgeschütztes Dateisystem. Darüber hinaus erstellt Docker eine Lese- / Schreibschicht, die von der Laufzeitumgebung des Containers verwendet wird. Schau dir das Bild an und laufe ein Containerrezept dieses Kapitels für weitere Details. Docker kann mehrere Union-Dateisystemvarianten verwenden, einschließlich AUFS, Btrfs, vfs und DeviceMapper.
 
 Docker kann mit verschiedenen Ausführungsfahrern arbeiten, wie z.B. `libcontainer`, `lxc` und `libvirt`, um Container zu verwalten. Der Default-Treiber ist `libcontainer`, der mit Docker aus der Box kommt. Es kann Namespaces, Kontrollgruppen, Fähigkeiten und so weiter für Docker manipulieren.
-
 
 ### Übersicht
 

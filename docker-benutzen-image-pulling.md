@@ -1,9 +1,11 @@
+# Docker Image Pulling
+
 Nach dem Durchsuchen des Bildes können wir es mit dem Docker-Daemon an das System ziehen. Mal sehen, wie wir das machen können.
 Fertig werden
 
 Vergewissern Sie sich, dass der Docker-Daemon auf dem Host läuft und Sie können über den Docker-Client eine Verbindung herstellen.
 
-### Wie es geht…
+## Wie es geht…
 
 1. Um ein Bild auf der Docker-Registry zu ziehen, führen Sie den folgenden Befehl aus:
 `docker pull NAME[:TAG]`
@@ -11,11 +13,11 @@ Vergewissern Sie sich, dass der Docker-Daemon auf dem Host läuft und Sie könne
 Das folgende ist ein Beispiel, um das Fedora-Bild zu ziehen:
 `$ docker pull fedora`
 
-### Wie es funktioniert…
+## Wie es funktioniert…
 
 Der `Pull`-Befehl lädt alle Layer aus der Docker-Registry herunter, die erforderlich sind, um dieses Bild lokal zu erstellen. Wir werden im nächsten Kapitel Details zu den Ebenen sehen.
 
-### Es gibt mehr…
+## Es gibt mehr…
 
 * Bild-Tags Gruppenbilder vom gleichen Typ. Zum Beispiel kann CentOS Bilder mit Tags wie centos5, centos6 und so weiter haben. Um beispielsweise ein Bild mit dem spezifischen Tag zu ziehen, führen Sie den folgenden Befehl aus:
 `$ docker pull centos:centos7`
@@ -27,14 +29,16 @@ Der `Pull`-Befehl lädt alle Layer aus der Docker-Registry herunter, die erforde
 `$ docker pull  <image>@sha256:<digest>`
 
 Hier ist ein Beispiel für einen Befehl:
-`$ docker pull debian@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf `
+`$ docker pull debian@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf`
 
 Digest wird nur mit dem Docker Registry V2 unterstützt.
 
 * Sobald ein Bild gezogen wird, befindet es sich auf dem lokalen Cache (Storage), so dass nachfolgende Zugriffe sehr schnell sein werden. Diese Funktion spielt eine sehr wichtige Rolle beim Aufbau von Docker-Layer-Bildern.
 
-### Siehe auch
+## Siehe auch
+
 * Schauen Sie sich die `hilfe`-Option von Docker `pull`:
+
 `$ docker pull --help`
 
 * Die Dokumentation auf der Docker-Website https://docs.docker.com/reference/commandline/cli/#pull

@@ -4,7 +4,7 @@
 
 ## Konfiguration
 
-Mongodb auf srv2 wurde für cobbler  konfiguriert. 
+Mongodb auf srv2 wurde für cobbler  konfiguriert.
 
 **Quellen:**
 

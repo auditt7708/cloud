@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Installation und Konfiguration
-=======
 # Angular JS Installation und Konfiguration
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 ## Installation mit nmp
 
@@ -52,8 +48,4 @@
 * [smart-table-website](http://lorenzofox3.github.io/smart-table-website/#section-intro) # Gut
 * [Angular Validation: Match](https://github.com/TheSharpieOne/angular-validation-match)
 * [The jQuery replacement for select boxes](https://select2.github.io/examples.html)
-<<<<<<< HEAD
 * [WhatsApp Clone with Meteor CLI and Ionic](https://angular-meteor.com/tutorials/whatsapp/meteor/bootstrapping)
-=======
-* [WhatsApp Clone with Meteor CLI and Ionic](https://angular-meteor.com/tutorials/whatsapp/meteor/bootstrapping)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

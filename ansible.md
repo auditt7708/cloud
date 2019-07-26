@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Ansible
 
 ## Übersicht
@@ -20,7 +19,7 @@
 * [Ansible Sozial Authentifikation](../ansible-social-auth)
 * [Zero Downtime Deployment](../ansible-zero-downtime-deployment)
 
-Tools 
+Tools
 
 * [Ansible Mazer](../ansible-mazer)
   * [Ansible Rolen](../ansible-rolen)
@@ -51,8 +50,6 @@ Sicherheit
 * [Ansible Web Tools](https://ansible.sivel.net/)
 * [centos-opstools](https://github.com/centos-opstools?page=5)
 * [opstools-ansible](https://opstools-ansible.readthedocs.io/en/latest/)
-=======
-# Ansible
 
 ## Inhaltsverzeichnis
 
@@ -102,4 +99,3 @@ Sicherheit
 * [opstools-ansible](https://opstools-ansible.readthedocs.io/en/latest/)
 * [Ansible  make your complex services simple](http://automationbroker.io/)
 * [ansible-playbook-bundle](https://github.com/ansibleplaybookbundle/ansible-playbook-bundle)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

@@ -1,3 +1,5 @@
+# Docker ci/cd mit shippable und openshift
+
 In der vorangegangenen anleitung sahen wir ein Beispiel dafür, wie Docker zum Testen in einer lokalen Dev- und QA-Umgebung verwendet werden kann. Schauen wir uns ein end-to-end Beispiel an, um zu sehen, wie Docker jetzt in der CI/CD-Umgebung verwendet wird. In diesem Rezept sehen wir, wie wir Shippable (http://www.shippable.com/) nutzen können, um CI/CD auszuführen und auf der OpenShift-Umgebung von Red Hat (https://openshift.redhat.com) zu implementieren.
 
 Shippable ist eine SaaS-Plattform, mit der Sie ganz einfach Continuous Integration/Deployment zu Ihrem GitHub und Bitbucket (Git) Repositories hinzufügen können, die komplett auf Docker aufbauen ist. 
@@ -18,66 +20,70 @@ Red Hat's OpenShift ist eine PaaS-Plattform für Ihre Bewerbung. Derzeit nutzt e
 
 Für dieses Rezept verwenden wir den gleichen Beispielcode, den wir in der vorherigen Rezeptur verwendet haben, um zuerst auf Shippable zu testen und dann auf OpenShift einzusetzen.
 
-### Fertig werden
-1. Erstellen Sie ein Konto auf Shippable (https://www.shippable.com/).
+## Fertig werden
 
-2. Gabel die Flasche Beispiel aus https://github.com/openshift/flask-example.
+1.Erstellen Sie ein Konto auf Shippable (https://www.shippable.com/).
 
-3. Erstellen Sie eine App auf OpenShift für das gegabelte Repository mit den folgenden Schritten:
+2.Gabel die Flasche Beispiel aus https://github.com/openshift/flask-example.
 
-3. 1. Erstellen Sie ein Konto (https://www.openshift.com/app/account/new) auf OpenShift und melden Sie sich an.
+3.Erstellen Sie eine App auf OpenShift für das gegabelte Repository mit den folgenden Schritten:
 
-3. 2. Wählen Sie Python 2.7 Cartridge für die Anwendung.
+3.1. Erstellen Sie ein Konto (https://www.openshift.com/app/account/new) auf OpenShift und melden Sie sich an.
 
-3. 3. Aktualisiere den gewünschten öffentlichen URL-Bereich. Geben Sie im Abschnitt Quellcode die URL unseres gegabelten Repo ein. Für dieses Beispiel habe ich die `blueprint` und `https://github.com/nkhare/flask-example` angegeben:
+3.2. Wählen Sie Python 2.7 Cartridge für die Anwendung.
+
+3.3. Aktualisiere den gewünschten öffentlichen URL-Bereich. Geben Sie im Abschnitt Quellcode die URL unseres gegabelten Repo ein. Für dieses Beispiel habe ich die `blueprint` und `https://github.com/nkhare/flask-example` angegeben:
+
 ![openshift-bueprint](https://www.packtpub.com/graphics/9781788297615/graphics/4862OS_05_02.jpg)
 
-3. 4. Klicken Sie auf Create Application, um die neue App zu erstellen. Einmal erstellt, sollten Sie in der Lage sein, auf die öffentliche URL zuzugreifen, die wir im vorherigen Schritt erwähnt haben.
+3.4. Klicken Sie auf Create Application, um die neue App zu erstellen. Einmal erstellt, sollten Sie in der Lage sein, auf die öffentliche URL zuzugreifen, die wir im vorherigen Schritt erwähnt haben.
 
 Sobald die App erstellt ist, bietet OpenShift eine Möglichkeit, den Quellcode für diese App im Abschnitt "Code ändern" zu verwalten / zu aktualisieren. Da wir die App mit Shippable einsetzen wollen, müssen wir diese Anweisungen nicht befolgen.
 
-4. Klonen Sie das gegabelte Repository auf das lokale System:
+4.Klonen Sie das gegabelte Repository auf das lokale System:
 `$ git clone git@github.com:nkhare/flask-example.git`
 
-5. Wir verwenden das gleiche Blaupause-Beispiel, das wir früher verwendet haben. Um dies zu tun, folgen Sie diesen Anweisungen:
- 5. 1. Klonen Sie das flask-Repository:
- 5. 2. Kopiren das blueprint example:
+5.Wir verwenden das gleiche Blaupause-Beispiel, das wir früher verwendet haben. Um dies zu tun, folgen Sie diesen Anweisungen:
+ 5.1. Klonen Sie das flask-Repository:
+ 5.2. Kopiren das blueprint example:
        `$ cp -Rv flask/examples/blueprintexample/* flask-example/wsgi/`
 
-6. Aktualisieren Sie die `flask-example/wsgi/application`, um das `app`-Modul aus dem blueprintexample-Modul zu importieren. Also, die letzte Zeile in der `blueprintexample` `flask-example/wsgi/application` Anwendungsdatei sieht wie folgt aus
+6.Aktualisieren Sie die `flask-example/wsgi/application`, um das `app`-Modul aus dem blueprintexample-Modul zu importieren. Also, die letzte Zeile in der `blueprintexample` `flask-example/wsgi/application` Anwendungsdatei sieht wie folgt aus
 `from blueprintexample import app as application`
 
-7. Fügen Sie die `requirements.txt` Datei mit dem folgenden Inhalt auf der obersten Ebene des Flaschen-Beispiel-Repository hinzu:
-```
-flask 
+7.Fügen Sie die `requirements.txt` Datei mit dem folgenden Inhalt auf der obersten Ebene des Flaschen-Beispiel-Repository hinzu:
+
+```s
+flask
 pytest
 ```
 
-8. Fügen Sie die Datei `shippable.yml` mit folgendem Inhalt hinzu:
+8.Fügen Sie die Datei `shippable.yml` mit folgendem Inhalt hinzu:
+
+```s
+language: python
+
+python:
+  - 2.6
+  - 2.7
+
+install:
+  - pip install -r requirements.txt
+
+# Make folders for the reports
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+
+script:
+  - py.test
+
+archive: true
 ```
-language: python 
 
-python: 
-  - 2.6 
-  - 2.7 
+9.Commit den Code und `pushe` ihn in dein gegabeltes Repository.
 
-install: 
-  - pip install -r requirements.txt 
-
-# Make folders for the reports 
-before_script: 
-  - mkdir -p shippable/testresults 
-  - mkdir -p shippable/codecoverage 
-
-script: 
-  - py.test 
-
-archive: true 
-```
-
-9. Commit den Code und `pushe` ihn in dein gegabeltes Repository.
-
-### Wie es geht…
+## Wie es geht…
 
 1. Melden Sie sich bei Shippable an.
 
@@ -89,8 +95,6 @@ archive: true
 Wenn der Build erfolgreich ist, dann wirst du das Erfolgssymbol sehen.
 
 Wenn Sie das nächste Mal in Ihrem Repository begehen, wird ein Build auf Shippable ausgelöst und der Code wird getestet. Jetzt, um Continuous Deployment auf OpenShift durchzuführen, folgen wir den Anweisungen auf der Shippable Website (http://docs.shippable.com/deployment/openshift/):
-
-
 
 1. Holen Sie sich den Deployment Key aus Ihrem Shippable Dashboard (auf der rechten Seite, unter Repos):
 

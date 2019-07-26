@@ -9,7 +9,8 @@ Make sure the Docker daemon is running on the host and you can connect through t
 `$ docker rm [ OPTIONS ] CONTAINER [ CONTAINER ]`
 
 2. Lassen Sie uns zuerst einen Container starten, stoppen Sie ihn und löschen Sie ihn dann mit den folgenden Befehlen:
-```
+
+```s
 $ ID='docker run -d -i fedora /bin/bash '
 $ docker stop $ID
 $ docker rm $ID
@@ -22,10 +23,12 @@ Wie wir aus dem vorherigen Screenshot sehen können, ist der Container nicht auf
 * Um einen Behälter ohne Zwischenstopp endgültig zu löschen, verwenden Sie die Option `-f`.
 
 * Um alle Container zu löschen, müssen wir zunächst alle laufenden Container stoppen und diese dann entfernen. Sei vorsichtig vor dem Ausführen der Befehle, da diese sowohl die laufenden als auch die gestoppten Container löschen werden:
-```
+
+```s
 $ docker stop 'docker ps -q'
 $ docker rm 'docker ps -aq'
 ```
+
 * Es gibt Optionen, um einen bestimmten Link und die mit dem Container verknüpften Volumes zu entfernen, die wir später erforschen werden.
 
 ### Wie es funktioniert…

@@ -1,5 +1,4 @@
-# Doker fehlerbehebung 
-
+# Doker fehlerbehebung
 
 ## Docker compose
 
@@ -10,13 +9,12 @@ Mit
 
 `find docker-compose.yml data/ helper-scripts/ -type f -exec sed 's/172.22/172.50/' '{}' \;`
 
-kann dann explizit eine IP geändert werden. 
+kann dann explizit eine IP geändert werden.
 
 Es kommt aber auch vor, dass es so auch nicht geht und die angeblich in Benutzung befindliche IP nicht in Benutzung ist.
 Wenn dem so ist kann man versuchen, dass man versuchen im Quellverzeichnis folgende befehle zu benutzen um die Konfiguration zu bereinigen.
 
-```
+```s
 docker-compose down
-docker-compose rm 
+docker-compose rm
 ```
-

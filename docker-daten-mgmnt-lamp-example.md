@@ -1,6 +1,8 @@
+# Docker lamp Management
+
 Lassen Sie uns das vorherige Rezept verlängern, indem Sie eine LAMP-Anwendung (WordPress) erstellen, indem Sie die Container verknüpfen.
 
-### Fertig werden
+## Fertig werden
 
 Um MySQL und WordPress Bilder aus der Docker Registry zu ziehen:
 
@@ -16,7 +18,7 @@ Um MySQL und WordPress Bilder aus der Docker Registry zu ziehen:
 
         * Für Dockerfile besuchen Sie https://github.com/docker-library/wordpress
 
-### Wie es geht…
+## Wie es geht…
 
 1. Zuerst einen `mysql`-Container starten:
 `$ docker run --name mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql`

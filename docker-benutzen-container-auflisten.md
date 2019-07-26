@@ -41,4 +41,3 @@ Der Docker-Daemon kann sich die mit den Containern verbundenen Metadaten anschau
 `$ docker ps -l`
 
 * Mit der Option `--filter/-f` auf `ps` können wir Container mit bestimmten Labels auflisten. Schauen Sie sich die Beschriftung und Filterung Container Rezept in diesem Kapitel für weitere Details.
-

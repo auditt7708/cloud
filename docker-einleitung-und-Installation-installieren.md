@@ -1,3 +1,5 @@
+# Docker Installation
+
 Da gibt es viele Distributionen, die Docker unterstützen, schauen wir uns die Installationsschritte auf Fedora 21 in diesem Rezept an. Für andere können Sie sich auf die Installationsanweisungen beziehen, die im Abschnitt "Siehe auch" dieses Rezepts erwähnt werden. Mit Docker Machine können wir Docker-Hosts auf lokalen Systemen, auf Cloud-Providern und anderen Umgebungen ganz einfach einrichten. Wir werden das in einem anderen Rezept abdecken.
 Fertig werden
 
@@ -5,17 +7,17 @@ Fertig werden
 
 Wie es geht…
 
-1. Install Docker mit yum:
+1.Install Docker mit yum:
+
 `$  yum -y install docker`
 
-### Wie es funktioniert...
+## Wie es funktioniert...
 
 Der vorherige Befehl installiert Docker und alle benötigten Pakete.
 
-#### Es gibt mehr…
+## Es gibt mehr…
 
 Die Standard-Docker-Daemon-Konfigurationsdatei befindet sich unter `/etc/sysconfig/docker`, die beim Starten des Daemons verwendet wird. Hier sind einige grundlegende Operationen:
-
 
 * Um den Service zu starten:
 
@@ -36,5 +38,3 @@ Die Standard-Docker-Daemon-Konfigurationsdatei befindet sich unter `/etc/sysconf
 * Um den Service zu stoppen:
 
 `$ Systemctl stop docker`
-
-

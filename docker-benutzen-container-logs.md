@@ -1,6 +1,8 @@
+# Docker Container Logs
+
 Wenn der Container Protokolle ausgibt oder auf `STDOUT` / `STDERR` ausgibt, können wir sie ohne Anmeldung in den Container abrufen.
 
-### Fertig werden
+## Fertig werden
 
 Vergewissern Sie sich, dass der Docker-Daemon auf dem Host läuft und Sie können über den Docker-Client eine Verbindung herstellen. Sie benötigen auch einen laufenden Container, der Protokolle / Ausgabe auf `STDOUT` ausgibt.
 
@@ -19,4 +21,3 @@ Docker schaut auf die spezifische Protokolldatei des Containers aus `/var/lib/do
 ### Es gibt mehr…
 
 Mit der Option `-t` können wir den Zeitstempel mit jeder Log-Linie bekommen und mit `-f` können wir ein solches Verhalten bekommen.
-

@@ -10,7 +10,8 @@ Vergewissern Sie sich, dass der Docker-Daemon auf dem Host läuft und Sie könne
 `docker stop [-t|--time[=10]] CONTAINER [CONTAINER...]`
 
 2. Wenn du schon einen laufenden Container hast, dann kannst du weiter gehen und ihn aufhalten; Wenn nicht, können wir einen erstellen und dann wie folgt aufhören:
-```
+
+```s
 $ ID='docker run -d -i fedora /bin/bash'
 $ docker stop $ID
 ```
@@ -20,8 +21,8 @@ $ docker stop $ID
 Dadurch wird der Zustand des Containers gespeichert und aufhören. Es kann bei Bedarf wieder gestartet werden.
 
 ### Es gibt mehr…
+
 * Um einen Container nach dem Warten auf einige Zeit zu stoppen, verwenden Sie die Option `--time/-t`.
 
 * Um alle laufenden Container zu stoppen, führen Sie den folgenden Befehl aus:
 `$ docker stop 'docker ps -q'`
-

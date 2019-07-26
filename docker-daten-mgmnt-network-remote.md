@@ -1,10 +1,12 @@
+# Docker Remote Netzwerk
+
 Sobald der Container verfügbar ist, möchten wir von außen auf ihn zugreifen. Wenn Sie den Container mit der Option `--net=host` gestartet haben, können Sie über die Docker-Host-IP aufrufen. Mit `--net=none` können Sie die Netzwerkschnittstelle vom öffentlichen Nets erreichen  oder über andere komplexe Einstellungen hinzufügen . Lassen Sie uns sehen, was passiert - wie Pakete von der Host-Netzwerk-Schnittstelle an den Container weitergeleitet werden.
 
-### Fertig werden
+## Fertig werden
 
 Vergewissern Sie sich, dass der Docker-Daemon auf dem Host läuft und dass Sie können über den Docker-Client eine Verbindung herstellen.
 
-### Wie es geht…
+## Wie es geht…
 
 1. Lassen Sie uns einen Container mit der Option `-P` starten:
 `$ docker run --expose 80 -i -d -P --name centos1  centos /bin/bash`
@@ -21,14 +23,14 @@ Wir können auch einen bestimmten Port des Containers an den spezifischen Port d
 
 In diesem Fall werden alle Anfragen, die auf Port `5000` von einer beliebigen Schnittstelle auf dem Docker-Host kommen, an Port `22` des Centos2-Containers weitergeleitet.
 
-### Wie es funktioniert…
+## Wie es funktioniert…
 
 Mit der Standardkonfiguration richtet Docker die Firewall-Regel ein, um die Verbindung vom Host zum Container weiterzuleiten und die IP-Weiterleitung auf dem Docker-Host zu ermöglichen:
 `iptables -t nat -L n`
 
 Wie wir aus dem vorstehenden Beispiel sehen können, wurde eine `DNAT`-Regel eingerichtet, um den gesamten Verkehr auf Port `5000` des Hosts an Port 22 des Containers weiterzuleiten.
 
-### Es gibt mehr…
+## Es gibt mehr…
 
 Standardmäßig wird mit der Option `-p` Docker alle Anfragen an eine beliebige Schnittstelle an den Host weiterleiten. Um an eine bestimmte Schnittstelle zu binden, können wir so etwas wie folgendes angeben:
 `$ docker run -i -d -p 192.168.1.10:5000:22 --name f20 fedora /bin/bash`
@@ -40,14 +42,11 @@ Wir können mehrere Ports auf Containern an Ports auf Hosts wie folgt binden:
 `$  docker run -d -i -p 5000:22 -p 8080:80 --name f20 fedora /bin/bash`
 
 Wir können den öffentlich public-facing mappen, dem des Containers zugeordnen :
-```
+
+```s
 $ docker port f20 80
 0.0.0.0:8080
 ```
 
 Um alle Netzwerkeinstellungen eines Containers zu betrachten, können wir den folgenden Befehl ausführen:
 `$ docker inspect   -f "{{ .NetworkSettings }}" f20`
-
-### Siehe auch
-
-     Netzwerkdokumentation auf der Docker-Website unter https://docs.docker.com/articles/networking/.

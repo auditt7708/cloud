@@ -1,13 +1,16 @@
+# Docker networking weave net Installation und Konfiguration
+
 ![docker-weave-net-01](https://www.packtpub.com/graphics/9781786461148/graphics/B05453_07_01.jpg)
 
 Du brauchst ein paar Gastgeber, vorzugsweise mit einigen von ihnen auf verschiedenen Subnetzen. Es wird davon ausgegangen, dass die in diesem Labor verwendeten Docker-Hosts in ihrer Standardkonfiguration sind. In einigen Fällen können die Änderungen, die wir machen, verlangen, dass Sie einen Root-Level-Zugriff auf das System haben.
 
-### Wie es geht…
+## Wie es geht…
 
 Weave wird über das Weave CLI Tool installiert und verwaltet. Einmal heruntergeladen, verwaltet es nicht nur Weave-bezogene Konfiguration, sondern auch die Bereitstellung von Weave-Services. Auf jedem Host, den du konfigurieren möchtest, kannst du einfach die folgenden drei Befehle ausführen:
 
 * Laden Sie die Weave-Binärdatei in Ihr lokales System herunter:
-```
+
+```s
 user@docker1:~$ sudo curl -L git.io/weave -o \
 /usr/local/bin/weave
 ```

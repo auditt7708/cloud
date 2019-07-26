@@ -1,3 +1,5 @@
+# Docker Tips und tricks
+
 Wir werden neugieriger werden, wenn wir mehr über Docker erfahren. Mailinglisten und IRC-Kanäle sind die besten Orte, um Hilfe zu bekommen, zu lernen und Wissen über Docker zu teilen. Docker hat ein paar IRC-Kanäle auf dem freien Nodes, wie `#docker` und `#Docker-dev`, um Docker im Allgemeinen und dev-related Zeug zu besprechen. Ähnlich hat Docker zwei Mailinglisten:
 
 * Die Docker-Benutzerliste finden Sie unter https://groups.google.com/forum/#!forum/docker-user
@@ -14,7 +16,8 @@ Es gibt viele Docker Gruppen auf der ganzen Welt, wo Sie Gleichgesinnte treffen 
 
 In diesem Kapitel werde ich auch ein paar Tipps und Tricks, die Ihnen helfen, besser zu arbeiten mit Docker.
 
-### Übersicht 
+## Übersicht
+
 * [Starten von Docker im Debug-Modus](../docker-tips-tricks-debug-mode)
 * [Einen Docker binär aus der Quelle bauen](../docker-tips-tricks-docker-source-build)
 * [Erstellen von Images ohne Verwendung von zwischengespeicherten Ebenen](../docker-tips-tricks-debug-images-raw)

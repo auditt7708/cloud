@@ -67,8 +67,4 @@ ssh-add ~/.ssh/id_rsa
 
 #### Quelle
 
-<<<<<<< HEAD
 * [user_guide/intro_adhoc](https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html)
-=======
-* [user_guide/intro_adhoc](https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
