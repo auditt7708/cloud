@@ -1,10 +1,5 @@
 # WildFly Konfigurartion
 
-<<<<<<< HEAD
-=======
-## Konfigurartion
-
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 ## Ports einrichten
 
 Unter Windows:
@@ -17,14 +12,11 @@ UNter Unix/Linux:
 
 Quellen:
 
-<<<<<<< HEAD
-* [wildfly-change-default-port](https://www.baeldung.com/wildfly-change-default-port)
-=======
 * [wildfly-change-default-port](https://www.baeldung.com/wildfly-change-default-port)
 
 ## mod_cluser
 
-### mod_cluster Konfiguration 
+### mod_cluster Konfiguration
 
 Konfiguration der Datei _mod_cluster.conf_
 
@@ -153,4 +145,4 @@ Quellen:
 * [modcluster.io examples/](https://modcluster.io/examples/)
 * [red_hat_jboss mod_cluster](https://access.redhat.com/documentation/en-us/red_hat_jboss_operations_network/3.0/html/manage_jboss_servers/mod_cluster)
 * [how-to-install-wildfly-on-centos-7](* [](https://linuxize.com/post/how-to-install-wildfly-on-centos-7/))
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
+* []()

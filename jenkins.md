@@ -1,7 +1,5 @@
 # Jenkins
 
-<<<<<<< HEAD
-=======
 Jenkins ist ein Programm das bei der Umsetzung einer CI/CD Umgebung hilft.
 Im gegensatz zu vielen anderen Alternativen wird ein allgemeiner Anzatz eingesezt was die einarbeitungzeit hier etwas verländern kann.
 Für jenkins gibt viele Plugins die die funktionalätät start erweitern können.
@@ -14,7 +12,9 @@ Inhaltesverzeichnis
 
 ## Installation
 
-### mod_proxy
+Einrichtung der Proxys
+
+### mod_proxy mit Apche 2.4
 
 ```s
 ProxyPass         /jenkins  http://localhost.local:8081/jenkins nocanon
@@ -62,7 +62,108 @@ AllowEncodedSlashes NoDecode
 Header edit Location ^http://www.example.com/jenkins/ https://www.example.com/jenkins/
 ```
 
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
+## Proxy mit ha proxy
+
+Ausgangslage:
+Domain: vmd36612.contaboserver.net
+Jenkins: ist local installiert
+https: letsencrypt wird noch über die Domain ausgeliefert
+
+haproxy.conf
+
+```s
+global
+  log /dev/log  local0
+  log /dev/log  local1 notice
+  stats socket /var/lib/haproxy/stats level admin
+  chroot /var/lib/haproxy
+ tune.ssl.default-dh-param 2048
+ user haproxy
+ group haproxy
+ daemon
+
+defaults
+   log global
+   mode  http
+   option  httplog
+   option  dontlognull
+        timeout connect 5000
+        timeout client 50000
+        timeout server 50000
+
+frontend www-https
+    # Bind 443 with the generated letsencrypt cert.
+    bind *:443 ssl crt /etc/haproxy/certs/vmd36612.contaboserver.net.pem
+    # set x-forward to https
+    # reqadd X-Forwarded-Proto:\ https
+    # set X-SSL in case of ssl_fc <- explained below
+    http-request set-header X-SSL %[ssl_fc]
+    # Select a Challenge
+    acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+    #acl url_jenkins path_beg /jenkins
+    #use_backend jenkins if url_jenkins
+    acl jenkins path_dir -i /jenkins
+    use_backend jenkins if jenkins
+    # Use the challenge backend if the challenge is set
+    use_backend letsencrypt-backend if letsencrypt-acl
+    default_backend https-backend
+
+frontend www-http
+    bind *:80
+    mode http
+    acl letsencrypt-acl path_beg /.well-known/acme-challenge/
+    use_backend letsencrypt-backend if letsencrypt-acl
+    acl url_jenkins path_beg /jenkins/
+    acl host-is-jenkins-vmd366 hdr(host) eq vmd36612.contaboserver.net
+    acl jenkins path_dir -i /jenkins
+    use_backend jenkins if url_jenkins host-is-jenkins-vmd366 jenkins
+    default_backend www-backend
+
+backend www-backend
+    mode http
+    balance roundrobin
+    option forwardfor
+    option httpchk HEAD / HTTP/1.1\r\nHost:localhost
+    cookie SERVERID insert indirect
+    redirect scheme https code 301 if !{ ssl_fc }
+
+backend https-backend
+    mode http
+    option forwardfor
+    option httpchk HEAD / HTTP/1.1\r\nHost:localhost
+    cookie SERVERID insert indirect
+    redirect scheme https code 301 if !{ ssl_fc }
+    server ghost 127.0.0.1:81
+backend letsencrypt-backend
+    server letsencrypt 127.0.0.1:54321
+
+    mode http
+    option forwardfor
+    #option httpchk HEAD :8080/jenkins HTTP/1.1rnHost:localhost:8080/jenkins
+    #http-request set-header X-Forwarded-Host vmd36612.contaboserver.net
+    ##http-request set-header X-Forwarded-Port 8443 if { ssl_fc }
+    #http-request set-header X-Forwarded-Port 8080 if !{ ssl_fc }
+    #http-request set-header X-Forwarded-Proto https if { ssl_fc }
+    server jenkins01 127.0.0.1:8080
+    reqrep ^([^\ :]*)\ /(.*) \1\ /\2
+   acl response-is-redirect res.hdr(Location) -m found
+   rspirep ^Location:\ (http|https)://127.0.0.1:8080/jenkins/(.*) Location:\ \1://vmd36612.contaboserver.net/jenkins/\2 if response-is-redirect
+```
+
+> Damit es auch geht muss der Jenkins Dienst mit `JENKINS_ARGS="$JENKINS_ARGS --prefix=/jenkins"` gestartet sein.
+
+## Sicherheit
+
+Certifikat für jenkins umwandeln
+
+Zuerst das  certificate in das DER format umwandeln :
+
+`openssl x509 -outform der -in certificate.pem -out certificate.der`
+
+Danach, import  in den keystore :
+
+`keytool -import -alias my-domain-com -keystore /root/.keystore -file certificate.der`
+
 ## Nach der Installation
 
 So sollte er nicht eingerichtet sein
@@ -109,18 +210,11 @@ Home verzeichnis : `/var/lib/jenkins`
 
 ## Jenkins Plugins
 
-<<<<<<< HEAD
 Die Wichtisten:
 
 * Pipeline
 * Ant Plugin
 
-=======
-Die Wichtisten Plugins:
-
-* Pipeline
-* Ant Plugin
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 * [rhnpush](https://wiki.jenkins-ci.org/display/JENKINS/rhnpush+Plugin)
 adds a post build step to push RPMs to Spacewalk or RHN satelite servers. It requires rhnpush to be installed on the slave
 * [SCP](https://wiki.jenkins-ci.org/display/JENKINS/SCP+plugin)
@@ -137,10 +231,6 @@ Tools:
 
 * [keystore-explorer](http://keystore-explorer.org/features.html)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 Benutzer Zugangsdaten:
 
 * **User** gelten für bestimmte Benutzer
@@ -160,20 +250,8 @@ Benutzer Zugangsdaten:
 * [continuous_delivery_with_jenkins_pipeline](https://go.cloudbees.com/docs/cloudbees-documentation/cookbook/book.html#ch13__continuous_delivery_with_jenkins_pipeline)
 * [TUTORIAL](https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md)
 * [top-10-best-practices-jenkins-pipeline-plugin](https://www.cloudbees.com/blog/top-10-best-practices-jenkins-pipeline-plugin)
-<<<<<<< HEAD
-*[hello-world](https://jenkins.io/doc/pipeline/tour/hello-world/)
-
-**Quelle:**
-
-* [ttps mit Jenkins und Let's Encrypt
-](https://github.com/hughperkins/howto-jenkins-ssl/blob/master/letsencrypt.md)
-=======
 * [hello-world](https://jenkins.io/doc/pipeline/tour/hello-world/)
-
-**Quelle:**
-
 * [https mit Jenkins und Let's Encrypt](https://github.com/hughperkins/howto-jenkins-ssl/blob/master/letsencrypt.md)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 * [Jenkins tutorialspoint](https://www.tutorialspoint.com/jenkins/index.htm)
 
 ## Jenkins Berechtigungen
@@ -205,8 +283,4 @@ Dazu wird ein _New personal access token_ unter -> USER -> Settings -> Developer
 * [kubernetes-cd-pipline-jenkins-integration](../kubernetes-cd-pipline-jenkins-integration)
 * [selenium tests mit jenkins](../selenium-tests-jenkins)
 * [kubernetes-cd-pipline-erstellen](../kubernetes-cd-pipline-erstellen)
-<<<<<<< HEAD
 * [Übersetzung von Pipeline as Code with Jenkins](../jenkins-pipline-as-code)
-=======
-* [Übersetzung von Pipeline as Code with Jenkins](../jenkins-pipline-as-code)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

@@ -55,8 +55,5 @@ Zu anpassende Datei für änderungen am loggin ist immer die `server.xml` im Ver
 
 * [webjars](https://www.webjars.org/) WebJars are client-side web libraries (e.g. jQuery & Bootstrap) packaged into JAR (Java Archive) files.
 * [tomcatmanager](https://pypi.org/project/tomcatmanager/)
-<<<<<<< HEAD
 * [easy-war-deployment](http://emmanuelrosa.com/articles/easy-war-deployment/)
-=======
-* [easy-war-deployment](http://emmanuelrosa.com/articles/easy-war-deployment/)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
+* [apache-http-server-mod_proxy_ajp](https://confluence.atlassian.com/kb/proxying-atlassian-server-applications-with-apache-http-server-mod_proxy_ajp-830284354.html)

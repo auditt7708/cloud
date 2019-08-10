@@ -130,3 +130,4 @@ vim - danach :w Dateiname
 Quellen
 
 * [Vim_Shortcuts](https://shortcutworld.com/Vim/linux/Vim_Shortcuts)
+* [Disable automatic comment insertion](https://vim.fandom.com/wiki/Disable_automatic_comment_insertion)
