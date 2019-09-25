@@ -122,8 +122,5 @@
 
 ### Sources
 
-<<<<<<< HEAD
 * [Tuturials](http://www.gtkdb.de/index_34_2792.html)
-=======
-* [Tuturials](http://www.gtkdb.de/index_34_2792.html)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
+
