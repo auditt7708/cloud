@@ -11,7 +11,7 @@ Es gibt verschiedene Lösungen für die Schaffung eines solchen Kubernetes-Clust
 >>
 >> * Linux-Maschine
 >
-> * Hosted Lösung, die beinhaltet:
+ > * Hosted Lösung, die beinhaltet:
 >
 >>
 >> * Google Container Engine
