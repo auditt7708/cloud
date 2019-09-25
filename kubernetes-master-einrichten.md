@@ -1,9 +1,7 @@
 Der Masternode von Kubernetes arbeitet als Kontrollzentrum für Container. Die Aufgaben, die vom Master übernommen werden, beinhalten ein Portal für Endbenutzer, die Zuweisung von Aufgaben an Knoten und das Sammeln von Informationen. In diesem Rezept werden wir sehen, wie man den Kubernetes Master aufbaut. Es gibt drei Dämonenprozesse am Meister:
 
 *      API Server
-
 *      Scheduler
-
 *      Controller Manager
 
 Wir können entweder mit dem Wrapper-Befehl, `hyperkube` starten oder sie einzeln als Daemons starten. Beide Lösungen werden in diesem Abschnitt behandelt.
@@ -24,7 +22,8 @@ $ curl -L <etcd endpoint URL>/v2/keys/coreos.com/network/config -XPUT -d value="
 ```
 
 ### Tip
-Darüber hinaus notieren Sie bitte die folgenden Elemente: die URL von `etcd endpoint`, den Port von `etcd endpoint`, und die CIDR des Overlay-Netzwerks. Sie benötigen sie bei der Konfiguration der Master-Dienste.
+Darüber hinaus notieren Sie bitte die folgenden Elemente: die URL von `etcd endpoint`, den Port von `etcd endpoint`, und die CIDR des Overlay-Netzwerks.
+Sie benötigen sie bei der Konfiguration der Master-Dienste.
 
 ### Wie es geht…
 
@@ -35,7 +34,6 @@ Um einen Master aufzubauen, schlagen wir die folgenden Schritte für die Install
 Hier bieten sich zwei Arten von Installationsverfahren an:
 
 * Einer ist ein RHEL-basiertes Betriebssystem mit Paketmanager; Master-Daemons werden von systemd gesteuert
-
 * Die andere ist für andere Linux-Distributionen; Wir bauen Master mit Binärdateien und Service-Init-Skripten auf
 
 ### CentOS 7 oder Red Hat Enterprise Linux 7
@@ -146,7 +144,27 @@ Mit den vorherigen Einstellungen können wir sicherstellen, dass der `kube-apise
 `Requires=kube-apiserver.service`
 
 
-`Requires` hat strengere Einschränkungen. Falls der daemon `kube-apiserver` abgestürzt ist, würde auch der `kube-scheduler` und der `kube-controller-manager` gestoppt werden. Auf der anderen Seite ist die Konfiguration mit `Requires` für das Debuggen der Master installation schwer zu benutzen. Es wird empfohlen, diesen Parameter zu aktivieren, sobald Sie sicherstellen, dass jede Einstellung korrekt ist.
+`Requires` hat strengere Einschränkungen.
+Falls der daemon `kube-apiserver` abgestürzt ist, würde auch der `kube-scheduler` und der `kube-controller-manager` gestoppt werden.
+Auf der anderen Seite ist die Konfiguration mit `Requires` für das Debuggen der Master installation schwer zu benutzen.
+Es wird empfohlen, diesen Parameter zu aktivieren, sobald Sie sicherstellen, dass jede Einstellung korrekt ist.
+
+
+> Wichtig: Für Docker muss unter Centos 7 ein versionlock eingerichetet werden 
+>
+> `sudo yum install yum-plugin-versionlock`
+> Zum hinzufügen
+>
+> `sudo yum versionlock add docker-ce-cli-*` 
+> Wenn nicht daraufgeachetet wurde ist auch noch ein downgrade notwendig
+> 
+> yum downgrade docker-ce
+> rpm -qa | grep docker-ce
+> yum list | grep docker-ce
+> yum list docker-ce --showduplicates | sort -r
+
+docker-ce-cli-18.09.9-3.el7
+
 
 ### Andere Linux-Optionen
 
