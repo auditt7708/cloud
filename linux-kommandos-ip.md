@@ -1,6 +1,6 @@
 # linux-kommandos-ip
 
-|Zweck |iproute2 Kommando | iproute2 Kommando | Kurzversion | net-tools Kommando|
+|Zweck |iproute2 Kommando | iproute2 Kommando | Kurzversion | net-tools Kommando||
 | :----: | :----: | :----: | :----: | :----: | :----: |
 |Linkstatus anzeigen |ip link show |ip l |ifconfig||
 |Linkstatus inkl. Statistik(RX/TX bytes, errors, ...) anzeigen | ip -statistics link show |ip -s l |ifconfig||
