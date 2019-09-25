@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # jaeger
 
 Monitorring und fehlerbehebung von transcations in komplexen systemen
@@ -32,8 +30,9 @@ docker run -d --name jaeger \
 |9411|HTTP|collector||
 
 
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
-**Quelle:**
+
+**Quelle**
+
 * [jaeger Homepage](https://www.jaegertracing.io/)
 * [Getting started](https://www.jaegertracing.io/docs/1.8/getting-started/)
 * [jaeger github](https://github.com/jaegertracing/jaeger)
