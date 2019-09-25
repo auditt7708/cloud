@@ -30,9 +30,7 @@ Eine lokale Maschinenlösung eignet sich, wenn wir nur eine Entwicklungsumgebung
 Es wird empfohlen, wenn Sie mindestens vier Linux-Server für Master, etcd und zwei Nodes haben. Wenn Sie es als Hochverfügbarkeits-Cluster erstellen möchten, werden mehr Server für jede Komponente bevorzugt. Wir werden in den folgenden Abschnitten drei Arten von Servern erstellen:
 
 * Kubernetes master
-
 * Kubernetes node
-
 * etcd
 
 Flannel befindet sich nicht in einer Maschine, die in allen Nodes benötigt wird. Die Kommunikation zwischen Containern und Diensten erfolgt durch Flanell, das ist ein etcd Backend Overlay Netzwerk für Container.
@@ -78,9 +76,7 @@ $ kubectl get nodes -o json | jq '.items[] | {name: .metadata.name, capacity: .s
 Das OS von den Nodes könnte verschieden sein, aber die Kernelversion muss 3.10 oder später sein. Im Folgenden sind die Betriebssysteme, die Kernel verwenden 3.10+ aufgelistet:
 
 * CentOS 7 or later
-
 * RHEL 7 or later
-
 * Ubuntu Vivid 15.04 / Ubuntu Trusty 14.04 (LTS) / Ubuntu Saucy 13.10
 
 ### Hinweis
@@ -97,9 +93,7 @@ Um sicherzustellen, dass jede Komponente im Kubernetes-Cluster einwandfrei funkt
 Der Kubernetes-Master sollte auf einem Linux-basierten Betriebssystem installiert sein. Für die in diesem Buch aufgeführten Beispiele verwenden wir CentOS 7.1 als OS. Im Master sind zwei Pakete erforderlich:
 
 * Kubernetes
-
 * Flannel (optional)
-
 * iptables (at least 1.4.11+ is preferred)
 
 ### Hinweis
@@ -112,11 +106,8 @@ Kubernetes nutzt iptables zur Implementierung von Service Proxy. Iptables mit Ve
 Auf den Kubernetes-Knoten müssen wir Folgendes vorbereiten:
 
 * Kubernetes
-
 * Flannel daemon
-
 * Docker ( 1.6.2+ ist empfohlen)
-
 * iptables (1.4.11+ ist empfohlen)
 
 ### Notiz
