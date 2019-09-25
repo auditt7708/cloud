@@ -1,6 +1,6 @@
 # Uebersicht
 
-## Pathname expansion (globbing)
+## Pathnamen erweiterung (globbing)
 
 * - means 'match any number of characters'. '/' is not matched (and depending on your settings, things like '.' may or may not be matched, see above)
 ? - means 'match any single character'
@@ -16,7 +16,7 @@ for filename in *.txt; do
 done
 ```
 
-## Compound commands
+## Compound kommandos
 
 Grouping
 { …; }	command grouping
@@ -34,7 +34,7 @@ Misc
 (( ... ))	arithmetic evaluation
 select word in …; do …; done	user selections
 
-## Expansions and substitutions
+## Expansion und substitution
 
 {A,B,C} {A..C}	Brace expansion
 ~/ ~root/	Tilde expansion
@@ -53,7 +53,7 @@ Hello <---> Word!	Word splitting
 >( <LIST> )
 ```
 
-## Example with diff
+## Example mit diff
 
 `diff <(ls "$first_directory") <(ls "$second_directory")`
 

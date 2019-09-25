@@ -11,4 +11,5 @@ Selenium arbeitet in der Praxis ziemlich gut und hat sich im Laufe der Jahre wei
 Eine andere Methode wird durch das Sikuli-Testgerüst angewendet. Es verwendet ein Computer Vision Framework, OpenCV, um zu identifizieren Controller, auch wenn sie bewegen oder ändern Erscheinungen. Dies ist nützlich, um native Anwendungen wie Spiele zu testen.
 
 Der untenstehende Screenshot stammt aus der Selenium IDE.
+
 ![Selenium-IDE](https://www.packtpub.com/graphics/9781785882876/graphics/4892_06_02.jpg)
