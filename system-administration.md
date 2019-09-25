@@ -13,12 +13,15 @@
 `journalctl --list-boots`
 
 **Gefilter nach datum**
+
 `journalctl --since "2016-07-01" --until "2 minutes ago"`
 
 **Rechte Prüfen**
+
 `usermod -aG systemd-journal BENUTZERNAME`
 
 **Filter nach Datum und Fehler Level**
+
 `journalctl -p err -b --since "2019-01-11"`
 
 ## Path-Units
