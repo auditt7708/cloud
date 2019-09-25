@@ -4,13 +4,8 @@
 
 ## Container Services
 
-<<<<<<< HEAD
-* [Docker](https://gitlab.com/tobkern1980/home-net4-environment/wikis/docker)
-* [OpenVZ](https://openvz.org/Main_Page)
-=======
 * [Docker](../docker)
 * [OpenVZ](https://openvz.org)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 ## Container Networking
 
@@ -93,8 +88,5 @@
 * [redstack-complete-microservices-mit-fmw-und-exalogic](https://www.informatik-aktuell.de/entwicklung/methoden/redstack-complete-microservices-mit-fmw-und-exalogic.html)
 * [devops-testautomation-ii-webapplikationen-mobile-device-clouds](https://www.informatik-aktuell.de/entwicklung/methoden/devops-testautomation-ii-webapplikationen-mobile-device-clouds.html)
 * [secdevops-kontinuierlich-sichere-software-bauen](https://www.informatik-aktuell.de/betrieb/sicherheit/secdevops-kontinuierlich-sichere-software-bauen.html)
-<<<<<<< HEAD
 * [Autarke Teams und DevOps: So skaliert Continuous Delivery](https://www.informatik-aktuell.de/entwicklung/methoden/autarke-teams-und-devops-so-skaliert-continuous-delivery.html)
-=======
-* [Autarke Teams und DevOps: So skaliert Continuous Delivery](https://www.informatik-aktuell.de/entwicklung/methoden/autarke-teams-und-devops-so-skaliert-continuous-delivery.html)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
+
