@@ -1,8 +1,9 @@
-<<<<<<< HEAD
 # Systemd
 
 ## systemctl
+
 **Abhängigkeiten Anzeigen**
+
 `systemctl list-dependencies $service`
 
 ## journalctl
@@ -30,7 +31,7 @@ Mit Hilfe von systemd Path-Units können Dateien oder Verzeichnisse auf Änderun
 ## APT und dep
 
 **Repository bei apt**
-=======
+
 # System Administrions Tools
 
 Benutzerverwaltung
@@ -90,9 +91,6 @@ Dateiwerkzeuge
 * [basename Rückgabe des Dateinamens](../basename)
 * [lsof Anzeige offener Dateien ("list open files")](../lsof)
 * [](../)
-* [](../)
-* [](../)
-* [](../)
 
 Systemüberwachung
 
@@ -105,21 +103,17 @@ Systemüberwachung
 
 Pager
 
-* [](../)
-* [](../)
+* [less](../system-administration-pager-less)
 
-witere Nützliche Befehle
 
-* [](../)
-* [](../)
-* [](../)
-* [](../)
-* [](../)
-* [](../)
-* [](../)
-* [](../)
-* [](../)
-* [](../)
+Wietere Nützliche Befehle
+
+* [](../system-administration-pager)
+* [](../system-administration-pager)
+* [](../system-administration-pager)
+* [](../system-administration-pager)
+* [](../system-administration-pager)
+* [](../system-administration-pager)
 
 Packet Managemnet
 
@@ -150,7 +144,6 @@ Repository bei apt
 * [](../)
 * [](../)
 * [](../)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 ```s
 wget -O - 'http://repo.proxysql.com/ProxySQL/repo_pub_key' | apt-key add -
