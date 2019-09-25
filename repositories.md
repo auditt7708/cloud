@@ -3,7 +3,6 @@ Centos7
 ceph.repo
 
 ```s
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 [ceph-noarch]
 name=Ceph noarch packages
 baseurl=https://download.ceph.com/rpm-jewel/el7/noarch
@@ -25,6 +24,7 @@ type=rpm-md
 gpgkey=https://download.ceph.com/keys/release.asc
 ```
 
+```s
 # cat CentOS-Gluster-3.8.repo
 # CentOS-Gluster-3.8.repo
 #
@@ -44,7 +44,6 @@ baseurl=http://buildlogs.centos.org/centos/$releasever/storage/$basearch/gluster
 gpgcheck=0
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Storage
-
 ```
 
 crmsh.repo
@@ -91,7 +90,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 gpgcheck=1
 ```
 
-Packete auf allen Systemen
+Pakete auf allen Systemen
 
 | OS | Packet |
 | :---: | :---: |
@@ -108,7 +107,7 @@ Packete auf allen Systemen
 
 Pakete für CentOS 7, drbd und nfs
 
-Wichtig für[drbd](http://elrepo.org/tiki/tiki-index.php)
+Wichtig für [drbd](http://elrepo.org/tiki/tiki-index.php)
 
 | Service | Packet |
 | :---: | :---: |
@@ -118,7 +117,7 @@ Wichtig für[drbd](http://elrepo.org/tiki/tiki-index.php)
 | beide   | tmux   |
 | beide   | cell 2   |
 
-Packete für Centos 7, drbd , nfs und glusterfs server
+Pakete für Centos 7, drbd , nfs und GlusterFS Server
 
 | Service | Packet |
 | :---: | :---: |
@@ -128,7 +127,7 @@ Packete für Centos 7, drbd , nfs und glusterfs server
 | beide   | tmux   |
 | beide   | cell 2   |
 
-**Quellen:**
+**Quellen**
 
 * [pulp](https://pulpproject.org/)
 * [Sammlung von Packetquellen](https://pkgs.org/)
