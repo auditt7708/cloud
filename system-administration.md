@@ -51,6 +51,8 @@ Benutzerverwaltung
 
 Prozesssteuerung
 
+* [ps](../ps)
+
 Service Management
 
 * [Systemd](../systemd)
