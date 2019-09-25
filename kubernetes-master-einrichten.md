@@ -11,6 +11,7 @@ Wir können entweder mit dem Wrapper-Befehl, `hyperkube` starten oder sie einzel
 ### Fertig werden
 
 Bevor Sie den Master-Knoten einsetzen, stellen Sie sicher, dass Sie den etcd-Endpunkt bereit haben, der wie der Datenspeicher von Kubernetes arbeitet. Sie müssen überprüfen, ob es zugänglich ist und auch mit dem Overlay-Netzwerk konfiguriert ist. **Classless Inter-Domain Routing** (CIDR https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing). Es ist möglich, es mit der folgenden Befehlszeile zu überprüfen:
+
 ```
 // Check both etcd connection and CIDR setting
 $ curl -L <etcd endpoint URL>/v2/keys/coreos.com/network/config
@@ -40,6 +41,7 @@ Hier bieten sich zwei Arten von Installationsverfahren an:
 ### CentOS 7 oder Red Hat Enterprise Linux 7
 
 1. RHEL 7, CentOS 7 oder später ein offizielles Paket für Kubernetes. Sie können sie über den `yum`-Befehl installieren:
+
 ```
 // install Kubernetes master package
 # yum install kubernetes-master kubernetes-client
@@ -50,11 +52,13 @@ Das `kubernetes-master` Paket enthält Master-Daemons, während der `kubernetes-
 ## Notiz
 CentOS 7s RPM von Kubernetes
 
-Es gibt fünf Kubernetes-RPMs (die `.rpm` Dateien, https://en.wikipedia.org/wiki/RPM_Package_Manager) für verschiedene Funktionalitäten: `kubernetes`, `kubernetes-master`, `kubernetes-client`, `kubernetes-node` und `kubernetes-unit-test`.
+Es gibt fünf Kubernetes-RPMs (die `.rpm` Dateien, https://en.wikipedia.org/wiki/RPM_Package_Manager) für verschiedene Funktionalitäten:
+`kubernetes`, `kubernetes-master`, `kubernetes-client`, `kubernetes-node` und `kubernetes-unit-test`.
 
 Das erste, `kubernetes`, ist genau wie ein Hyperlink zu den folgenden drei Items. Sie werden `kubernetes-master`, `kubernetes-client` und `kubernetes-node` sofort installieren. Derjenige namens kubernetes-node ist für die Nodeinstallation. Und der letzte, der Kubernetes-Unit-Test enthält nicht nur Test-Scripts, sondern auch Kubernetes-Template-Beispiele.
 
-2. Hier sind die dateien nach der Installation zu finden: 
+2. Hier sind die dateien nach der Installation zu finden:
+
 ```
 // profiles as environment variables for services
 # ls /etc/kubernetes/
@@ -66,6 +70,7 @@ apiserver  config  controller-manager  scheduler
 ```
 
 3. Als nächstes werden wir die `systemd` Original einstellungen ändern und die Werte in den Konfigurationsdateien unter dem Verzeichnis `/etc/kubernetes` ändern, um eine Verbindung mit etcd zu erstellen. Die Datei  `config` ist eine gemeinsame Umgebungsdatei für mehrere Kubernetes-Daemon-Prozesse. Für grundlegende Einstellungen, einfach änderungen in der `apiserver` Datei durchführen:
+
 ```
 # cat /etc/kubernetes/apiserver
 ###
@@ -97,6 +102,7 @@ KUBE_API_ARGS="--cluster_name=<your cluster name>"
 ```
 
 4. Dann starten Sie den Daemon `kube-apiserver`, `kube-scheduler` und `kube-controller-manager` eins nach dem anderen; Der Befehl `systemctl` kann für das Management helfen. Seien Sie sich bewusst, dass der `kube-apiserer` immer zuerst anfangen sollte, da der `kube-Scheduler` und der `kube-controller-manager` beim Start mit dem Kubernetes API-Server verbunden sind:
+
 ```
 // start services
 # systemctl start kube-apiserver
@@ -108,7 +114,7 @@ KUBE_API_ARGS="--cluster_name=<your cluster name>"
 # systemctl enable kube-controller-manager
 ```
 
-### Hinzufügen von Daemon abhängigkeiten
+### Hinzufügen von Daemon Abhängigkeiten
 
 1. Obwohl systemd keine Fehlermeldungen ohne den laufenden API-Server zurückgibt, erhalten sowohl der `kube-scheduler` als auch der `kube-controller-manager` Verbindungsfehler und bieten keine regelmäßigen Dienste an:
 ```
@@ -124,6 +130,7 @@ E1119 07:27:05.471102    2984 reflector.go:136] Failed to list *api.Node: Get ht
 ```
 
 2. Um also die Startreihenfolge zu beeinflussen, können Sie zwei Einstellungen unter dem Abschnitt von `systemd.unit` in `/usr/lib/systemd/system/kube-scheduler` und `/usr/lib/systemd/system/kube-controller-manager`:
+
 ```
 [Unit]
 Description=Kubernetes Controller Manager
@@ -135,6 +142,7 @@ Wants=kube-apiserver.service
 Mit den vorherigen Einstellungen können wir sicherstellen, dass der `kube-apiserver` der erste Dämon ist.
 
 3. Darüber hinaus sollte man sicherstellen , dass der Scheduler und der Controller Manager immer mit einem gesunden API-Server zuverlässig laufen, was bedeutet, wenn `kube-apiserver` gestoppt ist, werden auch `kube-scheduler` und der `kube-controller-manager` gestoppt; Sie können `systemd.unit` wenn wir `Wants`, wie folgt zu `Requires` ändern:
+
 `Requires=kube-apiserver.service`
 
 
@@ -145,6 +153,7 @@ Mit den vorherigen Einstellungen können wir sicherstellen, dass der `kube-apise
 Es ist auch möglich, dass wir eine Binärdatei zur Installation herunterladen. Die offizielle Website für die neueste Version ist hier: https://github.com/kubernetes/kubernetes/releases:
 
 1. Wir werden die Version, die als neues Release markiert ist, installieren und alle Dämonen mit dem Wrapper-Befehl `hyperkube` starten:
+
 ```
 // download Kubernetes package
 # curl -L -O https://github.com/GoogleCloudPlatform/kubernetes/releases/download/v1.1.2/kubernetes.tar.gz
@@ -155,7 +164,9 @@ Es ist auch möglich, dass wir eine Binärdatei zur Installation herunterladen. 
 // copy all binary files to system directory
 # cp /opt/kubernetes/server/bin/* /usr/local/bin/
 ```
+
 2. Der nächste Schritt besteht darin, ein Startskript (init) zu erstellen, das drei Master-Daemons abdecken und individuell starten würde:
+
 ```
  cat /etc/init.d/kubernetes-master
 #!/bin/bash
@@ -180,6 +191,7 @@ MASTER="127.0.0.1:8080"
 ```
 
 3. Um Ihre Kubernetes-Einstellungen einfacher und klarer zu verwalten, werden wir am Anfang dieses Init-Skripts die Deklaration der veränderbaren Variablen setzen. Bitte überprüfen Sie die etcd URL und überschreiben Sie das Netzwerk CIDR, um zu bestätigen, dass sie die gleiche wie Ihre vorherige Installation sind:
+
 ```
 start() {
 
@@ -218,7 +230,9 @@ stop() {
   return $RETVAL
 }
 ```
+
 4. Als nächstes fühlen Sie sich frei, die folgenden Zeilen als den letzten Teil in das Skript für allgemeine Service-Nutzung hinzuzufügen:
+
 ```
 # See how we were called.
 case "$1" in
@@ -253,21 +267,21 @@ esac
 5. Nun ist es möglich, den Service namens `kubernetes-master` zu starten:
 `$sudo service kubernetes-master start`
 
-
 Hinweis:
 Zum Zeitpunkt des Schreibens dieses Buches war die neueste Version von Kubernetes 1.1.2. Also, wir verwenden 1.1.2 in den Beispielen für die meisten Kapitel.
 
 ### Überprüfung
 
 1. Nachdem Sie alle drei Dämonen des Master Node gestartet haben, können Sie überprüfen, ob sie ordnungsgemäß ausgeführt werden, indem Sie den Service-Status überprüfen. Sowohl die Befehle, `systemd` und `Service`, können die Protokolle abrufen:
+
 `# systemd status <service name>`
 
 2. Für eine ausführlichere Protokollierung der Geschichte können Sie den Befehl `journalctl` verwenden:
-``
 
 Hier soll die meldung `Started..` erscheinen.
 
 3. Darüber hinaus kann in Kubernetes der Befehl`kubectl`, die Operation durchführen:
+
 ```
 // check Kubernetes version
 # kubectl version
