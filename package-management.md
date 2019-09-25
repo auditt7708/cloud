@@ -25,11 +25,7 @@
 ## Paket Manager
 
 | Distribution | Low-Level Tool | High-Level Tool |
-<<<<<<< HEAD
-| :------: | :------: | :------: |
-=======
 | :---: | :---: | :---: |
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 | Debian und derivate|[dpkg](../dpkg)| [apt-get](./apt-get) und [aptitude](../aptitude)|
 |CentOS|[rpm](../rpm)|[yum](../yum)|
 |openSUSE|[rpm](../rpm)|[zypper](../zypper)|
