@@ -1,4 +1,4 @@
 # kubernetes einrichten
 
-[Kubernetes Master](../kubernetes-master-einrichten)
-[kubeadm](../kubeadm)
+* [Kubernetes Master](../kubernetes-master-einrichten)
+* [kubeadm](../kubeadm)
