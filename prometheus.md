@@ -44,8 +44,6 @@ String-Literale
 
 Float Literale
 
-
-
 Zeitreihen-Selektoren
 Sofortige Vektor-Selektoren
 
@@ -69,7 +67,6 @@ Bereichsvektor-Selektoren
 
 `http_requests_total{job="prometheus"}[5m]`
 
-
 ## Komponenten
 
 * der **Prometheus- Hauptserver**, der Zeitreihendaten speichert und speichert
@@ -92,3 +89,7 @@ Bereichsvektor-Selektoren
 ## Quellen
 
 * [monitor-ubuntu-server-with-prometheus](https://www.howtoforge.com/tutorial/monitor-ubuntu-server-with-prometheus/)
+* [PromQL for Humans](https://timber.io/blog/promql-for-humans/)
+* [Metrics, tracing, and logging](https://peter.bourgon.org/blog/2017/02/21/metrics-tracing-and-logging.html)
+* [ftsdb format](https://github.com/prometheus/prometheus/blob/master/tsdb/docs/format/README.md)
+* []()

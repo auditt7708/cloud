@@ -81,15 +81,16 @@ Grundkommandos
 
 Netzwerk
 
-* [dig Namensauflösung (DNS)](../)
-* [iwconfig Werkzeug für WLAN-Schnittstellen](../)
-* [ip Anzeigen und Konfiguration von Netzwerkgeräten. Nachfolger von ifconfig](../)
+* [dig Namensauflösung (DNS)](../dig)
+* [iwconfig Werkzeug für WLAN-Schnittstellen](../iwconfig)
+* [ip Anzeigen und Konfiguration von Netzwerkgeräten. Nachfolger von ifconfig](../ifconfig)
 * [iw der Nachfolger von iwconfig](../)
 * [netstat Auflistung offener Ports und bestehender Netzwerkverbindungen ("network statistics")](../)
 * [ping Prüfen der Erreichbarkeit anderer Rechner über ein Netzwerk](../)
 * [route 🇩🇪 Anzeige und Änderung der Route (Routingtabelle)](../)
 * [ss der Nachfolger von netstat ("socket statistics")](../)
 * [traceroute Routenverfolgung und Verbindungsanalyse](../)
+* [nc nmap ](../nmap)
 
 Dateiwerkzeuge
 
