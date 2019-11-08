@@ -15,11 +15,10 @@ ssh-add ~/.ssh/id_rsa
 
 `ansible atlante -a "" -u`
 
-## Direkter Datei Transfer
+## Direckter Dateitransfer
 
 `ansible atlanta -m copy -a "src=/etc/hosts dest=/tmp/hosts"`
 
-## Pakete managen
 
 ## Paket Installieren
 

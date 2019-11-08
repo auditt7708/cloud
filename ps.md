@@ -6,7 +6,6 @@ oder
 
 `ps aux`
 
-
 herauszufinden ob einprogramm läuft
 
 `ps -fC einprogramm`
@@ -14,7 +13,6 @@ herauszufinden ob einprogramm läuft
 und
 
 `ps -fC einprogramm,nocheinprogramm,undnocheins `
-
 
 Einen Prozessbaum anzeigen
 
@@ -24,7 +22,6 @@ und
 
 `ps axjf`
 
-
 Benutzer Prozesse ausgeben
 
 `ps -fU USER`
@@ -33,7 +30,7 @@ oder
 
 `ps -fu $USERID`
 
-Alle proccesse die als root laufen ausgeben: 
+Alle proccesse die als root laufen ausgeben:
 
 `ps -U root -u root`
 
@@ -66,26 +63,23 @@ Prozess mit Threads ausgeben
 `ps -fL -C ProcessDeamonName`
 
 Formart der Ausgabe bestimmen
-Auflistung der Formate: 
+Auflistung der Formate:
 
 `ps L`
 
 Beispiel
 
-`ps -eo pid,ppid,user,cmd` oder  ` ps -p 1154 -o pid,ppid,fgroup,ni,lstart,etime`
+`ps -eo pid,ppid,user,cmd` oder  `ps -p 1154 -o pid,ppid,fgroup,ni,lstart,etime`
 
 Suchen des Prozess-namenes via PID
 
 `ps -p $PID -o comm=`
 
-
 Mutter und Kinds Process ausgeben
 
 `ps -C ProcessDeamonName -o pid=`
 
-
 Ressourcen Nutzung ausgeben
-
 
 `ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head`
 
@@ -96,6 +90,3 @@ oder
 PID eines Precess der nicht reagiert
 
 `ps -A | grep -i stress`
-
-
-

@@ -1,14 +1,10 @@
-<<<<<<< HEAD
 # Docker
 
 Inhaltsverzeichnis
 
 ## [Docker unter CentOS7](https://coderleaf.wordpress.com/2017/02/10/run-docker-as-user-on-centos7/)
 
-
 `usermod -aG docker $(whoami)`
-
-
 
 Die Datei _/etc/docker/daemon.json_ anpassen um mit einem Normalen Benutzer zu benutzen.
 
@@ -27,16 +23,11 @@ Notwendige Pakete installieren
 
 Docker activiren und starten und zustand Prüfen.
 
-```
+```s
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo systemctl status docker
 ```
-
-Reposirory =
-registry =
-
-Optionen
 
 Image löschen
 
@@ -59,7 +50,7 @@ Alle abgeleiteten Images löschen
 > Ohne angabe bei `CMD` von etwas was auch weiter leuft wird sich der Container sofort beenden
 > Images die mit _<None>_ angezeit werden nenen sich Dangling Images und müssen mit dem Schalter `-a` aufgrufen werden
 
-## Datein und verzeichnisse
+## Datein und Verzeichnisse
 
 ~/.docker/daemon.json = json Konfiguration für einen Benutzer
 
@@ -216,6 +207,8 @@ Alle abgeleiteten Images löschen
 ## [docker-orchestration-kubernetes-skalierung](../docker-orchestration-kubernetes-skalierung)
 
 ## [docker-orchestration-kubernetes-wordpress](../docker-orchestration-kubernetes-wordpress)
+
+## [Docker Swarm](../docker-swarm)
 
 ## [docker-orchestration-swarm](../docker-orchestration-swarm)
 
