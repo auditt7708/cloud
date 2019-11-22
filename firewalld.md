@@ -1,4 +1,5 @@
-# Administration
+# Administration mit firewalld
+
 
 **default Zone ausgeben**
 
@@ -28,3 +29,20 @@
 
 `firewall-cmd --permanent --zone=trusted --change-interface=docker0`
 
+**Mehere Services hinzufügen**
+
+`firewall-cmd --zone=internal --add-service={http,https,dns} --permanent`
+
+**Services auflisten**
+
+`firewall-cmd --list-services`
+
+**all zonen auflisten**
+
+`firewall-cmd --get-zones`
+
+**Active zonen auflisten**
+
+`firewall-cmd --get-active-zones`
+
+****
