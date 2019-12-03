@@ -1,7 +1,7 @@
 # ELK Stack
 
-Die ELK-Plattform ist eine komplette Log Analytics-Lösung, die auf einer Kombination von drei Open-Source-Tools - Elasticsearch, Logstash und Kibana - aufgebaut ist. 
-ELK nutzt den Open Source Stack von Elasticsearch für tiefe Suche und Datenanalytik; Logstash für das zentrale Protokollierungsmanagement, das das Verschicken und Weiterleiten der Protokolle von mehreren Servern, Protokollanreicherung und Parsing beinhaltet; 
+Die ELK-Plattform ist eine komplette Log Analytics-Lösung, die auf einer Kombination von drei Open-Source-Tools - Elasticsearch, Logstash und Kibana - aufgebaut ist.
+ELK nutzt den Open Source Stack von Elasticsearch für tiefe Suche und Datenanalytik; Logstash für das zentrale Protokollierungsmanagement, das das Verschicken und Weiterleiten der Protokolle von mehreren Servern, Protokollanreicherung und Parsing beinhaltet;
 Und schließlich Kibana für kraftvolle und schöne Datenvisualisierungen. ELK-Stack wird derzeit gepflegt und aktiv unterstützt von der Firma Elastic (ehemals Elasticsearch).
 
 # [elk-stack-logstash](../elk-stack-logstash)
@@ -51,6 +51,7 @@ Einige der Hauptmerkmale von Elasticsearch sind:
 * Es kann horizontal leicht skaliert werden und bietet einfache Integration mit Cloud-basierten Infrastrukturen wie AWS und anderen
 
 ### [Logstash](../logstash)
+
 Logstash ist eine Datenpipeline, die eine Vielzahl von strukturierten und unstrukturierten Daten und Ereignissen, die über verschiedene Systeme generiert werden, sammelt, analysiert und analysiert. Es stellt Plugins zur Verfügung, um eine Verbindung zu verschiedenen Arten von Eingangsquellen und Plattformen herzustellen und ist so konzipiert, dass es Protokolle, Ereignisse und unstrukturierte Datenquellen für die Verteilung in eine Vielzahl von Ausgängen mit der Verwendung seiner Ausgangs-Plugins, nämlich Datei, Stdout (als Ausgabe) effizient verarbeiten kann Auf Konsole mit Logstash) oder Elasticsearch.
 
 Es hat folgende Hauptmerkmale:
@@ -61,7 +62,10 @@ Es hat folgende Hauptmerkmale:
 
 * Plugin-Entwicklung: Benutzerdefinierte Plugins können entwickelt und veröffentlicht werden, und es gibt eine Vielzahl von benutzerdefinierten Plugins bereits verfügbar.
 
+### [filebeat](../filebeat)
+
 ### [Kibana](../kibana)
+
 Kibana ist eine Open Source Apache 2.0 lizenzierte Datenvisualisierungsplattform, die bei der Visualisierung jeglicher Art von strukturierten und unstrukturierten Daten hilft, die in Elasticsearch Indizes gespeichert sind. Kibana ist komplett in HTML und JavaScript geschrieben. Es nutzt die leistungsstarken Such- und Indizierungsfunktionen von Elasticsearch, die durch seine RESTful API ausgesetzt sind, um leistungsstarke Grafiken für die Endbenutzer anzuzeigen. Von der grundlegenden Business Intelligence bis hin zum Echtzeit-Debugging spielt Kibana seine Rolle durch die Darstellung von Daten durch schöne Histogramme, Geomaps, Kreisdiagramme, Graphen, Tabellen und so weiter.
 
 Kibana macht es leicht, große Datenmengen zu verstehen. Seine einfache browserbasierte Schnittstelle ermöglicht es Ihnen, schnell erstellen und teilen dynamische Dashboards, die Änderungen an Elasticsearch Abfragen in Echtzeit anzeigen.
@@ -80,8 +84,7 @@ Einige der wichtigsten Merkmale von Kibana sind wie folgt:
 
 * [Kibana Settings](https://www.elastic.co/guide/en/kibana/current/settings.html)
 
-
-### Übersicht 
+### Übersicht
 
 * [ELK stack Einrichten](../elk-stack-einrichten)
 * [ELK Stack Data Pipeline](../elk-stack-data-pipeline)

@@ -1,4 +1,4 @@
-# Server
+# DNS Server
 
 * [PowerDNS](../power-dns)
 * [Bind9](../bind9)
@@ -6,6 +6,9 @@
 ## Praktische Beispiele
 
 * [Split DNS](../split-dns)
+* [Caching-only DNS Server](../caching-only-dns)
+* [Hidden Master DNS](../hidden-master-dns)
+* [Bind DNS Servers with Failover and Dynamic Updates](ha-dns-server)
 
 ## Tools und Werzeuge
 

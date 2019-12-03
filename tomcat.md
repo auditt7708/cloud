@@ -2,6 +2,84 @@
 
 ERinfache grundlagen zur einrichtung.
 
+Installation aud centos
+
+`yum install httpd-devel apr apr-devel apr-util apr-util-devel gcc make libtool autoconf`
+
+Get the latest source tarball
+
+```
+# wget http://www.eu.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.42-src.tar.gz
+# wget http://www.eu.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.42-src.tar.gz.sha1
+```
+
+Check the integrity of the file:
+
+```
+sha1sum -c tomcat-connectors-1.2.42-src.tar.gz.sha1
+tomcat-connectors-1.2.42-src.tar.gz: OK
+```
+
+Extract the archive
+
+```
+tar xf tomcat-connectors-1.2.42-src.tar.gz
+# cd tomcat-connectors-1.2.42-src/native/
+```
+
+Get the path for apxs
+
+```
+# which apxs
+/usr/sbin/apxs
+```
+
+Configure, compile and install:
+
+```
+# ./configure --with-apxs=/usr/sbin/apxs
+# make
+# libtool --finish /usr/lib64/httpd/modules
+# make install
+```
+### Configuration
+
+Open the file /etc/httpd/conf/workers.properties and add the following to reflect your application details
+
+```
+worker.list=app1,app2
+
+worker.app1.type=ajp13
+worker.app1.host=app1.example.com
+worker.app1.port=8201
+worker.app1.socket_timeout=10
+
+worker.app2.type=ajp13
+worker.app2.host=app2.example.com
+worker.app2.port=8201
+worker.app1.socket_timeout=10
+```
+
+Open the file /etc/httpd/conf/httpd.conf and add the following
+
+```
+LoadModule jk_module modules/mod_jk.so
+
+JkWorkersFile "/etc/httpd/conf/workers.properties"
+JkLogFile     "/var/log/mod_jk.log"
+JkLogLevel  info
+JkLogStampFormat "[%a %b %d %H:%M:%S %Y] "
+JkOptions     +ForwardKeySize +ForwardURICompat -ForwardDirectories
+JkRequestLogFormat     "%w %V %T"
+```
+
+Restart Apache. Check the log file mod_jk.log for any issues
+
+`[Sun Dec 03 10:08:57 2017] [7005:140288381306848] [info] init_jk::mod_jk.c (3595): mod_jk/1.2.42 initialized`
+
+
+
+
 ## Tomcat-Cluster
 
 Cluster einrichten bei Tomcat
@@ -23,7 +101,6 @@ Mit tomcat logs Praktikabel einrichten
 Zu anpassende Datei für änderungen am loggin ist immer die `server.xml` im Verzeichnis `` .
 
 ```xml
-
  <Valve className="org.apache.catalina.valves.AccessLogValve"
                  directory="logs"  prefix="access_log" suffix=".log"
                  pattern="%h %l %u %t %{HOST}i &quot;%r&quot; %s %b %I %S %D" />

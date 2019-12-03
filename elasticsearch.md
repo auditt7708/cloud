@@ -1,8 +1,33 @@
-# Elasticsearch 
+# Elasticsearch
 
 /usr/share/elasticsearch/bin/elasticsearch
 
 ## Elasticsearch absichern
+
+Zur sicherenkomunikation kann, certbot verwendet werden
+
+Dazu muss dKonfigurationsdatei ___ folgerndermassen erweitert werden:
+
+```
+...
+xpack.ssl.key: /etc/elasticsearch/ssl/vmd36612.contaboserver.net/privkey.pem
+xpack.ssl.certificate: /etc/elasticsearch/ssl/vmd36612.contaboserver.net/fullchain.pem
+xpack.ssl.certificate_authorities: [
+  "/etc/elasticsearch/ssl/vmd36612.contaboserver.net/chain.pem",
+  "/etc/elasticsearch/ssl/vmd36612.contaboserver.net/cacert.pem" ]
+
+
+xpack.security.transport.ssl.enabled: true
+xpack.security.http.ssl.enabled: true
+xpack.security.audit.enabled: true
+
+
+xpack.security.audit.enabled: true
+xpack.security.audit.outputs: [ index, logfile ]
+xpack.security.audit.logfile.events.include: [ access_denied, authentication_failed, connection_denied ]
+```
+
+> Info: Es kann sein das die _xpack_ erweiterungeninstalliert werden müssen.
 
 ## Elasticsearch Konfiguration
 

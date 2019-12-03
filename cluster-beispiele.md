@@ -1,6 +1,6 @@
-# Cluster Peacemaker Beisliele mit pcs
+# Cluster Peacemaker mit pcs
 
-Vorausetzungen :
+**Vorausetzungen**
 
 * [Peacemaker LVM DRBD NFS](../peacemaker-lvm-drbd-nfs)
 
@@ -21,3 +21,7 @@ Vorausetzungen :
 * [Pacemaker-disaster-proxy-drbd](../Pacemaker-disaster-proxy-drbd)
 
 * [Pacemaker-gfs-nfs-drbd](../Pacemaker-gfs-nfs-drbd)
+
+* [High Availability Pacemaker Cluster Monitoring](../ha-pacemaker-monitoring)
+
+* [High Availability Pacemaker Cluster Logging](../ha-pacemaker-logging)
