@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-# Beispiel Konfigurationen 
-=======
+
 # Beispiel Konfigurationen
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 
 * [Jenkins](../haproxy-jenkins)
 
-Sources:
+**Sources**
+
 * https://raymii.org/s/tutorials/haproxy_client_side_ssl_certificates.html
 * https://raymii.org/s/tutorials/haproxy_intercept_all_cookies_and_set_secure_attribute.html
 * https://raymii.org/s/snippets/haproxy_redirect_to_ssl_or_any_other_website.html

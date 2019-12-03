@@ -5,12 +5,8 @@
 |Debian|tftpd-hpa|Server|
 
 Installation Übersicht zu den Linux Distributionen
-<<<<<<< HEAD
-*[Debain/Ubuntu](../tftpd-install-debian)
-=======
 
-* [Debain/Ubuntu](../tftpd-install-debian)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
+*[Debain/Ubuntu](../tftpd-install-debian)
 
 Nach Jeder Änderung muss der tftp Server mit :
 
@@ -70,8 +66,4 @@ benutzt werden.
 Source:
 
 * [gtkbd](http://www.gtkdb.de/index_34_2792.html)
-<<<<<<< HEAD
 * [Debian tftp Wiki](https://wiki.debian.org/PXEBootInstall?action=show&redirect=DebianInstaller%2FNetbootPXE)
-=======
-* [Debian tftp Wiki](https://wiki.debian.org/PXEBootInstall?action=show&redirect=DebianInstaller%2FNetbootPXE)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

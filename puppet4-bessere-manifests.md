@@ -1,12 +1,7 @@
 # Einführung
 
-<<<<<<< HEAD
-Ihre Puppenmanifeste sind die lebende Dokumentation für Ihre gesamte Infrastruktur. 
-Halten Sie sie ordentlich und gut organisiert, um es einfacher zu pflegen und zu verstehen. 
-=======
 Ihre Puppenmanifeste sind die lebende Dokumentation für Ihre gesamte Infrastruktur.
 Halten Sie sie ordentlich und gut organisiert, um es einfacher zu pflegen und zu verstehen.
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 Puppet gibt Ihnen eine Reihe von Werkzeugen, um dies zu tun, wie folgt:
 
 * Arrays
@@ -17,20 +12,6 @@ Puppet gibt Ihnen eine Reihe von Werkzeugen, um dies zu tun, wie folgt:
 
 Wir werden sehen, wie man all diese und mehr benutzt. Wenn Sie das Kapitel lesen, probieren Sie die Beispiele aus und schauen Sie durch Ihre eigenen Manifeste, um zu sehen, wo diese Features Ihnen helfen könnten, Ihren Puppet code zu vereinfachen und zu verbessern.
 
-<<<<<<< HEAD
-#### [Verwenden von Arrays und Ressourcen](../puppet-fort-manifests-arrays-ressourcen)
-#### [Verwenden von Ressourcenvorgaben](../puppet-fort-verwenden-ressourcenvorgaben)
-#### [definierte Typen verwenden](../puppet-fort-definierte-typen)
-#### [Tags Benutzen](../puppet-fort-tags)
-#### [Verwenden von run tags](../puppet-fort-run-tags)
-#### [Verwenden von Rollen und Profielen](../puppet-fort-rollen-profile)
-#### [Parsen von parametern zu Klassen](../puppet-fort-parsen-parameter-klassen)
-#### [Parsen von parametern von Hira](../puppet-fort-parsen-parameter-hira)
-#### [Schreiben von wiederverwendbaren Plattform unabhängiger manifests](../puppet-fort-reuable-manifests)
-#### [Informationen über die Umgebung bekommen](../puppet-fort-umgebung)
-#### [Importiren von dynamischen Informationen](../puppet-fort-import-dyn-infos)
-#### [Parsen von argumenten bei shell commandos](../puppet-fort-parsen-arg-shell)
-=======
 ## [Verwenden von Arrays und Ressourcen](../puppet-fort-manifests-arrays-ressourcen)
 
 ## [Verwenden von Ressourcenvorgaben](../puppet-fort-verwenden-ressourcenvorgaben)
@@ -54,4 +35,3 @@ Wir werden sehen, wie man all diese und mehr benutzt. Wenn Sie das Kapitel lesen
 ## [Importiren von dynamischen Informationen](../puppet-fort-import-dyn-infos)
 
 ## [Parsen von argumenten bei shell commandos](../puppet-fort-parsen-arg-shell)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

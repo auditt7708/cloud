@@ -66,8 +66,4 @@ Versions Veränderungen/Besonderheiten bei Puppet
 
 ## [Erweiterte Cluster Administration](../kubernetes-adv-administration)
 
-<<<<<<< HEAD
 ## [Logging und Monitorring](../kubernetes-logging-monitorring)
-=======
-## [Logging und Monitorring](../kubernetes-logging-monitorring)
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
