@@ -1,21 +1,26 @@
 # Puppet Basics
+
 * [Puppet 4 Installation via Ruby gem](../puppet4-gem-install)
 * [Puppet 4 Basics](../puppet4-basics)
 
-# [Puppetdb](./puppetdb)
+## [Puppetdb](./puppetdb)
 
-# Module
+## Module
+
 OpenSCAP = [OpebSCAP](https://github.com/theforeman/puppet-foreman_scap_client)
 
-# Praxis Beispiele
+## Praxis Beispiele
+
 * [devops-puppet-docker-kubernetes](../devops-puppet-docker-kubernetes)
 
-# Tools Hilfen
+## Tools Hilfen
+
 * [librarian-puppet](http://librarian-puppet.com/)
 * [puppetexplorer](https://github.com/dalen/puppetexplorer)
 * [puppetboard](https://github.com/voxpupuli/puppetboard)
 
-# Ruby gem Plugins
+## Ruby gem Plugins
+
 * [puppet-rundeck ](http://www.rubydoc.info/gems/puppet-rundeck/0.0.9)
 * [Puppet parallel-ssh integration](http://www.rubydoc.info/gems/puppet-pssh/0.3.2)
 * [Interact with the Puppet REST Api](https://rubygems.org/gems/puppet-rest)
@@ -26,7 +31,9 @@ OpenSCAP = [OpebSCAP](https://github.com/theforeman/puppet-foreman_scap_client)
 * [Puppet's accceptance testing harness](https://rubygems.org/gems/beaker)
 
 ## Documentation
+
 * [puppetcookbook](https://www.puppetcookbook.com/posts/install-rubygem.html)
 
-### Gute anleitungen und ToDus
+## Gute anleitungen und ToDus
+
 * [install-and-configure-puppet](https://www.linode.com/docs/applications/configuration-management/install-and-configure-puppet)

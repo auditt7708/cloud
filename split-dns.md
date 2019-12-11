@@ -4,7 +4,7 @@
 
 /etc/bind/named.conf.local
 
-```
+```s
 zone "example.com" {
     type master;
     file "/etc/bind/db.example.com";
@@ -13,7 +13,7 @@ zone "example.com" {
 
  /etc/bind/db.example.com
 
-```
+```s
 ; example.com
 $TTL    604800
 @       IN      SOA     ns1.example.com. root.example.com. (
@@ -34,7 +34,7 @@ client1 IN      A       192.0.2.201 ; We connect to client1 very often.
 
 /etc/bind/named.conf.local
 
-```
+```s
 acl slaves {
     195.234.42.0/24;    // XName
     193.218.105.144/28; // XName
@@ -44,7 +44,7 @@ acl slaves {
 
 and we change the zone declaration to
 
-```
+```s
 zone "example.com" {
     type master;
     file "/etc/bind/db.example.com";
@@ -56,7 +56,7 @@ Internals and externals
 
 On /etc/bind/named.conf.local we add the following definition (at the top or below the definition of slaves)
 
-```
+```s
 acl internals {
     127.0.0.0/8;
     10.0.0.0/24;
@@ -65,7 +65,7 @@ acl internals {
 
 We will use a new feature of BIND9 called views. A view let's put a piece of configuration inside a conditional that can depend on a number of things, in this case we'll just depend on internals. We replace the zone declaration at /etc/bind/named.conf.local with:
 
-```
+```s
 view "internal" {
     match-clients { internals; };
     zone "example.com" {
@@ -89,7 +89,7 @@ We also changed the path, we will have to create the directory /etc/bind/externa
 
 On /etc/bind/internals/db.example.com we put a zone file similar to the counterpart on external but holding the internal IPs:
 
-```
+```s
 ; example.com
 $TTL    604800
 @       IN      SOA     ns1.example.com. root.example.com. (
@@ -117,7 +117,7 @@ But we are a small, smart start up, we can do better than copy-paste each modifi
 
 What we will do is include the external zone file in the internal file this way
 
-```
+```s
 $include "/etc/bind/external/db.example.com"
 @       IN      A       10.0.0.1
 boss    IN      A       10.0.0.100
@@ -129,7 +129,7 @@ lab     IN      A       10.0.0.103
 
 and voila! Finding the $include directive in the current documentation was hard.. Just remember to change the serial of the external zone file whenever you change the internal one, but it is not a big deal, if you forget, nothing bad will happen since you are not likely to have caching servers inside your own small network.
 
-Security
+### Security
 
 It is not recommended to use the same DNS server as primary for some domain (in our case example.com) and as caching DNS server, but in our case we are forced to do it. From the outside world 192.0.2.1 is the primary DNS server for example.com, from our own internal network, 192.0.2.1 (or its private address, 10.0.0.1) is our caching name server that should be configured as the nameserver to use on each workstation we have.
 
@@ -137,7 +137,7 @@ One of the problems is that someone might start using our caching nameserver fro
 
 To improve our security a bit, we'll add a couple of directives to the configuration file
 
-```
+```s
 view "internal" {
     match-clients { internals; };
     recursion yes;
@@ -160,11 +160,11 @@ view "external" {
 
 That will prevent anyone on the dangerous Internet to use our server recursively while we, on our own network, can still do it.
 
-Configuration files
+### Configuration files
 
 /etc/bind/named.conf.local
 
-```
+```s
 acl slaves {
     195.234.42.0/24;    // XName
     193.218.105.144/28; // XName
@@ -197,7 +197,7 @@ view "external" {
 
 /etc/bind/externals/db.example.com
 
-```
+```s
 ; example.com
 $TTL    604800
 @       IN      SOA     ns1.example.com. root.example.com. (
@@ -218,7 +218,7 @@ client1 IN      A       192.0.2.201 ; We connect to client1 very often.
 
 /etc/bind/internals/db.example.com
 
-```
+```s
 $include "/etc/bind/external/db.example.com"
 @       IN      A       10.0.0.1
 boss    IN      A       10.0.0.100
@@ -232,7 +232,7 @@ lab     IN      A       10.0.0.103
 
 /etc/named.conf on the master
 
-```
+```s
 options {
         listen-on port 53 { 127.0.0.1; 192.168.202.101;};
         #listen-on-v6 port 53 { ::1; };
@@ -282,7 +282,7 @@ The basic options and logging remain as they were. The rest of the configuration
 31-35: contains the view called internal-view and it matches the ACL internal-acl. So hosts that are in the subnet 192.168.202.0/24 will end up in this view
 37-41: contains the view called external-view and it matches all hosts that weren’t matched before. So hosts that are not valid for the internal-acl will end up here.
 
-Zone configuration
+### Zone configuration
 
 As you can see, the zone configuration is excluded from named.conf so we can re-use the common zone definitions (in /etc/named.common.zones) for both views. A restriction of using views is that all zones must be part of one or more views.
 
@@ -290,7 +290,7 @@ As mentioned earlier, we want the zone blaat.test to be different for the extern
 
 The internal zone definitions are made in /etc/named.internal.zones
 
-```
+```s
 zone "blaat.test" {
         type master;
         file "/var/named/data/db_internal.blaat.test";
@@ -302,7 +302,7 @@ zone "blaat.test" {
 
 The external zone definitions are made in /etc/named.external.zones
 
-```
+```s
 zone "blaat.test" {
         type master;
         file "/var/named/data/db_external.blaat.test";
@@ -314,7 +314,7 @@ zone "blaat.test" {
 
 Finally, the common zone definitions are made in /etc/named.common.zones
 
-```
+```s
 zone "miauw.test" {
         type master;
         file "/var/named/data/db.miauw.test";
@@ -334,8 +334,7 @@ When looking at the zones defined in named.internal.zones and named.external.zon
 
 /var/named/data/db_internal.blaat.test
 
-
-```
+```s
 @       IN SOA  ns.blaat.test admin.blaat.test. (
                                 2014082202      ; serial
                                         1D      ; refresh
@@ -351,7 +350,7 @@ host2.blaat.test.       IN      A               192.168.202.20
 
 /var/named/data/db_external.blaat.test
 
-```
+```s
 @       IN SOA  ns.blaat.test admin.blaat.test. (
                                 2014082202      ; serial
                                         1D      ; refresh
@@ -373,7 +372,7 @@ After changing all of the above files, reload the changes
 
 Test to see if the server replies different when the request originates from a source within the specified subnet or from outside the subnet
 
-```
+```s
 nslookup host1.blaat.test localhost
 Server: localhost
 Address: 127.0.0.1#53
@@ -381,7 +380,7 @@ Name: host1.blaat.test
 Address: 10.10.10.10
 ```
 
-```
+```s
 nslookup host1.blaat.test 192.168.202.101
 Server: 192.168.202.101
 Address: 192.168.202.101#53
@@ -393,7 +392,7 @@ As you can see in the example, the server gives a different answer for a query t
 
 As a last test, we can check if the common zone is known from within both views and that the answer is equal
 
-```
+```ss
 nslookup host1.miauw.test localhost
 Server: localhost
 Address: 127.0.0.1#53
@@ -401,7 +400,7 @@ Name: host1.miauw.test
 Address: 192.168.202.10
 ```
 
-```
+```s
 nslookup host1.miauw.test 192.168.202.101
 Server: 192.168.202.101
 Address: 192.168.202.101#53
@@ -432,7 +431,7 @@ The keygen generates two files, a.key and a .private. We only need they key whic
 
 Now that we have our keys, we can start adjusting our /etc/named.conf on the master to restrict zone-transfers to the slave, depending on the key.
 
-```
+```s
 options {
         listen-on port 53 { 127.0.0.1; 192.168.202.101;};
         #listen-on-v6 port 53 { ::1; };
@@ -502,7 +501,7 @@ On the slave, we need to make similar changes as we first did to our master to m
 
 First, we’ll change the /etc/named.conf of the slave
 
-```
+```s
 options {
         listen-on port 53 { 127.0.0.1; 192.168.202.102;};
         #listen-on-v6 port 53 { ::1; };
@@ -560,7 +559,7 @@ The only difference between the slave and master’s configuration, besides the 
 
 /etc/named.internal.zones
 
-```
+```s
 zone "blaat.test" {
         type slave;
         file "/var/named/data/db_internal.blaat.test";
@@ -573,7 +572,7 @@ zone "blaat.test" {
 
 /etc/named.external.zones
 
-```
+```s
 zone "blaat.test" {
         type slave;
         file "/var/named/data/db_external.blaat.test";
@@ -586,7 +585,7 @@ zone "blaat.test" {
 
 /etc/named.common.zones
 
-```
+```s
 zone "miauw.test" {
         type slave;
         file "/var/named/data/db.miauw.test";
@@ -613,7 +612,7 @@ After changing the configuration on both the slave and master, we can reload the
 
 After reload the configuration of the master and restarting the slave, the /var/named/data/-directory, where we chose to store our zone-data on the slave should contain some data, transferred from the master
 
-```
+```s
  sudo ls -l /var/named/data
 total 20
 -rw-r--r--. 1 named named 338 Aug 25 11:32 db_external.blaat.test
@@ -624,7 +623,7 @@ total 20
 
 Since we have data here, the transfer between the master and slave is working fine. This should also be visible in /var/named/data/named.run. To test of the split horizon configuration works on the slave too, we can test it.
 
-```
+```s
 nslookup host1.blaat.test localhost
 Server: localhost
 Address: 127.0.0.1#53
@@ -632,7 +631,7 @@ Name: host1.blaat.test
 Address: 10.10.10.10
 ```
 
-```
+```s
 nslookup host1.blaat.test 192.168.202.102
 Server: 192.168.202.102
 Address: 192.168.202.102#53
@@ -642,7 +641,7 @@ Address: 192.168.202.10
 
 In case the transfer wouldn’t initiate correctly or the data isn’t correct while you are sure that your configuration is, you can force a retransfer of the zones with the follow commands
 
-```
+```s
 sudo rndc retransfer blaat.test IN internal-view
 sudo rndc retransfer blaat.test IN external-view
 ```

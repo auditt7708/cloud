@@ -2,29 +2,30 @@
 
 ## systemctl
 
-**Abhängigkeiten Anzeigen**
+Abhängigkeiten Anzeigen
 
 `systemctl list-dependencies $service`
 
 ## journalctl
 
-**Boot vprgänge auflisten**
+Boot vprgänge auflisten
 
 `journalctl --list-boots`
 
-**Gefilter nach datum**
+Gefilter nach datum
 
 `journalctl --since "2016-07-01" --until "2 minutes ago"`
 
-**Rechte Prüfen**
+Rechte Prüfen
 
 `usermod -aG systemd-journal BENUTZERNAME`
 
-**Filter nach Datum und Fehler Level**
+Filter nach Datum und Fehler Level
 
 `journalctl -p err -b --since "2019-01-11"`
 
 ## Path-Units
+
 Mit Hilfe von systemd Path-Units können Dateien oder Verzeichnisse auf Änderungen hin überwacht werden. Tritt ein definiertes Ergebnis wie z.B. das Anlegen einer Datei ein, wird eine Service-Unit ausgeführt.
 
 ## Reposyrorys
@@ -33,7 +34,7 @@ Mit Hilfe von systemd Path-Units können Dateien oder Verzeichnisse auf Änderun
 
 ## APT und dep
 
-**Repository bei apt**
+Repository bei apt
 
 # System Administrions Tools
 
@@ -49,15 +50,15 @@ Benutzerverwaltung
 * [usermod Bearbeitung eines Benutzerkontos ("modify user")](../)
 * [chfn erweiterte Benutzerinformationen anpassen](../chfn)
 
-Prozesssteuerung
+## Prozesssteuerung
 
 * [ps](../ps)
 
-Service Management
+## Service Management
 
 * [Systemd](../systemd)
 
-Grundkommandos
+### Grundkommandos
 
 * [cat Verknüpfung von Dateien ("concatenate")](../cat)
 * [cd Wechsel des Arbeitsverzeichnisses ("change directory")](./cd)
@@ -79,7 +80,7 @@ Grundkommandos
 * [touch Änderung der Zugriffs- und Änderungszeitstempel einer Datei oder eines Verzeichnisses (auch: Erstellen von Dateien)](../touch)
 * [unlink Löschen einer Datei](../unlink)
 
-Netzwerk
+### Netzwerk
 
 * [dig Namensauflösung (DNS)](../dig)
 * [iwconfig Werkzeug für WLAN-Schnittstellen](../iwconfig)
@@ -92,7 +93,7 @@ Netzwerk
 * [traceroute Routenverfolgung und Verbindungsanalyse](../)
 * [nc nmap ](../nmap)
 
-Dateiwerkzeuge
+### Dateiwerkzeuge
 
 * [basename Rückgabe des Dateinamens](../basename)
 * [lsof Anzeige offener Dateien ("list open files")](../lsof)
@@ -110,7 +111,6 @@ Systemüberwachung
 Pager
 
 * [less](../system-administration-pager-less)
-
 
 Wietere Nützliche Befehle
 
@@ -132,15 +132,15 @@ Packet Managemnet
 
 RPM
 
-* [](../)
-* [](../)
-* [](../)
+* [RPM](../rpm)
+* [YUM](../yum)
+* [Repositories](../repositories)
 * [](../)
 
 APT und dep
 
-* [](../)
-* [](../)
+* [APT](../apt)
+* [DEP](../dep)
 * [](../)
 * [](../)
 

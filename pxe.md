@@ -24,7 +24,7 @@ Dadurch werden die Pakete und deren Abhängigkeiten installiert.
 
 2. Als nächstes müssen wir unseren TFTP-Server konfigurieren. Verwenden Sie Ihren bevorzugten Editor, bearbeiten Sie die TFTP-Konfigurationsdatei unter `/etc/default/tftpd-hpa`. Standardmäßig sollte es dem ähneln:
 
-```
+```s
 # /etc/default/tftpd-hpa
 TFTP_USERNAME="tftp"
 TFTP_DIRECTORY="/var/lib/tftpboot"
@@ -34,7 +34,7 @@ TFTP_OPTIONS="--secure"
 
 Sie müssen dies ändern, damit es als Daemon laufen kann. Passen Sie die Datei an, um die folgende Zeile hinzuzufügen:
 
-```
+```s
 # /etc/default/tftpd-hpa
 RUN_DAEMON="yes"
 TFTP_USERNAME="tftp"
@@ -60,7 +60,8 @@ Beachten Sie, dass ich es an den Standardspeicherort für den TFTP-Server kopier
 `/var/lib/tftpboot/pxelinux.cfg/default`
 
 Fügen Sie folgendes ein:
-```
+
+```s
 label linux
         kernel ubuntu-installer/amd64/linux
         append preseed/url=http://<<NAME OF BOOT SERVER>>/ks.cfg vga=normal initrd=ubuntu-installer/amd64/initrd.gz ramdisk_size=16432 root=/dev/rd/0 rw  --
@@ -82,13 +83,15 @@ Wenn du noch keinen DHCP-Server hast, dann ist es ziemlich einfach zu installier
 `/etc/dhcp/dhcpd.conf`
 
 Die ersten Optionen, die wir einstellen müssen, sind unsere Domain- und Nameserver. Standardmäßig sollte die Konfiguration wie folgt aussehen:
-```
+
+```s
 option domain-name "example.org";
 option domain-name-servers ns1.example.org, ns2.example.org;
 ```
 
 Wir müssen das ändern, um unserem Setup zu entsprechen. In meinem Fall sieht es so aus:
-```
+
+```s
 option domain-name "stunthamster.com";
 option domain-name-servers ns1.stunthamster.com, ns2.stunthamster.com;
 ```
@@ -98,7 +101,8 @@ option domain-name-servers ns1.stunthamster.com, ns2.stunthamster.com;
 Stellen Sie sicher, dass es unkommentiert ist. Damit wird sichergestellt, dass der DHCP-Server zum Verwalten des Netzwerkbereichs verwendet wird und die Kunden Leasingstücke anmutig aufgeben und so weiter.
 
 10. Schließlich können wir die DHCP-Konfiguration für unser Netzwerk erstellen. Dies sollte am unteren Rand der Konfigurationsdatei hinzugefügt werden. Noch einmal ist das folgende Beispiel für mein Netzwerk. Sie sollten die Werte für Ihren eigenen IP-Bereich ersetzen:
-```
+
+```s
 subnet 10.0.1.0 netmask 255.255.255.0 {
  range 10.0.1.20 10.0.1.200;
  option domain-name-servers ns1.stunthamster.com;
@@ -114,7 +118,7 @@ subnet 10.0.1.0 netmask 255.255.255.0 {
  default-lease-time 600;
  max-lease-time 7200;
  }
-``` 
+```
 
 Notieren Sie sich die `next-server` Option: Dies sagt dem Client, wo Ihr TFTP-Server ist und sollte auf Ihren Server passen.
 
@@ -128,39 +132,45 @@ Für unsere nächste Aufgabe gehen wir weiter und konfigurieren unseren Nginx Se
 Obwohl ich Nginx verwende, kannst du jeden beliebigen HTTP-Server deiner Wahl verwenden, zum Beispiel Apache. Nginx ist mein bevorzugter Server in diesen Fällen, da es klein ist, einfach zu konfigurieren und sehr performant bei der Bereitstellung von statischen Assets:
 
 1. Zuerst installieren wir nginx mit folgendem Befehl:
+
 `$ sudo apt-get install nginx`
 
 2. Als nächstes müssen wir es konfigurieren, um das Installationsmedium zu bedienen, das wir im vorherigen Schritt kopiert haben. Öffnen Sie mit Ihrem Editor die folgende Konfigurationsdatei:
+
 `/etc/nginx/sites-available/default`
 
 Standardmäßig ähnelt die Konfiguration wie das folgende Code-Snippet (ich habe Kommentare für Klarheit entfernt):
-```
+
+```s
 server {
          listen 80 default_server;
          listen [::]:80 default_server ipv6only=on;
          root /usr/share/nginx/html;
          index index.html index.htm;
          server_name localhost;
-         location / 
+         location /
          {
            try_files $uri $uri/ =404;
          }
        }
 ```
+
 Ändern Sie es wie folgt:
-```
+
+```s
 server {
          listen 80 <<BOOT SERVERNAME>>;
          listen [::]:80 <<BOOT SERVERNAME>>ipv6only=on;
          root /var/lib/tftpboot/;
          index;
          server_name <<BOOT SERVERNAME>>;
-         location / 
+         location /
          {
            try_files $uri $uri/ =404;
          }
        }
 ```
+
 Ersetzen Sie die Zeile, die` << BOOT SERVERNAME >>` im vorherigen Beispiel mit dem DNS-Namen Ihres Boot-Servers liest.
 
 3. Diese Konfiguration dient dem Inhalt Ihres TFTP-Verzeichnisses und ermöglicht es Ihren Clients, die Ubuntu-Installationsdateien herunterzuladen. Denken Sie daran, dass diese Konfiguration keine Sicherheit hat und ermöglicht es den Menschen, den Inhalt des Verzeichnisses zu durchsuchen. So stellen Sie sicher, dass Sie in diesem Verzeichnis keine sensible Art platzieren!
@@ -179,7 +189,7 @@ Sie müssen diese Option nicht unbedingt einstellen. Wenn es unberührt bleibt, 
 
 6. Lassen Sie uns mit einigen grundlegenden Einstellungen, welche Sprache zu verwenden, was den Hostnamen zu setzen, unser Gebietsschema für die Zwecke der Tastatur, und die Einstellung der Zeitzone des Servers, den wir bauen. Wir können dies mit dem folgenden Code-Snippet tun:
 
-```
+```s
 d-i debian-installer/locale string en_UK.utf8
 d-i console-setup/ask_detect boolean false
 d-i console-setup/layout string UK
@@ -193,9 +203,9 @@ d-i debconf debconf/frontend select Noninteractive
 d-i pkgsel/install-language-support boolean false
 ```
 
-
 7. Als nächstes müssen wir dem Installateur mitteilen, wie die Festplatten auf unserem Host konfiguriert werden. Das folgende Snippet nimmt einen einzelnen Festplattenhost an und entfernt alle vorhandenen Partitionen. Ich habe auch den Partitionsmanager angewiesen, die Gesamtheit der Festplatte zu verwenden und ein **Logical Volume Manager (LVM)** Gerät einzurichten:
-```
+
+```s
 d-i partman-auto/method string lvm
 d-i partman-auto/purge_lvm_from_device boolean true
 d-i partman-lvm/confirm boolean true
@@ -213,10 +223,11 @@ d-i partman-auto-lvm/guided_size string max
 
 1. Der nächste Satz von Antworten beschäftigt sich mit der Benutzerverwaltung:
 
-Zuerst müssen wir unseren Standardbenutzer konfigurieren. Standardmäßig erlaubt Ihnen Ubuntu nicht, sich direkt als `root`-Benutzer anzumelden (eine unglaublich gute Übung!), Sondern ermöglicht es Ihnen, einen Benutzer zu erstellen, der für Administrationszwecke verwendet werden soll. Das folgende Snippet wird einen Benutzer von `adminuser `mit einem `passwort `des Passwortes erstellen. Ändern Sie diese Werte entsprechend Ihrem eigenen Setup.
+Zuerst müssen wir unseren Standardbenutzer konfigurieren. Standardmäßig erlaubt Ihnen Ubuntu nicht, sich direkt als `root`-Benutzer anzumelden (eine unglaublich gute Übung!), Sondern ermöglicht es Ihnen, einen Benutzer zu erstellen, der für Administrationszwecke verwendet werden soll. Das folgende Snippet wird einen Benutzer von `adminuser`mit einem `passwort`des Passwortes erstellen. Ändern Sie diese Werte entsprechend Ihrem eigenen Setup.
 
 Im folgenden Beispiel wird ein verschlüsseltes Passwort verwendet. Dies stellt sicher, dass die Leute das Passwort für Ihren Standardbenutzer nicht sehen können, indem Sie einfach Ihr TFTP-Repository durchsuchen. Um das verschlüsselte Passwort zu erstellen, kannst du den Befehl `mkpasswd -m sha-512` in einer Linux-Befehlszeile verwenden:
-```
+
+```s
 d-i passwd/user-fullname string adminuser
 d-i passwd/username string changeme
 d-i passwd/user-password-crypted password <<CRYPTED_PASSWORD>>
@@ -224,7 +235,8 @@ d-i user-setup/encrypt-home boolean false
 ```
 
 2. Schließlich sagen wir dem Installateur, welche Pakete als Teil der Basisinstallation installiert werden sollen. Im Allgemeinen möchten Sie diese Pakete auf diejenigen beschränken, die Sie benötigen, um Ihr Konfigurationsmanagement-Tool auszuführen und sonst nichts. Dies hält die Basisinstallation klein und sorgt auch dafür, dass Sie Pakete über Ihr Konfigurationsmanagement-Tool verwalten. Das folgende Snippet installiert einen Openssh-Server, damit Sie sich bei der Erstellung des Servers anmelden und die automatischen Updates deaktivieren können. Vielleicht möchten Sie dies an, aber ich ziehe es vor, es zu verlassen, damit ich weiß, dass nur die Pakete, die ich explizit installieren, auf die Server gedrückt werden, die ich baue.
-```
+
+```s
 d-i pkgsel/include string openssh-server
 d-i pkgsel/upgrade select full-upgrade
 d-i grub-installer/only_debian boolean true

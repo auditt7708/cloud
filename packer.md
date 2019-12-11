@@ -12,7 +12,7 @@ Packer ersetzt nicht die Konfigurationsverwaltung wie Chef oder Puppet.
 Beim Erstellen von Images kann Packer Tools wie Chef oder Puppet verwenden, um Software auf dem Image zu installieren.
 
 Ein Maschinenabbild ist eine einzelne statische Einheit, die ein vorkonfiguriertes Betriebssystem und installierte Software enthält, mit der schnell neue laufende Maschinen erstellt werden können.
-Maschinenbildformate ändern sich für jede Plattform. 
+Maschinenbildformate ändern sich für jede Plattform.
 Beispiele hierfür sind AMIs für EC2- , VMDK/VMX-Dateien für VMware, OVF-Exporte für VirtualBox usw.
 
 ## Anwendungsfälle
@@ -40,7 +40,6 @@ Wenn sich Ihre Software ändert, können Sie Appliances automatisch mit der vori
 Potentielle Benutzer können dann mit Ihrer Software beginnen, indem Sie sie in der Umgebung ihrer Wahl bereitstellen.
 
 Software mit komplexen Anforderungen zusammenzustellen, war noch nie so einfach. Oder erfreulich, wenn Sie mich fragen.
-
 
 ## Boot Kommandos
 

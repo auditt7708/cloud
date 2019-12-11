@@ -1,7 +1,6 @@
 # Netzwerkkonfiguration
 
 | Typ | MAC | Gerätebezeichner | DNS-Name | Domäne | IPv4-Subnetz | IPv6-Subnetz | IPv4-Adresse | IPv6-Adresse |
->>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | enp1s0 | 70:85:c2:20:31:23 | enp1s0 |  |  |  |  |  |  |
 | enp3s0 | 70:85:c2:20:31:23 | enp1s0 |  |  |  |  |  |  |

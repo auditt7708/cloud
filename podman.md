@@ -1,5 +1,7 @@
 # Podman
 
+deamonlose container engine die ohne root Berechtigungen ausgeführt werden.
+
 ## Kommandos
 
 Pull eines Images
@@ -24,6 +26,29 @@ Container einem Pod hinzufügen
 
 `podman ps --all --pod`
 
+Einen einfachencontainer starten
+
+```s
+podman run -dt -p 8080:8080/tcp -e HTTPD_VAR_RUN=/var/run/httpd -e HTTPD_MAIN_CONF_D_PATH=/etc/httpd/conf.d \
+                  -e HTTPD_MAIN_CONF_PATH=/etc/httpd/conf \
+                  -e HTTPD_CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/httpd/ \
+                  registry.fedoraproject.org/f27/httpd /usr/bin/run-httpd
+```
+
+## Container Migration
+
+Quell System
+
+```
+sudo podman container checkpoint <container_id> -e /tmp/checkpoint.tar.gz
+scp /tmp/checkpoint.tar.gz <destination_system>:/tmp
+```
+
+Ziel System
+
+```
+sudo podman container restore -i /tmp/checkpoint.tar.gz
+```
 
 ## Quellen
 

@@ -11,4 +11,3 @@ IPv6-Präfix: 2002:4d0a:aa5e::/56, Gültigkeit: 6792/3192s
 | Typ | MAC | Gerätebezeichner | DNS-Name | Domäne | IPv4-Subnetz | IPv6-Subnetz | IPv4-Adresse | IPv6-Adresse |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Asus || ASUS | r1.local | local | 192.168.4.0/24 ||192.168.4.254||
-

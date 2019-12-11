@@ -2,12 +2,10 @@
 
 In der Datei `/etc/salt/grains` sind eigene Variablen definiert
 
-Begriffe: 
+Begriffe:
 
 * Minions
 * Pillars
-* 
-
 
 ## Administration
 
@@ -48,7 +46,7 @@ Systeme via Grain auswählen
 
 Ein Minimalbeispiel eigener grains ist, in /etc/salt/grains ein key: value-Paar zu setzen:
 
-```
+```s
 sed 's/^[ ]*//' <<EOF | sudo tee -a /etc/salt/grains
 SLA: 24/7-Economie
 EOF
@@ -103,8 +101,7 @@ Wenn wir z.b nun unser Beispile erweitern
 Da grains allen Minins zugänlich sind sollte diese nicht für z.B Benutzerpasswörter oder Lizenzschlüssel verwendung finden.
 Dafür gibt es die pillars bei Saltstack.
 
-Nehmen wir an, das 
-
+Nehmen wir an, das
 
 ## Saltstack master of masters Einrichten
 

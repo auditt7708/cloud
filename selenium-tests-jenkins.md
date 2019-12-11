@@ -1,10 +1,11 @@
+# Selenium Tests mit jenkins
+
 Selen arbeitet, indem er einen Browser aufruft und auf einen Webserver zeigt, auf dem Ihre Anwendung läuft, und dann den Browser ferngesteuert, indem er sich in die JavaScript- und DOM-Ebenen integriert.
 
 Wenn Sie die Tests entwickeln, können Sie zwei grundlegende Methoden verwenden:
 
-*     Notieren Sie Benutzerinteraktionen im Browser und speichern Sie den resultierenden Testcode für die Wiederverwendung 
-
-*     Schreiben Sie die Tests von Scratch mit Selenium Test API 
+* Notieren Sie Benutzerinteraktionen im Browser und speichern Sie den resultierenden Testcode für die Wiederverwendung
+* Schreiben Sie die Tests von Scratch mit Selenium Test API
 
 Viele Entwickler bevorzugen es, Tests als Code mit der Selen-API zu Beginn zu schreiben, was mit einem testgetriebenen Entwicklungsansatz kombiniert werden kann.
 

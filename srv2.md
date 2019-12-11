@@ -21,7 +21,6 @@
 
 ## FsTab
 
-
 | Quelle | Mount | Type | options | dump | pass|
 | :--------: | :--------: | :--------: | :--------: | :--------: | :--------: |
 |UUID=c1baae53-b55a-4b31-b191-ab80cef17471 | /mnt/data   | xfs  | defaults | 1| 2|
@@ -32,16 +31,18 @@
 
 ## Verzeichnisse und Zweck
 
-**/mnt/backup/**
+/mnt/backup/
+
 Backup der localen systeme. Hier ist auch die Dokumentation pdf Datein sowie Daten aufgehoben und werden mit.
 
-**/mnt/drbd/**
+/mnt/drbd/
+
 Mount für drbd
 
-**/mnt/media/**
+/mnt/media/
+
 Erstes unterverzeichnis ist
 Bilder  musik  Projekte  Software  truetypes  videos
-
 
 df ausgabe
 

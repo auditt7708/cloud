@@ -1,5 +1,7 @@
 # Router r1
 
+nicht inbenutzung 11-12-2019
+
 ## Netzwerk
 
 | Typ | MAC | Gerätebezeichner | DNS-Name | Domäne | IPv4-Subnetz | IPv6-Subnetz | IPv4-Adresse | IPv6-Adresse |

@@ -1,9 +1,8 @@
 # /etc/sudoers
+
 Grundsetzlicher aufbau
 
-
-
-```
+```s
 #
 # This file MUST be edited with the 'visudo' command as root.
 #
