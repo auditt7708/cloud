@@ -1,8 +1,8 @@
-# Git Allegemein Infos
+# Git Allgemein Infos
 
 Begriffe
 
-- Git directory = Lokaller clone des Repos
+- Git directory = Lokaler clone des Repos
 - Git working tree = pull vom Git directory
 - Git Stag = Lokalle änderungen
 
@@ -20,7 +20,7 @@ Dabei ist https://github.com/USERNAME/REPOSITORY_xyz.git das neue Remote repo
 
 Zum Überprüfen kann `git remote -v` benutzt werden.
 
-**Kopiren von einer oder zwei Datein von einem branch zum andern. Hier von _dev_.**
+**Kopieren von einer oder zwei Datein von einem branch zum andern. Hier von _dev_.**
 
 `git checkout dev -- path/to/your/file.`
 
