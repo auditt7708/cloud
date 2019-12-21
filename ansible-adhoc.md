@@ -7,60 +7,55 @@ ssh-agent bash && \
 ssh-add ~/.ssh/id_rsa
 ```
 
-## Previligiertes ausführen mit Password abfrage
+Previligiertes ausführen mit Password abfrage
 
 `ansible atlanta -a "/usr/bin/foo" -u username --become --become-user otheruser [--ask-become-pass]`
 
-## Datei Tranfer
+Datei Tranfer
 
 `ansible atlante -a "" -u`
 
-## Direckter Dateitransfer
+Direckter Dateitransfer
 
 `ansible atlanta -m copy -a "src=/etc/hosts dest=/tmp/hosts"`
 
-
-## Paket Installieren
+Paket Installieren
 
 `ansible webservers -m yum -a "name=acme state=present"`
 
-### Benutzer und Gruppen
+## Benutzer und Gruppen
 
-### Benutzer anlegen
+Benutzer anlegen
 
 `ansible all -m user -a "name=foo password=<crypted password here>"`
 
-### Benutzer Löschen
+Benutzer Löschen
 
 `ansible all -m user -a "name=foo state=absent"`
 
-## Einrichtung von SCM
+Einrichtung von SCM
 
 `ansible webservers -m git -a "repo=https://foo.example.org/repo.git dest=/srv/myapp version=HEAD"`
 
 ## Services Verwalten
 
-## Service soll gestartet sein
+Service soll gestartet sein
 
 `ansible webservers -m service -a "name=httpd state=started"`
 
-## Service Neu Starten
+Service Neu Starten
 
 `ansible webservers -m service -a "name=httpd state=restarted"`
 
-## Service deaktiviren
+Service deaktiviren
 
 `ansible webservers -m service -a "name=httpd state=stopped"`
 
-## Zeit limitierte jobs ausführen
-
-``
-
-### Lan laufenen job in den Hintergrund und später wieder aufnehmen
+laufenen job in den Hintergrund und später wieder aufnehmen
 
 `ansible all -B 3600 -P 0 -a "/usr/bin/long_running_operation --do-stuff"`
 
-### Mit async_Modul wider aufnehmen
+Mit async_Modul wider aufnehmen
 
 `ansible web1.example.com -m async_status -a "jid=488359678239.2844"`
 

@@ -1,6 +1,10 @@
-Da DevOps, Logging und Monitoring sind, was wir immer im Auge behalten. Diese erzählen uns etwas über die Stabilität und den Status unserer Systeme. Für die Pflege von Logs, werden Sie lernen, wie die Protokolle in Kubernetes sammeln. Sie werden auch lernen, wie man die Protokolle für Kubernetes sammelt und kontrolliert. Schließlich gehen wir durch die Einrichtung von Überwachungssystemen für Kubernetes.
+# Kubernetes Logging und Monitoring
 
-### Übersicht 
+Da DevOps, Logging und Monitoring sind, was wir immer im Auge behalten sollten. Zur masshabe was dazugehör, solte man sich daran halten sich vurzustellen wann, dass Project gefärdet ist. Diese erzählen uns etwas über die Stabilität und den Status unserer Systeme.
+So gehört eine einzelne Workstation eines Programmiers nicht dazu auch wenn ich andres erlebt habe.
+Für die Pflege von Logs, werden Sie lernen, wie die Protokolle in Kubernetes sammeln. Wie man die Protokolle für Kubernetes sammelt und kontrolliert. Schließlich gehen wir durch die Einrichtung von Überwachungssystemen für Kubernetes.
+
+## Übersicht
 
 * [Sammeln von Anwendungsprotokollen](../kubernetes-logging-monitorring-anwendungsprotokollen)
 * [Arbeiten mit Kubernetes-Protokollen](../kubernetes-logging-monitorring-kubernetes-protokolle)

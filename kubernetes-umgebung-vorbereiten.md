@@ -1,7 +1,8 @@
-Bevor wir auf die Reise des eigenen Clusters gehen, müssen wir die Umgebung vorbereiten, um folgende Komponenten zu bauen:
-![schema-kubernetes](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_01_04.jpg)
+# Kubernetes Umgebung Vorbereiten
 
-Es gibt verschiedene Lösungen für die Schaffung eines solchen Kubernetes-Clusters, zum Beispiel:
+Bevor wir eine eigenen Cluster benutzen, müssen wir die Umgebung vorbereiten.
+
+Es gibt verschiedene Lösungen für die Einrichtung eines solchen Kubernetes-Clusters, zum Beispiel:
 
 > * Local-Machine-Lösungen, die Folgendes beinhalten:
 >
@@ -19,7 +20,6 @@ Es gibt verschiedene Lösungen für die Schaffung eines solchen Kubernetes-Clust
 >
 > * Kundenspezifische Lösungen
 >
-
 
 Eine lokale Maschinenlösung eignet sich, wenn wir nur eine Entwicklungsumgebung aufbauen oder den Durchführung des Konzepts schnell machen wollen. Durch die Verwendung von **Docker** (https://www.docker.com) oder **Vagrant** (https://www.vagrantup.com) konnten wir ganz einfach die gewünschte Umgebung in einer einzigen Maschine bauen; Allerdings ist es nicht praktisch, wenn wir eine Produktionsumgebung aufbauen wollen. Eine gehostete Lösung ist der einfachste Ausgangspunkt, wenn wir es in der Cloud bauen wollen.
 

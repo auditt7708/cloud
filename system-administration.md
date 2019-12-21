@@ -84,13 +84,14 @@ Benutzerverwaltung
 
 * [dig Namensauflösung (DNS)](../dig)
 * [iwconfig Werkzeug für WLAN-Schnittstellen](../iwconfig)
-* [ip Anzeigen und Konfiguration von Netzwerkgeräten. Nachfolger von ifconfig](../ifconfig)
-* [iw der Nachfolger von iwconfig](../)
-* [netstat Auflistung offener Ports und bestehender Netzwerkverbindungen ("network statistics")](../)
-* [ping Prüfen der Erreichbarkeit anderer Rechner über ein Netzwerk](../)
-* [route 🇩🇪 Anzeige und Änderung der Route (Routingtabelle)](../)
-* [ss der Nachfolger von netstat ("socket statistics")](../)
-* [traceroute Routenverfolgung und Verbindungsanalyse](../)
+* [ifconfig Anzeigen und Konfiguration von Netzwerkgeräten](../ifconfig)
+* [ip Anzeigen und Konfiguration von Netzwerkgeräten. Nachfolger von ifconfig](../ip)
+* [iw der Nachfolger von iwconfig](../iw)
+* [netstat Auflistung offener Ports und bestehender Netzwerkverbindungen ("network statistics")](../netstat)
+* [ping Prüfen der Erreichbarkeit anderer Rechner über ein Netzwerk](../ping)
+* [route 🇩🇪 Anzeige und Änderung der Route (Routingtabelle)](../route)
+* [ss der Nachfolger von netstat ("socket statistics")](../ss)
+* [traceroute Routenverfolgung und Verbindungsanalyse](../traceroute)
 * [nc nmap ](../nmap)
 
 ### Dateiwerkzeuge

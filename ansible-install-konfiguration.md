@@ -12,24 +12,24 @@ Für Ubuntu kann man [PPA](https://launchpad.net/~ansible/+archive/ansible) verw
 Repo für Ubuntu xenial:
 
 ```sh
-deb http://ppa.launchpad.net/ansible/ansible/ubuntu xenial main 
-deb-src http://ppa.launchpad.net/ansible/ansible/ubuntu xenial main 
+deb http://ppa.launchpad.net/ansible/ansible/ubuntu xenial main
+deb-src http://ppa.launchpad.net/ansible/ansible/ubuntu xenial main
 ```
 
-**Repo einrichten und update durchführen:**
+Repo einrichten und update durchführen
 
 ```sh
 sudo add-apt-repository ppa:ansible/ansible
 sudo apt-get update
 ```
 
-**Add Repository für Ubuntu**
+Add Repository für Ubuntu
 
 ```sh
-$ sudo apt-get install software-properties-common
-$ sudo apt-add-repository ppa:ansible/ansible
-$ sudo apt-get update
-$ sudo apt-get install ansible
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
 ```
 
 Da hier auch die quellen vorhanden sind kann man auch sich das Packet wie folgt bauen

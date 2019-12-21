@@ -1,200 +1,124 @@
-# kubernetes Übersicht
+# kubernetes Inhaltsverzeihnis
 
-## [kubernetes-einrichten](../kubernetes-einrichten)
+## Kubernetes Einrichtung
 
-## [kubernetes-umgebung-vorbereiten](../kubernetes-umgebung-vorbereiten)
+### [kubernetes-einrichten](../kubernetes-einrichten)
 
-## [kubernetes-overlay-network](../kubernetes-overlay-network)
+### [kubernetes-umgebung-vorbereiten](../kubernetes-umgebung-vorbereiten)
 
-## [kubernetes-master-einrichten](../kubernetes-master-einrichten)
+### [kubernetes-master-einrichten](../kubernetes-master-einrichten)
 
-## [kubernetes-nodes-einrichten](../kubernetes-nodes-einrichten)
+### [kubernetes-nodes-einrichten](../kubernetes-nodes-einrichten)
 
-## [kubernetes-konzepte](../kubernetes-konzepte)
+## Kubernetes Grundlagen
 
-## [kubernetes-konzepte-volumes](../kubernetes-konzepte-volumes)
+### [kubernetes-konzepte](../kubernetes-konzepte)
 
-## [kubernetes-konzepte-services](../kubernetes-konzepte-services)
+### [kubernetes-konzepte-volumes](../kubernetes-konzepte-volumes)
 
-## [kubernetes-konzepte-secrets](../kubernetes-konzepte-secrets)
+### [kubernetes-konzepte-services](../kubernetes-konzepte-services)
 
-## [kubernetes-konzepte-replication-controller](../kubernetes-konzepte-replication-controller)
+### [kubernetes-konzepte-secrets](../kubernetes-konzepte-secrets)
 
-## [kubernetes-konzepte-pods](../kubernetes-konzepte-pods)
+### [kubernetes-konzepte-replication-controller](../kubernetes-konzepte-replication-controller)
 
-## [kubernetes-konzepte-namespaces](../kubernetes-konzepte-namespaces)
+### [kubernetes-konzepte-pods](../kubernetes-konzepte-pods)
 
-## [kubernetes-konzepte-names](../kubernetes-konzepte-names)
+### [kubernetes-konzepte-namespaces](../kubernetes-konzepte-namespaces)
 
-## [kubernetes-konzepte-labels-selektoren](../kubernetes-konzepte-labels-selektoren)
+### [kubernetes-konzepte-names](../kubernetes-konzepte-names)
 
-## [kubernetes-konzepte-kontrolle](../kubernetes-konzepte-kontrolle)
+### [kubernetes-konzepte-labels-selektoren](../kubernetes-konzepte-labels-selektoren)
 
-## [kubernetes-architektur-erforschen](../kubernetes-architektur-erforschen)
+### [kubernetes-konzepte-kontrolle](../kubernetes-konzepte-kontrolle)
 
-## [kubernetes-aws-autodeploy-chef](../kubernetes-aws-autodeploy-chef)
+### [kubernetes-architektur-erforschen](../kubernetes-architektur-erforschen)
 
-## [kubernetes-aws-cloudformation-provisioning](../kubernetes-aws-cloudformation-provisioning)
+### [kubernetes-aws-autodeploy-chef](../kubernetes-aws-autodeploy-chef)
 
-## [kubernetes-aws-einrichten](../kubernetes-aws-einrichten)
+### [kubernetes-aws-cloudformation-provisioning](../kubernetes-aws-cloudformation-provisioning)
 
-## [kubernetes-aws-infrastruktur](../kubernetes-aws-infrastruktur)
+### [kubernetes-aws-einrichten](../kubernetes-aws-einrichten)
 
-## [kubernetes-aws-opsworks](../kubernetes-aws-opsworks)
+### [kubernetes-aws-infrastruktur](../kubernetes-aws-infrastruktur)
 
-## [kubernetes-cd-pipline-erstellen](../kubernetes-cd-pipline-erstellen)
+### [kubernetes-aws-opsworks](../kubernetes-aws-opsworks)
 
-## [kubernetes-cd-pipline-jenkins-integration](../kubernetes-cd-pipline-jenkins-integration)
+## Kubernete Netzwerk
 
-## [kubernetes-cd-pipline-monolitisch-microservices](../kubernetes-cd-pipline-monolitisch-microservices)
+### [kubernetes-overlay-network](../kubernetes-overlay-network)
 
-## [kubernetes-cd-pipline-private-docker-registry](../kubernetes-cd-pipline-private-docker-registry)
+### DC/CI mit Kubernetes
 
-## [kubernetes-cd-pipline](../kubernetes-cd-pipline)
+### [kubernetes-cd-pipline-erstellen](../kubernetes-cd-pipline-erstellen)
 
-## [kubernetes-erster-container](../kubernetes-erster-container)
+### [kubernetes-cd-pipline-jenkins-integration](../kubernetes-cd-pipline-jenkins-integration)
 
-## [kubernetes-container](../kubernetes-container)
+### [kubernetes-cd-pipline-monolitisch-microservices](../kubernetes-cd-pipline-monolitisch-microservices)
 
-## [kubernetes-container-arbeiten-konfigurationsdatein](../kubernetes-container-arbeiten-konfigurationsdatein)
+### [kubernetes-cd-pipline-private-docker-registry](../kubernetes-cd-pipline-private-docker-registry)
 
-## [kubernetes-container-flexibilisierung](../kubernetes-container-flexibilisierung)
+### [kubernetes-cd-pipline](../kubernetes-cd-pipline)
 
-## [kubernetes-container-live-updates](../kubernetes-container-live-updates)
+### Kubernetes Container
 
-## [kubernetes-container-ports-weiterleiten](../kubernetes-container-ports-weiterleiten)
+### [kubernetes-erster-container](../kubernetes-erster-container)
 
-## [kubernetes-container-skalierung](../kubernetes-container-skalierung)
+### [kubernetes-container](../kubernetes-container)
 
-## [kubernetes-datastore](../kubernetes-datastore)
+### [kubernetes-container-arbeiten-konfigurationsdatein](../kubernetes-container-arbeiten-konfigurationsdatein)
 
-## [kubernetes-helm](../kubernetes-helm)
+### [kubernetes-container-flexibilisierung](../kubernetes-container-flexibilisierung)
 
-## [kubernetes-ha-einrichten](../kubernetes-ha-einrichten)
+### [kubernetes-container-live-updates](../kubernetes-container-live-updates)
 
-## [kubernetes-ha-etcd](../kubernetes-ha-etcd)
+### [kubernetes-container-ports-weiterleiten](../kubernetes-container-ports-weiterleiten)
 
-## [kubernetes-ha-multi-masters](../kubernetes-ha-multi-masters)
+### [kubernetes-container-skalierung](../kubernetes-container-skalierung)
 
-## [kubernetes-logging-monitorring-anwendungsprotokollen](../kubernetes-logging-monitorring-anwendungsprotokollen)
+### [kubernetes-datastore](../kubernetes-datastore)
 
-## [kubernetes-logging-monitorring-etcd-log](../kubernetes-logging-monitorring-etcd-log)
+### [kubernetes-helm](../kubernetes-helm)
 
-## [kubernetes-logging-monitorring-kubernetes-protokolle](../kubernetes-logging-monitorring-kubernetes-protokolle)
+### Kubernetes Hochverfügbarkeit
 
-## [kubernetes-logging-monitorring-master-nodes](../kubernetes-logging-monitorring-master-nodes)
+### [kubernetes-ha-einrichten](../kubernetes-ha-einrichten)
 
-## [kubernetes-logging-monitorring](../kubernetes-logging-monitorring)
+### [kubernetes-ha-etcd](../kubernetes-ha-etcd)
 
-## [kubernetes-adv-administration](../kubernetes-adv-administration)
+### [kubernetes-ha-multi-masters](../kubernetes-ha-multi-masters)
 
-## [kubernetes-adv-advanced-working-restful-api](../kubernetes-adv-advanced-working-restful-api)
+### Kubernetes Logging unf Monitoring
 
-## [kubernetes-adv-advanced-webui](../kubernetes-adv-advanced-webui)
+### [kubernetes-logging-Monitoring-anwendungsprotokollen](../kubernetes-logging-monitorring-anwendungsprotokollen)
 
-## [kubernetes-adv-advanced-kubeconfig](../kubernetes-adv-advanced-kubeconfig)
+### [kubernetes-logging-Monitoring-etcd-log](../kubernetes-logging-monitorring-etcd-log)
 
-## [kubernetes-adv-advanced-konfig-ressources-nodes](../kubernetes-adv-advanced-konfig-ressources-nodes)
+### [kubernetes-logging-Monitoring-kubernetes-protokolle](../kubernetes-logging-monitorring-kubernetes-protokolle)
 
-## [kubernetes-adv-advanced-auth-autorisierung](../kubernetes-adv-advanced-auth-autorisierung)
+### [kubernetes-logging-Monitoring-master-nodes](../kubernetes-logging-monitorring-master-nodes)
 
-## Dokumentations Quellen
+### [kubernetes-logging-Monitoring](../kubernetes-logging-monitorring)
+
+### Kubernetes fortgeschrittene Administration
+
+### [kubernetes-adv-administration](../kubernetes-adv-administration)
+
+### [kubernetes-adv-advanced-working-restful-api](../kubernetes-adv-advanced-working-restful-api)
+
+### [kubernetes-adv-advanced-webui](../kubernetes-adv-advanced-webui)
+
+### [kubernetes-adv-advanced-kubeconfig](../kubernetes-adv-advanced-kubeconfig)
+
+### [kubernetes-adv-advanced-konfig-ressources-nodes](../kubernetes-adv-advanced-konfig-ressources-nodes)
+
+### [kubernetes-adv-advanced-auth-autorisierung](../kubernetes-adv-advanced-auth-autorisierung)
+
+#### Quellen
 
 * [installing-kubernetes-cluster-minions-centos7-manage-pods-services](https://severalnines.com/blog/installing-kubernetes-cluster-minions-centos7-manage-pods-services)
 
-## Installation
-
-Voraussetzungen:
-
-| Service | Version |
-| :---: | :---: |
-|docker|18.06|
-|kubeadm|latest|
-
-Repository für CentOS, RHEL oder Fedora anlegen
-
-```s
-cat <<EOF > /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
-name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-exclude=kube*
-EOF
-```
-
-> Bei CentOS, RHEL oder Fedora muss noch SELinux wie folgt angepasst werden
->```s
->
-># Set SELinux in permissive mode (effectively disabling it)
-> setenforce 0
-> sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
->
-> yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
->
-> systemctl enable --now kubelet
-> ```
-
-## Erste Initiale Einrichtung
-
-## Speziefische Version von Docker Installieren
-
-### Ubuntu
-
-**Verfügbare Versionsn anzeigen lassen**
-`apt-cache madison docker-ce`
-
-### Ubuntu User einrichten
-
-`sudo usermod -aG docker $USER`
-
-**Version Installieren**
-`apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io`
-
-## CentOS Installation
-
-## [kubelet](../kubelet)
-
-* [kubelet.service](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=2ahUKEwj64dSQ3dzgAhWCZFAKHaFwB5MQFjAAegQIABAB&url=https%3A%2F%2Fgithub.com%2Fkubernetes%2Fcontrib%2Fblob%2Fmaster%2Finit%2Fsystemd%2Fkubelet.service&usg=AOvVaw2GG-cG-fHta3SfPAWLvANN)
-
-## [Kubeadm](../kubeadm)
-
-## [Kubernetes Dashboard](https://github.com/kubernetes/dashboard)
-
-## Administration
-
-kube-system
-
-`kubectl --namespace= get pods`
-
-Alle namespaces ausgeben
-
-`kubectl get pods --all-namespaces`
-
-Nur Active namespaces ausgeben
-
-`kubectl get namespaces`
-
-Context ändern -> Umgebung
-
-`kubectl config use-context dev`
-
-Contest als ADMIN wiederherstellen
-
-`kubectl config use-context kubernetes-admin@kubernetes`
-
-Log von pod ansehen
-
-`kubectl logs dns-frontend`
-
-Alle verfügbaren api Resourcen mit zugewiesenen Namespace anzeigen
-
-`kubectl api-resources --namespaced=true`
-
-## Networking
+### Networking
 
 > kubernetes v1.6 offers 3 ways to expose a service:
 
@@ -207,20 +131,15 @@ Alle verfügbaren api Resourcen mit zugewiesenen Namespace anzeigen
 * [envoy Proxy](https://www.envoyproxy.io/docs/envoy/latest/)
 * [kube-keepalived-vip](https://github.com/kubernetes-retired/contrib/tree/master/keepalived-vip)
 
-## kubeadm-upgrade
-
-* [kubeadm-upgrade](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-upgrade/)
-
-## Authentifizieren mit Bootstrap Tokens
+### Authentifizieren mit Bootstrap Tokens
 
 * [bootstrap-tokens](https://kubernetes.io/docs/reference/access-authn-authz/bootstrap-tokens/#configmap-signing)
 
-## [Kubernetes API](../kubernetes-api)
+### [Kubernetes API](../kubernetes-api)
 
-Liste von Zugrifen via [Kubernetes API](../kubernetes-api)
+Liste von zugriffen via [Kubernetes API](../kubernetes-api)
 
-
-## Dokumentations-Quellen
+### Dokumentations-Quellen
 
 * [installing-kubernetes-cluster-minions-centos7-manage-pods-services](https://severalnines.com/blog/installing-kubernetes-cluster-minions-centos7-manage-pods-services)
 

@@ -49,6 +49,7 @@
 ## [Cluster STONITH](cluster-stonith)
 
 ## [Cluster LoadBalancer](../cluster-loadbalancer)
+
 * [keepalived](../keepalived.md)
 * [haproxy](../haproxy.md)
 

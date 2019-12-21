@@ -1,4 +1,4 @@
-# linux-kommandos-ip
+# linux Kommando ip
 
 |Zweck |iproute2 Kommando | iproute2 Kommando | Kurzversion | net-tools Kommando||
 | :----: | :----: | :----: | :----: | :----: | :----: |
@@ -11,7 +11,6 @@
 |Routingtabelle anzeigen | ip route show |ip r |route -n||
 |Standardgateway setzen | ip route add default via IP |ip r a default via IP | route add default gw IP DEVICE||
 |ARP-Cache anzeigen |ip neigh show |ip n |arp -na||
-
 
 Infos zu eth0
 

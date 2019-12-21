@@ -1,8 +1,10 @@
+# Kubernetes Master einrichtung
+
 Der Masternode von Kubernetes arbeitet als Kontrollzentrum für Container. Die Aufgaben, die vom Master übernommen werden, beinhalten ein Portal für Endbenutzer, die Zuweisung von Aufgaben an Knoten und das Sammeln von Informationen. In diesem Rezept werden wir sehen, wie man den Kubernetes Master aufbaut. Es gibt drei Dämonenprozesse am Meister:
 
-*      API Server
-*      Scheduler
-*      Controller Manager
+* API Server
+* Scheduler
+* Controller Manager
 
 Wir können entweder mit dem Wrapper-Befehl, `hyperkube` starten oder sie einzeln als Daemons starten. Beide Lösungen werden in diesem Abschnitt behandelt.
 
@@ -10,14 +12,14 @@ Wir können entweder mit dem Wrapper-Befehl, `hyperkube` starten oder sie einzel
 
 Bevor Sie den Master-Knoten einsetzen, stellen Sie sicher, dass Sie den etcd-Endpunkt bereit haben, der wie der Datenspeicher von Kubernetes arbeitet. Sie müssen überprüfen, ob es zugänglich ist und auch mit dem Overlay-Netzwerk konfiguriert ist. **Classless Inter-Domain Routing** (CIDR https://de.wikipedia.org/wiki/Classless_Inter-Domain_Routing). Es ist möglich, es mit der folgenden Befehlszeile zu überprüfen:
 
-```
+```s
 // Check both etcd connection and CIDR setting
 $ curl -L <etcd endpoint URL>/v2/keys/coreos.com/network/config
 ```
 
 Wenn die Verbindung erfolgreich ist, aber die etcd-Konfiguration keinen erwarteten CIDR-Wert hat, können Sie auch durch Curl-Wert schreiben:
 
-```
+```s
 $ curl -L <etcd endpoint URL>/v2/keys/coreos.com/network/config -XPUT -d value="{ \"Network\": \"<CIDR of overlay network>\" }"
 ```
 
@@ -25,7 +27,7 @@ $ curl -L <etcd endpoint URL>/v2/keys/coreos.com/network/config -XPUT -d value="
 Darüber hinaus notieren Sie bitte die folgenden Elemente: die URL von `etcd endpoint`, den Port von `etcd endpoint`, und die CIDR des Overlay-Netzwerks.
 Sie benötigen sie bei der Konfiguration der Master-Dienste.
 
-### Wie es geht…
+### Wie es geht
 
 Um einen Master aufzubauen, schlagen wir die folgenden Schritte für die Installation des Quellcodes vor, beginnend mit den Dämonen und dann die Überprüfung. Folgen Sie dem Verfahren und Sie erhalten schließlich einen praktischen Meister .
 
@@ -40,7 +42,7 @@ Hier bieten sich zwei Arten von Installationsverfahren an:
 
 1. RHEL 7, CentOS 7 oder später ein offizielles Paket für Kubernetes. Sie können sie über den `yum`-Befehl installieren:
 
-```
+```s
 // install Kubernetes master package
 # yum install kubernetes-master kubernetes-client
 ```
@@ -57,7 +59,7 @@ Das erste, `kubernetes`, ist genau wie ein Hyperlink zu den folgenden drei Items
 
 2. Hier sind die dateien nach der Installation zu finden:
 
-```
+```s
 // profiles as environment variables for services
 # ls /etc/kubernetes/
 apiserver  config  controller-manager  scheduler
@@ -69,7 +71,7 @@ apiserver  config  controller-manager  scheduler
 
 3. Als nächstes werden wir die `systemd` Original einstellungen ändern und die Werte in den Konfigurationsdateien unter dem Verzeichnis `/etc/kubernetes` ändern, um eine Verbindung mit etcd zu erstellen. Die Datei  `config` ist eine gemeinsame Umgebungsdatei für mehrere Kubernetes-Daemon-Prozesse. Für grundlegende Einstellungen, einfach änderungen in der `apiserver` Datei durchführen:
 
-```
+```s
 # cat /etc/kubernetes/apiserver
 ###
 # kubernetes system config
@@ -101,7 +103,7 @@ KUBE_API_ARGS="--cluster_name=<your cluster name>"
 
 4. Dann starten Sie den Daemon `kube-apiserver`, `kube-scheduler` und `kube-controller-manager` eins nach dem anderen; Der Befehl `systemctl` kann für das Management helfen. Seien Sie sich bewusst, dass der `kube-apiserer` immer zuerst anfangen sollte, da der `kube-Scheduler` und der `kube-controller-manager` beim Start mit dem Kubernetes API-Server verbunden sind:
 
-```
+```s
 // start services
 # systemctl start kube-apiserver
 # systemctl start kube-scheduler
@@ -114,8 +116,9 @@ KUBE_API_ARGS="--cluster_name=<your cluster name>"
 
 ### Hinzufügen von Daemon Abhängigkeiten
 
-1. Obwohl systemd keine Fehlermeldungen ohne den laufenden API-Server zurückgibt, erhalten sowohl der `kube-scheduler` als auch der `kube-controller-manager` Verbindungsfehler und bieten keine regelmäßigen Dienste an:
-```
+1. Obwohl systemd keine Fehlermeldungen ohne den laufenden API-Server zurückgibt, erhalten sowohl der `kube-scheduler` als auch der `kube-controller-manager` Verbindungsfehler und bieten keine regelmäßigen Dienste an
+
+```s
 $ sudo systemctl status kube-scheduler -l—output=cat kube-scheduler.service - Kubernetes Scheduler Plugin
    Loaded: loaded (/usr/lib/systemd/system/kube-scheduler.service; enabled)
    Active: active (running) since Thu 2015-11-19 07:21:57 UTC; 5min ago
@@ -127,9 +130,9 @@ E1119 07:27:05.471102    2984 reflector.go:136] Failed to list *api.Node: Get ht
 
 ```
 
-2. Um also die Startreihenfolge zu beeinflussen, können Sie zwei Einstellungen unter dem Abschnitt von `systemd.unit` in `/usr/lib/systemd/system/kube-scheduler` und `/usr/lib/systemd/system/kube-controller-manager`:
+1. Um also die Startreihenfolge zu beeinflussen, können Sie zwei Einstellungen unter dem Abschnitt von `systemd.unit` in `/usr/lib/systemd/system/kube-scheduler` und `/usr/lib/systemd/system/kube-controller-manager`:
 
-```
+```s
 [Unit]
 Description=Kubernetes Controller Manager
 Documentation=https://github.com/GoogleCloudPlatform/kubernetes
@@ -143,21 +146,21 @@ Mit den vorherigen Einstellungen können wir sicherstellen, dass der `kube-apise
 
 `Requires=kube-apiserver.service`
 
-
 `Requires` hat strengere Einschränkungen.
 Falls der daemon `kube-apiserver` abgestürzt ist, würde auch der `kube-scheduler` und der `kube-controller-manager` gestoppt werden.
 Auf der anderen Seite ist die Konfiguration mit `Requires` für das Debuggen der Master installation schwer zu benutzen.
 Es wird empfohlen, diesen Parameter zu aktivieren, sobald Sie sicherstellen, dass jede Einstellung korrekt ist.
 
-
-> Wichtig: Für Docker muss unter Centos 7 ein versionlock eingerichetet werden 
+> Wichtig: Für Docker muss unter Centos 7 ein versionlock eingerichetet werden
 >
 > `sudo yum install yum-plugin-versionlock`
+>
 > Zum hinzufügen
 >
-> `sudo yum versionlock add docker-ce-cli-*` 
+> `sudo yum versionlock add docker-ce-cli-*`
+>
 > Wenn nicht daraufgeachetet wurde ist auch noch ein downgrade notwendig
-> 
+>
 > yum downgrade docker-ce
 > rpm -qa | grep docker-ce
 > yum list | grep docker-ce
@@ -165,14 +168,13 @@ Es wird empfohlen, diesen Parameter zu aktivieren, sobald Sie sicherstellen, das
 
 docker-ce-cli-18.09.9-3.el7
 
-
 ### Andere Linux-Optionen
 
 Es ist auch möglich, dass wir eine Binärdatei zur Installation herunterladen. Die offizielle Website für die neueste Version ist hier: https://github.com/kubernetes/kubernetes/releases:
 
 1. Wir werden die Version, die als neues Release markiert ist, installieren und alle Dämonen mit dem Wrapper-Befehl `hyperkube` starten:
 
-```
+```s
 // download Kubernetes package
 # curl -L -O https://github.com/GoogleCloudPlatform/kubernetes/releases/download/v1.1.2/kubernetes.tar.gz
 
@@ -185,7 +187,7 @@ Es ist auch möglich, dass wir eine Binärdatei zur Installation herunterladen. 
 
 2. Der nächste Schritt besteht darin, ein Startskript (init) zu erstellen, das drei Master-Daemons abdecken und individuell starten würde:
 
-```
+```s
  cat /etc/init.d/kubernetes-master
 #!/bin/bash
 #
@@ -210,7 +212,7 @@ MASTER="127.0.0.1:8080"
 
 3. Um Ihre Kubernetes-Einstellungen einfacher und klarer zu verwalten, werden wir am Anfang dieses Init-Skripts die Deklaration der veränderbaren Variablen setzen. Bitte überprüfen Sie die etcd URL und überschreiben Sie das Netzwerk CIDR, um zu bestätigen, dass sie die gleiche wie Ihre vorherige Installation sind:
 
-```
+```s
 start() {
 
   # Start daemon.
@@ -251,7 +253,7 @@ stop() {
 
 4. Als nächstes fühlen Sie sich frei, die folgenden Zeilen als den letzten Teil in das Skript für allgemeine Service-Nutzung hinzuzufügen:
 
-```
+```s
 # See how we were called.
 case "$1" in
   start)
@@ -300,7 +302,7 @@ Hier soll die meldung `Started..` erscheinen.
 
 3. Darüber hinaus kann in Kubernetes der Befehl`kubectl`, die Operation durchführen:
 
-```
+```s
 // check Kubernetes version
 # kubectl version
 Client Version: version.Info{Major:"1", Minor:"0.3", GitVersion:"v1.0.3.34+b9a88a7d0e357b", GitCommit:"b9a88a7d0e357be2174011dd2b127038c6ea8929", GitTreeState:"clean"}

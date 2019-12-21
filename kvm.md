@@ -27,10 +27,9 @@ Das einrichten des sectres ist recht einfach mit:
 
 `virsh secret-define secret.xml`
 
-haben wir schon das Secret hinterlegt nun muss [virsh](../virsh) noch wissen welche Images es mit dem Erstellten secret öffnen/Starten kann.
+Haben wir schon das Secret hinterlegt nun muss [virsh](../virsh) noch wissen welche Images es mit dem Erstellten secret öffnen/Starten kann.
 Wenn man sich in der Konsole befunden hat wird sich [virsh](../virsh) schon automatisch ein Image aussuchen das meist auch Richtig ist, kann aber mit
-``virsh secret-list``
-kontrolliert werden.
+`virsh secret-list` kontrolliert werden.
 Insebondere wenn ein image nachträglich verschlüsselt wurde wird es nicht immer automatisch auch vom [virsh](../virsh) festgestellt, wenn einen nachbearbeitung notwendig wird muss die XML Datei manuel angepasst werden
 
 ### Images Builder
