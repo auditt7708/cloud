@@ -26,8 +26,6 @@ export PATH=/opt/maven/bin:$PATH#
 
 `mvn verify`
 
-****
-
 ## Quellen
 
 * [dropwizard mvn](https://dropwizard.github.io/dropwizard/1.3.14/docs/getting-started.html)
