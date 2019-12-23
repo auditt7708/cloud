@@ -1,7 +1,7 @@
-# Übersicht
+# Mesosphere
 
-## [DC/OS](../dcos)
+Hersteller folgender Projeckte
 
-OS für Computer Zentren
+* [DC/OS](../dcos)
 
-## [Mesos](../mesos)
+* [Mesos](../mesos)
