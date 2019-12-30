@@ -8,7 +8,6 @@ Add dir /home/$HOME/.ssh/config if not exists
 
 ```s
 #!/bin/bash
-
 if [ ! -d /home/$HOME/.ssh/config ]; then
    mkdir /home/$HOME/.ssh/config
 fi
@@ -29,3 +28,5 @@ RSAAuthentication yes
 IdentityFile ~/.ssh/config/private-key-filename
 
 ```
+
+> Für [Github und Gitlab etc.](../arbeiten-mit-gitlab.md) kann man wie beschrieben die Datei _~/.netrc_ benutzen.

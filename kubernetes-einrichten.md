@@ -1,8 +1,10 @@
 # kubernetes einrichten
 
-Willkommen auf der Reise von Kubernetes! In diesem ersten Abschnitt erfahren Sie, wie Sie Ihren eigenen Kubernetes-Cluster aufbauen können. Zusammen mit dem Verständnis jeder Komponente lernen Sie alles miteinander zu verbinden und erden Lernen wie Sie Ihren ersten Container auf Kubernetes zum laufen bringen. Mit einem Kubernetes-Cluster wird es Ihnen helfen, die Umsetzung in den folgenden Kapiteln fortzusetzen.
+Willkommen auf der Reise von Kubernetes! In diesem ersten Abschnitt erfahren Sie, wie Sie Ihren eigenen Kubernetes-Cluster aufbauen können.
+Zusammen mit dem Verständnis jeder Komponente lernen Sie alles miteinander zu verbinden und erden Lernen wie Sie Ihren ersten Container auf Kubernetes zum laufen bringen.
+Mit einem Kubernetes-Cluster wird es Ihnen helfen, die Umsetzung in den folgenden Kapiteln fortzusetzen.
 
-### Installation
+## Installation
 
 Voraussetzungen:
 
@@ -38,13 +40,29 @@ EOF
 > systemctl enable --now kubelet
 > ```
 
-### Erste Initiale Einrichtung
+## Kubernetes Ports
 
-### Speziefische Version von Docker Installieren
+Ports für Worker node(s)
 
-#### Ubuntu
+|Protocol | Direction | Port Range | Purpose | Used By|
+| :---: | :---: | :---: | :---: | :---: |
+|TCP |Inbound | 10250 | Kubelet API | Self, Control plane|
+|TCP |Inbound | 30000-32767 | NodePort Services** | All |
 
-**Verfügbare Versionsn anzeigen lassen**
+Konfig für firewalld
+
+```s
+firewall-cmd --permanent --zone=public --add-port=10250/tcp
+firewall-cmd --permanent --zone=public --add-port=30000-32767/tcp
+firewall-cmd --reload
+```
+
+## Speziefische Version von Docker Installieren
+
+### Ubuntu
+
+Verfügbare Versionsn anzeigen lassen
+
 `apt-cache madison docker-ce`
 
 #### Ubuntu User einrichten

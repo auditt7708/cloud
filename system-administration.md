@@ -82,6 +82,10 @@ Benutzerverwaltung
 
 ### Netzwerk
 
+Hosts in /etc/hosts ausgeben
+
+`echo -e "$(hostname -i)\$(hostname)" | sudo tee -a /etc/hosts`
+
 * [dig Namensauflösung (DNS)](../dig)
 * [iwconfig Werkzeug für WLAN-Schnittstellen](../iwconfig)
 * [ifconfig Anzeigen und Konfiguration von Netzwerkgeräten](../ifconfig)
@@ -124,26 +128,16 @@ Wietere Nützliche Befehle
 
 Packet Managemnet
 
-* [](../)
-* [](../)
-* [](../)
-* [](../)
-* [](../)
-* [](../)
-
 RPM
 
 * [RPM](../rpm)
 * [YUM](../yum)
 * [Repositories](../repositories)
-* [](../)
 
 APT und dep
 
 * [APT](../apt)
 * [DEP](../dep)
-* [](../)
-* [](../)
 
 Repository bei apt
 

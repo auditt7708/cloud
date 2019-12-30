@@ -9,6 +9,7 @@ check dependencies vom RPM
 `rpm -qpR BitTorrent-5.2.2-1-Python2.4.noarch.rpm`
 
 Überprüfen eines Installierten RPM Paketes
+
 `rpm -q BitTorrent`
 
 Liste aller Dateien eines Installierten  RPM Paketes
@@ -41,7 +42,7 @@ Dokumentation zu einem Paket finden
 
 rebuild  einer Korrupten RPM Database
 
-```
+```s
 cd /var/lib
 rm __db*
 rpm --rebuilddb
