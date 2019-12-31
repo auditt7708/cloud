@@ -17,6 +17,7 @@ exit 0
 ## Helm Konfigurieren
 
 Initiale Konfigurations einstellungen anlegen.
+
 `helm init`
 
 ### Quellen

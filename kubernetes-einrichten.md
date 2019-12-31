@@ -1,6 +1,7 @@
 # kubernetes einrichten
 
-Willkommen auf der Reise von Kubernetes! In diesem ersten Abschnitt erfahren Sie, wie Sie Ihren eigenen Kubernetes-Cluster aufbauen können.
+Willkommen auf der Reise von Kubernetes!
+In diesem ersten Abschnitt erfahren Sie, wie Sie Ihren eigenen Kubernetes-Cluster aufbauen können.
 Zusammen mit dem Verständnis jeder Komponente lernen Sie alles miteinander zu verbinden und erden Lernen wie Sie Ihren ersten Container auf Kubernetes zum laufen bringen.
 Mit einem Kubernetes-Cluster wird es Ihnen helfen, die Umsetzung in den folgenden Kapiteln fortzusetzen.
 
@@ -57,6 +58,13 @@ firewall-cmd --permanent --zone=public --add-port=30000-32767/tcp
 firewall-cmd --reload
 ```
 
+swap deactiviren
+
+```
+sudo sed -i '/swap/d' /etc/fstab
+sudo swapoff -a
+```
+
 ## Speziefische Version von Docker Installieren
 
 ### Ubuntu
@@ -82,6 +90,16 @@ Version Installieren
 ### [Kubeadm](../kubeadm)
 
 ### [Kubernetes Dashboard](https://github.com/kubernetes/dashboard)
+
+## Kubernetes und tls
+
+Namespace _cert-manager_ anlegen
+
+`kubectl create namespace cert-manager`
+
+Manifest anlegen
+
+`kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.12.0/cert-manager.yaml`
 
 ### Übersicht
 

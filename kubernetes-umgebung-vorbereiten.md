@@ -50,7 +50,8 @@ Für die Node ist die Standard-Maximalanzahl von Pods in einem Node 40. Jedoch i
 Überprüfen Sie Ihre Knotenkapazität im Knoten
 
 In deinem Master kannst du `jq` von `yum install jq` und `kubectl get nodes -o json | jq '.items[] | {name: .metadata.name, capacity: .status.capacity}'`, um die Kapazität jedes Knotens einschließlich CPU, Speicher und die maximale Kapazität von Pods zu überprüfen:
-```
+
+```s
 // check out your node capacity
 $ kubectl get nodes -o json | jq '.items[] | {name: .metadata.name, capacity: .status.capacity}'
 {
