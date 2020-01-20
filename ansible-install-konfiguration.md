@@ -1,10 +1,11 @@
 # Installation von Ansible
 
-Da es nicht immer auf Anhieb möglich ist mit der node auf Anhieb zuzugreifen und alle notwendigen automatisiert einzurichten kann man mit :
+Da es nicht immer auf Anhieb möglich ist mit der node auf Anhieb zuzugreifen und alle notwendigen Voraussetzungen automatisiert einzurichten kann man mit :
 
 `ansible myhost --sudo -m raw -a "yum install -y python2 python-simplejson"`
 
-alle Voraussetzungen für Ansible einrichten **myhost** ist hier der zielhost und **python-simplejson** ein Playbook das alle Abhängigkeiten einrichtet.
+alle Voraussetzungen um Ansible einrichten durchführen.
+**myhost** ist hier der Zielhost und **python-simplejson** ein Playbook das alle Abhängigkeiten einrichtet.
 
 ## Installation Ubuntu
 
