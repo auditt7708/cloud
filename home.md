@@ -54,7 +54,7 @@
 
 * [System Administration](../system-administration)
 
-## [Linux Entwicklung](../entwicklung.md)
+## [Linux Entwicklung](../entwicklung)
 
 ## Linux Cluster
 
@@ -119,7 +119,7 @@
 
 ## [Big Data](../bigdata)
 
-## [Netzwerk](../netzwerk.md)
+## [Netzwerk](../netzwerk)
 
 ### Sources
 
