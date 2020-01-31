@@ -1,5 +1,7 @@
 # Cloud
 
+* [Cloud Init](..(cloud-init)
+
 ## [PAAS](../paas)
 
 * [flynn](../flynn)
