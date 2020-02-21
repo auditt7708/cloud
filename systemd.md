@@ -6,7 +6,6 @@ Abhängigkeiten Anzeigen
 
 `systemctl list-dependencies $service`
 
-
 ## journalctl
 
 Boot vorgänge auflisten

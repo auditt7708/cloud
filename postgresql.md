@@ -1,6 +1,7 @@
 # Postgresql
 
 * [Postgres SQL Shell](../postgresql-sql-shell)
+* [Postgres PSQL Dump](../postgres-sql-pgdump.md)
 
 ## Postgresql Installation
 
@@ -57,3 +58,5 @@ Password des Datenbank benutzers Postgres
 ### Quellen zu BigSQL
 
 * [BigSQL Debian](https://www.bigsql.org/docs/deb.jsp)
+
+* [app-pgdump](https://www.postgresql.org/docs/9.3/app-pgdump.html)
