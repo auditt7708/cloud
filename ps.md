@@ -14,7 +14,7 @@ herauszufinden ob einprogramm läuft
 
 und
 
-`ps -fC einprogramm,nocheinprogramm,undnocheins `
+`ps -fC einprogramm,nocheinprogramm,undnocheins`
 
 Einen Prozessbaum anzeigen
 

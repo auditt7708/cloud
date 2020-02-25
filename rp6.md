@@ -3,7 +3,7 @@
 | Addresse | Service |
 | :--------: | :--------: |
 | 192.168.4.16 | http    |
-| ::21cf:1c17:d197:18f8| http | 
+| ::21cf:1c17:d197:18f8| http |
 
 ## Netzwerk
 
@@ -11,12 +11,11 @@
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Asus || ASUS | rp4.local | local | 192.168.4.0/24 ||192.168.4.16||
 
-
 ## Services
 
-| Service | Port | Remote Address | 
+| Service | Port | Remote Address |
 | :---: | :---: | :---: |
-|ssh|216|quf2t6m8fask0fhy.myfritz.net| 
+|ssh|216|quf2t6m8fask0fhy.myfritz.net|
 |http|816|quf2t6m8fask0fhy.myfritz.net|
 |https|4416|quf2t6m8fask0fhy.myfritz.net|
 |kubelet-api|10250|quf2t6m8fask0fhy.myfritz.net|
