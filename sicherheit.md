@@ -57,7 +57,7 @@ Einige Password Manager mit einer GUI. Ich habe mal eine Weboberfläche auch daz
 
 ## [Firewalld](../firewalld)
 
-## [VPN](../vpm)
+## [VPN](../vpn)
 
 * [wireguard VPN](https://www.wireguard.com/)
 * [Openvpn](../openvpn)
