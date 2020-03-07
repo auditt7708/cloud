@@ -4,16 +4,18 @@
 
 ## Installation von [Certutil](../certutil)
 
+```s
     Debian/Ubuntu: sudo apt-get install libnss3-tools
     Fedora: su -c "yum install nss-tools"
     Gentoo: su -c "echo 'dev-libs/nss utils' >> /etc/portage/package.use && emerge dev-libs/nss" (You need to launch all commands below with the nss prefix, e.g., nsscertutil.)
     Opensuse: sudo zypper install mozilla-nss-tools
+```
 
 Verzeichnisse erstellen :
 
 ```sh
-    sudo mkdir -p /etc/pki/tls/certs
-    sudo mkdir /etc/pki/tls/private
+sudo mkdir -p /etc/pki/tls/certs
+sudo mkdir /etc/pki/tls/private
 ```
 
 **Quellen:**

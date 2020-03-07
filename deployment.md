@@ -1,18 +1,11 @@
 # Management Tools
 
-
-## [Ansible](../ansible)
-
-* [ansibleplaybook-rancher](https://github.com/joshuacox/ansibleplaybook-rancher)
-
-## [Puppet](../puppet)
-
-* [puppet-rancher](https://github.com/nickschuch/puppet-rancher)
-
-## [SaltStack](../saltstack)
-
-
-* [rancher-salt](https://github.com/komljen/rancher-salt)
+*  [Ansible](../ansible)
+  * [ansibleplaybook-rancher](https://github.com/joshuacox/ansibleplaybook-rancher)
+* [Puppet](../puppet)
+  * [puppet-rancher](https://github.com/nickschuch/puppet-rancher)
+* [SaltStack](../saltstack)
+  * [rancher-salt](https://github.com/komljen/rancher-salt)
 
 ## Orchestraisierung Tools
 

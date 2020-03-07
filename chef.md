@@ -13,4 +13,3 @@ Bei Chef gibt es folgende Packete
   - Chef-menage
 - Chef
 - angrchef
--

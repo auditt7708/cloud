@@ -4,7 +4,6 @@ coreutils sind auch als _Gnu Tools_ bekannt.
 
 ## Ausgabe von übergebanen Datein
 
-
 ## Formatierung vonübergebenen Datein
 
 ## Formatiering von inhalten einer Datei

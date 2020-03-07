@@ -19,4 +19,3 @@ Folgende Erweiterungen sind Optional:
 * [JanusGraph](../janusGraph)
 * [Kafka](../kafka)
 * [Knox](../knox)
-
