@@ -2,16 +2,18 @@
 
 Prometheus ist ein kostenloses Open-Source-Software-Ökosystem,
 mit dem Messdaten aus unseren Anwendungen erfasst und in einer Datenbank gespeichert werden können,
-insbesondere in einer auf Zeitreihen basierenden Datenbank. 
+insbesondere in einer auf Zeitreihen basierenden Datenbank.
+
 Es ist ein sehr leistungsfähiges Überwachungssystem,
-das sich für dynamische Umgebungen eignet. Prometheus ist in Go geschrieben und verwendet die Abfragesprache für die Datenverarbeitung.
+das sich für dynamische Umgebungen eignet.
+Prometheus ist in Go geschrieben und verwendet die Abfragesprache für die Datenverarbeitung.
 Prometheus bietet Metriken für CPU, Arbeitsspeicher, Festplattennutzung, E/A, Netzwerkstatistik, MySQL-Server und Nginx.
 
 ## Prometheus Eigenschaften
 
 Prometheus Hauptmerkmale:
 
-* ein mehrdimensionales Datenmodell mit Zeitreihendaten, die durch Metriknamen und Schlüssel / Wert-Paare identifiziert werden
+* ein mehrdimensionales Datenmodell mit Zeitreihendaten, die durch Metriknamen und Schlüssel/Wert-Paare identifiziert werden
 * PromQL, eine flexible Abfragesprache , um diese Dimensionalität zu nutzen
 * keine Abhängigkeit von verteilter Speicherung; einzelne Server-Knoten sind autonom
 * Die Zeitserienerfassung erfolgt über ein Pull-Modell über HTTP
@@ -25,16 +27,16 @@ Dies ist die gleiche Schreibweise, die OpenTSDB verwendet.
 
 ### Prometheus abfragen mit PromQL
 
-Datentypen für Ausdruckssprache:
+Datentypen für die PromQL Ausdruckssprache:
 
 * **Sofortvektor** - eine Reihe von Zeitreihen, die einen einzelnen Abtastwert für jede Zeitreihe enthalten und alle den gleichen Zeitstempel haben
-* **Entfernungsvektor** - eine Reihe von Zeitreihen eine Reihe von Datenpunkten über die Zeit für jede Zeitreihe enthält ,
+* **Entfernungsvektor** - eine Reihe von Zeitreihen eine Reihe von Datenpunkten über die Zeit für jede Zeitreihe enthält,
 * **Skalar** - ein einfacher numerischer Fließkommawert
 * **String** - ein einfacher Stringwert; derzeit nicht verwendet
 
-Literale
+Literaleco
 
-String-Literale
+#### String-Literale
 
 ```s
 "this is a string"
@@ -42,7 +44,7 @@ String-Literale
 `these are not unescaped: \n ' " \t`
 ```
 
-Float Literale
+#### Float Literale
 
 Zeitreihen-Selektoren
 Sofortige Vektor-Selektoren
@@ -92,4 +94,4 @@ Bereichsvektor-Selektoren
 * [PromQL for Humans](https://timber.io/blog/promql-for-humans/)
 * [Metrics, tracing, and logging](https://peter.bourgon.org/blog/2017/02/21/metrics-tracing-and-logging.html)
 * [ftsdb format](https://github.com/prometheus/prometheus/blob/master/tsdb/docs/format/README.md)
-* []()
+* [Default Ports](https://github.com/prometheus/prometheus/wiki/Default-port-allocations)
