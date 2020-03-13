@@ -80,7 +80,13 @@ Bereichsvektor-Selektoren
 
 ### Prometheus Server
 
-### Prometheus Push-Gatewa
+Prometheus-Server, der die Datenbank darstellt, in der die eingesammelten Daten abgelegt werden.
+Er erfüllt in einem Setup drei Aufgaben: Zunächst empfängt er alle Messdaten, die in einem Setup anfallen.
+Die integrierte Storage-Engine des Prometheus-Servers legt diese organisiert auf der Festplatte des Servers ab, auf dem der Prometheus-Server läuft.
+Zudem bietet der Prometheus-Server eine API-Schnittstelle, über die sich die Daten auf Basis eines festgelegten Standards auch wieder auslesen lassen.
+Dafür hat das SoundCloud-Team sogar eine eigene Abfragesprache entwickelt, die auf den Namen "PromQL" hört. Ein genauerer Blick auf die drei Aufgaben des Servers hilft, um die grundlegenden Design-Ansätze der Lösung zu verstehen.
+
+### Prometheus Push-Gateway
 
 ### Prometheus Alertmanager
 
