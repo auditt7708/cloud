@@ -36,6 +36,7 @@
   * [Nagios](../nagios)
     * [Nagios Plugins](../nagios-plugins)
 * [Virtualisierung](../virtualisierung)
+  * [Proxmox](../proxmox/proxmox.md) 
 * [Entwicklung](../entwicklung)
   * [System Entwicklung](../system-development)
   * [Linux Entwicklung](../entwicklung)
