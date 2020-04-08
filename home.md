@@ -19,6 +19,7 @@
   * [cmatrix](http://www.asty.org/cmatrix/)
   * [termite](https://github.com/thestinger/termite)
   * [terminix-web](https://github.com/gnunn1/tilix-web)
+  * [spacevim](https://spacevim.org/)
   * [TermKit](https://github.com/unconed/TermKit)
   * [Xiki makes the shell console more friendly and powerful](http://xiki.org/ )
   * [katello](https://gitlab.com/tobkern1980/home-net4-environment/wikis/katello)
