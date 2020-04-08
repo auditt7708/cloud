@@ -1,3 +1,3 @@
 # Proxmox
 
-* [Proxmox API](../proxmox/proxmox-api)
+* [Proxmox API](/proxmox/proxmox-api)
