@@ -2,7 +2,6 @@
 
 * [redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
 * [Buecher mit Markdown schreiben CMS](https://www.bookstackapp.com/)
-
 * [Team Zusammenarbeit](../team-zusammenarbeit)
   * [Dashboard](../dashboard)
   * [collaboration](../collaboration)
