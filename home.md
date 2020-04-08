@@ -33,7 +33,7 @@
   * [Terminal](../terminal)
 * [monitoring](../monitoring)
   * [Icinga2](../icinga2)
-  * [prometheus](prometheus/prometheus)
+  * [prometheus](../prometheus/prometheus)
   * [Nagios](../nagios)
     * [Nagios Plugins](../nagios-plugins)
 * [Virtualisierung](../virtualisierung)
