@@ -40,7 +40,6 @@
   * [OVirt](../ovirt)
   * [KVM](../kvm)
   * [Proxmox](../proxmox/proxmox)
-  * [Proxmox2](/proxmox/proxmox)
 * [Entwicklung](../entwicklung)
   * [System Entwicklung](../system-development)
   * [Linux Entwicklung](../entwicklung)
