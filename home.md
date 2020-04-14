@@ -79,6 +79,7 @@
   * [Entwicklung](../entwicklung)
 * [sicherheit](../sicherheit)
   * [SSH](../arbeiten-mit-ssh)
+  * [wireguard](../wireguard)
 * [gitlab](../arbeiten-mit-gitlab)
 * [Application Services](../application-server)
   * [tomcat](../tomcat)
