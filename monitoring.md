@@ -1,5 +1,39 @@
 # Monitoring
 
+## SAR
+
+SAR system CPU I/O statistiken 3 mal mit einem 1 sec interval
+
+`sar -b 1 3`
+
+## iostst
+
+IO Geräte statistiken
+
+`iostat -p sda`
+
+## mpstst
+
+Processor statistiken
+
+Alle Infos
+
+`mpstat -A`
+
+Cpu ode cores
+
+`mpstat -P ALL`
+
+## vmstat
+
+Virtual memory statistiken
+
+Alle 2 sec 10 mal
+
+`vmstat 2 10`
+
+
+
 ## [Icinga2](../icinga2)
 
 ### Quellen

@@ -4,6 +4,10 @@ startet programm und gibt dessen Systemaufrufe auf dem Bildschirm aus
 
 `strace programm`
 
+startet programm und gibt dessen Systemaufrufe auf dem Bildschirm aus mit dem user mustermann
+
+`strace -u mustermann programm`
+
 Ausgabe in prog.log Logdatei
 
 `strace -o prog.log programm`

@@ -1,5 +1,9 @@
 # ps Process Manager
 
+Nach user und mit ASCII art Process
+
+`ps -f -u wwwrun,postfix`
+
 erweiterte Informationen
 
 `ps -eF` `ps -ef`
