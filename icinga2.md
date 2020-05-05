@@ -89,7 +89,9 @@ Für `MySQL Server` sind unter `/usr/share/icinga2-ido-mysql/schema/upgrade/` al
 **ToDo  bei einem Upgrade**
 
 - [ ] Icinga2 Upgrade
-    - [ ] Version Notieren
+    - [] Version Notieren
     - [] Version vergleichen
-    - [ ] je minor Update ein Schema Upgrade durchführen.
-- [] Login/Logout script um System zu überwachen / nicht überwachen schreiben
+    - [] je minor Update ein Schema Upgrade durchführen.
+- [] Login/Logout script um System zu überwachen schreiben
+
+> Es kommt vor , dass nicht alle notwendigen sql Updates der Datenbank vom Paketmanager durchgeführt werden. Um zu nachzuvollziehen wo der Paketmanager nicht richtig gearbeitet hat, sollte man sich also die Versionen vorher notieren!  
