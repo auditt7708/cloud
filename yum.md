@@ -12,7 +12,7 @@
 
 ## Alle Installierten Pakete auflisten
 
-`all Installed Package`
+`yum list all`
 
 ## Ausgeben zu welchem Paket eine Datei gehört.
 
