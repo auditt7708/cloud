@@ -104,7 +104,17 @@ Hosts in /etc/hosts ausgeben
 * [lsof Anzeige offener Dateien ("list open files")](../lsof)
 * [](../)
 
-Systemüberwachung
+### Storage
+
+Neue Images Scannen
+
+```
+for host in $(ls -1d /sys/class/scsi_host/*); do echo "- - -" > ${host}/scan ; done
+for device in $(ls -1d /sys/class/scsi_disk/*); do echo "1" > ${device}/device/rescan ; done
+
+```
+
+### Systemüberwachung
 
 * [](../)
 * [](../)
