@@ -26,7 +26,7 @@
 
 | Distribution | Low-Level Tool | High-Level Tool |
 | :---: | :---: | :---: |
-| Debian und derivate|[dpkg](../dpkg)| [apt-get](./apt-get) und [aptitude](../aptitude)|
+|Debian und derivate|[dpkg](../dpkg)| [apt-get](./apt-get) und [aptitude](../aptitude)|
 |CentOS|[rpm](../rpm)|[yum](../yum)|
 |openSUSE|[rpm](../rpm)|[zypper](../zypper)|
 
