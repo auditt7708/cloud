@@ -52,3 +52,10 @@ Optionen:
 -u
 zeigt (oder setzt) die Zeit als Greenwich Main Time
 
+2013-02-07
+
+`date +%F`
+
+02/07/13
+
+`date +%D`
