@@ -48,7 +48,8 @@ Durch das Ändern der Systemzeit wird nicht die CMos-Uhr gestellt. Nur die aktue
 
 Optionen:
 -s Datum
-(set) setzt die Zeit auf das Datum; das Datum kann Monatsnamen, Zeitzonen und ähnliches enthalten. Das oben dargestellte Format funktioniert hier nicht.
+(set) setzt die Zeit auf das Datum; das Datum kann Monatsnamen, Zeitzonen und ähnliches enthalten. 
+Das oben dargestellte Format funktioniert hier nicht.
 -u
 zeigt (oder setzt) die Zeit als Greenwich Main Time
 
