@@ -3,7 +3,7 @@
 | Task | [apt-get](../apt-get) Debian | [zypper](../zypper) Suse | [yum](../yum) | [dnf](../dnf) | [pacman](../pacman) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 |**Managing software**|||||
-|Install new software from package repository|apt-get install pkg|zypper install pkg|yum install pkg|pacman -S pkg|
+|Install new software from package repository|apt-get install pkg|zypper install pkg|yum install pkg||pacman -S pkg|
 |Install new software from package file|dpkg -i pkg|zypper install pkg|yum localinstall pkg|pacman -U pkg|
 |Update existing software|apt-get install pkg|zypper update -t package pkg|yum update pkg|pacman -S pkg|
 |Remove unwanted software|apt-get remove pkg|zypper remove pkg|yum erase pkg|pacman -R pkg|
@@ -15,7 +15,7 @@
 |Search by pattern|apt-cache search pattern|zypper search -t pattern pattern|yum search pattern|pacman -Ss pattern|
 |Search by file name|apt-file search path|zypper wp file|yum provides file|pacman -Qo file|
 |List installed packages|dpkg -l|zypper search -is|rpm -qa|pacman -Q|
-|package installed onto your system|dpkg-query -L pkg|||
+|package installed onto your system|dpkg-query -L pkg|dnf repoquery --installed -l||
 |see the filles will be installed|dpkg-deb -c pkg|||
 |**Configuring access to software repositories**|||||
 |List repositories|cat /etc/apt/sources.list|zypper repos|yum repolist|cat /etc/pacman.conf|
