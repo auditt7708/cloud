@@ -1,4 +1,3 @@
-# automatisierung deployment
 
   * [Repositories](../repositories)
   * [Preseed](../preseed)
