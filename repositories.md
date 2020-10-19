@@ -133,3 +133,4 @@ Pakete für Centos 7, drbd , nfs und GlusterFS Server
 
 * [pulp](https://pulpproject.org/)
 * [Sammlung von Packetquellen](https://pkgs.org/)
+* [RPM Remis PHP Repo](https://rpms.remirepo.net/)
