@@ -96,3 +96,7 @@ oder
 PID eines Precess der nicht reagiert
 
 `ps -A | grep -i stress`
+
+systemd csets anzeigen
+
+`ps xawf -eo pid,user,cgroup,args`
