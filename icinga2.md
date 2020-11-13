@@ -1,4 +1,7 @@
-## Icinga2 Konfiguration
+## Icinga2 
+
+* [Icinga2 icingaweb2](../icingaweb2)
+
 
 ### Service Monitoring
 
