@@ -29,18 +29,12 @@ Einige Password Manager mit einer GUI. Ich habe mal eine Weboberfläche auch daz
 **gpg Key untersuchen**
 `gpg --expert  --edit -key $key`
 
-[Monkeysphere](../monkeysphere)
-
-## [Yubikey](../yubikey)
-
-## [OpenSSH](../arbeiten-mit-ssh)
-
-## [OpenSSL](../openssl)
-
-## [Certutil](../certutil)
-
-## [letsencrypt](../letsencrypt)
-
+*[Monkeysphere](../monkeysphere)
+* [Yubikey](../yubikey)
+* [OpenSSH](../arbeiten-mit-ssh)
+* [OpenSSL](../openssl)
+* [Certutil](../certutil)
+* [letsencrypt](../letsencrypt)
 * [letsencrypt boulder](https://github.com/letsencrypt/boulder)
 
 ## Deployment Tools
@@ -53,9 +47,9 @@ Einige Password Manager mit einer GUI. Ich habe mal eine Weboberfläche auch daz
 
 ## Firewalls
 
-## [iptables](../iptables)
-
-## [Firewalld](../firewalld)
+* [iptables](../iptables)
+* [fail2ban](../fail2ban)
+* [Firewalld](../firewalld)
 
 ## [VPN](../vpn)
 
