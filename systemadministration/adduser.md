@@ -1,6 +1,6 @@
 # Benutzer hinzufügen
 
-Das Kommando _adduser_ dient zum Hinzufügen von Benutzern mit einigen Unterscheidungen
+Das Kommando `_adduser_` dient zum Hinzufügen von Benutzern mit einigen Unterscheidungen
 es gibt nämlich Systembenutzer, locale Benutzer und externe Benutze die dann nicht mit adduser verwaltet werden.
 
 User anlegen mit uid 1500
@@ -15,7 +15,7 @@ User mit angepastem Kommentar "GECOS"
 
 `sudo useradd -e 2019-01-22 username`
 
-Systemuser anlegen
+Systemnutzer anlegen
 
 `sudo useradd -r username`
 

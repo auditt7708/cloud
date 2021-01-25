@@ -1,4 +1,3 @@
-
-  * [Repositories](../repositories)
-  * [Preseed](../preseed)
-  * [Deployment](../deployment)
+* [Repositories](../repositories)
+* [Preseed](../preseed)
+* [Deployment](../deployment)

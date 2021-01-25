@@ -58,7 +58,6 @@ baseurl=http://download.opensuse.org/repositories/network:/ha-clustering:/Stable
 gpgcheck=1
 gpgkey=http://download.opensuse.org/repositories/network:/ha-clustering:/Stable/CentOS_CentOS-7//repodata/repomd.xml.key
 enabled=1
-
 ```
 
 epel.repo
@@ -94,40 +93,40 @@ gpgcheck=1
 
 Pakete auf allen Systemen
 
-| OS | Packet |
-| :---: | :---: |
-| beide   | vim     |
-| beide   | mc      |
-| beide   | tree   |
-| beide   | tmux   |
-| beide   | wget   |
-| cell 3   | cell 4   |
-| cell 1   | cell 2   |
-| cell 3   | cell 4   |
-| cell 1   | cell 2   |
-| cell 3   | cell 4   |
+| OS     | Packet |
+|:------:|:------:|
+| beide  | vim    |
+| beide  | mc     |
+| beide  | tree   |
+| beide  | tmux   |
+| beide  | wget   |
+| cell 3 | cell 4 |
+| cell 1 | cell 2 |
+| cell 3 | cell 4 |
+| cell 1 | cell 2 |
+| cell 3 | cell 4 |
 
 Pakete für CentOS 7, drbd und nfs
 
 Wichtig für [drbd](http://elrepo.org/tiki/tiki-index.php)
 
 | Service | Packet |
-| :---: | :---: |
-| beide   | vim     |
-| beide   | mc      |
+|:-------:|:------:|
+| beide   | vim    |
+| beide   | mc     |
 | beide   | tree   |
 | beide   | tmux   |
-| beide   | cell 2   |
+| beide   | cell 2 |
 
 Pakete für Centos 7, drbd , nfs und GlusterFS Server
 
 | Service | Packet |
-| :---: | :---: |
-| beide   | vim     |
-| beide   | mc      |
+|:-------:|:------:|
+| beide   | vim    |
+| beide   | mc     |
 | beide   | tree   |
 | beide   | tmux   |
-| beide   | cell 2   |
+| beide   | cell 2 |
 
 **Quellen**
 

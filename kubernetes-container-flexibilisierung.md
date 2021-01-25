@@ -7,6 +7,7 @@ In diesem Rezept werden wir zwei neue Features besprechen: `job` und `daemon set
 Was ist ein Job-like Pod und eine Daemon-like Pod? Pods in einem Kubernetes Job werden direkt beendet, nachdem sie ihre Arbeit abgeschlossen haben. Auf der anderen Seite wird ein Dämon-ähnlicher Pod in jedem Knoten erstellt, wenn die Benutzer es wünschen, dass es sich um ein langlebiges Programm handelt, das als System-Daemon dient.
 
 Sowohl der Job als auch der Daemon-Set gehören zur Erweiterung der Kubernetes API. Außerdem ist der Daemon-Set-Typ in den Standard-API-Einstellungen deaktiviert. Daher müssen Sie die Nutzung später zum Testen aktivieren. Ohne die Einstellung des Daemon-Sets zu starten, bekommst du einen Fehler über den unbekannten Typ:
+
 ```
 # kubectl create -f daemonset-test.yaml
 error validating "daemonset-test.yaml": error validating data: couldn't find type: v1beta1.DaemonSet; if you choose to ignore these errors, turn validation off with --validate=false
@@ -44,6 +45,7 @@ KUBE_API_ARGS="--cluster_name=Happy-k8s-cluster --runtime-config=extensions/v1be
 ```
 
 Nachdem Sie das Tag eingerichtet haben, entfernen Sie das Verzeichnis `/tmp/kubectl.schema`, das API-Schemas speichert. Danach sollte mann den Kubernetes apiserver neu zu starten:
+
 ```
 // Remove the schema file
 # rm -f /tmp/kubectl.schema
@@ -67,6 +69,7 @@ Nachdem Sie das Tag eingerichtet haben, entfernen Sie das Verzeichnis `/tmp/kube
     },
 :
 ```
+
 Als nächstes werden wir für die folgenden Abschnitte zeigen, wie man einen Job und einen Daemon mit Konfigurationsdateien erstellt. Schauen Sie sich das Beispiel an. Arbeiten Sie mit Konfigurationsdateien in diesem Kapitel, um mehr über andere Konzepte zu erfahren.
 
 ### Wie es geht…
@@ -105,11 +108,14 @@ spec:
 Eine Jobressource benötigt einen Selektor, um festzulegen, welche Pods als dieser Job abgedeckt werden sollen. Wenn in der Vorlage kein Selektor angegeben ist, wird es genau so sein wie die Labels des Auftrags. Die Neustart-Richtlinie für Pods, die in einem Job erstellt wurden, sollte auf `Never` oder `OnFailure` gesetzt werden, da ein Job beendet wird, sobald er erfolgreich abgeschlossen wurde.
 
 Jetzt sind Sie bereit, einen Job mit Ihrer Vorlage zu erstellen:
+
 ```
 # kubectl create -f job-dpkg.yaml
 job "package-check" created
 ```
+
 Nach dem laden(push) der angeforderten Datei ist es möglich, den Status sowohl des Pods als auch des Jobs zu überprüfen:
+
 ```
 # kubectl get job
 JOB             CONTAINER(S)    IMAGE(S)   SELECTOR                           SUCCESSFUL
@@ -118,8 +124,8 @@ package-check   package-check   ubuntu     image in (ubuntu),test in (dpkg)   1
 # kubectl get pod
 NAME                         READY     STATUS    RESTARTS   AGE
 package-check-jrry1          0/1       Pending   0          6s
-
 ```
+
 Sie werden feststellen, dass ein Pod für die Behandlung dieser Aufgabe bootet . Diese Pods wird sehr bald am Ende des Prozesses gestoppt werden. Der Unterbefehl `logs` helfen, das Ergebnis zu erhalten:
 
 ```
@@ -135,8 +141,8 @@ ii  apt-utils                       1.0.1ubuntu2.10                  amd64      
 ii  base-files                      7.2ubuntu5.3                     amd64        Debian base system miscellaneous files
 :
 (ignored)
-
 ```
+
 Jetzt überprüfen Sie die Job `package-check` mit dem Unterbefehl `describe`; Die Bestätigung für Pod-Abschluss und andere Meldungen werden als Systeminformation angezeigt:
 `# kubectl describe job package-check`
 
@@ -150,6 +156,7 @@ job "package-check" deleted
 ### Erstellen eines Jobs mit mehreren Pods ausgeführen
 
 Der Benutzer kann auch die Anzahl der Aufgaben entscheiden, die in einem einzigen Job beendet werden sollen. Es ist hilfreich, einige zufällige und Stichprobenprobleme auszulösen. Versuchen wir es mit der selben Vorlage im vorherigen Beispiel. Wir müssen das `Spec.completions` Element hinzufügen, um die Pod-Nummer anzugeben:
+
 ```
 # cat job-dpkg.yaml
 apiVersion: extensions/v1beta1
@@ -171,8 +178,8 @@ spec:
         image: ubuntu
         command: ["dpkg-query", "-l"]
       restartPolicy: Never
-
 ```
+
 Dann überprüfen Sie, wie der Job aussieht mit dem Unterbefehl `describe`:
 
 ```
@@ -201,6 +208,7 @@ Wie Sie sehen können, werden drei Pods erstellt, um diesen Job zu umzusetzen. A
 Wenn ein Kubernetes-Daemon-Set erstellt wird, wird der definierte Pod in jedem einzelnen Node eingesetzt. Es ist garantiert, dass die laufenden Container in jedem Knoten gleiche Ressourcen einnehmen. In diesem Szenario arbeitet der Container normalerweise als Daemon-Prozess.
 
 Zum Beispiel hat die folgende Vorlage einen `ubuntu` Image container, der die Speicherbenutzung halb so lange überprüft. Wir werden es als Dämon-Set aufbauen:
+
 ```
 # cat daemonset-free.yaml
 apiVersion: extensions/v1beta1
@@ -224,9 +232,11 @@ spec:
         command: ["/bin/bash","-c","while true; do free; sleep 30; done"]
       restartPolicy: Always
 ```
+
 Als Job könnte der Selektor ignoriert werden, aber es nimmt die Werte der Labels. Wir werden immer die Neustart-Police des Daemon-Sets als `Always` konfigurieren, was dafür sorgt, dass jeder Node einen Pod startet.
 
 Die Abkürzung des Dämonsatzes ist `ds`; Verwenden Sie diese kürzere variante in der Kommandozeilen-Schnittstelle zur Bequemlichkeit und verhinderung einer falschen eingabe:
+
 ```
 # kubectl create -f daemonset-free.yaml
 daemonset "ram-check" created
@@ -267,7 +277,9 @@ ram-check-bti08   1/1       Running   0          4m    kube-node1
 ram-check-mxry2   1/1       Running   0          4m    kube-node3
 ram-check-u9e5f   1/1       Running   0          4m    kube-node2
 ```
+
 Es ist gut für Sie, das Ergebnis mit den Unterbefehls `logs` zu bewerten:
+
 ```
 # kubectl logs ram-check-bti08
              total       used       free     shared    buffers     cached
@@ -281,7 +293,9 @@ Swap:            0          0          0
 :
 (ignored)
 ```
+
 Als nächstes löschen Sie diesen Dämon, der durch die Referenz der Vorlagendatei oder durch den Namen der  Ressource gesetzt wird:
+
 ```
 # kubectl stop -f daemonset-free.yaml
 // or 
@@ -291,6 +305,7 @@ Als nächstes löschen Sie diesen Dämon, der durch die Referenz der Vorlagendat
 ### Der Dämon wird nur auf bestimmten Node gesetzt
 
 Es gibt auch eine Lösung für Sie, um Daemon-ähnliche Pods einfach auf bestimmten Nodes zu implementieren. Zuerst müssen Sie Node in eine Gruppe hinzufügen, indem sie sie markieren. Wir werden nur den Node `kube-node3` mit dem speziellen Key-Value-Label markieren, der denjenigen zum Ausführen des Daemon-Sets anzeigt:
+
 ```
 # kubectl label nodes kube-node3 runDS=ok
 node "kube-node3" labeled
@@ -300,7 +315,9 @@ kube-node1   kubernetes.io/hostname=kube-node1             Ready     27d
 kube-node2   kubernetes.io/hostname=kube-node2             Ready     27d
 kube-node3   kubernetes.io/hostname=kube-node3,runDS=ok   Ready     4d
 ```
+
 Dann wählen wir diese one-member Gruppe in der Vorlage aus. Der Eintrag `spec.template.spec.nodeSelector` kann beliebige key-value(Schlüsselwertpaare) für die Nodeauswahl hinzufügen:
+
 ```
 # cat daemonset-free.yaml
 apiVersion: extensions/v1beta1
@@ -325,7 +342,6 @@ spec:
         image: ubuntu
         command: ["/bin/bash","-c","while true; do free; sleep 30; done"]
       restartPolicy: Always
-
 ```
 
 Beim Zuweisen des Dämonsatzes zu einer bestimmten Nodegruppe können wir in einem einzigen Node des Drei-Knoten-Systems durchführen:
