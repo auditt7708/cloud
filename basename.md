@@ -4,6 +4,6 @@ Dateiendung entfernen
 
 `basename datei.txt .txt`
 
-Dateiendung bei mehrere Dateien entvernen
+Dateiendung bei mehrere Dateien entfernen
 
 `basename --suffix=.list --multiple /etc/apt/sources.list.d/*.list`
