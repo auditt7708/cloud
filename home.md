@@ -84,6 +84,8 @@
 * [Application Services](../application-server)
   * [tomcat](../tomcat)
   * [WildFly](../wildfly)
+* [Storage](../storage)
+  * [ceph](../storage/ceph)
 * [Big Data](../bigdata)
 * [Netzwerk](../netzwerk)
 * [Hardware](../hardware)
