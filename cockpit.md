@@ -1,14 +1,32 @@
-# Systemd einrichten
+# Konfiguration 
+
+Systemctl activiren
 
 ```sh
 sudo systemctl start cockpit
 ​sudo systemctl enable cockpit.socket
 ```
 
-## Firewall
+
+
+firewalld
 
 ```sh
 sudo firewall-cmd --add-service=cockpit
 ​sudo firewall-cmd --add-service=cockpit --permanent
 ​sudo firewall-cmd --reload
+```
+
+
+[resolv proxy](https://cockpit-project.org/guide/172/cockpit.conf.5.html)
+
+```
+[WebService]
+Origins = https://somedomain1.com https://somedomain2.com:9090
+ProtocolHeader = X-Forwarded-Proto
+LoginTitle = 
+LoginTo = 
+MaxStartups = 
+AllowUnencrypted = 
+UrlRoot=/secret
 ```
