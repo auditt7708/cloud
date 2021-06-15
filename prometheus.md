@@ -90,6 +90,8 @@ Dafür hat das SoundCloud-Team sogar eine eigene Abfragesprache entwickelt, die 
 
 ### Prometheus Alertmanager
 
+* [prometheus alerts rules](https://awesome-prometheus-alerts.grep.to/rules)
+
 #### Prometheus Alertmanager pagerduty
 
 #### Prometheus Alertmanager Email

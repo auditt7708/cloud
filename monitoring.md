@@ -32,9 +32,9 @@ Alle 2 sec 10 mal
 
 `vmstat 2 10`
 
+## Basic resource monitoring
 
-
-## [Icinga2](../icinga2)
+* [Icinga2](../icinga2)
 
 ### Quellen
 
