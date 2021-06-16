@@ -1,3 +1,13 @@
+---
+title: ceph-fehlerbehebung
+description: 
+published: true
+date: 2021-06-16T21:59:23.531Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:13:10.632Z
+---
+
 # Ceph Fehler Behebung
 
 ## Kommandos zur fehlerbehebung
@@ -37,9 +47,7 @@
 `ceph crash archive-all`
 
 
-
-# Allgemeines zur Fehlerbehebung
-
+## Allgemeines zur Fehlerbehebung
 
 
 **Fehler Analyse**
@@ -49,7 +57,6 @@
 `ceph features`
 
 `ceph fs status`
-
 
 
 **Fehler**: [WRN]overall HEALTH_WARN 1 clients failing to respond to cache pressure
@@ -64,33 +71,21 @@ wider inodes freigeben
 **Ursache**: Clients haben die inodes im Zugriff, insgesamt soviel das der Ram nicht ausreicht
 
 
-
 **Manuelle Reparatur**
 
 `ceph-bluestore-tool repair --path` `/var/lib/ceph/osd/ceph-74`
 
 
-
 ceph pg repair ID 
-
 
 
 Nach Prüfung der Logs kann man dann die Fehler bestätigen mit:  
 
 
-
 ceph crash archive-all  
-
 
 
 so bleiben die auch bestehen. 
 
 
-
 --flush-all geht auch dann sind die aber weg!
-
-
-
-
-
-
