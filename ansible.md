@@ -1,23 +1,39 @@
+---
+title: ansible
+description: 
+published: true
+date: 2021-06-21T13:57:41.112Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:56:58.961Z
+---
+
 # Ansible
 
 ## Übersicht
-
 * [Ansible Installation und Konfiguration](../ansible-install-konfiguration)
-* [Ansible requirements](../ansible-erweitert-requirements)
-* [Ansible Variablen Facts Filter](../ansible-variablen)
-* [Ansibel Inventory und Hosts](../ansible-hosts)
+  * [Ansible requirements](../ansible-erweitert-requirements)
+  * [Ansible Variablen Facts Filter](../ansible-variablen)
+  * [Ansible Paterns](../ansible-pattern)
+  * [Ansible Filter](../ansible-filter)
+* [Ansible Inventory](../ansible-inventory)
+  * [Ansibel Inventory und Hosts](../ansible-hosts)
 * [Ansible Templates](../ansible-templates)
-* [Ansible Statements](../ansible-statements)
+  * [Ansible Statements](../ansible-statements)
 * [Ansible Verzeichnis Layout](../ansible-verzeichnis-layout)
-* [Ansible alternatives Verzeichnis Layout](../ansible-alternativ-verzeichnis-layout)
+  * [Ansible alternatives Verzeichnis Layout](../ansible-alternativ-verzeichnis-layout)
 * [Ansible Fehlersuche](../ansible-fehlersuche)
 * [Ansible Cluster](../ansible-cluster)
-* [Ansible Inventory](../ansible-inventory)
 * [Ansible Authentifikation](../ansible-authentifikation)
-* [Ansible Paterns](../ansible-pattern)
-* [Ansible Filter](../ansible-filter)
 * [Ansible Sozial Authentifikation](../ansible-social-auth)
 * [Zero Downtime Deployment](../ansible-zero-downtime-deployment)
+* [Tools](../ansible-tools)
+  * [Ansible Mazer](../ansible-mazer)
+  * [Ansible Rolen](../ansible-rolen)
+  * [Ansible Galaxy](../ansible-galaxy)
+  * [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
+* [Sicherheit](../ansible-sicherheit)
+  * [Ansible Vault](../ansible-vault)
 
 Tools
 
@@ -51,51 +67,4 @@ Sicherheit
 * [centos-opstools](https://github.com/centos-opstools?page=5)
 * [opstools-ansible](https://opstools-ansible.readthedocs.io/en/latest/)
 
-## Inhaltsverzeichnis
 
-* [Ansible Installation und Konfiguration](../ansible-install-konfiguration)
-  * [Ansible requirements](../ansible-erweitert-requirements)
-  * [Ansible Variablen Facts Filter](../ansible-variablen)
-  * [Ansible Paterns](../ansible-pattern)
-  * [Ansible Filter](../ansible-filter)
-* [Ansible Inventory](../ansible-inventory)
-  * [Ansibel Inventory und Hosts](../ansible-hosts)
-* [Ansible Templates](../ansible-templates)
-  * [Ansible Statements](../ansible-statements)
-* [Ansible Verzeichnis Layout](../ansible-verzeichnis-layout)
-  * [Ansible alternatives Verzeichnis Layout](../ansible-alternativ-verzeichnis-layout)
-* [Ansible Fehlersuche](../ansible-fehlersuche)
-* [Ansible Cluster](../ansible-cluster)
-* [Ansible Authentifikation](../ansible-authentifikation)
-* [Ansible Sozial Authentifikation](../ansible-social-auth)
-* [Zero Downtime Deployment](../ansible-zero-downtime-deployment)
-* [Tools](../ansible-tools)
-  * [Ansible Mazer](../ansible-mazer)
-  * [Ansible Rolen](../ansible-rolen)
-  * [Ansible Galaxy](../ansible-galaxy)
-  * [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
-* [Sicherheit](../ansible-sicherheit)
-  * [Ansible Vault](../ansible-vault)
-
-## Wichtige Documentation für ansible
-
-* [playbooks von ansile doc](http://docs.ansible.com/ansible/playbooks.html)
-* [gc3-uzh-ch](https://github.com/gc3-uzh-ch/ansible-playbooks)
-* [ansible-pacemaker](https://github.com/styopa/ansible-pacemaker)
-* [ansible fireball](https://linux.die.net/man/3/ansible.fireball)
-* [Ansible_access_other_groups_group_vars](https://raymii.org/s/tutorials/Ansible_access_other_groups_group_vars.html)
-* [Only-do-something-if-another-action-changed](https://raymii.org/s/tutorials/Ansible_-_Only-do-something-if-another-action-changed.html)
-* [Ansible and Openstck](https://raymii.org/s/articles/Building_HA_Clusters_With_Ansible_and_Openstack.html)
-* [ansible-zero-downtime-deployment](https://jaxenter.de/ansible-zero-downtime-deployment-50085)
-* [Dynamic Inventory](http://docs.ansible.com/ansible/intro_dynamic_inventory.html#using-inventory-directories-and-multiple-inventory-sources)
-* [playbooks_best_practices](https://docs.ansible.com/ansible/playbooks_best_practices.html)
-* [module-index](http://docs.ansible.com/ansible/modules_by_category.html#module-index)
-* [mongodb cluster](https://github.com/ansible/ansible-examples/tree/master/mongodb)
-* [directory-layout](https://docs.ansible.com/ansible/playbooks_best_practices.html#directory-layout)
-* [non-ssh-connection-types z.B Docker](http://docs.ansible.com/ansible/intro_inventory.html#non-ssh-connection-types)
-* [developing_api für eigene Scripte](http://docs.ansible.com/ansible/dev_guide/developing_api.html)
-* [Ansible Web Tools](https://ansible.sivel.net/)
-* [centos-opstools](https://github.com/centos-opstools?page=5)
-* [opstools-ansible](https://opstools-ansible.readthedocs.io/en/latest/)
-* [Ansible  make your complex services simple](http://automationbroker.io/)
-* [ansible-playbook-bundle](https://github.com/ansibleplaybookbundle/ansible-playbook-bundle)
