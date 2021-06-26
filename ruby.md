@@ -1,3 +1,13 @@
+---
+title: ruby
+description: 
+published: true
+date: 2021-06-09T16:03:55.667Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:03:50.855Z
+---
+
 # Installation Distributions unabhängig
 
 Centos7 Abhängigkeiten

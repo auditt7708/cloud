@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-facts-env
+description: 
+published: true
+date: 2021-06-09T15:58:18.914Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:58:13.645Z
+---
+
 # puppet4-externe-tools-ecosystem-facts-env
 
 Ein weiterer praktischer Weg, um Informationen in Puppet und Facter zu bekommen, ist, es mit Umgebungsvariablen zu übergeben. Jede Umgebungsvariable, deren Name mit `FACTER_` beginnt, wird als Tatsache interpretiert. Zum Beispiel, fragen Sie den Wert von hallo mit dem folgenden Befehl:

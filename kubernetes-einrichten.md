@@ -1,3 +1,13 @@
+---
+title: kubernetes-einrichten
+description: 
+published: true
+date: 2021-06-09T15:32:19.113Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:32:13.865Z
+---
+
 # kubernetes einrichten
 
 Willkommen auf der Reise von Kubernetes!

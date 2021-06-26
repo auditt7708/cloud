@@ -1,3 +1,13 @@
+---
+title: docker-performence-leistungsueberwachung
+description: 
+published: true
+date: 2021-06-09T15:14:21.452Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:14:16.220Z
+---
+
 # Docker Pervormence und Leistungsüberwachung
 
 Wir haben Werkzeuge wie SNMP, Nagios und so weiter, um Bare Metal und VM Performance zu überwachen. 

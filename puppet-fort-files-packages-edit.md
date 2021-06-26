@@ -1,3 +1,13 @@
+---
+title: puppet-fort-files-packages-edit
+description: 
+published: true
+date: 2021-06-09T15:48:28.924Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:48:23.395Z
+---
+
 # Puppet für fortgeschrittene: stdlib
 
 Wenn Sie eine Puppe ändern müssen, ändern Sie eine bestimmte Einstellung in einer Konfigurationsdatei, es ist üblich, einfach die gesamte Datei mit Puppet einzusetzen. Das ist aber nicht immer möglich; Vor allem, wenn es eine Datei ist, die mehrere verschiedene Teile Ihres Puppet Manifestes möglicherweise ändern müssen.

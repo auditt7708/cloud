@@ -1,3 +1,13 @@
+---
+title: puppet-fort-files-packages-gnupg-sec
+description: 
+published: true
+date: 2021-06-09T15:48:53.487Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:48:47.639Z
+---
+
 # Puppet für fortgeschrittene: Sicherheit mit gnupg
 
 Wir brauchen oft Puppet, um Zugang zu geheimen Informationen wie Passwörtern oder Krypto schlüssel zu haben, damit sie die Systeme ordnungsgemäß konfigurieren können. Aber wie vermeiden Sie diese Geheimnisse direkt in Ihren Puppet code gelangen, wo sie für jeden sichtbar sind, der Lesezugriff auf Ihr Repository hat?

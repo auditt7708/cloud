@@ -1,3 +1,13 @@
+---
+title: ha-pacemaker-logging
+description: 
+published: true
+date: 2021-06-09T15:24:03.750Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:23:58.421Z
+---
+
 # High Availability Pacemaker Cluster Logging
 
 We’re going to configure cluster logging on RHEL 7.

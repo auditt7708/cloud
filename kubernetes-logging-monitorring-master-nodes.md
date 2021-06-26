@@ -1,3 +1,13 @@
+---
+title: kubernetes-logging-monitorring-master-nodes
+description: 
+published: true
+date: 2021-06-09T15:34:53.438Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:34:47.927Z
+---
+
 ### Einrichten des DNS-Servers
 
 Wie bereits erwähnt, verwenden wir die offizielle Vorlage, um den DNS-Server in unserem Kubernetes-System aufzubauen. Es gibt nur zwei Schritte. Ändern Sie zuerst die Vorlagen und erstellen Sie die Ressourcen. Dann müssen wir den `kubelet` Daemon mit DNS-Informationen neu starten.

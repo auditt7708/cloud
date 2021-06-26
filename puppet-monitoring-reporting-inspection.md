@@ -1,3 +1,13 @@
+---
+title: puppet-monitoring-reporting-inspection
+description: 
+published: true
+date: 2021-06-09T15:54:15.225Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:54:10.259Z
+---
+
 # puppet-monitoring-reporting-inspection
 
 Sie wissen wahrscheinlich, dass die Konfigurationseinstellungen von Puppet in puppet.conf gespeichert sind, aber es gibt viele Parameter, und diejenigen, die nicht in der puppet.conf aufgeführt sind, nehmen einen Standardwert an. Wie sehen Sie den Wert eines beliebigen Konfigurationsparameters, unabhängig davon, ob es explizit in puppet.conf gesetzt ist oder nicht? Die Antwort ist, den Befehl puppet config print zu verwenden.

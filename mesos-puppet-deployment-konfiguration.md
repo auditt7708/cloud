@@ -1,3 +1,13 @@
+---
+title: mesos-puppet-deployment-konfiguration
+description: 
+published: true
+date: 2021-06-09T15:38:59.264Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:38:54.100Z
+---
+
 # Mesos Deployment mit Puppet
 
 Dieser Teil wird in erster Linie abdecken, wie man einen Mesos-Cluster mit dem Puppet-Konfigurationsmanagement-Tool mit den ZooKeeper- und Mesos-Modulen in den folgenden Repositories einsetzen kann:

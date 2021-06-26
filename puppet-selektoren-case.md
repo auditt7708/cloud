@@ -1,3 +1,13 @@
+---
+title: puppet-selektoren-case
+description: 
+published: true
+date: 2021-06-09T15:54:47.935Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:54:42.592Z
+---
+
 # puppet-selektoren-case
 
 Sie irgendeine 'if' bedingte Aussage schreiben, Puppet bietet aber ein paar zusätzliche ausdrücke, um Ihnen zu helfen, Bedingungen leichter auszudrücken: die `selector` und die `case` Anweisung.

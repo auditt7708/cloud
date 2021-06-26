@@ -1,3 +1,13 @@
+---
+title: ss
+description: 
+published: true
+date: 2021-06-09T16:06:26.196Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:06:21.214Z
+---
+
 # Linux ssexamples
 
 listen and exemled connections

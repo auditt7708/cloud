@@ -1,3 +1,13 @@
+---
+title: docker-benutzen-container-starten
+description: 
+published: true
+date: 2021-06-09T15:08:45.447Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:08:40.241Z
+---
+
 Sobald wir Bilder haben, können wir sie benutzen, um die Container zu starten. In diesem Rezept werden wir einen Container mit der `fedora:latest` neues image und sehen, was alle Dinge hinter der Szene passieren.
 Fertig werden
 

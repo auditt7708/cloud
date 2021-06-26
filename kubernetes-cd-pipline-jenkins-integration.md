@@ -1,3 +1,13 @@
+---
+title: kubernetes-cd-pipline-jenkins-integration
+description: 
+published: true
+date: 2021-06-09T15:30:51.975Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:30:45.554Z
+---
+
 # Kubernates CD/CI Piplines Integration mit Jenkins
 
 In Software Engineering, [Continuous Integration (CI)](https://de.wikipedia.org/wiki/Continuous_integration) und [Continuous Delivery (CD)](https://de.wikipedia.org/wiki/Continuous_delivery), abgekürzt als CI/CD, haben die Idee, das Verfahren des traditionellen Entwicklungsprozesses mit einem kontinuierlichen Testmechanismus zu vereinfachen, um die Panik der ernsten Konflikte zu reduzieren, nämlich, um kleine Fehler sofort zu lösen, sobald man einen gefunden hat.

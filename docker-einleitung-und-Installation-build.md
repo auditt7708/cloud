@@ -1,3 +1,13 @@
+---
+title: docker-einleitung-und-Installation-build
+description: 
+published: true
+date: 2021-06-09T15:10:42.479Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:10:36.625Z
+---
+
 # Docker Einleitung und Installations Build
 
 Ich leihe dieses Rezept aus dem nächsten Kapitel, um einige Konzepte vorzustellen.

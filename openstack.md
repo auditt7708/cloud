@@ -1,3 +1,13 @@
+---
+title: openstack
+description: 
+published: true
+date: 2021-06-09T15:42:40.279Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:42:35.153Z
+---
+
 # Openstack Projekte
 
 ## Nova Compute

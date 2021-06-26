@@ -1,3 +1,13 @@
+---
+title: puppet-fort-parsen-arg-shell
+description: 
+published: true
+date: 2021-06-09T15:49:42.723Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:49:37.438Z
+---
+
 # Puppet für fortgeschrittene: exec
 
 Wenn Sie Werte in eine Befehlszeile einfügen möchten (z.B die von einer `exec` Ressource ausgeführt werden), müssen sie oft quted sein, besonders wenn sie Leerzeichen enthalten. Die `shellquote` Funktion wird eine beliebige Anzahl von Argumenten, einschließlich Arrays, und jedes Argumente queten und übergibt sie alle als eine Leerzeichen getrennte Zeichenfolge, die Sie an Befehle übergeben können weiter.

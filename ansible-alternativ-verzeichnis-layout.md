@@ -1,3 +1,13 @@
+---
+title: ansible-alternativ-verzeichnis-layout
+description: 
+published: true
+date: 2021-06-09T14:54:50.343Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:54:45.313Z
+---
+
 # Ansible Alternatives Verzeichnis layout
 
 ```sh

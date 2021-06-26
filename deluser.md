@@ -1,3 +1,13 @@
+---
+title: deluser
+description: 
+published: true
+date: 2021-06-09T15:03:47.918Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:03:42.826Z
+---
+
 # Deluser
 
 Den Benutzer anton entfernen, aber das Homeverzeichnis aber auf dem System belassen:

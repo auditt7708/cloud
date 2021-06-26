@@ -1,3 +1,13 @@
+---
+title: puppet4-basics
+description: 
+published: true
+date: 2021-06-09T15:57:00.060Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:56:54.834Z
+---
+
 # Benutzen der Puppet community version
 
 Orginal Qelle zum Thema [style_guide](http://docs.puppetlabs.com/guides/style_guide.html)

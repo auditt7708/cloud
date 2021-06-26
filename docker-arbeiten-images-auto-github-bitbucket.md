@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-auto-github-bitbucket
+description: 
+published: true
+date: 2021-06-09T15:05:33.624Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:05:28.412Z
+---
+
 # Docker Arbeiten mit Images. Github und bitbucket
 
 Wir haben früher gesehen, wie man die Docker-Images auf Docker Hub gepushed. Docker Hub ermöglicht es uns, automatisierte Bilder aus einem GitHub / Bitbucket-Repository mit seinen Build-Clustern zu erstellen. Das GitHub / Bitbucket-Repository sollte die Dockerfile und den Inhalt enthalten, der zum Kopieren / Hinzufügen in das Bild erforderlich ist. Schauen wir uns ein GitHub-Beispiel in den kommenden Abschnitten an.

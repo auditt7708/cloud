@@ -1,3 +1,13 @@
+---
+title: docker-einleitung-und-Installation
+description: 
+published: true
+date: 2021-06-09T15:11:14.123Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:11:08.477Z
+---
+
 # Docker Einleitung und INstallation
 
 Zu Beginn der IT-Revolution wurden die meisten Anwendungen direkt auf der physischen Hardware, über das Host-Betriebssystem eingesetzt. Wegen dieses einzelnen Benutzerraums wurde die Laufzeit zwischen den Anwendungen geteilt. Der Einsatz war stabil, hardware-centric und hatte einen langen Wartungszyklus. Es wurde überwiegend von einer IT-Abteilung geleitet und hat den Entwicklern viel weniger Flexibilität gegeben. In solchen Fällen wurden Hardwareressourcen regelmäßig nicht ausgelastet.

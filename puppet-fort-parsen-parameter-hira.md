@@ -1,3 +1,13 @@
+---
+title: puppet-fort-parsen-parameter-hira
+description: 
+published: true
+date: 2021-06-09T15:49:51.499Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:49:46.039Z
+---
+
 # Puppet für fortgeschrittene: Hira Parameter benutzen
 
 Wie die Parameter-Vorgaben, die wir im vorherigen Kapitel eingeführt haben, kann Hiera verwendet werden, um Standardwerte für Klassen bereitzustellen. Diese Funktion erfordert Puppet Version 3 und höher.

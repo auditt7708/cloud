@@ -1,3 +1,13 @@
+---
+title: bind9
+description: 
+published: true
+date: 2021-06-09T14:58:37.433Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:58:32.158Z
+---
+
 # Bind9
 
 /etc/bind/db.example.com

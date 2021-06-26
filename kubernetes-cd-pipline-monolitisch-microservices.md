@@ -1,3 +1,13 @@
+---
+title: kubernetes-cd-pipline-monolitisch-microservices
+description: 
+published: true
+date: 2021-06-09T15:30:59.521Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:30:54.196Z
+---
+
 Typischerweise hat unsere Anwendungsarchitektur das monolithische Design, das Model-View-Controller (MVC) und jede Komponente innerhalb einer einzigen großen Binärdatei enthält.
 
 Monolithische Software hat einige Vorteile, wie weniger Latenz innerhalb von Komponenten, alle in einer einfachen Verpackung, und einfach zu implementieren und zu testen.

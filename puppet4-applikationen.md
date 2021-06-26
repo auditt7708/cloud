@@ -1,3 +1,13 @@
+---
+title: puppet4-applikationen
+description: 
+published: true
+date: 2021-06-09T15:55:19.905Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:55:14.473Z
+---
+
 # puppet4-applikationen
 
 Ohne Anwendungen ist ein Server nur eine sehr teure Raumheizung. In diesem Kapitel werde ich einige Rezepte vorstellen, um eine bestimmte Software mit Puppet zu verwalten: MySQL, Apache, Nginx und Ruby. Ich hoffe die Rezepte werden dir in sich selbst nützlich sein. Allerdings sind die Muster und Techniken, die sie verwenden, auf fast jede Software anwendbar, so dass Sie sie an Ihre eigenen Zwecke ohne viel Schwierigkeiten anpassen können. Eine Sache, die über diese Anwendungen üblich ist, sind sie üblich. Die meisten Puppeninstallationen müssen mit einem Webserver, Apache oder Nginx umgehen. Die meisten, wenn nicht alle, haben Datenbanken und einige von denen haben MySQL. Wenn jeder mit einem Problem umgehen muss, sind Community-Lösungen in der Regel besser getestet und gründlicher als homegrown Lösungen. Wir verwenden Module aus dem Puppet Forge in diesem Kapitel, um diese Anwendungen zu verwalten.

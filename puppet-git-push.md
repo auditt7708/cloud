@@ -1,3 +1,13 @@
+---
+title: puppet-git-push
+description: 
+published: true
+date: 2021-06-09T15:51:40.506Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:51:35.016Z
+---
+
 # Puppet git push
 
 Wie wir bereits im dezentralisierten Modell gesehen haben, kann Git verwendet werden, um Dateien zwischen Maschinen mit einer Kombination von `ssh` und `ssh` schlüsseln zu übertragen. Es kann auch sinnvoll sein, einen Git-Hook auf jedem erfolgreichen Commit zum Repository zu haben.

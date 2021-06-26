@@ -1,3 +1,13 @@
+---
+title: puppet-fort-files-packages-augeas
+description: 
+published: true
+date: 2021-06-09T15:48:19.942Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:48:14.176Z
+---
+
 # Puppet für fortgeschittene: auges benutzen
 
 Manchmal scheint es, jede Anwendung hat ein eigenes Konfigurationsdateiformat, und das Schreiben von regulären Ausdrücken zum analysieren und zum modifizieren von allen von ihnen kann ein langwieriges Geschäft sein.

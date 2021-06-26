@@ -1,3 +1,13 @@
+---
+title: journalctl
+description: 
+published: true
+date: 2021-06-09T15:27:23.819Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:27:18.777Z
+---
+
 # journalctl
 
 Zeitzonen

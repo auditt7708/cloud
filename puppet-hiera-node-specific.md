@@ -1,3 +1,13 @@
+---
+title: puppet-hiera-node-specific
+description: 
+published: true
+date: 2021-06-09T15:51:56.349Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:51:50.988Z
+---
+
 # Puppet Hiera node spezifikatioen
 
 In unserer Hierarchie, die in `hiera.yaml` definiert ist, haben wir einen Eintrag erstellt, der auf der `hosts` gacts basiert.

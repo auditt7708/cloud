@@ -1,3 +1,13 @@
+---
+title: cassandra-cql
+description: 
+published: true
+date: 2021-06-09T14:58:59.544Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:58:54.448Z
+---
+
 # Einfügen und Abfragen
 
 Die API für Cassandra ist CQL , die Cassandra Query Language.

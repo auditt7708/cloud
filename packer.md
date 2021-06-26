@@ -1,3 +1,13 @@
+---
+title: packer
+description: 
+published: true
+date: 2021-06-09T15:43:54.976Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:43:49.691Z
+---
+
 # Packer
 
 ## Einführung in Packer

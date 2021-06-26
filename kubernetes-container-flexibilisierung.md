@@ -1,3 +1,13 @@
+---
+title: kubernetes-container-flexibilisierung
+description: 
+published: true
+date: 2021-06-09T15:31:32.472Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:31:27.010Z
+---
+
 Pods, in Kubernetes, bedeuteten eine zusammenfassung von Containern, die auch die kleinste einsetzbare einheit darstellen. Sie haben vielleicht über die grundlegende Verwendung von Pod in den vorherigen Beispielen etwas erfahren. Pods werden normalerweise von replication controllers verwaltet und von Diensten bekant gemacht; Sie arbeiten als Anwendungen mit diesem Szenario.
 
 In diesem Rezept werden wir zwei neue Features besprechen: `job` und `daemon set`. Diese beiden Funktionen können die Verwendung von Pods effektiver machen.

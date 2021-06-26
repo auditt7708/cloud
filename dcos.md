@@ -1,3 +1,13 @@
+---
+title: dcos
+description: 
+published: true
+date: 2021-06-09T15:03:39.795Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:03:34.476Z
+---
+
 # [DC/OS](../dcos) [Mesos](../mesos)
 
 ## Hardware Voraussetzungen

@@ -1,3 +1,13 @@
+---
+title: selenium-tests-jenkins
+description: 
+published: true
+date: 2021-06-09T16:04:41.862Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:04:36.567Z
+---
+
 # Selenium Tests mit jenkins
 
 Selen arbeitet, indem er einen Browser aufruft und auf einen Webserver zeigt, auf dem Ihre Anwendung läuft, und dann den Browser ferngesteuert, indem er sich in die JavaScript- und DOM-Ebenen integriert.

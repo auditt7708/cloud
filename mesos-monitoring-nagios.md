@@ -1,3 +1,13 @@
+---
+title: mesos-monitoring-nagios
+description: 
+published: true
+date: 2021-06-09T15:38:50.982Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:38:45.254Z
+---
+
 # Mesos Monitoring mit Nagios
 
 Die Überwachung ist ein wichtiger Teil der Instandhaltung der Infrastruktur. Mesos integriert sich gut mit den bestehenden Monitoring-Lösungen und verfügt über Plugins für die meisten Monitoring-Lösungen wie Nagios. Dieses Modul gibt Ihnen eine exemplarische Vorgehensweise bei der Installation von Nagios auf Ihrem Cluster und ermöglicht die Überwachung, um Ihnen E-Mail-Benachrichtigungen zu senden, wann immer etwas in Ihrem Cluster schief geht.

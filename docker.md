@@ -1,3 +1,13 @@
+---
+title: docker
+description: 
+published: true
+date: 2021-06-09T15:17:42.002Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:17:34.539Z
+---
+
 # Docker
 
 Inhaltsverzeichnis

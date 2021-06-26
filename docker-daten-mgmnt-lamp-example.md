@@ -1,3 +1,13 @@
+---
+title: docker-daten-mgmnt-lamp-example
+description: 
+published: true
+date: 2021-06-09T15:09:30.307Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:09:23.967Z
+---
+
 # Docker lamp Management
 
 Lassen Sie uns das vorherige Rezept verlängern, indem Sie eine LAMP-Anwendung (WordPress) erstellen, indem Sie die Container verknüpfen.

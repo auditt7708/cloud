@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-librarian
+description: 
+published: true
+date: 2021-06-09T15:58:26.168Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:58:21.040Z
+---
+
 # puppet4-externe-tools-ecosystem-librarian
 
 Wenn du anfängst, Module aus der Schmiede in deiner Puppen-Infrastruktur einzuschließen, versteckst du, welche Versionen Sie installiert haben und die Konsistenz zwischen allen Testbereichen sichergestellt werden kann. Zum Glück können die Werkzeuge, die wir in den nächsten beiden Abschnitten besprechen werden, die Bestellung an Ihr System bringen. Wir werden zunächst mit der Bibliothekar-Puppe beginnen, die eine spezielle Konfigurationsdatei mit dem Namen Puppetfile verwendet, um den Quellort Ihrer verschiedenen Module anzugeben.

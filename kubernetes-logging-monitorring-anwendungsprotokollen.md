@@ -1,3 +1,13 @@
+---
+title: kubernetes-logging-monitorring-anwendungsprotokollen
+description: 
+published: true
+date: 2021-06-09T15:34:27.505Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:34:22.095Z
+---
+
 # Kubernates Logging Monitring Anwendungs Protokolle
 
 Wenn Sie mit der Verwaltung der Anwendung beginnen, sind die Protokollsammlung und -analyse zwei der wichtigen Routinen, um den Status der Anwendung zu verfolgen.

@@ -1,3 +1,13 @@
+---
+title: kubernetes-container
+description: 
+published: true
+date: 2021-06-09T15:32:03.648Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:31:58.611Z
+---
+
 ### Übersicht
 Über Container-Management, müssen Sie wissen, dass es einige Unterschiede gibt, um es mit Application Packaging-Management, wie z.B. rpm / dpkg zu vergleichen, weil Sie mehrere Container auf dem gleichen Rechner laufen können. Sie müssen sich auch um die Netzwerk-Port-Konflikte kümmern. In diesem Kapitel wird beschrieben, wie Sie die Container Anwendung mit Kubernetes aktualisieren, skalieren und starten können.
 

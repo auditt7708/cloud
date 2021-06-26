@@ -1,3 +1,13 @@
+---
+title: mesos
+description: 
+published: true
+date: 2021-06-09T15:39:22.486Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:39:17.430Z
+---
+
 # Übeersicht  [DC/OS](../dcos) [Mesos](../mesos)
 
 * [Deploying and configuring a Mesos cluster using Puppet](../mesos-puppet-deployment-konfiguration)

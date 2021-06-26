@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-eigener-provider
+description: 
+published: true
+date: 2021-06-09T15:57:47.152Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:57:42.006Z
+---
+
 # puppet4-externe-tools-ecosystem-eigener-provider
 
 Im vorherigen Abschnitt haben wir eine neue benutzerdefinierte Art namens `gitrepo` und sagte Puppet, dass es zwei Parameter, `source` und `path`. Doch so weit, haben wir nicht gesagt, Puppet, wie man tatsächlich auschecken die Repo; Mit anderen Worten, wie man eine bestimmte Instanz dieses Typs erstellt. Dort kommt der Anbieter herein.

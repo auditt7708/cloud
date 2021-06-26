@@ -1,3 +1,13 @@
+---
+title: mysql-cluster-ms
+description: 
+published: true
+date: 2021-06-09T15:40:48.266Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:40:43.281Z
+---
+
 # Mysql Cluster MS
 
 | User | Zwek | Passord |

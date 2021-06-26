@@ -1,3 +1,13 @@
+---
+title: puppet4-ressourcen-datein-verteilen-merging
+description: 
+published: true
+date: 2021-06-09T16:01:04.565Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:00:58.808Z
+---
+
 # puppet4-ressourcen-datein-verteilen-merging
 
 Wie wir im vorigen Kapitel gesehen haben, hat die Datei Ressource einen `recurse` Parameter, der Puppet erlaubt, ganze Verzeichnisbäume zu übertragen. Wir haben diesen Parameter verwendet, um die Dotfiles eines Admin-Benutzers in ihr Home-Verzeichnis zu kopieren. In diesem Abschnitt zeigen wir, wie man `recurse` und einen anderen Parameter `sourceselect` verwendet, um unser vorheriges Beispiel zu erweitern.

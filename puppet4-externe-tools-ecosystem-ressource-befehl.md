@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-ressource-befehl
+description: 
+published: true
+date: 2021-06-09T15:58:50.247Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:58:45.220Z
+---
+
 # puppet4-externe-tools-ecosystem-ressource-befehl
 
 Wenn du einen Server hast, der bereits so konfiguriert ist, wie er sein muss oder fast so, kannst du diese Konfiguration als Puppenmanifest erfassen. Der Puppet-Ressource-Befehl erzeugt Puppet-Manifeste aus der vorhandenen Konfiguration eines Systems. Zum Beispiel können Sie `puppet resource` generieren ein Manifest, das alle Benutzer auf dem System gefunden erstellt. Dies ist sehr nützlich, um einen Schnappschuss eines Arbeitssystems zu machen und seine Konfiguration schnell in die Puppe zu bringen.

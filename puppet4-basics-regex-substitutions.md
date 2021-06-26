@@ -1,3 +1,13 @@
+---
+title: puppet4-basics-regex-substitutions
+description: 
+published: true
+date: 2021-06-09T15:56:37.744Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:56:32.530Z
+---
+
 Puppet's `regsubst` Funktion bietet eine einfache Möglichkeit, Text zu manipulieren, zu suchen und zu ersetzen, oder extrahieren des Musters aus Strings. Wir müssen dies oft mit Daten aus `fatcts` ([Puppet facts](../puppet4-facts))  machen, oder aus externen Programmen.
 
 In diesem Beispiel sehen wir, wie man `regsubst` benutzt, um die ersten drei Oktette einer IPv4-Adresse zu extrahieren (der Netzwerkteil `/24`, vorausgesetzt,handelt sich um eine Adresse der Klasse C).

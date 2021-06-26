@@ -1,3 +1,13 @@
+---
+title: docker-networking-weave-net-benutzen
+description: 
+published: true
+date: 2021-06-09T15:11:44.778Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:11:39.393Z
+---
+
 # Docker Netzwerk mit weave net
 
 Weave ist ein interessantes Beispiel, das die verschiedenen Möglichkeiten zeigt, wie eine Drittanbieterlösung mit Docker interagieren kann. Es bietet verschiedene Ansätze zur Interaktion mit Docker. Die erste ist die Weave-CLI, von der aus man nicht nur Weave konfigurieren kann, sondern auch Container, wie man es mit dem Docker CLI mag. Das zweite ist das Netzwerk-Plugin, das direkt an Docker bindet und Ihnen erlaubt, Container von Docker auf das Weave-Netzwerk zu bringen. In diesem Rezept gehen wir durch, wie man Container mit dem Weave-Netzwerk mit dem Weave CLI verbindet. Das Weave Netzwerk-Plugin wird in seinem eigenen Rezept später in diesem Kapitel behandelt werden.

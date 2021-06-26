@@ -1,3 +1,13 @@
+---
+title: firewalld
+description: 
+published: true
+date: 2021-06-09T15:21:04.391Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:20:58.940Z
+---
+
 # Administration mit firewalld
 
 

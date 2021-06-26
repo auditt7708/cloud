@@ -1,3 +1,13 @@
+---
+title: package-management
+description: 
+published: true
+date: 2021-06-09T15:43:47.788Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:43:42.645Z
+---
+
 # Package Management
 
 | Task | [apt-get](../apt-get) Debian | [zypper](../zypper) Suse | [yum](../yum) | [dnf](../dnf) | [pacman](../pacman) |

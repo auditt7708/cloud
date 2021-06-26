@@ -1,3 +1,13 @@
+---
+title: hive
+description: 
+published: true
+date: 2021-06-09T15:24:49.911Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:24:44.517Z
+---
+
 Hive erweitert Hadoop um Data-Warehouse-Funktionalitäten, namentlich die Anfragesprache HiveQL und Indizes. 
 HiveQL ist eine auf SQL basierende Abfragesprache und ermöglicht dem Entwickler somit die Verwendung einer SQL99-ähnlichen Syntax.
 Seit Hive 2.0 wird Hybrid Procedural SQL On Hadoop (HPL/SQL) unterstützt, welches Ausführung von PL/SQL und vielen weiteren SQL-Dialekten unterstützt. 

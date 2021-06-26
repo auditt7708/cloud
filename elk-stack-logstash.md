@@ -1,3 +1,13 @@
+---
+title: elk-stack-logstash
+description: 
+published: true
+date: 2021-06-09T15:19:46.328Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:19:40.586Z
+---
+
 ### Logstash ausführen
 
 Führen Sie Logstash mit `-e` Flag aus, gefolgt von der Konfiguration der Standard-Eingabe und Ausgabe:

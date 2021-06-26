@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem
+description: 
+published: true
+date: 2021-06-09T15:59:06.282Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:59:00.791Z
+---
+
 # PuppetExterne Tols ecosstem
 
 Puppet ist ein nützliches Werkzeug für sich, aber man kann viel mehr Vorteile durch die Verwendung von Puppet in Kombination mit anderen Werkzeugen und Frameworks. Wir werden auf einige Möglichkeiten hinweisen, Daten in die Puppe zu bekommen, einschließlich benutzerdefinierter Faktenfakten, externen Fakten und Tools, um Puppenmanifeste automatisch aus der vorhandenen Konfiguration zu generieren.

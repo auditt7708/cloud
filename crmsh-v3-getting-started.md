@@ -1,3 +1,13 @@
+---
+title: crmsh-v3-getting-started
+description: 
+published: true
+date: 2021-06-09T15:03:10.130Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:03:04.899Z
+---
+
 # crmsh
 
 So Sie haben erfolgreich crmsh auf einer oder mehreren Maschinen installiert und nun möchten jetzt einen Basiscluster konfigurieren.

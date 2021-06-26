@@ -1,3 +1,13 @@
+---
+title: docker-networking-weave-net-dns
+description: 
+published: true
+date: 2021-06-09T15:11:52.147Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:11:46.687Z
+---
+
 # Docker DNS mit weave net
 
 Natürlich ist das nächste, was nach IPAM zu beachten ist Namensauflösung. Unabhängig von der Skala, mit einer Möglichkeit zu finden und zu identifizieren Container durch etwas anderes als eine IP-Adresse wird eine Notwendigkeit. Ähnlich wie neuere Versionen von Docker bietet Weave einen eigenen DNS-Service für die Behebung von Containernamen, die auf Weave-Netzwerken leben. In diesem Rezept werden wir die Standardkonfiguration für WeaveDNS überprüfen und zeigen, wie es implementiert ist, und einige relevante Konfigurationseinstellungen, um dich aufzurufen.

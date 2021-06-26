@@ -1,3 +1,13 @@
+---
+title: puppet-umgebung
+description: 
+published: true
+date: 2021-06-09T15:54:56.538Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:54:51.243Z
+---
+
 Umgebungen in Puppet sind Verzeichnisse, die verschiedene Versionen Ihrer Puppet manifests halten. 
 Umgebungen vor der Puppet Version 3.6 waren keine Standardkonfiguration für Puppet. 
 In neueren Versionen von Puppet sind Umgebungen standardmäßig konfiguriert.

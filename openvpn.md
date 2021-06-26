@@ -1,3 +1,13 @@
+---
+title: openvpn
+description: 
+published: true
+date: 2021-06-09T15:42:48.196Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:42:43.249Z
+---
+
 # OpenVPn
 
 ## OpenVPN Server Setup on Linux

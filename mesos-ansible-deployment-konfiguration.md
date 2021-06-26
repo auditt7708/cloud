@@ -1,3 +1,13 @@
+---
+title: mesos-ansible-deployment-konfiguration
+description: 
+published: true
+date: 2021-06-09T15:38:10.161Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:38:04.712Z
+---
+
 # Mesos und Ansible einrichten
 
 Ansible ist eines der beliebten Infrastruktur-Automatisierungs-Tools, die heute von Systemadministratoren häufig genutzt und vor kurzem von Red Hat erworben wurden. Nodes werden über **Secure Shell (SSH)** verwaltet und benötigen nur Python-Unterstützung. Ansible hat offen eine Menge von Spielbüchern, darunter eine unmögliche Mesos, die wir in diesem Abschnitt zu diskutieren.

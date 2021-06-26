@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-mit-docker-images
+description: 
+published: true
+date: 2021-06-09T15:07:25.625Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:07:20.583Z
+---
+
 # Docker arbeiten mit Images: Images
 
 In diesem Kapitel werden wir uns auf die Bilder konzentrieren. Wie wir wissen, sind Bilder erforderlich, um Container zu führen. Sie können entweder vorhandene Bilder verwenden oder neue benutzerdefinierte Bilder erstellen. Sie müssen benutzerdefinierte Bilder erstellen, um Ihre Entwicklungs- und Bereitstellungsumgebung anzupassen. Sobald Sie ein Bild erstellen, können Sie es über die öffentliche oder private Registrierung zu teilen. Bevor wir mehr über Docker-Bilder erforschen, schauen wir uns die Ausgabe des `docker info`-Befehls an:

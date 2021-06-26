@@ -1,3 +1,13 @@
+---
+title: kubernetes
+description: 
+published: true
+date: 2021-06-09T15:35:47.859Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:35:39.609Z
+---
+
 # kubernetes Inhaltsverzeihnis
 
 ## Kubernetes Einrichtung

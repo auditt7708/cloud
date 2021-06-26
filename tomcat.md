@@ -1,3 +1,13 @@
+---
+title: tomcat
+description: 
+published: true
+date: 2021-06-09T16:08:53.005Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:08:48.089Z
+---
+
 # Tomcat
 
 ERinfache grundlagen zur einrichtung.

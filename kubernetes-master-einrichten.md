@@ -1,3 +1,13 @@
+---
+title: kubernetes-master-einrichten
+description: 
+published: true
+date: 2021-06-09T15:35:11.130Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:35:04.689Z
+---
+
 # Kubernetes Master einrichtung
 
 Der Masternode von Kubernetes arbeitet als Kontrollzentrum für Container. Die Aufgaben, die vom Master übernommen werden, beinhalten ein Portal für Endbenutzer, die Zuweisung von Aufgaben an Knoten und das Sammeln von Informationen. In diesem Rezept werden wir sehen, wie man den Kubernetes Master aufbaut. Es gibt drei Dämonenprozesse am Meister:

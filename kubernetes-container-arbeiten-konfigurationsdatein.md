@@ -1,3 +1,13 @@
+---
+title: kubernetes-container-arbeiten-konfigurationsdatein
+description: 
+published: true
+date: 2021-06-09T15:31:24.095Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:31:18.124Z
+---
+
 Kubernetes unterstützt zwei verschiedene Dateiformate YAML und JSON. Jedes Format kann die gleiche Funktion von Kubernetes beschreiben.
 
 ### Fertig werden

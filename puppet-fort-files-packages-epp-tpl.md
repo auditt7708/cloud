@@ -1,3 +1,13 @@
+---
+title: puppet-fort-files-packages-epp-tpl
+description: 
+published: true
+date: 2021-06-09T15:48:36.708Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:48:31.089Z
+---
+
 # Puppet für fortgeschrittene epp Templates
 
 EPP Vorlagen sind ein neues Feature in Puppet 3.5 und neueren Versionen. EPP-Vorlagen verwenden eine Syntax ähnlich ERB-Vorlagen, werden aber nicht durch Ruby kompiliert. Es werden zwei neue Funktionen definiert, um EPP-Vorlagen, `epp` und `inline_epp` aufzurufen. Diese Funktionen sind die EPP-Äquivalente der ERB-Funktion `template` bzw. `inline_template`. Der Hauptunterschied zu den EPP-Vorlagen besteht darin, dass die Variable mit der Puppet Notation referenziert wird. `$variable` statt `@variable`.

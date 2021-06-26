@@ -1,3 +1,13 @@
+---
+title: docker-praktischer-einsatz
+description: 
+published: true
+date: 2021-06-09T15:15:44.751Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:15:39.248Z
+---
+
 Jetzt wissen wir, wie wir mit Containern und Images arbeiten können. 
 Im letzten Kapitel haben wir auch gesehen, wie man Container verknüpft und Daten zwischen dem Host und anderen Containern austauscht. 
 Wir haben auch gesehen, wie Container von einem Host mit anderen Containern von anderen Hosts kommunizieren können.

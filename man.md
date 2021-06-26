@@ -1,3 +1,13 @@
+---
+title: man
+description: 
+published: true
+date: 2021-06-09T15:37:31.452Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:37:22.742Z
+---
+
 # Ausgabe der Handbuchseite zu einem Befehl oder einer Anwendung
 
 Abschnitte der Handbuchseiten und den Typ der dort zu findenden Seiten.

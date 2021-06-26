@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-firefox-example
+description: 
+published: true
+date: 2021-06-09T15:06:04.826Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:05:59.099Z
+---
+
 # Docker Arbeiten mit Images: Firefox beispiel
 
 Wir können etwas interessanteres durch eine Dockerfile machen, wie zum Beispiel das Erstellen eines Containers, der nur Firefox ausführt. Diese Art von Anwendungsfall kann dazu beitragen, mehrere Browser von verschiedenen Versionen auf dem gleichen Computer, die sehr hilfreich bei der Durchführung von Multibrowser-Tests werden können.

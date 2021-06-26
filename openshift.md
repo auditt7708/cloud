@@ -1,3 +1,13 @@
+---
+title: openshift
+description: 
+published: true
+date: 2021-06-09T15:42:18.317Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:42:13.258Z
+---
+
 # Openshift Installation
 
 ## Vorbereitungen

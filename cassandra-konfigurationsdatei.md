@@ -1,3 +1,13 @@
+---
+title: cassandra-konfigurationsdatei
+description: 
+published: true
+date: 2021-06-09T14:59:17.306Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:59:09.427Z
+---
+
 Cassandra-Konfigurationsdatei
 
 ## cluster_name

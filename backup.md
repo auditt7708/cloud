@@ -1,3 +1,13 @@
+---
+title: backup
+description: 
+published: true
+date: 2021-06-09T14:57:57.929Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:57:52.642Z
+---
+
 # Sicherung der git repos
 
 Host für Sicherung ist der share1

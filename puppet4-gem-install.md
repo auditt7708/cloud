@@ -1,3 +1,13 @@
+---
+title: puppet4-gem-install
+description: 
+published: true
+date: 2021-06-09T15:59:13.557Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:59:08.199Z
+---
+
 # Puppet4 Instaliren mit hilfe von [rubygems](../rubygems)
 
 Voraussetzung zur Installation von [rubygems](../rubygems)

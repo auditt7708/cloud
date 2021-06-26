@@ -1,3 +1,13 @@
+---
+title: ps
+description: 
+published: true
+date: 2021-06-09T15:46:15.062Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:46:09.853Z
+---
+
 # ps Process Manager
 
 Nach user und mit ASCII art Process

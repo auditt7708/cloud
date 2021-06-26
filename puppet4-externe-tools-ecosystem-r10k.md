@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-r10k
+description: 
+published: true
+date: 2021-06-09T15:58:42.012Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:58:36.679Z
+---
+
 # puppet4-externe-tools-ecosystem-r10k
 
 Die `Puppetfile` ist ein sehr gutes Format, um zu beschreiben, welche Module Sie in Ihre Umgebung aufnehmen möchten. Auf der `Puppetfile` ist ein weiteres Werkzeug, **r10k**. R10k ist ein gesamtes umweltmanagement-tool. Sie können r10k verwenden, um ein lokales Git-Repository in Ihren `environmentpath` zu klonen und dann die in deiner `Puppetfile` angegebenen Module in dieses Verzeichnis zu platzieren. Das lokale Git-Repository wird als Master-Repository bezeichnet. Es ist, wo r10k erwartet, um Ihre `Puppetfile` zu ​​finden. r10k versteht auch Puppet-Umgebungen und wird Git-Zweige in Unterverzeichnisse Ihres `environmentpath` klonen, was die Bereitstellung von mehreren Umgebungen vereinfacht. Was macht r10k besonders nützlich ist die Verwendung eines lokalen Cache-Verzeichnisses, um die Implementierungen zu beschleunigen. Mit einer Konfigurationsdatei `r10k.yaml` können Sie festlegen, wo dieser Cache gespeichert werden soll und wo auch Ihr Master-Repository gehalten wird.

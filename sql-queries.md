@@ -1,3 +1,13 @@
+---
+title: sql-queries
+description: 
+published: true
+date: 2021-06-09T16:05:53.011Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:05:47.981Z
+---
+
 # MySQL/Mariadb
 
 Benutzer auflisten

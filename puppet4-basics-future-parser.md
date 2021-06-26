@@ -1,3 +1,13 @@
+---
+title: puppet4-basics-future-parser
+description: 
+published: true
+date: 2021-06-09T15:55:35.836Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:55:30.385Z
+---
+
 Die Puppet Sprache entwickelt sich im Moment;
 Viele Features, die voraussichtlich in die nächste Hauptversion (4 oder auch 5) aufgenommen werden, sind verfügbar, wenn Sie den futureParser aktivieren.
 

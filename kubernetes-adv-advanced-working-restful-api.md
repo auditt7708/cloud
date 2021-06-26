@@ -1,3 +1,13 @@
+---
+title: kubernetes-adv-advanced-working-restful-api
+description: 
+published: true
+date: 2021-06-09T15:29:31.734Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:29:26.504Z
+---
+
 Der Kubernetes-Administrator kann den Kubernetes-Cluster über den Befehl `kubectl `steuern. Es unterstützt die lokale und entfernte Ausführung. Allerdings müssen einige Administratoren oder Betreiber ein Programm zur Steuerung des Kubernetes-Clusters integrieren.
 
 Kubernetes hat eine RESTful API, die die Steuerung des Kubernetes-Clusters über API ähnlich dem Befehl `kubectl `ermöglicht.

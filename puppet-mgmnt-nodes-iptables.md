@@ -1,3 +1,13 @@
+---
+title: puppet-mgmnt-nodes-iptables
+description: 
+published: true
+date: 2021-06-09T15:53:03.201Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:52:57.701Z
+---
+
 # Puppet management von iptabels
 
 In diesem Kapitel werden wir beginnen, Dienste zu konfigurieren, die eine Kommunikation zwischen Hosts über das Netzwerk erfordern. Die meisten Linux-Distributionen werden standardmäßig auf eine Host-basierte Firewall, iptables laufen. Wenn Sie möchten, dass Ihre Hosts miteinander kommunizieren, haben Sie zwei Möglichkeiten: deaktivieren Sie iptables oder konfigurieren Sie iptables, um die Kommunikation zu ermöglichen.

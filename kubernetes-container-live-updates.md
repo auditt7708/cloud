@@ -1,3 +1,13 @@
+---
+title: kubernetes-container-live-updates
+description: 
+published: true
+date: 2021-06-09T15:31:39.776Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:31:34.420Z
+---
+
 # Kubernates Container live Updates
 
 Zum Nutzen von Containern können wir problemlos neue Programme veröffentlichen, indem wir das neueste Bild ausführen und die Kopfschmerzen der Umgebungseinstellung reduzieren. Aber was ist mit der Veröffentlichung des Programms auf laufenden Containern? Mit nativen Docker-Befehlen müssen wir die laufenden Container vor dem Booten neuer mit den neuesten Bildern und den gleichen Konfigurationen stoppen. Es gibt eine einfache und effiziente Null-Downtime-Methode, um Ihr Programm im Kubernetes-System zu aktualisieren. Es heißt Rolling-Update. Wir werden Ihnen diese Lösung in diesem Rezept zeigen.

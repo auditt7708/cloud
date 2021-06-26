@@ -1,3 +1,13 @@
+---
+title: puppet-fort-files-packages-inifile
+description: 
+published: true
+date: 2021-06-09T15:49:03.072Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:48:56.922Z
+---
+
 # Puppet für fortgeschrittene: ini Datein
 
 INI-Dateien werden in vielen Systemen verwendet, Puppet verwendet INI-Syntax für die Datei puppet.conf.

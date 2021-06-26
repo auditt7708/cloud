@@ -1,3 +1,13 @@
+---
+title: docker-daten-mgmnt-verwalten
+description: 
+published: true
+date: 2021-06-09T15:10:09.973Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:10:03.739Z
+---
+
 # Docker Daten Verwalten
 
 Alle ungebundenen Daten oder Änderungen in Containern gehen verloren, sobald Container gelöscht werden. Wenn Sie zum Beispiel die Docker-Registrierung in einem Container konfiguriert haben und einige Bilder gedrückt haben, sobald der Registry-Container gelöscht wird, werden alle Bilder verloren, wenn Sie sie nicht begangen haben. Auch wenn Sie begehen, ist es nicht die beste Praxis. Wir sollten versuchen, die Container so leicht wie möglich zu halten. Im Folgenden sind zwei primäre Möglichkeiten, Daten mit Docker zu verwalten:

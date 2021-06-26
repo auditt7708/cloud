@@ -1,3 +1,13 @@
+---
+title: docker-daten-mgmnt-network-remote
+description: 
+published: true
+date: 2021-06-09T15:09:53.060Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:09:48.245Z
+---
+
 # Docker Remote Netzwerk
 
 Sobald der Container verfügbar ist, möchten wir von außen auf ihn zugreifen. Wenn Sie den Container mit der Option `--net=host` gestartet haben, können Sie über die Docker-Host-IP aufrufen. Mit `--net=none` können Sie die Netzwerkschnittstelle vom öffentlichen Nets erreichen  oder über andere komplexe Einstellungen hinzufügen . Lassen Sie uns sehen, was passiert - wie Pakete von der Host-Netzwerk-Schnittstelle an den Container weitergeleitet werden.

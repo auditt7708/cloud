@@ -1,3 +1,13 @@
+---
+title: mesos-chef-deployment-konfiguration
+description: 
+published: true
+date: 2021-06-09T15:38:26.193Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:38:20.920Z
+---
+
 # Mesos Deployment mit Chef
 
 Chef ist sowohl der Name eines Unternehmens als auch der Name eines Konfigurationsmanagement-Tools, das in Ruby und Erlang geschrieben wurde.

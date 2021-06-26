@@ -1,3 +1,13 @@
+---
+title: kubernetes-konzepte-services
+description: 
+published: true
+date: 2021-06-09T15:34:03.542Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:33:57.030Z
+---
+
 # Kubernates Konzepte: Services
 
 Der Netzwerkdienst ist eine Anwendung, die Anfragen empfängt und eine Lösung bietet. Clients greifen über eine Netzwerkverbindung auf den Service zu. Sie müssen die Architektur des Dienstes nicht kennen oder wie es läuft. Das einzige, was die Kunden zu überprüfen haben, ist, ob der Endpunkt des Dienstes kontaktierbar ist, und folgen Sie dann seiner Nutzungsrichtlinie, um Probleme zu lösen. Der Kubernetes Service hat ähnliche Ideen. Es ist nicht notwendig, jeden Pod zu verstehen, bevor er ihre Funktionalitäten erreicht. Für Komponenten außerhalb des Kubernetes-Systems greifen sie nur auf den Kubernetes-Service mit einem exponierten Netzwerkanschluss zu, um mit laufenden Pods zu kommunizieren. Es ist nicht notwendig, sich der IPs und ports der Container bewusst zu sein. Deshalb können wir für unsere Containerprogramme ein Null-Downtime-Update erfüllen, ohne zu schwierigkeiten:

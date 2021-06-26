@@ -1,3 +1,13 @@
+---
+title: puppet4-basics-parameter
+description: 
+published: true
+date: 2021-06-09T15:56:21.993Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:56:17.410Z
+---
+
 Jede Zeile bei der Referenzierung der Parameter sollte mit einen Komma enden. 
 
 Beispiel : 

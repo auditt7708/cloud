@@ -1,3 +1,13 @@
+---
+title: puppet-dezentralisierte-env
+description: 
+published: true
+date: 2021-06-09T15:47:42.995Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:47:36.951Z
+---
+
 # Puppet für fortgeschrittene: dezentralews environment
 
 Puppet ist ein Konfigurationsmanagement-Tool. Sie können die Puppe verwenden, um Konfigurations und deren änderung in einer großen Anzahl von Clientcomputern zu konfigurieren und zu verhindern.

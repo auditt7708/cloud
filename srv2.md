@@ -1,3 +1,13 @@
+---
+title: srv2
+description: 
+published: true
+date: 2021-06-09T16:06:17.709Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:06:11.449Z
+---
+
 # Netwerk Konfiguration
 
 | Typ | MAC | Gerätebezeichner | DNS-Name | Domäne | IPv4 | IPv6 |

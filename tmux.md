@@ -1,3 +1,13 @@
+---
+title: tmux
+description: 
+published: true
+date: 2021-06-09T16:08:37.863Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:08:32.773Z
+---
+
 # tmux
 
 **Sessiom mit tmux **

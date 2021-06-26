@@ -1,3 +1,13 @@
+---
+title: elk-stack-logstash-plugins
+description: 
+published: true
+date: 2021-06-09T15:19:38.622Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:19:29.358Z
+---
+
 Logstash hat eine Vielzahl von Plugins um zu helfen, wir integrieren sie mit einer Vielzahl von Input-und Output-Quellen. Lassen Sie uns die verschiedenen Plugins erkunden.
 
 ### Auflisten aller Plugins in Logstash

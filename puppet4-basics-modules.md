@@ -1,3 +1,13 @@
+---
+title: puppet4-basics-modules
+description: 
+published: true
+date: 2021-06-09T15:56:15.007Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:56:09.666Z
+---
+
 Eines der wichtigsten Dinge, die Sie tun können, um Ihre Puppet manifests klarer und besser Administrieren zu können ist, sie in Module zu organisieren.
 
 Module sind fassen Puppet-Code zusammen, die alle Daten enthalten, die notwendig sind, um eine Aufgabe zu implementieren. 

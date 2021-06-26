@@ -1,3 +1,13 @@
+---
+title: jenkins-pipline-as-code
+description: 
+published: true
+date: 2021-06-09T15:26:52.750Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:26:47.472Z
+---
+
 # Jenkins pipeline als Code
 
 Als Standard-Interaktionsmodell für Jenkins, historisch gesehen, wurde sehr web-UI lastig entwickelt, was es Benutzern ermöglicht, manuelle Workspaces zu erstellen und dann manuell die Details über einen Webbrowser auszufüllen.

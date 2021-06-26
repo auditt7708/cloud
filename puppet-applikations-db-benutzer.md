@@ -1,3 +1,13 @@
+---
+title: puppet-applikations-db-benutzer
+description: 
+published: true
+date: 2021-06-09T15:46:38.714Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:46:33.264Z
+---
+
 # Puppet Applikation Datenbank benutzer
 
 Das Verwalten einer Datenbank bedeutet mehr als sicherzustellen, dass der Dienst ausgeführt wird; Ein Datenbankserver ist nichts ohne Datenbanken. Datenbanken benötigen Benutzer und Privilegien. Privilegien werden mit GRANT-Anweisungen behandelt. Wir verwenden das puppetlabs-mysql-Paket, um eine Datenbank und einen Benutzer mit Zugriff auf diese Datenbank zu erstellen. Wir erstellen einen MySQL-User Drupal und eine Datenbank namens Drupal. Wir erstellen eine Tabelle namens nodes und platzieren Sie Daten in diese Tabelle.

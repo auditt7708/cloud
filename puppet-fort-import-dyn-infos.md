@@ -1,3 +1,13 @@
+---
+title: puppet-fort-import-dyn-infos
+description: 
+published: true
+date: 2021-06-09T15:49:26.212Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:49:20.877Z
+---
+
 # Puppet für fortgeschrittene:  Import Dynaischer Informationen
 
 Auch wenn sich einige Systemadministratoren gern aus dem Rest des Büros mit Stapeln alter Drucker abwischen, müssen wir alle von Zeit zu Zeit uns mit anderen Abteilungen austauschen.

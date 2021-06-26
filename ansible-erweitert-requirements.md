@@ -1,3 +1,13 @@
+---
+title: ansible-erweitert-requirements
+description: 
+published: true
+date: 2021-06-09T14:55:03.955Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:54:58.323Z
+---
+
 # Ansible Galaxy requirements
 
 In der Datei `requirements.yml` kann man seine abhängigkeiten definieren `ansible-galaxy` kümmert sich dann darum alle rolen die benötigt werden auch  zu laden.

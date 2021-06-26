@@ -1,3 +1,13 @@
+---
+title: docker-tips-tricks-treiber-aendern
+description: 
+published: true
+date: 2021-06-09T15:17:31.638Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:17:26.069Z
+---
+
 Wie wir wissen, ist libcontainer der Standard-Ausführungstreiber. Es gibt Legacy-Unterstützung für LXC Userspace-Tools (https://linuxcontainers.org/). Denken Sie daran, dass LXC nicht die primäre Entwicklungsumgebung ist.
 
 ### Fertig werden

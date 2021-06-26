@@ -1,3 +1,13 @@
+---
+title: cockpit
+description: 
+published: true
+date: 2021-06-09T15:01:48.045Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:01:42.998Z
+---
+
 # Konfiguration 
 
 Systemctl activiren

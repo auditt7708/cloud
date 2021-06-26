@@ -1,3 +1,13 @@
+---
+title: puppet-fort-tags
+description: 
+published: true
+date: 2021-06-09T15:50:33.628Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:50:28.023Z
+---
+
 # Puppet für fortgeschrittene: tags benutzen
 
 Manchmal muss eine Puppetklasse über einen andere wissen oder zumindest wissen, ob diese vorhanden ist oder nicht. Zum Beispiel muss eine Klasse, die die Firewall verwaltet, möglicherweise wissen, ob der Node ein Webserver ist oder nicht.

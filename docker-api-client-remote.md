@@ -1,3 +1,13 @@
+---
+title: docker-api-client-remote
+description: 
+published: true
+date: 2021-06-09T15:04:39.081Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:04:33.923Z
+---
+
 # Docker API Client Remote
 
 In den letzten Rezepten haben wir die von Docker bereitgestellten APIs untersucht, um den entfernten Docker-Daemon anzuschließen und Operationen durchzuführen. Die Docker-Community hat Bindungen für verschiedene Programmiersprachen hinzugefügt, um auf diese APIs zuzugreifen.

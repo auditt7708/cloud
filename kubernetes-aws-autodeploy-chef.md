@@ -1,3 +1,13 @@
+---
+title: kubernetes-aws-autodeploy-chef
+description: 
+published: true
+date: 2021-06-09T15:29:54.589Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:29:48.914Z
+---
+
 # Kubernates AWS Autodeployment mit chef
 
 Um eine schnelle Implementierung in AWS OpsWorks zu erreichen, können wir Installationsverfahren in Chef Rezepten schreiben. Chef ist ein Ruby-basiertes, automatisches Bereitstellungs-Management-Tool [Chef](https://www.chef.io). Es kann für die Programm-Bereitstellung und Systemkonfiguration helfen. In diesem Rezept zeigen wir Ihnen, wie Chef mit den AWS OpsWorks arbeitet.

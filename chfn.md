@@ -1,3 +1,13 @@
+---
+title: chfn
+description: 
+published: true
+date: 2021-06-09T15:00:28.459Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:00:18.143Z
+---
+
 # erweiterte Benutzerinformationen anpassen
 
 Der Befehl chfn ändert den vollen Namen, die Büronummer sowie die Telefonnummern für ein Benutzerkonto.

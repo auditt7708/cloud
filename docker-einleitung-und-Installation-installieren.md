@@ -1,3 +1,13 @@
+---
+title: docker-einleitung-und-Installation-installieren
+description: 
+published: true
+date: 2021-06-09T15:10:58.619Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:10:53.918Z
+---
+
 # Docker Installation
 
 Da gibt es viele Distributionen, die Docker unterstützen, schauen wir uns die Installationsschritte auf Fedora 21 in diesem Rezept an. Für andere können Sie sich auf die Installationsanweisungen beziehen, die im Abschnitt "Siehe auch" dieses Rezepts erwähnt werden. Mit Docker Machine können wir Docker-Hosts auf lokalen Systemen, auf Cloud-Providern und anderen Umgebungen ganz einfach einrichten. Wir werden das in einem anderen Rezept abdecken.

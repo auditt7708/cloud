@@ -1,3 +1,13 @@
+---
+title: ansible-vault
+description: 
+published: true
+date: 2021-06-09T14:56:48.079Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:56:42.612Z
+---
+
 # Ansible Vault
 
 Mit der Vault können Sensible daten geschützt werden

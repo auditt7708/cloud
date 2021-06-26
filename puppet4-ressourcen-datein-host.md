@@ -1,3 +1,13 @@
+---
+title: puppet4-ressourcen-datein-host
+description: 
+published: true
+date: 2021-06-09T16:00:32.335Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:00:26.870Z
+---
+
 # puppet4-ressourcen-datein-host
 
 Es ist nicht immer praktisch, DNS zu verwenden, um Ihre Maschinennamen auf IP-Adressen zuzuordnen, vor allem in Cloud-Infrastrukturen, wo sich diese Adressen jederzeit ändern können. Wenn Sie jedoch stattdessen Einträge in der Datei `/etc/hosts` verwenden, haben Sie dann das Problem, diese Einträge auf alle Rechner zu verteilen und auf dem Laufenden zu halten.

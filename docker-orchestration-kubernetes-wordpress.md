@@ -1,3 +1,13 @@
+---
+title: docker-orchestration-kubernetes-wordpress
+description: 
+published: true
+date: 2021-06-09T15:13:50.158Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:13:44.479Z
+---
+
 # Kubernetes und Wordpress
 
 In diesem Rezept werden wir das WordPress-Beispiel in Kubernetes GitHub (https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples/mysql-wordpress-pd) verwenden. Das gegebene Beispiel erfordert einige Änderungen, da wir es auf der Vagrant-Umgebung statt der Standard-Google Compute-Engine ausführen werden. Auch anstatt die Helfer-Funktionen zu verwenden (z.B. `<kubernetes> /cluster/kubectl.sh`), melden wir uns an, um die `kubectl` Binärdatei zu haben und zu verwenden.

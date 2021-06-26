@@ -1,3 +1,13 @@
+---
+title: puppet-fort-files-packages-erb-tpl
+description: 
+published: true
+date: 2021-06-09T15:48:45.621Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:48:40.122Z
+---
+
 # Puppet für fortgeschrittene: erb Templates
 
 Während du Konfigurationsdateien einfach mit Puppet als einfache Textdateien einsetzen kannst, sind Vorlagen viel leistungsfähiger. Eine Vorlagendatei kann Berechnungen durchführen, Ruby-Code ausführen oder die Werte von Variablen aus Ihren Puppet-Manifests verweisen. Überall, wo Sie eine Textdatei mit Puppet bereitstellen können, können Sie stattdessen eine Vorlage verwenden.

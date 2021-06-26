@@ -1,3 +1,13 @@
+---
+title: puppet-fort-files-packages-paketversionen
+description: 
+published: true
+date: 2021-06-09T15:49:10.459Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:49:05.017Z
+---
+
 # Puppet für fortgeschrittene: Packages Paketverionen
 
 Paketversionsnummern sind seltsame Dinge. Sie sehen aus wie Dezimalzahlen, aber sie sind nicht: eine Versionsnummer ist oft in Form von `2.6.4`, zum Beispiel. Wenn du eine Versionsnummer mit einer anderen vergleichen musst, kannst du keinen direkten String-Vergleich machen: `2.6.4` wäre so interpretiert wie größer als `2.6.12`. Und ein numerischer Vergleich funktioniert nicht, weil sie keine gültigen Zahlen sind.

@@ -1,3 +1,13 @@
+---
+title: nvme
+description: 
+published: true
+date: 2021-06-09T16:12:08.208Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:12:00.629Z
+---
+
 # NVME Firmware
 
 Die HGST NVME Decives in den Nodes können mit neuer Firmware bestückt werden, sofern diese vorliegt.

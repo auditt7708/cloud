@@ -1,3 +1,13 @@
+---
+title: puppet-fort-files-packages-array-tpl
+description: 
+published: true
+date: 2021-06-09T15:48:11.585Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:48:04.856Z
+---
+
 # Puppet für Fortgeschrittene templates mit Datein und Packages
 
 Im vorherigen Beispiel haben wir gesehen, dass man Ruby verwenden kann, um je nach Ergebnis eines Ausdrucks unterschiedliche Werte in Vorlagen zu interpolieren.

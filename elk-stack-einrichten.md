@@ -1,3 +1,13 @@
+---
+title: elk-stack-einrichten
+description: 
+published: true
+date: 2021-06-09T15:19:00.461Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:18:55.436Z
+---
+
 Für die Ausführung von ELK Stack ist eine Java-Laufzeit erforderlich. Die neueste Version von Java wird für die Installation empfohlen. Zum Zeitpunkt des Schreibens dieses Artikels ist die Mindestanforderung Java 7. Sie können die offizielle Oracle-Distribution oder eine Open-Source-Distribution wie OpenJDK verwenden.
 
 Sie können die Java-Installation überprüfen, indem Sie den folgenden Befehl in Ihrer Shell ausführen:

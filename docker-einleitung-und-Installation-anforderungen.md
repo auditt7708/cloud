@@ -1,3 +1,13 @@
+---
+title: docker-einleitung-und-Installation-anforderungen
+description: 
+published: true
+date: 2021-06-09T15:10:34.022Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:10:28.433Z
+---
+
 Docker wird auf vielen Linux-Plattformen wie RHEL, Ubuntu, Fedora, CentOS, Debian, Arch Linux und so weiter unterstützt. Es wird auch auf vielen Cloud-Plattformen wie Amazon EC2, Rackspace Cloud und Google Compute Engine unterstützt. Mit Hilfe einer virtuellen Umgebung, Boot2Docker, kann es auch auf OS X und Microsoft Windows laufen. Eine Weile zurück, sagte Microsoft, dass es native Unterstützung für Docker auf seiner nächsten Microsoft Windows-Version hinzufügen würde.
 
 In diesem Rezept überprüfen wir die Anforderungen für die Docker-Installation. Wir werden das System mit der Installation von Fedora 21 überprüfen, obwohl die gleichen Schritte auch auf Ubuntu funktionieren sollten.

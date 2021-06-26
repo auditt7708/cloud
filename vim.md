@@ -1,3 +1,13 @@
+---
+title: vim
+description: 
+published: true
+date: 2021-06-09T16:10:17.036Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:10:11.415Z
+---
+
 # VIM  
 
 Starten

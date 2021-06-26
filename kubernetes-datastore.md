@@ -1,3 +1,13 @@
+---
+title: kubernetes-datastore
+description: 
+published: true
+date: 2021-06-09T15:32:10.942Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:32:05.454Z
+---
+
 Um die Kubernetes-Cluster-Informationen zu erhalten, müssen wir den Datenspeicher einrichten. Kubernetes verwendet etcd als Standard-Datenspeicher. Dieser Abschnitt führt Sie zum Aufbau des etcd-Servers.
 
 ### Wie es geht…

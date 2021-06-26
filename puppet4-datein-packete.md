@@ -1,3 +1,13 @@
+---
+title: puppet4-datein-packete
+description: 
+published: true
+date: 2021-06-09T15:57:24.248Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:57:19.198Z
+---
+
 # puppet4-datein-packete
 
 In diesem Kapitel werden wir sehen, wie man kleine Änderungen an Dateien vornimmt, wie man größere Änderungen in einer strukturierten Weise mit dem Augeas-Tool vornehmen kann, wie man Dateien aus verketteten Snippets konstruiert und wie man Dateien aus Vorlagen generiert. Wir lernen auch, wie man Pakete aus zusätzlichen Repositories installiert und wie man diese Repositories verwaltet. Darüber hinaus werden wir sehen, wie man geheime Daten mit Puppet speichern und entschlüsseln kann.

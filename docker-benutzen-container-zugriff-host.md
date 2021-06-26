@@ -1,3 +1,13 @@
+---
+title: docker-benutzen-container-zugriff-host
+description: 
+published: true
+date: 2021-06-09T15:08:59.484Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:08:54.995Z
+---
+
 # Docker Kost Zugriff
 
 Ab Docker 1.2 können wir den Zugriff auf das Host-Gerät auf einen Container mit der Option --device zum Befehl run ausgeben. Früher hat man es mit der Option -v gebunden, und das musste mit der --privilegierten Option gemacht werden.

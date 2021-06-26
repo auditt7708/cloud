@@ -1,3 +1,13 @@
+---
+title: docker-praktischer-einsatz-app-openshift
+description: 
+published: true
+date: 2021-06-09T15:14:54.464Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:14:48.920Z
+---
+
 # Docker Praxis mit Openshift
 
 Platform-as-a-Service ist eine Art von Cloud-Service, bei dem der Verbraucher die Software-Bereitstellungen und Konfigurationseinstellungen für Anwendungen (meist Web) steuert und der Anbieter Server, Netzwerke und andere Dienste zur Verwaltung dieser Bereitstellungen bereitstellt. Der Anbieter kann extern sein (ein öffentlicher Anbieter) oder intern (eine IT-Abteilung in einer Organisation). Es gibt viele PaaS-Anbieter wie Amazon (http://aws.amazon.com/), Heroku (https://www.heroku.com/), OpenShift (https://www.openshift.com/), und so weiter. In der jüngsten Vergangenheit scheinen die Container die natürliche Wahl für Anwendungen zu haben, um sich zu entfalten.

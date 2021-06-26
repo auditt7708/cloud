@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-eigene-ressourcen
+description: 
+published: true
+date: 2021-06-09T15:57:39.994Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:57:34.585Z
+---
+
 # puppet4-externe-tools-ecosystem-eigene-ressourcen
 
 Wie Sie wissen, hat Puppet eine Reihe von nützlichen integrierten Ressourcentypen: Pakete, Dateien, Benutzer und so weiter.

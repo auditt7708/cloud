@@ -1,3 +1,13 @@
+---
+title: puppet-monitoring-reporting-doc-auto
+description: 
+published: true
+date: 2021-06-09T15:53:59.346Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:53:53.998Z
+---
+
 
 # puppet-monitoring-reporting-doc-auto
 

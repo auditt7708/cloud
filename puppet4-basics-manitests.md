@@ -1,3 +1,13 @@
+---
+title: puppet4-basics-manitests
+description: 
+published: true
+date: 2021-06-09T15:56:06.979Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:56:01.565Z
+---
+
 Wenn du schon einen Puppencode hast (bekannt als Puppet manifest), kannst du diesen Abschnitt überspringen und weiter zum nächsten gehen. 
 Wenn nicht, werden wir sehen, wie man ein einfaches Manifest erstellt und anwendet.
 

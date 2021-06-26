@@ -1,3 +1,13 @@
+---
+title: puppet4-basics-false
+description: 
+published: true
+date: 2021-06-09T15:55:26.972Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:55:21.838Z
+---
+
 #False in Puppet
 
 Es gibt nur eine Sache in Puppet den wert False hat nähmlich `false` ohne irgendwelche weiteren Zeichen.

@@ -1,3 +1,13 @@
+---
+title: cloud-init
+description: 
+published: true
+date: 2021-06-09T15:00:53.503Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:00:47.775Z
+---
+
 # Cloud Init
 
 ## Boot Stages

@@ -1,3 +1,13 @@
+---
+title: puppet-mgmnt-nodes-nfs
+description: 
+published: true
+date: 2021-06-09T15:53:10.882Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:53:05.440Z
+---
+
 # Puppet Managemnt von NFS
 
 NFS (Network File System) ist ein Protokoll, um ein freigegebenes Verzeichnis von einem entfernten Server zu installieren. Zum Beispiel könnte ein Pool von Web-Servern alle die gleiche NFS-Freigabe einrichten, um statische Assets wie Bilder und Stylesheets zu bedienen. Obwohl NFS im Allgemeinen langsamer und weniger sicher ist als lokaler Speicher oder ein geclustertes Dateisystem, ist die Leichtigkeit, mit der es verwendet werden kann, eine gemeinsame Wahl im Rechenzentrum. Wir verwenden unser `myfw` Modul von vor, um sicherzustellen, dass die lokale Firewall `nfs` Kommunikation erlaubt. Wir verwenden auch das Puppet-Labs-Concat-Modul, um die Liste der exportierten Dateisysteme auf unserem `nfs` Server zu bearbeiten.

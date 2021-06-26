@@ -1,3 +1,13 @@
+---
+title: mesos-terraform-deployment-konfiguration
+description: 
+published: true
+date: 2021-06-09T15:39:15.481Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:39:10.359Z
+---
+
 # Mesos Deployment mit terraform
 
 Terraform ist ein Infrastrukturgebäude, ein Wechsel- und Versionierungswerkzeug,

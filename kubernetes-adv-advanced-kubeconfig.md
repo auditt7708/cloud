@@ -1,3 +1,13 @@
+---
+title: kubernetes-adv-advanced-kubeconfig
+description: 
+published: true
+date: 2021-06-09T15:29:16.502Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:29:11.071Z
+---
+
 Kubeconfig ist eine Konfigurationsdatei zur Verwaltung von Cluster-, Kontext- und Authentifizierungseinstellungen in Kubernetes. Mit der Datei kubeconfig können wir verschiedene Cluster-Anmeldeinformationen, Benutzer und Namespaces festlegen, um zwischen Clustern oder Kontexten innerhalb eines Clusters umzuschalten. Es kann über die Befehlszeile mit dem Unterbefehl `kubectl config` oder einer Konfigurationsdatei direkt konfiguriert werden. In diesem Abschnitt werden wir beschreiben, wie man `kubectl config` verwendet, um kubeconfig zu manipulieren und wie man eine kubeconfig Datei direkt eingibt.
 
 ### Fertig werden

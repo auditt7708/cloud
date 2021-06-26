@@ -1,3 +1,13 @@
+---
+title: jenkins-slave
+description: 
+published: true
+date: 2021-06-09T15:27:08.432Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:27:03.270Z
+---
+
 # User für Slave zugang vorbereiten
 
 User jenkins suchen

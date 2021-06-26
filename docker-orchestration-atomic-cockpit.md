@@ -1,3 +1,13 @@
+---
+title: docker-orchestration-atomic-cockpit
+description: 
+published: true
+date: 2021-06-09T15:12:48.536Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:12:43.482Z
+---
+
 # Docker Orchestration und atomi, cockpit
 
 Cockpit (http://cockpit-project.org/) ist ein Server-Manager, der es einfach macht, Ihre GNU/Linux-Server über einen Webbrowser zu verwalten. Es kann auch verwendet werden, um den Project Atomic Host zu verwalten. Mehr als ein Host kann über eine Cockpit-Instanz verwaltet werden. Cockpit kommt nicht standardmäßig mit dem neuesten Project Atomic, und Sie müssen es als **Super Privileged Container (SPC)** starten. SPCs sind speziell gebaute Container, die mit Sicherheit ausgeschaltet laufen (`--privileged`); Sie schalten ein oder mehrere Namespaces oder "Volume Mounts in" Teile des Host OS in den Container. Weitere Informationen über SPC finden Sie unter https://developerblog.redhat.com/2014/11/06/introducing-a-super-privileged-container-concept/ und https://www.youtube.com/watch?v=EJIeGnHtIYg.

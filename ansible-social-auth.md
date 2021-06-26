@@ -1,3 +1,13 @@
+---
+title: ansible-social-auth
+description: 
+published: true
+date: 2021-06-09T14:56:15.280Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:56:09.656Z
+---
+
 # Authentifikation einrichten mit social Auth tools
 
 Basierend auf [oauth](https://oauth.net/)  kann man diverse Sosial Accound nutzen um sich zusätzlich zu einem Accound zu Authentifizieren um die Sicherheit zu erhöhen.

@@ -1,3 +1,13 @@
+---
+title: docker-tips-tricks-protokoll-driver
+description: 
+published: true
+date: 2021-06-09T15:17:24.292Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:17:15.556Z
+---
+
 Mit dem Release von Docker 1.6 wurde eine neue Funktion hinzugefügt, um den Logging-Treiber beim Starten des Docker-Daemons auszuwählen. Derzeit werden drei Arten von Logging-Treibern unterstützt:
 
 * none

@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-wordpress-example
+description: 
+published: true
+date: 2021-06-09T15:07:17.854Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:07:12.831Z
+---
+
 # Docker arbeiten mit Images: Beispiel mit Wordpress
 
 Bisher haben wir das Beispiel gesehen, nur einen Service in einem Container laufen zu lassen. Wenn wir eine Anwendung ausführen wollen, die es erfordert, dass wir einen oder mehrere Dienste gleichzeitig ausführen, dann müssen wir sie auch auf demselben Container ausführen oder auf verschiedenen Containern laufen lassen und diese miteinander verknüpfen. WordPress ist ein solches Beispiel, das eine Datenbank und einen Web Service benötigt.

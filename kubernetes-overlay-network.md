@@ -1,3 +1,13 @@
+---
+title: kubernetes-overlay-network
+description: 
+published: true
+date: 2021-06-09T15:35:29.939Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:35:23.539Z
+---
+
 # Kubernetes overlay Netzwerk
 
 Kubernetes abstrahiert die Vernetzung, um die Kommunikation zwischen Containern über Knoten zu ermöglichen.

@@ -1,3 +1,13 @@
+---
+title: docker-orchestration-atomic-speicher
+description: 
+published: true
+date: 2021-06-09T15:13:03.655Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:12:58.230Z
+---
+
 # Docker Orchestration atomic Speicher
 
 Der Atomic-Host ist eine minimale distribution und wird als solche auf einem 6-GB-Image verteilt, um den footprint klein zu halten. Dies ist nicht sehr viel Speicherplatz zum bauen und zum speichern vieler Docker Images, es ist aber empfehlenswert, externe Speicher für diese Operationen zu benutzen.

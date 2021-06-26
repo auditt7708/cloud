@@ -1,3 +1,13 @@
+---
+title: gitlab-quick_start
+description: 
+published: true
+date: 2021-06-09T15:22:38.150Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:22:32.403Z
+---
+
 # Erste Schritte mit GitLab CI / CD
 
 **Hinweis:** Ab Version 8.0 ist GitLab Continuous Integration (CI) vollständig in GitLab selbst integriert und standardmäßig in allen Projekten aktiviert .

@@ -1,3 +1,13 @@
+---
+title: netzwerke
+description: 
+published: true
+date: 2021-06-09T15:41:18.960Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:41:13.742Z
+---
+
 # Services und Deamons
 
 * [services](https://gitlab.com/tobkern1980/home-net4-environment/wikis/services)

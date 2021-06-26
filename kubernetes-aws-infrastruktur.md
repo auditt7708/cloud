@@ -1,3 +1,13 @@
+---
+title: kubernetes-aws-infrastruktur
+description: 
+published: true
+date: 2021-06-09T15:30:25.720Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:30:17.407Z
+---
+
 Amazon Web Services (AWS) ist der beliebteste Cloud Service. Sie können mehrere virtuelle Maschinen auf dem Amazon-Rechenzentrum starten. Dieser Abschnitt umfasst die Anmeldung, die Einrichtung der AWS-Infrastruktur und die Einführung von Kubernetes auf AWS.
 
 ### Fertig werden

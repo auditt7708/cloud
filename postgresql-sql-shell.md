@@ -1,3 +1,13 @@
+---
+title: postgresql-sql-shell
+description: 
+published: true
+date: 2021-06-09T15:45:11.179Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:45:05.436Z
+---
+
 # postgresql-sql-shell
 
 Anmeldung an der Datenbank

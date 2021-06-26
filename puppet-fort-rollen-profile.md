@@ -1,3 +1,13 @@
+---
+title: puppet-fort-rollen-profile
+description: 
+published: true
+date: 2021-06-09T15:50:16.976Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:50:11.389Z
+---
+
 # Puppet für fortgeschrittene: Rollen Profile
 
 Gut organisierte Puppet manifestes sind leicht zu lesen; Der Zweck eines Moduls sollte in seinem Namen offensichtlich sein auch ohne besondere Sprachkenntnisse also keine Slangs .

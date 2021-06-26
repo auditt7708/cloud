@@ -1,3 +1,13 @@
+---
+title: puppet-passenger
+description: 
+published: true
+date: 2021-06-09T15:54:40.781Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:54:32.955Z
+---
+
 Der WEBrick-Server, den wir im vorherigen Abschnitt konfiguriert haben, ist nicht in der Lage, eine große Anzahl von Knoten zu handhaben. 
 Um mit einer großen Anzahl von Knoten umzugehen, ist ein skalierbarer Webserver erforderlich. 
 Puppet ist ein Rubyprozess, also brauchen wir einen Weg, um einen Rubyprozess innerhalb eines Webservers zu führen. Passagier ist die Lösung für dieses Problem. Es erlaubt uns, den Puppet-Master-Prozess innerhalb eines Webservers auszuführen \(Apache standardmäßig\). Viele Distributionen versenden mit einem Puppetmaster-Passager Paket, das das für Sie konfiguriert. 

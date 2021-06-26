@@ -1,3 +1,13 @@
+---
+title: puppet4-benutzer-virtuelleressourcen
+description: 
+published: true
+date: 2021-06-09T15:57:08.855Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:57:03.656Z
+---
+
 # puppet4-benutzer-virtuelleressource
 
 Benutzer können ein echter Schmerz sein. Ich meine nicht die Leute, obwohl das zweifellos wahr ist. Aber das Beibehalten von UNIX-Benutzerkonten und Dateizugriffsrechnungen in einem Netzwerk von Maschinen, von denen einige verschiedene Betriebssysteme betreiben, kann ohne eine Art zentralisiertes Konfigurationsmanagement sehr schwierig sein.

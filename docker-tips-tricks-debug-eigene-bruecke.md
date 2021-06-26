@@ -1,3 +1,13 @@
+---
+title: docker-tips-tricks-debug-eigene-bruecke
+description: 
+published: true
+date: 2021-06-09T15:16:39.936Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:16:34.678Z
+---
+
 Wie wir wissen, wenn der Docker-Dämon beginnt, schafft es eine Brücke namens `docker0` und alle Container würden die IP davon bekommen. Manchmal möchten wir diese Einstellungen anpassen. Mal sehen, wie wir das in diesem Rezept machen können.
 
 ### Fertig werden

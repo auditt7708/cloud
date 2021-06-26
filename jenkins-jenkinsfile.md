@@ -1,3 +1,13 @@
+---
+title: jenkins-jenkinsfile
+description: 
+published: true
+date: 2021-06-09T15:26:45.553Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:26:40.493Z
+---
+
 # jenkins-jenkinsfile
 
 * [Pipeline](https://jenkins.io/doc/book/pipeline/getting-started/#global-variable-reference#)

@@ -1,3 +1,13 @@
+---
+title: puppet4-basics-in-operator
+description: 
+published: true
+date: 2021-06-09T15:55:43.037Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:55:37.719Z
+---
+
 Der `in` Operator prüft, ob ein String einen anderen String enthält. Hier ist ein Beispiel:
 `if 'spring' in 'springfield'`
 

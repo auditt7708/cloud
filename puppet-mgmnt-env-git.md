@@ -1,3 +1,13 @@
+---
+title: puppet-mgmnt-env-git
+description: 
+published: true
+date: 2021-06-09T15:52:30.552Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:52:25.092Z
+---
+
 # Puppet Managemnt mit git
 
 Brunches sind ein Weg, um mehrere verschiedene tracks der Entwicklung in einem einzigen Quell-Repository zu halten.

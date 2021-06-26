@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-external-klassen
+description: 
+published: true
+date: 2021-06-09T15:58:02.990Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:57:57.479Z
+---
+
 Wenn die Puppe auf einem Node läuft, muss sie wissen, welche Klassen auf diesen Knoten angewendet werden sollen. Zum Beispiel, wenn es sich um einen Web-Server-Knoten handelt, muss es möglicherweise eine `apache`-Klasse enthalten. Der normale Weg, um Knoten zu Klassen zuzuordnen, ist in der Puppe manifestieren sich zum Beispiel in deiner `site.pp` Datei:
 ```
 node 'web1' {

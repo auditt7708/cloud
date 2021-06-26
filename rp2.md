@@ -1,3 +1,13 @@
+---
+title: rp2
+description: 
+published: true
+date: 2021-06-09T16:03:10.284Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:03:05.103Z
+---
+
 # Router r2
 
 Internet, IPv6

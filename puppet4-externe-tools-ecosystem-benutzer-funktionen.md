@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-benutzer-funktionen
+description: 
+published: true
+date: 2021-06-09T15:57:31.571Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:57:26.150Z
+---
+
 # puppet4-externe-tools-ecosystem-benutzer-funktionen
 
 Wenn Sie das Rezept gelesen haben Mit GnuPG verschlüsseln Sie Geheimnisse in [Puppet4 Arbeiten mit Dateien und Paketen](../puppet4-datein-packete), dann haben Sie bereits ein Beispiel für eine benutzerdefinierte Funktion gesehen (in diesem Beispiel haben wir eine `secret` Funktion erstellt, die sich auf GnuPG ausschloss ). Schauen wir uns die benutzerdefinierten Funktionen in ein wenig mehr Details an und bauen ein Beispiel.

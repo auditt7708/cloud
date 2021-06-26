@@ -1,3 +1,13 @@
+---
+title: docker-daten-mgmnt-verknuepfen
+description: 
+published: true
+date: 2021-06-09T15:10:00.337Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:09:55.166Z
+---
+
 # Docker Verknüpfungen
 
 Mit der Containerisierung möchten wir unseren Stapel erstellen, indem wir services auf verschiedenen Containern ausführen und diese dann miteinander verknüpfen. 

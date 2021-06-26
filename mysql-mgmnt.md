@@ -1,3 +1,13 @@
+---
+title: mysql-mgmnt
+description: 
+published: true
+date: 2021-06-09T15:40:55.807Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:40:50.519Z
+---
+
 # Datenbanken
 
 ## Neue Datenbank anlegen

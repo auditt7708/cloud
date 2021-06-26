@@ -1,3 +1,13 @@
+---
+title: puppet4-infrastruktur
+description: 
+published: true
+date: 2021-06-09T15:59:37.092Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:59:32.195Z
+---
+
 # Puppet4 Infrastruktur
 
 * [Puppet Manage deine manifests with git](../puppet-manage-manigests-git)

@@ -1,3 +1,13 @@
+---
+title: passwd
+description: 
+published: true
+date: 2021-06-09T15:44:10.107Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:44:05.103Z
+---
+
 # Änderung des Passworts eines Benutzers
 
 Infos zu allen Benutzen

@@ -1,3 +1,13 @@
+---
+title: mariadb-maxscale
+description: 
+published: true
+date: 2021-06-09T15:37:46.420Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:37:41.505Z
+---
+
 # maxscale Einrichtung
 
 _/etc/maxscale.cnf_ Konfiguration einrichten

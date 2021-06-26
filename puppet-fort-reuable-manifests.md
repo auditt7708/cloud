@@ -1,3 +1,13 @@
+---
+title: puppet-fort-reuable-manifests
+description: 
+published: true
+date: 2021-06-09T15:50:09.162Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:50:03.090Z
+---
+
 # Puppet für fortgeschrittene: Wiederbenutzbare manifests
 
 Jeder Systemadministrator träumt von einer einheitlichen, homogenen Infrastruktur von identischen Maschinen, die alle die gleiche Version des gleichen Betriebssystems ausführen. Wie in anderen Lebensbereichen ist die Realität aber oft unordentlich und entspricht nicht dem Plan.

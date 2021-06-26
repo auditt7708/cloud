@@ -1,3 +1,13 @@
+---
+title: docker-sicherheit-selinux-volume
+description: 
+published: true
+date: 2021-06-09T15:16:24.041Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:16:18.783Z
+---
+
 Wie wir in der früheren Rezeptur gesehen haben, wenn SELinux konfiguriert ist, kann ein nichtprivilegierter Container nicht auf Dateien auf dem Volume zugreifen, das nach der Montage des Verzeichnisses aus dem Host-System erstellt wurde. Allerdings ist es manchmal erforderlich, den Zugriff auf Host-Dateien aus dem Container zu ermöglichen. In diesem Rezept sehen wir, wie man den Zugang in solchen Fällen erlaubt.
 Fertig werden
 

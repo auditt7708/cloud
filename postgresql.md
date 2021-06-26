@@ -1,3 +1,13 @@
+---
+title: postgresql
+description: 
+published: true
+date: 2021-06-09T15:45:20.220Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:45:14.600Z
+---
+
 # Postgresql
 
 * [Postgres SQL Shell](../postgresql-sql-shell)

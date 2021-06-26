@@ -1,3 +1,13 @@
+---
+title: linux-hochverfugbarkeit
+description: 
+published: true
+date: 2021-06-09T15:36:26.039Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:36:20.568Z
+---
+
 # Linux Hochverfügbarkeit
 
 ## [HA auf Server-Ebene](../ha-server)

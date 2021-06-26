@@ -1,3 +1,13 @@
+---
+title: pxe
+description: 
+published: true
+date: 2021-06-09T16:01:51.493Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:01:45.848Z
+---
+
 # Automatisierte Installation mit PXE-Boot und einer Preseed-Datei
 
 Nun, da wir ein gespiegeltes Repository von Paketen haben, können wir es auch verwenden, um die Dateien zu bedienen, die unsere Hosts über das Netzwerk aufbauen. Das Erstellen von Bare-Metal-Servern über das Netzwerk hat viele Vorteile, so dass Sie einfach einen Bare-Metal-Server booten und über DHCP konfigurieren und ein Betriebssystem installieren können, ohne zusätzliche Interaktionen. Das PXE-Booten ermöglicht den Einsatz von diskless Clients, die booten und nur über das Netzwerk laufen können.

@@ -1,3 +1,13 @@
+---
+title: coreutils
+description: 
+published: true
+date: 2021-06-09T15:02:39.789Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:02:34.623Z
+---
+
 # coreutils
 
 coreutils sind auch als _Gnu Tools_ bekannt.

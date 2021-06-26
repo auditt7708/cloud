@@ -1,3 +1,13 @@
+---
+title: nosql
+description: 
+published: true
+date: 2021-06-09T15:41:55.920Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:41:50.966Z
+---
+
 # [Cassandra](../cassandra)
 
 ## [Redis](../redis)

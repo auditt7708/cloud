@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-von-container
+description: 
+published: true
+date: 2021-06-09T15:07:10.451Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:07:05.349Z
+---
+
 # Docker arbeiten mit Images: Images von Containern
 
 Es gibt ein paar Möglichkeiten, um Bilder zu erstellen, man ist von manuell begehen Schichten und der andere Weg ist durch Dockerfiles. In diesem Rezept sehen wir das ehemalige und Blick auf Dockerfiles später im Kapitel.

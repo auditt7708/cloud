@@ -1,3 +1,13 @@
+---
+title: kubernetes-ha-etcd
+description: 
+published: true
+date: 2021-06-09T15:32:42.248Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:32:36.795Z
+---
+
 Etcd speichert Netzwerkinformationen und Stati in Kubernetes. Jeder Datenverlust könnte entscheidend sein. Clustering wird dringend empfohlen in etcd. Etcd kommt mit Unterstützung für Clustering daher; Ein Cluster von **N** Mitgliedern kann bis zu **(N-1)/2** Ausfälle tolerieren. Es gibt drei Mechanismen für die Erstellung eines etcd-Clusters. Sie sind folgende:
 
 * Statisch

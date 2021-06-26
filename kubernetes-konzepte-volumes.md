@@ -1,3 +1,13 @@
+---
+title: kubernetes-konzepte-volumes
+description: 
+published: true
+date: 2021-06-09T15:34:12.239Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:34:05.546Z
+---
+
 Dateien in einem Container sind kurzlebig. Wenn der Container beendet ist, sind die Daten verschwunden. Docker hat Datenmengen und Datenmengencontainer eingeführt, um uns bei der Verwaltung der Daten zu helfen, indem wir aus dem Hostdatenträgerverzeichnis oder aus anderen Containern installieren. Allerdings, wenn es um einen Container-Cluster geht, ist es schwer Volumen zu verwalten über Hosts und durch ihre Lebensdauer mit Docker.
 
 Kubernetes führt Volumen ein, das mit einem Pod über Container-Neustarts lebt. Es unterstützt die folgenden verschiedenen Arten von Netzwerk-Festplatten:

@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-rspec
+description: 
+published: true
+date: 2021-06-09T15:58:57.661Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:58:52.280Z
+---
+
 # puppet4-externe-tools-ecosystem-rspec
 
 Es wäre toll, wenn wir verifizieren könnten, dass unsere Marionette manifestiert, gewisse Erwartungen, ohne auch nur die Puppe laufen zu müssen. Das `rspec-puppet` Tool ist ein raffiniertes Werkzeug dazu. Auf der Basis von RSpec, einem Test-Framework für Ruby-Programme, können Sie mit `rspec-puppet` Testfälle für Ihre Puppet manifestes schreiben, die besonders nützlich sind, um Regressionen zu fangen (Fehler bei der Festsetzung eines anderen Bugs) und Refactoring-Probleme (Fehler bei der Neuordnung Ihres Codes).

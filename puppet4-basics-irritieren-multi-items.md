@@ -1,3 +1,13 @@
+---
+title: puppet4-basics-irritieren-multi-items
+description: 
+published: true
+date: 2021-06-09T15:55:51.559Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:55:46.254Z
+---
+
 Arrays sind ein mächtiges Feature in Puppet.
 Wo immer du die gleiche Operation auf einer Liste von Dingen ausführt werden soll, kann ein Array in der Lage sein zu helfen. 
 Sie können ein Array erstellen, indem Sie einfach seinen Inhalt in eckige Klammern setzen:

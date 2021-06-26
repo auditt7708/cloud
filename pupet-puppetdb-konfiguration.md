@@ -1,3 +1,13 @@
+---
+title: pupet-puppetdb-konfiguration
+description: 
+published: true
+date: 2021-06-09T15:46:22.433Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:46:17.105Z
+---
+
 # Pupper PuppetDB
 
 PuppetDB ist eine Datenbank für Puppet, die verwendet wird, um Informationen über Nodes zu speichern, die mit einem Puppet-Master \(Puppet version &gt;= 4 Puppet Sever\) verbunden sind.

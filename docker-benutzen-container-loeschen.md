@@ -1,3 +1,13 @@
+---
+title: docker-benutzen-container-loeschen
+description: 
+published: true
+date: 2021-06-09T15:08:00.801Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:07:56.470Z
+---
+
 We can delete a container permanently, but before that we have to stop the container or use the force option. In this recipe, we'll start, stop, and delete a container.
 Getting ready
 

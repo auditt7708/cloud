@@ -1,3 +1,13 @@
+---
+title: tftpd-install-debian
+description: 
+published: true
+date: 2021-06-09T16:08:29.653Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:08:24.508Z
+---
+
 
 # tftpd Installation unter Debian
 

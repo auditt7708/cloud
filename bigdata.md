@@ -1,3 +1,13 @@
+---
+title: bigdata
+description: 
+published: true
+date: 2021-06-09T14:58:29.960Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:58:24.721Z
+---
+
 # [Hadoop](../hadhoop)
 
 ## Bestandteile

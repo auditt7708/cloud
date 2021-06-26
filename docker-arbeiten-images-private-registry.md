@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-private-registry
+description: 
+published: true
+date: 2021-06-09T15:06:41.518Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:06:36.231Z
+---
+
 # Docker arbeiten mit Images: Private Registry
 
 Wie wir schon früher gesehen haben, ist die öffentliche Docker-Registrierung die verfügbare [Docker Hub](https://registry.hub.docker.com/), über die Benutzer Bilder hochladen / ziehen können. Wir können auch eine private Registrierung entweder in einer lokalen Umgebung oder auf der Cloud. Es gibt ein paar Möglichkeiten, die lokale Registrierung einzurichten:

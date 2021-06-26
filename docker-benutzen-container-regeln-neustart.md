@@ -1,3 +1,13 @@
+---
+title: docker-benutzen-container-regeln-neustart
+description: 
+published: true
+date: 2021-06-09T15:08:37.405Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:08:32.414Z
+---
+
 Vor Docker 1.2 gab es eine Option zum Neustart des Containers. Mit der Freigabe von Docker 1.2 wurde es mit dem Befehl `run` mit Flags hinzugefügt, um die Neustartrichtlinie anzugeben. Mit dieser Richtlinie können wir Container konfigurieren, um beim Booten zu starten. Diese Option ist auch sehr nützlich, wenn ein Container versehentlich stirbt.
 
 ### Fertig werden

@@ -1,3 +1,13 @@
+---
+title: docker-sicherheit
+description: 
+published: true
+date: 2021-06-09T15:16:31.679Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:16:26.056Z
+---
+
 Docker-Container sind eigentlich keine Sandbox-Anwendungen, was bedeutet, dass nicht empfohlen wird, Anwendungen auf dem System als root mit Docker auszuführen. Sie sollten immer einen Container absichern, auf ein Service / Prozess als Service / Prozess läuft, wenn der auf dem Host-System läuft und alle Sicherheitsmaßnahmen in den Container, den Sie auf dem Host-System setzen, ausführen.
 
 Wir haben [Einleitung und Installation](../docker-einleitung-und-Installation) gesehen, wie Docker Namespaces für die Isolation verwendet. Die sechs Namespaces, die Docker verwendet, sind Process, Network, Mount, Hostname, Shared Memory, und User. Nicht alles in Linux ist namespaced, z.B SELinux, Cgroups, Devices (`/dev/mem`, `/dev/sd*`) und Kernel Module. Die Dateisysteme unter `/sys`, `/proc/sys`, `/proc/sysrq-trigger`, `/proc/irq`, `/proc/bus` sind auch nicht namenpaced, sondern sie werden standardmäßig nur mit dem libcontainer executing driver als gelesen.

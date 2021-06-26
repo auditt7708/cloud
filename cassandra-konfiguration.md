@@ -1,3 +1,13 @@
+---
+title: cassandra-konfiguration
+description: 
+published: true
+date: 2021-06-09T14:59:06.738Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:59:02.222Z
+---
+
 # Cassandra konfigurieren
 
 Um Cassandra auf einem einzelnen Knoten auszuführen, reicht die Standardkonfigurationsdatei ./conf/cassandra.yamlaus. Sie sollten keine Konfiguration ändern müssen. Wenn Sie jedoch einen Cluster von Knoten bereitstellen oder Clients verwenden, die sich nicht auf demselben Host befinden, müssen einige Parameter geändert werden.

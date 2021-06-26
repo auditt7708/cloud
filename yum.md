@@ -1,3 +1,13 @@
+---
+title: yum
+description: 
+published: true
+date: 2021-06-09T16:11:49.941Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:11:44.812Z
+---
+
 # Updaten  von einem  Paket
 
 `yum update mysql`

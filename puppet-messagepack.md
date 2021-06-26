@@ -1,3 +1,13 @@
+---
+title: puppet-messagepack
+description: 
+published: true
+date: 2021-06-09T15:52:22.819Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:52:17.482Z
+---
+
 
 # Puppet Messagepack
 

@@ -1,3 +1,13 @@
+---
+title: jaeger
+description: 
+published: true
+date: 2021-06-09T15:26:23.367Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:26:18.156Z
+---
+
 # jaeger
 
 Monitorring und fehlerbehebung von transcations in komplexen systemen

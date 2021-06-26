@@ -1,3 +1,13 @@
+---
+title: proxmox
+description: 
+published: true
+date: 2021-06-09T16:12:53.029Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:12:48.057Z
+---
+
 # Proxmox
 
 Proxmox VE (Proxmox Virtual Environment; kurz PVE) ist eine auf Debian basierende Open-Source-Virtualisierungsplattform zum Betrieb von virtuellen Maschinen mit einer Web-Oberfläche zur Einrichtung und Steuerung von x86-Virtualisierungen. Die Umgebung basiert auf QEMU mit der Kernel-based Virtual Machine (KVM). PVE bietet neben dem Betrieb von klassischen virtuellen Maschinen (Gastsystemen), die auch den Einsatz von Virtual Appliances erlauben, auch LinuX Containers (LXC) an.

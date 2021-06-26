@@ -1,3 +1,13 @@
+---
+title: rundeck
+description: 
+published: true
+date: 2021-06-09T16:04:04.255Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:03:58.727Z
+---
+
 # Datein, Benutzer  und Verzeichnisse
 
 Basisverzeichnis = /var/lib/rundeck

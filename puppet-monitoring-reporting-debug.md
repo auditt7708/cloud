@@ -1,3 +1,13 @@
+---
+title: puppet-monitoring-reporting-debug
+description: 
+published: true
+date: 2021-06-09T15:53:43.284Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:53:37.874Z
+---
+
 # puppet-monitoring-reporting-debug
 
 Es kann sehr hilfreich sein, wenn Sie Probleme debuggen, wenn Sie Informationen an einem bestimmten Punkt im Manifest ausdrucken können. Dies ist ein guter Weg zu sagen, zum Beispiel, wenn eine Variable nicht definiert ist oder einen unerwarteten Wert hat. Manchmal ist es sinnvoll, nur zu wissen, dass ein bestimmtes Stück Code ausgeführt wurde. Mit der Benachrichtigung von Puppet können Sie solche Nachrichten ausdrucken.

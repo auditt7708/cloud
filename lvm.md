@@ -1,3 +1,13 @@
+---
+title: lvm
+description: 
+published: true
+date: 2021-06-09T15:37:20.746Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:37:14.012Z
+---
+
 # LVM
 
 ## Neue PV anlegen einer vg hinzufügen, lv vg zuordnen

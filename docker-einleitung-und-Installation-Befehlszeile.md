@@ -1,3 +1,13 @@
+---
+title: docker-einleitung-und-Installation-Befehlszeile
+description: 
+published: true
+date: 2021-06-09T15:10:26.329Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:10:21.027Z
+---
+
 # Docker Installation
 
 Docker-Befehle sind gut dokumentiert und können bei jedem Bedarf benannt werden. Viele Dokumente sind auch online verfügbar, aber es könnte von der Dokumentation für die Docker-Version abweichen, die Sie ausführen.

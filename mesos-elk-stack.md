@@ -1,3 +1,13 @@
+---
+title: mesos-elk-stack
+description: 
+published: true
+date: 2021-06-09T15:38:34.098Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:38:28.144Z
+---
+
 # Mesos ELK Stack aufbauen
 
 In diesem Abschnitt wird der Elasticsearch-Logstash-Kibana (ELK) Stack vorgestellt und erklärt,

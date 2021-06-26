@@ -1,3 +1,13 @@
+---
+title: kubernetes-container-skalierung
+description: 
+published: true
+date: 2021-06-09T15:31:55.487Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:31:50.230Z
+---
+
 Kubernetes hat einen Scheduler, um den Container dem rechten Knoten zuzuordnen. Darüber hinaus können Sie leicht skalieren und skalieren die Anzahl der Container. Die Kubernetes-Skalierungsfunktion führt den replication controller aus, um die Anzahl der Container anzupassen.
 
 ### Fertig werden

@@ -1,3 +1,13 @@
+---
+title: puppet-fort-files-packages-3nd-repos
+description: 
+published: true
+date: 2021-06-09T15:48:00.943Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:47:54.669Z
+---
+
 # Puppet für fortgeschrittene: 3nd Repositorys
 
 Am häufigsten werden Sie , Pakete von der Hauptverteilung Repo installieren wollen, so dass es eine einfache Paket-Ressource wird:

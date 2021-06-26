@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-supermin
+description: 
+published: true
+date: 2021-06-09T15:06:48.525Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:06:43.392Z
+---
+
 # Docker arbeiten mit Images: Superadmin
 
 Früher in diesem Kapitel benutzten wir die `FROM`-Anweisung, um das Basisimage zu starten.

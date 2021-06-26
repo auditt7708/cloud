@@ -1,3 +1,13 @@
+---
+title: docker-performence
+description: 
+published: true
+date: 2021-06-09T15:14:46.098Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:14:39.021Z
+---
+
 # Docker Performence
 
 In [Arbeiten mit Docker Images](../docker-arbeiten-mit-docker-images), sahen wir, wie Dockerfiles verwendet werden können, um Images zu erstellen, die aus verschiedenen Diensten / Software und später in [Netzwerk und Daten Management mit Docker](../docker-daten-mgmnt) bestehen. Wir haben gesehen, wie ein Docker-Container mit dem sprechen kann Außenwelt in Bezug auf Daten und Netzwerk. In [Docker praktischer Einsatz möglichkeiten](../docker-praktischer-einsatz)sahen wir in die verschiedenen Anwendungsfälle von Docker, und in [Docker APIs und Programmierspach bindungen](../docker-api-programmierung), sahen wir, wie man Remote-APIs verwenden, um eine Verbindung zu einem Remote-Docker-Host zu verbinden.

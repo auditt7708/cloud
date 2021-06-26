@@ -1,3 +1,13 @@
+---
+title: puppet-fort-user-virtuelle-ressourcen-benutzen
+description: 
+published: true
+date: 2021-06-09T15:50:50.141Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:50:44.516Z
+---
+
 # Puppet für fortgeschrittene: Virtuelle resourcen benutzen
 
 Virtuelle Ressourcen in der Puppet mögen kompliziert und verwirrend sein, aber in Wirklichkeit sind sie sehr einfach. Sie sind genau wie reguläre Ressourcen, aber sie werden nicht wirklich wirksam, bis sie realisiert sind (im Sinne von "real gemacht"); Wohingegen eine reguläre Ressource nur einmal pro Knoten deklariert werden kann (so können zwei Klassen die gleiche Ressource beispielsweise nicht deklarieren). Eine virtuelle Ressource kann so oft wie notwendig realisiert werden.

@@ -1,3 +1,13 @@
+---
+title: docker-daten-mgmnt
+description: 
+published: true
+date: 2021-06-09T15:10:17.922Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:10:12.275Z
+---
+
 # Docker Daten Management
 
 Bisher haben wir mit einem einzigen Container gearbeitet und darauf lokal zugegriffen. Aber wenn wir in echte Praktische Fälle wechseln, müssen wir auf den Container von der Außenwelt zugreifen, den externen Speicher im Container freigeben, mit Containern kommunizieren, die auf anderen Hosts laufen und so weiter. In diesem Kapitel werden wir sehen, wie wir einige dieser Anforderungen erfüllen können. Lassen Sie uns beginnen, indem Sie das Standard-Netzwerk-Setup von Docker verstehen und dann zu fortgeschrittenen Anwendungsfällen gehen.

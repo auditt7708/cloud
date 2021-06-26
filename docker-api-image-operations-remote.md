@@ -1,3 +1,13 @@
+---
+title: docker-api-image-operations-remote
+description: 
+published: true
+date: 2021-06-09T15:05:01.834Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:04:56.169Z
+---
+
 # Docker API Image Operation Remote
 
 Nach dem Aktivieren der Docker-Daemon-Remote-API können wir alle Imagebezogenen Operationen über einen Client durchführen. Um ein besseres Verständnis der APIs zu erhalten, verwenden wir `curl`, um eine Verbindung zum Remote-Daemon herzustellen und einige Image-bezogene Operationen durchzuführen.

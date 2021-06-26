@@ -1,3 +1,13 @@
+---
+title: system-administration
+description: 
+published: true
+date: 2021-06-09T16:07:22.481Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:07:16.508Z
+---
+
 # Systemd
 
 ## systemctl

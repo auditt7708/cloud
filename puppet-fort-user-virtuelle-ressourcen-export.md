@@ -1,3 +1,13 @@
+---
+title: puppet-fort-user-virtuelle-ressourcen-export
+description: 
+published: true
+date: 2021-06-09T15:51:07.170Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:51:00.956Z
+---
+
 # Puppet für fortgeschrittene: Virtuelle Resourcen expotieren
 
 Alle unseren Rezepten bis zu diesem Punkt hat sich um eine einzelne maschine gehandelt. Es ist möglich mit Puppet, Ressourcen von einem Nodes zu haben, die einen anderen Node beeinflussen. Diese Interaktion wird mit exportierten Ressourcen verwaltet. Exportierte Ressourcen sind genau wie jede Ressource, die Sie für einen Knoten definieren könnten, aber anstatt auf den Node anzuwenden, auf dem sie erstellt wurden, werden sie für die Verwendung von allen Nodes in der Umgebung exportiert. Ausgeführte Ressourcen können als virtuelle Ressourcen betrachtet werden, die einen Schritt weiter gehen und über den Node hinausgehen, auf dem sie definiert wurden.

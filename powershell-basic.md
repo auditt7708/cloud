@@ -1,3 +1,13 @@
+---
+title: powershell-basic
+description: 
+published: true
+date: 2021-06-09T15:45:35.626Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:45:30.535Z
+---
+
 # Powershell
 
 ## Verarbeitung von JSON

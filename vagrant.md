@@ -1,3 +1,13 @@
+---
+title: vagrant
+description: 
+published: true
+date: 2021-06-09T16:10:00.490Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:09:55.275Z
+---
+
 # [Vagrant](../vagent)
 
 ## [Plugins](../vagrant-plugins)

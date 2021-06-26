@@ -1,3 +1,13 @@
+---
+title: kubernetes-adv-administration
+description: 
+published: true
+date: 2021-06-09T15:28:52.994Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:28:48.080Z
+---
+
 # Kubernetes Fortgeschrittene Administration
 
 Wir werden in diesem Kapitel fortgeschrittene Themen zur Verwaltung durchführen.
