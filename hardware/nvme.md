@@ -31,7 +31,7 @@ Aktuelle Firmware auf dem Device anzeigen
 root@ceph-1:~ ./nvme_firmware/dm-1.7.0-Linux/bin/dm-cli manage-firmware -p /dev/nvme0 -l
 [/dev/nvme0]
   Product Name                 = Ultrastar                                                                                                                                                                      
-  Device Type                  = NVMe Controller                                                                                                                                                                
+  Device Type                  = NVMe Controller                                                                                                                           
   Device Path                  = /dev/nvme0                                                                                                                                                                     
   UID                          = 1C58SDM00007EC41HUSMR7616BHP3010023                                                                                                                                            
   Alias                        = @nvme1                                                                                                                                                                         
