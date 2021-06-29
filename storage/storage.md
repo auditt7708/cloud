@@ -1,3 +1,3 @@
 # Storage Uebersicht
 
-+ [Ceph](./ceph/ceph)
++ [Ceph](../ceph/ceph-inhalt)

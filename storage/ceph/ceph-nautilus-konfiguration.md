@@ -1,0 +1,5 @@
+Beispiel Konfiguration
+
+```bash
+
+```
