@@ -11,40 +11,40 @@ dateCreated: 2021-06-09T14:56:58.961Z
 # Ansible
 
 ## Übersicht
-* [Ansible Installation und Konfiguration](../ansible-install-konfiguration)
-  * [Ansible requirements](../ansible-erweitert-requirements)
-  * [Ansible Variablen Facts Filter](../ansible-variablen)
-  * [Ansible Paterns](../ansible-pattern)
-  * [Ansible Filter](../ansible-filter)
-* [Ansible Inventory](../ansible-inventory)
-  * [Ansibel Inventory und Hosts](../ansible-hosts)
-* [Ansible Templates](../ansible-templates)
-  * [Ansible Statements](../ansible-statements)
-* [Ansible Verzeichnis Layout](../ansible-verzeichnis-layout)
-  * [Ansible alternatives Verzeichnis Layout](../ansible-alternativ-verzeichnis-layout)
-* [Ansible Fehlersuche](../ansible-fehlersuche)
-* [Ansible Cluster](../ansible-cluster)
-* [Ansible Authentifikation](../ansible-authentifikation)
-* [Ansible Sozial Authentifikation](../ansible-social-auth)
-* [Zero Downtime Deployment](../ansible-zero-downtime-deployment)
-* [Tools](../ansible-tools)
-  * [Ansible Mazer](../ansible-mazer)
-  * [Ansible Rolen](../ansible-rolen)
-  * [Ansible Galaxy](../ansible-galaxy)
-  * [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
-* [Sicherheit](../ansible-sicherheit)
-  * [Ansible Vault](../ansible-vault)
+* [Ansible Installation und Konfiguration](../ansible/ansible-install-konfiguration)
+  * [Ansible requirements](../ansible/ansible-erweitert-requirements)
+  * [Ansible Variablen Facts Filter](../ansible/ansible-variablen)
+  * [Ansible Paterns](../ansible/ansible/ansible-pattern)
+  * [Ansible Filter](../ansible/ansible-filter)
+* [Ansible Inventory](../ansible/ansible-inventory)
+  * [Ansibel Inventory und Hosts](../ansible/ansible-hosts)
+* [Ansible Templates](../ansible/ansible-templates)
+  * [Ansible Statements](../ansible/ansible-statements)
+* [Ansible Verzeichnis Layout](../ansible/ansible-verzeichnis-layout)
+  * [Ansible alternatives Verzeichnis Layout](../ansible/ansible-alternativ-verzeichnis-layout)
+* [Ansible Fehlersuche](../ansible/ansible-fehlersuche)
+* [Ansible Cluster](../ansible/ansible-cluster)
+* [Ansible Authentifikation](../ansible/ansible-authentifikation)
+* [Ansible Sozial Authentifikation](../ansible/ansible-social-auth)
+* [Zero Downtime Deployment](../ansible/ansible-zero-downtime-deployment)
+* [Tools](../ansible/ansible-tools)
+  * [Ansible Mazer](../ansible/ansible-mazer)
+  * [Ansible Rolen](../ansible/ansible-rolen)
+  * [Ansible Galaxy](../ansible/ansible-galaxy)
+  * [Ansible Direkte Kommandos ausführen](../ansible/ansible-adhoc)
+* [Sicherheit](../ansible/ansible-sicherheit)
+  * [Ansible Vault](../ansible/ansible-vault)
 
 Tools
 
-* [Ansible Mazer](../ansible-mazer)
-* [Ansible Rolen](../ansible-rolen)
-* [Ansible Galaxy](../ansible-galaxy)
-* [Ansible Direkte Kommandos ausführen](../ansible-adhoc)
+* [Ansible Mazer](../ansible/ansible-mazer)
+* [Ansible Rolen](../ansible/ansible-rolen)
+* [Ansible Galaxy](../ansible/ansible-galaxy)
+* [Ansible Direkte Kommandos ausführen](../ansible/ansible-adhoc)
 
 Sicherheit
 
-* [Ansible Vault](../ansible-vault)
+* [Ansible Vault](../ansible/ansible-vault)
 
 ## Wichtige Documentation für ansible
 
