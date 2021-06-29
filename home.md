@@ -1,13 +1,3 @@
----
-title: home
-description: 
-published: true
-date: 2021-06-16T20:56:23.278Z
-tags: 
-editor: markdown
-dateCreated: 2021-06-16T20:52:07.704Z
----
-
 # Eigene Systeme, Notizen und Services
 
 * [redash](https://redash.io/help/aboutrd/aboutrd.html#whats_redash)
