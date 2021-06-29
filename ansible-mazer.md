@@ -1,3 +1,13 @@
+---
+title: ansible-mazer
+description: 
+published: true
+date: 2021-06-09T14:55:51.457Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:55:45.494Z
+---
+
 # Installation
 
 Die installation wird mit [Python pip](../python-pip) durchgeführt.

@@ -1,3 +1,13 @@
+---
+title: preseed
+description: 
+published: true
+date: 2021-06-09T15:45:50.982Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:45:45.369Z
+---
+
 # Automatisierung mit preseed
 
 * [Automatisierung von post-installation](../preseed-post-installation-tasks)

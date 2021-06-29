@@ -1,3 +1,13 @@
+---
+title: docker-api-programmierung
+description: 
+published: true
+date: 2021-06-09T15:05:10.568Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:05:05.264Z
+---
+
 # Docker API Programmierung
 
 In den vorangegangenen Kapiteln haben wir verschiedene Befehle gelernt, um Images, Container und so weiter zu verwalten. Obwohl wir alle Befehle über die Befehlszeile ausführen, geschieht die Kommunikation zwischen dem Docker-Client (CLI) und dem Docker-Daemon durch APIs, die Docker-Daemon-Remote-APIs heißen.

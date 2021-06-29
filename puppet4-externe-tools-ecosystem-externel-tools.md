@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-externel-tools
+description: 
+published: true
+date: 2021-06-09T15:58:11.299Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:58:06.216Z
+---
+
 Wenn du die komplette Konfiguration eines laufenden Systems als Puppet Manifest schnell erfassen willst, gibt es ein paar Tools zur Verfügung. In diesem Beispiel werden wir auf Blueprint schauen, der entworfen ist, um eine Maschine zu untersuchen und seinen Zustand als Puppencode zu entsorgen.
 
 ### Fertig werden

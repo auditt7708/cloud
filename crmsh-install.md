@@ -1,3 +1,13 @@
+---
+title: crmsh-install
+description: 
+published: true
+date: 2021-06-09T15:03:01.518Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:02:56.566Z
+---
+
 # Debian 8
 
 ## CentOS 7

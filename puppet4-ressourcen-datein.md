@@ -1,3 +1,13 @@
+---
+title: puppet4-ressourcen-datein
+description: 
+published: true
+date: 2021-06-09T16:01:12.833Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:01:07.729Z
+---
+
 # puppet4-ressourcen-datein
 
 Im vorigen Kapitel haben wir virtuelle und exportierte Ressourcen eingeführt. Virtuelle und exportierte Ressourcen sind Möglichkeiten, die Art und Weise zu verwalten, in der Ressourcen auf einen Node angewendet werden.

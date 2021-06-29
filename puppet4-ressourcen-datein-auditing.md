@@ -1,3 +1,13 @@
+---
+title: puppet4-ressourcen-datein-auditing
+description: 
+published: true
+date: 2021-06-09T15:59:52.001Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:59:46.974Z
+---
+
 Trockenlauf-Modus, mit dem `--noop` Schalter, ist eine einfache Möglichkeit, um alle Änderungen an einer Maschine unter Puppet's Kontrolle zu überprüfen. Allerdings hat Puppet auch eine eigene Audit-Funktion, die Änderungen an Ressourcen oder spezifischen Attributen melden kann.
 
 ### Wie es geht

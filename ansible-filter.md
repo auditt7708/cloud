@@ -1,3 +1,13 @@
+---
+title: ansible-filter
+description: 
+published: true
+date: 2021-06-09T14:55:18.932Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:55:13.635Z
+---
+
 # Filter Beispiele
 
 ## Facts nach /tmp/facts Speichern

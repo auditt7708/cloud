@@ -1,3 +1,13 @@
+---
+title: elk-stack-kibana5-apache-log
+description: 
+published: true
+date: 2021-06-09T15:19:19.406Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:19:13.423Z
+---
+
 Apache und NGINX sind die meistgenutzten Webserver in der Welt. Es gibt Milliarden von Anfragen, die von diesen Servern da draußen bedient werden, zu internen Netzwerken so viel wie externe Benutzer. Die meiste Zeit sind sie eine der ersten Logik-Layer, die in einer Transaktion berührt werden, so dass man von dort aus eine sehr genaue Sicht auf das, was im Begriff des Service-Gebrauchs vor sich geht, bekommen kann.
 
 In diesem Kapitel konzentrieren wir uns auf den Apache-Server und nutzen die Protokolle, die der Server während der Laufzeit generiert, um die Benutzeraktivität zu visualisieren. Die Protokolle, die wir verwenden werden, wurden von einer Website (www.logstash.net) Apache Webserver generiert. Sie wurden von Peter Kim und Christian Dahlqvist zusammengestellt, zwei meiner Lösungen Architektenkollegen bei Elastic (https://github.com/elastic/elk-index-size-tests).

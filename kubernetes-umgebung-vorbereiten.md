@@ -1,3 +1,13 @@
+---
+title: kubernetes-umgebung-vorbereiten
+description: 
+published: true
+date: 2021-06-09T15:35:37.796Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:35:32.375Z
+---
+
 # Kubernetes Umgebung Vorbereiten
 
 Bevor wir eine eigenen Cluster benutzen, müssen wir die Umgebung vorbereiten.

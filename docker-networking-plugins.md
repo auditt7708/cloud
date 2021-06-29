@@ -1,3 +1,13 @@
+---
+title: docker-networking-plugins
+description: 
+published: true
+date: 2021-06-09T15:11:37.586Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:11:32.576Z
+---
+
 ## Docker Netzwerk Plugins
 
 Folgende Plugins sind einsetzbar :

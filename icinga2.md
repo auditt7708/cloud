@@ -1,3 +1,13 @@
+---
+title: icinga2
+description: 
+published: true
+date: 2021-06-09T15:25:28.971Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:25:23.259Z
+---
+
 ## Icinga2 
 
 * [Icinga2 icingaweb2](../icingaweb2)

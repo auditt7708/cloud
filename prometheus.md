@@ -1,3 +1,13 @@
+---
+title: prometheus
+description: 
+published: true
+date: 2021-06-15T07:20:53.367Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:45:53.821Z
+---
+
 # Installation von  Prometheus auf Ubuntu 18.04 LTS
 
 Prometheus ist ein kostenloses Open-Source-Software-Ökosystem,

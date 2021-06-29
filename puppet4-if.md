@@ -1,3 +1,13 @@
+---
+title: puppet4-if
+description: 
+published: true
+date: 2021-06-09T15:59:29.470Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:59:24.251Z
+---
+
 # Puppet4 if 
 
 Puppets `if` Anweisung erlaubt Ihnen, das manifest Verhalten auf der Grundlage des Wertes einer Variablen oder eines Ausdrucks zu ändern.

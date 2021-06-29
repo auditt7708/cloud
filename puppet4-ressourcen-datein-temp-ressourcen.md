@@ -1,3 +1,13 @@
+---
+title: puppet4-ressourcen-datein-temp-ressourcen
+description: 
+published: true
+date: 2021-06-09T16:00:48.025Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:00:42.737Z
+---
+
 # puppet4-ressourcen-datein-temp-ressourcen
 
 >>>>>>> bbacd8996fafa1e0ea5fd2d8bd7c77fc4364f275

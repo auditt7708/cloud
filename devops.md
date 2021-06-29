@@ -1,3 +1,13 @@
+---
+title: devops
+description: 
+published: true
+date: 2021-06-09T15:04:10.202Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:04:05.088Z
+---
+
 # Agile, Continuous Delevery und die Dreiwege
 
 ## Die Wertkette in der Herstellung

@@ -1,3 +1,13 @@
+---
+title: repositories
+description: 
+published: true
+date: 2021-06-09T16:02:32.116Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:02:26.866Z
+---
+
 # Repositories
 
 ## Centos7

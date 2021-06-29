@@ -1,3 +1,13 @@
+---
+title: puppet4-bessere-manifests
+description: 
+published: true
+date: 2021-06-09T15:57:16.241Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:57:11.010Z
+---
+
 # Einführung
 
 Ihre Puppenmanifeste sind die lebende Dokumentation für Ihre gesamte Infrastruktur.

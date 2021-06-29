@@ -1,3 +1,13 @@
+---
+title: lsof
+description: 
+published: true
+date: 2021-06-09T15:37:10.701Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:37:05.620Z
+---
+
 # Anzeige offener Dateien ("list open files")
 
 Prozesse gerade alle die Bash benutzen

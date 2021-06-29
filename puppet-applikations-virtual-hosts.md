@@ -1,3 +1,13 @@
+---
+title: puppet-applikations-virtual-hosts
+description: 
+published: true
+date: 2021-06-09T15:47:09.957Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:47:04.758Z
+---
+
 # Puppet Apache modul verwenden
 
 Apache virtuelle Hosts werden mit dem `apache` Modul mit dem definierten Typ `apache::vhost` erstellt. Wir schaffen einen neuen VHost auf unserem Apache Webserver namens navajo, einer der Apache Stämme.

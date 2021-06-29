@@ -1,3 +1,13 @@
+---
+title: kubernetes-adv-advanced-webui
+description: 
+published: true
+date: 2021-06-09T15:29:23.481Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:29:18.386Z
+---
+
 # Kubernates Web UI
 
 Kubernetes hat das WebUI-Add-on, das den Status von Kubernetes wie Pod, Replikationscontroller und Service visualisiert.

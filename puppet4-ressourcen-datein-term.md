@@ -1,3 +1,13 @@
+---
+title: puppet4-ressourcen-datein-term
+description: 
+published: true
+date: 2021-06-09T16:00:56.194Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:00:50.757Z
+---
+
 # puppet4-ressourcen-datein-term
 
 So weit, haben wir gesehen, was Puppet für uns tun kann, und die Ordnung, dass es Dinge umsetzt, aber nicht, wenn es sie durchführt.

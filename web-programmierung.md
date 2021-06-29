@@ -1,3 +1,13 @@
+---
+title: web-programmierung
+description: 
+published: true
+date: 2021-06-09T16:11:12.239Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:11:07.040Z
+---
+
 # REST und API
 
 * [Json](../json)

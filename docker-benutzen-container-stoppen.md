@@ -1,3 +1,13 @@
+---
+title: docker-benutzen-container-stoppen
+description: 
+published: true
+date: 2021-06-09T15:08:52.312Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:08:47.255Z
+---
+
 Wir können sofort einen oder mehrere Container stoppen. In diesem Rezept werden wir zunächst einen Container starten und dann aufhören.
 
 ### Fertig werden

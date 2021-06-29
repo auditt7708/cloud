@@ -1,3 +1,13 @@
+---
+title: ansible-inventory
+description: 
+published: true
+date: 2021-06-09T14:55:42.366Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:55:37.092Z
+---
+
 # Ansible Inventory
 
 Zum Ansible Inventory gehören die Host, Gruppen und Skripte für eine Automatisches inventory.

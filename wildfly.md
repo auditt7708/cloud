@@ -1,3 +1,13 @@
+---
+title: wildfly
+description: 
+published: true
+date: 2021-06-09T16:11:20.056Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:11:15.359Z
+---
+
 # WildFly Konfigurartion
 
 ## Ports einrichten

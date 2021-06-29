@@ -1,3 +1,13 @@
+---
+title: puppet-fort-definierte-typen
+description: 
+published: true
+date: 2021-06-09T15:47:51.260Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:47:45.081Z
+---
+
 # Puppet für fortgeschrittene:  definierte Typen
 
 Im vorherigen Beispiel haben wir gesehen, wie man redundanten Code durch die Gruppierung identischer Ressourcen in Arrays reduziert.

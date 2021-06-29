@@ -1,3 +1,13 @@
+---
+title: mysql-berechtigungen
+description: 
+published: true
+date: 2021-06-09T15:40:40.444Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:40:35.207Z
+---
+
 # Mysql Berechtigungen Setzen
 
 ## User Berechtigungen

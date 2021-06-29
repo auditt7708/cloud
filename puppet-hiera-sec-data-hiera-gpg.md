@@ -1,3 +1,13 @@
+---
+title: puppet-hiera-sec-data-hiera-gpg
+description: 
+published: true
+date: 2021-06-09T15:52:04.629Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:51:58.417Z
+---
+
 # Puppet hiera sicherheit mit gpg
 
 Wenn Sie Hiera verwenden, um Ihre Konfigurationsdaten zu speichern, gibt es einen gem, der **hiera-gpg** genannt wird, der ein Hier verschlüsseltes Backend hinzufügt, damit Sie die in Hiera gespeicherten Werte schützen können.

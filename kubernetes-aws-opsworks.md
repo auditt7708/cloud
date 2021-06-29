@@ -1,3 +1,13 @@
+---
+title: kubernetes-aws-opsworks
+description: 
+published: true
+date: 2021-06-09T15:30:35.419Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:30:27.910Z
+---
+
 AWS OpsWorks ist ein umfassendes AWS EC2 und Application Deployment Framework, das auf Chef basiert (http://chef.io/). Es ist einfach, das Chef Rezept und EC2 Instanz mit der OpsWorks UI zu assoziieren.
 Fertig werden
 

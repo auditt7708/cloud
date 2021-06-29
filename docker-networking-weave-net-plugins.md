@@ -1,3 +1,13 @@
+---
+title: docker-networking-weave-net-plugins
+description: 
+published: true
+date: 2021-06-09T15:12:17.922Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:12:12.516Z
+---
+
 # Docker Networking weave net Plugins
 
 Eines der Dinge, die Weave auseinander setzen ist, dass es in verschiedenen verschiedenen Arten betrieben werden kann. Wie wir in den vorherigen Rezepten dieses Kapitels gesehen haben, hat Weave eine eigene CLI, die wir verwenden können, um Container direkt auf das Weave-Netzwerk zu bringen. Während dies ist sicherlich eine enge Integration, die gut funktioniert, erfordert es, dass Sie die Weave CLI oder Weave API Proxy nutzen, um mit Docker zu integrieren. Zusätzlich zu diesen Optionen hat Weave auch ein natives Docker-Netzwerk-Plugin geschrieben. Dieses Plugin ermöglicht es Ihnen, mit Weave direkt von Docker zu arbeiten. Das heißt, sobald das Plugin registriert ist, müssen Sie nicht mehr die Weave CLI verwenden, um Container in Weave zu versorgen. In diesem Rezept, werden wir überprüfen, wie zu installieren und mit dem Weave Netzwerk-Plugin zu arbeiten.

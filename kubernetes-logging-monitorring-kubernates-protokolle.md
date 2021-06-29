@@ -1,3 +1,13 @@
+---
+title: kubernetes-logging-monitorring-kubernates-protokolle
+description: 
+published: true
+date: 2021-06-09T15:34:45.856Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:34:37.365Z
+---
+
 Kubernetes kommt mit drei Daemon-Prozessen auf Master: API Server, Scheduler und Controller Manager. Unter dem `/var/log` Ordner befinden sich drei entsprechende Log-Dateien, die die Protokolle dieser Prozesse aufzeichnen:
 
 |Deamon auf Master|Log Datei| Beschreibung|

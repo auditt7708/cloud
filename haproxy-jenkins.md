@@ -1,3 +1,13 @@
+---
+title: haproxy-jenkins
+description: 
+published: true
+date: 2021-06-09T15:24:18.590Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:24:13.890Z
+---
+
 # HaProxy mit Jenkins
 
 Beispiel ohne Verschlüsselung auf einem lokalem system

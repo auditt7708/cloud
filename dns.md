@@ -1,3 +1,13 @@
+---
+title: dns
+description: 
+published: true
+date: 2021-06-09T15:04:23.979Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:04:19.319Z
+---
+
 # DNS Server
 
 * [PowerDNS](../power-dns)

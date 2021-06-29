@@ -1,3 +1,13 @@
+---
+title: docker-einleitung-und-Installation-hosts-maschine
+description: 
+published: true
+date: 2021-06-09T15:10:51.188Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:10:45.160Z
+---
+
 # Docker Installation der Host maschienen
 
 Anfang dieses Jahres veröffentlichte Docker Orchestrierungswerkzeuge (https://blog.docker.com/2015/02/orchestrating-docker-with-machine-swarm-and-compose/) und Maschinen-, Schwarm- und Compose-Container nahtlos. In diesem Rezept decken wir Docker Machine ab und betrachten die anderen in späteren Kapiteln. Mit dem Docker-Tool (https://github.com/docker/machine/) können Sie Docker-Hosts lokal auf Cloud mit einem Befehl einrichten. Es ist derzeit im Beta-Modus und wird nicht für die Produktion verwendet. Es unterstützt Umgebungen wie VirtualBox, OpenStack, Google, Digital Ocean und andere. Für eine vollständige Liste können Sie https://github.com/docker/machine/tree/master/drivers besuchen. Nutzen wir dieses Tool und richten einen Host in Google Cloud ein.

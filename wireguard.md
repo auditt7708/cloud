@@ -1,3 +1,13 @@
+---
+title: wireguard
+description: 
+published: true
+date: 2021-06-09T16:11:34.805Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:11:29.774Z
+---
+
 # Wireguard
 
 WireGuard ist VPN welches sich dann ähnlich aufbaut wie ssh

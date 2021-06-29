@@ -1,3 +1,13 @@
+---
+title: kubernetes-konzepte-kontrolle
+description: 
+published: true
+date: 2021-06-09T15:33:05.843Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:33:00.338Z
+---
+
 # Kubernates Konzepte: Kontrolle
 
 Die Arbeit mit Kubernetes ist ganz einfach, entweder mit Command Line Interface (CLI) oder API (RESTful). In diesem Abschnitt wird die Kubernetes-Steuerung von CLI beschrieben. Die CLI, die wir in diesem Kapitel verwendet haben, ist Version 1.1.3.

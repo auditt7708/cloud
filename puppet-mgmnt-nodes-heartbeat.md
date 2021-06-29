@@ -1,3 +1,13 @@
+---
+title: puppet-mgmnt-nodes-heartbeat
+description: 
+published: true
+date: 2021-06-09T15:52:54.703Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:52:49.272Z
+---
+
 # Puppet Management von heartbeat Nodes
 
 Hochverfügbarkeitsdienste sind diejenigen, die den Ausfall einer einzelnen Maschine oder Netzwerkverbindung überleben können. Die primäre Technik für Hochverfügbarkeit ist Redundanz, sonst bekannt als Wurf Hardware auf das Problem. Obwohl der eventuelle Ausfall eines einzelnen Servers sicher ist, ist der gleichzeitige Ausfall von zwei Servern unwahrscheinlich, dass dies für die meisten Anwendungen eine gute Redundanz bietet.

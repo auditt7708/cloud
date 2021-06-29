@@ -1,3 +1,13 @@
+---
+title: puppet-hiera-basics
+description: 
+published: true
+date: 2021-06-09T15:51:48.464Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:51:43.251Z
+---
+
 # Puppet hiera Basics
 
 Hiera ist ein Informations-Repository für Puppet.

@@ -1,3 +1,13 @@
+---
+title: split-dns
+description: 
+published: true
+date: 2021-06-09T16:05:44.987Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:05:38.968Z
+---
+
 # Split DNS
 
 ## Two-in-one DNS server with BIND9

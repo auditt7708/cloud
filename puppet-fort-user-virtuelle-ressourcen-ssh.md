@@ -1,3 +1,13 @@
+---
+title: puppet-fort-user-virtuelle-ressourcen-ssh
+description: 
+published: true
+date: 2021-06-09T15:51:16.660Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:51:10.642Z
+---
+
 # Puppet für fortgeschrittene: Virtuelle Recourcen ssh
 
 Ein sinnvoller Ansatz für die Zugriffskontrolle für Server ist die Verwendung von Benutzerkonten mit passphrasegeschützten SSH-Schlüsseln, anstatt Benutzer ein Konto mit einem weithin bekannten Passwort zu teilen. Puppet macht das dank des eingebauten ssh_authorized_key Typs einfach zu verwalten.

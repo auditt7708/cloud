@@ -1,3 +1,13 @@
+---
+title: adduser
+description: 
+published: true
+date: 2021-06-09T16:13:08.554Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:13:03.471Z
+---
+
 # Benutzer hinzufügen
 
 Das Kommando `_adduser_` dient zum Hinzufügen von Benutzern mit einigen Unterscheidungen

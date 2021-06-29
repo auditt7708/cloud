@@ -1,3 +1,13 @@
+---
+title: docker-orchestration-kubernetes-skalierung
+description: 
+published: true
+date: 2021-06-09T15:13:42.628Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:13:37.417Z
+---
+
 # Kubernetes Skalierung
 
 Im vorherigen Abschnitt haben wir erwähnt, dass der replication controller sicherstellt, dass die benutzerdefinierte Anzahl von pod replicas zu einem beliebigen Zeitpunkt ausgeführt wird. Um Replikate mit dem replication controller zu verwalten, müssen wir eine Konfigurationsdatei mit dem Replikat für einen Pod definieren. Diese Konfiguration kann zur Laufzeit geändert werden.

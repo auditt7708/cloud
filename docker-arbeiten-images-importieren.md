@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-importieren
+description: 
+published: true
+date: 2021-06-09T15:06:18.576Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:06:14.139Z
+---
+
 # Docker arbeiten mit Images: Importiren
 
 Um eine lokale Kopie des image zu erhalten, müssen wir sie entweder aus der zugänglichen Registrierung kopiren oder aus dem bereits exportierten image importieren, wie wir im früheren Rezept gesehen haben. Mit dem Befehl `docker import` wir ein exportiertes Bild.

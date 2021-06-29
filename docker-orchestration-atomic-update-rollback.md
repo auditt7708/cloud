@@ -1,3 +1,13 @@
+---
+title: docker-orchestration-atomic-update-rollback
+description: 
+published: true
+date: 2021-06-09T15:13:10.609Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:13:05.507Z
+---
+
 # Docker orchestration atomic update und rollback
 
 Um auf die neueste Version zu gelangen oder auf die ältere Version von Project Atomic zurückzukehren, verwenden wir den `atomic host` Befehl, der intern rpm-ostree anruft.

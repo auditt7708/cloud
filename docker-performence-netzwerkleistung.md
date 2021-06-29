@@ -1,3 +1,13 @@
+---
+title: docker-performence-netzwerkleistung
+description: 
+published: true
+date: 2021-06-09T15:14:28.671Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:14:23.213Z
+---
+
 # Docker Netzwerkleistung
 
 Netzwerk ist eines der wichtigsten Aspekte bei der Bereitstellung der Anwendungen in der Containerumgebung. Um Leistungsvergleich mit bare metal, VM und Containern durchzuführen, müssen wir verschiedene Szenarien wie folgt berücksichtigen:

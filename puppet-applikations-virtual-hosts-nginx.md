@@ -1,3 +1,13 @@
+---
+title: puppet-applikations-virtual-hosts-nginx
+description: 
+published: true
+date: 2021-06-09T15:47:01.544Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:46:56.137Z
+---
+
 # Puppet Nginx Modul verwenden
 
 Nginx ist ein schneller, leichtgewichtiger Webserver, der in vielen Kontexten über Apache bevorzugt wird, besonders dort, wo hohe Leistung wichtig ist. Nginx ist etwas anders konfiguriert als Apache; Wie Apache aber gibt es ein Forge-Modul, das verwendet werden kann, um nginx für uns zu konfigurieren. Im Gegensatz zu Apache wird das Modul, das für den Gebrauch vorgeschlagen wird, nicht von Puppetlabs geliefert, sondern von James Fryman. Dieses Modul verwendet einige interessante Tricks, um sich selbst zu konfigurieren. Bisherige Versionen dieses Moduls nutzten das `Modul_data` Paket von R.I. Pienaar. Dieses Paket wird verwendet, um hieradata innerhalb eines Moduls zu konfigurieren. Es wird verwendet, um Standardwerte für das nginx-Modul zu liefern. Ich würde nicht empfehlen, mit diesem Modul an dieser Stelle zu beginnen, aber es ist ein gutes Beispiel dafür, wo Modulkonfiguration in der Zukunft geleitet werden kann. Den Modellen die Möglichkeit zu geben, hieradata zu modifizieren, kann sich als nützlich erweisen.

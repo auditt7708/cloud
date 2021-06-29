@@ -1,3 +1,13 @@
+---
+title: kubernetes-konzepte-namespaces
+description: 
+published: true
+date: 2021-06-09T15:33:30.339Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:33:24.696Z
+---
+
 # Kubernates Konzept: namespaces
 
 Der Name einer Ressource ist eine eindeutige Kennung innerhalb eines Namespaces im Kubernetes-Cluster. Die Verwendung eines Kubernetes-Namespaces kann Namespaces für verschiedene Umgebungen im selben Cluster isolieren.

@@ -1,3 +1,13 @@
+---
+title: puppet4-basics-lint
+description: 
+published: true
+date: 2021-06-09T15:55:58.747Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:55:53.486Z
+---
+
 # Prüfen der manifests mit Puppet-lint
 
 Zu den Spezifikationen die gehört noch laut puppetlabs um Puppet-lint eine aussagekräftige Rückmeldung zu bekommen.

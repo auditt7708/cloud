@@ -1,3 +1,13 @@
+---
+title: puppet-mgmnt-nodes-haproxy
+description: 
+published: true
+date: 2021-06-09T15:52:46.804Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:52:41.297Z
+---
+
 # Puppet Managemnt von HAProxy
 
 Lastausgleicher(Load balancers) werden verwendet, um eine Ladung auf eine Anzahl von Servern zu verbreiten. Hardware-Lastverteiler sind immer noch etwas teuer, während Software-Balancer die meisten Vorteile einer Hardware-Lösung erreichen können.

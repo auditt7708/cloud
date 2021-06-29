@@ -1,3 +1,13 @@
+---
+title: kubernetes-erster-container
+description: 
+published: true
+date: 2021-06-09T15:32:26.611Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:32:21.166Z
+---
+
 Glückwünsche! Du hast in den vorherigen Abschnitten deinen eigenen Kubernetes-Cluster aufgebaut. Nun, lasst uns mit dem Ausführen deines ersten Containers nginx (http://nginx.org/) fortfahren, das ist ein Open-Source-Reverse-Proxy-Server, Load Balancer und Web-Server.
 
 ### Fertig werden

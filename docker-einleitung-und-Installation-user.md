@@ -1,3 +1,13 @@
+---
+title: docker-einleitung-und-Installation-user
+description: 
+published: true
+date: 2021-06-09T15:11:06.651Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:11:01.083Z
+---
+
 #  Docker installion für Benutzer
 
 Für die Benutzerfreundlichkeit können wir einem Nicht-Root-Benutzer erlauben, Docker zu verwalten, indem er sie zu einer Docker-Gruppe hinzufügt.

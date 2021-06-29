@@ -1,3 +1,13 @@
+---
+title: puppet-fort-parsen-parameter-klassen
+description: 
+published: true
+date: 2021-06-09T15:49:59.201Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:49:53.591Z
+---
+
 # Puppet für fortgeschrittene: gem
 
 Manchmal ist es sehr nützlich, einen Aspekt einer Klasse zu parametrisieren.

@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-nenutzer-fats
+description: 
+published: true
+date: 2021-06-09T15:58:34.725Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:58:29.322Z
+---
+
 # puppet4-externe-tools-ecosystem-nenutzer-fats
 
 Während Facter's eingebaute Fakten nützlich sind, ist es eigentlich ganz einfach, Ihre eigenen Fakten hinzuzufügen. Wenn Sie z. B. Maschinen in verschiedenen Rechenzentren oder Hosting-Anbietern haben, können Sie dazu eine eigene Tatsache hinzufügen, damit die Puppe feststellen kann, ob lokale Einstellungen angewendet werden müssen (z. B. lokale DNS-Server oder Netzwerkrouten).

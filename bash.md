@@ -1,3 +1,13 @@
+---
+title: bash
+description: 
+published: true
+date: 2021-06-09T14:58:21.709Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:58:15.625Z
+---
+
 # Uebersicht
 
 ## Pathnamen erweiterung (globbing)

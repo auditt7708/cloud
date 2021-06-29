@@ -1,3 +1,13 @@
+---
+title: bacula
+description: 
+published: true
+date: 2021-06-09T14:58:05.199Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:57:59.823Z
+---
+
 # Bacula
 
 ```sh

@@ -1,3 +1,13 @@
+---
+title: mesos-hadoop
+description: 
+published: true
+date: 2021-06-09T15:38:43.197Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:38:37.502Z
+---
+
 # Mesos und hadoop
 
 Dieser Abschnitt wird Hadoop vorstellen, erklären, wie man den Hadoop Stack auf Mesos einrichtet und die Probleme beseitigt, die bei der Einrichtung des Stapels häufig auftreten.

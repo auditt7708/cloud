@@ -1,3 +1,13 @@
+---
+title: puppet-auto-syntax-check-git-hook
+description: 
+published: true
+date: 2021-06-09T15:47:17.087Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:47:11.912Z
+---
+
 # Puppet auto syntax git hooks einsetzen
 
 Es wäre schön, wenn wir wüssten, dass es einen Syntaxfehler im Manifest gab, sogar bevor wir es getan haben.

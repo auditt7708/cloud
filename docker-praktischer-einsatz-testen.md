@@ -1,3 +1,13 @@
+---
+title: docker-praktischer-einsatz-testen
+description: 
+published: true
+date: 2021-06-09T15:15:35.804Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:15:30.013Z
+---
+
 Während der Entwicklung oder QA, wird es hilfreich sein, wenn wir unseren Code gegen verschiedene Umgebungen überprüfen können. Zum Beispiel können wir unseren Python-Code zwischen verschiedenen Versionen von Python oder auf verschiedenen Distributionen wie Fedora, Ubuntu, CentOS und so weiter überprüfen. Für dieses Rezept, werden wir Pick-Code aus Flask's GitHub Repository, das ist ein Mikroframework für Python (http://flask.pocoo.org/). Ich wählte dieses, um die Dinge einfach zu halten, und es ist einfacher, für andere Rezepte auch zu verwenden.
 
 Für dieses Rezept werden wir Bilder erstellen, um einen Container mit Python 2.7 und anderen mit Python 3.3 zu haben. Wir verwenden dann einen Beispiel-Python-Testcode, der gegen jeden Container ausgeführt wird.

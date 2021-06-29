@@ -1,3 +1,13 @@
+---
+title: rpm
+description: 
+published: true
+date: 2021-06-09T16:03:48.283Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:03:43.040Z
+---
+
 # RPM Benutzung
 
 Check Package  Signature

@@ -1,3 +1,13 @@
+---
+title: puppet4
+description: 
+published: true
+date: 2021-06-09T16:01:36.212Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:01:30.994Z
+---
+
 # Puppet4
 
 ## SSL connect Fehler certificate verify failed

@@ -1,3 +1,13 @@
+---
+title: docker-networking-weave-net-sicherheit
+description: 
+published: true
+date: 2021-06-09T15:12:26.252Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:12:20.901Z
+---
+
 # Sicheres Netzwerk mit weave net
 
 Weave bietet ein paar Features, die unter den Schirm der Sicherheit fallen. Da Weave eine überlagernde Netzwerklösung ist, bietet sie die Möglichkeit, den Overlay-Verkehr zu verschlüsseln, während er das physische oder das Unterlagennetzwerk durchquert. Dies kann besonders nützlich sein, wenn Ihre Container ein öffentliches Netzwerk durchqueren müssen. Darüber hinaus erlaubt Weave Ihnen, Container in bestimmten Netzwerksegmenten zu isolieren. Weave setzt auf die Verwendung von verschiedenen Subnetzen für jedes isolierte Segment, um dies zu erreichen. In diesem Rezept gehen wir durch, wie man sowohl Overlay-Verschlüsselung konfiguriert als auch wie man Isolation für verschiedene Container über das Weave-Netzwerk bereitstellt.

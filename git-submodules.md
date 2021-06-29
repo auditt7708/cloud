@@ -1,3 +1,13 @@
+---
+title: git-submodules
+description: 
+published: true
+date: 2021-06-09T15:22:12.485Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:22:07.487Z
+---
+
 # Arbeiten mit Repositorys, die Submodule enthalten
 
 **Klonen eines Repositorys, das Submodule enthält**

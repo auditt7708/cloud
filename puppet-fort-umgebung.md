@@ -1,3 +1,13 @@
+---
+title: puppet-fort-umgebung
+description: 
+published: true
+date: 2021-06-09T15:50:41.740Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:50:36.324Z
+---
+
 # Puppet für fortgeschrittene: Umgebung
 
 Oft in einem Puppet Manifests, müssen Sie wissen, wo einige lokale Informationen über die Maschine zu finden sind. Facter ist das Werkzeug, das Puppet begleitet, um eine Standardmethode bereit zu stellen, um Informationen (facts) aus der Umgebung zu bekommen, wie solche:

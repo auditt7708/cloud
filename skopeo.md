@@ -1,3 +1,13 @@
+---
+title: skopeo
+description: 
+published: true
+date: 2021-06-09T16:05:13.789Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:05:08.245Z
+---
+
 # Skopeo
 
 **Quellen:**

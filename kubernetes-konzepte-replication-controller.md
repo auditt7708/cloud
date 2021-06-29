@@ -1,3 +1,13 @@
+---
+title: kubernetes-konzepte-replication-controller
+description: 
+published: true
+date: 2021-06-09T15:33:46.686Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:33:41.044Z
+---
+
 Ein Replikationscontroller ist ein Begriff für API-Objekte in Kubernetes, der sich auf Pod-Repliken bezieht. Die Idee ist, in der Lage sein, eine Reihe von Pods Verhaltensweisen zu kontrollieren. Der Replikationscontroller sorgt dafür, dass die Pods in einer benutzerdefinierten Nummer ständig laufen. Wenn einige Pods im Replikationscontroller abstürzen und beenden, wird das System Pods mit den ursprünglichen Konfigurationen auf gesunden Knoten automatisch neu erstellen und eine gewisse Anzahl von Prozessen kontinuierlich laufen lassen. Nach dieser Funktion, egal ob Sie Repliken von Pods benötigen oder nicht, können Sie immer die Pods mit dem Replikations-Controller für Autorecovery abschirmen. In diesem Rezept werden Sie lernen, wie Sie Ihre Pods verwalten, indem Sie den Replikations-Controller:
 
 ![schema-replication-controller](https://www.packtpub.com/graphics/9781788297615/graphics/B05161_02_01.jpg)

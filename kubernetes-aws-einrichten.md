@@ -1,3 +1,13 @@
+---
+title: kubernetes-aws-einrichten
+description: 
+published: true
+date: 2021-06-09T15:30:15.534Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:30:10.305Z
+---
+
 In diesem Kapitel erfahren Sie, wie Sie alle Komponenten auf beliebten Public Cloud Amazon Web Services aufbauen können. Allerdings mögen wir unsere Infrastruktur als Code. Die Infrastruktur kann immer wieder zuverlässig aufgebaut werden. Sie lernen, wie man den Lebenszyklus einer Anwendung mit AWS OpsWorks, die von Chef angetrieben wird, zu verwalten. Schließlich werden wir das, was wir gelernt haben, nutzen und die gesamte Infrastruktur über eine Textdatei im JSON-Format aufbauen!
 
 

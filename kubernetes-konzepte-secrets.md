@@ -1,3 +1,13 @@
+---
+title: kubernetes-konzepte-secrets
+description: 
+published: true
+date: 2021-06-09T15:33:54.137Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:33:48.660Z
+---
+
 # Kubernates Konzepte zur Sicherheit
 
 Kubernetes Geheimnisse verwalten Informationen in  key-value Formate mit dem value codiert. Mit secrets müssen die Benutzer keine Werte in der Konfigurationsdatei setzen oder in CLI eingeben. Wenn secrets ordnungsgemäß verwendet werden, können sie das Risiko von Credential Leck reduzieren und unsere Ressourcenkonfigurationen besser organisieren.

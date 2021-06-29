@@ -1,3 +1,13 @@
+---
+title: storage-lvm-drbd-nfs
+description: 
+published: true
+date: 2021-06-09T16:06:48.288Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:06:43.231Z
+---
+
 # Storage mit LVM drbd und nfs
 
 ## Quellen

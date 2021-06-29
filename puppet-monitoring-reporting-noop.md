@@ -1,3 +1,13 @@
+---
+title: puppet-monitoring-reporting-noop
+description: 
+published: true
+date: 2021-06-09T15:54:23.355Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:54:18.286Z
+---
+
 # puppet-monitoring-reporting-noop
 
 Manchmal tut dein Puppet manifest nicht genau das, was du erwartet hast, oder vielleicht hat jemand anderes Änderungen vorgenommen, die du nicht gewusst hast. So oder so ist es gut, genau zu wissen, was die Puppet machen wird, bevor es das tut.

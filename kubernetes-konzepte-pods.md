@@ -1,3 +1,13 @@
+---
+title: kubernetes-konzepte-pods
+description: 
+published: true
+date: 2021-06-09T15:33:37.972Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:33:32.576Z
+---
+
 Die Pod ist eine Gruppe von einem oder mehreren Containern und die kleinste einsetzbare Einheit in Kubernetes. Pods sind immer zusammengelegt und koordiniert und laufen in einem gemeinsamen Kontext. Jeder Pod wird von folgenden Linux-Namespaces isoliert:
 
 * Prozess-ID (PID) Namespace

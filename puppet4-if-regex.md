@@ -1,3 +1,13 @@
+---
+title: puppet4-if-regex
+description: 
+published: true
+date: 2021-06-09T15:59:22.242Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:59:16.725Z
+---
+
 # Puppet4 if und Reguläre ausdrücke
 
 Eine andere Art von Ausdruck, den Sie testen können, `if` Aussagen und andere Bedingungen der reguläre Ausdruck sind.

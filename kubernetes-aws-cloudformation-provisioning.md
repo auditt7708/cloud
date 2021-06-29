@@ -1,3 +1,13 @@
+---
+title: kubernetes-aws-cloudformation-provisioning
+description: 
+published: true
+date: 2021-06-09T15:30:07.169Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:29:57.691Z
+---
+
 AWS CloudFormation ist ein Service, um die AWS-Ressourcenerstellung einfach zu machen. Eine einfache JSON-Format-Textdatei könnte Ihnen die Möglichkeit geben, die Anwendungsinfrastruktur mit nur wenigen Klicks zu erstellen. Systemadministratoren und Entwickler können ihre AWS-Ressourcen einfach erstellen, aktualisieren und verwalten, ohne sich Gedanken über menschliches Fehler zu machen. In diesem Abschnitt werden wir den Inhalt der vorherigen Abschnitte in diesem Kapitel nutzen und CloudFormation verwenden, um sie zu erstellen und Instanzen mit der Kubernetes-Einstellung automatisch zu starten.
 
 ### Fertig werden

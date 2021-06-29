@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-exportieren
+description: 
+published: true
+date: 2021-06-09T15:05:56.134Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:05:51.061Z
+---
+
 # Docker Arbeiten mit Images. Expotiren
 
 Lassen Sie uns sagen, Sie haben einen Kunden, der sehr strenge Richtlinien hat, die ihnen nicht erlauben, Images von der public domain zu verwenden. In solchen Fällen kannst du Images über Tarballs teilen, die später auf einem anderen System importiert werden können. In diesem Rezept werden wir sehen, wie man das mit dem `docker save` Befehl macht.

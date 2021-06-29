@@ -1,3 +1,13 @@
+---
+title: puppet4-ressourcen-datein-cron
+description: 
+published: true
+date: 2021-06-09T16:00:11.528Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:00:05.093Z
+---
+
 # Puppetressourcenund datein mit cron
 
 Wenn du viele Server hast, die denselben Cron Job ausführen, ist es gewöhnlich eine gute Idee, sie nicht alle zur gleichen Zeit auzuführen.

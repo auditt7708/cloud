@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-dockerfiles-build
+description: 
+published: true
+date: 2021-06-09T15:05:49.072Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:05:43.705Z
+---
+
 # Docker Arbeiten mit Images: dockerfils Build
 
 Dockerfiles helfen uns bei der Automatisierung der Imagezeugung und bekommen genau das gleiche Image, wenn wir es wollen. Der Docker-Builder liest Anweisungen aus einer Textdatei (eine Dockerfile) und führt sie nacheinander in der Reihenfolge aus. Es kann als Vagrant-Dateien verglichen werden, mit denen Sie VMs in einer vorhersagbaren Weise konfigurieren können.

@@ -1,3 +1,13 @@
+---
+title: hosts
+description: 
+published: true
+date: 2021-06-09T15:25:12.889Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:25:07.124Z
+---
+
 # Host Dokumentation
 
 * [srv1](../srv1)

@@ -1,3 +1,13 @@
+---
+title: puppet-fort-files-packages-snoppets
+description: 
+published: true
+date: 2021-06-09T15:49:18.883Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:49:13.656Z
+---
+
 # Puppet für fortgeschrittene: Packages codeteile
 
 Manchmal können Sie nicht eine ganze Konfigurationsdatei in einem Stück bereitstellen, aber das Zeilen-Zeilen-Editieren ist nicht genug. Oft müssen Sie eine Konfigurationsdatei aus verschiedenen Bits der Konfiguration erstellen, die von verschiedenen Klassen verwaltet wird. Sie können in eine Situation laufen, in der lokale Informationen auch in die Datei importiert werden müssen. In diesem Beispiel erstellen wir eine Konfigurationsdatei mit einer lokalen Datei sowie Snippets, die in unseren Manifesten definiert sind.

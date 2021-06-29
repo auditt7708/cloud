@@ -1,3 +1,13 @@
+---
+title: puppet4-ressourcen-datein-export
+description: 
+published: true
+date: 2021-06-09T16:00:22.862Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:00:14.290Z
+---
+
 # puppet4-ressourcen-datein-export
 
 Im vorherigen Beispiel haben wir die Raumschiff-Syntax verwendet, um virtuelle Host-Ressourcen für Hosts von Typ-Datenbank zu sammeln oder Web zu schreiben. Sie können den gleichen Trick mit exportierten Ressourcen verwenden. Der Vorteil der Verwendung von exportierten Ressourcen ist, dass beim Hinzufügen weiterer Datenbankserver die Kollektor-Syntax automatisch die neu erstellten exportierten Host-Einträge für diese Server anzieht. Dies macht Ihre `/etc/hosts` Einträge dynamischer.

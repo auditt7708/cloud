@@ -1,3 +1,13 @@
+---
+title: mesos-cassandra
+description: 
+published: true
+date: 2021-06-09T15:38:17.662Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:38:12.163Z
+---
+
 # Mesos und Cassandra
 
 In diesem Abschnitt wird Cassandra vorgestellt und erklärt, wie man Cassandra auf Mesos einrichtet und dabei auch die Probleme behandelt, die während des Setup-Prozesses häufig auftreten.

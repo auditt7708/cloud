@@ -1,3 +1,13 @@
+---
+title: proxys
+description: 
+published: true
+date: 2021-06-09T15:46:06.897Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:46:01.103Z
+---
+
 # Proxys
 
 Es gibt viele arten von sogenanten Proxys.

@@ -1,3 +1,13 @@
+---
+title: git
+description: 
+published: true
+date: 2021-06-09T15:22:20.058Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:22:14.805Z
+---
+
 # Git Allgemein Infos
 
 Begriffe

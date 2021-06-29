@@ -1,3 +1,13 @@
+---
+title: puppet-cron-start
+description: 
+published: true
+date: 2021-06-09T15:47:33.703Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:47:28.073Z
+---
+
 # Puppet für fortgeschrittene: cron benutzen
 
 Sie können viel mit dem Setup tun, das Sie bereits haben: Arbeiten Sie an Ihren Puppet manifes als Team, kommunizieren Änderungen über ein zentrales Git-Repository und manuell auf eine Maschine mit dem `papply` Skript anwenden.

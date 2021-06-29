@@ -1,3 +1,13 @@
+---
+title: backup-mysqldump
+description: 
+published: true
+date: 2021-06-09T14:57:49.714Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:57:44.773Z
+---
+
 # Backup mit mysqldump
 
 Mehere Datenbanken Sichern

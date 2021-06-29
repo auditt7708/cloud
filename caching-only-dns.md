@@ -1,3 +1,13 @@
+---
+title: caching-only-dns
+description: 
+published: true
+date: 2021-06-09T14:58:52.834Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:58:47.553Z
+---
+
 # Caching-only DNS Server
 
 Catching-only Name Server with Unbound

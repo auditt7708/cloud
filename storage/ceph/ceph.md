@@ -1,8 +1,7 @@
-# Ceph Übersicht
+# Ceph Uebersicht
 
 * [ceph und kubernetes](../ceph-kubernetes)
 * [ceph fehlerbehebung](../ceph-fehlerbehebung)
-
 ## Ceph Administration
 
 Ceph Storage Administration

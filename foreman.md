@@ -1,3 +1,13 @@
+---
+title: foreman
+description: 
+published: true
+date: 2021-06-09T15:21:57.152Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:21:51.542Z
+---
+
 * [Foreman discovery image](../foreman-discovery-image)
 
 ## Administration 

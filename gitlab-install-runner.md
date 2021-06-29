@@ -1,3 +1,13 @@
+---
+title: gitlab-install-runner
+description: 
+published: true
+date: 2021-06-09T15:22:30.141Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:22:22.022Z
+---
+
 GitLab ist ein wunderbares Werkzeug für CI und Einsatz für Docker Bilder und Dienstleistungen. Es kombiniert Git mit Issue Tracking, ein Docker Registry und CI, um eine einheitliche Erfahrung zu bieten. Allerdings ist dieser Prozess nicht einzigartig für GitLab. Die in diesem Abschnitt erlernten Lektionen sollten unabhängig von den verwendeten Systemen gelten.
 Einrichten von GitLab für CI
 

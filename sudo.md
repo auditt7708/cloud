@@ -1,3 +1,13 @@
+---
+title: sudo
+description: 
+published: true
+date: 2021-06-09T16:07:12.808Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:07:06.783Z
+---
+
 # /etc/sudoers
 
 Grundsetzlicher aufbau

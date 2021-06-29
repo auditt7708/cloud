@@ -1,3 +1,13 @@
+---
+title: Hadoop
+description: 
+published: true
+date: 2021-06-09T14:53:30.763Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:53:23.328Z
+---
+
 
 # Hadoop und docker
 

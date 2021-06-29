@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-loeschen
+description: 
+published: true
+date: 2021-06-09T15:06:33.432Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:06:28.206Z
+---
+
 # Docker arbeiten mit Images: Löschen
 
 Um das Image vom Host zu entfernen, können wir den Befehl `docker rmi` verwenden. Allerdings entfernt dies keine Images aus der Registrierung.

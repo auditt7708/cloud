@@ -1,3 +1,13 @@
+---
+title: docker-praktischer-einsatz-paas-openshift-origin
+description: 
+published: true
+date: 2021-06-09T15:15:28.111Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:15:22.383Z
+---
+
 OpenShift v3 bietet den Build-Prozess, um ein Image aus dem Quellcode zu erstellen. Im Folgenden sind die Build-Strategien, die man einsetzen kann, um Image zu bauen:
 
 * Docker-Build: In diesem werden die Benutzer dem Docker-Kontext (Dockerfiles und Support-Dateien) zur Verfügung stellen, mit denen Bilder erstellt werden können. OpenShift löst nur den Befehl zum `docker build` aus, um das Bild zu erstellen.

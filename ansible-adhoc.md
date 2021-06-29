@@ -1,3 +1,13 @@
+---
+title: ansible-adhoc
+description: 
+published: true
+date: 2021-06-09T14:54:42.979Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:54:37.669Z
+---
+
 # Parallelisieren und Shell Kommandos
 
 ## SSH Agent einrichten

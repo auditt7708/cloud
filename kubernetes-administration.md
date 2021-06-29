@@ -1,3 +1,13 @@
+---
+title: kubernetes-administration
+description: 
+published: true
+date: 2021-06-09T15:28:45.053Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:28:40.176Z
+---
+
 # Kubernetes Administration
 
 kube-system

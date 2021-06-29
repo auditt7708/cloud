@@ -1,3 +1,13 @@
+---
+title: puppet-mgmnt-nodes-docker
+description: 
+published: true
+date: 2021-06-09T15:52:39.056Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:52:33.659Z
+---
+
 # Puppet managemnt mit docker
 
 **Docker** ist eine Plattform für den schnellen Einsatz von Containern. Container sind wie eine leichte virtuelle Maschine, die nur einen einzigen Prozess ausführen könnte. Die Container im Docker heißen Docks und sind mit Dateien namens Dockerfiles konfiguriert. Puppet kann verwendet werden, um einen Knoten zu konfigurieren, um nicht nur Docker zu betreiben, sondern auch mehrere Docks zu konfigurieren und zu starten. Sie können dann Puppet verwenden, um sicherzustellen, dass Ihre Docks laufen und konsequent konfiguriert sind.

@@ -1,3 +1,13 @@
+---
+title: ansible-rolen
+description: 
+published: true
+date: 2021-06-09T14:56:07.909Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:56:02.497Z
+---
+
 # Allgemeiner aufbau von Rolen in Ansible
 
 ```

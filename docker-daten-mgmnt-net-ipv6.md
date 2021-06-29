@@ -1,3 +1,13 @@
+---
+title: docker-daten-mgmnt-net-ipv6
+description: 
+published: true
+date: 2021-06-09T15:09:45.354Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:09:40.256Z
+---
+
 # Docker Netzwerk mit ipv6
 
 Standardmäßig ordnet Docker IPv4-Adressen den Containern zu. Mit Docker 1.5 wurde eine Funktion zur Unterstützung von IPv6-Adressen hinzugefügt.

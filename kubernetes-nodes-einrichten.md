@@ -1,3 +1,13 @@
+---
+title: kubernetes-nodes-einrichten
+description: 
+published: true
+date: 2021-06-09T15:35:21.452Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:35:14.503Z
+---
+
 Ein Node ist der Slave im Kubernetes-Cluster. Um den Meister einen Node unter seiner Aufsicht zu lassen, installiert der Node einen Agenten namens Kubelet, um sich an einen bestimmten Master zu registrieren. Nach der Registrierung, behandelt der Daemon Kubelet auch Container-Operationen und Berichte Ressourcen-Utilities und Container-Status an den Master. Der andere Dämon, der auf dem Node läuft, ist der Kube-Proxy, der TCP/UDP-Pakete zwischen Containern verwaltet. In diesem Abschnitt zeigen wir Ihnen, wie Sie einen Node konfigurieren können.
 
 ### Fertig werden

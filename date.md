@@ -1,3 +1,13 @@
+---
+title: date
+description: 
+published: true
+date: 2021-06-09T15:03:24.530Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:03:20.150Z
+---
+
 # Anzeige von Datum und Zeit
 
 Die folgenden Parameter werden unterstützt:

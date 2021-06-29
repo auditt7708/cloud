@@ -1,3 +1,13 @@
+---
+title: postgres-sql-pgdump
+description: 
+published: true
+date: 2021-06-09T15:45:02.864Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:44:56.975Z
+---
+
 # To dump a database called mydb into a SQL-script file
 
 `pg_dump mydb > db.sql`

@@ -1,3 +1,13 @@
+---
+title: graylog2
+description: 
+published: true
+date: 2021-06-09T15:23:24.906Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:23:19.723Z
+---
+
 # Graylog2
 
 

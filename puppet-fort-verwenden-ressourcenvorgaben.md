@@ -1,3 +1,13 @@
+---
+title: puppet-fort-verwenden-ressourcenvorgaben
+description: 
+published: true
+date: 2021-06-09T15:51:32.949Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:51:27.338Z
+---
+
 # Puppet für fortgeschrittene: Ressourcen vorgaben und Defaultwerte
 
 Ein Puppet-Modul ist eine Gruppe von verwandten Ressourcen, in der Regel gruppiert, um einen bestimmten Dienst zu konfigurieren. Innerhalb eines Moduls können Sie mehrere Ressourcen definieren. Ressourcen-Standardeinstellungen können Sie die Standardattributwerte für eine Ressource angeben. In diesem Beispiel zeigen wir Ihnen, wie Sie eine Ressource-Standard für den Dateityp angeben.

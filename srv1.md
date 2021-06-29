@@ -1,3 +1,13 @@
+---
+title: srv1
+description: 
+published: true
+date: 2021-06-09T16:06:09.235Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:06:03.737Z
+---
+
 # Netzwerkkonfiguration
 
 | Typ | MAC | Gerätebezeichner | DNS-Name | Domäne | IPv4-Subnetz | IPv6-Subnetz | IPv4-Adresse | IPv6-Adresse |

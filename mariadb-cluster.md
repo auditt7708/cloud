@@ -1,3 +1,13 @@
+---
+title: mariadb-cluster
+description: 
+published: true
+date: 2021-06-09T15:37:38.582Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:37:33.187Z
+---
+
 # Einrichten einer MariaDB Galera Cluster
 
 ## Schrit 1: MariaDB Repositories

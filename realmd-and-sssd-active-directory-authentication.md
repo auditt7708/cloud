@@ -1,3 +1,13 @@
+---
+title: realmd-and-sssd-active-directory-authentication
+description: 
+published: true
+date: 2021-06-09T16:02:24.970Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:02:17.056Z
+---
+
 # Introduction to SSSD and Realmd
 
 Starting from Red Hat 7 and CentOS 7, SSSD or ‘System Security Services Daemon’  and realmd have been introduced. SSSD’s main function is to access a remote identity and authentication resource through a common framework that provides caching and offline support to the system. SSSD provides PAM and NSS integration and a database to store local users, as well as core and extended user data retrieved from a central server.

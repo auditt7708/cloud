@@ -1,3 +1,13 @@
+---
+title: puppet-fort-user-virtuelle-ressourcen-verwalten
+description: 
+published: true
+date: 2021-06-09T15:51:24.302Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:51:18.581Z
+---
+
 # Puppet für fortgeschrittene: 
 
 Benutzer sind ein großartiges Beispiel für eine Ressource, die möglicherweise durch mehrere Klassen realisiert werden muss. Betrachten Sie die folgende Situation. Um die Verwaltung einer großen Anzahl von Maschinen zu vereinfachen, haben Sie Klassen für zwei Arten von Benutzern definiert: `developers` und `sysadmins`. Alle Maschinen müssen `sysadmins` einschließen, aber nur einige Maschinen benötigen `developers`:

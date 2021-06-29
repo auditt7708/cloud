@@ -1,3 +1,13 @@
+---
+title: docker-performence-plattenleistung
+description: 
+published: true
+date: 2021-06-09T15:14:37.212Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:14:32.074Z
+---
+
 # Docker Platetenleistung
 
 Es gibt Werkzeuge wie Iozone (http://www.iozone.org/), smallfile (https://github.com/bengland2/smallfile) und Flexible IO (https://github.com/axboe/fio) Verfügbar zur Benchmark-Plattenleistung. Für dieses Rezept verwenden wir FIO. Dazu müssen wir eine Job-Datei schreiben, die die Arbeitsbelastung imitiert, die Sie ausführen möchten. Mit dieser Job-Datei können wir die Workload auf dem Ziel simulieren. Für dieses Rezept nehmen wir das FIO-Beispiel aus den Benchmark-Ergebnissen, die IBM veröffentlicht hat (https://github.com/thewmf/kvm-docker-comparison/tree/master/fio).

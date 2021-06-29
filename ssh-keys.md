@@ -1,3 +1,13 @@
+---
+title: ssh-keys
+description: 
+published: true
+date: 2021-06-09T16:06:33.160Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:06:28.011Z
+---
+
 # Arbeiten mit nicht Standart ssh keys
 
 If you used a non-default file path for your GitLab SSH key pair, you must configure your SSH client to find your GitLab SSH private key for connections to your GitLab server (perhaps gitlab.com).

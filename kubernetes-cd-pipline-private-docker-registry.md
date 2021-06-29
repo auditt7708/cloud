@@ -1,3 +1,13 @@
+---
+title: kubernetes-cd-pipline-private-docker-registry
+description: 
+published: true
+date: 2021-06-09T15:31:07.360Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:31:01.427Z
+---
+
 Wenn du anfängst, dein eigenes Docker-Image zu pflegen, musst du vielleicht ein privates Docker-Registry haben, um sensible Informationen in ein Image oder deine Organisationspolitik zu bringen.
 
 Docker Hub bietet das private Repository an, das nur der authentifizierte Benutzer Bilder hochladen und ziehen kann und für andere Benutzer nicht sichtbar ist. Allerdings gibt es nur eine Quote für ein kostenloses Docker Hub-Konto. Sie können zahlen, um die private Repositories-Quote zu erhöhen, aber wenn Sie die Microservices-Architektur annehmen, benötigen Sie eine große Anzahl von privaten Repositories:

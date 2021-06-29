@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-debootstrap
+description: 
+published: true
+date: 2021-06-09T15:05:41.621Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:05:36.717Z
+---
+
 # Docker Arbeiten mit Images: debootstrap
 
 Debootstrap ist ein Tool zum Installieren eines Debian-basierten Systems in einem Verzeichnis eines bereits installierten Systems.

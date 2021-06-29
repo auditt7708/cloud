@@ -1,3 +1,13 @@
+---
+title: docker-orchestration-coreos
+description: 
+published: true
+date: 2021-06-09T15:13:26.851Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:13:21.103Z
+---
+
 # CoreOS
 
 oreOS (https://coreos.com/) ist eine Linux-Distribution, für Container wie Docker angepasst wurde, um die notwendigen Funktionen für den Betrieb moderner Infrastruktur-Stacks bereitzustellen. Es ist Apache 2.0 lizenziert. Es hat ein Produkt namens CoreOS Managed Linux (https://coreos.com/products/managed-linux/), für das das CoreOS-Team kommerzielle Unterstützung bietet.

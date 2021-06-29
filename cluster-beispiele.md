@@ -1,3 +1,13 @@
+---
+title: cluster-beispiele
+description: 
+published: true
+date: 2021-06-09T15:01:09.914Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:01:04.490Z
+---
+
 # Cluster Peacemaker mit pcs
 
 * [Peacemaker LVM DRBD NFS](../peacemaker-lvm-drbd-nfs)

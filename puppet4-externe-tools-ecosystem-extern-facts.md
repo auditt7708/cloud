@@ -1,3 +1,13 @@
+---
+title: puppet4-externe-tools-ecosystem-extern-facts
+description: 
+published: true
+date: 2021-06-09T15:57:55.570Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:57:50.020Z
+---
+
 Das Erstellen von benutzerdefinierten Fakten Rezept beschreibt, wie man zusätzliche Fakten in Ruby geschrieben. Sie können auch Fakten aus einfachen Textdateien oder Skripts mit externen Fakten stattdessen erstellen.
 
 Externe Fakten leben im Verzeichnis `/etc/facter/facts.d` und haben ein einfaches `key=value` wie folgt:

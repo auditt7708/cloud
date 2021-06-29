@@ -1,3 +1,13 @@
+---
+title: foreman-examples
+description: 
+published: true
+date: 2021-06-09T15:21:48.152Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:21:43.003Z
+---
+
 ```
   foreman_url: https://foreman.example.com
   puppetrun: true

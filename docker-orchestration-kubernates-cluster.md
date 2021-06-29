@@ -1,3 +1,13 @@
+---
+title: docker-orchestration-kubernates-cluster
+description: 
+published: true
+date: 2021-06-09T15:13:34.287Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:13:28.668Z
+---
+
 # Docker Orchestration mit Kubernates
 
 Kubernetes ist ein Open-Source-Container-Orchestrierungswerkzeug über mehrere Nodes im Cluster. Derzeit unterstützt es nur Docker.

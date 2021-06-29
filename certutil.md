@@ -1,3 +1,13 @@
+---
+title: certutil
+description: 
+published: true
+date: 2021-06-09T15:00:03.486Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:59:56.716Z
+---
+
 # Certutil
 
 [Certutil](../certutil)- Manage keys and certificate in both NSS databases and other NSS tokens

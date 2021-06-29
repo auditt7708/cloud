@@ -1,3 +1,13 @@
+---
+title: saltstack
+description: 
+published: true
+date: 2021-06-09T16:04:19.651Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:04:14.358Z
+---
+
 # Saltstack
 
 In der Datei `/etc/salt/grains` sind eigene Variablen definiert

@@ -1,3 +1,13 @@
+---
+title: virt-install
+description: 
+published: true
+date: 2021-06-09T16:10:24.668Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:10:19.726Z
+---
+
 Debian 7
 
 ```s

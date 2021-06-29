@@ -1,3 +1,13 @@
+---
+title: docker-Orchestration-hosting
+description: 
+published: true
+date: 2021-06-09T15:04:32.054Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:04:26.685Z
+---
+
 # Docker Orchestestretion
 
 Docker auf einem einzigen Host kann gut für die Entwicklungsumgebung sein, aber der reale Wert kommt, wenn wir mehrere Hosts überspannen.

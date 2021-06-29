@@ -1,3 +1,13 @@
+---
+title: kubernetes-architektur-erforschen
+description: 
+published: true
+date: 2021-06-09T15:29:46.995Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:29:41.523Z
+---
+
 # Kubernates Architektur Erforschen
 
 Kubernetes ist ein Open-Source-Container-Management-Tool. Es ist ein [Go-Lang-basierte](https://golang.org), leichte und tragbare Anwendung. Sie können einen Kubernetes-Cluster auf einem Linux-basierten Betriebssystem einrichten, um die Docker-Container-Anwendungen auf mehreren Hosts zu implementieren, zu verwalten und zu skalieren.

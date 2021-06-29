@@ -1,3 +1,13 @@
+---
+title: kubernetes-konzepte-names
+description: 
+published: true
+date: 2021-06-09T15:33:21.709Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:33:16.404Z
+---
+
 Wenn Sie beliebige Kubernetes-Objekte wie einen Pod, replication controller und Service erstellen, können Sie ihm einen Namen zuordnen. Die Namen in Kubernetes sind räumlich eindeutig, was bedeutet, dass du den gleichen Namen nicht in den Pods zuweisen kannst.
 Fertig werden
 

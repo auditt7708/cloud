@@ -1,3 +1,13 @@
+---
+title: docker-orchestration-compose
+description: 
+published: true
+date: 2021-06-09T15:13:17.808Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:13:12.517Z
+---
+
 # Docker compose
 
 Docker Compose (http://docs.docker.com/compose/) ist das native Docker-Tool, um die interdependenten Container auszuführen, aus denen eine Anwendung besteht. Wir definieren eine Multicontainer-Anwendung in einer einzigen Datei und füttern sie an Docker Compose, die die Anwendung einrichtet. Zum Zeitpunkt des Schreibens ist Compose noch nicht fertigungsbereit. In diesem Rezept werden wir wieder WordPress als Beispiel-Anwendung zu laufen.

@@ -1,3 +1,13 @@
+---
+title: docker-sicherheit-selinux-mac
+description: 
+published: true
+date: 2021-06-09T15:16:16.713Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:16:10.992Z
+---
+
 Es wird empfohlen, dass Sie je nach Linux-Distribution eine Form von MAC auf dem Docker-Host entweder über SELinux oder AppArmor einrichten. In diesem Rezept sehen wir, wie man SELinux auf einem installierten System von Fedora / RHEL / CentOS einrichtet. Schauen wir mal an, was SELinux ist:
 
 * SELinux ist ein Label system

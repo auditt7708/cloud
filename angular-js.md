@@ -1,3 +1,13 @@
+---
+title: angular-js
+description: 
+published: true
+date: 2021-06-09T14:54:34.813Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:54:29.183Z
+---
+
 # Angular JS Installation und Konfiguration
 
 ## Installation mit nmp

@@ -1,3 +1,13 @@
+---
+title: mongodb-basics
+description: 
+published: true
+date: 2021-06-09T15:40:10.472Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:40:05.397Z
+---
+
 # Allgemeine Infos
 
 ## Datenmodel

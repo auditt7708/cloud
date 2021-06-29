@@ -1,3 +1,13 @@
+---
+title: puppet4-templates
+description: 
+published: true
+date: 2021-06-09T16:01:27.664Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:01:22.658Z
+---
+
 Vorlagen sind eine leistungsstarke Möglichkeit, Embedded Ruby (ERB) zu verwenden, um Konfigurationsdateien dynamisch zu erstellen. 
 Sie können die ERB-Syntax auch direkt verwenden, ohne eine separate Datei verwenden zu müssen, indem Sie die Funktion `inline_template` aufrufen. 
 ERB erlaubt Ihnen, eine bedingte Logik zu verwenden, über Arrays zu iterieren und Variablen einzuschließen.

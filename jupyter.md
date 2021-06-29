@@ -1,3 +1,13 @@
+---
+title: jupyter
+description: 
+published: true
+date: 2021-06-09T15:27:39.389Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:27:34.061Z
+---
+
 # [jupyter](https://jupyter.org/) Installation Vorausetzungen
 
 [jupyter](https://jupyter.org/) kann eigentlich auf jedem OS Installiert werden wenn man sich damit beschäftigt.

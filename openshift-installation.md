@@ -1,3 +1,13 @@
+---
+title: openshift-installation
+description: 
+published: true
+date: 2021-06-09T15:42:11.453Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:42:06.308Z
+---
+
 # Docker Vorbereiten
 
 ## Storage einrichten

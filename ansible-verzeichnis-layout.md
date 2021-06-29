@@ -1,3 +1,13 @@
+---
+title: ansible-verzeichnis-layout
+description: 
+published: true
+date: 2021-06-09T14:56:56.539Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:56:50.398Z
+---
+
 # Ansible Verzeichnis layout
 
 ```sh

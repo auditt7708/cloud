@@ -1,3 +1,13 @@
+---
+title: puppet4-basics-qouting
+description: 
+published: true
+date: 2021-06-09T15:56:30.347Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:56:25.144Z
+---
+
 # Quoting
 
 Stelle sicher das du immer folgendes Quouting deiner resource names benutzt: 

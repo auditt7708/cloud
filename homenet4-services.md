@@ -1,3 +1,13 @@
+---
+title: homenet4-services
+description: 
+published: true
+date: 2021-06-09T15:25:05.087Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:24:58.866Z
+---
+
 # [Eigene Services](../homenet4-services)
 
 ## Serive ports Ports

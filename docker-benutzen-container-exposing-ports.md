@@ -1,3 +1,13 @@
+---
+title: docker-benutzen-container-exposing-ports
+description: 
+published: true
+date: 2021-06-09T15:07:47.189Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:07:42.246Z
+---
+
 # Docker Container exposing Ports benutzen
 
 Es gibt eine Reihe von Möglichkeiten, mit denen Ports auf dem Container ausgesetzt werden können. Einer von ihnen ist durch den Run-Befehl, den wir in diesem Kapitel abdecken werden. Die anderen Möglichkeiten sind durch die Docker-Datei und den Befehl --link. Wir werden sie in den anderen Kapiteln erforschen.

@@ -1,3 +1,13 @@
+---
+title: docker-praktischer-einsatz-cicd-shippable-openshift
+description: 
+published: true
+date: 2021-06-09T15:15:11.434Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:15:05.620Z
+---
+
 # Docker ci/cd mit shippable und openshift
 
 In der vorangegangenen anleitung sahen wir ein Beispiel dafür, wie Docker zum Testen in einer lokalen Dev- und QA-Umgebung verwendet werden kann. Schauen wir uns ein end-to-end Beispiel an, um zu sehen, wie Docker jetzt in der CI/CD-Umgebung verwendet wird. In diesem Rezept sehen wir, wie wir Shippable (http://www.shippable.com/) nutzen können, um CI/CD auszuführen und auf der OpenShift-Umgebung von Red Hat (https://openshift.redhat.com) zu implementieren.

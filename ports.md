@@ -1,3 +1,13 @@
+---
+title: ports
+description: 
+published: true
+date: 2021-06-09T15:44:53.967Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:44:48.774Z
+---
+
 # Wichte Ports Übersicht
 
 |Port| Protocol|Beschreibung |

@@ -1,3 +1,13 @@
+---
+title: docker-orchestration-swarm
+description: 
+published: true
+date: 2021-06-09T15:13:58.677Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:13:53.440Z
+---
+
 # Docker swarm
 
 Docker Swarm (http://docs.docker.com/swarm/) ist native Clustering für Docker. Es gruppiert mehrere Docker-Hosts in einem einzigen Pool, in dem man Container starten kann. In diesem Rezept verwenden wir Docker Machine (http://docs.docker.com/machine/), um einen Swarm-Cluster einzurichten. Zum Zeitpunkt des Schreibens ist Swarm in Docker Integriert. Um die Dinge einfach zu halten, verwenden wir VirtualBox als Backend für Docker Machine, um Hosts zu konfigurieren.

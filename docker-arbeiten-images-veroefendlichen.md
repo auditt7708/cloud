@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-veroefendlichen
+description: 
+published: true
+date: 2021-06-09T15:06:55.397Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:06:50.380Z
+---
+
 # Docker arbeiten mit Images: Veröfentlischen
 
 Angenommen, Sie haben ein Image erstellt, das der Entwicklungsumgebung in Ihrer Organisation entspricht. Sie können es entweder mit einem Teerball teilen, was wir später in diesem Kapitel sehen werden, oder in eine zentrale Lagern, von wo aus der Benutzer es herhollen kann.

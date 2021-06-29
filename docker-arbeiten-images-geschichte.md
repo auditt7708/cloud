@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-geschichte
+description: 
+published: true
+date: 2021-06-09T15:06:11.823Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:06:06.611Z
+---
+
 # Docker arbeiten mit Images: Geschichte
 
 Es ist praktisch zu wissen, wie das Bild, das wir verwenden, erstellt wurde. Der `docker history`-Befehl hilft uns, alle Zwischenschichten zu finden.

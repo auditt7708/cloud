@@ -1,3 +1,13 @@
+---
+title: devops-puppet-docker-kubernetes
+description: 
+published: true
+date: 2021-06-09T15:04:02.084Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:03:56.661Z
+---
+
 # Konfigurations Management
 
 ## [Puppet Allgemein](../puppet)

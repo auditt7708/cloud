@@ -1,3 +1,13 @@
+---
+title: kickstart
+description: 
+published: true
+date: 2021-06-09T15:28:23.456Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:28:18.355Z
+---
+
 # Kickstart
 
 ## Dokumentation

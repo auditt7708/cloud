@@ -1,3 +1,13 @@
+---
+title: puppet-zert-multi-dns-names
+description: 
+published: true
+date: 2021-06-09T15:55:04.072Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:54:58.479Z
+---
+
 Standardmäßig erstellt Puppet ein SSL-Zertifikat für Ihren Puppet-Master, der nur den vollständig qualifizierten Domainnamen des Servers enthält. Je nachdem, wie Ihr Netzwerk konfiguriert ist, kann es sinnvoll sein, dass der Server mit anderen Namen bekannt ist. In diesem Rezept machen wir ein neues Zertifikat für unseren Puppet-Master, der mehrere DNS-Namen hat.
 
 ### Fertig werden

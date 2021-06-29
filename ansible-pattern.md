@@ -1,3 +1,13 @@
+---
+title: ansible-pattern
+description: 
+published: true
+date: 2021-06-09T14:55:58.869Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:55:53.266Z
+---
+
 # Ansible Pattern
 
 ## Alias für ALL

@@ -1,3 +1,13 @@
+---
+title: pdns
+description: 
+published: true
+date: 2021-06-09T15:44:16.955Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:44:12.033Z
+---
+
 # PDNS
 
 ## Mysql Datenbamk pdns Einrichtung

@@ -1,3 +1,13 @@
+---
+title: docker-benutzen-container-labeling-filtering
+description: 
+published: true
+date: 2021-06-09T15:07:53.983Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:07:48.841Z
+---
+
 # Docker Container labels und filter benutzen
 
 Mit Docker 1.6 wurde ein Feature zu Label-Containern und Bildern hinzugefügt, mit denen wir beliebige Key-Value-Metadaten anfügen können. Sie können sie als Umgebungsvariablen denken, die für die Ausführung von Anwendungen in Containern nicht verfügbar sind, aber sie sind für Programme (Docker CLI) verfügbar, die Bilder und Container verwalten. Etiketten, die an Bilder angebracht sind, werden auch auf Container angewendet, die über sie gestartet werden. Wir können auch Etiketten zu den Behältern anbringen.

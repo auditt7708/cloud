@@ -1,3 +1,13 @@
+---
+title: kubernetes-logging-monitorring-etcd-log
+description: 
+published: true
+date: 2021-06-09T15:34:35.668Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:34:30.528Z
+---
+
 Der Datenspeicher, etcd, arbeitet für das Speichern der Informationen von Kubernetes Ressourcen. Das Kubernetes-System wird ohne robuste etcd-Server nicht stabil sein. Wenn die Information eines Pods verloren gehen, können wir es nicht im System erkennen, wie wir über mit den Kubernetes-Service darauf zugreifen oder ihn über den Replikationscontroller verwalten können wissen wir. In diesem Rezept, werden Sie lernen, welche Art von Nachricht aus dem etcd Log hollen können und wie man sie mit ELK zu sammelt.
 
 ### Fertig werden

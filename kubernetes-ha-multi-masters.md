@@ -1,3 +1,13 @@
+---
+title: kubernetes-ha-multi-masters
+description: 
+published: true
+date: 2021-06-09T15:32:50.385Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:32:44.390Z
+---
+
 # Kubernates HA Multi Master
 
 Der Masterknoten dient als Kernel komponente im Kubernetes-System. Zu seinen Aufgaben gehören:

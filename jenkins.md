@@ -1,3 +1,13 @@
+---
+title: jenkins
+description: 
+published: true
+date: 2021-06-09T15:27:16.851Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:27:11.332Z
+---
+
 # Jenkins
 
 Jenkins ist ein Programm das bei der Umsetzung einer CI/CD Umgebung hilft.

@@ -1,3 +1,13 @@
+---
+title: elk-stack-logstsh-input-dataset
+description: 
+published: true
+date: 2021-06-09T15:19:55.271Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:19:49.533Z
+---
+
 Für unser Beispiel ist der Datensatz, den wir hier verwenden werden, der tägliche Google (GOOG) Quotes Preisdatensatz über einen Zeitraum von 6 Monaten vom 1. Juli 2014 bis zum 31. Dezember 2014. Dies ist ein guter Datensatz, um zu verstehen, wie wir schnell können Analysieren einfache Datensätze, wie diese, mit ELK.
 
 ###### Hinweiß

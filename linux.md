@@ -1,3 +1,13 @@
+---
+title: linux
+description: 
+published: true
+date: 2021-06-09T15:36:40.771Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:36:35.857Z
+---
+
 # Linux
 
 ## Basis

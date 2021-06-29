@@ -1,3 +1,13 @@
+---
+title: elasticsearch
+description: 
+published: true
+date: 2021-06-09T15:18:39.452Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:18:33.961Z
+---
+
 # Elasticsearch
 
 /usr/share/elasticsearch/bin/elasticsearch

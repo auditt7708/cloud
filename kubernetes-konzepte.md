@@ -1,3 +1,13 @@
+---
+title: kubernetes-konzepte
+description: 
+published: true
+date: 2021-06-09T15:34:20.081Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:34:15.182Z
+---
+
 In diesem Kapitel werden wir mit der erstellung unterschiedlicher Ressourcen auf dem Kubernetes-System beginnen. Um Ihre Anwendung in einer Mikroservice-Struktur zu verwirklichen, wird das Lesen der Rezepte in diesem Kapitel ein guter Anfang sein, um die Konzepte der Kubernetes-Ressourcen zu verstehen und zu konsolidieren. Nachdem Sie Anwendungen in Kubernetes eingesetzt haben, können Sie an der skalierbaren und effizienten Containerverwaltung arbeiten und auch die DevOps-Bereitstellung von Microservices erfüllen.
 
 ### Übersicht

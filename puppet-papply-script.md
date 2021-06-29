@@ -1,3 +1,13 @@
+---
+title: puppet-papply-script
+description: 
+published: true
+date: 2021-06-09T15:54:30.850Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:54:25.598Z
+---
+
 Wir möchten es so schnell und einfach wie möglich machen, Puppet auf eine Maschine anzuwenden. 
 Dafür werden wir ein kleines Skript schreiben, das den `puppet apply` Befehlt mit den dafür benötigten Parametern umgibt. Wir werden das Skript bereitstellen, wo es für Puppet selbst benötigt wird.
 

@@ -1,3 +1,13 @@
+---
+title: ha-dns-server
+description: 
+published: true
+date: 2021-06-09T15:23:55.474Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:23:49.709Z
+---
+
 # ha-dns-server
 
 Configure Master DNS Server

@@ -1,3 +1,13 @@
+---
+title: kubernetes-adv-advanced-auth-autorisierung
+description: 
+published: true
+date: 2021-06-09T15:29:00.524Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:28:55.180Z
+---
+
 Um ein fortgeschritteneres Management nutzen zu können, können wir dem Kubernetes-System Berechtigungsregeln hinzufügen. In unserem Cluster konnten zwei Berechtigungstypen generiert werden: Einer ist zwischen den Maschinen. Nodes, die eine Authentifizierung haben, können sich mit dem steuernden Nodes in Verbindung setzen. Zum Beispiel kann der Master, der die Zertifizierung mit dem etcd-Server besitzt, Daten in etcd speichern. Die andere Berechtigungsregel befindet sich im Kubernetes-Master. Benutzer können die Berechtigung zur Überprüfung und Erstellung der Ressourcen erhalten. Das Anwenden von Authentifizierung und Autorisierung ist eine sichere Lösung, um zu verhindern, dass Ihre Daten oder Ihr Status von anderen aufgerufen werden.
 
 ### Fertig werden

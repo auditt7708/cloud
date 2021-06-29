@@ -1,3 +1,13 @@
+---
+title: ip
+description: 
+published: true
+date: 2021-06-09T15:25:51.839Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:25:46.263Z
+---
+
 # linux Kommando ip
 
 |Zweck |iproute2 Kommando | iproute2 Kommando | Kurzversion | net-tools Kommando||

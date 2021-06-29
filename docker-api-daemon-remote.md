@@ -1,3 +1,13 @@
+---
+title: docker-api-daemon-remote
+description: 
+published: true
+date: 2021-06-09T15:04:54.336Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:04:49.023Z
+---
+
 # Docker API Daemon Remote
 
 Wie wir wissen, hat Docker eine Client-Server-Architektur. Wenn wir Docker installieren, starten ein user space Programm und ein Daemon von der gleichen Binärdatei. Der Dämon bindet auf `unix://var/run/docker.sock` standardmäßig auf demselben Host. Dies erlaubt uns nicht, den Dämon remote zugänglich zu machen. Um den Fernzugriff zu ermöglichen, müssen wir den Docker so starten, dass er den Fernzugriff ermöglicht, was durch die entsprechende Änderung der `-H` Flags erfolgen kann.

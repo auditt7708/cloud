@@ -1,3 +1,13 @@
+---
+title: docker-hilfe-tips-tricks
+description: 
+published: true
+date: 2021-06-09T15:11:29.618Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:11:24.546Z
+---
+
 # Docker Tips und tricks
 
 Wir werden neugieriger werden, wenn wir mehr über Docker erfahren. Mailinglisten und IRC-Kanäle sind die besten Orte, um Hilfe zu bekommen, zu lernen und Wissen über Docker zu teilen. Docker hat ein paar IRC-Kanäle auf dem freien Nodes, wie `#docker` und `#Docker-dev`, um Docker im Allgemeinen und dev-related Zeug zu besprechen. Ähnlich hat Docker zwei Mailinglisten:

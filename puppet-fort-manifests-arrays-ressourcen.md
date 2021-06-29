@@ -1,3 +1,13 @@
+---
+title: puppet-fort-manifests-arrays-ressourcen
+description: 
+published: true
+date: 2021-06-09T15:49:35.418Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:49:29.759Z
+---
+
 # Puppet für fortgeschrittene: Arrays und Ressourcen
 
 Alles, was eine Ressource tun können , können Sie mit auch einen array tun , um eine Reihe von Ressourcen darzustellen.

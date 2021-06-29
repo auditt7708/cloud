@@ -1,3 +1,13 @@
+---
+title: docker-praktischer-einsatz-openstack
+description: 
+published: true
+date: 2021-06-09T15:15:18.856Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:15:13.240Z
+---
+
 Ich gehe davon aus, dass der Leser eine gewisse Exposition gegenüber OpenStack für dieses Rezept hat, da es außerhalb des Geltungsbereichs dieses Buches liegt. Weitere Informationen über OpenStack und seine Komponenten finden Sie unter http://www.openstack.org/software/.
 
 In OpenStack unterstützt Nova verschiedene Hypervisoren fürs computing, wie z.B. KVM, XEN, VMware, HyperV und andere. Wir können VMs mit diesen Treibern zur Verfügung stellen. Mit Ironic (https://wiki.openstack.org/wiki/Ironic) können Sie auch bare metal bereitstellen. Nova hat Unterstützung für Container-Provisioning mit Docker in der Havanna (https://www.openstack.org/software/havana/) veröffentlicht, aber derzeit außerhalb der mainline für schnelleren dev-Zyklus. Es gibt Pläne, es in der Hauptlinie in der Zukunft zu verschmelzen. Unter der Haube sieht es so aus:

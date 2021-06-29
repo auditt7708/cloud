@@ -1,3 +1,13 @@
+---
+title: mesos-saltstck-deployment-konfiguration
+description: 
+published: true
+date: 2021-06-09T15:39:07.086Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:39:01.389Z
+---
+
 # Mesos Deployment mit Saltstack
 
 Die SaltStack-Plattform oder Salt ist eine Python-basierte Open-Source-Konfigurations-Management-Software und eine Remote-Ausführungs-Engine.

@@ -1,3 +1,13 @@
+---
+title: docker-orchestration-atomic-host
+description: 
+published: true
+date: 2021-06-09T15:12:55.411Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:12:50.393Z
+---
+
 # Docker orchestration atmic host
 
 Project Atomic erleichtert die anwendungsorientierte IT-Architektur durch die Bereitstellung einer End-to-End-Lösung für die Bereitstellung von Container-Anwendungen schnell und zuverlässig mit atomic Update und Rollback für Applikation und Host.

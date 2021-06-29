@@ -1,3 +1,13 @@
+---
+title: docker-tips-tricks-debug-mode
+description: 
+published: true
+date: 2021-06-09T15:16:55.099Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:16:50.026Z
+---
+
 Wir können Docker im Debug-Modus starten, um Protokolle zu debuggen.
 
 ### Fertig werden

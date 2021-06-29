@@ -1,3 +1,13 @@
+---
+title: kubernetes-cd-pipline-erstellen
+description: 
+published: true
+date: 2021-06-09T15:30:43.390Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:30:37.773Z
+---
+
 # Kubernetes CD Pipline erstellen
 
 Continuous Delivery ist ein Konzept.

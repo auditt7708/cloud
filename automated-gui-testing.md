@@ -1,3 +1,13 @@
+---
+title: automated-gui-testing
+description: 
+published: true
+date: 2021-06-09T14:57:35.560Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T14:57:30.428Z
+---
+
 # Automated Gui testing
 
 Automatisierung GUI-Tests hat viele wünschenswerte Eigenschaften, aber es ist auch schwierig. Ein Grund dafür ist, dass sich Benutzeroberflächen während der Entwicklungsphase stark ändern, und Schaltflächen und Steuerelemente bewegen sich in der GUI.

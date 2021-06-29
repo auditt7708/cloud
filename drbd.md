@@ -1,3 +1,13 @@
+---
+title: drbd
+description: 
+published: true
+date: 2021-06-09T15:18:15.494Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:18:09.555Z
+---
+
 #### Daten
 
 Clustername = testcluster

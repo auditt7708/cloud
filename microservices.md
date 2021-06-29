@@ -1,3 +1,13 @@
+---
+title: microservices
+description: 
+published: true
+date: 2021-06-09T15:39:38.176Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:39:32.704Z
+---
+
 # HowTos Packtische Beispiele
 
 * [Patterns mit Microservices](http://microservices.io/patterns/microservices.html)

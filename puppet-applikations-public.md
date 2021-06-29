@@ -1,3 +1,13 @@
+---
+title: puppet-applikations-public
+description: 
+published: true
+date: 2021-06-09T15:46:53.938Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:46:48.738Z
+---
+
 # Puppet Modul Schreiben
 
 Wenn du ein Puppet-Modul schreibst, um irgendeine Software oder einen Service zu verwalten, musst du nicht von vorne anfangen. Community-beigefügte Module sind auf der Puppet Forge-Website für viele beliebte Anwendungen verfügbar. Manchmal ist ein Community-Modul genau das, was Sie brauchen und Sie können es herunterladen und sofort sofort starten. In den meisten Fällen müssen Sie einige Änderungen an Ihren speziellen Bedürfnissen und Umgebung vornehmen.

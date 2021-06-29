@@ -1,3 +1,13 @@
+---
+title: puppet4-ressourcen-datein-aufraumen
+description: 
+published: true
+date: 2021-06-09T16:00:00.490Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:59:55.069Z
+---
+
 Die `tidy` Ressource von Puppet wird Ihnen helfen, alte oder veraltete Dateien aufzuräumen, wodurch der Datenträgerverbrauch reduziert wird. Wenn Sie beispielsweise das Puppet-Reporting aktiviert haben, wie es im Abschnitt zum Erstellen von Berichten beschrieben ist, sollten Sie regelmäßig alte Berichtsdateien löschen.
 
 Wie es geht...

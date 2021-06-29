@@ -1,3 +1,13 @@
+---
+title: puppet-monitoring-reporting-depend-graphen
+description: 
+published: true
+date: 2021-06-09T15:53:52.065Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:53:46.661Z
+---
+
 # puppet-monitoring-reporting-depend-graphe
 
 Abhängigkeiten können schnell kompliziert werden, und es ist einfach, am Ende mit einer kreisförmigen Abhängigkeit (wo A von B abhängt, die von A abhängt), die die Marionette beschweren und aufhören zu arbeiten. Glücklicherweise macht Puppets `--graph` Option es einfach, ein Diagramm Ihrer Ressourcen und die Abhängigkeiten zwischen ihnen zu erzeugen, was eine große Hilfe bei der Festsetzung solcher Probleme sein kann.

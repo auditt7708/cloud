@@ -1,3 +1,13 @@
+---
+title: windows
+description: 
+published: true
+date: 2021-06-09T16:11:27.414Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:11:22.248Z
+---
+
 # Kosolen Kommandos 
 
 ## xcopy

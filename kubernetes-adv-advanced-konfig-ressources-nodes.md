@@ -1,3 +1,13 @@
+---
+title: kubernetes-adv-advanced-konfig-ressources-nodes
+description: 
+published: true
+date: 2021-06-09T15:29:08.315Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:29:02.727Z
+---
+
 Das Rechenressourcenmanagement ist in jeder Infrastruktur so wichtig. Wir sollten unsere Anwendung gut kennen und genügend CPU und Speicherkapazität bewahren, um das Auslaufen von Ressourcen zu verhindern. In diesem Abschnitt stellen wir vor, wie man die Nodeskapazität in den Kubernetes-Nodes verwaltet. Darüber hinaus werden wir auch beschreiben, wie man pod-Computing-Ressourcen verwaltet.
 
 ### Fertig werden

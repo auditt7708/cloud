@@ -1,3 +1,13 @@
+---
+title: elk-stack
+description: 
+published: true
+date: 2021-06-09T15:20:06.248Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:19:57.754Z
+---
+
 # ELK Stack
 
 Die ELK-Plattform ist eine komplette Log Analytics-Lösung, die auf einer Kombination von drei Open-Source-Tools - Elasticsearch, Logstash und Kibana - aufgebaut ist.

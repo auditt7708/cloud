@@ -1,3 +1,13 @@
+---
+title: docker-praktischer-einsatz-cicd-drone
+description: 
+published: true
+date: 2021-06-09T15:15:01.661Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:14:56.224Z
+---
+
 # Dpcker mit di/cd und drone
 
 Wie erwähnt auf der Drone-Website (https://drone.io/), Drone ist ein gehosteter Continuous Integration Service. Es ermöglicht Ihnen, bequem zu konfigurieren Projekte automatisch zu bauen, zu testen und zu implementieren, wie Sie Änderungen an Ihrem Code vornehmen. Sie bieten eine Open-Source-Version ihrer Plattform, die Sie in Ihrer Umgebung oder auf Wolke hosten können. Ab sofort unterstützen sie Sprachen wie C / C ++, Dart, Go, Haskell, Groovy, Java, Node.js, PHP, Python, Ruby und Scala. Mit Drone können Sie Ihre Anwendung auf Plattformen wie Heroku, Dotcloud, Google App Engine und S3 bereitstellen. Sie können auch SSH (rsync) Ihren Code zu einem Remote-Server für die Bereitstellung.

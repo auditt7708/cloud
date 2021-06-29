@@ -1,3 +1,13 @@
+---
+title: kubernetes-konzepte-labels-selektoren
+description: 
+published: true
+date: 2021-06-09T15:33:14.387Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:33:08.943Z
+---
+
 Labels sind ein Satz von Schlüssel/Wert Paaren, die an Objektmetadaten angehängt sind. Wir könnten Label verwenden, um Objekte wie Pods, replication controller und Services auszuwählen, zum organisieren und zum gruppieren. labels sind nicht unbedingt einmalig. Gegenstände könnten die gleichen Labels tragen.
 
 Label selektoren werden verwendet, um Objekte über Etiketten abzufragen. Die aktuell unterstützten Selektionstypen sind:

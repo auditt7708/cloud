@@ -1,3 +1,13 @@
+---
+title: puppet4-ressourcen-datein-multi-datei-quellen
+description: 
+published: true
+date: 2021-06-09T16:00:40.765Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:00:35.698Z
+---
+
 # puppet4-ressourcen-datein-multi-datei-quellen
 
 Eine ordentliche Funktion der Puppet `file` Ressource ist, dass Sie mehrere Werte für den `souce` parameter angeben können. Die Puppe sucht sie nacheinander. Wenn die erste Quelle nicht gefunden wird, geht sie weiter zum nächsten und so weiter. Sie können dies verwenden, um einen Standard-Ersatz anzugeben, wenn die jeweilige Datei nicht vorhanden ist, oder sogar eine Reihe von zunehmend generischen Substituten.

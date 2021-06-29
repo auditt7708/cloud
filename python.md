@@ -1,3 +1,13 @@
+---
+title: python
+description: 
+published: true
+date: 2021-06-09T16:01:59.087Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:01:53.622Z
+---
+
 # Python Installation
 
 PIP als modul nutzen um eine bestimmte Version zu benutzen

@@ -1,3 +1,13 @@
+---
+title: hidden-master-dns
+description: 
+published: true
+date: 2021-06-09T15:24:42.196Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:24:36.891Z
+---
+
 # hidden-master-dns
 
 ## Configuring my BIND/named DNS servers to operate from a hidden master via VPN for Let’s Encrypt

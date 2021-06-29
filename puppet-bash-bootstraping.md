@@ -1,3 +1,13 @@
+---
+title: puppet-bash-bootstraping
+description: 
+published: true
+date: 2021-06-09T15:47:25.912Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:47:20.692Z
+---
+
 # Puppet bash bootstraping
 
 Bissher haben wir in diesem Buche  Rakefiles verwendet um puppet einzurichten.

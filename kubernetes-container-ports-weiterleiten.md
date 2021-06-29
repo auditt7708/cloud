@@ -1,3 +1,13 @@
+---
+title: kubernetes-container-ports-weiterleiten
+description: 
+published: true
+date: 2021-06-09T15:31:48.373Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:31:42.811Z
+---
+
 In den vorangegangenen Kapiteln haben Sie gelernt, mit den Kubernetes-Diensten zu arbeiten, um den Container-Port intern und extern weiterzuleiten. Jetzt ist es Zeit, es noch einen Schritt weiter zu sehen, wie es funktioniert.
 
 Es gibt vier Netzwerkmodelle in Kubernetes, und wir werden die Details in den folgenden Abschnitten erkunden:

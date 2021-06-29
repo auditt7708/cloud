@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-images-apache-dockerfile
+description: 
+published: true
+date: 2021-06-09T15:05:26.545Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:05:21.114Z
+---
+
 # Docker arbeiten mit Images: Docker Apache
 
 Ich werde Dockerfiles aus dem Fedora-Dockerfiles [GitHub Repo](https://github.com/fedora-cloud/Fedora-Dockerfiles) verweisen. Wenn du Fedora benutzt hast, kannst du auch das Paket `fedora-dockerfiles`installieren, um die Probe Dockerfiles in `/usr/share/fedora-dockerfiles` zu bekommen. In jedem der Unterverzeichnisse werden Sie ein Dockerfile, die unterstützenden Dateien und eine README-Datei.

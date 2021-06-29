@@ -1,3 +1,13 @@
+---
+title: docker-sicherheit-namespaces-hosts-container
+description: 
+published: true
+date: 2021-06-09T15:16:08.006Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:16:02.665Z
+---
+
 Wie wir wissen, erstellt Docker standardmäßig sechs verschiedene Namespaces - Prozess, Netzwerk, Mount, Hostname, Shared Memory und User für einen Container. In einigen Fällen möchten wir vielleicht einen Namespace zwischen zwei oder mehr Containern teilen. Zum Beispiel, in Kubernetes, alle Container in einem Pod teilen sich die gleichen Netzwerk-Namespace.
 
 In einigen Fällen möchten wir die Namespaces des Host-Systems mit den Containern teilen. Zum Beispiel teilen wir den gleichen Netzwerk-Namespace zwischen dem Host und dem Container, um nahe der Nativen Geschwindigkeit innerhalb des Containers zu bekommen. In diesem Rezept sehen wir, wie man Namensräume zwischen Host und Container freigibt.

@@ -1,3 +1,13 @@
+---
+title: puppet-fort-run-tags
+description: 
+published: true
+date: 2021-06-09T15:50:25.802Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:50:20.116Z
+---
+
 # Puppet für fortgeschrittene: Tags einsetzen
 
 Eine häufige Anforderung ist, eine bestimmte Gruppe von Ressourcen vor anderen Gruppen anzuwenden (zum Beispiel einer Paket-Repository oder eine benutzerdefinierte Ruby-Version zu installieren), oder nach der anderen (zum Beispiel der Bereitstellung eine Anwendung, sobald ihre Abhängigkeiten installiert sind). Puppet der Laufstufe Funktion ermöglicht es Ihnen, dies zu tun.

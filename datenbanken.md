@@ -1,3 +1,13 @@
+---
+title: datenbanken
+description: 
+published: true
+date: 2021-06-09T15:03:32.605Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:03:27.518Z
+---
+
 # Übersicht Der Datenbanken
 
 * [Postgresql](../postgresql)

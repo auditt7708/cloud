@@ -1,3 +1,13 @@
+---
+title: puppet-manage-manigests-git
+description: 
+published: true
+date: 2021-06-09T15:52:14.359Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:52:08.271Z
+---
+
 # Puppet Manifests mit git managen
 
 Es ist eine großartige Idee, deine Puppenmanifeste in ein Versionskontrollsystem wie Git oder Subversion zu stellen (Git ist der De-facto-Standard für Puppet). Das gibt Ihnen einige Vorteile:

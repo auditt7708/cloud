@@ -1,3 +1,13 @@
+---
+title: puppet4-standart-bezeichnung
+description: 
+published: true
+date: 2021-06-09T16:01:20.499Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:01:15.277Z
+---
+
 Die Wahl geeigneter und informativer Namen für Ihre Module und Klassen wird eine große Hilfe sein, wenn es um die Lesbarkeit Ihres Codes geht. 
 Das ist noch wichtiger, wenn andere Leute ihren Code lesen und an ihren Manifesten arbeiten müssen.
 

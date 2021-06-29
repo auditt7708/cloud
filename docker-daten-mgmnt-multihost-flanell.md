@@ -1,3 +1,13 @@
+---
+title: docker-daten-mgmnt-multihost-flanell
+description: 
+published: true
+date: 2021-06-09T15:09:38.427Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:09:33.235Z
+---
+
 # Docker Multihost managenment mit flanell
 
 In diesem Rezept verwenden wir Flannel (https://github.com/coreos/flannel), um Multihost-Container-Netzwerke einzurichten. Flanell ist ein generisches Overlay-Netzwerk, das als Alternative zu Software Defined Networking (SDN) verwendet werden kann. Es handelt sich um eine IP-basierte Lösung, die virtuelles Extensible LAN (VXLAN) verwendet, bei dem jedem Container ein einzelnes Subnetz zugeordnet wird, das dem Host, der diesen Container ausführt, zugewiesen wird. Also, in dieser Art von Lösung, ein anderes Subnetz und Kommunikation tritt in jedem Host im Cluster, mit dem Overlay-Netzwerk. Flannel verwendet den etcd-Service (https://github.com/coreos/etcd) für den Key-Value-Store.

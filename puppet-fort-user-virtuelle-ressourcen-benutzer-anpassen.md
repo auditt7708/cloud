@@ -1,3 +1,13 @@
+---
+title: puppet-fort-user-virtuelle-ressourcen-benutzer-anpassen
+description: 
+published: true
+date: 2021-06-09T15:50:58.310Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:50:53.087Z
+---
+
 # Puppet für fortgeschrittene: Virtuelle resourcen Benutzer anpassen
 
 Benutzer neigen dazu, ihre Shell-Umgebungen, Terminal-Farben, Aliase und so weiter anpassen. Dies wird in der Regel durch eine Anzahl von Dotfiles in ihrem Home-Verzeichnis erreicht, z.B `.bash_profile` oder `.vimrc`.

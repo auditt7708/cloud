@@ -1,3 +1,13 @@
+---
+title: proxmox-openvswitch
+description: 
+published: true
+date: 2021-06-09T16:12:37.926Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:12:32.883Z
+---
+
 # Proxmox und Open vSwitch
 
 Open vSwitch-Pakete installieren

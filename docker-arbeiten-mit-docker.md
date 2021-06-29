@@ -1,3 +1,13 @@
+---
+title: docker-arbeiten-mit-docker
+description: 
+published: true
+date: 2021-06-09T15:07:32.503Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:07:27.404Z
+---
+
 # Docker arbeiten mit Images
 
 Im vorherigen Kapitel, nach der Installation von Docker, zogen wir ein Bild und erstellt einen Container daraus. Das primäre Ziel von Docker ist es, Container zu führen. In diesem Kapitel sehen wir die verschiedenen Operationen, die wir mit Containern wie Start, Stoppen, Auflistung, Löschen und so weiter machen können. Dies wird uns helfen, Docker für verschiedene Anwendungsfälle wie Testen, CI / CD, Einrichtung von PaaS und so weiter zu verwenden, die wir in späteren Kapiteln abdecken werden. Bevor wir anfangen, überprüfen wir die Docker-Installation, indem wir den folgenden Befehl ausführen:

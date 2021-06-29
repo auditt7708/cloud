@@ -1,3 +1,13 @@
+---
+title: elk-konfiguration
+description: 
+published: true
+date: 2021-06-09T15:18:46.294Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T15:18:42.078Z
+---
+
 # [Elasticsearch](../elasticsearch)
 
 Elasticsearch-Konfigurationsdateien befinden sich unter dem Konfigurationsordner im Elasticsearch-Installationsverzeichnis. Der config-Ordner hat zwei Dateien, nämlich elasticsearch.yml und logging.yml. Erstere werden verwendet, um die Konfigurationseigenschaften von verschiedenen Elasticsearch-Modulen festzulegen, wie z. B. Netzwerkadresse, Pfade usw., während letztere loggenbezogene Konfigurationen angeben.

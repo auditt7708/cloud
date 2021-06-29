@@ -1,3 +1,13 @@
+---
+title: selenium-gui-tasting
+description: 
+published: true
+date: 2021-06-09T16:04:34.332Z
+tags: 
+editor: markdown
+dateCreated: 2021-06-09T16:04:29.494Z
+---
+
 # Beispiel an Wordpress
 
 
