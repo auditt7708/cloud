@@ -1,2 +1,2 @@
 # linux-doku Übersicht
-* [Home](../home.md)
+* [Home](home.md)
